@@ -76,8 +76,46 @@ textarea {
 	background: rgba(55,55,55,0.8);
 }
 
+._C_ce { /*Color*/
+}
+
+._C_F_ce { /*Color /Folders*/
+	color: green;
+}
+
+._C_P_ce { /*Color /Programs*/
+	color: teal;
+}
+
+._FT_ce { /*File Type*/
+	color: gray;
+}
+
+._FT__ce { /*File Type /*/
+}
+
+._FT_html_ce { /*File Type /html*/
+}
+
+._FT_py_ce { /*File Type /py*/
+}
+
 </style>
 <script>
+
+window.onload = function() {
+	var __I_ve = [0,0]; /*Iteration*/
+	var __FT_ve = [['','/'],['html','.html'],['py','.py']]; /*Files Type*/
+	for(__I_ve[1]; __I_ve[1]<__FT_ve.length; __I_ve[1]++) {
+			//~ alert(__FT_ve.length);
+		for(__I_ve[0]; __I_ve[0]<document.getElementsByClassName('_FT_'+__FT_ve[__I_ve[1]][0]+'_ce').length; __I_ve[0]++) {
+			//~ alert(String(document.getElementsByClassName('_FT_'+__FT_ve[__I_ve[1]][0]+'_ce').length)+'!');
+			document.getElementsByClassName('_FT_'+__FT_ve[__I_ve[1]][0]+'_ce')[__I_ve[0]].innerHTML = __FT_ve[__I_ve[1]][1];
+		};
+		__I_ve[0] = 0;
+	};
+	__I_ve[1] = 0;
+};
 
 </script>
 </head>
@@ -85,10 +123,16 @@ textarea {
 
 <p>
 	<p>
-		<a href="/.html">---</a>
+		<span>
+			<span><a class="_C_ce" href="/.html">---</a>
+			<span class="_FT_ce"></span>
+		</span>
 	</p>
 	<p>
-		<a href="/.html">---</a>
+		<span>
+			<span><a class="_C_ce" href="/.html">---</a>
+			<span class="_FT_ce "></span>
+		</span>
 	</p>
 </p>
 
