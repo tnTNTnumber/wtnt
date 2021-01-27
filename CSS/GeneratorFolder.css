@@ -1,0 +1,21 @@
+._C_ce { /*Color*/
+}._C_F_ce { /*Color /Folders*/
+	color: green;
+}._C_P_ce { /*Color /Programs*/
+	color: teal;
+}._C_Pj_ce { /*Color /Projects*/ /*Special*/
+	color: orange;
+}
+
+._D1_ce { /*Div 1*/
+}
+
+._DE_ce { /*Div Error*/
+}
+
+._FT_ce { /*File Type*/
+	color: gray;
+}._FT__ce { /*File Type /*/
+}._FT_html_ce { /*File Type /html*/
+}._FT_py_ce { /*File Type /py*/
+}
