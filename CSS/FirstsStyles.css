@@ -45,7 +45,7 @@ textarea {
 	scrollbar-color: rgba(55,55,55,0.8) rgba(0,0,0,0);
 	scrollbar-width: thin;
 	transition-duration: 0.4s;
-}textarea:hover{
+}textarea:hover {
 	background: rgba(116,116,116,0.8)!important;
 }textarea.focus, textarea:focus {
     outline: 0;

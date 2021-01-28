@@ -1,21 +1,45 @@
-._C_ce { /*Color*/
-}._C_F_ce { /*Color /Folders*/
+._GeneratorFolder_C_ce { /*Color*/
+}._GeneratorFolder_C_F_ce { /*Color /Folders*/
 	color: green;
-}._C_P_ce { /*Color /Programs*/
+}._GeneratorFolder_C_P_ce { /*Color /Programs*/
 	color: teal;
-}._C_Pj_ce { /*Color /Projects*/ /*Special*/
+}._GeneratorFolder_C_Pj_ce { /*Color /Projects*/ /*Special*/
 	color: orange;
 }
 
 ._D1_ce { /*Div 1*/
+	left: 45%;
+	position: absolute;
+	transform: translateX(-50%);
 }
 
 ._DE_ce { /*Div Error*/
 }
 
-._FT_ce { /*File Type*/
+._GeneratorFolder_FT_ce { /*File Type*/
 	color: gray;
-}._FT__ce { /*File Type /*/
-}._FT_html_ce { /*File Type /html*/
-}._FT_py_ce { /*File Type /py*/
+}._GeneratorFolder_FT__ce { /*File Type /*/
+}._GeneratorFolder_FT_html_ce { /*File Type /html*/
+}._GeneratorFolder_FT_py_ce { /*File Type /py*/
+}
+
+._GeneratorFolder_LE_ce { /*?*/
+	transition-duration: 0.4s;
+}._GeneratorFolder_LE_ce.hover, ._GeneratorFolder_LE_ce:hover {
+}._GeneratorFolder_LE_ce { /*?*/
+	margin: 0px;
+}._GeneratorFolder_LE_ce.hover, ._GeneratorFolder_LE_ce:hover { /*?*/
+	/*transform: scale(1.2);
+	transform-origin: left;*/
+	background: rgba(55,55,55,0.05);
+	/*background-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 1%, rgba(0, 255, 255, 1) 50%, rgba(0, 0, 0, 1) 100%);*/
+}._GeneratorFolder_LE_C_ce { /*Cell*/
+	text-align: left;
+}._GeneratorFolder_LE_C_ce.hover, ._GeneratorFolder_LE_C_ce:hover {
+}._GeneratorFolder_LE_CF_ce { /*Cell Fake*/
+	height: 6px;
+}._GeneratorFolder_LE_CF_ce.hover, ._GeneratorFolder_LE_CF_ce:hover {
+}._GeneratorFolder_LE_T_ce { /*Table*/
+	margin-left: auto;
+	margin-right: auto;
 }
