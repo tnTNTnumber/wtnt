@@ -1,10 +1,12 @@
 ._GeneratorFolder_C_ce { /*Color*/
 }._GeneratorFolder_C_F_ce { /*Color /Folders*/
-	color: green;
+	color: rgba(0,128,0,0.9); /**green*/
 }._GeneratorFolder_C_P_ce { /*Color /Programs*/
-	color: teal;
-}._GeneratorFolder_C_Pj_ce { /*Color /Projects*/ /*Special*/
-	color: orange;
+	color: rgba(0,128,128,0.9); /**teal*/
+}._GeneratorFolder_C_Pj_ce { /*Color /Projects*/
+	color: rgba(255,165,0,0.9); /**orange*/
+}._GeneratorFolder_C_PjP_ce { /*Color /Projects Programs*/
+	color: rgba(128,146,64,0.9); /**orange + teal*/
 }
 
 ._GeneratorFolder_FT_ce { /*File Type*/
@@ -32,6 +34,7 @@
 }._GeneratorFolder_LE_CF_ce.hover, ._GeneratorFolder_LE_CF_ce:hover {
 }._GeneratorFolder_LE_CL_ce { /*Cell Large*/
 }._GeneratorFolder_LE_CL_ce.hover, ._GeneratorFolder_LE_CL_ce:hover {
+	opacity: 0.95;
 	transform: scale(1.2);
 }._GeneratorFolder_LE_T_ce { /*Table*/
 	margin-left: auto;
