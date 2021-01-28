@@ -39,6 +39,9 @@
 }._GeneratorFolder_LE_CF_ce { /*Cell Fake*/
 	height: 6px;
 }._GeneratorFolder_LE_CF_ce.hover, ._GeneratorFolder_LE_CF_ce:hover {
+}._GeneratorFolder_LE_CL_ce { /*Cell Large*/
+}._GeneratorFolder_LE_CL_ce.hover, ._GeneratorFolder_LE_CL_ce:hover {
+	transform: scale(1.2);
 }._GeneratorFolder_LE_T_ce { /*Table*/
 	margin-left: auto;
 	margin-right: auto;
