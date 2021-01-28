@@ -7,15 +7,6 @@
 	color: orange;
 }
 
-._D1_ce { /*Div 1*/
-	left: 45%;
-	position: absolute;
-	transform: translateX(-50%);
-}
-
-._DE_ce { /*Div Error*/
-}
-
 ._GeneratorFolder_FT_ce { /*File Type*/
 	color: gray;
 }._GeneratorFolder_FT__ce { /*File Type /*/

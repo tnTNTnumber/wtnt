@@ -26,6 +26,10 @@ button {
 	background: rgba(88,88,88,0.8)!important;
 }
 
+div {
+	transition-duration: 0.4s;
+}
+
 ::placeholder {
 	color: rgba(55,55,55,0.8);
 }:-ms-input-placeholder {
@@ -67,4 +71,24 @@ textarea {
 	border-radius: 6px;
 }::-webkit-scrollbar-thumb:hover {
 	background: rgba(55,55,55,0.8);
+}
+
+._0_ce { /*0*/
+	border: 0px;
+	border: 0;
+	margin: 0px;
+	margin: 0;
+	padding: 0px;
+	padding: 0;
+}
+
+._D1_ce { /*Div 1*/
+	left: 45vw;
+	position: absolute;
+	transform: translateX(-50%);
+	transition-duration: 1.4s;
+}_D1_ce * {
+}
+
+._DE_ce { /*Div Error*/
 }
