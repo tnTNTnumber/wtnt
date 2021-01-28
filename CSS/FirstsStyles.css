@@ -5,7 +5,7 @@ body {
 	color: rgba(0,0,0,0.95)!important;
 	font-family: 'Lucida Console', monospace;
 	font-family: 'Ubuntu Mono', monospace;
-	font-size: 1vmax;
+	font-size: 20px; /*2.5vmin; 1vmax; 20px*/
 	transition-duration: 0.4s;
 }body * {
 	transition-duration: 0.4s;
