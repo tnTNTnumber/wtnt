@@ -1,0 +1,4433 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Py Syntax - τnTNT_☢️</title>
+	<meta charset="UTF-8">
+<style>
+
+._A_ce { /*All*/
+	margin-left: 70px;
+}
+
+body {
+	background: rgba(33,33,33,0.8);
+	color: rgba(0,0,0,0.95)!important;
+}
+
+b0 { /*bold 1*/
+	color: rgba(0,0,0,0,8);
+	text-shadow: 2px 0 rgba(0,0,0,0.8);
+	letter-spacing: 2px;
+	font-size: 1.2em;
+	font-weight: bold;
+}
+
+b1 { /*bold 1*/
+	color: rgba(0,0,0,0,8);
+	text-shadow: 1px 0 rgba(0,0,0,0.8);
+	letter-spacing: 1px;
+	font-weight: bold;
+}
+
+b2 { /*bold 2*/
+	color: rgba(0,0,0,0,8);
+	text-shadow: 1px 0 rgba(0,0,0,0.8);
+	letter-spacing: 1px;
+	font-weight: bold;
+}
+
+button {
+	background: rgba(55,55,55,0.8);
+	border: 0.4vmin solid rgba(44,44,44,0.8);
+    border-radius: 10%;
+	color: rgba(0,0,0,0.8);
+	color: rgba(22,22,22,0.8);
+	font-size: 2.5vmin;
+	transform: translate(50%,50%);
+	transition-duration: 0.2s;
+}button.focus, button:focus {
+    outline: 0;
+    box-shadow: none!important;
+}button:hover {
+	background: rgba(88,88,88,0.8)!important;
+}
+
+._BS1_ce {
+	background: rgba(55,55,55,0.8);
+	border: 0.4vmin solid rgba(44,44,44,0.8);
+    border-radius: 10%;
+	color: rgba(0,0,0,0.8);
+	color: rgba(22,22,22,0.8);
+	font-size: 2.5vmin;
+	transform: translate(50%,50%);
+	transition-duration: 0.2s;
+}._BS1_ce.focus, button:focus {
+    outline: 0;
+    box-shadow: none!important;
+}._BS1_ce:hover {
+	background: rgba(88,88,88,0.8)!important;
+}
+
+._BS2_ce {
+	background: rgba(44,66,44,0.8);
+	border: 0.4vmin solid rgba(44,44,44,0.8);
+    border-radius: 10%;
+	color: rgba(0,0,0,0.8);
+	color: rgba(22,22,22,0.8);
+	font-size: 2.5vmin;
+	transform: translate(50%,50%);
+	transition-duration: 0.2s;
+}._BS2_ce.focus, button:focus {
+    outline: 0;
+    box-shadow: none!important;
+}._BS2_ce:hover {
+	background: rgba(66,88,88,0.8)!important;
+}
+
+._BT_ce { /*Button Toggle*/
+	height: 5vmin;
+	position: fixed;
+	width: 5vmin;
+	z-index: 16;
+}
+
+#_BTS_de { /*Button Toggle Syntax*/
+	bottom: 12.5vmin;
+	right: 12.5vmin;
+}
+
+#_BTE_de { /*Button Toggle Examples*/
+	bottom: 5vmin;
+	right: 12.5vmin;
+}
+
+#_BTHW_de { /*Button Toggle Hello World*/
+	bottom: 50vmin;
+	right: 5vmin;
+}
+
+#_BTMO_de { /*Button Toggle Mathematical Operator*/
+	bottom: 42.5vmin;
+	right: 5vmin;
+}
+
+#_BTAO_de { /*Button Toggle Assignment Operator*/
+	bottom: 35vmin;
+	right: 5vmin;
+}
+
+#_BTCO_de { /*Button Toggle Comparison Operator*/
+	bottom: 27.5vmin;
+	right: 5vmin;
+}
+
+#_BTV_de { /*Button Toggle Variable*/
+	bottom: 20vmin;
+	right: 5vmin;
+}
+
+#_BTFunc_de { /*Button Toggle Function*/
+	bottom: 12.5vmin;
+	right: 5vmin;
+}
+
+#_BTCI_de { /*Button Toggle Conditional Instruction*/
+	bottom: 5vmin;
+	right: 5vmin;
+}
+
+div {
+	transition-duration: 0.4s;
+}
+
+h1 {
+	margin-bottom: 0px;
+	margin-left: -60px;
+	margin-top: 0px;
+	transition-duration: 0.4s;
+}
+
+h3 {
+	margin-bottom: 0px;
+	margin-left: -40px;
+	margin-top: 0px;
+	transition-duration: 0.4s;
+}
+
+h5 {
+	margin-bottom: 0px;
+	margin-left: -20px;
+	margin-top: 0px;
+	transition-duration: 0.4s;
+}
+
+h7 {
+	margin-bottom: 10px;
+	margin-left: 0px;
+	margin-top: 0px;
+	transition-duration: 0.4s;
+}
+
+T_B0 { /*Bracket 1*/
+	color: rgba(44,44,44,0.8);
+	font-size: 80%;
+	transition-duration: 0.4s;
+}
+
+T_B0_0 { /*Bracket 1*/
+	color: rgba(44,44,44,0.8);
+	transition-duration: 0.4s;
+}
+
+T_B1 { /*Bracket 1*/
+	color: rgba(11,11,77,0.8);
+	font-size: 80%;
+	transition-duration: 0.4s;
+}
+
+T_B1__0 { /*Bracket 1*/
+	color: rgba(33,33,77,0.8);
+	font-size: 80%;
+	transition-duration: 0.4s;
+}
+
+T_B1_0 { /*Bracket 3*/
+	color: rgba(11,11,77,0.8);
+	transition-duration: 0.4s;
+}
+
+T_B1_0__0 { /*Bracket 3*/
+	color: rgba(33,33,77,0.8);
+	transition-duration: 0.4s;
+}
+
+T_B2 { /*Bracket 2*/
+	color: rgba(77,11,11,0.8);
+	font-size: 80%;
+	transition-duration: 0.4s;
+}
+
+T_B3 { /*Bracket 2*/
+	background: rgba(88,88,88,0.8);
+	color: rgba(11,11,11,0.8);
+	transition-duration: 0.4s;
+}
+
+T_B4 { /*Bracket 2*/
+	color: rgba(00,44,00,0.8);
+	transition-duration: 0.4s;
+}
+
+T_E { /*Examples*/
+}
+
+T_E { /*Syntax*/
+}
+
+::placeholder {
+	color: rgba(55,55,55,0.8);
+}:-ms-input-placeholder {
+	color: rgba(55,55,55,0.8);
+}::-ms-input-placeholder {
+	color: rgba(55,55,55,0.8);
+}
+
+::selection {
+  background: rgba(99,99,99,0.8);
+}::-moz-selection {
+  background: rgba(99,99,99,0.8);
+}
+
+textarea {
+	color: rgba(0,0,0,0.8);
+	scrollbar-color: rgba(55,55,55,0.8) rgba(0,0,0,0);
+	scrollbar-width: thin;
+	transition-duration: 0.4s;
+}textarea:hover{
+	background: rgba(116,116,116,0.8)!important;
+}textarea.focus, textarea:focus {
+    outline: 0;
+    box-shadow: none!important;
+}
+
+::-webkit-scrollbar {
+	width: 12px;
+	background: rgba(88,88,88,0);
+	border-radius: 6px;
+	transition-duration: 0.4s;
+}::-webkit-scrollbar-track {
+	background: linear-gradient(90deg,rgba(88,88,88,0.2),rgba(0,0,0,0));
+	border-radius: 6px;
+}::-webkit-scrollbar-track:hover {
+	background: rgba(88,88,88,0.4);
+}::-webkit-scrollbar-thumb {
+	background: rgba(55,55,55,0.5);
+	border-radius: 6px;
+}::-webkit-scrollbar-thumb:hover {
+	background: rgba(55,55,55,0.8);
+}
+
+</style>
+<script>
+
+function _BS_fe(_BT_T_fe,_BT_I_fe) { /*Button Scroll*/
+	/*Tag*/
+	/*Id*/
+	if(document.getElementsByTagName(String(_BT_T_fe))[0].style.display==='none') {
+	} else {
+		document.getElementsByTagName(String(_BT_T_fe))[0].scrollIntoView();
+	};
+};
+
+function _BT_fe(_BT_T_fe,_BT_I_fe) { /*Button Toggle*/
+	/*Tag*/
+	/*Id*/
+	if(document.getElementsByTagName(String(_BT_T_fe))[0].style.display==='none') {
+		_CC_fe(document.getElementById(_BT_I_fe),'_BS1_ce _BT_ce');
+		for(var _BT_I_ve=0; _BT_I_ve<document.getElementsByTagName(String(_BT_T_fe)).length; _BT_I_ve++) {
+			document.getElementsByTagName(String(_BT_T_fe))[_BT_I_ve].style.display = 'block';
+		};
+	} else {
+		_CC_fe(document.getElementById(_BT_I_fe),'_BS2_ce _BT_ce');
+		for(var _BT_I_ve=0; _BT_I_ve<document.getElementsByTagName(String(_BT_T_fe)).length; _BT_I_ve++) {
+			document.getElementsByTagName(String(_BT_T_fe))[_BT_I_ve].style.display = 'none';
+		};
+	};
+};
+
+function _CC_fe(_CC_O_ve,_CC_CL_ve) { /*Change Class*/
+    /*Object*/
+    /*Class List*/
+    _CC_O_ve.className = String(_CC_CL_ve);
+};
+
+</script>
+</head>
+<body>
+
+<div class="_A_ce">
+<T_H0_HelloWorld>
+
+<h1>
+	<b0>Hello World</b0>
+</h1>
+<T_H1_HelloWorld>
+	<h1>
+		<b1>Hello World</b1>
+	</h1>
+	<T_S>
+		<h3>
+			<b2>Spiegazione</b2>
+		</h3>
+		<h7>
+<pre>Con "Hello World" si intende il codice base di un linguaggio di programmazione per stampare la scritta 'Hello World'.</pre>
+		</h7>
+	</T_S>
+	<T_E>
+		<h3>
+			<i>Codice</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre>print ( 'Hello World!' )</pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>Hello World!</T_B3></pre>
+		</h7>
+	</T_E>
+</T_H1_HelloWorld>
+
+</T_H0_HelloWorld>
+<T_H0_MathematicalOperator>
+
+<h1>
+	<b0>Operatori Matematici</b0>
+</h1>
+<T_H1_Addition>
+	<h1>
+		<b1>Addizione</b1>
+	</h1>
+	<T_S>
+		<h3>
+			<b2>Sintassi</b2>
+		</h3>
+		<h7>
+<pre><T_B1>primo termine</T_B1> + <T_B1>secondo termine</T_B1></pre>
+		</h7>
+	</T_S>
+	<T_E>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>print ( </T_B0_0><T_B1_0>5</T_B1_0> + <T_B1_0>5</T_B1_0><T_B0_0> )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>10</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>print ( </T_B0_0><T_B1_0>'ci'</T_B1_0> + <T_B1_0>'ao'</T_B1_0><T_B0_0> )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>ciao</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>print ( </T_B0_0><T_B1_0>str( 5 )</T_B1_0> + <T_B1_0>' castagne'</T_B1_0><T_B0_0> )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>5 castagne</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>X = 5</T_B0_0>
+<T_B0_0>Y = 3</T_B0_0>
+<T_B0_0>print ( </T_B0_0><T_B1_0>X</T_B1_0> + <T_B1_0>Y</T_B1_0><T_B0_0> )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>8</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>print ( </T_B0_0><T_B1_0>3</T_B1_0> + <T_B1_0>5</T_B1_0> + <T_B1_0>7</T_B1_0><T_B0_0> )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>15</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>X = 'multiple'</T_B0_0>
+<T_B0_0>print ( </T_B0_0><T_B1_0>'addizioni'</T_B1_0> + <T_B1_0>' '</T_B1_0> + <T_B1_0>X</T_B1_0><T_B0_0> )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>addizioni multiple</T_B3></pre>
+		</h7>
+	</T_E>
+</T_H1_Addition>
+<T_H1_Subtraction>
+	<h1>
+		<b1>Sottrazione</b1>
+	</h1>
+	<T_S>
+		<h3>
+			<b2>Sintassi</b2>
+		</h3>
+		<h7>
+<pre><T_B1>primo termine</T_B1> - <T_B1>secondo termine</T_B1></pre>
+		</h7>
+	</T_S>
+	<T_E>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>print ( </T_B0_0><T_B1_0>5</T_B1_0> - <T_B1_0>5</T_B1_0><T_B0_0> )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>0</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>X = 5</T_B0_0>
+<T_B0_0>Y = 3</T_B0_0>
+<T_B0_0>print ( </T_B0_0><T_B1_0>X</T_B1_0> - <T_B1_0>Y</T_B1_0><T_B0_0> )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>2</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>X = 7</T_B0_0>
+<T_B0_0>print ( </T_B0_0><T_B1_0>X</T_B1_0> - <T_B1_0>3</T_B1_0> - <T_B1_0>5</T_B1_0><T_B0_0> )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>-1</T_B3></pre>
+		</h7>
+	</T_E>
+</T_H1_Subtraction>
+<T_H1_Multiplication>
+	<h1>
+		<b1>Moltiplicazione</b1>
+	</h1>
+	<T_S>
+		<h3>
+			<b2>Sintassi</b2>
+		</h3>
+		<h7>
+<pre><T_B1>primo termine</T_B1> * <T_B1>secondo termine</T_B1></pre>
+		</h7>
+	</T_S>
+	<T_E>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>print ( </T_B0_0><T_B1_0>5</T_B1_0> * <T_B1_0>5</T_B1_0><T_B0_0> )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>25</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>print ( </T_B0_0><T_B1_0>'cinque '</T_B1_0> * <T_B1_0>5</T_B1_0><T_B0_0> )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>cinque cinque cinque cinque cinque </T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>X = 5</T_B0_0>
+<T_B0_0>Y = 3</T_B0_0>
+<T_B0_0>print ( </T_B0_0><T_B1_0>X</T_B1_0> * <T_B1_0>Y</T_B1_0><T_B0_0> )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>15</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>X = 3</T_B0_0>
+<T_B0_0>print ( </T_B0_0><T_B1_0>X</T_B1_0> * <T_B1_0>'ciao '</T_B1_0> * <T_B1_0>5</T_B1_0><T_B0_0> )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>ciao ciao ciao ciao ciao ciao ciao ciao ciao ciao ciao ciao ciao ciao ciao </T_B3></pre>
+		</h7>
+	</T_E>
+</T_H1_Multiplication>
+<T_H1_Division>
+	<h1>
+		<b1>Divisione</b1>
+	</h1>
+	<T_S>
+		<h3>
+			<b2>Sintassi</b2>
+		</h3>
+		<h7>
+<pre><T_B1>primo termine</T_B1> / <T_B1>secondo termine</T_B1></pre>
+		</h7>
+	</T_S>
+	<T_E>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>print ( </T_B0_0><T_B1_0>5</T_B1_0> / <T_B1_0>5</T_B1_0><T_B0_0> )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>1.0</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>print ( int( </T_B0_0><T_B1_0>5</T_B1_0> / <T_B1_0>5</T_B1_0><T_B0_0> ) )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>1</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>print ( </T_B0_0><T_B1_0>5</T_B1_0> / <T_B1_0>2</T_B1_0><T_B0_0> )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>2.5</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>print ( </T_B0_0><T_B1_0>5</T_B1_0> / <T_B1_0>3</T_B1_0><T_B0_0> )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>1.6666666666666667</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>print ( int( </T_B0_0><T_B1_0>5</T_B1_0> / <T_B1_0>3</T_B1_0><T_B0_0> ) )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>1</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>print ( </T_B0_0><T_B1_0>100</T_B1_0> / <T_B1_0>5</T_B1_0><T_B0_0> )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>20.0</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>print ( </T_B0_0><T_B1_0>3.5</T_B1_0> / <T_B1_0>5</T_B1_0><T_B0_0> )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>0.7</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>print ( </T_B0_0><T_B1_0>0.22</T_B1_0> / <T_B1_0>5.5</T_B1_0><T_B0_0> )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>0.04</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>X = 10</T_B0_0>
+<T_B0_0>Y = 5</T_B0_0>
+<T_B0_0>print ( </T_B0_0><T_B1_0>X</T_B1_0> / <T_B1_0>Y</T_B1_0><T_B0_0> )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>2.0</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>X = 20</T_B0_0>
+<T_B0_0>print ( </T_B0_0><T_B1_0>X</T_B1_0> / <T_B1_0>5</T_B1_0> / <T_B1_0>10</T_B1_0><T_B0_0> )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>0.4</T_B3></pre>
+		</h7>
+	</T_E>
+</T_H1_Division>
+<T_H1_Modulus>
+	<h1>
+		<b1>Modulo</b1>
+	</h1>
+	<T_S>
+		<h3>
+			<b2>Sintassi</b2>
+		</h3>
+		<h7>
+<pre><T_B1>primo termine</T_B1> % <T_B1>secondo termine</T_B1></pre>
+		</h7>
+	</T_S>
+	<T_E>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>print ( </T_B0_0><T_B1_0>5</T_B1_0> % <T_B1_0>5</T_B1_0><T_B0_0> )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>0</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>print ( </T_B0_0><T_B1_0>28</T_B1_0> % <T_B1_0>10</T_B1_0><T_B0_0> )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>8</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>print ( </T_B0_0><T_B1_0>5</T_B1_0> % <T_B1_0>8</T_B1_0><T_B0_0> )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>5</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>print ( </T_B0_0><T_B1_0>-28</T_B1_0> % <T_B1_0>10</T_B1_0><T_B0_0> )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>2</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>print ( </T_B0_0><T_B1_0>28</T_B1_0> % <T_B1_0>-10</T_B1_0><T_B0_0> )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>-2</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>print ( </T_B0_0><T_B1_0>-28</T_B1_0> % <T_B1_0>-10</T_B1_0><T_B0_0> )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>-8</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>print ( </T_B0_0><T_B1_0>5.5</T_B1_0> % <T_B1_0>2.5</T_B1_0><T_B0_0> )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>0.5</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>X = 8</T_B0_0>
+<T_B0_0>Y = 3</T_B0_0>
+<T_B0_0>print ( </T_B0_0><T_B1_0>X</T_B1_0> % <T_B1_0>Y</T_B1_0><T_B0_0> )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>2</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>X = 50</T_B0_0>
+<T_B0_0>print ( </T_B0_0><T_B1_0>X</T_B1_0> % <T_B1_0>20</T_B1_0> % <T_B1_0>7</T_B1_0><T_B0_0> )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>3</T_B3></pre>
+		</h7>
+	</T_E>
+</T_H1_Modulus>
+<T_H1_Exponentiation>
+	<h1>
+		<b1>Potenza</b1>
+	</h1>
+	<T_S>
+		<h3>
+			<b2>Sintassi</b2>
+		</h3>
+		<h7>
+<pre><T_B1>primo termine</T_B1> ** <T_B1>secondo termine</T_B1></pre>
+		</h7>
+	</T_S>
+	<T_E>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>print ( </T_B0_0><T_B1_0>5</T_B1_0> ** <T_B1_0>2</T_B1_0><T_B0_0> )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>25</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>X = 5</T_B0_0>
+<T_B0_0>Y = 3</T_B0_0>
+<T_B0_0>print ( </T_B0_0><T_B1_0>X</T_B1_0> ** <T_B1_0>Y</T_B1_0><T_B0_0> )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>125</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>print ( ( </T_B0_0><T_B1_0>2</T_B1_0> ** <T_B1_0>3</T_B1_0><T_B0_0> )</T_B0_0> ** <T_B1_0>2</T_B1_0><T_B0_0> )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>64</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>X = 2</T_B0_0>
+<T_B0_0>print ( </T_B0_0><T_B1_0>X</T_B1_0> ** <T_B1_0>3</T_B1_0> ** <T_B1_0>2</T_B1_0><T_B0_0> )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>512</T_B3></pre>
+		</h7>
+	</T_E>
+</T_H1_Exponentiation>
+<T_H1_FloorDivision>
+	<h1>
+		<b1>Divisione arrotondata</b1>
+	</h1>
+	<T_S>
+		<h3>
+			<b2>Sintassi</b2>
+		</h3>
+		<h7>
+<pre><T_B1>primo termine</T_B1> // <T_B1>secondo termine</T_B1></pre>
+		</h7>
+	</T_S>
+	<T_E>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>print ( </T_B0_0><T_B1_0>7</T_B1_0> // <T_B1_0>5</T_B1_0><T_B0_0> )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>1</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>print ( </T_B0_0><T_B1_0>128</T_B1_0> // <T_B1_0>10</T_B1_0><T_B0_0> )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>12</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>X = 10</T_B0_0>
+<T_B0_0>Y = 3</T_B0_0>
+<T_B0_0>print ( </T_B0_0><T_B1_0>X</T_B1_0> // <T_B1_0>Y</T_B1_0><T_B0_0> )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>3</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>X = 128</T_B0_0>
+<T_B0_0>print ( </T_B0_0><T_B1_0>X</T_B1_0> // <T_B1_0>10</T_B1_0> // <T_B1_0>5</T_B1_0><T_B0_0> )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>2</T_B3></pre>
+		</h7>
+	</T_E>
+</T_H1_FloorDivision>
+
+</T_H0_MathematicalOperator>
+<T_H0_AssignmentOperator>
+
+<h1>
+	<b0>Operatori Di Assegnazione</b0>
+</h1>
+<T_H1_Assignment>
+	<h1>
+		<b1>Assegnazione semplice</b1>
+	</h1>
+	<T_S>
+		<h3>
+			<b2>Sintassi</b2>
+		</h3>
+		<h7>
+<pre><T_B1>variabile</T_B1> = <T_B1>valore da assegnare</T_B1></pre>
+		</h7>
+	</T_S>
+	<T_E>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B1_0>X</T_B1_0> = <T_B1_0>5</T_B1_0>
+<T_B0_0>print ( X )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>5</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B1_0>X</T_B1_0> = <T_B1_0>5 + 5</T_B1_0>
+<T_B0_0>print ( X )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>10</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B1_0>X</T_B1_0> = <T_B1_0>5 * 'a'</T_B1_0>
+<T_B0_0>print ( X )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>aaaaa</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B1_0>X</T_B1_0> = <T_B1_0>5</T_B1_0>
+<T_B1_0>Y</T_B1_0> = <T_B1_0>X</T_B1_0>
+<T_B0_0>print ( Y )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>5</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B1_0>A</T_B1_0> = <T_B1_0>5</T_B1_0>
+<T_B1_0>B</T_B1_0> = <T_B1_0>7</T_B1_0>
+<T_B1_0>X</T_B1_0> = <T_B1_0>A * B</T_B1_0>
+<T_B0_0>print ( X )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>35</T_B3></pre>
+		</h7>
+	</T_E>
+</T_H1_Assignment>
+<T_H1_AssignmentAddition>
+	<h1>
+		<b1>Assegnazione con Addizione</b1>
+	</h1>
+	<T_S>
+		<h3>
+			<b2>Sintassi</b2>
+		</h3>
+		<h7>
+<pre><T_B1>variabile</T_B1> += <T_B1>valore da aggiungere</T_B1></pre>
+		</h7>
+	</T_S>
+	<T_E>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>X = 5</T_B0_0>
+<T_B1_0>X</T_B1_0> += <T_B1_0>5</T_B1_0>
+<T_B0_0>print ( X )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>10</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>X = 5</T_B0_0>
+<T_B1_0>X</T_B1_0> += <T_B1_0>5 + 3</T_B1_0>
+<T_B0_0>print ( X )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>13</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>X = 'Classe'</T_B0_0>
+<T_B1_0>X</T_B1_0> += <T_B1_0>str( 5 )</T_B1_0>
+<T_B0_0>print ( X )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>Classe5</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>X = 'Come'</T_B0_0>
+<T_B1_0>X</T_B1_0> += <T_B1_0>' stai?'</T_B1_0>
+<T_B0_0>print ( X )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>Come stai?</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>X = str( 8 )</T_B0_0>
+<T_B1_0>X</T_B1_0> += <T_B1_0>' gatti'</T_B1_0>
+<T_B0_0>print ( X )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>8 gatti</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>X = 5</T_B0_0>
+<T_B1_0>X</T_B1_0> += <T_B1_0>X</T_B1_0>
+<T_B0_0>print ( X )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>10</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>A = 5</T_B0_0>
+<T_B0_0>B = 3</T_B0_0>
+<T_B0_0>C = 7</T_B0_0>
+<T_B0_0>X = 10</T_B0_0>
+<T_B1_0>X</T_B1_0> += <T_B1_0>A</T_B1_0>
+<T_B1_0>X</T_B1_0> += <T_B1_0>B</T_B1_0>
+<T_B1_0>X</T_B1_0> += <T_B1_0>C</T_B1_0>
+<T_B0_0>print ( X )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>25</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre>
+<T_B0_0>X = 5</T_B0_0>
+<T_B1_0>X</T_B1_0> += <T_B1_0>X</T_B1_0>
+<T_B0_0>print ( X )</T_B0_0>
+<T_B1_0>X</T_B1_0> += <T_B1_0>X</T_B1_0>
+<T_B0_0>print ( X )</T_B0_0>
+<T_B1_0>X</T_B1_0> += <T_B1_0>X</T_B1_0>
+<T_B0_0>print ( X )</T_B0_0>
+<T_B1_0>X</T_B1_0> += <T_B1_0>X</T_B1_0>
+<T_B0_0>print ( X )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>10
+20
+40
+80</T_B3></pre>
+		</h7>
+	</T_E>
+</T_H1_AssignmentAddition>
+<T_H1_AssignmentSubtraction>
+	<h1>
+		<b1>Assegnazione con Sottrazione</b1>
+	</h1>
+	<T_S>
+		<h3>
+			<b2>Sintassi</b2>
+		</h3>
+		<h7>
+<pre><T_B1>variabile</T_B1> -= <T_B1>valore per il quale diminuisce</T_B1></pre>
+		</h7>
+	</T_S>
+	<T_E>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>X = 5</T_B0_0>
+<T_B1_0>X</T_B1_0> -= <T_B1_0>5</T_B1_0>
+<T_B0_0>print ( X )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>0</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>X = 5</T_B0_0>
+<T_B1_0>X</T_B1_0> -= <T_B1_0>X</T_B1_0>
+<T_B0_0>print ( X )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>0</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>Y = 5</T_B0_0>
+<T_B0_0>X = 7</T_B0_0>
+<T_B1_0>X</T_B1_0> -= <T_B1_0>Y</T_B1_0>
+<T_B0_0>print ( X )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>2</T_B3></pre>
+		</h7>
+	</T_E>
+</T_H1_AssignmentSubtraction>
+<T_H1_AssignmentMultiplication>
+	<h1>
+		<b1>Assegnazione con Moltiplicazione</b1>
+	</h1>
+	<T_S>
+		<h3>
+			<b2>Sintassi</b2>
+		</h3>
+		<h7>
+<pre><T_B1>variabile</T_B1> *= <T_B1>valore da moltiplicare</T_B1></pre>
+		</h7>
+	</T_S>
+	<T_E>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>X = 5</T_B0_0>
+<T_B1_0>X</T_B1_0> *= <T_B1_0>5</T_B1_0>
+<T_B0_0>print ( X )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>25</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>X = 'a'</T_B0_0>
+<T_B1_0>X</T_B1_0> *= <T_B1_0>5</T_B1_0>
+<T_B0_0>print ( X )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>aaaaa</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>X = 5</T_B0_0>
+<T_B1_0>X</T_B1_0> *= <T_B1_0>'a'</T_B1_0>
+<T_B0_0>print ( X )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>aaaaa</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>X = 5</T_B0_0>
+<T_B0_0>Y = 3</T_B0_0>
+<T_B1_0>X</T_B1_0> *= <T_B1_0>Y</T_B1_0>
+<T_B0_0>print ( X )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>15</T_B3></pre>
+		</h7>
+	</T_E>
+</T_H1_AssignmentMultiplication>
+<T_H1_AssignmentDivision>
+	<h1>
+		<b1>Assegnazione con Divisione</b1>
+	</h1>
+	<T_S>
+		<h3>
+			<b2>Sintassi</b2>
+		</h3>
+		<h7>
+<pre><T_B1>variabile</T_B1> /= <T_B1>valore da moltiplicare</T_B1></pre>
+		</h7>
+	</T_S>
+	<T_E>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>X = 5</T_B0_0>
+<T_B1_0>X</T_B1_0> /= <T_B1_0>5</T_B1_0>
+<T_B0_0>print ( X )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>1.0</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>X = 5</T_B0_0>
+<T_B1_0>X</T_B1_0> /= <T_B1_0>3</T_B1_0>
+<T_B0_0>print ( X )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>1.6666666666666667</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>X = 5</T_B0_0>
+<T_B1_0>X</T_B1_0> /= <T_B1_0>X</T_B1_0>
+<T_B0_0>print ( X )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>1.0</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>X = 10</T_B0_0>
+<T_B0_0>Y = 2</T_B0_0>
+<T_B1_0>X</T_B1_0> /= <T_B1_0>Y</T_B1_0>
+<T_B0_0>print ( X )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>5.0</T_B3></pre>
+		</h7>
+	</T_E>
+</T_H1_AssignmentDivision>
+<T_H1_AssignmentModulus>
+	<h1>
+		<b1>Assegnazione con Modulo</b1>
+	</h1>
+	<T_S>
+		<h3>
+			<b2>Sintassi</b2>
+		</h3>
+		<h7>
+<pre><T_B1>variabile</T_B1> %= <T_B1>valore per il quale si trova il modulo</T_B1></pre>
+		</h7>
+	</T_S>
+	<T_E>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>X = 7</T_B0_0>
+<T_B1_0>X</T_B1_0> %= <T_B1_0>5</T_B1_0>
+<T_B0_0>print ( X )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>2</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>X = 5</T_B0_0>
+<T_B1_0>X</T_B1_0> %= <T_B1_0>X</T_B1_0>
+<T_B0_0>print ( X )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>0</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>X = 7</T_B0_0>
+<T_B0_0>Y = 3</T_B0_0>
+<T_B1_0>X</T_B1_0> %= <T_B1_0>Y</T_B1_0>
+<T_B0_0>print ( X )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>1</T_B3></pre>
+		</h7>
+	</T_E>
+</T_H1_AssignmentModulus>
+<T_H1_AssignmentExponentiation>
+	<h1>
+		<b1>Assegnazione con Potenza</b1>
+	</h1>
+	<T_S>
+		<h3>
+			<b2>Sintassi</b2>
+		</h3>
+		<h7>
+<pre><T_B1>variabile</T_B1> **= <T_B1>valore da esponenziare</T_B1></pre>
+		</h7>
+	</T_S>
+	<T_E>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>X = 5</T_B0_0>
+<T_B1_0>X</T_B1_0> **= <T_B1_0>2</T_B1_0>
+<T_B0_0>print ( X )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>25</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>X = 3</T_B0_0>
+<T_B1_0>X</T_B1_0> **= <T_B1_0>X</T_B1_0>
+<T_B0_0>print ( X )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>27</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>X = 5</T_B0_0>
+<T_B0_0>Y = 3</T_B0_0>
+<T_B1_0>X</T_B1_0> **= <T_B1_0>Y</T_B1_0>
+<T_B0_0>print ( X )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>125</T_B3></pre>
+		</h7>
+	</T_E>
+</T_H1_AssignmentExponentiation>
+<T_H1_AssignmentFloordivision>
+	<h1>
+		<b1>Assegnazione con Divisione arrotondata</b1>
+	</h1>
+	<T_S>
+		<h3>
+			<b2>Sintassi</b2>
+		</h3>
+		<h7>
+<pre><T_B1>variabile</T_B1> //= <T_B1>valore da dividere in modo arrotondato</T_B1></pre>
+		</h7>
+	</T_S>
+	<T_E>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>X = 15</T_B0_0>
+<T_B1_0>X</T_B1_0> //= <T_B1_0>7</T_B1_0>
+<T_B0_0>print ( X )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>2</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>X = 5</T_B0_0>
+<T_B1_0>X</T_B1_0> //= <T_B1_0>X</T_B1_0>
+<T_B0_0>print ( X )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>1</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>X = 18</T_B0_0>
+<T_B0_0>Y = 5</T_B0_0>
+<T_B1_0>X</T_B1_0> //= <T_B1_0>Y</T_B1_0>
+<T_B0_0>print ( X )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>3</T_B3></pre>
+		</h7>
+	</T_E>
+</T_H1_AssignmentFloordivision>
+<T_H1_AssignmentAnd>
+	<h1>
+		<b1>Assegnazione con and</b1>
+	</h1>
+	<T_S>
+		<h3>
+			<b2>Sintassi</b2>
+		</h3>
+		<h7>
+<pre><T_B1>variabile</T_B1> &= <T_B1>valore da comparare in and</T_B1></pre>
+		</h7>
+	</T_S>
+	<T_E>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>X = True</T_B0_0>
+<T_B1_0>X</T_B1_0> &= <T_B1_0>True</T_B1_0>
+<T_B0_0>print ( X )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>True</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>X = False</T_B0_0>
+<T_B1_0>X</T_B1_0> &= <T_B1_0>True</T_B1_0>
+<T_B0_0>print ( X )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>False</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>X = True</T_B0_0>
+<T_B1_0>X</T_B1_0> &= <T_B1_0>5 == 3</T_B1_0>
+<T_B0_0>print ( X )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>False</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>X = 5 == 5</T_B0_0>
+<T_B1_0>X</T_B1_0> &= <T_B1_0>3 == 3</T_B1_0>
+<T_B0_0>print ( X )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>True</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>X = True</T_B0_0>
+<T_B1_0>X</T_B1_0> &= <T_B1_0>X</T_B1_0>
+<T_B0_0>print ( X )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>True</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>X = False</T_B0_0>
+<T_B1_0>X</T_B1_0> &= <T_B1_0>X</T_B1_0>
+<T_B0_0>print ( X )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>False</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>X = True</T_B0_0>
+<T_B0_0>Y = False</T_B0_0>
+<T_B1_0>X</T_B1_0> &= <T_B1_0>Y</T_B1_0>
+<T_B0_0>print ( X )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>False</T_B3></pre>
+		</h7>
+	</T_E>
+</T_H1_AssignmentAnd>
+<T_H1_AssignmentOr>
+	<h1>
+		<b1>Assegnazione con or</b1>
+	</h1>
+	<T_S>
+		<h3>
+			<b2>Sintassi</b2>
+		</h3>
+		<h7>
+<pre><T_B1>variabile</T_B1> |= <T_B1>valore da comparare in or</T_B1></pre>
+		</h7>
+	</T_S>
+	<T_E>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>X = True</T_B0_0>
+<T_B1_0>X</T_B1_0> |= <T_B1_0>True</T_B1_0>
+<T_B0_0>print ( X )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>True</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>X = False</T_B0_0>
+<T_B1_0>X</T_B1_0> |= <T_B1_0>True</T_B1_0>
+<T_B0_0>print ( X )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>True</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>X = False</T_B0_0>
+<T_B1_0>X</T_B1_0> |= <T_B1_0>5 == 3</T_B1_0>
+<T_B0_0>print ( X )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>False</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>X = 5 == 5</T_B0_0>
+<T_B1_0>X</T_B1_0> |= <T_B1_0>3 == 7</T_B1_0>
+<T_B0_0>print ( X )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>True</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>X = True</T_B0_0>
+<T_B1_0>X</T_B1_0> |= <T_B1_0>X</T_B1_0>
+<T_B0_0>print ( X )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>True</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>X = False</T_B0_0>
+<T_B1_0>X</T_B1_0> |= <T_B1_0>X</T_B1_0>
+<T_B0_0>print ( X )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>False</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>X = True</T_B0_0>
+<T_B0_0>Y = False</T_B0_0>
+<T_B1_0>X</T_B1_0> |= <T_B1_0>Y</T_B1_0>
+<T_B0_0>print ( X )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>True</T_B3></pre>
+		</h7>
+	</T_E>
+</T_H1_AssignmentOr>
+<T_H1_AssignmentXor>
+	<h1>
+		<b1>Assegnazione con xor</b1>
+	</h1>
+	<T_S>
+		<h3>
+			<b2>Sintassi</b2>
+		</h3>
+		<h7>
+<pre><T_B1>variabile</T_B1> ^= <T_B1>valore da comparare in xor</T_B1></pre>
+		</h7>
+	</T_S>
+	<T_E>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>X = True</T_B0_0>
+<T_B1_0>X</T_B1_0> ^= <T_B1_0>True</T_B1_0>
+<T_B0_0>print ( X )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>False</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>X = False</T_B0_0>
+<T_B1_0>X</T_B1_0> ^= <T_B1_0>True</T_B1_0>
+<T_B0_0>print ( X )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>True</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>X = True</T_B0_0>
+<T_B1_0>X</T_B1_0> ^= <T_B1_0>5 == 3</T_B1_0>
+<T_B0_0>print ( X )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>True</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>X = 5 == 5</T_B0_0>
+<T_B1_0>X</T_B1_0> ^= <T_B1_0>3 == 3</T_B1_0>
+<T_B0_0>print ( X )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>False</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>X = True</T_B0_0>
+<T_B1_0>X</T_B1_0> ^= <T_B1_0>X</T_B1_0>
+<T_B0_0>print ( X )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>False</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>X = False</T_B0_0>
+<T_B1_0>X</T_B1_0> ^= <T_B1_0>X</T_B1_0>
+<T_B0_0>print ( X )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>False</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>X = True</T_B0_0>
+<T_B0_0>Y = False</T_B0_0>
+<T_B1_0>X</T_B1_0> ^= <T_B1_0>Y</T_B1_0>
+<T_B0_0>print ( X )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>True</T_B3></pre>
+		</h7>
+	</T_E>
+</T_H1_AssignmentXor>
+<T_H1_AssignmentMultiplicationToPowerBase2>
+	<h1>
+		<b1>Assegnazione con moltiplicazione di potenza base 2</b1>
+	</h1>
+	<T_S>
+		<h3>
+			<b2>Sintassi</b2>
+		</h3>
+		<h7>
+<pre><T_B1>variabile</T_B1> <<= <T_B1>esponente</T_B1></pre>
+		</h7>
+	</T_S>
+	<T_E>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>X = 5</T_B0_0>
+<T_B1_0>X</T_B1_0> <<= <T_B1_0>2</T_B1_0>
+<T_B0_0>print ( X )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>20</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>X = 2</T_B0_0>
+<T_B1_0>X</T_B1_0> <<= <T_B1_0>3</T_B1_0>
+<T_B0_0>print ( X )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>16</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>X = 3</T_B0_0>
+<T_B0_0>Y = 0</T_B0_0>
+<T_B1_0>X</T_B1_0> <<= <T_B1_0>Y</T_B1_0>
+<T_B0_0>print ( X )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>3</T_B3></pre>
+		</h7>
+	</T_E>
+</T_H1_AssignmentMultiplicationToPowerBase2>
+<T_H1_AssignmentFloorDivisionToPowerBase2>
+	<h1>
+		<b1>Assegnazione con divisiopne arrotondata di potenza base 2</b1>
+	</h1>
+	<T_S>
+		<h3>
+			<b2>Sintassi</b2>
+		</h3>
+		<h7>
+<pre><T_B1>variabile</T_B1> >>= <T_B1>esponente</T_B1></pre>
+		</h7>
+	</T_S>
+	<T_E>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>X = 50</T_B0_0>
+<T_B1_0>X</T_B1_0> >>= <T_B1_0>2</T_B1_0>
+<T_B0_0>print ( X )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>12</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>X = 32</T_B0_0>
+<T_B1_0>X</T_B1_0> >>= <T_B1_0>3</T_B1_0>
+<T_B0_0>print ( X )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>4</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>X = 3</T_B0_0>
+<T_B0_0>Y = 0</T_B0_0>
+<T_B1_0>X</T_B1_0> >>= <T_B1_0>Y</T_B1_0>
+<T_B0_0>print ( X )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>3</T_B3></pre>
+		</h7>
+	</T_E>
+</T_H1_AssignmentFloorDivisionToPowerBase2>
+
+</T_H0_AssignmentOperator>
+<T_H0_ComparisonOperator>
+
+<h1>
+	<b0>Operatori Di Comparazione</b0>
+</h1>
+<T_H1_Equal>
+	<h1>
+		<b1>Egualianza</b1>
+	</h1>
+	<T_S>
+		<h3>
+			<b2>Sintassi</b2>
+		</h3>
+		<h7>
+<pre><T_B1>primo termine</T_B1> == <T_B1>secondo termine</T_B1></pre>
+			<h5>
+				Output:
+			</h5>
+<pre><T_B3>True</T_B3>: Se i due termini sono uguali.</pre>
+<pre><T_B3>False</T_B3>: Se i due termini sono diversi.</pre>
+		</h7>
+	</T_S>
+	<T_E>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>print ( <T_B1_0>5</T_B1_0> == <T_B1_0>5</T_B1_0> )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>True</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>print ( <T_B1_0>5</T_B1_0> == <T_B1_0>3</T_B1_0> )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>False</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>print ( <T_B1_0>'ciao'</T_B1_0> == <T_B1_0>3</T_B1_0> )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>False</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>print ( <T_B1_0>'ciao'</T_B1_0> == <T_B1_0>'ciao'</T_B1_0> )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>True</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>print ( <T_B1_0>'gatto'</T_B1_0> == <T_B1_0>'cane'</T_B1_0> )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>False</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>print ( <T_B1_0>False</T_B1_0> == <T_B1_0>False</T_B1_0> )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>True</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>print ( <T_B1_0>None</T_B1_0> == <T_B1_0>''</T_B1_0> )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>False</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>print ( <T_B1_0>''</T_B1_0> == <T_B1_0>0</T_B1_0> )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>False</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>print ( <T_B1_0>[ 1, 2, 3 ]</T_B1_0> == <T_B1_0>[ 1, 2, 3 ]</T_B1_0> )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>True</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>print ( <T_B1_0>[ 1, 2, 3 ]</T_B1_0> == <T_B1_0>[ 'A', 'B', 'C' ]</T_B1_0> )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>False</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>X = 5</T_B0_0>
+<T_B0_0>print ( <T_B1_0>X</T_B1_0> == <T_B1_0>5</T_B1_0> )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>True</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>X = 5</T_B0_0>
+<T_B0_0>print ( <T_B1_0>X</T_B1_0> == <T_B1_0>X</T_B1_0> )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>True</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>X = 5</T_B0_0>
+<T_B0_0>Y = 3</T_B0_0>
+<T_B0_0>print ( <T_B1_0>X</T_B1_0> == <T_B1_0>Y</T_B1_0> )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>False</T_B3></pre>
+		</h7>
+	</T_E>
+</T_H1_Equal>
+<T_H1_NotEqual>
+	<h1>
+		<b1>Disegualianza</b1>
+	</h1>
+	<T_S>
+		<h3>
+			<b2>Sintassi</b2>
+		</h3>
+		<h7>
+<pre><T_B1>primo termine</T_B1> != <T_B1>secondo termine</T_B1></pre>
+			<h5>
+				Output:
+			</h5>
+<pre><T_B3>True</T_B3>: Se i due termini sono diversi.</pre>
+<pre><T_B3>False</T_B3>: Se i due termini sono uguali.</pre>
+		</h7>
+	</T_S>
+	<T_E>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>print ( <T_B1_0>5</T_B1_0> != <T_B1_0>5</T_B1_0> )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>False</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>print ( <T_B1_0>5</T_B1_0> != <T_B1_0>3</T_B1_0> )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>True</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>print ( <T_B1_0>'ciao'</T_B1_0> != <T_B1_0>3</T_B1_0> )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>True</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>print ( <T_B1_0>'ciao'</T_B1_0> != <T_B1_0>'ciao'</T_B1_0> )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>False</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>print ( <T_B1_0>'gatto'</T_B1_0> != <T_B1_0>'cane'</T_B1_0> )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>True</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>print ( <T_B1_0>True</T_B1_0> != <T_B1_0>True</T_B1_0> )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>False</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>print ( <T_B1_0>None</T_B1_0> != <T_B1_0>''</T_B1_0> )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>True</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>print ( <T_B1_0>''</T_B1_0> != <T_B1_0>0</T_B1_0> )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>True</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>print ( <T_B1_0>[ 1, 2, 3 ]</T_B1_0> != <T_B1_0>[ 1, 2, 3 ]</T_B1_0> )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>False</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>print ( <T_B1_0>[ 1, 2, 3 ]</T_B1_0> != <T_B1_0>[ 'A', 'B', 'C' ]</T_B1_0> )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>True</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>X = 5</T_B0_0>
+<T_B0_0>print ( <T_B1_0>X</T_B1_0> != <T_B1_0>5</T_B1_0> )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>False</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>X = 5</T_B0_0>
+<T_B0_0>print ( <T_B1_0>X</T_B1_0> != <T_B1_0>X</T_B1_0> )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>False</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>X = 5</T_B0_0>
+<T_B0_0>Y = 3</T_B0_0>
+<T_B0_0>print ( <T_B1_0>X</T_B1_0> != <T_B1_0>Y</T_B1_0> )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>True</T_B3></pre>
+		</h7>
+	</T_E>
+</T_H1_NotEqual>
+<T_H1_Greater>
+	<h1>
+		<b1>Maggioranza</b1>
+	</h1>
+	<T_S>
+		<h3>
+			<b2>Sintassi</b2>
+		</h3>
+		<h7>
+<pre><T_B1>primo termine</T_B1> > <T_B1>secondo termine</T_B1></pre>
+			<h5>
+				Output:
+			</h5>
+<pre><T_B3>True</T_B3>: Se il primo termine è maggiore del secondo termine.</pre>
+<pre><T_B3>False</T_B3>: Se il primo termine non è maggiore del secondo termine.</pre>
+		</h7>
+	</T_S>
+	<T_E>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>print ( <T_B1_0>5</T_B1_0> > <T_B1_0>3</T_B1_0> )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>True</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>print ( <T_B1_0>5</T_B1_0> > <T_B1_0>5</T_B1_0> )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>False</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>print ( <T_B1_0>'Ciao, come stai?'</T_B1_0> > <T_B1_0>'ciao'</T_B1_0> )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>True</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>print ( <T_B1_0>True</T_B1_0> > <T_B1_0>False</T_B1_0> )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>True</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>print ( <T_B1_0>False</T_B1_0> > <T_B1_0>True</T_B1_0> )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>False</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>print ( <T_B1_0>True</T_B1_0> > <T_B1_0>True</T_B1_0> )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>False</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>print ( <T_B1_0>[ 1, 2, 3 ]</T_B1_0> > <T_B1_0>[ 1, 2, 3 ]</T_B1_0> )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>False</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>print ( <T_B1_0>[ 1, 2, 3, 4, 5 ]</T_B1_0> > <T_B1_0>[ 'A', 'B', 'C' ]</T_B1_0> )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>True</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>X = 5</T_B0_0>
+<T_B0_0>print ( <T_B1_0>X</T_B1_0> > <T_B1_0>3</T_B1_0> )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>True</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>X = 5</T_B0_0>
+<T_B0_0>print ( <T_B1_0>X</T_B1_0> > <T_B1_0>X</T_B1_0> )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>False</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>X = 5</T_B0_0>
+<T_B0_0>Y = 3</T_B0_0>
+<T_B0_0>print ( <T_B1_0>X</T_B1_0> > <T_B1_0>Y</T_B1_0> )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>True</T_B3></pre>
+		</h7>
+	</T_E>
+</T_H1_Greater>
+<T_H1_Less>
+	<h1>
+		<b1>Minoranza</b1>
+	</h1>
+	<T_S>
+		<h3>
+			<b2>Sintassi</b2>
+		</h3>
+		<h7>
+<pre><T_B1>primo termine</T_B1> < <T_B1>secondo termine</T_B1></pre>
+			<h5>
+				Output:
+			</h5>
+<pre><T_B3>True</T_B3>: Se il primo termine è minore del secondo termine.</pre>
+<pre><T_B3>False</T_B3>: Se il primo termine non è minore del secondo termine.</pre>
+		</h7>
+	</T_S>
+	<T_E>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>print ( <T_B1_0>3</T_B1_0> < <T_B1_0>5</T_B1_0> )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>True</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>print ( <T_B1_0>5</T_B1_0> < <T_B1_0>5</T_B1_0> )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>False</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>print ( <T_B1_0>'ciao'</T_B1_0> < <T_B1_0>'ParolaSuperLunghissima'</T_B1_0> )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>True</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>print ( <T_B1_0>True</T_B1_0> < <T_B1_0>False</T_B1_0> )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>False</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>print ( <T_B1_0>False</T_B1_0> < <T_B1_0>True</T_B1_0> )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>True</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>print ( <T_B1_0>True</T_B1_0> < <T_B1_0>True</T_B1_0> )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>False</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>print ( <T_B1_0>[ 1, 2, 3 ]</T_B1_0> < <T_B1_0>[ 1, 2, 3 ]</T_B1_0> )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>False</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>print ( <T_B1_0>[ 1, 2, 3 ]</T_B1_0> < <T_B1_0>[ 'A', 'B', 'C', 'D', 'E' ]</T_B1_0> )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>True</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>X = 3</T_B0_0>
+<T_B0_0>print ( <T_B1_0>X</T_B1_0> < <T_B1_0>5</T_B1_0> )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>True</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>X = 5</T_B0_0>
+<T_B0_0>print ( <T_B1_0>X</T_B1_0> < <T_B1_0>X</T_B1_0> )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>False</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>X = 3</T_B0_0>
+<T_B0_0>Y = 5</T_B0_0>
+<T_B0_0>print ( <T_B1_0>X</T_B1_0> < <T_B1_0>Y</T_B1_0> )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>True</T_B3></pre>
+		</h7>
+	</T_E>
+</T_H1_Less>
+<T_H1_GreaterOrEqual>
+	<h1>
+		<b1>Maggioranza od Egualianza</b1>
+	</h1>
+	<T_S>
+		<h3>
+			<b2>Sintassi</b2>
+		</h3>
+		<h7>
+<pre><T_B1>primo termine</T_B1> >= <T_B1>secondo termine</T_B1></pre>
+			<h5>
+				Output:
+			</h5>
+<pre><T_B3>True</T_B3>: Se il primo termine è maggiore od uguale del secondo termine.</pre>
+<pre><T_B3>False</T_B3>: Se il primo termine non è maggiore od uguale del secondo termine.</pre>
+		</h7>
+	</T_S>
+	<T_E>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>print ( <T_B1_0>5</T_B1_0> >= <T_B1_0>3</T_B1_0> )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>True</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>print ( <T_B1_0>5</T_B1_0> >= <T_B1_0>5</T_B1_0> )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>True</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>print ( <T_B1_0>'ciao'</T_B1_0> >= <T_B1_0>'ciao'</T_B1_0> )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>True</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>print ( <T_B1_0>True</T_B1_0> >= <T_B1_0>False</T_B1_0> )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>True</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>print ( <T_B1_0>False</T_B1_0> >= <T_B1_0>True</T_B1_0> )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>False</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>print ( <T_B1_0>False</T_B1_0> >= <T_B1_0>False</T_B1_0> )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>True</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>print ( <T_B1_0>[ 1, 2, 3 ]</T_B1_0> >= <T_B1_0>[ 1, 2, 3 ]</T_B1_0> )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>True</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>print ( <T_B1_0>[ 1, 2, 3, 4, 5 ]</T_B1_0> >= <T_B1_0>[ 'A', 'B', 'C' ]</T_B1_0> )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>True</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>X = 5</T_B0_0>
+<T_B0_0>print ( <T_B1_0>X</T_B1_0> >= <T_B1_0>3</T_B1_0> )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>True</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>X = 5</T_B0_0>
+<T_B0_0>print ( <T_B1_0>X</T_B1_0> >= <T_B1_0>X</T_B1_0> )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>True</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>X = 5</T_B0_0>
+<T_B0_0>Y = 3</T_B0_0>
+<T_B0_0>print ( <T_B1_0>X</T_B1_0> >= <T_B1_0>Y</T_B1_0> )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>True</T_B3></pre>
+		</h7>
+	</T_E>
+</T_H1_GreaterOrEqual>
+<T_H1_LessOrEqual>
+	<h1>
+		<b1>Minoranza od Egualianza</b1>
+	</h1>
+	<T_S>
+		<h3>
+			<b2>Sintassi</b2>
+		</h3>
+		<h7>
+<pre><T_B1>primo termine</T_B1> <= <T_B1>secondo termine</T_B1></pre>
+			<h5>
+				Output:
+			</h5>
+<pre><T_B3>True</T_B3>: Se il primo termine è minore od uguale del secondo termine.</pre>
+<pre><T_B3>False</T_B3>: Se il primo termine non è minore od uguale del secondo termine.</pre>
+		</h7>
+	</T_S>
+	<T_E>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>print ( <T_B1_0>3</T_B1_0> <= <T_B1_0>5</T_B1_0> )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>True</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>print ( <T_B1_0>5</T_B1_0> <= <T_B1_0>5</T_B1_0> )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>True</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>print ( <T_B1_0>'5 cubi'</T_B1_0> <= <T_B1_0>'3 cubi'</T_B1_0> )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>True</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>print ( <T_B1_0>True</T_B1_0> <= <T_B1_0>False</T_B1_0> )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>False</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>print ( <T_B1_0>False</T_B1_0> <= <T_B1_0>True</T_B1_0> )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>True</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>print ( <T_B1_0>False</T_B1_0> <= <T_B1_0>False</T_B1_0> )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>True</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>print ( <T_B1_0>[ 1, 2, 3 ]</T_B1_0> <= <T_B1_0>[ 1, 2, 3 ]</T_B1_0> )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>True</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>print ( <T_B1_0>[ 1, 2, 3 ]</T_B1_0> <= <T_B1_0>[ 'A', 'B', 'C', 'D', 'E' ]</T_B1_0> )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>True</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>X = 3</T_B0_0>
+<T_B0_0>print ( <T_B1_0>X</T_B1_0> <= <T_B1_0>5</T_B1_0> )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>True</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>X = 5</T_B0_0>
+<T_B0_0>print ( <T_B1_0>X</T_B1_0> <= <T_B1_0>X</T_B1_0> )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>True</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>X = 3</T_B0_0>
+<T_B0_0>Y = 5</T_B0_0>
+<T_B0_0>print ( <T_B1_0>X</T_B1_0> <= <T_B1_0>Y</T_B1_0> )</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>True</T_B3></pre>
+		</h7>
+	</T_E>
+</T_H1_LessOrEqual>
+
+</T_H0_ComparisonOperator>
+<T_H0_Variable>
+
+<h1>
+	<b0>Variabili</b0>
+</h1>
+
+</T_H0_Variable>
+<T_H0_Function>
+
+<h1>
+	<b0>Funzioni</b0>
+</h1>
+<T_H1_Print>
+	<h1>
+		<b1>Print</b1>
+	</h1>
+	<T_S>
+		<h3>
+			<b2>Sintassi</b2>
+		</h3>
+		<h7>
+<pre>print ( <T_B1>oggetti</T_B1> , sep = <T_B1>separatore</T_B1> , end = <T_B1>fine</T_B1> , file = <T_B1>file</T_B1> , flush = <T_B1>flush</T_B1> )</pre>
+			<h5>
+				Parametri:
+			</h5>
+<pre><T_B1_0>oggetto</T_B1_0>: può essere uno o più (nel caso siano più di uno devono essere separati da una virgola) e può essere un numero, una stringa oppure una variabile. <T_B4>Valore predefinito: <T_B3>None</T_B3></T_B4></pre>
+<pre><T_B1_0>separatore</T_B1_0>: separa gli <T_B1_0>oggetti</T_B1_0> tra loro. <T_B4>Valore predefinito: <T_B3>' '</T_B3></T_B4></pre>
+<pre><T_B1_0>fine</T_B1_0>: è stampato alla fine. <T_B4>Valore predefinito: <T_B3>'\n'</T_B3></T_B4></pre>
+<pre><T_B1_0>file</T_B1_0>: dice dove deve essere stampato il contenuto (deve essere un oggetto con metodo write (string)). <T_B4>Valore predefinito: <T_B3>sys.stdout</T_B3></T_B4></pre>
+<pre><T_B1_0>flush</T_B1_0>: se <T_B3>True</T_B3>, il flusso viene scaricato forzatamente. <T_B4>Valore predefinito: <T_B3>False</T_B3></T_B4></pre>
+		</h7>
+	</T_S>
+	<T_E>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre>print ( <T_B1_0>'ciao'</T_B1_0> )</pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>ciao</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre>print ( <T_B1_0>5</T_B1_0> )</pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>5</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre>print ( <T_B1_0>3.5</T_B1_0> )</pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>3.5</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre>print ( <T_B1_0>5 * 2</T_B1_0> )</pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>10</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre>print ( <T_B1_0>'ci' + 'ao'</T_B1_0> )</pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>ciao</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre>print ( <T_B1_0>'ciao ' * 3</T_B1_0> )</pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>ciao ciao ciao </T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>X = 5</T_B0_0>
+print ( <T_B1_0>X</T_B1_0> )</pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>5</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre>print ( <T_B1_0>'Stampa'</T_B1_0> , <T_B1_0>'questo'</T_B1_0> )</pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>Stampa questo</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>X = 5</T_B0_0>
+print ( <T_B1_0>'X vale'</T_B1_0> , <T_B1_0>X</T_B1_0> , <T_B1_0>'!'</T_B1_0> )</pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>X vale 5 !</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre>print ( <T_B1_0>str(5)</T_B1_0> , <T_B1_0>' + '</T_B1_0> , <T_B1_0>str(3)</T_B1_0> )</pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>5 + 3</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>giorno = 'Lunedì'
+X = [ 3.5 , 'Concordia' , 5 , False , giorno ]</T_B0_0>
+print ( <T_B1_0>X</T_B1_0> )</pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>[3.5, 'Concordia', 5, False, 'Lunedì']</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre>print ( <T_B1_0>'\'a1\\a2\na3\ra4\ta5\ba6\fa7\110a8\x6fa9'</T_B1_0> )</pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>'a1\a2
+a4  aa6
+       a7Ha8oa9</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre>print ( <T_B1_0>'X\\nY'</T_B1_0> )</pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>X\nY</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre>print ( <T_B1_0>'sep'</T_B1_0> , <T_B1_0>'viene stampato'</T_B1_0> , <T_B1_0>'tra'</T_B1_0> , <T_B1_0>'gli oggetti'</T_B1_0> , sep = <T_B1_0>' ;)\n'</T_B1_0> )</pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>sep ;)
+viene stampato ;)
+tra ;)
+gli oggetti</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre>print ( <T_B1_0>'Stampa'</T_B1_0> )
+print ( <T_B1_0>'questo'</T_B1_0> )</pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>Stampa
+questo</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre>print ( <T_B1_0>'end'</T_B1_0> , end = <T_B1_0>'\n...\n;)\n-O-\n'</T_B1_0> )
+print ( <T_B1_0>'viene stampato alla fine del contenuto'</T_B1_0> )</pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>end
+...
+;)
+-O-
+viene stampato alla fine del contenuto</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>X = ''</T_B0_0>
+print ( <T_B1_0>X</T_B1_0> , <T_B1_0>X</T_B1_0> , sep = <T_B1_0>'|--|'</T_B1_0> , end = <T_B1_0>'-o-'</T_B1_0> )
+print ( )
+print ( <T_B1_0>X</T_B1_0> , <T_B1_0>X</T_B1_0> , sep = <T_B1_0>'|--|'</T_B1_0> , end = <T_B1_0>'-o-'</T_B1_0> )</pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>|--|-o-
+|--|-o-</T_B3></pre>
+		</h7>
+	</T_E>
+</T_H1_Print>
+
+</T_H0_Function>
+<br />
+<T_H0_ConditionalInstruction>
+
+<h1>
+	<b0>Instruzioni Condizionali</b0>
+</h1>
+<T_H1_While>
+	<h1>
+		<b1>while</b1>
+	</h1>
+	<T_S>
+		<h3>
+			<b2>Sintassi</b2>
+		</h3>
+		<h7>
+<pre><T_B0>qui può esserci del codice ...</T_B0></pre>
+<pre>while <T_B1>condizione</T_B1> :</pre>
+<pre><T_B2>valutazione della condizione</T_B2></pre>
+<pre>	<T_B1__0>se la condizione è vera va qui</T_B1__0></pre>
+<pre>	<T_B2>torna su e ripete il while</T_B2></pre>
+<pre><T_B0>qui può continuare il codice ...</T_B0></pre>
+		</h7>
+	</T_S>
+	<T_E>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>X = 5</T_B0_0>
+while <T_B1_0>X == 5</T_B1_0> :
+	<T_B1_0__0>print('La condizione è vera e va qui')</T_B1_0>
+	<T_B1_0__0>print('In questo esempio, il while risulterà sempre vero perché X continua a valere 5')</T_B1_0__0>
+<T_B0_0>print('qui non ci arriverà mai in questo esempio poiché la condizione del while continua ad essere vera')</T_B0_0__0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>La condizione è vera e va qui</T_B3>
+<T_B3>In questo esempio, il while risulterà sempre vero perché X continua a valere 5</T_B3>
+<T_B3>La condizione è vera e va qui</T_B3>
+<T_B3>In questo esempio, il while risulterà sempre vero perché X continua a valere 5</T_B3>
+<T_B3>La condizione è vera e va qui</T_B3>
+<T_B3>In questo esempio, il while risulterà sempre vero perché X continua a valere 5</T_B3>
+<T_B3>La condizione è vera e va qui</T_B3>
+<T_B3>In questo esempio, il while risulterà sempre vero perché X continua a valere 5</T_B3>
+<T_B3>...</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>X = 3</T_B0_0>
+while <T_B1_0>X == 5</T_B1_0> :
+	<T_B1_0__0>print('La condizione è falsa, quindi non andrà qui')</T_B1_0__0>
+<T_B0_0>print('Passerà direttamente qui, ed il codice può continuare ...')</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>Passerà direttamente qui, ed il codice può continuare ...</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>X = 5</T_B0_0>
+while <T_B1_0>X == 5</T_B1_0> :
+	<T_B1_0__0>print('La condizione è vera e va qui')</T_B1_0__0>
+	<T_B1_0__0>X = 3</T_B1_0__0>
+	<T_B1_0__0>print('Qui viene modificato il valore di X, quindi quando verrà rivalutata la condizione X varrà 3, e sarà falsa, perciò uscirà')</T_B1_0__0>
+<T_B0_0>print('Qui può continuare il codice ...')</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>La condizione è vera e va qui
+Qui viene modificato il valore di X, quindi quando verrà rivalutata la condizione X varrà 3, e sarà falsa, perciò uscirà
+Qui può continuare il codice ...</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>X = 5</T_B0_0>
+while <T_B1_0>X > 3</T_B1_0> :
+	<T_B1_0__0>print('La condizione è vera e va qui')</T_B1_0__0>
+	<T_B1_0__0>print('In questo momento X vale ', X)</T_B1_0__0>
+	<T_B1_0__0>X = X - 1</T_B1_0__0>
+	<T_B1_0__0>print('Qui viene modificato il valore di X da ', X + 1 ,' a ', X)</T_B1_0__0>
+	<T_B1_0__0>print('In questo momento X vale ', X)</T_B1_0__0>
+<T_B0_0>print('X valendo 3, non è più maggiore di 3, quindi esce dal ciclo')</T_B0_0>
+<T_B0_0>print('Qui può continuare il codice ...')</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>La condizione è vera e va qui
+In questo momento X vale  5
+Qui viene modificato il valore di X da  5  a  4
+In questo momento X vale  4
+La condizione è vera va qui
+In questo momento X vale  4
+Qui viene modificato il valore di X da  4  a  3
+In questo momento X vale  3
+X valendo 3, non è più maggiore di 3, quindi esce dal ciclo
+Qui può continuare il codice ...</T_B3></pre>
+		</h7>
+	</T_E>
+</T_H1_While>
+<T_H1_If>
+	<h1>
+		<b1>if</b1>
+	</h1>
+	<T_S>
+		<h3>
+			<b2>Sintassi</b2>
+		</h3>
+		<h7>
+<pre><T_B0>qui può esserci del codice ...</T_B0></pre>
+<pre>if <T_B1>condizione</T_B1> :</pre>
+<pre><T_B2>valutazione della condizione</T_B2></pre>
+<pre>	<T_B1__0>se la condizione è vera va qui</T_B1__0></pre>
+<pre><T_B0>qui può continuare il codice ...</T_B0></pre>
+		</h7>
+	</T_S>
+	<T_E>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>X = 5</T_B0_0>
+if <T_B1_0>X == 5</T_B1_0> :
+	<T_B1_0__0>print('La condizione è vera e va qui')</T_B1_0__0>
+<T_B0_0>print('Qui può continuare il codice ...')</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>La condizione è vera e va qui
+Qui può continuare il codice ...</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>X = 3</T_B0_0>
+if <T_B1_0>X == 5</T_B1_0> :
+	<T_B1_0__0>print('La condizione è falsa, quindi non andrà qui')</T_B1_0__0>
+<T_B0_0>print('Qui può continuare il codice ...')</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>Qui può continuare il codice ...</T_B3></pre>
+		</h7>
+	</T_E>
+</T_H1_If>
+<T_H1_IfElse>
+	<h1>
+		<b1>if else</b1>
+	</h1>
+	<T_S>
+		<h3>
+			<b2>Sintassi</b2>
+		</h3>
+		<h7>
+<pre><T_B0>qui può esserci del codice ...</T_B0></pre>
+<pre>if <T_B1>condizione</T_B1> :</pre>
+<pre><T_B2>valutazione della condizione</T_B2></pre>
+<pre>	<T_B1__0>se la condizione è vera va qui</T_B1__0></pre>
+<pre>else :</pre>
+<pre>	<T_B1__0>se la condizione è falsa va qui</T_B1__0></pre>
+<pre><T_B0>qui può continuare il codice ...</T_B0></pre>
+		</h7>
+	</T_S>
+	<T_E>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>X = 5</T_B0_0>
+if <T_B1_0>X == 5</T_B1_0> :
+	<T_B1_0__0>print('La condizione è vera e va qui')</T_B1_0__0>
+else :
+	<T_B1_0__0>print('La condizione è vera ed è già andata sopra, quindi non andrà qui')</T_B1_0__0>
+<T_B0_0>print('Qui può continuare il codice ...')</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>La condizione è vera e va qui
+Qui può continuare il codice ...</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>X = 3</T_B0_0>
+if <T_B1_0>X == 5</T_B1_0> :
+	<T_B1_0__0>print('La condizione è falsa, quindi non andrà qui')</T_B1_0__0>
+else :
+	<T_B1_0__0>print('La condizione è falsa e non è andata di sopra, infatti va qui')</T_B1_0__0>
+<T_B0_0>print('Qui può continuare il codice ...')</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>La condizione è falsa e non è andata di sopra, infatti va qui
+Qui può continuare il codice ...</T_B3></pre>
+		</h7>
+	</T_E>
+</T_H1_IfElse>
+<T_H1_IfElif>
+	<h1>
+		<b1>if elif</b1>
+	</h1>
+	<T_S>
+		<h3>
+			<b2>Sintassi</b2>
+		</h3>
+		<h7>
+<pre><T_B0>qui può esserci del codice ...</T_B0></pre>
+<pre>if <T_B1>prima condizione</T_B1> :</pre>
+<pre><T_B2>valutazione della prima condizione</T_B2></pre>
+<pre>	<T_B1__0>se la prima condizione è vera va qui</T_B1__0></pre>
+<pre>elif <T_B1>altra condizione</T_B1> :</pre>
+<pre><T_B2>valutazione dell'altra condizione, nel caso la precedente sia falsa</T_B2></pre>
+<pre>	<T_B1__0>se la precedente condizione è falsa, e l'altra condizione è vera, va qui</T_B1__0></pre>
+<pre><T_B0>qui può continuare il codice ...</T_B0></pre>
+		</h7>
+	</T_S>
+	<T_E>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>X = 5</T_B0_0>
+if <T_B1_0>X == 5</T_B1_0> :
+	<T_B1_0__0>print('La prima condizione è vera e va qui')</T_B1_0__0>
+	<T_B1_0__0>print('Essendo vera la prima condizione non verrà valutata la seconda e continuerà il programma')</T_B1_0__0>
+elif <T_B1_0>X == 5</T_B1_0> :
+	<T_B1_0__0>print('La condizione, nonostante sia vera, non verrà analizzata poiché la prima condizione era vera, quindi non andrà qui')</T_B1_0__0>
+<T_B0_0>print('Qui può continuare il codice ...')</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>La prima condizione è vera e va qui
+Essendo vera la prima condizione non verrà valutata la seconda e continuerà il programma
+Qui può continuare il codice ...</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>X = 5</T_B0_0>
+if <T_B1_0>X == 3</T_B1_0> :
+	<T_B1_0__0>print('La prima condizione è falsa, quindi non andrà qui')</T_B1_0__0>
+elif <T_B1_0>X == 5</T_B1_0> :
+	<T_B1_0__0>print('La prima condizione essendo falsa da modo di valutare la seconda')</T_B1_0__0>
+	<T_B1_0__0>print('La seconda condizione viene analizzata ed è vera, quindi va qui')</T_B1_0__0>
+<T_B0_0>print('Qui può continuare il codice ...')</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>La prima condizione essendo falsa da modo di valutare la seconda
+La seconda condizione viene analizzata ed è vera, quindi va qui
+Qui può continuare il codice ...</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>X = 5</T_B0_0>
+if <T_B1_0>X == 3</T_B1_0> :
+	<T_B1_0__0>print('La prima condizione è falsa, quindi non andrà qui')</T_B1_0__0>
+elif <T_B1_0>X == 5</T_B1_0> :
+	<T_B1_0__0>print('La prima condizione essendo falsa da modo di valutare la seconda')</T_B1_0__0>
+	<T_B1_0__0>print('La seconda condizione è vera, quindi va qui')</T_B1_0__0>
+elif <T_B1_0>X == 5</T_B1_0> :
+	<T_B1_0__0>print('La seconda condizione essendo vera, non da modo di valutare la terza')</T_B1_0__0>
+	<T_B1_0__0>print('Quindi, nonostante la terza condizione sia vera, non andrà qui')</T_B1_0__0>
+<T_B0_0>print('In questo caso vi erano più elif')</T_B0_0>
+<T_B0_0>print('In questo caso nessuna delle tre condizioni si è verificata, perciò non entrerà in nessuna delle tre opzioni, ma continuerà il programma')</T_B0_0>
+<T_B0_0>print('Qui può continuare il codice ...')</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>La prima condizione essendo falsa da modo di valutare la seconda
+La seconda condizione è vera, quindi va qui
+In questo caso vi erano più elif
+In questo caso nessuna delle tre condizioni si è verificata, perciò non entrerà in nessuna delle tre opzioni, ma continuerà il programma
+Qui può continuare il codice ...</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>X = 5</T_B0_0>
+if <T_B1_0>X == 3</T_B1_0> :
+	<T_B1_0__0>print('La prima condizione è falsa, quindi non andrà qui')</T_B1_0__0>
+elif <T_B1_0>X == 7</T_B1_0> :
+	<T_B1_0__0>print('La prima condizione essendo falsa da modo di valutare la seconda')</T_B1_0__0>
+	<T_B1_0__0>print('La seconda condizione è falsa, quindi non andrà qui')</T_B1_0__0>
+elif <T_B1_0>X == 7</T_B1_0> :
+	<T_B1_0__0>print('La seconda condizione essendo falsa da modo di valutare la terza')</T_B1_0__0>
+	<T_B1_0__0>print('La terza condizione è falsa, quindi non andrà qui')</T_B1_0__0>
+<T_B0_0>print('In questo caso vi erano più elif')</T_B0_0>
+<T_B0_0>print('In questo caso nessuna delle tre condizioni si è verificata, perciò non entrerà in nessuna delle tre opzioni, ma continuerà il programma')</T_B0_0>
+<T_B0_0>print('Qui può continuare il codice ...')</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>In questo caso vi erano più elif
+In questo caso nessuna delle tre condizioni si è verificata, perciò non entrerà in nessuna delle tre opzioni, ma continuerà il programma
+Qui può continuare il codice ...</T_B3></pre>
+		</h7>
+	</T_E>
+</T_H1_IfElif>
+<T_H1_IfElifElse>
+	<h1>
+		<b1>if elif else</b1>
+	</h1>
+	<T_S>
+		<h3>
+			<b2>Sintassi</b2>
+		</h3>
+		<h7>
+<pre><T_B0>qui può esserci del codice ...</T_B0>
+if <T_B1>prima condizione</T_B1> :
+<T_B2>valutazione della prima condizione</T_B2>
+	<T_B1__0>se la prima condizione è vera va qui</T_B1__0>
+elif <T_B1>altra condizione</T_B1> :
+<T_B2>valutazione dell'altra condizione, nel caso la precedente sia falsa</T_B2>
+	<T_B1__0>se la precedente condizione è falsa, e l'altra condizione è vera, va qui</T_B1__0>
+else :
+	<T_B1__0>se tutte le condizioni sono false va qui</T_B1__0>
+<T_B0>qui può continuare il codice ...</T_B0></pre>
+		</h7>
+	</T_S>
+	<T_E>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>X = 5</T_B0_0>
+if <T_B1_0>X == 3</T_B1_0> :
+	<T_B1_0__0>print('La prima condizione è falsa, quindi non andrà qui')</T_B1_0__0>
+elif <T_B1_0>X == 7</T_B1_0> :
+	<T_B1_0__0>print('La prima condizione essendo falsa da modo di valutare la seconda')</T_B1_0__0>
+	<T_B1_0__0>print('La seconda condizione è falsa, quindi non andrà qui')</T_B1_0__0>
+elif <T_B1_0>X != 5</T_B1_0> :
+	<T_B1_0__0>print('La seconda condizione essendo falsa da modo di valutare la terza')</T_B1_0__0>
+	<T_B1_0__0>print('La terza condizione è falsa, quindi non andrà qui')</T_B1_0__0>
+else :
+	<T_B1_0__0>print('In questo caso nessuna delle precedenti condizioni si è verificata, quindi va qui')</T_B1_0__0>
+<T_B0_0>print('In questo caso vi erano più elif')</T_B0_0>
+<T_B0_0>print('Qui può continuare il codice ...')</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>In questo caso nessuna delle precedenti condizioni si è verificata, quindi va qui
+In questo caso vi erano più elif
+Qui può continuare il codice ...</T_B3></pre>
+		</h7>
+	</T_E>
+</T_H1_IfElifElse>
+<T_H1_For>
+	<h1>
+		<b1>for</b1>
+	</h1>
+	<T_S>
+		<h3>
+			<b2>Sintassi</b2>
+		</h3>
+		<h7>
+<pre><T_B0>qui può esserci del codice ...</T_B0></pre>
+<pre>for <T_B1>variable</T_B1> in <T_B1>range</T_B1> :</pre>
+<pre><T_B2>valutazione della ripetizione</T_B2></pre>
+<pre>	<T_B1__0>se persiste il range va qui</T_B1__0></pre>
+<pre><T_B0>qui può continuare il codice ...</T_B0></pre>
+		</h7>
+	</T_S>
+	<T_E>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>print('qui può esserci del codice ...')</T_B0_0>
+for <T_B1_0>X</T_B1_0> in <T_B1_0>range(5)</T_B1_0> :
+	<T_B1_0__0>print('Siamo nel %s° giro ed X vale %s' % (X+1, X))</T_B1_0__0>
+<T_B0_0>print('In questo caso il ciclo è stato eseguito cinque volte')</T_B0_0>
+<T_B0_0>print('Inserendo un unico valore in "range()" verrà eseguito un ciclo con la variabile andante da 0 al precedente del numero inserito')</T_B0_0>
+<T_B0_0>print('Qui può continuare il codice ...')</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>qui può esserci del codice ...
+Siamo nel 1° giro ed X vale 0
+Siamo nel 2° giro ed X vale 1
+Siamo nel 3° giro ed X vale 2
+Siamo nel 4° giro ed X vale 3
+Siamo nel 5° giro ed X vale 4
+In questo caso il ciclo è stato eseguito cinque volte
+Inserendo un unico valore in "range()" verrà eseguito un ciclo con la variabile andante da 0 al precedente del numero inserito
+Qui può continuare il codice ...</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>print('qui può esserci del codice ...')</T_B0_0>
+for <T_B1_0>X</T_B1_0> in <T_B1_0>range(3, 5)</T_B1_0> :
+	<T_B1_0__0>print('Siamo nel %s° giro ed X vale %s' % (X-2, X))</T_B1_0__0>
+<T_B0_0>print('In questo caso il ciclo è stato eseguito due volte')</T_B0_0>
+<T_B0_0>print('Inserendo due valori in "range()" verrà eseguito un ciclo con la variabile andante dal primo valore al precedente del secondo valore')</T_B0_0>
+<T_B0_0>print('Qui può continuare il codice ...')</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>qui può esserci del codice ...
+Siamo nel 1° giro ed X vale 3
+Siamo nel 2° giro ed X vale 4
+In questo caso il ciclo è stato eseguito due volte
+Inserendo due valori in "range()" verrà eseguito un ciclo con la variabile andante dal primo valore al precedente del secondo valore
+Qui può continuare il codice ...</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			<b>Codice</b>
+		</h5>
+		<h7>
+<pre><T_B0_0>print('qui può esserci del codice ...')</T_B0_0>
+for <T_B1_0>X</T_B1_0> in <T_B1_0>range(3, 10, 2)</T_B1_0> :
+	<T_B1_0__0>print('Siamo nel %s° giro ed X vale %s' % (int(X/2-0.5), X))</T_B1_0__0>
+<T_B0_0>print('In questo caso il ciclo è stato eseguito due volte')</T_B0_0>
+<T_B0_0>print('Inserendo tre valori in "range()" verrà eseguito un ciclo con la variabile andante dal primo valore al precedente del secondo valore avendo il passo del terzo valore')</T_B0_0>
+<T_B0_0>print('Nel caso si aggiunga il terzo valore, X potrebbe anche non diventare il numero inferiore del secondo valore')</T_B0_0>
+<T_B0_0>print('Qui può continuare il codice ...')</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>qui può esserci del codice ...
+Siamo nel 1° giro ed X vale 3
+Siamo nel 2° giro ed X vale 5
+Siamo nel 3° giro ed X vale 7
+Siamo nel 4° giro ed X vale 9
+In questo caso il ciclo è stato eseguito due volte
+Inserendo tre valori in "range()" verrà eseguito un ciclo con la variabile andante dal primo valore al precedente del secondo valore avendo il passo del terzo valore
+Nel caso si aggiunga il terzo valore, X potrebbe anche non diventare il numero inferiore del secondo valore
+Qui può continuare il codice ...</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>print('qui può esserci del codice ...')</T_B0_0>
+for <T_B1_0>X</T_B1_0> in <T_B1_0>'CIAO'</T_B1_0> :
+	<T_B1_0__0>print('X continene %s' % (X))</T_B1_0__0>
+<T_B0_0>print('In questo caso il ciclo è stato eseguito quattro volte')</T_B0_0>
+<T_B0_0>print('Inserendo una stringa verrà eseguito il ciclo per la lunghezza della stringa, assegnando alla variabile la stringa della lettera che sta prendendo in considerazione')</T_B0_0>
+<T_B0_0>print('Qui può continuare il codice ...')</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>qui può esserci del codice ...
+X continene C
+X continene I
+X continene A
+X continene O
+In questo caso il ciclo è stato eseguito quattro volte
+Inserendo una stringa verrà eseguito il ciclo per la lunghezza della stringa, assegnando alla variabile la stringa della lettera che sta prendendo in considerazione
+Qui può continuare il codice ...</T_B3></pre>
+		</h7>
+		<h3>
+			<i>Esempio</i>
+		</h3>
+		<h5>
+			Codice
+		</h5>
+		<h7>
+<pre><T_B0_0>pianeta = 'Saturno'</T_B0_0>
+for <T_B1_0>X</T_B1_0> in <T_B1_0>['Londra', 5, pianeta, 'Marco' , 3.5]</T_B1_0> :
+	<T_B1_0__0>print('X continene %s' % (X))</T_B1_0__0>
+<T_B0_0>print('In questo caso il ciclo è stato eseguito cinque volte')</T_B0_0>
+<T_B0_0>print('Inserendo una array verrà eseguito il ciclo per la lunghezza dell\'array, assegnando alla variabile il contenuto dell\'array nella posizione che sta prendendo in considerazione')</T_B0_0>
+<T_B0_0>print('Qui può continuare il codice ...')</T_B0_0></pre>
+		</h7>
+		<h5>
+			Output
+		</h5>
+		<h7>
+<pre><T_B3>qui può esserci del codice ...
+X continene Londra
+X continene 5
+X continene Saturno
+X continene Marco
+X continene 3.5
+In questo caso il ciclo è stato eseguito cinque volte
+Inserendo una array verrà eseguito il ciclo per la lunghezza dell'array, assegnando alla variabile il contenuto dell'array nella posizione che sta prendendo in considerazione
+Qui può continuare il codice ...</T_B3></pre>
+		</h7>
+	</T_E>
+</T_H0_ConditionalInstruction>
+
+</T_H0_boh>
+</div>
+
+<button class="_BT_ce _BS1_ce" id="_BTS_de" onclick="_BT_fe('T_S','_BTS_de');">S</button>
+<button class="_BT_ce _BS1_ce" id="_BTE_de" onclick="_BT_fe('T_E','_BTE_de');">E</button>
+
+<button class="_BT_ce _BS1_ce" id="_BTHW_de" onclick="_BT_fe('T_H0_HelloWorld','_BTHW_de');_BS_fe('T_H0_HelloWorld','_BTHW_de');">HW</button>
+<button class="_BT_ce _BS1_ce" id="_BTMO_de" onclick="_BT_fe('T_H0_MathematicalOperator','_BTMO_de');_BS_fe('T_H0_MathematicalOperator','_BTMO_de');">MO</button>
+<button class="_BT_ce _BS1_ce" id="_BTAO_de" onclick="_BT_fe('T_H0_AssignmentOperator','_BTAO_de');_BS_fe('T_H0_AssignmentOperator','_BTAO_de');">AO</button>
+<button class="_BT_ce _BS1_ce" id="_BTCO_de" onclick="_BT_fe('T_H0_ComparisonOperator','_BTCO_de');_BS_fe('T_H0_ComparisonOperator','_BTCO_de');">CO</button>
+<button class="_BT_ce _BS1_ce" id="_BTV_de" onclick="_BT_fe('T_H0_Variable','_BTV_de');_BS_fe('T_H0_Variable','_BTV_de');">V</button>
+<button class="_BT_ce _BS1_ce" id="_BTFunc_de" onclick="_BT_fe('T_H0_Function','_BTFunc_de');_BS_fe('T_H0_Function','_BTFunc_de');">F</button>
+<button class="_BT_ce _BS1_ce" id="_BTCI_de" onclick="_BT_fe('T_H0_ConditionalInstruction','_BTCI_de');_BS_fe('T_H0_ConditionalInstruction','_BTCI_de');">CI</button>
+
+</body>
+</html>
