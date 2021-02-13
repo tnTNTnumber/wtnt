@@ -1,0 +1,234 @@
+._A_ce { /*All*/
+	margin-left: 70px;
+}
+
+body {
+	background: rgba(33,33,33,0.8);
+	color: rgba(0,0,0,0.95)!important;
+}
+
+b0 { /*bold 1*/
+	color: rgba(0,0,0,0,8);
+	text-shadow: 2px 0 rgba(0,0,0,0.8);
+	letter-spacing: 2px;
+	font-size: 1.2em;
+	font-weight: bold;
+}
+
+b1 { /*bold 1*/
+	color: rgba(0,0,0,0,8);
+	text-shadow: 1px 0 rgba(0,0,0,0.8);
+	letter-spacing: 1px;
+	font-weight: bold;
+}
+
+b2 { /*bold 2*/
+	color: rgba(0,0,0,0,8);
+	text-shadow: 1px 0 rgba(0,0,0,0.8);
+	letter-spacing: 1px;
+	font-weight: bold;
+}
+
+button {
+	background: rgba(55,55,55,0.8);
+	border: 0.4vmin solid rgba(44,44,44,0.8);
+    border-radius: 10%;
+	color: rgba(0,0,0,0.8);
+	color: rgba(22,22,22,0.8);
+	font-size: 2.5vmin;
+	transform: translate(50%,50%);
+	transition-duration: 0.2s;
+}button.focus, button:focus {
+    outline: 0;
+    box-shadow: none!important;
+}button:hover {
+	background: rgba(88,88,88,0.8)!important;
+}
+
+._BS1_ce {
+	background: rgba(55,55,55,0.8);
+	border: 0.4vmin solid rgba(44,44,44,0.8);
+    border-radius: 10%;
+	color: rgba(0,0,0,0.8);
+	color: rgba(22,22,22,0.8);
+	font-size: 2.5vmin;
+	transform: translate(50%,50%);
+	transition-duration: 0.2s;
+}._BS1_ce.focus, button:focus {
+    outline: 0;
+    box-shadow: none!important;
+}._BS1_ce:hover {
+	background: rgba(88,88,88,0.8)!important;
+}
+
+._BS2_ce {
+	background: rgba(44,66,44,0.8);
+	border: 0.4vmin solid rgba(44,44,44,0.8);
+    border-radius: 10%;
+	color: rgba(0,0,0,0.8);
+	color: rgba(22,22,22,0.8);
+	font-size: 2.5vmin;
+	transform: translate(50%,50%);
+	transition-duration: 0.2s;
+}._BS2_ce.focus, button:focus {
+    outline: 0;
+    box-shadow: none!important;
+}._BS2_ce:hover {
+	background: rgba(66,88,88,0.8)!important;
+}
+
+._BT_ce { /*Button Toggle*/
+	height: 5vmin;
+	position: fixed;
+	width: 5vmin;
+	z-index: 16;
+}
+
+#_BTS_de { /*Button Toggle Syntax*/
+	bottom: 12.5vmin;
+	right: 5vmin;
+}
+
+#_BTE_de { /*Button Toggle Examples*/
+	bottom: 5vmin;
+	right: 5vmin;
+}
+
+div {
+	transition-duration: 0.4s;
+}
+
+h1 {
+	margin-bottom: 0px;
+	margin-left: -60px;
+	margin-top: 0px;
+	transition-duration: 0.4s;
+}
+
+h3 {
+	margin-bottom: 0px;
+	margin-left: -40px;
+	margin-top: 0px;
+	transition-duration: 0.4s;
+}
+
+h5 {
+	margin-bottom: 0px;
+	margin-left: -20px;
+	margin-top: 0px;
+	transition-duration: 0.4s;
+}
+
+h7 {
+	margin-bottom: 10px;
+	margin-left: 0px;
+	margin-top: 0px;
+	transition-duration: 0.4s;
+}
+
+T_B0 { /*Bracket 1*/
+	color: rgba(44,44,44,0.8);
+	font-size: 80%;
+	transition-duration: 0.4s;
+}
+
+T_B0_0 { /*Bracket 1*/
+	color: rgba(44,44,44,0.8);
+	transition-duration: 0.4s;
+}
+
+T_B1 { /*Bracket 1*/
+	color: rgba(11,11,77,0.8);
+	font-size: 80%;
+	transition-duration: 0.4s;
+}
+
+T_B1__0 { /*Bracket 1*/
+	color: rgba(33,33,77,0.8);
+	font-size: 80%;
+	transition-duration: 0.4s;
+}
+
+T_B1_0 { /*Bracket 3*/
+	color: rgba(11,11,77,0.8);
+	transition-duration: 0.4s;
+}
+
+T_B1_0__0 { /*Bracket 3*/
+	color: rgba(33,33,77,0.8);
+	transition-duration: 0.4s;
+}
+
+T_B2 { /*Bracket 2*/
+	color: rgba(77,11,11,0.8);
+	font-size: 80%;
+	transition-duration: 0.4s;
+}
+
+T_B3 { /*Bracket 2*/
+	background: rgba(88,88,88,0.8);
+	color: rgba(11,11,11,0.8);
+	transition-duration: 0.4s;
+}
+
+T_B4 { /*Bracket 2*/
+	color: rgba(00,44,00,0.8);
+	transition-duration: 0.4s;
+}
+
+T_E { /*Examples*/
+}
+
+T_E { /*Syntax*/
+}
+
+::placeholder {
+	color: rgba(55,55,55,0.8);
+}:-ms-input-placeholder {
+	color: rgba(55,55,55,0.8);
+}::-ms-input-placeholder {
+	color: rgba(55,55,55,0.8);
+}
+
+::selection {
+  background: rgba(99,99,99,0.8);
+}::-moz-selection {
+  background: rgba(99,99,99,0.8);
+}
+
+textarea {
+	color: rgba(0,0,0,0.8);
+	scrollbar-color: rgba(55,55,55,0.8) rgba(0,0,0,0);
+	scrollbar-width: thin;
+	transition-duration: 0.4s;
+}textarea:hover{
+	background: rgba(116,116,116,0.8)!important;
+}textarea.focus, textarea:focus {
+    outline: 0;
+    box-shadow: none!important;
+}
+
+::-webkit-scrollbar {
+	width: 12px;
+	background: rgba(88,88,88,0);
+	border-radius: 6px;
+	transition-duration: 0.4s;
+}::-webkit-scrollbar-track {
+	background: linear-gradient(90deg,rgba(88,88,88,0.2),rgba(0,0,0,0));
+	border-radius: 6px;
+}::-webkit-scrollbar-track:hover {
+	background: rgba(88,88,88,0.4);
+}::-webkit-scrollbar-thumb {
+	background: rgba(55,55,55,0.5);
+	border-radius: 6px;
+}::-webkit-scrollbar-thumb:hover {
+	background: rgba(55,55,55,0.8);
+}
+
+._AExt_ce { /*Anchor href External*/
+	color: rgba(15,0,35,0.9);
+}
+
+._APS_ce { /*Anchor href PySyntax*/
+	color: rgba(22,11,22,0.9);
+}
