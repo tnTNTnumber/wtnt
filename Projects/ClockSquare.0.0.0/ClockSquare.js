@@ -50,17 +50,25 @@ function _GeneratorClock_ClockDraw_fe() { /*Generator Clock /Clock Draw*/
 	};
 	_GeneratorClock_D1_ve.style.background = 'hsla('+((_GeneratorClock_D_H_ve/24)+((_GeneratorClock_D_M_ve/60)/24)+(((_GeneratorClock_D_S_ve/60)/60)/24))*360*4+',100%,26%,0.2)';
 	if(_GeneratorClock_D_M_ve==0&&_GeneratorClock_D_S_ve==0) {
-		_GeneratorClock_Flash_fe(_GeneratorClock_D_H_ve%6);
+		_GeneratorClock_Flash_fe(_GeneratorClock_D_H_ve%6,100,100);
 	};
-	//~ alert(_GeneratorClock_D_H_ve+':'+_GeneratorClock_D_M_ve+':'+_GeneratorClock_D_S_ve);
+	if(_GeneratorClock_D_M_ve!=0&&_GeneratorClock_D_M_ve%5==0&&_GeneratorClock_D_S_ve==0) {
+		_GeneratorClock_Flash_fe(Math.abs(6-(_GeneratorClock_D_M_ve/5))+1,100,0);
+	};
+	if(_GeneratorClock_D_S_ve==0) {
+		_GeneratorClock_Flash_fe(1,200,50);
+	};
+	//~ alert(_GeneratorClock_D_H_ve+':'+_GeneratorClock_D_M_ve+':'+_GeneratorClock_D_S_ve); ///Time
 };
 
-function _GeneratorClock_Flash_fe(_GeneratorClock_Flash_NF_ve) { /*Flash*/
+function _GeneratorClock_Flash_fe(_GeneratorClock_Flash_NF_ve,_GeneratorClock_Flash_S_ve,_GeneratorClock_Flash_L_ve) { /*Flash*/
 	/*Number of Flashes*/
+	/*Saturation*/
+	/*Luminosity*/
 	_GeneratorClock_Flash_I_ve = [0]; /*Iteration*/
 	for(_GeneratorClock_Flash_I_ve[0]; _GeneratorClock_Flash_I_ve[0]<_GeneratorClock_Flash_NF_ve; _GeneratorClock_Flash_I_ve[0]++) {
 		setTimeout(function() {
-			_GeneratorClock_D1_ve.style.background = 'hsla('+((_GeneratorClock_D_H_ve/24)+((_GeneratorClock_D_M_ve/60)/24)+(((_GeneratorClock_D_S_ve/60)/60)/24))*360*4+',100%,100%,0.2)';
+			_GeneratorClock_D1_ve.style.background = 'hsla('+((_GeneratorClock_D_H_ve/24)+((_GeneratorClock_D_M_ve/60)/24)+(((_GeneratorClock_D_S_ve/60)/60)/24))*360*4+','+_GeneratorClock_Flash_S_ve+'%,'+_GeneratorClock_Flash_L_ve+'%,0.2)';
 		},2000*_GeneratorClock_Flash_I_ve[0]);
 	};
 };
