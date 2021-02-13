@@ -1,0 +1,326 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Py Syntax - τnTNT_☢️</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="css.css">
+	<script src="js.js"></script>
+<style>
+
+</style>
+<script>
+
+</script>
+</head>
+<body>
+
+<div class="_A_ce">
+
+<T_H0_Function>
+	<h1>
+		<b0>Funzioni</b0>
+	</h1>
+	<T_H1_Print>
+		<h1>
+			<b1>Print</b1>
+		</h1>
+		<T_S>
+			<h3>
+				<b2>Sintassi</b2>
+			</h3>
+			<h7>
+<pre>print ( <T_B1>oggetti</T_B1> , sep = <T_B1>separatore</T_B1> , end = <T_B1>fine</T_B1> , file = <T_B1>file</T_B1> , flush = <T_B1>flush</T_B1> )</pre>
+				<h5>
+					Parametri:
+				</h5>
+<pre><T_B1_0>oggetto</T_B1_0>: può essere uno o più (nel caso siano più di uno devono essere separati da una virgola) e può essere un numero, una stringa oppure una variabile. <T_B4>Valore predefinito: <T_B3>None</T_B3></T_B4></pre>
+<pre><T_B1_0>separatore</T_B1_0>: separa gli <T_B1_0>oggetti</T_B1_0> tra loro. <T_B4>Valore predefinito: <T_B3>' '</T_B3></T_B4></pre>
+<pre><T_B1_0>fine</T_B1_0>: è stampato alla fine. <T_B4>Valore predefinito: <T_B3>'\n'</T_B3></T_B4></pre>
+<pre><T_B1_0>file</T_B1_0>: dice dove deve essere stampato il contenuto (deve essere un oggetto con metodo write (string)). <T_B4>Valore predefinito: <T_B3>sys.stdout</T_B3></T_B4></pre>
+<pre><T_B1_0>flush</T_B1_0>: se <T_B3>True</T_B3>, il flusso viene scaricato forzatamente. <T_B4>Valore predefinito: <T_B3>False</T_B3></T_B4></pre>
+			</h7>
+		</T_S>
+		<T_E>
+			<h3>
+				<i>Esempio</i>
+			</h3>
+			<h5>
+				Codice
+			</h5>
+			<h7>
+<pre>print ( <T_B1_0>'ciao'</T_B1_0> )</pre>
+			</h7>
+			<h5>
+				Output
+			</h5>
+			<h7>
+<pre><T_B3>ciao</T_B3></pre>
+			</h7>
+			<h3>
+				<i>Esempio</i>
+			</h3>
+			<h5>
+				Codice
+			</h5>
+			<h7>
+<pre>print ( <T_B1_0>5</T_B1_0> )</pre>
+			</h7>
+			<h5>
+				Output
+			</h5>
+			<h7>
+<pre><T_B3>5</T_B3></pre>
+			</h7>
+			<h3>
+				<i>Esempio</i>
+			</h3>
+			<h5>
+				Codice
+			</h5>
+			<h7>
+<pre>print ( <T_B1_0>3.5</T_B1_0> )</pre>
+			</h7>
+			<h5>
+				Output
+			</h5>
+			<h7>
+<pre><T_B3>3.5</T_B3></pre>
+			</h7>
+			<h3>
+				<i>Esempio</i>
+			</h3>
+			<h5>
+				Codice
+			</h5>
+			<h7>
+<pre>print ( <T_B1_0>5 * 2</T_B1_0> )</pre>
+			</h7>
+			<h5>
+				Output
+			</h5>
+			<h7>
+<pre><T_B3>10</T_B3></pre>
+			</h7>
+			<h3>
+				<i>Esempio</i>
+			</h3>
+			<h5>
+				Codice
+			</h5>
+			<h7>
+<pre>print ( <T_B1_0>'ci' + 'ao'</T_B1_0> )</pre>
+			</h7>
+			<h5>
+				Output
+			</h5>
+			<h7>
+<pre><T_B3>ciao</T_B3></pre>
+			</h7>
+			<h3>
+				<i>Esempio</i>
+			</h3>
+			<h5>
+				Codice
+			</h5>
+			<h7>
+<pre>print ( <T_B1_0>'ciao ' * 3</T_B1_0> )</pre>
+			</h7>
+			<h5>
+				Output
+			</h5>
+			<h7>
+<pre><T_B3>ciao ciao ciao </T_B3></pre>
+			</h7>
+			<h3>
+				<i>Esempio</i>
+			</h3>
+			<h5>
+				Codice
+			</h5>
+			<h7>
+<pre><T_B0_0>X = 5</T_B0_0>
+print ( <T_B1_0>X</T_B1_0> )</pre>
+			</h7>
+			<h5>
+				Output
+			</h5>
+			<h7>
+<pre><T_B3>5</T_B3></pre>
+			</h7>
+			<h3>
+				<i>Esempio</i>
+			</h3>
+			<h5>
+				Codice
+			</h5>
+			<h7>
+<pre>print ( <T_B1_0>'Stampa'</T_B1_0> , <T_B1_0>'questo'</T_B1_0> )</pre>
+			</h7>
+			<h5>
+				Output
+			</h5>
+			<h7>
+<pre><T_B3>Stampa questo</T_B3></pre>
+			</h7>
+			<h3>
+				<i>Esempio</i>
+			</h3>
+			<h5>
+				Codice
+			</h5>
+			<h7>
+<pre><T_B0_0>X = 5</T_B0_0>
+print ( <T_B1_0>'X vale'</T_B1_0> , <T_B1_0>X</T_B1_0> , <T_B1_0>'!'</T_B1_0> )</pre>
+			</h7>
+			<h5>
+				Output
+			</h5>
+			<h7>
+<pre><T_B3>X vale 5 !</T_B3></pre>
+			</h7>
+			<h3>
+				<i>Esempio</i>
+			</h3>
+			<h5>
+				Codice
+			</h5>
+			<h7>
+<pre>print ( <T_B1_0>str(5)</T_B1_0> , <T_B1_0>' + '</T_B1_0> , <T_B1_0>str(3)</T_B1_0> )</pre>
+			</h7>
+			<h5>
+				Output
+			</h5>
+			<h7>
+<pre><T_B3>5 + 3</T_B3></pre>
+			</h7>
+			<h3>
+				<i>Esempio</i>
+			</h3>
+			<h5>
+				Codice
+			</h5>
+			<h7>
+<pre><T_B0_0>giorno = 'Lunedì'
+X = [ 3.5 , 'Concordia' , 5 , False , giorno ]</T_B0_0>
+print ( <T_B1_0>X</T_B1_0> )</pre>
+			</h7>
+			<h5>
+				Output
+			</h5>
+			<h7>
+<pre><T_B3>[3.5, 'Concordia', 5, False, 'Lunedì']</T_B3></pre>
+			</h7>
+			<h3>
+				<i>Esempio</i>
+			</h3>
+			<h5>
+				Codice
+			</h5>
+			<h7>
+<pre>print ( <T_B1_0>'\'a1\\a2\na3\ra4\ta5\ba6\fa7\110a8\x6fa9'</T_B1_0> )</pre>
+			</h7>
+			<h5>
+				Output
+			</h5>
+			<h7>
+<pre><T_B3>'a1\a2
+a4  aa6
+       a7Ha8oa9</T_B3></pre>
+			</h7>
+			<h3>
+				<i>Esempio</i>
+			</h3>
+			<h5>
+				Codice
+			</h5>
+			<h7>
+<pre>print ( <T_B1_0>'X\\nY'</T_B1_0> )</pre>
+			</h7>
+			<h5>
+				Output
+			</h5>
+			<h7>
+<pre><T_B3>X\nY</T_B3></pre>
+			</h7>
+			<h3>
+				<i>Esempio</i>
+			</h3>
+			<h5>
+				Codice
+			</h5>
+			<h7>
+<pre>print ( <T_B1_0>'sep'</T_B1_0> , <T_B1_0>'viene stampato'</T_B1_0> , <T_B1_0>'tra'</T_B1_0> , <T_B1_0>'gli oggetti'</T_B1_0> , sep = <T_B1_0>' ;)\n'</T_B1_0> )</pre>
+			</h7>
+			<h5>
+				Output
+			</h5>
+			<h7>
+<pre><T_B3>sep ;)
+viene stampato ;)
+tra ;)
+gli oggetti</T_B3></pre>
+			</h7>
+			<h3>
+				<i>Esempio</i>
+			</h3>
+			<h5>
+				Codice
+			</h5>
+			<h7>
+<pre>print ( <T_B1_0>'Stampa'</T_B1_0> )
+print ( <T_B1_0>'questo'</T_B1_0> )</pre>
+			</h7>
+			<h5>
+				Output
+			</h5>
+			<h7>
+<pre><T_B3>Stampa
+questo</T_B3></pre>
+			</h7>
+			<h3>
+				<i>Esempio</i>
+			</h3>
+			<h5>
+				Codice
+			</h5>
+			<h7>
+<pre>print ( <T_B1_0>'end'</T_B1_0> , end = <T_B1_0>'\n...\n;)\n-O-\n'</T_B1_0> )
+print ( <T_B1_0>'viene stampato alla fine del contenuto'</T_B1_0> )</pre>
+			</h7>
+			<h5>
+				Output
+			</h5>
+			<h7>
+<pre><T_B3>end
+...
+;)
+-O-
+viene stampato alla fine del contenuto</T_B3></pre>
+			</h7>
+			<h3>
+				<i>Esempio</i>
+			</h3>
+			<h5>
+				Codice
+			</h5>
+			<h7>
+<pre><T_B0_0>X = ''</T_B0_0>
+print ( <T_B1_0>X</T_B1_0> , <T_B1_0>X</T_B1_0> , sep = <T_B1_0>'|--|'</T_B1_0> , end = <T_B1_0>'-o-'</T_B1_0> )
+print ( )
+print ( <T_B1_0>X</T_B1_0> , <T_B1_0>X</T_B1_0> , sep = <T_B1_0>'|--|'</T_B1_0> , end = <T_B1_0>'-o-'</T_B1_0> )</pre>
+			</h7>
+			<h5>
+				Output
+			</h5>
+			<h7>
+<pre><T_B3>|--|-o-
+|--|-o-</T_B3></pre>
+			</h7>
+		</T_E>
+	</T_H1_Print>
+</T_H0_Function>
+
+</div>
+
+</body>
+</html>
