@@ -1,0 +1,2020 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Periodic Table based on the Electron Configuration - τnTNT_☢️</title>
+	<meta charset="UTF-8">
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@1,700&display=swap');
+
+body {
+	background: rgba(33,33,33,0.8);
+	color: rgba(0,0,0,0.95)!important;
+	font-family: 'Lucida Console', monospace;
+	font-family: 'Ubuntu Mono', monospace;
+	font-size: calc(1.2em + 0.2vmax); /**2.5vmin; 1vmax; 20px; 1.5em*/
+	transition-duration: 0.4s;
+}body * {
+	transition-duration: 0.4s;
+}
+
+button {
+	background: rgba(55,55,55,0.8);
+	border: 0.4vmin solid rgba(44,44,44,0.8);
+    border-radius: 10%;
+	color: rgba(0,0,0,0.8);
+	color: rgba(22,22,22,0.8);
+	font-size: 2.5vmin;
+	transform: translate(50%,50%);
+	transition-duration: 0.2s;
+}button.focus, button:focus {
+    outline: 0;
+    box-shadow: none!important;
+}button:hover {
+	background: rgba(88,88,88,0.8)!important;
+}
+
+div {
+	transition-duration: 0.4s;
+}
+
+::placeholder {
+	color: rgba(55,55,55,0.8);
+}:-ms-input-placeholder {
+	color: rgba(55,55,55,0.8);
+}::-ms-input-placeholder {
+	color: rgba(55,55,55,0.8);
+}
+
+::selection {
+	background: rgba(99,99,99,0.8);
+}::-moz-selection {
+	background: rgba(99,99,99,0.8);
+}
+
+textarea {
+	color: rgba(0,0,0,0.8);
+	scrollbar-color: rgba(55,55,55,0.8) rgba(0,0,0,0);
+	scrollbar-width: thin;
+	transition-duration: 0.4s;
+}textarea:hover {
+	background: rgba(116,116,116,0.8)!important;
+}textarea.focus, textarea:focus {
+    outline: 0;
+    box-shadow: none!important;
+}
+
+::-webkit-scrollbar {
+	width: 12px;
+	background: rgba(88,88,88,0);
+	border-radius: 6px;
+	transition-duration: 0.4s;
+}::-webkit-scrollbar-track {
+	background: linear-gradient(90deg,rgba(88,88,88,0.2),rgba(0,0,0,0));
+	border-radius: 6px;
+}::-webkit-scrollbar-track:hover {
+	background: rgba(88,88,88,0.4);
+}::-webkit-scrollbar-thumb {
+	background: rgba(55,55,55,0.5);
+	border-radius: 6px;
+}::-webkit-scrollbar-thumb:hover {
+	background: rgba(55,55,55,0.8);
+}
+
+._0_ce { /*0*/
+	border: 0px;
+	border: 0;
+	margin: 0px;
+	margin: 0;
+	padding: 0px;
+	padding: 0;
+}
+
+._D1_ce { /*Div 1*/
+	left: 49vw;
+	position: absolute;
+	transform: translateX(-50%);
+	transition-duration: 1.4s;
+	text-align: center;
+}._D1_ce * {
+	transition-duration: 0s;
+}
+
+/**^std^*/
+/**.var.*/
+
+._CoE_ce { /*Capacity of Electrons*/
+}
+
+._CCoE_ce { /*Cumulative Capacity of Electrons*/
+}
+
+._CCoEm_ce { /*Cumulative Capacity of Electrons - min*/
+}
+
+._CH_ce { /*Compartment Horizontal*/
+}
+
+._CV_ce { /*Compartment Vertical*/
+}
+
+._Es_ce { /*Elements*/
+}
+
+._LCoO_ce { /*Linear Construction of Orbitals*/
+}
+
+._PTbotEC_ce { /*Periodic Table based on the Electron Configuration*/
+    margin-left: auto;
+    margin-right: auto;
+	transform: translateX(-0.18vw);
+	transition-duration: 1.4s;
+}._PTbotEC_ce tr, ._PTbotEC_ce td {
+}._PTbotEC_ce tr {
+}._PTbotEC_ce td {
+	text-align: center;
+	vertical-align: top;
+}._PTbotEC_ce * {
+	transition-duration: 0s;
+}
+
+._SSC_ce { /*Sub-Sub-Cell*/
+}
+
+._ST_ce_ce { /*Sub-Table*/
+	border: calc(0.3em + 0.05vmax) solid rgba(0,0,0,0); /**0.625vmin; 0.25vmax; 5px; 0.375em*/
+    margin-left: auto;
+    margin-right: auto;
+}._ST_ce_ce tr, ._ST_ce_ce td {
+}
+
+._STCH_ce { /*Sub-Table Compartment Horizontal*/
+}
+
+._STCV_ce { /*Sub-Table Compartment Vertical*/
+}
+
+._T0_ce { /*Table 0*/
+}
+
+._T_ce { /*Title*/
+	transition-duration: 1.4s;
+}
+
+._Vs_ce { /*Values*/
+}
+
+</style>
+<script>
+
+//~ var __ve = []; /**/
+
+window.onload = function() {
+	document.body.innerHTML = '<div class="_D1_ce _0_ce"><h1 class="_T_ce">'+document.title+'</h1>'+document.getElementsByClassName('_T0_ce')[0].innerHTML+'</div>';
+	//~ var __I_ve = [0,0,0,0]; /*Iteration*/
+	//~ document.body.innerHTML = '<div class="_D1_ce _0_ce"><h1>'+document.title+'</h1></div>';
+	//~ document.getElementsByClassName('_D1_ce')[0].innerHTML += '<table class="_PTbotEC_ce"></table>';
+	//~ for(__I_ve[0]; __I_ve[0]<3; __I_ve[0]++) {
+		//~ document.getElementsByClassName('_PTbotEC_ce')[0].innerHTML += '<tr class="_CH_ce">';
+		//~ for(__I_ve[1]; __I_ve[1]<13; __I_ve[1]++) {
+			//~ document.getElementsByClassName('_CH_ce')[__I_ve[0]].innerHTML += '<td class="_CV_ce"><table class="_ST_ce_ce">';
+
+			//~ for(__I_ve[2]; __I_ve[2]<2; __I_ve[2]++) {
+				//~ document.getElementsByClassName('_ST_ce_ce')[__I_ve[0]*13+__I_ve[1]].innerHTML += '<tr class="_STCV_ce">';
+				//~ for(__I_ve[3]; __I_ve[3]<2; __I_ve[3]++) {
+					//~ document.getElementsByClassName('_ST_ce_ce')[__I_ve[0]*13+__I_ve[1]].innerHTML += '<tr class="_STCV_ce">';
+					//~ document.getElementsByClassName('_ST_ce_ce')[__I_ve[0]*13+__I_ve[1]].innerHTML += '</tr>';
+				//~ }; __I_ve[3] = 0;
+				//~ document.getElementsByClassName('_ST_ce_ce')[__I_ve[0]*13+__I_ve[1]].innerHTML += '</tr>';
+			//~ }; __I_ve[2] = 0;
+
+			//~ document.getElementsByClassName('_CH_ce')[__I_ve[0]].innerHTML += '</table></td>';
+		//~ }; __I_ve[1] = 0;
+		//~ document.getElementsByClassName('_PTbotEC_ce')[0].innerHTML += '</tr>';
+	//~ }; __I_ve[0] = 0;
+
+	//~ for(__I_ve[2]; __I_ve[2]<13; __I_ve[2]++) {
+	//~ };
+};
+
+</script>
+</head>
+<body>
+
+<div class="_DE_ce">
+	<span>ERROR :/</span><br />
+	<span>Please enable Javascripts.</span>
+</div>
+
+<div class="_T0_ce">
+	<table class="_PTbotEC_ce">
+		<tr class="_CH_ce _LCoO_ce">
+			<td class="_CV_ce">
+				<table class="_ST_ce_ce">
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">1s</span>
+						</td>
+					</tr>
+				</table>
+			</td>
+			<td class="_CV_ce">
+				<table class="_ST_ce_ce">
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">2s</span>
+						</td>
+					</tr>
+				</table>
+			</td>
+			<td class="_CV_ce">
+				<table class="_ST_ce_ce">
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">2p</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">3s</span>
+						</td>
+					</tr>
+				</table>
+			</td>
+			<td class="_CV_ce">
+				<table class="_ST_ce_ce">
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">3p</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">4s</span>
+						</td>
+					</tr>
+				</table>
+			</td>
+			<td class="_CV_ce">
+				<table class="_ST_ce_ce">
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">3d</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">4p</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">5s</span>
+						</td>
+					</tr>
+				</table>
+			</td>
+			<td class="_CV_ce">
+				<table class="_ST_ce_ce">
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">4d</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">5p</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">6s</span>
+						</td>
+					</tr>
+				</table>
+			</td>
+			<td class="_CV_ce">
+				<table class="_ST_ce_ce">
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">4f</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">5d</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">6p</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">7s</span>
+						</td>
+					</tr>
+				</table>
+			</td>
+			<td class="_CV_ce">
+				<table class="_ST_ce_ce">
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">5f</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">6d</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">7p</span>
+						</td>
+					</tr>
+				</table>
+			</td>
+			<td class="_CV_ce">
+				<table class="_ST_ce_ce">
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">5g</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">6f</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">7d</span>
+						</td>
+					</tr>
+				</table>
+			</td>
+			<td class="_CV_ce">
+				<table class="_ST_ce_ce">
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">6g</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">7f</span>
+						</td>
+					</tr>
+				</table>
+			</td>
+			<td class="_CV_ce">
+				<table class="_ST_ce_ce">
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">6h</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">7g</span>
+						</td>
+					</tr>
+				</table>
+			</td>
+			<td class="_CV_ce">
+				<table class="_ST_ce_ce">
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">7h</span>
+						</td>
+					</tr>
+				</table>
+			</td>
+			<td class="_CV_ce">
+				<table class="_ST_ce_ce">
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">7i</span>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr class="_CH_ce _Vs_ce">
+			<td class="_CV_ce">
+				<table class="_ST_ce_ce">
+					<tr class="_CH_ce _CoE_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">2</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce _CCoEm_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">1</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce _CCoE_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">2</span>
+						</td>
+					</tr>
+				</table>
+			</td>
+			<td class="_CV_ce">
+				<table class="_ST_ce_ce">
+					<tr class="_CH_ce _CoE_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">2</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce _CCoEm_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">3</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce _CCoE_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">4</span>
+						</td>
+					</tr>
+				</table>
+			</td>
+			<td class="_CV_ce">
+				<table class="_ST_ce_ce">
+					<tr class="_CH_ce _CoE_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">6</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">2</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce _CCoEm_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">5</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">11</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce _CCoE_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">10</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">12</span>
+						</td>
+					</tr>
+				</table>
+			</td>
+			<td class="_CV_ce">
+				<table class="_ST_ce_ce">
+					<tr class="_CH_ce _CoE_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">6</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">2</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce _CCoEm_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">13</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">19</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce _CCoE_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">18</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">20</span>
+						</td>
+					</tr>
+				</table>
+			</td>
+			<td class="_CV_ce">
+				<table class="_ST_ce_ce">
+					<tr class="_CH_ce _CoE_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">10</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">6</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">2</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce _CCoEm_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">21</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">31</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">37</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce _CCoE_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">30</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">36</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">38</span>
+						</td>
+					</tr>
+				</table>
+			</td>
+			<td class="_CV_ce">
+				<table class="_ST_ce_ce">
+					<tr class="_CH_ce _CoE_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">10</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">6</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">2</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce _CCoEm_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">39</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">49</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">55</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce _CCoE_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">48</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">54</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">56</span>
+						</td>
+					</tr>
+				</table>
+			</td>
+			<td class="_CV_ce">
+				<table class="_ST_ce_ce">
+					<tr class="_CH_ce _CoE_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">14</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">10</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">6</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">2</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce _CCoEm_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">57</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">71</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">81</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">87</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce _CCoE_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">70</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">80</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">86</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">88</span>
+						</td>
+					</tr>
+				</table>
+			</td>
+			<td class="_CV_ce">
+				<table class="_ST_ce_ce">
+					<tr class="_CH_ce _CoE_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">14</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">10</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">6</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce _CCoEm_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">89</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">103</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">113</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce _CCoE_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">102</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">112</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">118</span>
+						</td>
+					</tr>
+				</table>
+			</td>
+			<td class="_CV_ce">
+				<table class="_ST_ce_ce">
+					<tr class="_CH_ce _CoE_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">18</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">14</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">10</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce _CCoEm_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">119</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">137</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">151</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce _CCoE_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">136</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">150</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">160</span>
+						</td>
+					</tr>
+				</table>
+			</td>
+			<td class="_CV_ce">
+				<table class="_ST_ce_ce">
+					<tr class="_CH_ce _CoE_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">18</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">14</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce _CCoEm_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">161</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">179</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce _CCoE_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">178</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">192</span>
+						</td>
+					</tr>
+				</table>
+			</td>
+			<td class="_CV_ce">
+				<table class="_ST_ce_ce">
+					<tr class="_CH_ce _CoE_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">22</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">18</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce _CCoEm_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">193</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">215</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce _CCoE_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">214</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">232</span>
+						</td>
+					</tr>
+				</table>
+			</td>
+			<td class="_CV_ce">
+				<table class="_ST_ce_ce">
+					<tr class="_CH_ce _CoE_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">22</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce _CCoEm_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">233</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce _CCoE_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">254</span>
+						</td>
+					</tr>
+				</table>
+			</td>
+			<td class="_CV_ce">
+				<table class="_ST_ce_ce">
+					<tr class="_CH_ce _CoE_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">26</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce _CCoEm_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">255</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce _CCoE_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">280</span>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr class="_CH_ce _Es_ce">
+			<td class="_CV_ce">
+				<table class="_ST_ce_ce">
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">H</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">He</span>
+						</td>
+					</tr>
+				</table>
+			</td>
+			<td class="_CV_ce">
+				<table class="_ST_ce_ce">
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">Li</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">Be</span>
+						</td>
+					</tr>
+				</table>
+			</td>
+			<td class="_CV_ce">
+				<table class="_ST_ce_ce">
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">B</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">Na</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">C</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">Mg</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">N</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">O</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">F</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">Ne</span>
+						</td>
+					</tr>
+				</table>
+			</td>
+			<td class="_CV_ce">
+				<table class="_ST_ce_ce">
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">Al</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">K</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">Si</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">Ca</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">P</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">S</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">Cl</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">Ar</span>
+						</td>
+					</tr>
+				</table>
+			</td>
+			<td class="_CV_ce">
+				<table class="_ST_ce_ce">
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">Sc</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">Ga</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">Rb</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">Ti</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">Ge</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">Sr</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">V</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">As</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">Cr</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">Se</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">Mn</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">Br</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">Fe</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">Kr</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">Co</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">Ni</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">Cu</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">Zn</span>
+						</td>
+					</tr>
+				</table>
+			</td>
+			<td class="_CV_ce">
+				<table class="_ST_ce_ce">
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">Y</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">In</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">Cs</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">Zr</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">Sn</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">Ba</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">Nb</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">Sb</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">Mo</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">Te</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">Tc</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">I</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">Ru</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">Xe</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">Rh</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">Pd</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">Ag</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">Cd</span>
+						</td>
+					</tr>
+				</table>
+			</td>
+			<td class="_CV_ce">
+				<table class="_ST_ce_ce">
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">La</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">Lu</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">Tl</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">Fr</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">Ce</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">Hf</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">Pb</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">Ra</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">Pr</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">Ta</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">Bi</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">Nd</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">W</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">Po</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">Pm</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">Re</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">At</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">Sm</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">Os</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">Rn</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">Eu</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">Ir</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">Gd</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">Pt</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">Tb</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">Au</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">Dy</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">Hg</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">Ho</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">Er</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">Tm</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">Yb</span>
+						</td>
+					</tr>
+				</table>
+			</td>
+			<td class="_CV_ce">
+				<table class="_ST_ce_ce">
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">Ac</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">Lr</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">Nh</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">Th</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">Rf</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">Fl</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">Pa</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">Db</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">Mc</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">U</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">Sg</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">Lv</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">Np</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">Bh</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">Ts</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">Pu</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">Hs</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">Og</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">Am</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">Mt</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">Cm</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">Ds</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">Bk</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">Rg</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">Cf</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">Cn</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">Es</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">Fm</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">Md</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">No</span>
+						</td>
+					</tr>
+				</table>
+			</td>
+			<td class="_CV_ce">
+				<table class="_ST_ce_ce">
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">Uue</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">137</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">151</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">120</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">138</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">152</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">121</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">139</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">153</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">122</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">140</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">154</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">123</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">141</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">155</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">124</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">142</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">156</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">125</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">143</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">157</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">126</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">144</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">158</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">127</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">145</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">159</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">128</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">146</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">160</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">129</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">147</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">130</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">148</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">131</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">149</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">132</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">150</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">133</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">134</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">135</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">136</span>
+						</td>
+					</tr>
+				</table>
+			</td>
+			<td class="_CV_ce">
+				<table class="_ST_ce_ce">
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">161</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">179</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">162</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">180</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">163</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">181</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">164</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">182</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">165</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">183</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">166</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">184</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">167</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">185</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">168</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">186</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">169</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">187</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">170</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">188</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">171</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">189</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">172</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">190</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">173</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">191</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">174</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">192</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">175</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">176</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">177</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">178</span>
+						</td>
+					</tr>
+				</table>
+			</td>
+			<td class="_CV_ce">
+				<table class="_ST_ce_ce">
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">193</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">215</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">194</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">216</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">195</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">217</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">196</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">218</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">197</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">219</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">198</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">220</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">199</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">221</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">200</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">222</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">201</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">223</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">202</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">224</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">203</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">225</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">204</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">226</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">205</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">227</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">206</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">228</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">207</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">229</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">208</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">230</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">209</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">231</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">210</span>
+						</td>
+						<td class="_CV_ce">
+							<span class="_SSC_ce">232</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">211</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">212</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">213</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">214</span>
+						</td>
+					</tr>
+				</table>
+			</td>
+			<td class="_CV_ce">
+				<table class="_ST_ce_ce">
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">233</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">234</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">235</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">236</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">237</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">238</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">239</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">240</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">241</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">242</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">243</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">244</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">245</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">246</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">247</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">248</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">249</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">250</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">251</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">252</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">253</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">254</span>
+						</td>
+					</tr>
+				</table>
+			</td>
+			<td class="_CV_ce">
+				<table class="_ST_ce_ce">
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">255</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">256</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">257</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">258</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">259</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">260</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">261</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">262</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">263</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">264</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">265</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">266</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">267</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">268</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">269</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">270</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">271</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">272</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">273</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">274</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">275</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">276</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">277</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">278</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">279</span>
+						</td>
+					</tr>
+					<tr class="_CH_ce">
+						<td class="_CV_ce">
+							<span class="_SSC_ce">280</span>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	<!--
+		<tr class="_CH_ce">
+		</tr>
+		<tr class="_CH_ce">
+		</tr>
+		<tr class="_LCoO_ce">
+		</tr>
+		<tr class="_CoE_ce">
+		</tr>
+		<tr class="_CCoE_ce">
+		</tr>
+	-->
+	</table>
+</div>
+
+<!--
+<div class="_LCoO_ce">
+</div>
+
+<div class="_CoE_ce">
+</div>
+
+<div class="_CCoE_ce">
+</div>
+-->
+
+</body>
+</html>
