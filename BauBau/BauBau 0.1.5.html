@@ -1,0 +1,577 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Bau Bau 0.1.0 - τnTNT_☢️</title>
+	<meta charset="UTF-8">
+<style>
+
+body {
+	background: rgba(0,0,0,1);
+}
+
+button {
+	background: rgba(55,55,55,0.8);
+	border: 0.4vmin solid rgba(44,44,44,0.8);
+    border-radius: 10%;
+	color: rgba(0,0,0,0.8);
+	color: rgba(22,22,22,0.8);
+	font-size: 2.5vmin;
+	transform: translate(50%,50%);
+	transition-duration: 0.2s;
+}button.focus, button:focus {
+    outline: 0;
+    box-shadow: none!important;
+}button:hover {
+	background: rgba(88,88,88,0.8)!important;
+}
+
+._B1_ce { /*Button 1*/
+	background: rgba(55,55,55,0.8);
+	border: 0.4vmin solid rgba(44,44,44,0.8);
+    border-radius: 10%;
+	color: rgba(0,0,0,0.8);
+	color: rgba(22,22,22,0.8);
+	font-size: 2.5vmin;
+	height: 5vmin;
+	position: fixed;
+	transform: translate(50%,50%);
+	transition-duration: 0.2s;
+	width: 5vmin;
+	z-index: 16;
+}._B1_ce.focus, button:focus {
+    outline: 0;
+    box-shadow: none!important;
+}._B1_ce:hover {
+	background: rgba(88,88,88,0.8)!important;
+}
+
+._B2_ce { /*Button 2*/
+	background: rgba(44,66,44,0.8);
+	border: 0.4vmin solid rgba(44,44,44,0.8);
+    border-radius: 10%;
+	color: rgba(0,0,0,0.8);
+	color: rgba(22,22,22,0.8);
+	font-size: 2.5vmin;
+	height: 5vmin;
+	position: fixed;
+	transform: translate(50%,50%);
+	transition-duration: 0.2s;
+	width: 5vmin;
+	z-index: 16;
+}._B2_ce.focus, button:focus {
+    outline: 0;
+    box-shadow: none!important;
+}._B2_ce:hover {
+	background: rgba(66,88,88,0.8)!important;
+}
+
+._BD_ce { /*Button Div*/
+}
+
+._BS_ce { /*Button Settings*/
+	bottom: 12.5vmin;
+	left: 2.5vmin;
+}
+
+._BI_ce { /*Button Info*/
+	bottom: 5vmin;
+	left: 2.5vmin;
+}
+
+._OD1_ce { /*Overlay Div 1*/
+	background: rgba(55,55,55,0.8);
+	border: 0.4vmin solid rgba(44,44,44,0.8);
+    border-radius: 10%;
+	color: rgba(0,0,0,0.8);
+	color: rgba(22,22,22,0.8);
+	display: none;
+	font-size: 2.5vmin;
+	height: 80vmin;
+	position: fixed;
+	transform: translate(-50%,-50%);
+	transition-duration: 0.2s;
+	width: 80vmin;
+	z-index: 8;
+}._OD1_ce.focus, button:focus {
+    outline: 0;
+    box-shadow: none!important;
+}._OD1_ce:hover {
+	background: rgba(88,88,88,0.8)!important;
+}
+
+._OD2_ce { /*Overlay Div 2*/
+	background: rgba(44,66,44,0.8);
+	border: 0.4vmin solid rgba(44,44,44,0.8);
+    border-radius: 10%;
+	color: rgba(0,0,0,0.8);
+	color: rgba(22,22,22,0.8);
+	display: block;
+	font-size: 2.5vmin;
+	height: 80vmin;
+	position: fixed;
+	transform: translate(-50%,-50%);
+	transition-duration: 0.2s;
+	width: 80vmin;
+	z-index: 8;
+}._OD2_ce.focus, button:focus {
+    outline: 0;
+    box-shadow: none!important;
+}._OD2_ce:hover {
+	background: rgba(66,88,88,0.8)!important;
+}
+
+._OD_ce { /*Overlay Div*/
+}
+
+._ODS_ce { /*Overlay Div Settings*/
+	left: 50vw;
+	top: 50vh;
+}
+
+._ODST_ce { /*Overlay Div Settings Textarea*/
+}
+
+._ODI_ce { /*Overlay Div Info*/
+	left: 50vw;
+	top: 50vh;
+}
+
+._ODIT_ce { /*Overlay Div Info Textarea*/
+}
+
+._ODT_ce { /*Overlay Div Textarea*/
+	border: solid 0.2vh rgba(55,55,55,0.8);
+	border-radius: 1vmin;
+	font-size: 2.3vmin;
+	height: 3vmin;
+	padding: 1vmin;
+	position: relative;
+	text-align: center;
+	width: 12vmin;
+}
+
+._ODT1_ce { /*Overlay Div Textarea 1*/
+	background: rgba(99,99,99,0.4);
+	border-right: 1vmin;
+	text-align: right;
+	border-radius: 1vmin 0vmin 0vmin 1vmin;
+}_ODT1_ce:hover{
+	background: rgba(104,104,104,0.6)!important;
+}
+
+._ODT2_ce { /*Overlay Div Textarea 2*/
+	background: rgba(111,111,111,0.4);
+	border-left: 1vmin;
+	text-align: left;
+	border-radius: 0vmin 1vmin 1vmin 0vmin;
+}_ODT2_ce:hover{
+	background: rgba(116,116,116,0.6)!important;
+}
+
+div {
+	transition-duration: 0.4s;
+}
+
+::placeholder {
+	color: rgba(55,55,55,0.8);
+}:-ms-input-placeholder {
+	color: rgba(55,55,55,0.8);
+}::-ms-input-placeholder {
+	color: rgba(55,55,55,0.8);
+}
+
+::selection {
+  background: rgba(99,99,99,0.8);
+}::-moz-selection {
+  background: rgba(99,99,99,0.8);
+}
+
+textarea {
+	background: rgba(111,111,111,0.8);
+	color: rgba(0,0,0,0.8);
+	resize: none;
+	scrollbar-color: rgba(55,55,55,0.8) rgba(0,0,0,0);
+	scrollbar-width: thin;
+	transition-duration: 0.4s;
+}textarea:hover{
+	background: rgba(116,116,116,0.8)!important;
+}textarea.focus, textarea:focus {
+    outline: 0;
+    box-shadow: none!important;
+}
+
+::-webkit-scrollbar {
+	width: 12px;
+	background: rgba(88,88,88,0);
+	border-radius: 6px;
+	transition-duration: 0.4s;
+}::-webkit-scrollbar-track {
+	background: linear-gradient(90deg,rgba(88,88,88,0.2),rgba(0,0,0,0));
+	border-radius: 6px;
+}::-webkit-scrollbar-track:hover {
+	background: rgba(88,88,88,0.4);
+}::-webkit-scrollbar-thumb {
+	background: rgba(55,55,55,0.5);
+	border-radius: 6px;
+}::-webkit-scrollbar-thumb:hover {
+	background: rgba(55,55,55,0.8);
+}
+
+._0_ce { /*0*/
+	border: 0px;
+	margin: 0px;
+	padding: 0px;
+}
+
+._C_ce { /*Center*/
+	transform: translate(-50%,-50%);
+}._C_B_ce {
+	transform: translate(-50%,50%);
+}._C_B_R_ce {
+	transform: translate(-50%,-50%);
+}._C_R_ce {
+	transform: translate(50%,50%);
+}
+
+#_D1_de { /*Div 1*/
+	background: rgba(0,0,0,1);
+	position: absolute;
+}
+
+#_D2_de { /*Div 2*/
+	background: rgba(55,55,55,1);
+	position: absolute;
+}
+
+._P_ce {
+	background: red;
+	position: absolute;
+	transition-duration: 0.1s;
+}
+
+._O_ce {
+	position: absolute;
+}
+
+._O1_ce {
+	background: blue;
+	position: absolute;
+}
+
+._O2_ce {
+	background: purple;
+	position: absolute;
+}
+
+._O3_ce {
+	background: black;
+	position: absolute;
+}
+
+</style>
+<script>
+
+function _BT_fe(_BT_CB_fe,_BT_CD_fe) { /*Button Toggle*/
+	/*Class Button*/
+	/*Class Div*/
+	if(document.getElementsByClassName(String(_BT_CB_fe))[0].className==='_B2_ce '+String(_BT_CB_fe)) {
+		_CC_fe(document.getElementsByClassName(_BT_CB_fe)[0],'_B1_ce '+String(_BT_CB_fe));
+		_CR_fe(document.getElementsByClassName(_BT_CD_fe)[0],'_OD2_ce','_OD1_ce');
+	} else {
+		_CC_fe(document.getElementsByClassName(_BT_CB_fe)[0],'_B2_ce '+String(_BT_CB_fe));
+		_CR_fe(document.getElementsByClassName(_BT_CD_fe)[0],'_OD1_ce','_OD2_ce');
+	};
+};
+
+function _CC_fe(_CC_O_ve,_CC_CL_ve) { /*Class Change*/
+    /*Object*/
+    /*Class List*/
+    _CC_O_ve.className = String(_CC_CL_ve);
+};
+
+function _CR_fe(_CR_O_ve,_CR_C1_ve,_CR_C2_ve) { /*Class Replace*/
+    /*Object*/
+    /*Class 1*/
+    /*Class 2*/
+    _CR_O_ve.className = String(_CR_O_ve.className).split(String(_CR_C1_ve)).join(String(_CR_C2_ve));
+};
+
+function _cX_fe(_cX_V_ve) { /*div 2 dimensions convert X*/
+	/*Value*/
+	return Number(_cX_V_ve*100/_D2XV_ve);
+};
+
+function _cY_fe(_cY_V_ve) { /*div 2 dimensions convert Y*/
+	/*Value*/
+	return Number(_cY_V_ve*100/_D2YV_ve);
+};
+
+function _G_fe() {
+	document.getElementById('_D2_de').innerHTML += '<div class="_P_ce"></div>';
+	_PH_ve = 1;
+	_PW_ve = 1;
+	_PT_ve = 0;
+	_PL_ve = 0;
+	document.getElementsByClassName('_P_ce')[0].style.height = String(_cY_fe(_PH_ve))+'%';
+	document.getElementsByClassName('_P_ce')[0].style.width = String(_cX_fe(_PW_ve))+'%';
+	document.getElementsByClassName('_P_ce')[0].style.top = String(_cY_fe(_PT_ve))+'%';
+	document.getElementsByClassName('_P_ce')[0].style.left = String(_cX_fe(_PL_ve))+'%';
+	_GO_fe(document.getElementById('_D2_de'),0,1,1,1,'Block','','_O1_ce');
+	_GO_fe(document.getElementById('_D2_de'),0,2,1,1,'Block','','_O2_ce');
+	_GO_fe(document.getElementById('_D2_de'),14,6,1,1,'Block','','_O3_ce');
+};
+
+function _GO_fe(_GO_EL_ve,_GO_L_ve,_GO_T_ve,_GO_W_ve,_GO_H_ve,_GO_ET_ve,_GO_C_ve,_GO_SC_ve) { /*Generator Object*/
+	/*element Location*/
+	/*Left*/
+	/*Top*/
+	/*Width*/
+	/*Height*/
+	/*Element Type*/
+	/*Classes*/
+	/*Singolar Class*/
+	_GO_EL_ve.innerHTML += '<div class="_O_ce _OET'+String(_GO_ET_ve)+'_ce '+String(_GO_C_ve)+' '+String(_GO_SC_ve)+'"></div>';
+	_OL_ve.push(Number(_GO_L_ve));
+	_OT_ve.push(Number(_GO_T_ve));
+	_OW_ve.push(Number(_GO_W_ve));
+	_OH_ve.push(Number(_GO_H_ve));
+	document.getElementsByClassName('_O_ce')[_OH_ve.length-1].style.height = String(_cY_fe(_OH_ve[_OH_ve.length-1]))+'%';
+	document.getElementsByClassName('_O_ce')[_OW_ve.length-1].style.width = String(_cX_fe(_OW_ve[_OW_ve.length-1]))+'%';
+	document.getElementsByClassName('_O_ce')[_OT_ve.length-1].style.top = String(_cY_fe(_OT_ve[_OT_ve.length-1]))+'%';
+	document.getElementsByClassName('_O_ce')[_OL_ve.length-1].style.left = String(_cX_fe(_OL_ve[_OL_ve.length-1]))+'%';
+};
+
+function _GOD_fe() { /*Generate Overlay Div*/
+	//~ document.getElementsByClassName('_ODSD_ce')[0].innerHTML;
+};
+
+function _OC_fe(_OC_1L_ve,_OC_1T_ve,_OC_1W_ve,_OC_1H_ve,_OC_2L_ve,_OC_2T_ve,_OC_2W_ve,_OC_2H_ve) { /*Objects Collide*/
+	/*1 Left*/
+	/*1 Top*/
+	/*1 Width*/
+	/*1 Height*/
+	/*2 Left*/
+	/*2 Top*/
+	/*2 Width*/
+	/*2 Height*/
+	if(Number(_OC_2L_ve)>=Number(_OC_1W_ve)+Number(_OC_1L_ve)||Number(_OC_1L_ve)>=Number(_OC_2W_ve)+Number(_OC_2L_ve)||Number(_OC_2T_ve)>=Number(_OC_1H_ve)+Number(_OC_1T_ve)||Number(_OC_1T_ve)>=Number(_OC_2H_ve)+Number(_OC_2T_ve)) {
+	} else {
+		_PSM_ve = 1;
+	};
+};
+
+function _OCN_fe(_OC_1L_ve,_OC_1T_ve,_OC_1W_ve,_OC_1H_ve,_OC_2L_ve,_OC_2T_ve,_OC_2W_ve,_OC_2H_ve) { /*Objects Collide Not*/
+	/*1 Left*/
+	/*1 Top*/
+	/*1 Width*/
+	/*1 Height*/
+	/*2 Left*/
+	/*2 Top*/
+	/*2 Width*/
+	/*2 Height*/
+	if(Number(_OC_2L_ve)>=Number(_OC_1W_ve)+Number(_OC_1L_ve)||Number(_OC_1L_ve)>=Number(_OC_2W_ve)+Number(_OC_2L_ve)||Number(_OC_2T_ve)>=Number(_OC_1H_ve)+Number(_OC_1T_ve)||Number(_OC_1T_ve)>=Number(_OC_2H_ve)+Number(_OC_2T_ve)) {
+		_PSM_ve = 1;
+	} else {
+	};
+};
+
+function _OKD_fe(_OKD_I_ve) { /*On Key Down*/
+	/*Input*/
+	_OKD_V_ve = _OKD_I_ve.which||_OKD_I_ve.keyCode; /*Value*/
+	if(_OKD_V_ve == 220) { /**\*/
+		while(document.getElementsByClassName('_B2_ce').length!=0) {
+			_CR_fe(document.getElementsByClassName('_B2_ce')[0],'_B2_ce','_B1_ce');
+			_CR_fe(document.getElementsByClassName('_OD2_ce')[0],'_OD2_ce','_OD1_ce');
+		};
+	};
+	if(_OKD_V_ve == 37) { /**left*/
+		_PL_ve = Number(_PL_ve)-1;
+		document.getElementsByClassName('_P_ce')[0].style.left = String(_cX_fe(_PL_ve))+'%';
+	};
+	if(_OKD_V_ve == 38) { /**up*/
+		_PT_ve = Number(_PT_ve)-1;
+		document.getElementsByClassName('_P_ce')[0].style.top = String(_cY_fe(_PT_ve))+'%';
+	};
+	if(_OKD_V_ve == 39) { /**right*/
+		_PL_ve = Number(_PL_ve)+1;
+		document.getElementsByClassName('_P_ce')[0].style.left = String(_cX_fe(_PL_ve))+'%';
+	};
+	if(_OKD_V_ve == 40) { /**down*/
+		_PT_ve = Number(_PT_ve)+1;
+		document.getElementsByClassName('_P_ce')[0].style.top = String(_cY_fe(_PT_ve))+'%';
+	};
+	if(_OKD_V_ve == 73) { /**I*/
+		_BT_fe('_BI_ce','_ODI_ce');
+	};
+	if(_OKD_V_ve == 79) { /**O*/
+		_BT_fe('_BS_ce','_ODS_ce');
+	};
+	_OCN_fe(_PL_ve,_PT_ve,_PW_ve,_PH_ve,0,0,_D2XV_ve,_D2YV_ve);
+	for(var _OKD_I1_ve=0; _OKD_I1_ve<document.getElementsByClassName('_O_ce').length; _OKD_I1_ve++) {
+		_OC_fe(_PL_ve,_PT_ve,_PW_ve,_PH_ve,_OL_ve[_OKD_I1_ve],_OT_ve[_OKD_I1_ve],_OW_ve[_OKD_I1_ve],_OH_ve[_OKD_I1_ve]);
+	};
+	if(_PSM_ve==1) {
+		if(_OKD_V_ve == 37) { /**left*/
+			_PL_ve = Number(_PL_ve)+1;
+			document.getElementsByClassName('_P_ce')[0].style.left = String(_cX_fe(_PL_ve))+'%';
+		};
+		if(_OKD_V_ve == 38) { /**up*/
+			_PT_ve = Number(_PT_ve)+1;
+			document.getElementsByClassName('_P_ce')[0].style.top = String(_cY_fe(_PT_ve))+'%';
+		};
+		if(_OKD_V_ve == 39) { /**right*/
+			_PL_ve = Number(_PL_ve)-1;
+			document.getElementsByClassName('_P_ce')[0].style.left = String(_cX_fe(_PL_ve))+'%';
+		};
+		if(_OKD_V_ve == 40) { /**down*/
+			_PT_ve = Number(_PT_ve)-1;
+			document.getElementsByClassName('_P_ce')[0].style.top = String(_cY_fe(_PT_ve))+'%';
+		};
+	};
+	_PSM_ve = 0;
+};
+
+function _OKP_fe(_OKP_I_ve) { /*On Key Press*/
+	/*Input*/
+	_OKP_V_ve = _OKP_I_ve.which||_OKP_I_ve.keyCode; /*Value*/
+};
+
+function _OMM_fe(_OMM_P_ve) { /*On Mouse Move*/
+	/*Position*/
+	_MX_ve = _OMM_P_ve.pageX;
+	_MY_ve = _OMM_P_ve.pageY;
+};
+
+function _R_fe() { /*Resize*/
+	_WH_ve = window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight;
+	_WW_ve = window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth;
+	_WR_ve = _WW_ve/_WH_ve;
+	if(_WH_ve<_WW_ve) {
+		_WT_ve = 0;
+	} else if(_WH_ve>_WW_ve) {
+		_WT_ve = 1;
+	} else {
+		_WT_ve = 2;
+	};
+	/**Div 1 Misure*/
+	_D1R_ve = _D1RX_ve/_D1RY_ve;
+	if(_WR_ve>_D1R_ve) {
+		_D1H_ve = _WH_ve;
+		_D1W_ve = _D1R_ve*_WH_ve;
+		document.getElementById('_D1_de').style.height = String(_D1H_ve)+'px';
+		document.getElementById('_D1_de').style.width = String(_D1W_ve)+'px';
+	} else {
+		_D1H_ve = Math.pow(_D1R_ve,-1)*_WW_ve;
+		_D1W_ve = _WW_ve;
+		document.getElementById('_D1_de').style.height = String(_D1H_ve)+'px';
+		document.getElementById('_D1_de').style.width = String(_D1W_ve)+'px';
+	};
+	_D1L_ve = (_WW_ve-_D1W_ve)/2;
+	_D1T_ve = (_WH_ve-_D1H_ve)/2;
+	document.getElementById('_D1_de').style.left = String(_D1L_ve)+'px';
+	document.getElementById('_D1_de').style.top = String(_D1T_ve)+'px';
+	/**X Y Misurament*/
+	_XM_ve = _D1W_ve/_D1RX_ve;
+	_YM_ve = _D1H_ve/_D1RY_ve;
+	/**Div 2 Misure*/
+	_D2H_ve = _YM_ve*_D2RY_ve;
+	_D2W_ve = _XM_ve*_D2RX_ve;
+	document.getElementById('_D2_de').style.height = String(_D2H_ve)+'px';
+	document.getElementById('_D2_de').style.width = String(_D2W_ve)+'px';
+	_D2L_ve = (_D1W_ve-_D2W_ve)/2;
+	_D2T_ve = (_D1H_ve-_D2H_ve)/2;
+	document.getElementById('_D2_de').style.left = String(_D2L_ve)+'px';
+	document.getElementById('_D2_de').style.top = String(_D2T_ve)+'px';
+};
+
+function _SI100_fe() { /*Set Interval 100*/
+};
+
+function _SI10_fe() { /*Set Interval 10*/
+};
+
+var _D1H_ve; /*Div 1 Height*/
+var _D1W_ve; /*Div 1 Width*/
+var _D1R_ve; /*Div 1 Ratio*/
+var _D1RX_ve = 16; /*Div 1 Ratio X*/
+var _D1RY_ve = 9; /*Div 1 Ratio Y*/
+var _D1L_ve; /*Div 1 Left*/
+var _D1T_ve; /*Div 1 Top*/
+
+var _D2H_ve; /*Div 2 Height*/
+var _D2W_ve; /*Div 2 Width*/
+var _D2R_ve; /*Div 2 Ratio*/
+var _D2RX_ve = 15.5; /*Div 2 Ratio X*/
+var _D2RY_ve = 8.5; /*Div 2 Ratio Y*/
+var _D2L_ve; /*Div 2 Left*/
+var _D2T_ve; /*Div 2 Top*/
+var _D2XV_ve = 31; /*Div 2 X Value*/
+var _D2YV_ve = 17; /*Div 2 Y Value*/
+
+var _MX_ve; /*Mouse X*/
+var _MY_ve; /*Mouse Y*/
+
+var _O_SI100_ve; /*Set Interval 100*/
+var _O_SI10_ve; /*Set Interval 10*/
+
+var _PH_ve; /*Player Height*/
+var _PW_ve; /*Player Width*/
+var _PT_ve; /*Player Top*/
+var _PL_ve; /*Player Left*/
+var _PSM_ve = 0; /*Player Stop Move*/ /*0=Play; 1=Stop*/
+
+var _OH_ve = []; /*Object Height*/
+var _OW_ve = []; /*Object Width*/
+var _OT_ve = []; /*Object Top*/
+var _OL_ve = []; /*Object Left*/
+
+var _WH_ve; /*Window Height*/
+var _WW_ve; /*Window Width*/
+var _WT_ve; /*Window Type*/ /*0=Landscape; 1=Protrait; 2=Square*/
+var _WR_ve; /*Window Ratio*/
+
+var _XM_ve; /*X Misure*/
+var _YM_ve; /*Y Misure*/
+
+window.addEventListener('mousemove', _OMM_fe, false);
+window.addEventListener('resize', _R_fe);
+
+window.onload = function _O_fe() { /*Onload*/
+	document.body.innerHTML += '<div class="_0_ce" id="_D1_de"></div>';
+	document.getElementById('_D1_de').innerHTML += '<div class="_0_ce" id="_D2_de"></div>';
+	_R_fe();
+	_O_SI100_ve = setInterval(_SI100_fe,100);
+	_O_SI10_ve = setInterval(_SI10_fe,10);
+	_GOD_fe();
+	_G_fe();
+};
+
+</script>
+</head>
+<body class="_0_ce" onkeydown="_OKD_fe(event)" onkeypress="_OKP_fe(event)">
+
+<div class="_BD_ce">
+	<button class="_B1_ce _BS_ce" onclick="_BT_fe('_BS_ce','_ODS_ce');">⚙️</button>
+	<button class="_B1_ce _BI_ce" onclick="_BT_fe('_BI_ce','_ODI_ce');">ℹ</button>
+</div>
+<div class="_OD_ce">
+	<div class="_OD1_ce _ODS_ce">
+		<center>
+			Options
+			<div class="_ODSD_ce">
+				<textarea class="_0_ce _ODT_ce _ODST_ce _ODT1_ce"></textarea><textarea class="_0_ce _ODT_ce _ODST_ce _ODT2_ce"></textarea>
+			</div>
+		</center>
+	</div>
+	<div class="_OD1_ce _ODI_ce">
+		<center>
+			Info
+			<div class="_ODID_ce">
+				<textarea class="_0_ce _ODT_ce _ODIT_ce _ODT1_ce"></textarea><textarea class="_0_ce _ODT_ce _ODIT_ce _ODT2_ce"></textarea>
+			</div>
+		</center>
+	</div>
+</div>
+
+</body>
+</html>

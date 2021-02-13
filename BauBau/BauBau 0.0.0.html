@@ -1,0 +1,424 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>BauBau - τnTNT_☢️</title>
+	<meta charset="UTF-8">
+<style>
+
+body {
+	background: rgba(44,44,44,0.8);
+}
+
+button {
+	color: rgba(0,0,0,0.8);
+}button.focus, button:focus {
+    outline: 0;
+    box-shadow: none!important;
+}button:hover {
+	background: rgba(88,88,88,0.8)!important;
+}
+
+._C_ce {
+	transform: translate(-50%,-50%);
+}._C_B_ce {
+	transform: translate(-50%,50%);
+}._C_B_R_ce {
+	transform: translate(-50%,-50%);
+}._C_R_ce {
+	transform: translate(50%,50%);
+}
+
+div {
+	transition-duration: 0.4s;
+}
+
+._DS_ce {
+	background: rgba(55,55,55,0.8);
+	border: 0.4vmin solid rgba(44,44,44,0.8);
+	border-radius: 5%;
+}
+
+._F_C_ce {
+	color: rgba(22,22,22,0.8);
+}._F_C_1_ce {
+	color: rgba(33,33,33,0.8);
+}._F_S_ce {
+	font-size: 1em;
+}._F_S_1_ce {
+	font-size: 1vmin;
+}._F_S_2_ce {
+	font-size: 5vmin;
+}._F_S_3_ce {
+	font-size: 10vmin;
+}._F_S_4_ce {
+	font-size: 2vmin;
+}._F_S_5_ce {
+	font-size: 2.5vmin;
+}
+
+::placeholder {
+	color: rgba(55,55,55,0.8);
+}:-ms-input-placeholder {
+	color: rgba(55,55,55,0.8);
+}::-ms-input-placeholder {
+	color: rgba(55,55,55,0.8);
+}
+
+._P_ce {
+}._P_A_ce {
+	position: absolute;
+}._P_F_ce {
+	position: fixed;
+}._P_R_ce {
+	position: relative;
+}
+
+textarea {
+	color: rgba(0,0,0,0.8);
+	scrollbar-color: rgba(55,55,55,0.8) rgba(0,0,0,0);
+	scrollbar-width: thin;
+	transition-duration: 0.4s;
+}textarea:hover{
+	background: rgba(116,116,116,0.8)!important;
+}textarea.focus, textarea:focus {
+    outline: 0;
+    box-shadow: none!important;
+}
+
+._TD_ce {
+	transition-duration: 0.2s;
+}
+
+::-webkit-scrollbar {
+	width: 0.5vw;
+	background: rgba(88,88,88,0);
+	border-radius: 0.25vw;
+	transition-duration: 0.4s;
+}::-webkit-scrollbar-track {
+	background: linear-gradient(90deg,rgba(88,88,88,0.2),rgba(0,0,0,0));
+	border-radius: 0.25vw;
+}::-webkit-scrollbar-track:hover {
+	background: rgba(88,88,88,0.4);
+}::-webkit-scrollbar-thumb {
+	background: rgba(55,55,55,0.5);
+	border-radius: 0.25vw;
+}::-webkit-scrollbar-thumb:hover {
+	background: rgba(55,55,55,0.8);
+}
+
+._0_ce {
+	border: 0px;
+	margin: 0px;
+	padding: 0px;
+}
+
+._D3_ce {
+	background: rgba(44,44,255,0.1);
+	position: relative;
+}
+
+#_D1_de {
+	background: rgba(255,44,44,0.1);
+	position: relative;
+}
+
+#_D2_de {
+	background: rgba(44,255,44,0.1);
+	position: relative;
+}
+
+#_D3_1_de {
+}
+
+#_D3_2_de {
+}
+
+#_DS_de{
+	background: rgba(44,255,255,0.1);
+	position: fixed;
+	transition-duration: 0.4s !important;
+}
+
+#_DI_de{
+	background: rgba(44,255,255,0.1);
+	position: fixed;
+	transition-duration: 0.4s !important;
+}
+
+</style>
+<script>
+
+var _B_S_S_ve; //Button /Setting /State //0=None; 1=Block
+var _B_I_S_ve; //Button /Info /State //0=None; 1=Block
+
+var _GRX_ve; //Golden Ratio X
+var _GRY_ve; //Golden Ratio Y
+var _GRZ_ve; //Golden Ratio Z
+var _GRXS_ve; //Golden Ratio X Size
+var _GRYS_ve; //Golden Ratio Y Size
+var _GRZS_ve; //Golden Ratio Z Size
+
+var _WH_ve; //Window Height
+var _WW_ve; //Window Width
+var _WT_ve; //Window Type //0=Landscape; 1=Protrait; 2=Square
+var _WR_ve; //Window Ratio
+
+var _DX_ve; //Div 1 X
+var _DY_ve; //Div 1 Y
+var _DZ_ve; //Div 1 Z
+
+var _D1H_ve; //Div 1 Height
+var _D1W_ve; //Div 1 Width
+var _D1R_ve; //Div 1 Ratio
+var _D1L_ve; //Div 1 Left
+var _D1T_ve; //Div 1 Top
+
+var _D2H_ve; //Div 2 Height
+var _D2W_ve; //Div 2 Width
+var _D2R_ve; //Div 2 Ratio
+var _D2L_ve; //Div 2 Left
+var _D2T_ve; //Div 2 Top
+
+var _D3_1H_ve; //Div 3 /1 Height
+var _D3_1W_ve; //Div 3 /1 Width
+var _D3_1R_ve; //Div 3 /1 Ratio
+var _D3_1L_ve; //Div 3 /1 Left
+var _D3_1T_ve; //Div 3 /1 Top
+
+var _D3_2H_ve; //Div 3 /2 Height
+var _D3_2W_ve; //Div 3 /2 Width
+var _D3_2R_ve; //Div 3 /2 Ratio
+var _D3_2L_ve; //Div 3 /2 Left
+var _D3_2T_ve; //Div 3 /2 Top
+var _D3_2Ri_ve; //Div 3 /2 Right
+var _D3_2B_ve; //Div 3 /2 Bottom
+
+var _DSH_ve; //Div S Height
+var _DSW_ve; //Div S Width
+var _DSR_ve; //Div S Ratio
+var _DSL_ve; //Div S Left
+var _DST_ve; //Div S Top
+
+var _DIH_ve; //Div I Height
+var _DIW_ve; //Div I Width
+var _DIR_ve; //Div I Ratio
+var _DIL_ve; //Div I Left
+var _DIT_ve; //Div I Top
+
+function _B_S_fe() { //Button /Setting
+	if(_B_S_S_ve==0) {
+		_B_S_S_ve = 1;
+		document.getElementById('_DS_de').style.display = 'block';
+		document.getElementById('_DS_de').style.transform = 'scale(1)';
+	} else {
+		_B_S_S_ve = 0;
+		document.getElementById('_DS_de').style.display = 'none';
+		document.getElementById('_DS_de').style.transform = 'scale(0)';
+	};
+};
+
+function _B_I_fe() { //Button /Info
+	if(_B_I_S_ve==0) {
+		_B_I_S_ve = 1;
+		document.getElementById('_DI_de').style.display = 'block';
+		document.getElementById('_DI_de').style.transform = 'scale(1)';
+	} else {
+		_B_I_S_ve = 0;
+		document.getElementById('_DI_de').style.display = 'none';
+		document.getElementById('_DI_de').style.transform = 'scale(0)';
+	};
+};
+
+function _OKD_fe(_OKD_I_ve) { //On Key Down
+	//Input
+	_OKD_V_ve = _OKD_I_ve.which||_OKD_I_ve.keyCode; //Value
+	if (_OKD_V_ve == 73) { ////I
+		_B_I_fe();
+	};
+	if (_OKD_V_ve == 83) { ////S
+		_B_S_fe();
+	};
+	if (_OKD_V_ve == 220) { ////\
+	};
+};
+
+function _OKP_fe(_OKP_I_ve) { //On Key Press
+	//Input
+	_OKP_V_ve = _OKP_I_ve.which||_OKP_I_ve.keyCode; //Value
+};
+
+function _R_fe() { //Resize
+	_WH_ve = window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight;
+	_WW_ve = window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth;
+	_WR_ve = _WW_ve/_WH_ve;
+	if(_WH_ve<_WW_ve) {
+		_WT_ve = 0;
+	} else if(_WH_ve>_WW_ve) {
+		_WT_ve = 1;
+	} else {
+		_WT_ve = 2;
+	};
+	if(_WT_ve==0||_WT_ve==2) {
+		////Div 1 Misure
+		_D1R_ve = (2*_GRY_ve+2*_GRZ_ve)/(_GRX_ve+0.5*_GRZ_ve);
+		if(_WR_ve>_D1R_ve) {
+			_D1H_ve = _WH_ve;
+			_D1W_ve = _D1R_ve*_WH_ve;
+			document.getElementById('_D1_de').style.height = String(_D1H_ve)+'px';
+			document.getElementById('_D1_de').style.width = String(_D1W_ve)+'px';
+		} else {
+			_D1H_ve = Math.pow(_D1R_ve,-1)*_WW_ve;
+			_D1W_ve = _WW_ve;
+			document.getElementById('_D1_de').style.height = String(_D1H_ve)+'px';
+			document.getElementById('_D1_de').style.width = String(_D1W_ve)+'px';
+		};
+		_D1L_ve = (_WW_ve-_D1W_ve)/2;
+		_D1T_ve = (_WH_ve-_D1H_ve)/2;
+		document.getElementById('_D1_de').style.left = String(_D1L_ve)+'px';
+		document.getElementById('_D1_de').style.top = String(_D1T_ve)+'px';
+		////Golden Ratio Misure
+		_GRXS_ve = _D1H_ve/(_GRX_ve+0.5*_GRZ_ve);
+		_GRYS_ve = _GRXS_ve*_GRY_ve;
+		_GRZS_ve = _GRXS_ve*_GRZ_ve;
+		////Div 2 Misure
+		_D2H_ve = _GRXS_ve;
+		_D2W_ve = 2*_GRYS_ve+1.5*_GRZS_ve;
+		document.getElementById('_D2_de').style.height = String(_D2H_ve)+'px';
+		document.getElementById('_D2_de').style.width = String(_D2W_ve)+'px';
+		_D2L_ve = _GRZS_ve/4;
+		_D2T_ve = _GRZS_ve/4;
+		document.getElementById('_D2_de').style.left = String(_D2L_ve)+'px';
+		document.getElementById('_D2_de').style.top = String(_D2T_ve)+'px';
+		////Div 3 1 Misure
+		_D3_1H_ve = _GRXS_ve;
+		_D3_1W_ve = _GRYS_ve+0.5*_GRZS_ve;
+		document.getElementById('_D3_1_de').style.height = String(_D3_1H_ve)+'px';
+		document.getElementById('_D3_1_de').style.width = String(_D3_1W_ve)+'px';
+		_D3_1L_ve = 0;
+		_D3_1T_ve = 0;
+		document.getElementById('_D3_1_de').style.left = String(_D3_1L_ve)+'px';
+		document.getElementById('_D3_1_de').style.top = String(_D3_1T_ve)+'px';
+		document.getElementById('_D3_1_de').style.float = 'left';
+		////Div 3 2 Misure
+		_D3_2H_ve = _GRXS_ve;
+		_D3_2W_ve = _GRYS_ve+0.5*_GRZS_ve;
+		document.getElementById('_D3_2_de').style.height = String(_D3_2H_ve)+'px';
+		document.getElementById('_D3_2_de').style.width = String(_D3_2W_ve)+'px';
+		_D3_2Ri_ve = 0;
+		_D3_2T_ve = 0;
+		document.getElementById('_D3_2_de').style.right = String(_D3_2Ri_ve)+'px';
+		document.getElementById('_D3_2_de').style.top = String(_D3_2T_ve)+'px';
+		document.getElementById('_D3_1_de').style.float = 'right';
+	} else {
+		////Div 1 Misure
+		_D1R_ve = (_GRY_ve+0.5*_GRZ_ve)/(2*_GRX_ve+0.25*_GRZ_ve);
+		if(_WR_ve>_D1R_ve) {
+			_D1H_ve = _WH_ve;
+			_D1W_ve = _D1R_ve*_WH_ve;
+			document.getElementById('_D1_de').style.height = String(_D1H_ve)+'px';
+			document.getElementById('_D1_de').style.width = String(_D1W_ve)+'px';
+		} else {
+			_D1H_ve = Math.pow(_D1R_ve,-1)*_WW_ve;
+			_D1W_ve = _WW_ve;
+			document.getElementById('_D1_de').style.height = String(_D1H_ve)+'px';
+			document.getElementById('_D1_de').style.width = String(_D1W_ve)+'px';
+		};
+		_D1L_ve = (_WW_ve-_D1W_ve)/2;
+		_D1T_ve = (_WH_ve-_D1H_ve)/2;
+		document.getElementById('_D1_de').style.left = String(_D1L_ve)+'px';
+		document.getElementById('_D1_de').style.top = String(_D1T_ve)+'px';
+		////Golden Ratio Misure
+		_GRXS_ve = _D1H_ve/(2*_GRX_ve+0.25*_GRZ_ve);
+		_GRYS_ve = _GRXS_ve*_GRY_ve;
+		_GRZS_ve = _GRXS_ve*_GRZ_ve;
+		////Div 2 Misure
+		_D2H_ve = 2*_GRXS_ve+0.25*_GRZS_ve;
+		_D2W_ve = _GRYS_ve+0.5*_GRZS_ve;
+		document.getElementById('_D2_de').style.height = String(_D2H_ve)+'px';
+		document.getElementById('_D2_de').style.width = String(_D2W_ve)+'px';
+		_D2L_ve = 0;
+		_D2T_ve = 0;
+		document.getElementById('_D2_de').style.left = String(_D2L_ve)+'px';
+		document.getElementById('_D2_de').style.top = String(_D2T_ve)+'px';
+		////Div 3 1 Misure
+		_D3_1H_ve = _GRXS_ve;
+		_D3_1W_ve = _GRYS_ve+0.5*_GRZS_ve;
+		document.getElementById('_D3_1_de').style.height = String(_D3_1H_ve)+'px';
+		document.getElementById('_D3_1_de').style.width = String(_D3_1W_ve)+'px';
+		_D3_1L_ve = 0;
+		_D3_1T_ve = 0;
+		document.getElementById('_D3_1_de').style.left = String(_D3_1L_ve)+'px';
+		document.getElementById('_D3_1_de').style.top = String(_D3_1T_ve)+'px';
+		document.getElementById('_D3_1_de').style.float = 'none';
+		////Div 3 2 Misure
+		_D3_2H_ve = _GRXS_ve;
+		_D3_2W_ve = _GRYS_ve+0.5*_GRZS_ve;
+		document.getElementById('_D3_2_de').style.height = String(_D3_2H_ve)+'px';
+		document.getElementById('_D3_2_de').style.width = String(_D3_2W_ve)+'px';
+		_D3_2L_ve = 0;
+		_D3_2T_ve = 0.25*_GRZS_ve;
+		document.getElementById('_D3_2_de').style.left = String(_D3_2L_ve)+'px';
+		document.getElementById('_D3_2_de').style.top = String(_D3_2T_ve)+'px';
+		document.getElementById('_D3_1_de').style.float = 'none';
+	};
+	////Div Setting
+	_DSH_ve = _GRXS_ve;
+	_DSW_ve = _GRXS_ve;
+	_DSR_ve = _DSW_ve/_DSH_ve;
+	_DSL_ve = (_WW_ve-_DSW_ve)/2;
+	_DST_ve = (_WH_ve-_DSH_ve)/2;
+	document.getElementById('_DS_de').style.height = String(_DSH_ve)+'px';
+	document.getElementById('_DS_de').style.width = String(_DSW_ve)+'px';
+	document.getElementById('_DS_de').style.left = String(_DSL_ve)+'px';
+	document.getElementById('_DS_de').style.top = String(_DST_ve)+'px';
+	////Div Info
+	_DIH_ve = _GRXS_ve;
+	_DIW_ve = _GRXS_ve;
+	_DIR_ve = _DIW_ve/_DIH_ve;
+	_DIL_ve = (_WW_ve-_DIW_ve)/2;
+	_DIT_ve = (_WH_ve-_DIH_ve)/2;
+	document.getElementById('_DI_de').style.height = String(_DIH_ve)+'px';
+	document.getElementById('_DI_de').style.width = String(_DIW_ve)+'px';
+	document.getElementById('_DI_de').style.left = String(_DIL_ve)+'px';
+	document.getElementById('_DI_de').style.top = String(_DIT_ve)+'px';
+};
+
+function _SI100_fe() { //Set Interval 100
+};
+
+window.addEventListener('resize', _R_fe);
+
+window.onload = function _O_fe() { //Onload
+	document.body.innerHTML += '<div id="_DS_de">⚙️</div>'
+	document.getElementById('_DS_de').style.display = 'none';
+	document.getElementById('_DS_de').style.transform = 'scale(0)';
+	document.body.innerHTML += '<button id="_B_S_de" class="_C_B_ce _DS_ce _F_C_ce _F_S_5_ce _P_F_ce _TD_ce" onclick="_B_S_fe()" style="bottom:5vmin;height:5vmin;left:5vmin;width:5vmin;">⚙️</button>'
+	_B_S_S_ve = 0;
+	document.body.innerHTML += '<div id="_DI_de">⚙️</div>'
+	document.getElementById('_DI_de').style.display = 'none';
+	document.getElementById('_DI_de').style.transform = 'scale(0)';
+	document.body.innerHTML += '<button id="_B_I_de" class="_C_B_ce _DS_ce _F_C_ce _F_S_5_ce _P_F_ce _TD_ce" onclick="_B_I_fe()" style="bottom:12.5vmin;height:5vmin;left:5vmin;width:5vmin;">ℹ</button>'
+	_B_I_S_ve = 0;
+	document.body.innerHTML += '<div class="_0_ce" id="_D1_de"></div>';
+	document.getElementById('_D1_de').innerHTML += '<div class="_0_ce" id="_D2_de"></div>';
+	document.getElementById('_D2_de').innerHTML += '<div class="_0_ce _D3_ce" id="_D3_1_de"></div>';
+	document.getElementById('_D2_de').innerHTML += '<div class="_0_ce _D3_ce" id="_D3_2_de"></div>';
+	_GRX_ve = 1;
+	_GRY_ve = (Math.sqrt(5)-1)/2;
+	_GRZ_ve = (3-Math.sqrt(5))/2;
+	_D1R_ve = (2*_GRY_ve+2.5*_GRZ_ve)/(_GRX_ve+_GRZ_ve);
+	_D2R_ve = (2*_GRY_ve+1.5*_GRZ_ve)/_GRX_ve;
+	_D3_1R_ve = (_GRY_ve+0.5*_GRZ_ve)/_GRX_ve;
+	_D3_2R_ve = (_GRY_ve+0.5*_GRZ_ve)/_GRX_ve;
+	_R_fe();
+	_O_SI100_ve = setInterval(_SI100_fe,100);
+};
+
+/*X=1 Y=((1/2)*(-1+sqrt(5))) Z=((1/2)*(3-sqrt(5)))*/
+
+</script>
+</head>
+<body class="_0_ce" onkeypress="_OKP_fe(event)" onkeydown="_OKD_fe(event)">
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+0.0.0
+Added Div1, Div2, Div3_1 and Div3_2.
+Added buttons Info and Setting.
+Added overlay div of info and setting.
+Change colors.
+
+0.0.1
+Change dimensions.
+Change styles.
+
+0.1.0
+Reset all.
+Added Div1 and Div2.
+Added player.
+Added movement a set of 4 arrow's keys.
+Added 2 objects.
+Added object collide.
+Added div not collide.
+
+0.1.1
+Resized dimensions of objects into Div2.
+
+0.1.2
+Added buttons Info and Setting.
+Added overlay div of info and setting.
+
+0.1.3
+Resized dimensions of objects into Div2, now is a virtual grid 31*17.
+
+0.1.4
+Changed generation's system of objects.
+
+0.1.5
+Added a div in setting's overlay and info's overlay.
+Added an example's set of 2 divs for future information in setting's overlay and info's overlay.
+
+0.1.6
+Changed generation's system of divs into setting's overlay and info's overlay.
+Added a circle shaped div following the mouse.
+Made the div that follows the mouse clickable through.
+
+0.1.7
+Changed the speed of the div following the mouse, now is 0.2s.
+
+0.1.8

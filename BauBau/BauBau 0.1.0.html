@@ -1,0 +1,383 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Bau Bau 0.1.0 - τnTNT_☢️</title>
+	<meta charset="UTF-8">
+<style>
+
+body {
+	background: rgba(0,0,0,1);
+}
+
+button {
+	background: rgba(55,55,55,0.8);
+	border: 0.4vmin solid rgba(44,44,44,0.8);
+    border-radius: 10%;
+	color: rgba(0,0,0,0.8);
+	color: rgba(22,22,22,0.8);
+	font-size: 2.5vmin;
+	transform: translate(50%,50%);
+	transition-duration: 0.2s;
+}button.focus, button:focus {
+    outline: 0;
+    box-shadow: none!important;
+}button:hover {
+	background: rgba(88,88,88,0.8)!important;
+}
+
+._BS1_ce {
+	background: rgba(55,55,55,0.8);
+	border: 0.4vmin solid rgba(44,44,44,0.8);
+    border-radius: 10%;
+	color: rgba(0,0,0,0.8);
+	color: rgba(22,22,22,0.8);
+	font-size: 2.5vmin;
+	transform: translate(50%,50%);
+	transition-duration: 0.2s;
+}._BS1_ce.focus, button:focus {
+    outline: 0;
+    box-shadow: none!important;
+}._BS1_ce:hover {
+	background: rgba(88,88,88,0.8)!important;
+}
+
+._BS2_ce {
+	background: rgba(44,66,44,0.8);
+	border: 0.4vmin solid rgba(44,44,44,0.8);
+    border-radius: 10%;
+	color: rgba(0,0,0,0.8);
+	color: rgba(22,22,22,0.8);
+	font-size: 2.5vmin;
+	transform: translate(50%,50%);
+	transition-duration: 0.2s;
+}._BS2_ce.focus, button:focus {
+    outline: 0;
+    box-shadow: none!important;
+}._BS2_ce:hover {
+	background: rgba(66,88,88,0.8)!important;
+}
+
+div {
+	transition-duration: 0.4s;
+}
+
+::placeholder {
+	color: rgba(55,55,55,0.8);
+}:-ms-input-placeholder {
+	color: rgba(55,55,55,0.8);
+}::-ms-input-placeholder {
+	color: rgba(55,55,55,0.8);
+}
+
+::selection {
+  background: rgba(99,99,99,0.8);
+}::-moz-selection {
+  background: rgba(99,99,99,0.8);
+}
+
+textarea {
+	color: rgba(0,0,0,0.8);
+	scrollbar-color: rgba(55,55,55,0.8) rgba(0,0,0,0);
+	scrollbar-width: thin;
+	transition-duration: 0.4s;
+}textarea:hover{
+	background: rgba(116,116,116,0.8)!important;
+}textarea.focus, textarea:focus {
+    outline: 0;
+    box-shadow: none!important;
+}
+
+::-webkit-scrollbar {
+	width: 12px;
+	background: rgba(88,88,88,0);
+	border-radius: 6px;
+	transition-duration: 0.4s;
+}::-webkit-scrollbar-track {
+	background: linear-gradient(90deg,rgba(88,88,88,0.2),rgba(0,0,0,0));
+	border-radius: 6px;
+}::-webkit-scrollbar-track:hover {
+	background: rgba(88,88,88,0.4);
+}::-webkit-scrollbar-thumb {
+	background: rgba(55,55,55,0.5);
+	border-radius: 6px;
+}::-webkit-scrollbar-thumb:hover {
+	background: rgba(55,55,55,0.8);
+}
+
+._0_ce { /*0*/
+	border: 0px;
+	margin: 0px;
+	padding: 0px;
+}
+
+._C_ce { /*Center*/
+	transform: translate(-50%,-50%);
+}._C_B_ce {
+	transform: translate(-50%,50%);
+}._C_B_R_ce {
+	transform: translate(-50%,-50%);
+}._C_R_ce {
+	transform: translate(50%,50%);
+}
+
+#_D1_de { /*Div 1*/
+	background: rgba(0,0,0,1);
+	position: absolute;
+}
+
+#_D2_de { /*Div 2*/
+	background: rgba(55,55,55,1);
+	position: absolute;
+}
+
+._P_ce {
+	background: red;
+	position: absolute;
+	transition-duration: 0.1s;
+}
+
+._O_ce {
+	position: absolute;
+}
+
+._O1_ce {
+	background: blue;
+	position: absolute;
+}
+
+._O2_ce {
+	background: purple;
+	position: absolute;
+}
+
+</style>
+<script>
+
+function _G_fe() {
+	document.getElementById('_D2_de').innerHTML += '<div class="_P_ce"></div>';
+	_PH_ve = 50;
+	_PW_ve = 50;
+	_PT_ve = 0;
+	_PL_ve = 0;
+	document.getElementsByClassName('_P_ce')[0].style.height = String(_PH_ve)+'px';
+	document.getElementsByClassName('_P_ce')[0].style.width = String(_PW_ve)+'px';
+	document.getElementsByClassName('_P_ce')[0].style.top = String(_PT_ve)+'px';
+	document.getElementsByClassName('_P_ce')[0].style.left = String(_PL_ve)+'px';
+	document.getElementById('_D2_de').innerHTML += '<div class="_O_ce _O1_ce"></div>';
+	_O1H_ve = 50;
+	_O1W_ve = 50;
+	_O1T_ve = 50;
+	_O1L_ve = 0;
+	document.getElementsByClassName('_O1_ce')[0].style.height = String(_O1H_ve)+'px';
+	document.getElementsByClassName('_O1_ce')[0].style.width = String(_O1W_ve)+'px';
+	document.getElementsByClassName('_O1_ce')[0].style.top = String(_O1T_ve)+'px';
+	document.getElementsByClassName('_O1_ce')[0].style.left = String(_O1L_ve)+'px';
+	document.getElementById('_D2_de').innerHTML += '<div class="_O_ce _O2_ce"></div>';
+	_O2H_ve = 50;
+	_O2W_ve = 50;
+	_O2T_ve = 100;
+	_O2L_ve = 0;
+	document.getElementsByClassName('_O2_ce')[0].style.height = String(_O2H_ve)+'px';
+	document.getElementsByClassName('_O2_ce')[0].style.width = String(_O2W_ve)+'px';
+	document.getElementsByClassName('_O2_ce')[0].style.top = String(_O2T_ve)+'px';
+	document.getElementsByClassName('_O2_ce')[0].style.left = String(_O2L_ve)+'px';
+};
+
+function _OC_fe(_OC_1L_ve,_OC_1T_ve,_OC_1W_ve,_OC_1H_ve,_OC_2L_ve,_OC_2T_ve,_OC_2W_ve,_OC_2H_ve) { /*Objects Collide*/
+	/*1 Left*/
+	/*1 Top*/
+	/*1 Width*/
+	/*1 Height*/
+	/*2 Left*/
+	/*2 Top*/
+	/*2 Width*/
+	/*2 Height*/
+	if(Number(_OC_2L_ve)>=Number(_OC_1W_ve)+Number(_OC_1L_ve)||Number(_OC_1L_ve)>=Number(_OC_2W_ve)+Number(_OC_2L_ve)||Number(_OC_2T_ve)>=Number(_OC_1H_ve)+Number(_OC_1T_ve)||Number(_OC_1T_ve)>=Number(_OC_2H_ve)+Number(_OC_2T_ve)) {
+	} else {
+		_PSM_ve = 1;
+	};
+};
+
+function _OCN_fe(_OC_1L_ve,_OC_1T_ve,_OC_1W_ve,_OC_1H_ve,_OC_2L_ve,_OC_2T_ve,_OC_2W_ve,_OC_2H_ve) { /*Objects Collide Not*/
+	/*1 Left*/
+	/*1 Top*/
+	/*1 Width*/
+	/*1 Height*/
+	/*2 Left*/
+	/*2 Top*/
+	/*2 Width*/
+	/*2 Height*/
+	if(Number(_OC_2L_ve)>=Number(_OC_1W_ve)+Number(_OC_1L_ve)||Number(_OC_1L_ve)>=Number(_OC_2W_ve)+Number(_OC_2L_ve)||Number(_OC_2T_ve)>=Number(_OC_1H_ve)+Number(_OC_1T_ve)||Number(_OC_1T_ve)>=Number(_OC_2H_ve)+Number(_OC_2T_ve)) {
+		_PSM_ve = 1;
+	} else {
+	};
+};
+
+function _OKD_fe(_OKD_I_ve) { /*On Key Down*/
+	/*Input*/
+	_OKD_V_ve = _OKD_I_ve.which||_OKD_I_ve.keyCode; /*Value*/
+	if(_OKD_V_ve == 220) { /**\*/
+	};
+	if(_OKD_V_ve == 37) { /**left*/
+		_PL_ve = Number(_PL_ve)-50;
+		document.getElementsByClassName('_P_ce')[0].style.left = String(_PL_ve)+'px';
+	};
+	if(_OKD_V_ve == 38) { /**up*/
+		_PT_ve = Number(_PT_ve)-50;
+		document.getElementsByClassName('_P_ce')[0].style.top = String(_PT_ve)+'px';
+	};
+	if(_OKD_V_ve == 39) { /**right*/
+		_PL_ve = Number(_PL_ve)+50;
+		document.getElementsByClassName('_P_ce')[0].style.left = String(_PL_ve)+'px';
+	};
+	if(_OKD_V_ve == 40) { /**down*/
+		_PT_ve = Number(_PT_ve)+50;
+		document.getElementsByClassName('_P_ce')[0].style.top = String(_PT_ve)+'px';
+	};
+	_OCN_fe(_PL_ve,_PT_ve,_PW_ve,_PH_ve,0,0,_D2W_ve,_D2H_ve);
+	_OC_fe(_PL_ve,_PT_ve,_PW_ve,_PH_ve,_O1L_ve,_O1T_ve,_O1W_ve,_O1H_ve);
+	_OC_fe(_PL_ve,_PT_ve,_PW_ve,_PH_ve,_O2L_ve,_O2T_ve,_O2W_ve,_O2H_ve);
+	if(_PSM_ve==1) {
+		if(_OKD_V_ve == 37) { /**left*/
+			_PL_ve = Number(_PL_ve)+50;
+			document.getElementsByClassName('_P_ce')[0].style.left = String(_PL_ve)+'px';
+		};
+		if(_OKD_V_ve == 38) { /**up*/
+			_PT_ve = Number(_PT_ve)+50;
+			document.getElementsByClassName('_P_ce')[0].style.top = String(_PT_ve)+'px';
+		};
+		if(_OKD_V_ve == 39) { /**right*/
+			_PL_ve = Number(_PL_ve)-50;
+			document.getElementsByClassName('_P_ce')[0].style.left = String(_PL_ve)+'px';
+		};
+		if(_OKD_V_ve == 40) { /**down*/
+			_PT_ve = Number(_PT_ve)-50;
+			document.getElementsByClassName('_P_ce')[0].style.top = String(_PT_ve)+'px';
+		};
+	};
+	_PSM_ve = 0;
+};
+
+function _OKP_fe(_OKP_I_ve) { /*On Key Press*/
+	/*Input*/
+	_OKP_V_ve = _OKP_I_ve.which||_OKP_I_ve.keyCode; /*Value*/
+};
+
+function _OMM_fe(_OMM_P_ve) { /*On Mouse Move*/
+	/*Position*/
+	_MX_ve = _OMM_P_ve.pageX;
+	_MY_ve = _OMM_P_ve.pageY;
+};
+
+function _R_fe() { /*Resize*/
+	_WH_ve = window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight;
+	_WW_ve = window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth;
+	_WR_ve = _WW_ve/_WH_ve;
+	if(_WH_ve<_WW_ve) {
+		_WT_ve = 0;
+	} else if(_WH_ve>_WW_ve) {
+		_WT_ve = 1;
+	} else {
+		_WT_ve = 2;
+	};
+	/**Div 1 Misure*/
+	_D1R_ve = _D1RX_ve/_D1RY_ve;
+	if(_WR_ve>_D1R_ve) {
+		_D1H_ve = _WH_ve;
+		_D1W_ve = _D1R_ve*_WH_ve;
+		document.getElementById('_D1_de').style.height = String(_D1H_ve)+'px';
+		document.getElementById('_D1_de').style.width = String(_D1W_ve)+'px';
+	} else {
+		_D1H_ve = Math.pow(_D1R_ve,-1)*_WW_ve;
+		_D1W_ve = _WW_ve;
+		document.getElementById('_D1_de').style.height = String(_D1H_ve)+'px';
+		document.getElementById('_D1_de').style.width = String(_D1W_ve)+'px';
+	};
+	_D1L_ve = (_WW_ve-_D1W_ve)/2;
+	_D1T_ve = (_WH_ve-_D1H_ve)/2;
+	document.getElementById('_D1_de').style.left = String(_D1L_ve)+'px';
+	document.getElementById('_D1_de').style.top = String(_D1T_ve)+'px';
+	/**X Y Misurament*/
+	_XM_ve = _D1W_ve/_D1RX_ve;
+	_YM_ve = _D1H_ve/_D1RY_ve;
+	/**Div 2 Misure*/
+	_D2H_ve = _YM_ve*_D2RY_ve;
+	_D2W_ve = _XM_ve*_D2RX_ve;
+	document.getElementById('_D2_de').style.height = String(_D2H_ve)+'px';
+	document.getElementById('_D2_de').style.width = String(_D2W_ve)+'px';
+	_D2L_ve = (_D1W_ve-_D2W_ve)/2;
+	_D2T_ve = (_D1H_ve-_D2H_ve)/2;
+	document.getElementById('_D2_de').style.left = String(_D2L_ve)+'px';
+	document.getElementById('_D2_de').style.top = String(_D2T_ve)+'px';
+};
+
+function _SI100_fe() { /*Set Interval 100*/
+};
+
+function _SI10_fe() { /*Set Interval 10*/
+};
+
+var _D1H_ve; /*Div 1 Height*/
+var _D1W_ve; /*Div 1 Width*/
+var _D1R_ve; /*Div 1 Ratio*/
+var _D1RX_ve = 16; /*Div 1 Ratio X*/
+var _D1RY_ve = 9; /*Div 1 Ratio Y*/
+var _D1L_ve; /*Div 1 Left*/
+var _D1T_ve; /*Div 1 Top*/
+
+var _D2H_ve; /*Div 2 Height*/
+var _D2W_ve; /*Div 2 Width*/
+var _D2R_ve; /*Div 2 Ratio*/
+var _D2RX_ve = 15.6; /*Div 2 Ratio X*/
+var _D2RY_ve = 8.6; /*Div 2 Ratio Y*/
+var _D2L_ve; /*Div 2 Left*/
+var _D2T_ve; /*Div 2 Top*/
+
+var _MX_ve; /*Mouse X*/
+var _MY_ve; /*Mouse Y*/
+
+var _O_SI100_ve; /*Set Interval 100*/
+var _O_SI10_ve; /*Set Interval 10*/
+
+var _PH_ve; /*Player Height*/
+var _PW_ve; /*Player Width*/
+var _PT_ve; /*Player Top*/
+var _PL_ve; /*Player Left*/
+var _PSM_ve = 0; /*Player Stop Move*/ /*0=Play; 1=Stop*/
+
+var _O1H_ve; /*Object Height*/
+var _O1W_ve; /*Object Width*/
+var _O1T_ve; /*Object Top*/
+var _O1L_ve; /*Object Left*/
+
+var _O2H_ve; /*Object Height*/
+var _O2W_ve; /*Object Width*/
+var _O2T_ve; /*Object Top*/
+var _O2L_ve; /*Object Left*/
+
+var _WH_ve; /*Window Height*/
+var _WW_ve; /*Window Width*/
+var _WT_ve; /*Window Type*/ /*0=Landscape; 1=Protrait; 2=Square*/
+var _WR_ve; /*Window Ratio*/
+
+var _XM_ve; /*X Misure*/
+var _YM_ve; /*Y Misure*/
+
+window.addEventListener('mousemove', _OMM_fe, false);
+window.addEventListener('resize', _R_fe);
+
+window.onload = function _O_fe() { /*Onload*/
+	document.body.innerHTML += '<div class="_0_ce" id="_D1_de"></div>';
+	document.getElementById('_D1_de').innerHTML += '<div class="_0_ce" id="_D2_de"></div>';
+	_R_fe();
+	_O_SI100_ve = setInterval(_SI100_fe,100);
+	_O_SI10_ve = setInterval(_SI10_fe,10);
+	_G_fe();
+};
+
+</script>
+</head>
+<body class="_0_ce" onkeydown="_OKD_fe(event)" onkeypress="_OKP_fe(event)">
+
+</body>
+</html>

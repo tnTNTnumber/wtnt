@@ -1,0 +1,23 @@
+C'e una citta
+C'e un cagnolino di nome Febe
+.1	Febe scappa dalla citta
+.2	Il cane Febe si perde in una valle sconosciuta
+.3	Il cagnolino si accovaccia e fa un pisolino
+.4	L'unicorno di nome "La Regina Del Bosco" trova il cagnolino Febe
+.5	L'unicorno chiama gli altri
+Gli altri sono
+	.1	(l'unicorno di nome "La Regina Del Bosco")
+	.2	l'unicorno "le ombre della notte",
+	.3	l'unicorno "le Lune d'Acqua",
+	.4	l'Unicorno delle Bolle,
+	.5	l'Unicorno della Cina,
+	.6	l'Unicorno di Ghiaccio,
+	.7	gli unicorno di Tempesta,
+	.8	l'unicorno Gioielli di montagna,
+	.9	l'unicorno Fiamme del Deserto,
+	.10	l'unicorno "gli spiriti dell'Alba"
+.6	Lo presero e lo portarono a fare un bagno
+.7	Li ringrazia
+.8	Diventano amici
+.9	Si aiutano e stanno assieme
+.10
