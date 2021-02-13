@@ -1,6 +1,9 @@
 ._GeneratorFolder_C_ce { /*Color*/
 }._GeneratorFolder_C_F_ce { /*Folders*/
 	color: rgba(0,128,0,0.9); /**green*/
+}._GeneratorFolder_C_TXT_ce { /*TXT*/
+	color: rgba(75,144,211,0.9); /**3*cornflowerblue + teal*/
+	/*color: rgba(67,142,201,0.9);*/ /**2*cornflowerblue + teal*/
 }._GeneratorFolder_C_VL_ce { /*Versions List*/
 	color: rgba(0,128,96,0.9); /**3*teal + green*/
 }._GeneratorFolder_C_FF_ce { /*Files' Folders*/
