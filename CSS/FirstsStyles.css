@@ -91,5 +91,11 @@ textarea {
 }_D1_ce * {
 }
 
+._DHTML_ce { /*Div HTML*/
+	display: none;
+	transition-duration: 1.4s;
+}_DHTML_ce * {
+}
+
 ._DE_ce { /*Div Error*/
 }
