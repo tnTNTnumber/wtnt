@@ -33,8 +33,8 @@ function _GeneratorClock_ClockDraw_fe() { /*Generator Clock /Clock Draw*/
 	_GeneratorClock_D_ve = new Date(); /*Date*/
 	_GeneratorClock_D_T_ve = _GeneratorClock_D_ve.toLocaleTimeString(); /*Date /Time*/
 	_GeneratorClock_D_H_ve = Number(_GeneratorClock_D_T_ve[0]+_GeneratorClock_D_T_ve[1]); /*Date /Hour*/
-	_GeneratorClock_D_M_ve = Number(_GeneratorClock_D_T_ve[3]+_GeneratorClock_D_T_ve[4])-0; /*Date /Minut*/
-	_GeneratorClock_D_S_ve = Number(_GeneratorClock_D_T_ve[6]+_GeneratorClock_D_T_ve[7])-0; /*Date /Scond*/
+	_GeneratorClock_D_M_ve = Number(_GeneratorClock_D_T_ve[3]+_GeneratorClock_D_T_ve[4]); /*Date /Minut*/
+	_GeneratorClock_D_S_ve = Number(_GeneratorClock_D_T_ve[6]+_GeneratorClock_D_T_ve[7]); /*Date /Scond*/
 	if(0<=_GeneratorClock_D_H_ve&&_GeneratorClock_D_H_ve<6) {
 		_GeneratorClock_DClock_ve.style.left = 'calc('+_GeneratorClock_WW_ve+'px - '+_GeneratorClock_RS_se+' - '+_GeneratorClock_RM_se+')';
 		_GeneratorClock_DClock_ve.style.transform = 'rotate(40deg)';
