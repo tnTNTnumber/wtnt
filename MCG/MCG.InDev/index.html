@@ -58,19 +58,19 @@ h7 {
 	color: rgba(55,55,55,0.8);
 }
 
-T_A {
+T_A { /*Added*/
 	font-size: 1.2em;
 	font-weight: bolder;
 	transition-duration: 0.4s;
 }
 
-T_B {
+T_B { /*Block*/
 	font-size: 1.2em;
 	font-weight: bolder;
 	transition-duration: 0.4s;
 }
 
-T_D {
+T_D { /*Date*/
 	color: rgba(11,11,11,0.8);
 	font-size: 80%;
 	font-weight: normal;
@@ -78,13 +78,19 @@ T_D {
 	transition-duration: 0.4s;
 }
 
-T_I {
+T_I { /*Item*/
 	font-size: 1em;
 	font-weight: bolder;
 	transition-duration: 0.4s;
 }
 
-T_R {
+T_R { /*Removed*/
+	font-size: 1.2em;
+	font-weight: bolder;
+	transition-duration: 0.4s;
+}
+
+T_RA { /*ReAdded*/
 	font-size: 1.2em;
 	font-weight: bolder;
 	transition-duration: 0.4s;
@@ -136,6 +142,7 @@ window.onload = function _O_fe() { //Onload
 	_MT_fe('T_B','▢');
 	_MT_fe('T_I','⚔');
 	_MT_fe('T_R','-');
+	_MT_fe('T_RA','⭟');
 };
 
 </script>
@@ -1069,33 +1076,33 @@ window.onload = function _O_fe() { //Onload
 		<h3>
 			Beta 1.2 <T_D>2011/01/13</T_D>
 			<h4>
-				<T_A></T_A> <T_B></T_B> Light Gray Wool
+				<T_RA></T_RA> <T_B></T_B> Light Gray Wool
 				<br />
 				<T_A></T_A> <T_B></T_B> Gray Wool
 				<br />
-				<T_A></T_A> <T_B></T_B> Black Wool
+				<T_RA></T_RA> <T_B></T_B> Black Wool
 				<br />
 				<T_A></T_A> <T_B></T_B> Brown Wool
 				<br />
-				<T_A></T_A> <T_B></T_B> Red Wool
+				<T_RA></T_RA> <T_B></T_B> Red Wool
 				<br />
-				<T_A></T_A> <T_B></T_B> Orange Wool
+				<T_RA></T_RA> <T_B></T_B> Orange Wool
 				<br />
-				<T_A></T_A> <T_B></T_B> Yellow Wool
+				<T_RA></T_RA> <T_B></T_B> Yellow Wool
 				<br />
 				<T_A></T_A> <T_B></T_B> Lime Wool
 				<br />
-				<T_A></T_A> <T_B></T_B> Green Wool
+				<T_RA></T_RA> <T_B></T_B> Green Wool
 				<br />
-				<T_A></T_A> <T_B></T_B> Cyan Wool
+				<T_RA></T_RA> <T_B></T_B> Cyan Wool
 				<br />
 				<T_A></T_A> <T_B></T_B> Light Blue Wool
 				<br />
 				<T_A></T_A> <T_B></T_B> Blue Wool
 				<br />
-				<T_A></T_A> <T_B></T_B> Magenta Wool
+				<T_RA></T_RA> <T_B></T_B> Magenta Wool
 				<br />
-				<T_A></T_A> <T_B></T_B> Purple Wool
+				<T_RA></T_RA> <T_B></T_B> Purple Wool
 				<br />
 				<T_A></T_A> <T_B></T_B> Pink Wool
 				<br />
@@ -1313,29 +1320,35 @@ window.onload = function _O_fe() { //Onload
 		<h3>
 			Beta 1.9 Prerelease 2 <T_D>2011/09/29</T_D>
 			<h4>
-				<T_A></T_A> <T_B></T_B> <T_I></T_I> Cauldron
+				<T_A></T_A> <T_B></T_B> Cauldron
 			</h4>
 		</h3>
 		<h3>
 			Beta 1.9 Prerelease 3 <T_D>2011/10/06</T_D>
 			<h4>
-				<T_A></T_A> <T_B></T_B> <T_I></T_I> Cauldron
+				<T_A></T_A> <T_B></T_B> Brewing Stand
 				<br />
-				<T_A></T_A> <T_B></T_B> <T_I></T_I> Cauldron
+				<T_A></T_A> <T_B></T_B> Enchanting Table
 				<br />
-				<T_A></T_A> <T_B></T_B> <T_I></T_I> Cauldron
+				<T_A></T_A> <T_B></T_B> End Portal Frame
 				<br />
-				<T_A></T_A> <T_B></T_B> <T_I></T_I> Cauldron
+				<T_A></T_A> <T_B></T_B> End Portal (block)
 			</h4>
 		</h3>
 		<h3>
 			Beta 1.9 Prerelease 4 <T_D>2011/10/13</T_D>
+			<h4>
+				<T_A></T_A> <T_B></T_B> End Stone
+			</h4>
 		</h3>
 		<h3>
 			Beta 1.9 Prerelease 5 <T_D>2011/10/27</T_D>
 		</h3>
 		<h3>
 			Beta 1.9 Prerelease 6 <T_D>2011/11/11</T_D>
+			<h4>
+				<T_A></T_A> <T_B></T_B> Dragon Egg
+			</h4>
 		</h3>
 		<h3>
 			RC1 <T_D>2011/11/13</T_D>
@@ -1354,24 +1367,6 @@ window.onload = function _O_fe() { //Onload
 		</h3>
 	</h2>
 </h1>
-<!--
-Beta 1.9 Prerelease 3	Added Brewing Stand, Enchanting Table, End Portal Frame, End Portal Blocks
-Total blocks: 145 (+4, -0)
-Beta 1.9 Prerelease 4	Added end stone.
-Total blocks: 146 (+1, -0)
-Beta 1.9 Prerelease 6	Added the dragon egg.
-Total blocks: 147 (+1, -0)
--->
-<!--
-			<h4>
-				<T_A></T_A> <T_B></T_B> 1
-				<br />
-				<T_A></T_A> <T_B></T_B> 2
-			</h4>
-			<h7>
-				Total Blocks : 0 (+0, -0)
-			</h7>
--->
 <h1>
 	1.1
 	<h2>
@@ -1402,9 +1397,17 @@ Total blocks: 147 (+1, -0)
 		1.2
 		<h3>
 			12w03a <T_D>2012/01/19</T_D>
+			<h4>
+				<T_A></T_A> <T_B></T_B> Jungle Logs
+				<br />
+				<T_A></T_A> <T_B></T_B> Jungle Leaves
+			</h4>
 		</h3>
 		<h3>
 			12w04a <T_D>2012/01/26</T_D>
+			<h4>
+				<T_A></T_A> <T_B></T_B> Jungle Sapling
+			</h4>
 		</h3>
 		<h3>
 			12w05a <T_D>2012/02/02</T_D>
@@ -1417,6 +1420,9 @@ Total blocks: 147 (+1, -0)
 		</h3>
 		<h3>
 			12w07a <T_D>2012/02/15</T_D>
+			<h4>
+				<T_A></T_A> <T_B></T_B> Redstone Lamps
+			</h4>
 		</h3>
 		<h3>
 			12w07b <T_D>2012/02/15</T_D>
@@ -1426,6 +1432,9 @@ Total blocks: 147 (+1, -0)
 		</h3>
 		<h3>
 			1.2 <T_D>2012/02/29</T_D>
+			<h4>
+				<T_A></T_A> <T_B></T_B> Chiseled Stone Bricks
+			</h4>
 		</h3>
 	</h2>
 	<h2>
@@ -1450,6 +1459,17 @@ Total blocks: 147 (+1, -0)
 		1.2.4
 		<h3>
 			1.2.4 <T_D>2012/03/22</T_D>
+			<h4>
+				<T_A></T_A> <T_B></T_B> Birch Planks
+				<br />
+				<T_A></T_A> <T_B></T_B> Spruce Planks
+				<br />
+				<T_A></T_A> <T_B></T_B> Jungle Planks
+				<br />
+				<T_A></T_A> <T_B></T_B> Cut Sandstone
+				<br />
+				<T_A></T_A> <T_B></T_B> Chiseled Sandstone
+			</h4>
 		</h3>
 	</h2>
 	<h2>
@@ -1471,21 +1491,47 @@ Total blocks: 147 (+1, -0)
 		</h3>
 		<h3>
 			12w17a <T_D>2012/04/26</T_D>
+			<h4>
+				<T_A></T_A> <T_B></T_B> Oak Slab
+				<br />
+				<T_A></T_A> <T_B></T_B> Birch Slab
+				<br />
+				<T_A></T_A> <T_B></T_B> Spruce Slab
+				<br />
+				<T_A></T_A> <T_B></T_B> Jungle Slab
+			</h4>
 		</h3>
 		<h3>
 			12w18a <T_D>2012/05/03</T_D>
 		</h3>
 		<h3>
 			12w19a <T_D>2012/05/10</T_D>
+			<h4>
+				<T_A></T_A> <T_B></T_B> Cocoa Beans
+			</h4>
 		</h3>
 		<h3>
 			12w21a <T_D>2012/05/24</T_D>
+			<h4>
+				<T_A></T_A> <T_B></T_B> Emerald Ore
+				<br />
+				<T_A></T_A> <T_B></T_B> Ender Chest
+				<br />
+				<T_A></T_A> <T_B></T_B> Sandstone Stairs
+			</h4>
 		</h3>
 		<h3>
 			12w21b <T_D>2012/05/25</T_D>
 		</h3>
 		<h3>
 			12w22a <T_D>2012/05/31</T_D>
+			<h4>
+				<T_A></T_A> <T_B></T_B> Tripwire
+				<br />
+				<T_A></T_A> <T_B></T_B> Tripwire Hook
+				<br />
+				<T_A></T_A> <T_B></T_B> Blocks of Emerald
+			</h4>
 		</h3>
 		<h3>
 			12w23a <T_D>2012/06/07</T_D>
@@ -1498,6 +1544,13 @@ Total blocks: 147 (+1, -0)
 		</h3>
 		<h3>
 			12w25a <T_D>2012/06/21</T_D>
+			<h4>
+				<T_A></T_A> <T_B></T_B> Birch Stairs
+				<br />
+				<T_A></T_A> <T_B></T_B> Spruce Stairs
+				<br />
+				<T_A></T_A> <T_B></T_B> Jungle Stairs
+			</h4>
 		</h3>
 		<h3>
 			12w26a <T_D>2012/06/27</T_D>
@@ -1516,6 +1569,15 @@ Total blocks: 147 (+1, -0)
 		</h3>
 		<h3>
 			12w30d <T_D>2012/07/25</T_D>
+			<h4>
+				<T_A></T_A> <T_B></T_B> Oak Wood
+				<br />
+				<T_A></T_A> <T_B></T_B> Birch Wood
+				<br />
+				<T_A></T_A> <T_B></T_B> Spruce Wood
+				<br />
+				<T_A></T_A> <T_B></T_B> Jungle Wood
+			</h4>
 		</h3>
 		<h3>
 			12w30e <T_D>2012/07/25</T_D>
@@ -1543,15 +1605,44 @@ Total blocks: 147 (+1, -0)
 		1.4
 		<h3>
 			12w32a <T_D>2012/08/09</T_D>
+			<h4>
+				<T_A></T_A> <T_B></T_B> Beacon
+				<br />
+				<T_A></T_A> <T_B></T_B> Command Block
+			</h4>
 		</h3>
 		<h3>
 			12w34a <T_D>2012/08/23</T_D>
+			<h4>
+				<T_A></T_A> <T_B></T_B> Carrot
+				<br />
+				<T_A></T_A> <T_B></T_B> Potato
+				<br />
+				<T_A></T_A> <T_B></T_B> Flower Pot
+				<br />
+				<T_A></T_A> <T_B></T_B> Oak Button
+				<br />
+				<T_A></T_A> <T_B></T_B> Cobblestone Wall
+				<br />
+				<T_A></T_A> <T_B></T_B> Mossy Cobblestone Wall
+			</h4>
 		</h3>
 		<h3>
 			12w34b <T_D>2012/08/24</T_D>
 		</h3>
 		<h3>
 			12w36a <T_D>2012/09/06</T_D>
+			<h4>
+				<T_A></T_A> <T_B></T_B> Creeper Head
+				<br />
+				<T_A></T_A> <T_B></T_B> Player Head
+				<br />
+				<T_A></T_A> <T_B></T_B> Skeleton Skull
+				<br />
+				<T_A></T_A> <T_B></T_B> Wither Skeleton Skull
+				<br />
+				<T_A></T_A> <T_B></T_B> Zombie Head
+			</h4>
 		</h3>
 		<h3>
 			12w37a <T_D>2012/09/13</T_D>
@@ -1576,6 +1667,13 @@ Total blocks: 147 (+1, -0)
 		</h3>
 		<h3>
 			12w41a <T_D>2012/10/11</T_D>
+			<h4>
+				<T_A></T_A> <T_B></T_B> Anvil
+				<br />
+				<T_A></T_A> <T_B></T_B> Chipped Anvil
+				<br />
+				<T_A></T_A> <T_B></T_B> Damaged Anvil
+			</h4>
 		</h3>
 		<h3>
 			12w41b <T_D>2012/10/12</T_D>
@@ -1624,6 +1722,9 @@ Total blocks: 147 (+1, -0)
 		1.4.6
 		<h3>
 			12w49a <T_D>2012/12/07</T_D>
+			<h4>
+				<T_A></T_A> <T_B></T_B> Nether Brick Slab
+			</h4>
 		</h3>
 		<h3>
 			12w50a <T_D>2012/12/13</T_D>
@@ -1648,21 +1749,63 @@ Total blocks: 147 (+1, -0)
 		1.5
 		<h3>
 			13w01a <T_D>2013/01/03</T_D>
+			<h4>
+				<T_A></T_A> <T_B></T_B> Nether Quartz Ore
+				<br />
+				<T_A></T_A> <T_B></T_B> Block of Redstone
+				<br />
+				<T_A></T_A> <T_B></T_B> Daylight Detector
+				<br />
+				<T_A></T_A> <T_B></T_B> Hopper
+				<br />
+				<T_A></T_A> <T_B></T_B> Redstone Comparator
+				<br />
+				<T_A></T_A> <T_B></T_B> Trapped Chest
+				<br />
+				<T_A></T_A> <T_B></T_B> Light Weighted Pressure Plate
+				<br />
+				<T_A></T_A> <T_B></T_B> Heavy Weighted Pressure Plate
+			</h4>
 		</h3>
 		<h3>
 			13w01b <T_D>2013/01/04</T_D>
 		</h3>
 		<h3>
 			13w02a <T_D>2013/01/10</T_D>
+			<h4>
+				<T_A></T_A> <T_B></T_B> Activator Rail
+				<br />
+				<T_A></T_A> <T_B></T_B> Block of Quartz
+				<br />
+				<T_A></T_A> <T_B></T_B> Chiseled Quartz Block
+				<br />
+				<T_A></T_A> <T_B></T_B> Quartz Pillar
+				<br />
+				<T_A></T_A> <T_B></T_B> Quartz Slab
+				<br />
+				<T_A></T_A> <T_B></T_B> Quartz Stairs
+				<br />
+				<T_R></T_R> <T_B></T_B> Smooth Stone
+			</h4>
 		</h3>
 		<h3>
 			13w02b <T_D>2013/01/11</T_D>
 		</h3>
 		<h3>
 			13w03a <T_D>2013/01/17</T_D>
+			<h4>
+				<T_A></T_A> <T_B></T_B> Dropper
+			</h4>
 		</h3>
 		<h3>
 			13w04a <T_D>2013/01/24</T_D>
+			<h4>
+				<T_A></T_A> <T_B></T_B> Smooth Sandstone
+				<br />
+				<T_A></T_A> <T_B></T_B> Smooth Quartz
+				<br />
+				<T_RA></T_RA> <T_B></T_B> Smooth Stone
+			</h4>
 		</h3>
 		<h3>
 			13w05a <T_D>2013/01/31</T_D>
@@ -1720,12 +1863,50 @@ Total blocks: 147 (+1, -0)
 		1.6
 		<h3>
 			13w16a <T_D>2013/04/18</T_D>
+			<h4>
+				<T_A></T_A> <T_B></T_B> White Carpet
+				<br />
+				<T_A></T_A> <T_B></T_B> Orange Carpet
+				<br />
+				<T_A></T_A> <T_B></T_B> Magenta Carpet
+				<br />
+				<T_A></T_A> <T_B></T_B> Light Blue Carpet
+				<br />
+				<T_A></T_A> <T_B></T_B> Yellow Carpet
+				<br />
+				<T_A></T_A> <T_B></T_B> Lime Carpet
+				<br />
+				<T_A></T_A> <T_B></T_B> Pink Carpet
+				<br />
+				<T_A></T_A> <T_B></T_B> Gray Carpet
+				<br />
+				<T_A></T_A> <T_B></T_B> Light Gray Carpet
+				<br />
+				<T_A></T_A> <T_B></T_B> Cyan Carpet
+				<br />
+				<T_A></T_A> <T_B></T_B> Purple Carpet
+				<br />
+				<T_A></T_A> <T_B></T_B> Blue Carpet
+				<br />
+				<T_A></T_A> <T_B></T_B> Brown Carpet
+				<br />
+				<T_A></T_A> <T_B></T_B> Green Carpet
+				<br />
+				<T_A></T_A> <T_B></T_B> Red Carpet
+				<br />
+				<T_A></T_A> <T_B></T_B> Black Carpet
+				<br />
+				<T_A></T_A> <T_B></T_B> Smooth Stone
+			</h4>
 		</h3>
 		<h3>
 			13w16b <T_D>2013/04/23</T_D>
 		</h3>
 		<h3>
 			13w17a <T_D>2013/04/25</T_D>
+			<h4>
+				<T_A></T_A> <T_B></T_B> Terracotta
+			</h4>
 		</h3>
 		<h3>
 			13w18a <T_D>2013/05/02</T_D>
@@ -1957,6 +2138,13 @@ Total blocks: 147 (+1, -0)
 		</h3>
 	</h2>
 </h1>
+<!--
+			<h4>
+				<T_A></T_A> <T_B></T_B> 1
+				<br />
+				<T_A></T_A> <T_B></T_B> 2
+			</h4>
+-->
 <h1>
 	1.8 (Bountiful Update)
 	<h2>
@@ -3319,6 +3507,21 @@ Total blocks: 147 (+1, -0)
 		</h3>
 		<h3>
 			20w49a <T_D>2020/12/02</T_D>
+		</h3>
+		<h3>
+			20w51a <T_D>2020/12/16</T_D>
+		</h3>
+		<h3>
+			21w03a <T_D>2021/01/20</T_D>
+		</h3>
+		<h3>
+			21w05a <T_D>2021/02/03</T_D>
+		</h3>
+		<h3>
+			21w05b <T_D>2021/02/04</T_D>
+		</h3>
+		<h3>
+			21w06a <T_D>2021/02/10</T_D>
 		</h3>
 		<h3>
 			1.17 <T_D>2021</T_D>
