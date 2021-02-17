@@ -70,17 +70,6 @@ T_B { /*Block*/
 	transition-duration: 0.4s;
 }
 
-T_C { /*Changed*/
-	font-size: 0.9em;
-	font-weight: bolder;
-	transition-duration: 0.4s;
-} T_CI { /*Changed In*/
-	color: rgba(11,11,11,0.8);
-	font-size: 1em;
-	font-weight: bolder;
-	transition-duration: 0.4s;
-}
-
 T_D { /*Date*/
 	color: rgba(11,11,11,0.8);
 	font-size: 80%;
@@ -96,7 +85,7 @@ T_I { /*Item*/
 }
 
 T_R { /*Removed*/
-	font-size: 1.05em;
+	font-size: 1.2em;
 	font-weight: bolder;
 	transition-duration: 0.4s;
 }
@@ -151,8 +140,6 @@ function _MT_fe(_MT_T_ve,_MT_V_ve) { //Modify Tags
 window.onload = function _O_fe() { //Onload
 	_MT_fe('T_A','+');
 	_MT_fe('T_B','▢');
-	_MT_fe('T_C','🔄&#xFE0E;'); /**⇅ ⇄ 🗘*/
-	_MT_fe('T_CI','in');
 	_MT_fe('T_I','⚔');
 	_MT_fe('T_R','-');
 	_MT_fe('T_RA','⭟');
@@ -1908,6 +1895,8 @@ window.onload = function _O_fe() { //Onload
 				<T_A></T_A> <T_B></T_B> Red Carpet
 				<br />
 				<T_A></T_A> <T_B></T_B> Black Carpet
+				<br />
+				<T_A></T_A> <T_B></T_B> Smooth Stone
 			</h4>
 		</h3>
 		<h3>
@@ -1921,9 +1910,6 @@ window.onload = function _O_fe() { //Onload
 		</h3>
 		<h3>
 			13w18a <T_D>2013/05/02</T_D>
-			<h4>
-				<T_A></T_A> <T_B></T_B> Block of Coal
-			</h4>
 		</h3>
 		<h3>
 			13w18b <T_D>2013/05/02</T_D>
@@ -1933,39 +1919,6 @@ window.onload = function _O_fe() { //Onload
 		</h3>
 		<h3>
 			13w19a <T_D>2013/05/10</T_D>
-			<h4>
-				<T_A></T_A> <T_B></T_B> White Terracotta
-				<br />
-				<T_A></T_A> <T_B></T_B> Orange Terracotta
-				<br />
-				<T_A></T_A> <T_B></T_B> Magenta Terracotta
-				<br />
-				<T_A></T_A> <T_B></T_B> Light Blue Terracotta
-				<br />
-				<T_A></T_A> <T_B></T_B> Yellow Terracotta
-				<br />
-				<T_A></T_A> <T_B></T_B> Lime Terracotta
-				<br />
-				<T_A></T_A> <T_B></T_B> Pink Terracotta
-				<br />
-				<T_A></T_A> <T_B></T_B> Gray Terracotta
-				<br />
-				<T_A></T_A> <T_B></T_B> Light Gray Terracotta
-				<br />
-				<T_A></T_A> <T_B></T_B> Cyan Terracotta
-				<br />
-				<T_A></T_A> <T_B></T_B> Purple Terracotta
-				<br />
-				<T_A></T_A> <T_B></T_B> Blue Terracotta
-				<br />
-				<T_A></T_A> <T_B></T_B> Brown Terracotta
-				<br />
-				<T_A></T_A> <T_B></T_B> Green Terracotta
-				<br />
-				<T_A></T_A> <T_B></T_B> Red Terracotta
-				<br />
-				<T_A></T_A> <T_B></T_B> Black Terracotta
-			</h4>
 		</h3>
 		<h3>
 			13w21a <T_D>2013/05/23</T_D>
@@ -2035,51 +1988,6 @@ window.onload = function _O_fe() { //Onload
 		1.7
 		<h3>
 			13w36a <T_D>2013/09/05</T_D>
-			<h4>
-				<T_A></T_A> <T_B></T_B> Allium
-				<br />
-				<T_A></T_A> <T_B></T_B> Azure Bluet
-				<br />
-				<T_A></T_A> <T_B></T_B> Blue Orchid
-				<br />
-				<T_A></T_A> <T_B></T_B> Oxeye Daisy
-				<br />
-				<T_A></T_A> <T_B></T_B> Lilac
-				<br />
-				<T_A></T_A> <T_B></T_B> Peony
-				<br />
-				<T_A></T_A> <T_B></T_B> Poppy
-				<br />
-				<T_A></T_A> <T_B></T_B> Rose Bush
-				<br />
-				<T_A></T_A> <T_B></T_B> Sunflower
-				<br />
-				<T_A></T_A> <T_B></T_B> Orange Tulip
-				<br />
-				<T_A></T_A> <T_B></T_B> Pink Tulip
-				<br />
-				<T_A></T_A> <T_B></T_B> Red Tulip
-				<br />
-				<T_A></T_A> <T_B></T_B> White Tulip
-				<br />
-				<T_A></T_A> <T_B></T_B> Tall Grass
-				<br />
-				<T_A></T_A> <T_B></T_B> Large Fern
-				<br />
-				<T_A></T_A> <T_B></T_B> Packed Ice
-				<br />
-				<T_A></T_A> <T_B></T_B> Podzol
-				<br />
-				<T_A></T_A> <T_B></T_B> Grassless Dirt
-				<br />
-				<T_A></T_A> <T_B></T_B> Infested Cracked Stone Bricks
-				<br />
-				<T_A></T_A> <T_B></T_B> Infested Mossy Stone Bricks
-				<br />
-				<T_A></T_A> <T_B></T_B> Infested Chiseled Stone Bricks
-				<br />
-				<T_R></T_R> <T_B></T_B> Rose
-			</h4>
 		</h3>
 		<h3>
 			13w36b <T_D>2013/09/06</T_D>
@@ -2101,82 +2009,12 @@ window.onload = function _O_fe() { //Onload
 		</h3>
 		<h3>
 			13w39a <T_D>2013/09/26</T_D>
-			<h4>
-				<T_A></T_A> <T_B></T_B> Red Sand
-			</h4>
 		</h3>
 		<h3>
 			13w39b <T_D>2013/09/27</T_D>
 		</h3>
 		<h3>
 			13w41a <T_D>2013/10/10</T_D>
-			<h4>
-				<T_A></T_A> <T_B></T_B> White Stained Glass
-				<br />
-				<T_A></T_A> <T_B></T_B> Orange Stained Glass
-				<br />
-				<T_A></T_A> <T_B></T_B> Magenta Stained Glass
-				<br />
-				<T_A></T_A> <T_B></T_B> Light Blue Stained Glass
-				<br />
-				<T_A></T_A> <T_B></T_B> Yellow Stained Glass
-				<br />
-				<T_A></T_A> <T_B></T_B> Lime Stained Glass
-				<br />
-				<T_A></T_A> <T_B></T_B> Pink Stained Glass
-				<br />
-				<T_A></T_A> <T_B></T_B> Gray Stained Glass
-				<br />
-				<T_A></T_A> <T_B></T_B> Light Gray Stained Glass
-				<br />
-				<T_A></T_A> <T_B></T_B> Cyan Stained Glass
-				<br />
-				<T_A></T_A> <T_B></T_B> Purple Stained Glass
-				<br />
-				<T_A></T_A> <T_B></T_B> Blue Stained Glass
-				<br />
-				<T_A></T_A> <T_B></T_B> Brown Stained Glass
-				<br />
-				<T_A></T_A> <T_B></T_B> Green Stained Glass
-				<br />
-				<T_A></T_A> <T_B></T_B> Red Stained Glass
-				<br />
-				<T_A></T_A> <T_B></T_B> Black Stained Glass
-				<br />
-				<T_A></T_A> <T_B></T_B> White Stained Glass Pane
-				<br />
-				<T_A></T_A> <T_B></T_B> Orange Stained Glass Pane
-				<br />
-				<T_A></T_A> <T_B></T_B> Magenta Stained Glass Pane
-				<br />
-				<T_A></T_A> <T_B></T_B> Light Blue Stained Glass Pane
-				<br />
-				<T_A></T_A> <T_B></T_B> Yellow Stained Glass Pane
-				<br />
-				<T_A></T_A> <T_B></T_B> Lime Stained Glass Pane
-				<br />
-				<T_A></T_A> <T_B></T_B> Pink Stained Glass Pane
-				<br />
-				<T_A></T_A> <T_B></T_B> Gray Stained Glass Pane
-				<br />
-				<T_A></T_A> <T_B></T_B> Light Gray Stained Glass Pane
-				<br />
-				<T_A></T_A> <T_B></T_B> Cyan Stained Glass Pane
-				<br />
-				<T_A></T_A> <T_B></T_B> Purple Stained Glass Pane
-				<br />
-				<T_A></T_A> <T_B></T_B> Blue Stained Glass Pane
-				<br />
-				<T_A></T_A> <T_B></T_B> Brown Stained Glass Pane
-				<br />
-				<T_A></T_A> <T_B></T_B> Green Stained Glass Pane
-				<br />
-				<T_A></T_A> <T_B></T_B> Red Stained Glass Pane
-				<br />
-				<T_A></T_A> <T_B></T_B> Black Stained Glass Pane
-				<br />
-				<T_R></T_R> <T_B></T_B> Locked Chest
-			</h4>
 		</h3>
 		<h3>
 			13w41b <T_D>2013/10/11</T_D>
@@ -2189,46 +2027,15 @@ window.onload = function _O_fe() { //Onload
 		</h3>
 		<h3>
 			13w43a <T_D>2013/10/21</T_D>
-			<h4>
-				<T_A></T_A> <T_B></T_B> Acacia Log
-				<br />
-				<T_A></T_A> <T_B></T_B> Acacia Wood
-				<br />
-				<T_A></T_A> <T_B></T_B> Acacia Leaves
-				<br />
-				<T_A></T_A> <T_B></T_B> Acacia Sapling
-				<br />
-				<T_A></T_A> <T_B></T_B> Dark Oak Log
-				<br />
-				<T_A></T_A> <T_B></T_B> Dark Oak Wood
-				<br />
-				<T_A></T_A> <T_B></T_B> Dark Oak Leaves
-				<br />
-				<T_A></T_A> <T_B></T_B> Dark Oak Sapling
-			</h4>
 		</h3>
 		<h3>
 			1.7 <T_D>2013/10/22</T_D>
-			<h4>
-				<T_A></T_A> <T_B></T_B> Acacia Stairs
-				<br />
-				<T_A></T_A> <T_B></T_B> Acacia Slab
-				<br />
-				<T_A></T_A> <T_B></T_B> Dark Oak Stairs
-				<br />
-				<T_A></T_A> <T_B></T_B> Dark Oak Slab
-			</h4>
 		</h3>
 	</h2>
 	<h2>
 		1.7.1
 		<h3>
 			1.7.1 <T_D>2013/10/23</T_D>
-			<h4>
-				<T_A></T_A> <T_B></T_B> Acacia Planks
-				<br />
-				<T_A></T_A> <T_B></T_B> Dark Oak Planks
-			</h4>
 		</h3>
 	</h2>
 	<h2>
@@ -2331,27 +2138,19 @@ window.onload = function _O_fe() { //Onload
 		</h3>
 	</h2>
 </h1>
+<!--
+			<h4>
+				<T_A></T_A> <T_B></T_B> 1
+				<br />
+				<T_A></T_A> <T_B></T_B> 2
+			</h4>
+-->
 <h1>
 	1.8 (Bountiful Update)
 	<h2>
 		1.8
 		<h3>
 			14w02a <T_D>2014/01/09</T_D>
-			<h4>
-				<T_A></T_A> <T_B></T_B> Granite
-				<br />
-				<T_A></T_A> <T_B></T_B> Polished Granite
-				<br />
-				<T_A></T_A> <T_B></T_B> Diorite
-				<br />
-				<T_A></T_A> <T_B></T_B> Polished Diorite
-				<br />
-				<T_A></T_A> <T_B></T_B> Andesite
-				<br />
-				<T_A></T_A> <T_B></T_B> Polished Andesite
-				<br />
-				<T_A></T_A> <T_B></T_B> Slime Block
-			</h4>
 		</h3>
 		<h3>
 			14w02b <T_D>2014/01/09</T_D>
@@ -2373,9 +2172,6 @@ window.onload = function _O_fe() { //Onload
 		</h3>
 		<h3>
 			14w05a <T_D>2014/01/30</T_D>
-			<h4>
-				<T_A></T_A> <T_B></T_B> Barrier
-			</h4>
 		</h3>
 		<h3>
 			14w05b <T_D>2014/01/31</T_D>
@@ -2388,9 +2184,6 @@ window.onload = function _O_fe() { //Onload
 		</h3>
 		<h3>
 			14w07a <T_D>2014/02/14</T_D>
-			<h4>
-				<T_A></T_A> <T_B></T_B> Iron Trapdoor
-			</h4>
 		</h3>
 		<h3>
 			14w08a <T_D>2014/02/19</T_D>
@@ -2436,21 +2229,6 @@ window.onload = function _O_fe() { //Onload
 		</h3>
 		<h3>
 			14w25a <T_D>2014/06/18</T_D>
-			<h4>
-				<T_A></T_A> <T_B></T_B> Prismarine
-				<br />
-				<T_A></T_A> <T_B></T_B> Prismarine Bricks
-				<br />
-				<T_A></T_A> <T_B></T_B> Dark Prismarine
-				<br />
-				<T_A></T_A> <T_B></T_B> Sea Lantern
-				<br />
-				<T_A></T_A> <T_B></T_B> Coarse Dirt
-				<br />
-				<T_A></T_A> <T_B></T_B> Wet Sponge
-				<br />
-				<T_R></T_R> <T_B></T_B> Grassless Dirt
-			</h4>
 		</h3>
 		<h3>
 			14w25b <T_D>2014/06/19</T_D>
@@ -2484,39 +2262,6 @@ window.onload = function _O_fe() { //Onload
 		</h3>
 		<h3>
 			14w30a <T_D>2014/07/23</T_D>
-			<h4>
-				<T_A></T_A> <T_B></T_B> White Banner
-				<br />
-				<T_A></T_A> <T_B></T_B> Orange Banner
-				<br />
-				<T_A></T_A> <T_B></T_B> Magenta Banner
-				<br />
-				<T_A></T_A> <T_B></T_B> Light Blue Banner
-				<br />
-				<T_A></T_A> <T_B></T_B> Yellow Banner
-				<br />
-				<T_A></T_A> <T_B></T_B> Lime Banner
-				<br />
-				<T_A></T_A> <T_B></T_B> Pink Banner
-				<br />
-				<T_A></T_A> <T_B></T_B> Gray Banner
-				<br />
-				<T_A></T_A> <T_B></T_B> Light Gray Banner
-				<br />
-				<T_A></T_A> <T_B></T_B> Cyan Banner
-				<br />
-				<T_A></T_A> <T_B></T_B> Purple Banner
-				<br />
-				<T_A></T_A> <T_B></T_B> Blue Banner
-				<br />
-				<T_A></T_A> <T_B></T_B> Brown Banner
-				<br />
-				<T_A></T_A> <T_B></T_B> Green Banner
-				<br />
-				<T_A></T_A> <T_B></T_B> Red Banner
-				<br />
-				<T_A></T_A> <T_B></T_B> Black Banner
-			</h4>
 		</h3>
 		<h3>
 			14w30b <T_D>2014/07/23</T_D>
@@ -2529,60 +2274,15 @@ window.onload = function _O_fe() { //Onload
 		</h3>
 		<h3>
 			14w32a <T_D>2014/08/06</T_D>
-			<h4>
-				<T_A></T_A> <T_B></T_B> Red Sandstone
-				<br />
-				<T_A></T_A> <T_B></T_B> Cut Red Sandstone
-				<br />
-				<T_A></T_A> <T_B></T_B> Chiseled Red Sandstone
-				<br />
-				<T_A></T_A> <T_B></T_B> Smooth Red Sandstone
-				<br />
-				<T_A></T_A> <T_B></T_B> Red Sandstone Slab
-				<br />
-				<T_A></T_A> <T_B></T_B> Red Sandstone Stairs
-			</h4>
 		</h3>
 		<h3>
 			14w32b <T_D>2014/08/07</T_D>
-			<h4>
-				<T_A></T_A> <T_B></T_B> Birch Fence
-				<br />
-				<T_A></T_A> <T_B></T_B> Spruce Fence
-				<br />
-				<T_A></T_A> <T_B></T_B> Jungle Fence
-				<br />
-				<T_A></T_A> <T_B></T_B> Acacia Fence
-				<br />
-				<T_A></T_A> <T_B></T_B> Dark Oak Fence
-				<br />
-				<T_A></T_A> <T_B></T_B> Birch Fence Gate
-				<br />
-				<T_A></T_A> <T_B></T_B> Spruce Fence Gate
-				<br />
-				<T_A></T_A> <T_B></T_B> Jungle Fence Gate
-				<br />
-				<T_A></T_A> <T_B></T_B> Acacia Fence Gate
-				<br />
-				<T_A></T_A> <T_B></T_B> Dark Oak Fence Gate
-			</h4>
 		</h3>
 		<h3>
 			14w32c <T_D>2014/08/08</T_D>
 		</h3>
 		<h3>
 			14w32d <T_D>2014/08/08</T_D>
-			<h4>
-				<T_A></T_A> <T_B></T_B> Birch Door
-				<br />
-				<T_A></T_A> <T_B></T_B> Spruce Door
-				<br />
-				<T_A></T_A> <T_B></T_B> Jungle Door
-				<br />
-				<T_A></T_A> <T_B></T_B> Acacia Door
-				<br />
-				<T_A></T_A> <T_B></T_B> Dark Oak Door
-			</h4>
 		</h3>
 		<h3>
 			14w33a <T_D>2014/08/13</T_D>
@@ -2715,31 +2415,6 @@ window.onload = function _O_fe() { //Onload
 		1.9
 		<h3>
 			15w31a <T_D>2015/07/29</T_D>
-			<h4>
-				<T_A></T_A> <T_B></T_B> Chorus Plants
-				<br />
-				<T_A></T_A> <T_B></T_B> Chorus Flower
-				<br />
-				<T_A></T_A> <T_B></T_B> Dragon Head
-				<br />
-				<T_A></T_A> <T_B></T_B> End Gateway Block
-				<br />
-				<T_A></T_A> <T_B></T_B> End Rod
-				<br />
-				<T_A></T_A> <T_B></T_B> End Stone Bricks
-				<br />
-				<T_A></T_A> <T_B></T_B> Dirt Path
-				<br />
-				<T_A></T_A> <T_B></T_B> Purpur Block
-				<br />
-				<T_A></T_A> <T_B></T_B> Purpur Pillar
-				<br />
-				<T_A></T_A> <T_B></T_B> Purpur Slab
-				<br />
-				<T_A></T_A> <T_B></T_B> Purpur Stairs
-				<br />
-				<T_A></T_A> <T_B></T_B> Structure Block
-			</h4>
 		</h3>
 		<h3>
 			15w31b <T_D>2015/07/30</T_D>
@@ -2836,9 +2511,6 @@ window.onload = function _O_fe() { //Onload
 		</h3>
 		<h3>
 			15w42a <T_D>2015/10/14</T_D>
-			<h4>
-				<T_A></T_A> <T_B></T_B> Frosted Ice
-			</h4>
 		</h3>
 		<h3>
 			15w43a <T_D>2015/10/21</T_D>
@@ -2983,17 +2655,6 @@ window.onload = function _O_fe() { //Onload
 		1.10
 		<h3>
 			16w20a <T_D>2016/05/18</T_D>
-			<h4>
-				<T_A></T_A> <T_B></T_B> Bone Block
-				<br />
-				<T_A></T_A> <T_B></T_B> Magma Block
-				<br />
-				<T_A></T_A> <T_B></T_B> Nether Wart Block
-				<br />
-				<T_A></T_A> <T_B></T_B> Red Nether Bricks
-				<br />
-				<T_A></T_A> <T_B></T_B> Structure Void
-			</h4>
 		</h3>
 		<h3>
 			16w21a <T_D>2016/05/25</T_D>
@@ -3048,50 +2709,12 @@ window.onload = function _O_fe() { //Onload
 		</h3>
 		<h3>
 			16w39a <T_D>2016/09/28</T_D>
-			<h4>
-				<T_A></T_A> <T_B></T_B> Observer
-				<br />
-				<T_A></T_A> <T_B></T_B> White Shulker Box
-				<br />
-				<T_A></T_A> <T_B></T_B> Orange Shulker Box
-				<br />
-				<T_A></T_A> <T_B></T_B> Magenta Shulker Box
-				<br />
-				<T_A></T_A> <T_B></T_B> Light Blue Shulker Box
-				<br />
-				<T_A></T_A> <T_B></T_B> Yellow Shulker Box
-				<br />
-				<T_A></T_A> <T_B></T_B> Lime Shulker Box
-				<br />
-				<T_A></T_A> <T_B></T_B> Pink Shulker Box
-				<br />
-				<T_A></T_A> <T_B></T_B> Gray Shulker Box
-				<br />
-				<T_A></T_A> <T_B></T_B> Silver Shulker Box
-				<br />
-				<T_A></T_A> <T_B></T_B> Cyan Shulker Box
-				<br />
-				<T_A></T_A> <T_B></T_B> Purple Shulker Box
-				<br />
-				<T_A></T_A> <T_B></T_B> Blue Shulker Box
-				<br />
-				<T_A></T_A> <T_B></T_B> Brown Shulker Box
-				<br />
-				<T_A></T_A> <T_B></T_B> Green Shulker Box
-				<br />
-				<T_A></T_A> <T_B></T_B> Red Shulker Box
-				<br />
-				<T_A></T_A> <T_B></T_B> Black Shulker Box
-			</h4>
 		</h3>
 		<h3>
 			16w39b <T_D>2016/09/29</T_D>
 		</h3>
 		<h3>
 			16w39c <T_D>2016/09/30</T_D>
-			<h4>
-				<T_C></T_C> <T_B></T_B> Silver Shulker Box <T_CI></T_CI> Light Gray Shulker Box
-			</h4>
 		</h3>
 		<h3>
 			16w40a <T_D>2016/10/06</T_D>
@@ -3137,103 +2760,6 @@ window.onload = function _O_fe() { //Onload
 		1.12
 		<h3>
 			17w06a <T_D>2017/02/08</T_D>
-			<h4>
-				<T_A></T_A> <T_B></T_B> White Concrete
-				<br />
-				<T_A></T_A> <T_B></T_B> Orange Concrete
-				<br />
-				<T_A></T_A> <T_B></T_B> Magenta Concrete
-				<br />
-				<T_A></T_A> <T_B></T_B> Light Blue Concrete
-				<br />
-				<T_A></T_A> <T_B></T_B> Yellow Concrete
-				<br />
-				<T_A></T_A> <T_B></T_B> Lime Concrete
-				<br />
-				<T_A></T_A> <T_B></T_B> Pink Concrete
-				<br />
-				<T_A></T_A> <T_B></T_B> Gray Concrete
-				<br />
-				<T_A></T_A> <T_B></T_B> Light Gray Concrete
-				<br />
-				<T_A></T_A> <T_B></T_B> Cyan Concrete
-				<br />
-				<T_A></T_A> <T_B></T_B> Purple Concrete
-				<br />
-				<T_A></T_A> <T_B></T_B> Blue Concrete
-				<br />
-				<T_A></T_A> <T_B></T_B> Brown Concrete
-				<br />
-				<T_A></T_A> <T_B></T_B> Green Concrete
-				<br />
-				<T_A></T_A> <T_B></T_B> Red Concrete
-				<br />
-				<T_A></T_A> <T_B></T_B> Black Concrete
-				<br />
-				<T_A></T_A> <T_B></T_B> White Concrete Powder
-				<br />
-				<T_A></T_A> <T_B></T_B> Orange Concrete Powder
-				<br />
-				<T_A></T_A> <T_B></T_B> Magenta Concrete Powder
-				<br />
-				<T_A></T_A> <T_B></T_B> Light Blue Concrete Powder
-				<br />
-				<T_A></T_A> <T_B></T_B> Yellow Concrete Powder
-				<br />
-				<T_A></T_A> <T_B></T_B> Lime Concrete Powder
-				<br />
-				<T_A></T_A> <T_B></T_B> Pink Concrete Powder
-				<br />
-				<T_A></T_A> <T_B></T_B> Gray Concrete Powder
-				<br />
-				<T_A></T_A> <T_B></T_B> Light Gray Concrete Powder
-				<br />
-				<T_A></T_A> <T_B></T_B> Cyan Concrete Powder
-				<br />
-				<T_A></T_A> <T_B></T_B> Purple Concrete Powder
-				<br />
-				<T_A></T_A> <T_B></T_B> Blue Concrete Powder
-				<br />
-				<T_A></T_A> <T_B></T_B> Brown Concrete Powder
-				<br />
-				<T_A></T_A> <T_B></T_B> Green Concrete Powder
-				<br />
-				<T_A></T_A> <T_B></T_B> Red Concrete Powder
-				<br />
-				<T_A></T_A> <T_B></T_B> Black Concrete Powder
-				<br />
-				<T_A></T_A> <T_B></T_B> White Glazed Terracotta
-				<br />
-				<T_A></T_A> <T_B></T_B> Orange Glazed Terracotta
-				<br />
-				<T_A></T_A> <T_B></T_B> Magenta Glazed Terracotta
-				<br />
-				<T_A></T_A> <T_B></T_B> Light Blue Glazed Terracotta
-				<br />
-				<T_A></T_A> <T_B></T_B> Yellow Glazed Terracotta
-				<br />
-				<T_A></T_A> <T_B></T_B> Lime Glazed Terracotta
-				<br />
-				<T_A></T_A> <T_B></T_B> Pink Glazed Terracotta
-				<br />
-				<T_A></T_A> <T_B></T_B> Gray Glazed Terracotta
-				<br />
-				<T_A></T_A> <T_B></T_B> Light Gray Glazed Terracotta
-				<br />
-				<T_A></T_A> <T_B></T_B> Cyan Glazed Terracotta
-				<br />
-				<T_A></T_A> <T_B></T_B> Purple Glazed Terracotta
-				<br />
-				<T_A></T_A> <T_B></T_B> Blue Glazed Terracotta
-				<br />
-				<T_A></T_A> <T_B></T_B> Brown Glazed Terracotta
-				<br />
-				<T_A></T_A> <T_B></T_B> Green Glazed Terracotta
-				<br />
-				<T_A></T_A> <T_B></T_B> Red Glazed Terracotta
-				<br />
-				<T_A></T_A> <T_B></T_B> Black Glazed Terracotta
-			</h4>
 		</h3>
 		<h3>
 			17w13a <T_D>2017/03/30</T_D>
@@ -3246,37 +2772,6 @@ window.onload = function _O_fe() { //Onload
 		</h3>
 		<h3>
 			17w15a <T_D>2017/04/12</T_D>
-			<h4>
-				<T_A></T_A> <T_B></T_B> White Bed
-				<br />
-				<T_A></T_A> <T_B></T_B> Orange Bed
-				<br />
-				<T_A></T_A> <T_B></T_B> Magenta Bed
-				<br />
-				<T_A></T_A> <T_B></T_B> Light Blue Bed
-				<br />
-				<T_A></T_A> <T_B></T_B> Yellow Bed
-				<br />
-				<T_A></T_A> <T_B></T_B> Lime Bed
-				<br />
-				<T_A></T_A> <T_B></T_B> Pink Bed
-				<br />
-				<T_A></T_A> <T_B></T_B> Gray Bed
-				<br />
-				<T_A></T_A> <T_B></T_B> Light Gray Bed
-				<br />
-				<T_A></T_A> <T_B></T_B> Cyan Bed
-				<br />
-				<T_A></T_A> <T_B></T_B> Purple Bed
-				<br />
-				<T_A></T_A> <T_B></T_B> Blue Bed
-				<br />
-				<T_A></T_A> <T_B></T_B> Brown Bed
-				<br />
-				<T_A></T_A> <T_B></T_B> Green Bed
-				<br />
-				<T_A></T_A> <T_B></T_B> Black Bed
-			</h4>
 		</h3>
 		<h3>
 			17w16a <T_D>2017/04/20</T_D>
@@ -3367,39 +2862,6 @@ window.onload = function _O_fe() { //Onload
 		</h3>
 		<h3>
 			17w47a <T_D>2017/11/22</T_D>
-			<h4>
-				<T_A></T_A> <T_B></T_B> Pumpkin
-				<br />
-				<T_A></T_A> <T_B></T_B> Spruce Button
-				<br />
-				<T_A></T_A> <T_B></T_B> Birch Button
-				<br />
-				<T_A></T_A> <T_B></T_B> Jungle Button
-				<br />
-				<T_A></T_A> <T_B></T_B> Acacia Button
-				<br />
-				<T_A></T_A> <T_B></T_B> Dark Oak Button
-				<br />
-				<T_A></T_A> <T_B></T_B> Spruce Pressure Plate
-				<br />
-				<T_A></T_A> <T_B></T_B> Birch Pressure Plate
-				<br />
-				<T_A></T_A> <T_B></T_B> Jungle Pressure Plate
-				<br />
-				<T_A></T_A> <T_B></T_B> Acacia Pressure Plate
-				<br />
-				<T_A></T_A> <T_B></T_B> Dark Oak Pressure Plate
-				<br />
-				<T_A></T_A> <T_B></T_B> Spruce Trapdoor
-				<br />
-				<T_A></T_A> <T_B></T_B> Birch Trapdoor
-				<br />
-				<T_A></T_A> <T_B></T_B> Jungle Trapdoor
-				<br />
-				<T_A></T_A> <T_B></T_B> Acacia Trapdoor
-				<br />
-				<T_A></T_A> <T_B></T_B> Dark Oak Trapdoor
-			</h4>
 		</h3>
 		<h3>
 			17w47b <T_D>2017/11/23</T_D>
@@ -3436,41 +2898,6 @@ window.onload = function _O_fe() { //Onload
 		</h3>
 		<h3>
 			18w07a <T_D>2018/02/14</T_D>
-			<h4>
-				<T_A></T_A> <T_B></T_B> Stripped Oak Log
-				<br />
-				<T_A></T_A> <T_B></T_B> Stripped Spruce Log
-				<br />
-				<T_A></T_A> <T_B></T_B> Stripped Birch Log
-				<br />
-				<T_A></T_A> <T_B></T_B> Stripped Jungle Log
-				<br />
-				<T_A></T_A> <T_B></T_B> Stripped Acacia Log
-				<br />
-				<T_A></T_A> <T_B></T_B> Stripped Dark Oak Log
-				<br />
-				<T_A></T_A> <T_B></T_B> Bubble Column
-				<br />
-				<T_A></T_A> <T_B></T_B> Kelp
-				<br />
-				<T_A></T_A> <T_B></T_B> Seagrass
-				<br />
-				<T_A></T_A> <T_B></T_B> Dried Kelp Block
-				<br />
-				<T_A></T_A> <T_B></T_B> Prismarine Stairs
-				<br />
-				<T_A></T_A> <T_B></T_B> Prismarine Bricks Stairs
-				<br />
-				<T_A></T_A> <T_B></T_B> Dark Prismarine Stairs
-				<br />
-				<T_A></T_A> <T_B></T_B> Prismarine Slab
-				<br />
-				<T_A></T_A> <T_B></T_B> Prismarine Bricks Slab
-				<br />
-				<T_A></T_A> <T_B></T_B> Dark Prismarine Slab
-				<br />
-				<T_A></T_A> <T_B></T_B> Turtle Egg
-			</h4>
 		</h3>
 		<h3>
 			18w07b <T_D>2018/02/15</T_D>
@@ -3486,51 +2913,12 @@ window.onload = function _O_fe() { //Onload
 		</h3>
 		<h3>
 			18w09a <T_D>2018/03/01</T_D>
-			<h4>
-				<T_A></T_A> <T_B></T_B> Tube Coral Block
-				<br />
-				<T_A></T_A> <T_B></T_B> Brain Coral Block
-				<br />
-				<T_A></T_A> <T_B></T_B> Bubble Coral Block
-				<br />
-				<T_A></T_A> <T_B></T_B> Fire Coral Block
-				<br />
-				<T_A></T_A> <T_B></T_B> Horn Coral Block
-				<br />
-				<T_A></T_A> <T_B></T_B> Dead Coral Block
-			</h4>
 		</h3>
 		<h3>
 			18w10a <T_D>2018/03/06</T_D>
-			<h4>
-				<T_A></T_A> <T_B></T_B> Tube Coral
-				<br />
-				<T_A></T_A> <T_B></T_B> Brain Coral
-				<br />
-				<T_A></T_A> <T_B></T_B> Bubble Coral
-				<br />
-				<T_A></T_A> <T_B></T_B> Fire Coral
-				<br />
-				<T_A></T_A> <T_B></T_B> Horn Coral
-			</h4>
 		</h3>
 		<h3>
 			18w10b <T_D>2018/03/07</T_D>
-			<h4>
-				<T_A></T_A> <T_B></T_B> Dead Tube Coral Block
-				<br />
-				<T_A></T_A> <T_B></T_B> Dead Brain Coral Block
-				<br />
-				<T_A></T_A> <T_B></T_B> Dead Bubble Coral Block
-				<br />
-				<T_A></T_A> <T_B></T_B> Dead Fire Coral Block
-				<br />
-				<T_A></T_A> <T_B></T_B> Dead Horn Coral Block
-				<br />
-				<T_A></T_A> <T_B></T_B> Shulker Box
-				<br />
-				<T_R></T_R> <T_B></T_B> Dead Coral Block
-			</h4>
 		</h3>
 		<h3>
 			18w10c <T_D>2018/03/08</T_D>
@@ -3540,34 +2928,15 @@ window.onload = function _O_fe() { //Onload
 		</h3>
 		<h3>
 			18w11a <T_D>2018/03/13</T_D>
-			<h4>
-				<T_A></T_A> <T_B></T_B> Tube Coral Fan
-				<br />
-				<T_A></T_A> <T_B></T_B> Brain Coral Fan
-				<br />
-				<T_A></T_A> <T_B></T_B> Bubble Coral Fan
-				<br />
-				<T_A></T_A> <T_B></T_B> Fire Coral Fan
-				<br />
-				<T_A></T_A> <T_B></T_B> Horn Coral Fan
-			</h4>
 		</h3>
 		<h3>
 			18w14a <T_D>2018/04/04</T_D>
 		</h3>
 		<h3>
 			18w14b <T_D>2018/04/05</T_D>
-			<h4>
-				<T_A></T_A> <T_B></T_B> Sea Pickle
-			</h4>
 		</h3>
 		<h3>
 			18w15a <T_D>2018/04/11</T_D>
-			<h4>
-				<T_A></T_A> <T_B></T_B> Blue Ice
-				<br />
-				<T_A></T_A> <T_B></T_B> Conduit
-			</h4>
 		</h3>
 		<h3>
 			18w16a <T_D>2018/04/19</T_D>
@@ -3607,19 +2976,6 @@ window.onload = function _O_fe() { //Onload
 		</h3>
 		<h3>
 			1.13-pre2 <T_D>2018/06/15</T_D>
-			<h4>
-				<T_A></T_A> <T_B></T_B> Stripped Oak Bark
-				<br />
-				<T_A></T_A> <T_B></T_B> Stripped Spruce Bark
-				<br />
-				<T_A></T_A> <T_B></T_B> Stripped Birch Bark
-				<br />
-				<T_A></T_A> <T_B></T_B> Stripped Jungle Bark
-				<br />
-				<T_A></T_A> <T_B></T_B> Stripped Acacia Bark
-				<br />
-				<T_A></T_A> <T_B></T_B> Stripped Dark Oak Bark
-			</h4>
 		</h3>
 		<h3>
 			1.13-pre3 <T_D>2018/06/21</T_D>
@@ -3638,17 +2994,6 @@ window.onload = function _O_fe() { //Onload
 		</h3>
 		<h3>
 			1.13-pre8 <T_D>2018/07/13</T_D>
-			<h4>
-				<T_A></T_A> <T_B></T_B> Dead Tube Coral Fan
-				<br />
-				<T_A></T_A> <T_B></T_B> Dead Brain Coral Fan
-				<br />
-				<T_A></T_A> <T_B></T_B> Dead Bubble Coral Fan
-				<br />
-				<T_A></T_A> <T_B></T_B> Dead Fire Coral Fan
-				<br />
-				<T_A></T_A> <T_B></T_B> Dead Horn Coral Fan
-			</h4>
 		</h3>
 		<h3>
 			1.13-pre9 <T_D>2018/07/16</T_D>
@@ -3673,17 +3018,6 @@ window.onload = function _O_fe() { //Onload
 		</h3>
 		<h3>
 			18w32a <T_D>2018/08/08</T_D>
-			<h4>
-				<T_A></T_A> <T_B></T_B> Dead Tube Coral
-				<br />
-				<T_A></T_A> <T_B></T_B> Dead Brain Coral
-				<br />
-				<T_A></T_A> <T_B></T_B> Dead Bubble Coral
-				<br />
-				<T_A></T_A> <T_B></T_B> Dead Fire Coral
-				<br />
-				<T_A></T_A> <T_B></T_B> Dead Horn Coral
-			</h4>
 		</h3>
 		<h3>
 			18w33a <T_D>2018/08/15</T_D>
@@ -3717,79 +3051,6 @@ window.onload = function _O_fe() { //Onload
 		1.14
 		<h3>
 			18w43a <T_D>2018/10/24</T_D>
-			<h4>
-				<T_A></T_A> <T_B></T_B> Bamboo
-				<br />
-				<T_A></T_A> <T_B></T_B> Cornflower
-				<br />
-				<T_A></T_A> <T_B></T_B> Wither Rose
-				<br />
-				<T_A></T_A> <T_B></T_B> Lily of the Valley
-				<br />
-				<T_A></T_A> <T_B></T_B> Loom
-				<br />
-				<T_A></T_A> <T_B></T_B> Spruce Sign
-				<br />
-				<T_A></T_A> <T_B></T_B> Birch Sign
-				<br />
-				<T_A></T_A> <T_B></T_B> Jungle Sign
-				<br />
-				<T_A></T_A> <T_B></T_B> Acacia Sign
-				<br />
-				<T_A></T_A> <T_B></T_B> Dark Oak Sign
-				<br />
-				<T_A></T_A> <T_B></T_B> Stone Slab
-				<br />
-				<T_A></T_A> <T_B></T_B> Andesite Slab
-				<br />
-				<T_A></T_A> <T_B></T_B> Polished Andesite Slab
-				<br />
-				<T_A></T_A> <T_B></T_B> Diorite Slab
-				<br />
-				<T_A></T_A> <T_B></T_B> Polished Diorite Slab
-				<br />
-				<T_A></T_A> <T_B></T_B> Granite Slab
-				<br />
-				<T_A></T_A> <T_B></T_B> Polished Granite Slab
-				<br />
-				<T_A></T_A> <T_B></T_B> Mossy Stone Brick Slab
-				<br />
-				<T_A></T_A> <T_B></T_B> Mossy Cobblestone Slab
-				<br />
-				<T_A></T_A> <T_B></T_B> Smooth Sandstone Slab
-				<br />
-				<T_A></T_A> <T_B></T_B> Smooth Red Sandstone Slab
-				<br />
-				<T_A></T_A> <T_B></T_B> Smooth Quartz Slab
-				<br />
-				<T_A></T_A> <T_B></T_B> Red Nether Brick Slab
-				<br />
-				<T_A></T_A> <T_B></T_B> End Stone Brick Slab
-				<br />
-				<T_A></T_A> <T_B></T_B> Brick Wall
-				<br />
-				<T_A></T_A> <T_B></T_B> Andesite Wall
-				<br />
-				<T_A></T_A> <T_B></T_B> Diorite Wall
-				<br />
-				<T_A></T_A> <T_B></T_B> Granite Wall
-				<br />
-				<T_A></T_A> <T_B></T_B> Prismarine Wall
-				<br />
-				<T_A></T_A> <T_B></T_B> Stone Brick Wall
-				<br />
-				<T_A></T_A> <T_B></T_B> Mossy Stone Brick Wall
-				<br />
-				<T_A></T_A> <T_B></T_B> Sandstone Wall
-				<br />
-				<T_A></T_A> <T_B></T_B> Red Sandstone Wall
-				<br />
-				<T_A></T_A> <T_B></T_B> Nether Brick Wall
-				<br />
-				<T_A></T_A> <T_B></T_B> Red Nether Brick Wall
-				<br />
-				<T_A></T_A> <T_B></T_B> End Stone Brick Wall
-			</h4>
 		</h3>
 		<h3>
 			18w43b <T_D>2018/10/24</T_D>
@@ -3799,41 +3060,12 @@ window.onload = function _O_fe() { //Onload
 		</h3>
 		<h3>
 			18w44a <T_D>2018/10/31</T_D>
-			<h4>
-				<T_A></T_A> <T_B></T_B> Barrel
-				<br />
-				<T_A></T_A> <T_B></T_B> Bell
-				<br />
-				<T_A></T_A> <T_B></T_B> Blast Furnace
-				<br />
-				<T_A></T_A> <T_B></T_B> Smoker
-				<br />
-				<T_A></T_A> <T_B></T_B> Cartography Table
-				<br />
-				<T_A></T_A> <T_B></T_B> Fletching Table
-				<br />
-				<T_A></T_A> <T_B></T_B> Smithing Table
-				<br />
-				<T_A></T_A> <T_B></T_B> Stonecutter
-				<br />
-				<T_A></T_A> <T_B></T_B> Grindstone
-				<br />
-				<T_A></T_A> <T_B></T_B> Lectern
-			</h4>
 		</h3>
 		<h3>
 			18w45a <T_D>2018/11/07</T_D>
-			<h4>
-				<T_A></T_A> <T_B></T_B> Scaffolding
-			</h4>
 		</h3>
 		<h3>
 			18w46a <T_D>2018/11/15</T_D>
-			<h4>
-				<T_A></T_A> <T_B></T_B> Lantern
-				<br />
-				<T_A></T_A> <T_B></T_B> Jigsaw Block
-			</h4>
 		</h3>
 		<h3>
 			18w47a <T_D>2018/11/21</T_D>
@@ -3849,27 +3081,15 @@ window.onload = function _O_fe() { //Onload
 		</h3>
 		<h3>
 			18w49a <T_D>2018/12/05</T_D>
-			<h4>
-				<T_A></T_A> <T_B></T_B> Sweet Berries
-			</h4>
 		</h3>
 		<h3>
 			18w50a <T_D>2018/12/12</T_D>
-			<h4>
-				<T_A></T_A> <T_B></T_B> Sweet Berry Bush
-			</h4>
 		</h3>
 		<h3>
 			19w02a <T_D>2019/01/09</T_D>
-			<h4>
-				<T_A></T_A> <T_B></T_B> Campfire
-			</h4>
 		</h3>
 		<h3>
 			19w03a <T_D>2019/01/16</T_D>
-			<h4>
-				<T_A></T_A> <T_B></T_B> Composter
-			</h4>
 		</h3>
 		<h3>
 			19w03b <T_D>2019/01/17</T_D>
@@ -3909,11 +3129,6 @@ window.onload = function _O_fe() { //Onload
 		</h3>
 		<h3>
 			19w12a <T_D>2019/03/20</T_D>
-			<h4>
-				<T_A></T_A> <T_B></T_B> Cut Sandstone Slab
-				<br />
-				<T_A></T_A> <T_B></T_B> Cut Red Sandstone Slab
-			</h4>
 		</h3>
 		<h3>
 			19w12b <T_D>2019/03/21</T_D>
@@ -4031,11 +3246,6 @@ window.onload = function _O_fe() { //Onload
 		1.15
 		<h3>
 			19w34a <T_D>2019/08/22</T_D>
-			<h4>
-				<T_A></T_A> <T_B></T_B> Bee Nest
-				<br />
-				<T_A></T_A> <T_B></T_B> Beehive
-			</h4>
 		</h3>
 		<h3>
 			19w35a <T_D>2019/08/28</T_D>
@@ -4060,11 +3270,6 @@ window.onload = function _O_fe() { //Onload
 		</h3>
 		<h3>
 			19w41a <T_D>2019/10/09</T_D>
-			<h4>
-				<T_A></T_A> <T_B></T_B> Honey Block
-				<br />
-				<T_A></T_A> <T_B></T_B> Honeycomb Block
-			</h4>
 		</h3>
 		<h3>
 			19w42a <T_D>2019/10/16</T_D>
@@ -4137,85 +3342,6 @@ window.onload = function _O_fe() { //Onload
 		1.16
 		<h3>
 			20w06a <T_D>2020/02/05</T_D>
-			<h4>
-				<T_A></T_A> <T_B></T_B> Ancient Debris
-				<br />
-				<T_A></T_A> <T_B></T_B> Basalt
-				<br />
-				<T_A></T_A> <T_B></T_B> Block of Netherite
-				<br />
-				<T_A></T_A> <T_B></T_B> Crimson Stem
-				<br />
-				<T_A></T_A> <T_B></T_B> Crimson Planks
-				<br />
-				<T_A></T_A> <T_B></T_B> Crimson Sign
-				<br />
-				<T_A></T_A> <T_B></T_B> Crimson Slab
-				<br />
-				<T_A></T_A> <T_B></T_B> Crimson Stairs
-				<br />
-				<T_A></T_A> <T_B></T_B> Crimson Fence
-				<br />
-				<T_A></T_A> <T_B></T_B> Crimson Fence Gate
-				<br />
-				<T_A></T_A> <T_B></T_B> Crimson Pressure Plate
-				<br />
-				<T_A></T_A> <T_B></T_B> Crimson Button
-				<br />
-				<T_A></T_A> <T_B></T_B> Crimson Door
-				<br />
-				<T_A></T_A> <T_B></T_B> Crimson Trapdoor
-				<br />
-				<T_A></T_A> <T_B></T_B> Crimson Fungus
-				<br />
-				<T_A></T_A> <T_B></T_B> Crimson Nylium
-				<br />
-				<T_A></T_A> <T_B></T_B> Crimson Roots
-				<br />
-				<T_A></T_A> <T_B></T_B> Warped Stem
-				<br />
-				<T_A></T_A> <T_B></T_B> Warped Planks
-				<br />
-				<T_A></T_A> <T_B></T_B> Warped Sign
-				<br />
-				<T_A></T_A> <T_B></T_B> Warped Slab
-				<br />
-				<T_A></T_A> <T_B></T_B> Warped Stairs
-				<br />
-				<T_A></T_A> <T_B></T_B> Warped Fence
-				<br />
-				<T_A></T_A> <T_B></T_B> Warped Fence Gate
-				<br />
-				<T_A></T_A> <T_B></T_B> Warped Pressure Plate
-				<br />
-				<T_A></T_A> <T_B></T_B> Warped Button
-				<br />
-				<T_A></T_A> <T_B></T_B> Warped Door
-				<br />
-				<T_A></T_A> <T_B></T_B> Warped Trapdoor
-				<br />
-				<T_A></T_A> <T_B></T_B> Warped Fungus
-				<br />
-				<T_A></T_A> <T_B></T_B> Warped Nylium
-				<br />
-				<T_A></T_A> <T_B></T_B> Warped Roots
-				<br />
-				<T_A></T_A> <T_B></T_B> Nether Sprouts
-				<br />
-				<T_A></T_A> <T_B></T_B> Shroomlight
-				<br />
-				<T_A></T_A> <T_B></T_B> Soul Fire
-				<br />
-				<T_A></T_A> <T_B></T_B> Soul Lantern
-				<br />
-				<T_A></T_A> <T_B></T_B> Soul Torch
-				<br />
-				<T_A></T_A> <T_B></T_B> Soul Soil
-				<br />
-				<T_A></T_A> <T_B></T_B> Warped Wart Block
-				<br />
-				<T_A></T_A> <T_B></T_B> Weeping Vines
-			</h4>
 		</h3>
 		<h3>
 			20w07a <T_D>2020/02/14</T_D>
@@ -4225,45 +3351,18 @@ window.onload = function _O_fe() { //Onload
 		</h3>
 		<h3>
 			20w09a <T_D>2020/02/26</T_D>
-			<h4>
-				<T_A></T_A> <T_B></T_B> Crying Obsidian
-				<br />
-				<T_A></T_A> <T_B></T_B> Target Block
-			</h4>
 		</h3>
 		<h3>
 			20w10a <T_D>2020/03/04</T_D>
-			<h4>
-				<T_A></T_A> <T_B></T_B> Crimson Hyphae
-				<br />
-				<T_A></T_A> <T_B></T_B> Warped Hyphae
-				<br />
-				<T_A></T_A> <T_B></T_B> Stripped Crimson Hyphae
-				<br />
-				<T_A></T_A> <T_B></T_B> Stripped Warped Hyphae
-			</h4>
 		</h3>
 		<h3>
 			20w11a <T_D>2020/03/11</T_D>
-			<h4>
-				<T_A></T_A> <T_B></T_B> Nether Gold Ore
-				<br />
-				<T_A></T_A> <T_B></T_B> Twisting Vines
-			</h4>
 		</h3>
 		<h3>
 			20w12a <T_D>2020/03/18</T_D>
-			<h4>
-				<T_A></T_A> <T_B></T_B> Polished Basalt
-				<br />
-				<T_A></T_A> <T_B></T_B> Respawn Anchor
-			</h4>
 		</h3>
 		<h3>
 			20w13a <T_D>2020/03/25</T_D>
-			<h4>
-				<T_A></T_A> <T_B></T_B> Lodestone
-			</h4>
 		</h3>
 		<h3>
 			20w13b <T_D>2020/03/26</T_D>
@@ -4273,55 +3372,9 @@ window.onload = function _O_fe() { //Onload
 		</h3>
 		<h3>
 			20w15a <T_D>2020/04/08</T_D>
-			<h4>
-				<T_A></T_A> <T_B></T_B> Blackstone
-				<br />
-				<T_A></T_A> <T_B></T_B> Blackstone Slab
-				<br />
-				<T_A></T_A> <T_B></T_B> Blackstone Stairs
-				<br />
-				<T_A></T_A> <T_B></T_B> Blackstone Wall
-				<br />
-				<T_A></T_A> <T_B></T_B> Chiseled Nether Bricks
-				<br />
-				<T_A></T_A> <T_B></T_B> Chiseled Polished Blackstone
-				<br />
-				<T_A></T_A> <T_B></T_B> Cracked Nether Bricks
-				<br />
-				<T_A></T_A> <T_B></T_B> Cracked Polished Blackstone Bricks
-				<br />
-				<T_A></T_A> <T_B></T_B> Gilded Blackstone
-				<br />
-				<T_A></T_A> <T_B></T_B> Polished Blackstone
-				<br />
-				<T_A></T_A> <T_B></T_B> Polished Blackstone Bricks
-				<br />
-				<T_A></T_A> <T_B></T_B> Polished Blackstone Brick Slab
-				<br />
-				<T_A></T_A> <T_B></T_B> Polished Blackstone Brick Stairs
-				<br />
-				<T_A></T_A> <T_B></T_B> Polished Blackstone Brick Wall
-				<br />
-				<T_A></T_A> <T_B></T_B> Polished Blackstone Button
-				<br />
-				<T_A></T_A> <T_B></T_B> Polished Blackstone Pressure Plate
-				<br />
-				<T_A></T_A> <T_B></T_B> Polished Blackstone Slab
-				<br />
-				<T_A></T_A> <T_B></T_B> Polished Blackstone Stairs
-				<br />
-				<T_A></T_A> <T_B></T_B> Polished Blackstone Wall
-				<br />
-				<T_A></T_A> <T_B></T_B> Quartz Bricks
-				<br />
-				<T_A></T_A> <T_B></T_B> Soul Campfire
-			</h4>
 		</h3>
 		<h3>
 			20w16a <T_D>2020/04/15</T_D>
-			<h4>
-				<T_A></T_A> <T_B></T_B> Chain
-			</h4>
 		</h3>
 		<h3>
 			20w17a <T_D>2020/04/22</T_D>
@@ -4445,232 +3498,27 @@ window.onload = function _O_fe() { //Onload
 		1.17
 		<h3>
 			20w45a <T_D>2020/11/04</T_D>
-			<h4>
-				<T_A></T_A> <T_B></T_B> Copper Ore
-				<br />
-				<T_A></T_A> <T_B></T_B> Copper Block
-				<br />
-				<T_A></T_A> <T_B></T_B> Lightly Weathered Copper Block
-				<br />
-				<T_A></T_A> <T_B></T_B> Semi-Weathered Copper Block
-				<br />
-				<T_A></T_A> <T_B></T_B> Weathered Copper BlocK
-				<br />
-				<T_A></T_A> <T_B></T_B> Cut Copper
-				<br />
-				<T_A></T_A> <T_B></T_B> Lightly Weathered Cut Copper
-				<br />
-				<T_A></T_A> <T_B></T_B> Semi-Weathered Cut Copper
-				<br />
-				<T_A></T_A> <T_B></T_B> Weathered Cut Copper
-				<br />
-				<T_A></T_A> <T_B></T_B> Cut Copper Stairs
-				<br />
-				<T_A></T_A> <T_B></T_B> Lightly Weathered Cut Copper Stairs
-				<br />
-				<T_A></T_A> <T_B></T_B> Semi-Weathered Cut Copper Stairs
-				<br />
-				<T_A></T_A> <T_B></T_B> Weathered Cut Copper Stairs
-				<br />
-				<T_A></T_A> <T_B></T_B> Cut Copper Slab
-				<br />
-				<T_A></T_A> <T_B></T_B> Lightly Weathered Cut Copper Slab
-				<br />
-				<T_A></T_A> <T_B></T_B> Semi Weathered Cut Copper Slab
-				<br />
-				<T_A></T_A> <T_B></T_B> Weathered Cut Copper Slab
-				<br />
-				<T_A></T_A> <T_B></T_B> Waxed Copper
-				<br />
-				<T_A></T_A> <T_B></T_B> Waxed Lightly Weathered Copper
-				<br />
-				<T_A></T_A> <T_B></T_B> Waxed Semi-Weathered Copper
-				<br />
-				<T_A></T_A> <T_B></T_B> Waxed Cut Copper
-				<br />
-				<T_A></T_A> <T_B></T_B> Waxed Lightly Weathered Cut Copper
-				<br />
-				<T_A></T_A> <T_B></T_B> Waxed Semi-Weathered Cut Copper
-				<br />
-				<T_A></T_A> <T_B></T_B> Waxed Cut Copper Stairs
-				<br />
-				<T_A></T_A> <T_B></T_B> Waxed Lightly Weathered Cut Copper Stairs
-				<br />
-				<T_A></T_A> <T_B></T_B> Waxed Semi-Weathered Cut Copper Stairs
-				<br />
-				<T_A></T_A> <T_B></T_B> Waxed Cut Copper Slab
-				<br />
-				<T_A></T_A> <T_B></T_B> Waxed Lightly Weathered Cut Copper Slab
-				<br />
-				<T_A></T_A> <T_B></T_B> Waxed Semi Weathered Cut Copper Slab
-				<br />
-				<T_A></T_A> <T_B></T_B> Small Amethyst Bud
-				<br />
-				<T_A></T_A> <T_B></T_B> Medium Amethyst Bud
-				<br />
-				<T_A></T_A> <T_B></T_B> Large Amethyst Bud
-				<br />
-				<T_A></T_A> <T_B></T_B> Amethyst Cluster
-				<br />
-				<T_A></T_A> <T_B></T_B> Block of Amethyst
-				<br />
-				<T_A></T_A> <T_B></T_B> Budding Amethyst
-				<br />
-				<T_A></T_A> <T_B></T_B> Calcite
-				<br />
-				<T_A></T_A> <T_B></T_B> Tuff
-				<br />
-				<T_A></T_A> <T_B></T_B> Candle
-				<br />
-				<T_A></T_A> <T_B></T_B> White Candle
-				<br />
-				<T_A></T_A> <T_B></T_B> Orange Candle
-				<br />
-				<T_A></T_A> <T_B></T_B> Magenta Candle
-				<br />
-				<T_A></T_A> <T_B></T_B> Light Blue Candle
-				<br />
-				<T_A></T_A> <T_B></T_B> Yellow Candle
-				<br />
-				<T_A></T_A> <T_B></T_B> Lime Candle
-				<br />
-				<T_A></T_A> <T_B></T_B> Pink Candle
-				<br />
-				<T_A></T_A> <T_B></T_B> Gray Candle
-				<br />
-				<T_A></T_A> <T_B></T_B> Light Gray Candle
-				<br />
-				<T_A></T_A> <T_B></T_B> Cyan Candle
-				<br />
-				<T_A></T_A> <T_B></T_B> Purple Candle
-				<br />
-				<T_A></T_A> <T_B></T_B> Blue Candle
-				<br />
-				<T_A></T_A> <T_B></T_B> Brown Candle
-				<br />
-				<T_A></T_A> <T_B></T_B> Green Candle
-				<br />
-				<T_A></T_A> <T_B></T_B> Red Candle
-				<br />
-				<T_A></T_A> <T_B></T_B> Black Candle
-				<br />
-				<T_A></T_A> <T_B></T_B> Lightning Rod
-				<br />
-				<T_A></T_A> <T_B></T_B> Tinted Glass
-			</h4>
 		</h3>
 		<h3>
 			20w46a <T_D>2020/11/11</T_D>
-			<h4>
-				<T_A></T_A> <T_B></T_B> Powder Snow
-			</h4>
 		</h3>
 		<h3>
 			20w48a <T_D>2020/11/25</T_D>
-			<h4>
-				<T_A></T_A> <T_B></T_B> Dripstone Block
-				<br />
-				<T_A></T_A> <T_B></T_B> Pointed Dripstone
-			</h4>
 		</h3>
 		<h3>
 			20w49a <T_D>2020/12/02</T_D>
-			<h4>
-				<T_A></T_A> <T_B></T_B> Sculk Sensor
-			</h4>
 		</h3>
 		<h3>
 			20w51a <T_D>2020/12/16</T_D>
 		</h3>
 		<h3>
 			21w03a <T_D>2021/01/20</T_D>
-			<h4>
-				<T_A></T_A> <T_B></T_B> Glow Lichen
-			</h4>
 		</h3>
 		<h3>
 			21w05a <T_D>2021/02/03</T_D>
-			<h4>
-				<T_A></T_A> <T_B></T_B> Azalea Bush
-				<br />
-				<T_A></T_A> <T_B></T_B> Azalea Leaves
-				<br />
-				<T_A></T_A> <T_B></T_B> Flowering Azalea Leaves
-				<br />
-				<T_A></T_A> <T_B></T_B> Cave Vines
-				<br />
-				<T_A></T_A> <T_B></T_B> Dripleaf
-				<br />
-				<T_A></T_A> <T_B></T_B> Hanging Roots
-				<br />
-				<T_A></T_A> <T_B></T_B> Rooted Dirt
-				<br />
-				<T_A></T_A> <T_B></T_B> Moss Block
-				<br />
-				<T_A></T_A> <T_B></T_B> Moss Carpet
-				<br />
-				<T_A></T_A> <T_B></T_B> Spore Blossom
-				<br />
-				<T_C></T_C> <T_B></T_B> Lightly Weathered Copper Block <T_CI></T_CI> Exposed Copper Block
-				<br />
-				<T_C></T_C> <T_B></T_B> Semi-Weathered Copper Block <T_CI></T_CI> Weathered Copper Block
-				<br />
-				<T_C></T_C> <T_B></T_B> Weathered Copper BlocK <T_CI></T_CI> Oxidized Copper Block
-				<br />
-				<T_C></T_C> <T_B></T_B> Lightly Weathered Cut Copper <T_CI></T_CI> Exposed Cut Copper
-				<br />
-				<T_C></T_C> <T_B></T_B> Semi-Weathered Cut Copper <T_CI></T_CI> Weathered Cut Copper
-				<br />
-				<T_C></T_C> <T_B></T_B> Weathered Cut Copper <T_CI></T_CI> Oxidized Cut Copper
-				<br />
-				<T_C></T_C> <T_B></T_B> Lightly Weathered Cut Copper Stairs <T_CI></T_CI> Exposed Cut Copper Stairs
-				<br />
-				<T_C></T_C> <T_B></T_B> Semi-Weathered Cut Copper Stairs <T_CI></T_CI> Weathered Cut Copper Stairs
-				<br />
-				<T_C></T_C> <T_B></T_B> Weathered Cut Copper Stairs <T_CI></T_CI> Oxidized Cut Copper Stairs
-				<br />
-				<T_C></T_C> <T_B></T_B> Lightly Weathered Cut Copper Slab <T_CI></T_CI> Exposed Cut Copper Slab
-				<br />
-				<T_C></T_C> <T_B></T_B> Semi Weathered Cut Copper Slab <T_CI></T_CI> Weathered Cut Copper Slab
-				<br />
-				<T_C></T_C> <T_B></T_B> Weathered Cut Copper Slab <T_CI></T_CI> Oxidized Cut Copper Slab
-				<br />
-				<T_C></T_C> <T_B></T_B> Waxed Lightly Weathered Copper <T_CI></T_CI> Waxed Exposed Copper
-				<br />
-				<T_C></T_C> <T_B></T_B> Waxed Semi-Weathered Copper <T_CI></T_CI> Waxed Weathered Copper
-				<br />
-				<T_C></T_C> <T_B></T_B> Waxed Lightly Weathered Cut Copper <T_CI></T_CI> Waxed Exposed Cut Copper
-				<br />
-				<T_C></T_C> <T_B></T_B> Waxed Semi-Weathered Cut Copper <T_CI></T_CI> Waxed Weathered Cut Copper
-				<br />
-				<T_C></T_C> <T_B></T_B> Waxed Lightly Weathered Cut Copper Stairs <T_CI></T_CI> Waxed Exposed Cut Copper Stairs
-				<br />
-				<T_C></T_C> <T_B></T_B> Waxed Semi-Weathered Cut Copper Stairs <T_CI></T_CI> Waxed Weathered Cut Copper Stairs
-				<br />
-				<T_C></T_C> <T_B></T_B> Waxed Lightly Weathered Cut Copper Slab <T_CI></T_CI> Waxed Exposed Cut Copper Slab
-				<br />
-				<T_C></T_C> <T_B></T_B> Waxed Semi Weathered Cut Copper Slab <T_CI></T_CI> Waxed Weathered Cut Copper Slab
-			</h4>
 		</h3>
 		<h3>
 			21w05b <T_D>2021/02/04</T_D>
-			<h4>
-				<T_C></T_C> <T_B></T_B> Copper Block <T_CI></T_CI> Block of Copper
-				<br />
-				<T_C></T_C> <T_B></T_B> Exposed Copper Block <T_CI></T_CI> Exposed Copper
-				<br />
-				<T_C></T_C> <T_B></T_B> Weathered Copper Block <T_CI></T_CI> Weathered Copper
-				<br />
-				<T_C></T_C> <T_B></T_B> Oxidized Copper Block <T_CI></T_CI> Oxidized Copper
-				<br />
-				<T_C></T_C> <T_B></T_B> Waxed Copper Block <T_CI></T_CI> Waxed Block of Copper
-				<br />
-				<T_C></T_C> <T_B></T_B> Waxed Exposed Copper Block <T_CI></T_CI> Waxed Exposed Copper
-				<br />
-				<T_C></T_C> <T_B></T_B> Waxed Weathered Copper Block <T_CI></T_CI> Waxed Weathered Copper
-				<br />
-				<T_C></T_C> <T_B></T_B> Waxed Oxidized Copper Block <T_CI></T_CI> Waxed Oxidized Copper
-			</h4>
 		</h3>
 		<h3>
 			21w06a <T_D>2021/02/10</T_D>
