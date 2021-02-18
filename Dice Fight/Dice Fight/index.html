@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 <head>
-	<title>Blocks' History of Miecraft - τnTNT_☢️</title>
+	<title>Fight Dice Game - τnTNT_☢️</title>
 	<meta charset="UTF-8">
 <style>
 
@@ -216,8 +216,41 @@ div._NumberBattle_ce {
 	transform: translateX(-50%);
 }
 
+div._VictoryOrLose_ce {
+	background: rgba(11,11,11,0.4);
+	display: none;
+	font-size: calc(2.4em + 0.4vmax); /**5vmin; 2vmax; 40px; 3em*/
+	left: 48vw;
+	opacity: 0;
+	position: fixed;
+	top: 50vh;
+	transform: translate(-50%,-50%);
+	transition-duration: 0.8s;
+}
+
 </style>
 <script>
+
+function _AlertOverlay_fe(_AlertOverlay_Value_ve) {
+	if(_AlertOverlay_Value_ve=='Draw') {
+		CLASS('_VictoryOrLose_ce')[0].innerText = 'Draw!';
+		_AlertOverlayAnimation_fe();
+	} else {
+		//~ CLASS('_'+_AlertOverlay_Value_ve+'SideColorName_ce')[0].innerText+' Won!'
+		CLASS('_VictoryOrLose_ce')[0].innerText = CLASS('_'+_AlertOverlay_Value_ve+'SideColorName_ce')[0].innerText+' Won!';
+		_AlertOverlayAnimation_fe();
+	};
+};
+
+function _AlertOverlayAnimation_fe() {
+	CLASS('_VictoryOrLose_ce')[0].style.display = 'block';
+	setTimeout(function() {CLASS('_VictoryOrLose_ce')[0].style.opacity = '1';},0);
+	setTimeout(function() {CLASS('_VictoryOrLose_ce')[0].style.opacity = '0';},800);
+	setTimeout(function() {
+		CLASS('_VictoryOrLose_ce')[0].style.display = 'none';
+		CLASS('_StartFightButton_ce')[0].style.pointerEvents = 'auto';
+	},1600);
+};
 
 function _ButtonClicked_fe(_ButtonClicked_ClassToSwitch_ve) {
 	var _ButtonClicked_ListOfElementToSwitch_ve = CLASS(CLASS('_Game_ce')[0] ,_ButtonClicked_ClassToSwitch_ve);
@@ -264,7 +297,7 @@ function _ScrollDice_fe(_ScrollDice_ValueElement_ve,_ScrollDice_Element_ve) {
 	var _ScrollDice_TimeOfScrolls_ve = [50,200,320,420,510,600,680,760,750,840,940,1060,1200,1400];
 	for(var _ScrollDice_Iteration_ve=0; _ScrollDice_Iteration_ve<_ScrollDice_TimeOfScrolls_ve.length; _ScrollDice_Iteration_ve++) {
 		setTimeout(function() {
-			_ScrollDice_NumberRolled_ve = Math.floor(Math.random()*_Fight_NumbersGamableInThisSession_ve.length+1);
+			_ScrollDice_NumberRolled_ve = CLASS('_UsableDice_ce')[0].innerText[Math.floor(Math.random()*CLASS('_UsableDice_ce')[0].innerText.length)];
 			_ScrollDice_ValueElement_ve.innerHTML = _ScrollDice_NumberRolled_ve;
 			_DrawDice_fe(_ScrollDice_ValueElement_ve,_ScrollDice_Element_ve);
 		},_ScrollDice_TimeOfScrolls_ve[_ScrollDice_Iteration_ve]);
@@ -283,21 +316,18 @@ function _SetGameStyle_fe() {
 
 function _StartFight_fe() {
 	CLASS('_StartFightButton_ce')[0].style.pointerEvents = 'none';
-	if(_StartFight_EndFight_ve==true) {
-	} else {
-	};
-		_StartFight_TimeOfScroll_ve = _ScrollDice_fe(CLASS('_UpSideDiceValue_ce')[0],CLASS('_UpSideDice_ce')[0]);
-		_StartFight_TimeOfScroll_ve = _ScrollDice_fe(CLASS('_BottomSideDiceValue_ce')[0],CLASS('_BottomSideDice_ce')[0]);
-		setTimeout(function() {
-			var _StartFight_WhoHasWon_ve = _WhoHasWon_fe();
-			CLASS('_StartFightButton_ce')[0].style.pointerEvents = 'auto';
-			if(_StartFight_WhoHasWon_ve=='Draw') {
-				_StartFight_EndFight_ve = false;
-			} else {
-				_StartFight_EndFight_ve = true;
-			};
-		},_StartFight_TimeOfScroll_ve);
-	//~ return 0;
+	_StartFight_TimeOfScroll_ve = _ScrollDice_fe(CLASS('_UpSideDiceValue_ce')[0],CLASS('_UpSideDice_ce')[0]);
+	_StartFight_TimeOfScroll_ve = _ScrollDice_fe(CLASS('_BottomSideDiceValue_ce')[0],CLASS('_BottomSideDice_ce')[0]);
+	setTimeout(function() {
+		var _StartFight_WhoHasWon_ve = _WhoHasWon_fe();
+		if(_StartFight_WhoHasWon_ve=='Draw') {
+			CLASS('_UsableDice_ce')[0].innerText = CLASS('_UsableDice_ce')[0].innerText.replace(CLASS('_DiceValue_ce')[0].innerText[0],'');
+			_AlertOverlay_fe(_StartFight_WhoHasWon_ve);
+		} else {
+			CLASS('_UsableDice_ce')[0].innerText = CLASS('_AllDices_ce')[0].innerText;
+			_AlertOverlay_fe(_StartFight_WhoHasWon_ve);
+		};
+	},_StartFight_TimeOfScroll_ve);
 };
 
 function _WhoHasWon_fe() {
@@ -310,9 +340,9 @@ function _WhoHasWon_fe() {
 	};
 };
 
-var _Fight_NumbersGamable_ve = [1,2,3,4,5,6];
-var _Fight_NumbersGamableInThisSession_ve = [1,2,3,4,5,6];
-var _StartFight_EndFight_ve = true;
+//~ var _Fight_NumbersGamable_ve = [1,2,3];//,4,5,6];
+//~ var _Fight_NumbersGamableInThisSession_ve;
+//~ var _StartFight_EndFight_ve = true;
 
 window.onload = function _O_fe() { /*Onload*/
 	document.body.innerHTML = '<div class="_DHTML_ce">'+document.getElementsByClassName('_DHTML_ce')[0].innerHTML+'</div>';
@@ -351,6 +381,21 @@ function CALHTML(_CALHTML_Element_ve,_CALHTML_Value_ve) { /*Change All Lenght in
 	};
 };
 
+//~ function AREMOVE(_AREMOVE_Array_ve,_AREMOVE_Value_ve) {
+	//~ var index = _AREMOVE_Array_ve.indexOf(_AREMOVE_Value_ve);
+	//~ if(index > -1) {
+		//~ _AREMOVE_Array_ve.splice(index, 1);
+	//~ };
+//~ };
+
+function AREMOVE(_AREMOVE_Array_ve,_AREMOVE_Value_ve) {
+	var _AREMOVE_Index_ve = _AREMOVE_Array_ve.indexOf(_AREMOVE_Value_ve);
+	if(_AREMOVE_Index_ve>-1) {
+		_AREMOVE_Array_ve.splice(_AREMOVE_Index_ve,1);
+	};
+	return _AREMOVE_Array_ve;
+};
+
 </script>
 </head>
 <body class="_0_ce">
@@ -373,17 +418,21 @@ function CALHTML(_CALHTML_Element_ve,_CALHTML_Value_ve) { /*Change All Lenght in
 		</div>
 		<div class="_Singleplayer_ce _GameElement_ce">
 			<span class="_UpSideColor_ce _UpSideColorWins_ce _Color_ce">0</span>
-			<span class="_UpSideColor_ce _UpSideColorName_ce _Color_ce">---</span>
+			<span class="_UpSideColor_ce _UpSideColorName_ce _Color_ce">Doll</span>
 			<div class="_UpSideDice_ce _Dice_ce">☐</div>
 			<div class="_UpSideDiceValue_ce _DiceValue_ce">0</div>
 			<button class="_StartFightButton_ce" onclick="_Fight_fe();">Fight!</button>
 			<div class="_BottomSideDiceValue_ce _DiceValue_ce">0</div>
 			<div class="_BottomSideDice_ce _Dice_ce">☐</div>
-			<span class="_BottomSideColor_ce _BottomSideColorName_ce _Color_ce">---</span>
+			<span class="_BottomSideColor_ce _BottomSideColorName_ce _Color_ce">Jack</span>
 			<span class="_BottomSideColor_ce _BottomSideColorWins_ce _Color_ce">0</span>
 		</div>
 		<div class="_NumberBattle_ce _Singleplayer_ce _Multiplayer_ce _GameElement_ce">
 			<span class="_NumberBattle_ce">1st battle!</span>
+		</div>
+		<div class="_UsableDiceDiv_ce _GameElement_ce">
+			<span class="_AllDices_ce">123</span>
+			<span class="_UsableDice_ce">123456</span>
 		</div>
 		<div class="_DiceChars_ce _GameElement_ce">
 			<div class="_Dice0_ce _Dice_ce">☐</div>
