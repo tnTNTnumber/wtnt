@@ -110,6 +110,15 @@ textarea {
 ._DE_ce { /*Div Error*/
 }
 
+._noselect_ce {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
 /**^^*/
 /**..*/
 
@@ -141,21 +150,108 @@ div._Play_ce {
 	transform: translate(-50%,0%);
 }
 
+div._Game_ce {
+	transition-duration: 0.8s;
+}
+
+div._GameElement_ce {
+	opacity: 0;
+	display: none;
+	transition-duration: 0.8s;
+}
+
+div._Singleplayer_ce {
+	display: none;
+	left: 48vw;
+	opacity: 0;
+	position: fixed;
+	top: 50vh;
+	transform: translate(-50%,-50%);
+} div._Singleplayer_ce div {
+	display: inline-block;
+	left: 50%;
+	margin: 0px;
+	position: relative;
+	transform: translate(-50%,0%);
+} div._Singleplayer_ce span {
+	display: block;
+	left: 50%;
+	margin: 0px;
+	position: relative;
+	transform: translate(-50%,0%);
+  width: max-content;
+} div._Singleplayer_ce button {
+    display: block;
+	left: 50%;
+	margin: 1.4vmin 0px;
+	position: relative;
+	transform: translate(-50%,0%);
+}
+
+div._Dice_ce {
+	font-size: calc(6em + 1vmax); /**12.5vmin; 5vmax; 100px; 7.5em*/
+}
+
+div._DiceValue_ce {
+	display: none !important;
+}
+
+span._Color_ce {
+} span._UpSideColor_ce {
+	color: blue;
+} span._BottomSideColor_ce {
+	color: red;
+}
+
+button._StartFightButton_ce {
+}
+
+div._NumberBattle_ce {
+	display: none;
+	font-size: calc(1.2em + 0.2vmax); /**2.5vmin; 1vmax; 20px; 1.5em*/
+	left: 48.2vw;
+	opacity: 0;
+	position: fixed;
+	top: 1.5vmin;
+	transform: translateX(-50%);
+}
+
 </style>
 <script>
 
-function _MCN_fe(_MCN_T_ve,_MCN_V_ve) { /*Modify Class Names*/
-	/*Tag*/
-	/*Value*/
-	var _MCN_I_ve; /*Iteration*/
-	for (_MCN_I_ve=0; _MCN_I_ve<document.getElementsByClassName(_MCN_T_ve).length; _MCN_I_ve++) {
-		document.getElementsByClassName(_MCN_T_ve)[_MCN_I_ve].innerHTML = _MCN_V_ve;
+function _ButtonClicked_fe(_ButtonClicked_ClassToSwitch_ve) {
+	var _ButtonClicked_ListOfElementToSwitch_ve = CLASS(CLASS('_Game_ce')[0] ,_ButtonClicked_ClassToSwitch_ve);
+	var _ButtonClicked_ListOfGameElements_ve = CLASS(CLASS('_Game_ce')[0] ,'_GameElement_ce');
+	for(var _ButtonClicked_Iteration_ve=0; _ButtonClicked_Iteration_ve<_ButtonClicked_ListOfGameElements_ve.length; _ButtonClicked_Iteration_ve++) {
+		_ButtonClicked_ListOfGameElements_ve[_ButtonClicked_Iteration_ve].style.opacity = '0';
 	};
+	setTimeout(function() {
+		for(var _ButtonClicked_Iteration_ve=0; _ButtonClicked_Iteration_ve<_ButtonClicked_ListOfGameElements_ve.length; _ButtonClicked_Iteration_ve++) {
+			if(!(String(_ButtonClicked_ListOfGameElements_ve[_ButtonClicked_Iteration_ve].classList).includes(_ButtonClicked_ClassToSwitch_ve))) {
+				_ButtonClicked_ListOfGameElements_ve[_ButtonClicked_Iteration_ve].style.display = 'none';
+			};
+		};
+	},800);
+	setTimeout(function() {
+		for(var _ButtonClicked_Iteration_ve=0; _ButtonClicked_Iteration_ve<_ButtonClicked_ListOfElementToSwitch_ve.length; _ButtonClicked_Iteration_ve++) {
+			_ButtonClicked_ListOfElementToSwitch_ve[_ButtonClicked_Iteration_ve].style.display = 'block';
+		};
+		for(var _ButtonClicked_Iteration_ve=0; _ButtonClicked_Iteration_ve<_ButtonClicked_ListOfElementToSwitch_ve.length; _ButtonClicked_Iteration_ve++) {
+			_ButtonClicked_ListOfElementToSwitch_ve[_ButtonClicked_Iteration_ve].style.opacity = '1';
+		};
+	},494.427191/2);
 };
 
-	//~ display: flex;
-	//~ flex-direction: column;
-	//~ flex-wrap: wrap;
+function _DrawDice_fe(_DrawDice_ValueElement_ve,_DrawDice_Element_ve) {
+	_DrawDice_ClassDiceRolled_ve = '_Dice'+_DrawDice_ValueElement_ve.innerHTML+'_ce';
+	_DrawDice_DiceRolled_ve = CLASS(_DrawDice_ClassDiceRolled_ve)[0].innerHTML;
+	_DrawDice_Element_ve.innerText = _DrawDice_DiceRolled_ve;
+};
+
+function _Fight_fe() {
+	var a = _StartFight_fe();
+};
+
 function _SavingDates_fe() {
 	if(S._GameOpenedNTimes_ve) {
 		S._GameOpenedNTimes_ve = Number(S._GameOpenedNTimes_ve)+1;
@@ -164,10 +260,60 @@ function _SavingDates_fe() {
 	};
 };
 
+function _ScrollDice_fe(_ScrollDice_ValueElement_ve,_ScrollDice_Element_ve) {
+	var _ScrollDice_TimeOfScrolls_ve = [50,200,320,420,510,600,680,760,750,840,940,1060,1200,1400];
+	for(var _ScrollDice_Iteration_ve=0; _ScrollDice_Iteration_ve<_ScrollDice_TimeOfScrolls_ve.length; _ScrollDice_Iteration_ve++) {
+		setTimeout(function() {
+			_ScrollDice_NumberRolled_ve = Math.floor(Math.random()*_Fight_NumbersGamableInThisSession_ve.length+1);
+			_ScrollDice_ValueElement_ve.innerHTML = _ScrollDice_NumberRolled_ve;
+			_DrawDice_fe(_ScrollDice_ValueElement_ve,_ScrollDice_Element_ve);
+		},_ScrollDice_TimeOfScrolls_ve[_ScrollDice_Iteration_ve]);
+	};
+	return _ScrollDice_TimeOfScrolls_ve[_ScrollDice_TimeOfScrolls_ve.length-1];
+};
+
 function _SetGameStyle_fe() {
+	setTimeout(function() {CLASS('_Stats_ce')[0].style.display = 'block';},0);
+	setTimeout(function() {CLASS('_Stats_ce')[0].style.opacity = '1';},0);
+	setTimeout(function() {CLASS('_Play_ce')[0].style.display = 'block';},0);
+	setTimeout(function() {CLASS('_Play_ce')[0].style.opacity = '1';},0);
 	TAG(CLASS('_Play_ce')[0],'span')[0].innerHTML = 'Select!';
 	TAG(CLASS('_Stats_ce')[0],'span')[0].innerHTML = 'Scores: <span class="_ScoresValue_ce">0</span>';
 };
+
+function _StartFight_fe() {
+	CLASS('_StartFightButton_ce')[0].style.pointerEvents = 'none';
+	if(_StartFight_EndFight_ve==true) {
+	} else {
+	};
+		_StartFight_TimeOfScroll_ve = _ScrollDice_fe(CLASS('_UpSideDiceValue_ce')[0],CLASS('_UpSideDice_ce')[0]);
+		_StartFight_TimeOfScroll_ve = _ScrollDice_fe(CLASS('_BottomSideDiceValue_ce')[0],CLASS('_BottomSideDice_ce')[0]);
+		setTimeout(function() {
+			var _StartFight_WhoHasWon_ve = _WhoHasWon_fe();
+			CLASS('_StartFightButton_ce')[0].style.pointerEvents = 'auto';
+			if(_StartFight_WhoHasWon_ve=='Draw') {
+				_StartFight_EndFight_ve = false;
+			} else {
+				_StartFight_EndFight_ve = true;
+			};
+		},_StartFight_TimeOfScroll_ve);
+	//~ return 0;
+};
+
+function _WhoHasWon_fe() {
+	if(CLASS('_UpSideDiceValue_ce')[0].innerText==CLASS('_BottomSideDiceValue_ce')[0].innerText) {
+		return 'Draw';
+	} else if(Number(CLASS('_UpSideDiceValue_ce')[0].innerText)>Number(CLASS('_BottomSideDiceValue_ce')[0].innerText)) {
+		return 'Up';
+	} else {
+		alert();
+		return 'Bottom';
+	};
+};
+
+var _Fight_NumbersGamable_ve = [1,2,3,4,5,6];
+var _Fight_NumbersGamableInThisSession_ve = [1,2,3,4,5,6];
+var _StartFight_EndFight_ve = true;
 
 window.onload = function _O_fe() { /*Onload*/
 	document.body.innerHTML = '<div class="_DHTML_ce">'+document.getElementsByClassName('_DHTML_ce')[0].innerHTML+'</div>';
@@ -200,6 +346,12 @@ function CLASS(_TAG_ElementOrClass_ve,_CLASS_Class_ve) {
 	};
 };
 
+function CALHTML(_CALHTML_Element_ve,_CALHTML_Value_ve) { /*Change All Lenght innerHTML*/
+	for(var _CALHTML_Iteration_ve=0; _CALHTML_Iteration_ve<_CALHTML_Element_ve.length; _CALHTML_Iteration_ve++) {
+		_CALHTML_Element_ve[_CALHTML_Iteration_ve].innerHTML = _CALHTML_Value_ve;
+	};
+};
+
 </script>
 </head>
 <body class="_0_ce">
@@ -210,15 +362,41 @@ function CLASS(_TAG_ElementOrClass_ve,_CLASS_Class_ve) {
 </div>
 
 <div class="_DHTML_ce">
-	<div class="_Game_ce">
-		<div class="_Stats_ce">
-			<button class="_Stats_ce">Stats</button>
+	<div class="_Game_ce _noselect_ce">
+		<div class="_Stats_ce _GameElement_ce">
+			<button class="_StatsButton_ce" onclick="_ButtonClicked_fe('_Statistics_ce');">Stats</button>
 			<span class="_Scores_ce">Scores</span>
 		</div>
-		<div class="_Play_ce">
+		<div class="_Play_ce _GameElement_ce">
 			<span class="_Play_ce">Play!</span>
-			<button class="_Singleplayer_ce">Singleplayer</button>
-			<button class="_Multiplayer_ce">Multiplayer</button>
+			<button class="_SingleplayerButton_ce" onclick="_ButtonClicked_fe('_Singleplayer_ce');">Singleplayer</button>
+			<button class="_MultiplayerButton_ce" onclick="_ButtonClicked_fe('_Multiplayer_ce');">Multiplayer</button>
+		</div>
+		<div class="_Singleplayer_ce _GameElement_ce">
+			<span class="_UpSideColor_ce _UpSideColorWins_ce _Color_ce">0</span>
+			<span class="_UpSideColor_ce _UpSideColorName_ce _Color_ce">---</span>
+			<div class="_UpSideDice_ce _Dice_ce">☐</div>
+			<div class="_UpSideDiceValue_ce _DiceValue_ce">0</div>
+			<button class="_StartFightButton_ce" onclick="_Fight_fe();">Fight!</button>
+			<div class="_BottomSideDiceValue_ce _DiceValue_ce">0</div>
+			<div class="_BottomSideDice_ce _Dice_ce">☐</div>
+			<span class="_BottomSideColor_ce _BottomSideColorName_ce _Color_ce">---</span>
+			<span class="_BottomSideColor_ce _BottomSideColorWins_ce _Color_ce">0</span>
+		</div>
+		<div class="_NumberBattle_ce _Singleplayer_ce _Multiplayer_ce _GameElement_ce">
+			<span class="_NumberBattle_ce">1st battle!</span>
+		</div>
+		<div class="_DiceChars_ce _GameElement_ce">
+			<div class="_Dice0_ce _Dice_ce">☐</div>
+			<div class="_Dice1_ce _Dice_ce">⚀</div>
+			<div class="_Dice2_ce _Dice_ce">⚁</div>
+			<div class="_Dice3_ce _Dice_ce">⚂</div>
+			<div class="_Dice4_ce _Dice_ce">⚃</div>
+			<div class="_Dice5_ce _Dice_ce">⚄</div>
+			<div class="_Dice6_ce _Dice_ce">⚅</div>
+		</div>
+		<div class="_VictoryOrLose_ce _GameElement_ce">
+			Wine or Lost?
 		</div>
 	</div>
 	<div class="_Info_ce">
