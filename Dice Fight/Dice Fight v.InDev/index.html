@@ -1,0 +1,379 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Blocks' History of Miecraft - τnTNT_☢️</title>
+	<meta charset="UTF-8">
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@1,700&display=swap');
+
+body {
+	background: rgba(33,33,33,0.8);
+	color: rgba(0,0,0,0.95)!important;
+	font-family: 'Lucida Console', monospace;
+	font-family: 'Ubuntu Mono', monospace;
+	font-size: calc(1.2em + 0.2vmax); /**2.5vmin; 1vmax; 20px; 1.5em*/
+	transition-duration: 0.4s;
+}body * {
+	transition-duration: 0.4s;
+}
+
+button {
+	background: rgba(55,55,55,0.8);
+	border: 0.4vmin solid rgba(44,44,44,0.8);
+    border-radius: 0.5vmin;
+	color: rgba(0,0,0,0.8);
+	color: rgba(22,22,22,0.8);
+	font-size: 2.5vmin;
+	transition-duration: 0.2s;
+}button.focus, button:focus {
+    outline: 0;
+    box-shadow: none!important;
+}button:hover {
+	background: rgba(88,88,88,0.8)!important;
+}
+
+div {
+	transition-duration: 0.4s;
+}
+
+::placeholder {
+	color: rgba(55,55,55,0.8);
+}:-ms-input-placeholder {
+	color: rgba(55,55,55,0.8);
+}::-ms-input-placeholder {
+	color: rgba(55,55,55,0.8);
+}
+
+::selection {
+	background: rgba(99,99,99,0.8);
+}::-moz-selection {
+	background: rgba(99,99,99,0.8);
+}
+
+textarea {
+	color: rgba(0,0,0,0.8);
+	resize: none;
+	scrollbar-color: rgba(55,55,55,0.8) rgba(0,0,0,0);
+	scrollbar-width: thin;
+	transition-duration: 0.4s;
+}textarea:hover{
+	background: rgba(116,116,116,0.8)!important;
+}textarea.focus, textarea:focus {
+    outline: 0;
+    box-shadow: none!important;
+}
+
+::-webkit-scrollbar {
+	width: 0.5vw;
+	background: rgba(88,88,88,0);
+	border-radius: 0.25vw;
+	transition-duration: 0.4s;
+}::-webkit-scrollbar-track {
+	background: linear-gradient(90deg,rgba(88,88,88,0.2),rgba(0,0,0,0));
+	border-radius: 0.25vw;
+}::-webkit-scrollbar-track:hover {
+	background: rgba(88,88,88,0.4);
+}::-webkit-scrollbar-thumb {
+	background: rgba(55,55,55,0.5);
+	border-radius: 0.25vw;
+}::-webkit-scrollbar-thumb:hover {
+	background: rgba(55,55,55,0.8);
+}
+
+._0_ce { /*0*/
+	border: 0px;
+	border: 0;
+	margin: 0px;
+	margin: 0;
+	padding: 0px;
+	padding: 0;
+}
+
+._C_ce { /*Center*/
+	transform: translate(-50%,-50%);
+}
+
+._DN_ce { /*Display None*/
+	display:none;
+}
+
+._DHTML_ce { /*Div HTML*/
+}_DHTML_ce * {
+}
+
+._Info_ce {
+	display: none;
+}_Info_ce * {
+}
+
+._DE_ce { /*Div Error*/
+}
+
+/**^^*/
+/**..*/
+
+div._Stats_ce {
+	left: 0.5vmin;
+	position: fixed;
+	top: 0.5vmin;
+}
+
+div._Play_ce {
+	left: 48vw;
+	position: fixed;
+	top: 50vh;
+	transform: translate(-50%,-50%);
+} div._Play_ce button {
+	display: block;
+	left: 50%;
+	margin: 0px;
+	margin-top: 0.6vmin;
+	position: relative;
+	transform: translate(-50%,0%);
+} div._Play_ce button:nth-child(n+2) {
+} div._Play_ce span {
+    display: inline-block;
+	left: 50%;
+	margin: 0px;
+	margin-bottom: 0.4vmin;
+	position: relative;
+	transform: translate(-50%,0%);
+}
+
+</style>
+<script>
+
+function _MCN_fe(_MCN_T_ve,_MCN_V_ve) { /*Modify Class Names*/
+	/*Tag*/
+	/*Value*/
+	var _MCN_I_ve; /*Iteration*/
+	for (_MCN_I_ve=0; _MCN_I_ve<document.getElementsByClassName(_MCN_T_ve).length; _MCN_I_ve++) {
+		document.getElementsByClassName(_MCN_T_ve)[_MCN_I_ve].innerHTML = _MCN_V_ve;
+	};
+};
+
+	//~ display: flex;
+	//~ flex-direction: column;
+	//~ flex-wrap: wrap;
+function _SavingDates_fe() {
+	if(S._GameOpenedNTimes_ve) {
+		S._GameOpenedNTimes_ve = Number(S._GameOpenedNTimes_ve)+1;
+	} else {
+		S.setItem('_GameOpenedNTimes_ve',1);
+	};
+};
+
+function _SetGameStyle_fe() {
+	TAG(CLASS('_Play_ce')[0],'span')[0].innerHTML = 'Select!';
+	TAG(CLASS('_Stats_ce')[0],'span')[0].innerHTML = 'Scores: <span class="_ScoresValue_ce">0</span>';
+};
+
+window.onload = function _O_fe() { /*Onload*/
+	document.body.innerHTML = '<div class="_DHTML_ce">'+document.getElementsByClassName('_DHTML_ce')[0].innerHTML+'</div>';
+	S = localStorage;
+	_SavingDates_fe();
+	_SetGameStyle_fe();
+};
+
+function TAG(_TAG_ElementOrTag_ve,_TAG_Tag_ve) {
+	if(_TAG_Tag_ve) {
+		return _TAG_ElementOrTag_ve.getElementsByTagName(_TAG_Tag_ve);
+	} else {
+		return document.getElementsByTagName(_TAG_ElementOrTag_ve);
+	};
+};
+
+function ID(_TAG_ElementOrId_ve,_ID_Id_ve) {
+	if(_ID_Id_ve) {
+		return _TAG_ElementOrId_ve.getElementById(_ID_Id_ve);
+	} else {
+		return document.getElementById(_TAG_ElementOrId_ve);
+	};
+};
+
+function CLASS(_TAG_ElementOrClass_ve,_CLASS_Class_ve) {
+	if(_CLASS_Class_ve) {
+		return _TAG_ElementOrClass_ve.getElementsByClassName(_CLASS_Class_ve);
+	} else {
+		return document.getElementsByClassName(_TAG_ElementOrClass_ve);
+	};
+};
+
+</script>
+</head>
+<body class="_0_ce">
+
+<div class="_DE_ce">
+	<span>ERROR :/</span><br />
+	<span>Please enable Javascripts.</span>
+</div>
+
+<div class="_DHTML_ce">
+	<div class="_Game_ce">
+		<div class="_Stats_ce">
+			<button class="_Stats_ce">Stats</button>
+			<span class="_Scores_ce">Scores</span>
+		</div>
+		<div class="_Play_ce">
+			<span class="_Play_ce">Play!</span>
+			<button class="_Singleplayer_ce">Singleplayer</button>
+			<button class="_Multiplayer_ce">Multiplayer</button>
+		</div>
+	</div>
+	<div class="_Info_ce">
+		<div class="_Language_English_ce">
+			<h1 class="_Language_ce">
+				English (English):
+			</h1>
+			<p class="_Title_ce">
+				Dice Fight Game made in HTML, CSS and JavaScript (JS)
+			</p>
+			<p class="_Information_ce">
+				Dice Fight Game made in HTML, CSS and JavaScript (JS) is a game in which two dice fight, in a very random fight.
+				Whoever rolls the highest number wins the battle.
+				If both of them come up with the same number, he withdraws, and the same numbers that gave the tie cannot come out.
+				If there is a tie with all 6 numbers, the battle ends in a tie.
+				At the end of the challenge, whoever has scored the most points in the battles wins.
+				If the total points are equal, no one wins.
+				In the statistics the score of the matches is kept, it can go from -1 to 1.
+				If you win a challenge you get +1, if you lose, instead, -1.
+				The average of the points obtained gives the total scores.
+				Furthermore, the statistics contain the number of games won, games lost, and played.
+				The statistics are stored in the session of the browser.
+			</p>
+		</div>
+		<div class="_Language_Italian_ce">
+			<h1 class="_Language_ce">
+				Italiano (Italian):
+			</h1>
+			<p class="_Title_ce">
+				Gioco di Lotta tra Dadi fatto in HTML, CSS e JavaScript (JS)
+			</p>
+			<p class="_Information_ce">
+				Dice Fight Game made in HTML, CSS and JavaScript (JS) è un gioco nel quale si scontrano due dadi, in un combattimento molto aleatorio.
+				Il combattimento (sfida) consiste in 5 battaglie, nelle quali si tirano i dadi.
+				Chi fa il numero maggiore vince la battaglia.
+				Se esce ad entrambi lo stesso numero si ritira, e non potranno uscire gli stessi numeri che hanno dato il pareggio.
+				Nel caso si facciano pareggi con tutti e 6 i numeri, la battaglia finisce in pareggio.
+				Alla fine della sfida, chi ha fatto più punti nelle battaglie, vince.
+				Se i punti totali sono equivalenti, non vince nessuno.
+				Nelle statistiche è tenuto il punteggio delle partite (scores), esso può andare da -1 ad 1.
+				Se si vince una sfida si ottiene +1, se si perde, invece, -1.
+				La media dei punti ottenuti dà il punteggio totale (scores).
+				Inoltre nelle statistiche è contenuto il numero di partite vinte, di partite perse, e di giocate fatte.
+				Le statistiche vengono memorizzate nella sessione dell'applicazione di navigazione internet (browser).
+			</p>
+		</div>
+		<div class="_Language_Spanish_ce">
+			<h1 class="_Language_ce">
+				Español (Spanish):
+			</h1>
+			<p class="_Title_ce">
+				Juego de Lucha de Dados realizado en HTML, CSS y JavaScript (JS)
+			</p>
+			<p class="_Information_ce">
+				Dice Fight Game made in HTML, CSS and JavaScript (JS) es un juego en el que dos dados chocan, en una pelea muy aleatoria.
+				El combate (desafío) consta de 5 batallas, en las que se lanzan los dados.
+				Quien saque el número más alto gana la batalla.
+				Si ambos obtienen el mismo número, él se retira y no pueden salir los mismos números que dieron el empate.
+				Si hay un empate con los 6 números, la batalla termina en empate.
+				Al final del desafío, el que haya anotado más puntos en las batallas gana.
+				Si el total de puntos es igual, nadie gana.
+				En las estadísticas se mantiene el puntaje de los partidos, puede ir de -1 a 1.
+				Si ganas un desafío, obtienes +1, si pierdes, en cambio, -1.
+				El promedio de los puntos obtenidos da la puntuación total (scores).
+				Además, las estadísticas contienen el número de juegos ganados, juegos perdidos y jugados.
+				Las estadísticas se almacenan en la sesión de la navegador (browser).
+			</p>
+		</div>
+		<div class="_Language_Russian_ce">
+			<h1 class="_Language_ce">
+				Русский (Russian):
+			</h1>
+			<p class="_Title_ce">
+				Игра в Кости, созданная на HTML, CSS и JavaScript (JS)
+			</p>
+			<p class="_Information_ce">
+				Dice Fight Game, made in HTML, CSS and JavaScript (JS), представляет собой игру, в которой два кубика сталкиваются в очень случайной схватке.
+				Бой (вызов) состоит из 5 боёв, в которых бросаются кубики.
+				Тот, у кого выпадает наибольшее число, побеждает в битве.
+				Если они оба получат одинаковое число, он отказывается от участия, и те же числа, которые дали равный результат, не могут выйти.
+				Если все 6 чисел совпадают, битва заканчивается вничью.
+				В конце испытания побеждает тот, кто набрал наибольшее количество очков в боях.
+				Если сумма очков равна, никто не выигрывает.
+				В статистике ведется счет матчей, он может изменяться от -1 до 1.
+				Если вы выиграете испытание, вы получите +1, если проиграете, то -1.
+				Среднее значение полученных баллов дает общий балл (scores).
+				Кроме того, статистика содержит количество выигранных, проигранных и сыгранных игр.
+				Статистика хранится в сеансе приложения интернет-навигации (browser).
+			</p>
+		</div>
+		<div class="_Language_Arabic_ce">
+			<h1 class="_Language_ce">
+				عربي (Arabic):
+			</h1>
+			<p class="_Title_ce">
+				لعبة Dice Fight مصنوعة في HTML و CSS و JavaScript (JS)
+			</p>
+			<p class="_Information_ce">
+				Dice Fight Game, made in HTML, CSS and JavaScript (JS) هي لعبة يتقاتل فيها نردان ، في قتال عشوائي للغاية.
+				من يلقي العدد الأكبر يفوز في المعركة.
+				إذا أتى كلاهما بنفس الرقم ، فإنه ينسحب ، ولن تظهر نفس الأرقام التي أعطت التعادل.
+				إذا كان هناك تعادل بجميع الأرقام الستة ، تنتهي المعركة بالتعادل.
+				في نهاية التحدي ، يفوز كل من سجل أكبر عدد من النقاط في المعارك.
+				إذا تساوت مجموع النقاط ، فلن يفوز أحد.
+				في الإحصائيات ، يتم الاحتفاظ بنتيجة المباريات ، يمكن أن تتراوح من -1 إلى 1.
+				إذا فزت في أحد التحديات ، فستحصل على +1 ، وإذا خسرت ، فستحصل على -1.
+				يعطي متوسط ​​النقاط التي تم الحصول عليها مجموع الدرجات (scores).
+				علاوة على ذلك ، تحتوي الإحصائيات على عدد الألعاب التي تم الفوز بها ، والمباريات التي خسرها ، واللعب.
+				يتم تخزين الإحصائيات في جلسة المتصفح.
+			</p>
+		</div>
+		<div class="_Language_Japanese_ce">
+			<h1 class="_Language_ce">
+				日本語 (Japanese):
+			</h1>
+			<p class="_Title_ce">
+				HTML、CSS、JavaScript（JS）で作られたダイスファイトゲーム
+			</p>
+			<p class="_Information_ce">
+				Dice Fight Game, made in HTML, CSS and JavaScript (JS)は、非常にランダムな戦いで2つのサイコロが戦うゲームです。
+				最も高い数字を出した人が戦闘に勝ちます。
+				両方が同じ番号を思いついた場合、彼は撤退し、同点を与えた同じ番号は出られません。
+				6つの数字すべてで同点の場合、戦闘は同点で終了します。
+				チャレンジの終わりに、戦いで最も多くのポイントを獲得した人が勝ちます。
+				合計ポイントが等しい場合、誰も勝ちません。
+				統計では、試合のスコアが保持され、-1から1になります。
+				チャレンジに勝った場合は+1、負けた場合は-1になります。
+				得られたポイントの平均が合計スコア（scores）を示します。
+				さらに、統計には、勝ったゲーム、負けたゲーム、およびプレイしたゲームの数が含まれています。
+				統計はブラウザのセッションに保存されます。
+			</p>
+		</div>
+		<div class="_Language_Chinese_Simplified_ce">
+			<h1 class="_Language_ce">
+				简体中文 (Chinese (Simplified)):
+			</h1>
+			<p class="_Title_ce">
+				HTML，CSS和JavaScript（JS）制作的骰子格斗游戏
+			</p>
+			<p class="_Information_ce">
+				Dice Fight Game, made in HTML, CSS and JavaScript (JS)是一种游戏，其中两个人说的是打架，一场非常随机的打架。
+				人数最多的人将赢得这场战斗。
+				如果他们两个都给出相同的数字，他将退出，并且给出平局的相同数字也不会出来。
+				如果所有6个号码都平局，则战斗以平局结束。
+				挑战结束时，无论谁在战斗中获得最高分都获胜。
+				如果总分相等，则没有人获胜。
+				在统计数据中保留比赛的分数，分数可以从-1到1。
+				如果您赢得挑战，那么您将获得+1，如果您输了，您将获得-1。
+				获得的平均分给出总分（scores）。
+				此外，统计信息还包含获胜，输掉和玩的游戏数。
+				统计信息存储在浏览器的会话中。
+			</p>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>
