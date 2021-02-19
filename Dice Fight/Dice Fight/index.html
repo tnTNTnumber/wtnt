@@ -267,15 +267,17 @@ function _ButtonClicked_fe(_ButtonClicked_ClassToSwitch_ve) {
 				_ButtonClicked_ListOfGameElements_ve[_ButtonClicked_Iteration_ve].style.display = 'none';
 			};
 		};
-	},800);
+	},_ButtonClicked_Time_ve);
 	setTimeout(function() {
 		for(var _ButtonClicked_Iteration_ve=0; _ButtonClicked_Iteration_ve<_ButtonClicked_ListOfElementToSwitch_ve.length; _ButtonClicked_Iteration_ve++) {
 			_ButtonClicked_ListOfElementToSwitch_ve[_ButtonClicked_Iteration_ve].style.display = 'block';
 		};
-		for(var _ButtonClicked_Iteration_ve=0; _ButtonClicked_Iteration_ve<_ButtonClicked_ListOfElementToSwitch_ve.length; _ButtonClicked_Iteration_ve++) {
-			_ButtonClicked_ListOfElementToSwitch_ve[_ButtonClicked_Iteration_ve].style.opacity = '1';
-		};
-	},494.427191/2);
+		setTimeout(function() {
+			for(var _ButtonClicked_Iteration_ve=0; _ButtonClicked_Iteration_ve<_ButtonClicked_ListOfElementToSwitch_ve.length; _ButtonClicked_Iteration_ve++) {
+				_ButtonClicked_ListOfElementToSwitch_ve[_ButtonClicked_Iteration_ve].style.opacity = '1';
+			};
+		},_ButtonClicked_Time_ve*0.6180339887498948/4);
+	},_ButtonClicked_Time_ve*0.6180339887498948/4);
 };
 
 function _DrawDice_fe(_DrawDice_ValueElement_ve,_DrawDice_Element_ve) {
@@ -330,6 +332,30 @@ function _SavingDates_fe() {
 		S._GameOpenedNTimes_ve = Number(S._GameOpenedNTimes_ve)+1;
 	} else {
 		S.setItem('_GameOpenedNTimes_ve',1);
+	};
+	if(S._AllDates_ve) {
+		//~ S._AllDates_ve
+		/*var _AllDatesJSON_ve;
+		_AllDatesJSON_ve = JSON.parse(S._AllDates_ve);
+		alert(_AllDatesJSON_ve._SingleplayerInfos_je);
+		S.removeItem('_AllDates_ve');
+		alert('Removed!');*/
+	} else {
+		/*S.setItem('_AllDates_ve',{});*/
+		//~ var _AllDates_ve = {};
+		//~ S._AllDates_ve.push({"_SingleplayerInfos_je":'ciao'});
+		//~ S._AllDates_ve._SingleplayerInfos_je = 'ciao';
+		//~ S.setItem('_AllDates_ve._SingleplayerInfos_je','ciao');
+		//~ _AllDates_ve._SingleplayerInfos_je = 'ciao';
+		//~ S._AllDates_ve.extend(S._AllDates_ve, {"_SingleplayerInfos_je":'ciao',});
+		//~ S._AllDates_ve = {JSON.parse(S._AllDates_ve),JSON.parse({"_SingleplayerInfos_je":'ciao',})};
+		//~ alert(S._AllDates_ve._SingleplayerInfos_je);
+		//~ alert(S._AllDates_ve._SingleplayerInfos_je);
+		//~ alert(_AllDates_ve._SingleplayerInfos_je);
+		/*var _AllDatesJSON_ve = {};*/
+		/*_AllDatesJSON_ve._SingleplayerInfos_je = 'ciao';*/
+		//~ alert(_AllDatesJSON_ve._SingleplayerInfos_je);
+		/*S._AllDates_ve = JSON.stringify(_AllDatesJSON_ve);*/
 	};
 };
 
@@ -401,6 +427,7 @@ function _WhoHasWon_fe() {
 };
 
 var _AlertOverlayAnimation_Time_ve = 1200;
+var _ButtonClicked_Time_ve = 800;
 
 window.onload = function _O_fe() { /*Onload*/
 	document.body.innerHTML = '<div class="_DHTML_ce">'+document.getElementsByClassName('_DHTML_ce')[0].innerHTML+'</div>';
@@ -446,6 +473,9 @@ function AREMOVE(_AREMOVE_Array_ve,_AREMOVE_Value_ve) {
 	};
 	return _AREMOVE_Array_ve;
 };
+
+//~ function SJ(_SJ_Array_ve,) { /*local Storage JSON for Write*/ /**Write*/
+//~ };
 
 </script>
 </head>
@@ -494,27 +524,130 @@ function AREMOVE(_AREMOVE_Array_ve,_AREMOVE_Value_ve) {
 			<div class="_Dice5_ce _Dice_ce">⚄</div>
 			<div class="_Dice6_ce _Dice_ce">⚅</div>
 		</div>
+		<div class="_Colors_ce _GameElement_ce">
+			<div><span>Red</span><span>rgba(255,0,0,0.9)</span></div>
+			<div><span>Green</span><span>rgba(0,255,0,0.9)</span></div>
+			<div><span>Blue</span><span>rgba(0,0,255,0.9)</span></div>
+		</div>
+		<div class="_Themes_ce _GameElement_ce">
+			<div><span>White</span><!--span></span--></div>
+			<div><span>Light</span><!--span></span--></div>
+			<div><span>Grey</span><!--span></span--></div>
+			<div><span>Dark</span><!--span></span--></div>
+			<div><span>Black</span><!--span></span--></div>
+		</div>
 		<div class="_VictoryOrLose_ce _GameElement_ce">
 			Wine or Lost?
 		</div>
 		<div class="_PredefinedPlayerInfos_ce _GameElement_ce">
-			<div class="_PlayerInfos_ce">
-				<div><span>Name</span><span>Jack</span></div>
-				<div><span>Score</span><span>0</span></div>
-				<div><span>Rank</span><span>G</span></div>
-				<div><span>FightsWon</span><span>0</span></div>
-				<div><span>FightsLost</span><span>0</span></div>
-				<div><span>FightsList</span><span></span></div>
-				<div><span>TotalLog</span><span></span></div>
+			<div class="_SingleplayerInfos_ce">
+				<div class="_PlayerInfos_ce">
+					<div><span>Name</span><span>Jack</span></div>
+					<div><span>Color</span><span>Red</span></div>
+					<div><span>Score</span><span>0</span></div>
+					<div><span>Rank</span><span>G</span></div>
+					<div><span>FightsWon</span><span>0</span></div>
+					<div><span>FightsLost</span><span>0</span></div>
+					<div><span>FightsList</span><span></span></div>
+					<div><span>Game Started</span><span>0</span></div>
+					<div><span>Game Ended</span><span>0</span></div>
+					<div><span>TotalLog</span><span></span></div>
+				</div>
+				<div class="_BotInfos_ce">
+					<div><span>Name</span><span>Doll</span></div>
+					<div><span>Color</span><span>Blue</span></div>
+					<div><span>Score</span><span>0</span></div>
+					<div><span>Rank</span><span>G</span></div>
+					<div><span>FightsWon</span><span>0</span></div>
+					<div><span>FightsLost</span><span>0</span></div>
+					<div><span>FightsList</span><span></span></div>
+					<div><span>Game Started</span><span>0</span></div>
+					<div><span>Game Ended</span><span>0</span></div>
+					<div><span>TotalLog</span><span></span></div>
+				</div>
 			</div>
-			<div class="_BotInfos_ce">
-				<div><span>Name</span><span>Doll</span></div>
-				<div><span>Score</span><span>0</span></div>
-				<div><span>Rank</span><span>G</span></div>
-				<div><span>FightsWon</span><span>0</span></div>
-				<div><span>FightsLost</span><span>0</span></div>
-				<div><span>FightsList</span><span></span></div>
-				<div><span>TotalLog</span><span></span></div>
+			<div class="_MultiplayerInfos_ce">
+				<div class="_Player1Infos_ce">
+					<div><span>Name</span><span>Player 1</span></div>
+					<div><span>Color</span><span>Red</span></div>
+					<div><span>Score</span><span>0</span></div>
+					<div><span>Rank</span><span>G</span></div>
+					<div><span>FightsWon</span><span>0</span></div>
+					<div><span>FightsLost</span><span>0</span></div>
+					<div><span>FightsList</span><span></span></div>
+					<div><span>Game Started</span><span>0</span></div>
+					<div><span>Game Ended</span><span>0</span></div>
+					<div><span>TotalLog</span><span></span></div>
+				</div>
+				<div class="_Player2Infos_ce">
+					<div><span>Name</span><span>Player 2</span></div>
+					<div><span>Color</span><span>Green</span></div>
+					<div><span>Score</span><span>0</span></div>
+					<div><span>Rank</span><span>G</span></div>
+					<div><span>FightsWon</span><span>0</span></div>
+					<div><span>FightsLost</span><span>0</span></div>
+					<div><span>FightsList</span><span></span></div>
+					<div><span>Game Started</span><span>0</span></div>
+					<div><span>Game Ended</span><span>0</span></div>
+					<div><span>TotalLog</span><span></span></div>
+				</div>
+			</div>
+			<div class="_SettingInfos_ce">
+				<div class="_GeneralInfos_ce">
+					<div><span>Game Open</span><span>1</span></div>
+					<div><span>Font Size</span><span>1</span></div>
+					<div><span>Theme</span><span>Grey</span></div>
+				</div>
+			</div>
+		</div>
+		<div class="_Statistics_ce _GameElement_ce">
+			<div class="_SingleplayerStats_ce">
+				<div class="_PlayerStats_ce">
+<!--
+					<div><h2>Name</h2><input type="">Jack</input></div>
+					<div><h2>Color</h2><input type="">red</input></div>
+					<div><h2>Score</h2><input type="">0</input></div>
+					<div><h2>Rank</h2><input type="">G</input></div>
+					<div><h2>FightsWon</h2><input type="">0</input></div>
+					<div><h2>FightsLost</h2><input type="">0</input></div>
+					<div><h2>FightsList</h2><input type=""></input></div>
+					<div><h2>TotalLog</h2><input type=""></input></div>
+-->
+				</div>
+				<div class="_BotStats_ce">
+<!--
+					<div><h2>Name</h2><input type="">Doll</input></div>
+					<div><h2>Color</h2><input type="">blue</input></div>
+					<div><h2>Score</h2><input type="">0</input></div>
+					<div><h2>Rank</h2><input type="">G</input></div>
+					<div><h2>FightsWon</h2><input type="">0</input></div>
+					<div><h2>FightsLost</h2><input type="">0</input></div>
+					<div><h2>FightsList</h2><input type=""></input></div>
+					<div><h2>TotalLog</h2><input type=""></input></div>
+-->
+				</div>
+			</div>
+			<div class="_MultiplayerStats_ce">
+				<div class="_Player1Stats_ce">
+<!--
+					<div><h2>Name</h2><input type="">Player 1</input></div>
+					<div><h2>Color</h2><input type="">red</input></div>
+-->
+				</div>
+				<div class="_Player2Stats_ce">
+<!--
+					<div><h2>Name</h2><input type="">Player 2</input></div>
+					<div><h2>Color</h2><input type="">green</input></div>
+-->
+				</div>
+			</div>
+			<div class="_SettingStats_ce">
+				<div class="_GeneralStats_ce">
+<!--
+					<div><h2>Font Size</h2><input type="">1</input></div>
+					<div><h2>Theme</h2><input type="">Grey</input></div>
+-->
+				</div>
 			</div>
 		</div>
 	</div>
