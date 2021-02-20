@@ -330,32 +330,17 @@ function _ResetFight_fe() {
 function _SavingDates_fe() {
 	if(S._GameOpenedNTimes_ve) {
 		S._GameOpenedNTimes_ve = Number(S._GameOpenedNTimes_ve)+1;
+		/*/*/ LOG(S._GameOpenedNTimes_ve);
 	} else {
 		S.setItem('_GameOpenedNTimes_ve',1);
 	};
 	if(S._AllDates_ve) {
 		//~ S._AllDates_ve
-		/*var _AllDatesJSON_ve;
-		_AllDatesJSON_ve = JSON.parse(S._AllDates_ve);
-		alert(_AllDatesJSON_ve._SingleplayerInfos_je);
-		S.removeItem('_AllDates_ve');
-		alert('Removed!');*/
+		SR('_AllDates_ve');
+		LOG('Removed!');
 	} else {
-		/*S.setItem('_AllDates_ve',{});*/
-		//~ var _AllDates_ve = {};
-		//~ S._AllDates_ve.push({"_SingleplayerInfos_je":'ciao'});
-		//~ S._AllDates_ve._SingleplayerInfos_je = 'ciao';
-		//~ S.setItem('_AllDates_ve._SingleplayerInfos_je','ciao');
-		//~ _AllDates_ve._SingleplayerInfos_je = 'ciao';
-		//~ S._AllDates_ve.extend(S._AllDates_ve, {"_SingleplayerInfos_je":'ciao',});
-		//~ S._AllDates_ve = {JSON.parse(S._AllDates_ve),JSON.parse({"_SingleplayerInfos_je":'ciao',})};
-		//~ alert(S._AllDates_ve._SingleplayerInfos_je);
-		//~ alert(S._AllDates_ve._SingleplayerInfos_je);
-		//~ alert(_AllDates_ve._SingleplayerInfos_je);
-		/*var _AllDatesJSON_ve = {};*/
-		/*_AllDatesJSON_ve._SingleplayerInfos_je = 'ciao';*/
-		//~ alert(_AllDatesJSON_ve._SingleplayerInfos_je);
-		/*S._AllDates_ve = JSON.stringify(_AllDatesJSON_ve);*/
+		SDJ('_AllDates_ve');
+		LOG(TAG(NAME('PredefinedPlayerInfos')[0],'div').length);
 	};
 };
 
@@ -428,10 +413,13 @@ function _WhoHasWon_fe() {
 
 var _AlertOverlayAnimation_Time_ve = 1200;
 var _ButtonClicked_Time_ve = 800;
+//~ var _AllDates_ve = {};
 
 window.onload = function _O_fe() { /*Onload*/
 	document.body.innerHTML = '<div class="_DHTML_ce">'+document.getElementsByClassName('_DHTML_ce')[0].innerHTML+'</div>';
 	S = localStorage;
+	W = window;
+	G = window.MyGlobalVariables = {};
 	_SavingDates_fe();
 	_SetGameStyle_fe();
 };
@@ -460,6 +448,14 @@ function CLASS(_TAG_ElementOrClass_ve,_CLASS_Class_ve) {
 	};
 };
 
+function NAME(_TAG_ElementOrName_ve,_NAME_Name_ve) {
+	if(_NAME_Name_ve) {
+		return _TAG_ElementOrName_ve.getElementsByName(_NAME_Name_ve);
+	} else {
+		return document.getElementsByName(_TAG_ElementOrName_ve);
+	};
+};
+
 function CALHTML(_CALHTML_Element_ve,_CALHTML_Value_ve) { /*Change All Lenght innerHTML*/
 	for(var _CALHTML_Iteration_ve=0; _CALHTML_Iteration_ve<_CALHTML_Element_ve.length; _CALHTML_Iteration_ve++) {
 		_CALHTML_Element_ve[_CALHTML_Iteration_ve].innerHTML = _CALHTML_Value_ve;
@@ -474,8 +470,69 @@ function AREMOVE(_AREMOVE_Array_ve,_AREMOVE_Value_ve) {
 	return _AREMOVE_Array_ve;
 };
 
-//~ function SJ(_SJ_Array_ve,) { /*local Storage JSON for Write*/ /**Write*/
-//~ };
+function LOG(_LOG_Value_ve) {
+	console.log(_LOG_Value_ve);
+};
+
+function JL(_JL_Value_ve) { /*JSON.lenght*/
+	return Object.keys(_JL_Value_ve).length;
+};
+
+function SD(_SD_VariableString_ve,_SD_Value_ve) { /*local Storage JSON for Declaration and Global Declaration*/ /**Declaration*/
+	if(_SD_Value_ve) {
+		localStorage.setItem(_SD_VariableString_ve,JSON.stringify(_SD_Value_ve));
+		eval(_SD_VariableString_ve+` = _SD_Value_ve;`);
+	} else {
+		localStorage.setItem(_SD_VariableString_ve,undefined);
+		eval(_SD_VariableString_ve+` = undefined;`);
+	};
+};
+
+function Sd(_Sd_VariableString_ve,_Sd_Value_ve) { /*local Storage JSON for Declaration*/ /**Declaration*/
+	if(_Sd_Value_ve) {
+		localStorage.setItem(_Sd_VariableString_ve,JSON.stringify(_Sd_Value_ve));
+	} else {
+		localStorage.setItem(_Sd_VariableString_ve,undefined);
+	};
+};
+
+function SDJ(_SDJ_VariableString_ve) { /*local Storage JSON for Declaration and Global Declaration (set JSON)*/ /**Declaration*/
+	localStorage.setItem(_SDJ_VariableString_ve,{});
+	eval(_SDJ_VariableString_ve+` = {};`);
+};
+
+function Sdj(_Sdj_VariableString_ve) { /*local Storage JSON for Declaration (set JSON)*/ /**Declaration*/
+	localStorage.setItem(_Sdj_VariableString_ve,{});
+};
+
+function Sj(_Sj_VariableString_ve,_Sj_Variable_ve) { /*local Storage JSON for Write (stringify)*/ /**Write (stringify)*/
+	if(_Sj_Variable_ve) {
+		localStorage.setItem(_Sj_VariableString_ve,JSON.stringify(_Sj_Variable_ve));
+	} else {
+		eval(`localStorage.setItem(_Sj_VariableString_ve,JSON.stringify(`+_Sj_VariableString_ve+`));`);
+	};
+};
+
+function SJ(_SJ_VariableString_ve,_SJ_Variable_ve) { /*local Storage JSON for Write in Opposite (parse)*/ /**Write in Opposite (parse)*/
+	if(_SJ_Variable_ve) {
+		eval(_SJ_Variable_ve+` = JSON.parse(localStorage.getItem(_SJ_VariableString_ve));`);
+	} else {
+		eval(_SJ_VariableString_ve+` = JSON.parse(localStorage.getItem(_SJ_VariableString_ve));`);
+	};
+};
+
+function Se(_Se_VariableString_ve) { /*local Storage JSON for Extract (parse)*/ /**Extract (parse)*/
+	return JSON.parse(localStorage.getItem(_Se_VariableString_ve));
+};
+
+function Sr(_Sr_VariableString_ve) { /*local Storage JSON for Removing*/ /**Removing*/
+	localStorage.removeItem(_Sr_VariableString_ve);
+};
+
+function SR(_SR_VariableString_ve) { /*local Storage JSON for Removing and Remove a Global Variable*/ /**Removing*/
+	localStorage.removeItem(_SR_VariableString_ve);
+	eval(`delete `+_SR_VariableString_ve+`;`);
+};
 
 </script>
 </head>
@@ -539,70 +596,70 @@ function AREMOVE(_AREMOVE_Array_ve,_AREMOVE_Value_ve) {
 		<div class="_VictoryOrLose_ce _GameElement_ce">
 			Wine or Lost?
 		</div>
-		<div class="_PredefinedPlayerInfos_ce _GameElement_ce">
-			<div class="_SingleplayerInfos_ce">
-				<div class="_PlayerInfos_ce">
+		<div class="_PredefinedPlayerInfos_ce _GameElement_ce" name="PredefinedPlayerInfos">
+			<div class="_SingleplayerInfos_ce" name="SingleplayerInfos">
+				<div class="_PlayerInfos_ce" name="PlayerInfos">
 					<div><span>Name</span><span>Jack</span></div>
 					<div><span>Color</span><span>Red</span></div>
 					<div><span>Score</span><span>0</span></div>
 					<div><span>Rank</span><span>G</span></div>
-					<div><span>FightsWon</span><span>0</span></div>
-					<div><span>FightsLost</span><span>0</span></div>
-					<div><span>FightsList</span><span></span></div>
+					<div><span>Fights Won</span><span>0</span></div>
+					<div><span>Fights Lost</span><span>0</span></div>
+					<div><span>Fights List</span><span></span></div>
 					<div><span>Game Started</span><span>0</span></div>
 					<div><span>Game Ended</span><span>0</span></div>
-					<div><span>TotalLog</span><span></span></div>
+					<div><span>Total Log</span><span></span></div>
 				</div>
-				<div class="_BotInfos_ce">
+				<div class="_BotInfos_ce" name="BotInfos">
 					<div><span>Name</span><span>Doll</span></div>
 					<div><span>Color</span><span>Blue</span></div>
 					<div><span>Score</span><span>0</span></div>
 					<div><span>Rank</span><span>G</span></div>
-					<div><span>FightsWon</span><span>0</span></div>
-					<div><span>FightsLost</span><span>0</span></div>
-					<div><span>FightsList</span><span></span></div>
+					<div><span>Fights Won</span><span>0</span></div>
+					<div><span>Fights Lost</span><span>0</span></div>
+					<div><span>Fights List</span><span></span></div>
 					<div><span>Game Started</span><span>0</span></div>
 					<div><span>Game Ended</span><span>0</span></div>
-					<div><span>TotalLog</span><span></span></div>
+					<div><span>Total Log</span><span></span></div>
 				</div>
 			</div>
-			<div class="_MultiplayerInfos_ce">
-				<div class="_Player1Infos_ce">
+			<div class="_MultiplayerInfos_ce" name="MultiplayerInfos">
+				<div class="_Player1Infos_ce" name="Player1Infos">
 					<div><span>Name</span><span>Player 1</span></div>
 					<div><span>Color</span><span>Red</span></div>
 					<div><span>Score</span><span>0</span></div>
 					<div><span>Rank</span><span>G</span></div>
-					<div><span>FightsWon</span><span>0</span></div>
-					<div><span>FightsLost</span><span>0</span></div>
-					<div><span>FightsList</span><span></span></div>
+					<div><span>Fights Won</span><span>0</span></div>
+					<div><span>Fights Lost</span><span>0</span></div>
+					<div><span>Fights List</span><span></span></div>
 					<div><span>Game Started</span><span>0</span></div>
 					<div><span>Game Ended</span><span>0</span></div>
-					<div><span>TotalLog</span><span></span></div>
+					<div><span>Total Log</span><span></span></div>
 				</div>
-				<div class="_Player2Infos_ce">
+				<div class="_Player2Infos_ce" name="Player2Infos">
 					<div><span>Name</span><span>Player 2</span></div>
 					<div><span>Color</span><span>Green</span></div>
 					<div><span>Score</span><span>0</span></div>
 					<div><span>Rank</span><span>G</span></div>
-					<div><span>FightsWon</span><span>0</span></div>
-					<div><span>FightsLost</span><span>0</span></div>
-					<div><span>FightsList</span><span></span></div>
+					<div><span>Fights Won</span><span>0</span></div>
+					<div><span>Fights Lost</span><span>0</span></div>
+					<div><span>Fights List</span><span></span></div>
 					<div><span>Game Started</span><span>0</span></div>
 					<div><span>Game Ended</span><span>0</span></div>
-					<div><span>TotalLog</span><span></span></div>
+					<div><span>Total Log</span><span></span></div>
 				</div>
 			</div>
-			<div class="_SettingInfos_ce">
-				<div class="_GeneralInfos_ce">
+			<div class="_SettingInfos_ce" name="SettingInfos">
+				<div class="_GeneralInfos_ce" name="GeneralInfos">
 					<div><span>Game Open</span><span>1</span></div>
 					<div><span>Font Size</span><span>1</span></div>
 					<div><span>Theme</span><span>Grey</span></div>
 				</div>
 			</div>
 		</div>
-		<div class="_Statistics_ce _GameElement_ce">
-			<div class="_SingleplayerStats_ce">
-				<div class="_PlayerStats_ce">
+		<div class="_Statistics_ce _GameElement_ce" name="PredefinedPlayerInfos">
+			<div class="_SingleplayerStats_ce" name="SingleplayerInfos">
+				<div class="_PlayerStats_ce" name="PlayerInfos">
 <!--
 					<div><h2>Name</h2><input type="">Jack</input></div>
 					<div><h2>Color</h2><input type="">red</input></div>
@@ -614,7 +671,7 @@ function AREMOVE(_AREMOVE_Array_ve,_AREMOVE_Value_ve) {
 					<div><h2>TotalLog</h2><input type=""></input></div>
 -->
 				</div>
-				<div class="_BotStats_ce">
+				<div class="_BotStats_ce" name="BotInfos">
 <!--
 					<div><h2>Name</h2><input type="">Doll</input></div>
 					<div><h2>Color</h2><input type="">blue</input></div>
@@ -627,22 +684,22 @@ function AREMOVE(_AREMOVE_Array_ve,_AREMOVE_Value_ve) {
 -->
 				</div>
 			</div>
-			<div class="_MultiplayerStats_ce">
-				<div class="_Player1Stats_ce">
+			<div class="_MultiplayerStats_ce" name="MultiplayerInfos">
+				<div class="_Player1Stats_ce" name="Player1Infos">
 <!--
 					<div><h2>Name</h2><input type="">Player 1</input></div>
 					<div><h2>Color</h2><input type="">red</input></div>
 -->
 				</div>
-				<div class="_Player2Stats_ce">
+				<div class="_Player2Stats_ce" name="Player2Infos">
 <!--
 					<div><h2>Name</h2><input type="">Player 2</input></div>
 					<div><h2>Color</h2><input type="">green</input></div>
 -->
 				</div>
 			</div>
-			<div class="_SettingStats_ce">
-				<div class="_GeneralStats_ce">
+			<div class="_SettingStats_ce" name="SettingInfos">
+				<div class="_GeneralStats_ce" name="GeneralInfos">
 <!--
 					<div><h2>Font Size</h2><input type="">1</input></div>
 					<div><h2>Theme</h2><input type="">Grey</input></div>
