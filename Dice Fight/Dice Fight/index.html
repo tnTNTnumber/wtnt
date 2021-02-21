@@ -326,7 +326,7 @@ function _ResetFight_fe() {
 	CLASS('_UsableDice_ce')[0].innerText = CLASS('_AllDices_ce')[0].innerText;
 	setTimeout(function() {CLASS('_VictoryOrLose_ce')[0].innerText = 'Wine or Lost?';},800);
 };
-
+//------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 function _SavingDates_fe() {
 	if(S._GameOpenedNTimes_ve) {
 		S._GameOpenedNTimes_ve = Number(S._GameOpenedNTimes_ve)+1;
@@ -340,7 +340,7 @@ function _SavingDates_fe() {
 		LOG('Removed!');
 	} else {
 		SDJ('_AllDates_ve');
-		LOG(TAG(NAME('PredefinedPlayerInfos')[0],'div').length);
+		//~ LOG(TAG(NAME('PredefinedPlayerInfos')[0],'index1').length);
 	};
 };
 
@@ -448,13 +448,29 @@ function CLASS(_TAG_ElementOrClass_ve,_CLASS_Class_ve) {
 	};
 };
 
-function NAME(_TAG_ElementOrName_ve,_NAME_Name_ve) {
+function NAME(_NAME_ElementOrName_ve,_NAME_Name_ve) {
 	if(_NAME_Name_ve) {
 		return _TAG_ElementOrName_ve.getElementsByName(_NAME_Name_ve);
 	} else {
-		return document.getElementsByName(_TAG_ElementOrName_ve);
+		return document.getElementsByName(_NAME_ElementOrName_ve);
 	};
 };
+
+function ATTR(_ATTR_ElementOrName_ve,_ATTR_Name_ve) { /*get Attribute*/
+	if(_ATTR_Name_ve) {
+		return _ATTR_ElementOrName_ve.getAttribute(_ATTR_Name_ve);
+	} else {
+		return document.getAttribute(_ATTR_ElementOrName_ve);
+	};
+};
+
+//~ function ELEM(_ELEM_ElementOrName_ve,_ELEM_Name_ve) { /*custom Element*/
+	//~ if(_ELEM_Name_ve) {
+		//~ return _ELEM_ElementOrName_ve.customElements.get(_ELEM_Name_ve);
+	//~ } else {
+		//~ return document.customElements.get(_ELEM_ElementOrName_ve);
+	//~ };
+//~ };
 
 function CALHTML(_CALHTML_Element_ve,_CALHTML_Value_ve) { /*Change All Lenght innerHTML*/
 	for(var _CALHTML_Iteration_ve=0; _CALHTML_Iteration_ve<_CALHTML_Element_ve.length; _CALHTML_Iteration_ve++) {
@@ -596,116 +612,116 @@ function SR(_SR_VariableString_ve) { /*local Storage JSON for Removing and Remov
 		<div class="_VictoryOrLose_ce _GameElement_ce">
 			Wine or Lost?
 		</div>
-		<div class="_PredefinedPlayerInfos_ce _GameElement_ce" name="PredefinedPlayerInfos">
-			<div class="_SingleplayerInfos_ce" name="SingleplayerInfos">
-				<div class="_PlayerInfos_ce" name="PlayerInfos">
-					<div><span>Name</span><span>Jack</span></div>
-					<div><span>Color</span><span>Red</span></div>
-					<div><span>Score</span><span>0</span></div>
-					<div><span>Rank</span><span>G</span></div>
-					<div><span>Fights Won</span><span>0</span></div>
-					<div><span>Fights Lost</span><span>0</span></div>
-					<div><span>Fights List</span><span></span></div>
-					<div><span>Game Started</span><span>0</span></div>
-					<div><span>Game Ended</span><span>0</span></div>
-					<div><span>Total Log</span><span></span></div>
-				</div>
-				<div class="_BotInfos_ce" name="BotInfos">
-					<div><span>Name</span><span>Doll</span></div>
-					<div><span>Color</span><span>Blue</span></div>
-					<div><span>Score</span><span>0</span></div>
-					<div><span>Rank</span><span>G</span></div>
-					<div><span>Fights Won</span><span>0</span></div>
-					<div><span>Fights Lost</span><span>0</span></div>
-					<div><span>Fights List</span><span></span></div>
-					<div><span>Game Started</span><span>0</span></div>
-					<div><span>Game Ended</span><span>0</span></div>
-					<div><span>Total Log</span><span></span></div>
-				</div>
-			</div>
-			<div class="_MultiplayerInfos_ce" name="MultiplayerInfos">
-				<div class="_Player1Infos_ce" name="Player1Infos">
-					<div><span>Name</span><span>Player 1</span></div>
-					<div><span>Color</span><span>Red</span></div>
-					<div><span>Score</span><span>0</span></div>
-					<div><span>Rank</span><span>G</span></div>
-					<div><span>Fights Won</span><span>0</span></div>
-					<div><span>Fights Lost</span><span>0</span></div>
-					<div><span>Fights List</span><span></span></div>
-					<div><span>Game Started</span><span>0</span></div>
-					<div><span>Game Ended</span><span>0</span></div>
-					<div><span>Total Log</span><span></span></div>
-				</div>
-				<div class="_Player2Infos_ce" name="Player2Infos">
-					<div><span>Name</span><span>Player 2</span></div>
-					<div><span>Color</span><span>Green</span></div>
-					<div><span>Score</span><span>0</span></div>
-					<div><span>Rank</span><span>G</span></div>
-					<div><span>Fights Won</span><span>0</span></div>
-					<div><span>Fights Lost</span><span>0</span></div>
-					<div><span>Fights List</span><span></span></div>
-					<div><span>Game Started</span><span>0</span></div>
-					<div><span>Game Ended</span><span>0</span></div>
-					<div><span>Total Log</span><span></span></div>
-				</div>
-			</div>
-			<div class="_SettingInfos_ce" name="SettingInfos">
-				<div class="_GeneralInfos_ce" name="GeneralInfos">
-					<div><span>Game Open</span><span>1</span></div>
-					<div><span>Font Size</span><span>1</span></div>
-					<div><span>Theme</span><span>Grey</span></div>
-				</div>
-			</div>
-		</div>
-		<div class="_Statistics_ce _GameElement_ce" name="PredefinedPlayerInfos">
-			<div class="_SingleplayerStats_ce" name="SingleplayerInfos">
-				<div class="_PlayerStats_ce" name="PlayerInfos">
+		<div class="_PredefinedPlayerInfos_ce _GameElement_ce index0" name="PredefinedPlayerInfos">
+			<index1 class="_SingleplayerInfos_ce index1" name="SingleplayerInfos">
+				<index2 class="_PlayerInfos_ce index2" name="PlayerInfos">
+					<p><span>Name</span><span>Jack</span></p>
+					<p><span>Color</span><span>Red</span></p>
+					<p><span>Score</span><span>0</span></p>
+					<p><span>Rank</span><span>G</span></p>
+					<p><span>Fights Won</span><span>0</span></p>
+					<p><span>Fights Lost</span><span>0</span></p>
+					<p><span>Fights List</span><span></span></p>
+					<p><span>Game Started</span><span>0</span></p>
+					<p><span>Game Ended</span><span>0</span></p>
+					<p><span>Total Log</span><span></span></p>
+				</index2>
+				<index2 class="_BotInfos_ce index2" name="BotInfos">
+					<p><span>Name</span><span>Doll</span></p>
+					<p><span>Color</span><span>Blue</span></p>
+					<p><span>Score</span><span>0</span></p>
+					<p><span>Rank</span><span>G</span></p>
+					<p><span>Fights Won</span><span>0</span></p>
+					<p><span>Fights Lost</span><span>0</span></p>
+					<p><span>Fights List</span><span></span></p>
+					<p><span>Game Started</span><span>0</span></p>
+					<p><span>Game Ended</span><span>0</span></p>
+					<p><span>Total Log</span><span></span></p>
+				</index2>
+			</index1>
+			<index1 class="_MultiplayerInfos_ce index1" name="MultiplayerInfos">
+				<index2 class="_Player1Infos_ce index2" name="Player1Infos">
+					<p><span>Name</span><span>Player 1</span></p>
+					<p><span>Color</span><span>Red</span></p>
+					<p><span>Score</span><span>0</span></p>
+					<p><span>Rank</span><span>G</span></p>
+					<p><span>Fights Won</span><span>0</span></p>
+					<p><span>Fights Lost</span><span>0</span></p>
+					<p><span>Fights List</span><span></span></p>
+					<p><span>Game Started</span><span>0</span></p>
+					<p><span>Game Ended</span><span>0</span></p>
+					<p><span>Total Log</span><span></span></p>
+				</index2>
+				<index2 class="_Player2Infos_ce index2" name="Player2Infos">
+					<p><span>Name</span><span>Player 2</span></p>
+					<p><span>Color</span><span>Green</span></p>
+					<p><span>Score</span><span>0</span></p>
+					<p><span>Rank</span><span>G</span></p>
+					<p><span>Fights Won</span><span>0</span></p>
+					<p><span>Fights Lost</span><span>0</span></p>
+					<p><span>Fights List</span><span></span></p>
+					<p><span>Game Started</span><span>0</span></p>
+					<p><span>Game Ended</span><span>0</span></p>
+					<p><span>Total Log</span><span></span></p>
+				</index2>
+			</index1>
+			<index1 class="_SettingInfos_ce index1" name="SettingInfos">
+				<index2 class="_GeneralInfos_ce index2" name="GeneralInfos">
+					<p><span>Game Open</span><span>1</span></p>
+					<p><span>Font Size</span><span>1</span></p>
+					<p><span>Theme</span><span>Grey</span></p>
+				</index2>
+			</index1>
+		</p>
+		<div class="_Statistics_ce _GameElement_ce index0" name="PredefinedPlayerInfos">
+			<index1 class="_SingleplayerStats_ce index1" name="SingleplayerInfos">
+				<index2 class="_PlayerStats_ce index2" name="PlayerInfos">
 <!--
-					<div><h2>Name</h2><input type="">Jack</input></div>
-					<div><h2>Color</h2><input type="">red</input></div>
-					<div><h2>Score</h2><input type="">0</input></div>
-					<div><h2>Rank</h2><input type="">G</input></div>
-					<div><h2>FightsWon</h2><input type="">0</input></div>
-					<div><h2>FightsLost</h2><input type="">0</input></div>
-					<div><h2>FightsList</h2><input type=""></input></div>
-					<div><h2>TotalLog</h2><input type=""></input></div>
+					<p><div>Name</div><input type="">Jack</input></p>
+					<p><div>Color</div><input type="">red</input></p>
+					<p><div>Score</div><input type="">0</input></p>
+					<p><div>Rank</div><input type="">G</input></p>
+					<p><div>FightsWon</div><input type="">0</input></p>
+					<p><div>FightsLost</div><input type="">0</input></p>
+					<p><div>FightsList</div><input type=""></input></p>
+					<p><div>TotalLog</div><input type=""></input></p>
 -->
-				</div>
-				<div class="_BotStats_ce" name="BotInfos">
+				</index2>
+				<index2 class="_BotStats_ce index2" name="BotInfos">
 <!--
-					<div><h2>Name</h2><input type="">Doll</input></div>
-					<div><h2>Color</h2><input type="">blue</input></div>
-					<div><h2>Score</h2><input type="">0</input></div>
-					<div><h2>Rank</h2><input type="">G</input></div>
-					<div><h2>FightsWon</h2><input type="">0</input></div>
-					<div><h2>FightsLost</h2><input type="">0</input></div>
-					<div><h2>FightsList</h2><input type=""></input></div>
-					<div><h2>TotalLog</h2><input type=""></input></div>
+					<p><div>Name</div><input type="">Doll</input></p>
+					<p><div>Color</div><input type="">blue</input></p>
+					<p><div>Score</div><input type="">0</input></p>
+					<p><div>Rank</div><input type="">G</input></p>
+					<p><div>FightsWon</div><input type="">0</input></p>
+					<p><div>FightsLost</div><input type="">0</input></p>
+					<p><div>FightsList</div><input type=""></input></p>
+					<p><div>TotalLog</div><input type=""></input></p>
 -->
-				</div>
-			</div>
-			<div class="_MultiplayerStats_ce" name="MultiplayerInfos">
-				<div class="_Player1Stats_ce" name="Player1Infos">
+				</index2>
+			</index1>
+			<index1 class="_MultiplayerStats_ce index1" name="MultiplayerInfos">
+				<index2 class="_Player1Stats_ce index2" name="Player1Infos">
 <!--
-					<div><h2>Name</h2><input type="">Player 1</input></div>
-					<div><h2>Color</h2><input type="">red</input></div>
+					<p><div>Name</div><input type="">Player 1</input></p>
+					<p><div>Color</div><input type="">red</input></p>
 -->
-				</div>
-				<div class="_Player2Stats_ce" name="Player2Infos">
+				</index2>
+				<index2 class="_Player2Stats_ce index2" name="Player2Infos">
 <!--
-					<div><h2>Name</h2><input type="">Player 2</input></div>
-					<div><h2>Color</h2><input type="">green</input></div>
+					<p><div>Name</div><input type="">Player 2</input></p>
+					<p><div>Color</div><input type="">green</input></p>
 -->
-				</div>
-			</div>
-			<div class="_SettingStats_ce" name="SettingInfos">
-				<div class="_GeneralStats_ce" name="GeneralInfos">
+				</index2>
+			</index1>
+			<index1 class="_SettingStats_ce index1" name="SettingInfos">
+				<index2 class="_GeneralStats_ce index2" name="GeneralInfos">
 <!--
-					<div><h2>Font Size</h2><input type="">1</input></div>
-					<div><h2>Theme</h2><input type="">Grey</input></div>
+					<p><div>Font Size</div><input type="">1</input></p>
+					<p><div>Theme</div><input type="">Grey</input></p>
 -->
-				</div>
-			</div>
+				</index2>
+			</index1>
 		</div>
 	</div>
 	<div class="_Info_ce">
