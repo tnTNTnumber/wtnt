@@ -179,7 +179,7 @@ div._Singleplayer_ce {
 	margin: 0px;
 	position: relative;
 	transform: translate(-50%,0%);
-  width: max-content;
+	width: max-content;
 } div._Singleplayer_ce button {
     display: block;
 	left: 50%;
@@ -216,7 +216,7 @@ div._NumberBattleContainer_ce {
 	transform: translateX(-50%);
 }
 
-span._NumberBattleSpan_ce {
+p._NumberBattleP_ce {
 }
 
 div._VictoryOrLose_ce {
@@ -311,6 +311,13 @@ function _Fight_fe() {
 		CLASS('_UsableDice_ce')[0].innerText = CLASS('_AllDices_ce')[0].innerText;
 		_AlertOverlay_fe('Draw','<b>⚝</b>',_AlertOverlayAnimation_Time_ve+1200);
 		CLASS('_NumberBattle_ce')[0].innerText = Number(CLASS('_NumberBattle_ce')[0].innerText)+1;
+		if(CLASS('_NumberBattle_ce')[0].innerText==2) {
+			CLASS('_NumberSuffixBattle_ce')[0].innerText = 'nd';
+		} else if(CLASS('_NumberBattle_ce')[0].innerText==3) {
+			CLASS('_NumberSuffixBattle_ce')[0].innerText = 'rd';
+		} else if(CLASS('_NumberBattle_ce')[0].innerText>3) {
+			CLASS('_NumberSuffixBattle_ce')[0].innerText = 'th';
+		};
 	};
 };
 
@@ -322,6 +329,7 @@ function _ResetFight_fe() {
 	CLASS('_BottomSideDice_ce')[0].innerText = '☐';
 	CLASS('_BottomSideColorWins_ce')[0].innerText = 0;
 	CLASS('_NumberBattle_ce')[0].innerText = 1;
+	CLASS('_NumberSuffixBattle_ce')[0].innerText = 'st';
 	CLASS('_AllDices_ce')[0].innerText = 123456;
 	CLASS('_UsableDice_ce')[0].innerText = CLASS('_AllDices_ce')[0].innerText;
 	setTimeout(function() {CLASS('_VictoryOrLose_ce')[0].innerText = 'Wine or Lost?';},800);
@@ -393,6 +401,13 @@ function _StartFight_fe() {
 			_AlertOverlay_fe(_StartFight_WhoHasWon_ve,_StartFight_WhoHasWon_ve,_AlertOverlayAnimation_Time_ve);
 			CLASS('_'+_StartFight_WhoHasWon_ve+'SideColorWins_ce')[0].innerText = Number(CLASS('_'+_StartFight_WhoHasWon_ve+'SideColorWins_ce')[0].innerText)+1;
 			CLASS('_NumberBattle_ce')[0].innerText = Number(CLASS('_NumberBattle_ce')[0].innerText)+1;
+			if(CLASS('_NumberBattle_ce')[0].innerText==2) {
+				CLASS('_NumberSuffixBattle_ce')[0].innerText = 'nd';
+			} else if(CLASS('_NumberBattle_ce')[0].innerText==3) {
+				CLASS('_NumberSuffixBattle_ce')[0].innerText = 'rd';
+			} else if(CLASS('_NumberBattle_ce')[0].innerText>3) {
+				CLASS('_NumberSuffixBattle_ce')[0].innerText = 'th';
+			};
 		};
 		if(Number(CLASS('_NumberBattle_ce')[0].innerText)>5) {
 			CLASS('_NumberBattle_ce')[0].innerText = 5;
@@ -422,6 +437,7 @@ window.onload = function _O_fe() { /*Onload*/
 	G = window.MyGlobalVariables = {};
 	_SavingDates_fe();
 	_SetGameStyle_fe();
+	//~ alert(CLASS('_NumberBattleP_ce')[0].innerHTML);
 };
 
 function TAG(_TAG_ElementOrTag_ve,_TAG_Tag_ve) {
@@ -582,7 +598,7 @@ function SR(_SR_VariableString_ve) { /*local Storage JSON for Removing and Remov
 			<span class="_BottomSideColor_ce _BottomSideColorWins_ce _Color_ce">0</span>
 		</div>
 		<div class="_NumberBattleContainer_ce _Singleplayer_ce _Multiplayer_ce _GameElement_ce">
-			<span class="_NumberBattleSpan_ce"><span class="_NumberBattle_ce">1</span>st battle!</span>
+			<p class="_NumberBattleP_ce"><span class="_NumberBattle_ce">1</span><span class="_NumberSuffixBattle_ce">st</span> battle!</p>
 		</div>
 		<div class="_UsableDiceDiv_ce _GameElement_ce">
 			<span class="_AllDices_ce">123456</span>
