@@ -1,7 +1,7 @@
 function _GeneratorFolder_M_fe() { /*Main*/
 	var _GeneratorFolder_M_T_ve = document.getElementsByClassName('_DHTML_Title_ce')[0].innerHTML; /*Title*/
 	var _GeneratorFolder_M_I_ve = [0,0,0,0,0]; /*Iteration*/
-	document.body.innerHTML = '<div class="_DHTML_ce">'+document.getElementsByClassName('_DHTML_ce')[0].innerHTML+'</div>'+document.getElementsByClassName('HowManyViews')[0].innerHTML;
+	document.body.innerHTML = '<div class="_DHTML_ce">'+document.getElementsByClassName('_DHTML_ce')[0].innerHTML+'</div>';
 	document.body.innerHTML += '<div class="_D1_ce _0_ce"></div>';
 	document.getElementsByClassName('_D1_ce')[0].innerHTML = '<h1>'+_GeneratorFolder_M_T_ve+'</h1><table class="_GeneratorFolder_LE_T_ce"></table>';
 	for(_GeneratorFolder_M_I_ve[2]; _GeneratorFolder_M_I_ve[2]<document.getElementsByClassName('_DHTML_LA_ce').length; _GeneratorFolder_M_I_ve[2]++) {
