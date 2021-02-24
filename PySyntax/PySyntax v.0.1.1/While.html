@@ -1,0 +1,147 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Py Syntax - τnTNT_☢️</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="css.css">
+	<script src="js.js"></script>
+<style>
+
+</style>
+<script>
+
+</script>
+</head>
+<body>
+
+<div class="_A_ce">
+
+<T_H0_ConditionalInstruction>
+	<h1>
+		<b0>Instruzioni Condizionali</b0>
+	</h1>
+	<T_H1_While>
+		<h1>
+			<b1>While</b1>
+		</h1>
+		<T_S>
+			<h3>
+				<b2>Sintassi</b2>
+			</h3>
+			<h7>
+<pre><T_B0>qui può esserci del codice ...</T_B0></pre>
+<pre>while <T_B1>condizione</T_B1> :</pre>
+<pre><T_B2>valutazione della condizione</T_B2></pre>
+<pre>	<T_B1__0>se la condizione è vera va qui</T_B1__0></pre>
+<pre>	<T_B2>torna su e ripete il while</T_B2></pre>
+<pre><T_B0>qui può continuare il codice ...</T_B0></pre>
+			</h7>
+		</T_S>
+		<T_E>
+			<h3>
+				<i>Esempio</i>
+			</h3>
+			<h5>
+				Codice
+			</h5>
+			<h7>
+<pre><T_B0_0>X = 5</T_B0_0>
+while <T_B1_0>X == 5</T_B1_0> :
+	<T_B1_0__0>print('La condizione è vera e va qui')</T_B1_0>
+	<T_B1_0__0>print('In questo esempio, il while risulterà sempre vero perché X continua a valere 5')</T_B1_0__0>
+<T_B0_0>print('qui non ci arriverà mai in questo esempio poiché la condizione del while continua ad essere vera')</T_B0_0__0></pre>
+			</h7>
+			<h5>
+				Output
+			</h5>
+			<h7>
+<pre><T_B3>La condizione è vera e va qui</T_B3>
+<T_B3>In questo esempio, il while risulterà sempre vero perché X continua a valere 5</T_B3>
+<T_B3>La condizione è vera e va qui</T_B3>
+<T_B3>In questo esempio, il while risulterà sempre vero perché X continua a valere 5</T_B3>
+<T_B3>La condizione è vera e va qui</T_B3>
+<T_B3>In questo esempio, il while risulterà sempre vero perché X continua a valere 5</T_B3>
+<T_B3>La condizione è vera e va qui</T_B3>
+<T_B3>In questo esempio, il while risulterà sempre vero perché X continua a valere 5</T_B3>
+<T_B3>...</T_B3></pre>
+			</h7>
+			<h3>
+				<i>Esempio</i>
+			</h3>
+			<h5>
+				Codice
+			</h5>
+			<h7>
+<pre><T_B0_0>X = 3</T_B0_0>
+while <T_B1_0>X == 5</T_B1_0> :
+	<T_B1_0__0>print('La condizione è falsa, quindi non andrà qui')</T_B1_0__0>
+<T_B0_0>print('Passerà direttamente qui, ed il codice può continuare ...')</T_B0_0></pre>
+			</h7>
+			<h5>
+				Output
+			</h5>
+			<h7>
+<pre><T_B3>Passerà direttamente qui, ed il codice può continuare ...</T_B3></pre>
+			</h7>
+			<h3>
+				<i>Esempio</i>
+			</h3>
+			<h5>
+				Codice
+			</h5>
+			<h7>
+<pre><T_B0_0>X = 5</T_B0_0>
+while <T_B1_0>X == 5</T_B1_0> :
+	<T_B1_0__0>print('La condizione è vera e va qui')</T_B1_0__0>
+	<T_B1_0__0>X = 3</T_B1_0__0>
+	<T_B1_0__0>print('Qui viene modificato il valore di X, quindi quando verrà rivalutata la condizione X varrà 3, e sarà falsa, perciò uscirà')</T_B1_0__0>
+<T_B0_0>print('Qui può continuare il codice ...')</T_B0_0></pre>
+			</h7>
+			<h5>
+				Output
+			</h5>
+			<h7>
+<pre><T_B3>La condizione è vera e va qui
+Qui viene modificato il valore di X, quindi quando verrà rivalutata la condizione X varrà 3, e sarà falsa, perciò uscirà
+Qui può continuare il codice ...</T_B3></pre>
+			</h7>
+			<h3>
+				<i>Esempio</i>
+			</h3>
+			<h5>
+				Codice
+			</h5>
+			<h7>
+<pre><T_B0_0>X = 5</T_B0_0>
+while <T_B1_0>X > 3</T_B1_0> :
+	<T_B1_0__0>print('La condizione è vera e va qui')</T_B1_0__0>
+	<T_B1_0__0>print('In questo momento X vale ', X)</T_B1_0__0>
+	<T_B1_0__0>X = X - 1</T_B1_0__0>
+	<T_B1_0__0>print('Qui viene modificato il valore di X da ', X + 1 ,' a ', X)</T_B1_0__0>
+	<T_B1_0__0>print('In questo momento X vale ', X)</T_B1_0__0>
+<T_B0_0>print('X valendo 3, non è più maggiore di 3, quindi esce dal ciclo')</T_B0_0>
+<T_B0_0>print('Qui può continuare il codice ...')</T_B0_0></pre>
+			</h7>
+			<h5>
+				Output
+			</h5>
+			<h7>
+<pre><T_B3>La condizione è vera e va qui
+In questo momento X vale  5
+Qui viene modificato il valore di X da  5  a  4
+In questo momento X vale  4
+La condizione è vera va qui
+In questo momento X vale  4
+Qui viene modificato il valore di X da  4  a  3
+In questo momento X vale  3
+X valendo 3, non è più maggiore di 3, quindi esce dal ciclo
+Qui può continuare il codice ...</T_B3></pre>
+			</h7>
+		</T_E>
+	</T_H1_While>
+</T_H0_ConditionalInstruction>
+
+</div>
+
+</body>
+</html>
