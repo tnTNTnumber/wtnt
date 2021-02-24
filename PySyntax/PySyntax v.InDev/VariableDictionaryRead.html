@@ -1,0 +1,166 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Py Syntax - τnTNT_☢️</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="css.css">
+	<script src="js.js"></script>
+<style>
+
+</style>
+<script>
+
+</script>
+</head>
+<body>
+
+<div class="_A_ce">
+
+<T_H0_Variable>
+	<h1>
+		<b0>Variabili</b0>
+	</h1>
+	<T_H1_VariableDictionaryRead>
+		<h1>
+			<b1>Leggere i <a class="_APS_ce" href="VariableDictionary.html">Dizionari</a></b1>
+		</h1>
+		<T_S>
+			<h3>
+				<b2>Sintassi</b2>
+			</h3>
+			<h7>
+<pre><T_B1>dizionario</T_B1> [ <T_B1>chiave</T_B1> ]</pre>
+				<h5>
+					Spiegazione:
+				</h5>
+<pre>In Python, per leggere i <a class="_APS_ce" href="VariableDictionary.html">dizionari</a>, dopo il dizionario (che di solito è indicato con una variabile) si scrive tra <T_B3>[</T_B3> <T_B3>]</T_B3> la chiave dell'oggetto da leggere.</pre>
+<pre><T_B1_0>Chiave</T_B1_0>: è una stringa, od un numero, che viene assegnato come nome dell'elemento, funziona similmente al numero tra <T_B3>[</T_B3> <T_B3>]</T_B3> negli <a class="_APS_ce" href="VariableArray.html">liste</a>, nelle <a class="_APS_ce" href="VariableTuple.html">ennuple</a>, e nelle <a class="_APS_ce" href="VariableSet.html">Serie</a>.</pre>
+			</h7>
+		</T_S>
+		<T_E>
+			<h3>
+				<i>Esempio</i>
+			</h3>
+			<h5>
+				Codice
+			</h5>
+			<h7>
+<pre><T_B0_0>print ( 'La chiave 1 corrisponde al numero 2:' )</T_B0_0>
+<T_B0_0>print ( </T_B0_0><T_B1_0>{ 1: 4, 2: 5, 3: 6 }</T_B1_0> [ <T_B1_0>1</T_B1_0> ]<T_B0_0> )</T_B0_0>
+<T_B0_0>print ( )</T_B0_0>
+<T_B0_0>print ( 'La chiave "b" corrisponde al numero 2:' )</T_B0_0>
+<T_B0_0>print ( </T_B0_0><T_B1_0>{ 'a': 1, 'b': 2, 'c': 3 }</T_B1_0> [ <T_B1_0>'b'</T_B1_0> ]<T_B0_0> )</T_B0_0>
+<T_B0_0>print ( )</T_B0_0>
+<T_B0_0>print ( 'La chiave "None" corrisponde al numero 3:' )</T_B0_0>
+<T_B0_0>print ( </T_B0_0><T_B1_0>{ True: 1, False: 2, None: 3 }</T_B1_0> [ <T_B1_0>None</T_B1_0> ]<T_B0_0> )</T_B0_0></pre>
+			</h7>
+			<h5>
+				Output
+			</h5>
+			<h7>
+<pre><T_B3>La chiave 1 corrisponde al numero 2:
+4
+
+La chiave "b" corrisponde al numero 2:
+2
+
+La chiave "None" corrisponde al numero 3:
+3</T_B3></pre>
+			</h7>
+			<h3>
+				<i>Esempio</i>
+			</h3>
+			<h5>
+				Codice
+			</h5>
+			<h7>
+<pre><T_B0_0>X = 'Bistecca'</T_B0_0>
+<T_B0_0>print ( 'Alla chiave "Primo" corrisponde "Bistecca":' )</T_B0_0>
+<T_B0_0>print ( </T_B0_0><T_B1_0>{ 'Primo': X, 'Secondo': 'Insalata', 'Bevanda': 'Acqua' }</T_B1_0> [ <T_B1_0>'Primo'</T_B1_0> ]<T_B0_0> )</T_B0_0></pre>
+			</h7>
+			<h5>
+				Output
+			</h5>
+			<h7>
+<pre><T_B3>Alla chiave "Primo" corrisponde "Bistecca":
+Bistecca</T_B3></pre>
+			</h7>
+			<h3>
+				<i>Esempio</i>
+			</h3>
+			<h5>
+				Codice
+			</h5>
+			<h7>
+<pre><T_B0_0>X = 'Bistecca'</T_B0_0>
+<T_B0_0>A = { 'Primo': X, 'Secondo': 'Insalata', 'Bevanda': 'Acqua' }</T_B0_0>
+<T_B0_0>print ( 'Un dizionario è comune che venga assegnato ad una variabile.' )</T_B0_0>
+<T_B0_0>print ( 'In questo caso è assegnato alla variabile "A", perciò per chiamarlo bisogna scrivere la variabile "A" invece che il dizionario:' )</T_B0_0>
+<T_B0_0>print ( )</T_B0_0>
+<T_B0_0>print ( 'Alla chiave "Bevanda" corrisponde "Acqua":' )</T_B0_0>
+<T_B0_0>print ( </T_B0_0><T_B1_0>A</T_B1_0> [ <T_B1_0>'Bevanda'</T_B1_0> ]<T_B0_0> )</T_B0_0></pre>
+			</h7>
+			<h5>
+				Output
+			</h5>
+			<h7>
+<pre><T_B3>Un dizionario è comune che venga assegnato ad una variabile.
+In questo caso è assegnato alla variabile "A", perciò per chiamarlo bisogna scrivere la variabile "A" invece che il dizionario:
+
+Alla chiave "Bevanda" corrisponde "Acqua":
+Acqua</T_B3></pre>
+			</h7>
+			<h3>
+				<i>Esempio</i>
+			</h3>
+			<h5>
+				Codice
+			</h5>
+			<h7>
+<pre><T_B0_0>X = 'Tre'</T_B0_0>
+<T_B0_0>Sette = '7'</T_B0_0>
+<T_B0_0>print ( </T_B0_0><T_B1_0>{ 'Uno': { 'Due': 1, X: 2 }, 'Quattro': { X + '+2': { 'Sei': 1, Sette: 2 }, 'Otto': 2, 'Nove': 3 } }</T_B1_0> [ <T_B1_0>'Quattro'</T_B1_0> ]<T_B0_0> )</T_B0_0></pre>
+			</h7>
+			<h5>
+				Output
+			</h5>
+			<h7>
+<pre><T_B3>{'Tre+2': {'Sei': 1, '7': 2}, 'Otto': 2, 'Nove': 3}</T_B3></pre>
+			</h7>
+			<h3>
+				<i>Esempio</i>
+			</h3>
+			<h5>
+				Codice
+			</h5>
+			<h7>
+<pre><T_B0_0>print ( 'Se un dizionario contiene altri dizionari si può accedere ad i loro contenuti in questo modo:' )</T_B0_0>
+<T_B0_0>print ( )</T_B0_0>
+<T_B0_0>print ( </T_B0_0><T_B1_0>{ 'a': { 'a1': 1, 'a2': 2 }, 'b': { 'b1': 3, 'b2': 4 } }</T_B1_0> [ <T_B1_0>'b'</T_B1_0> ] [ <T_B1_0>'b1'</T_B1_0> ]<T_B0_0> )</T_B0_0>
+<T_B0_0>print ( 'In questo caso nelle prime [] vi è contenuto "\'b\'", questo indica che si debba leggere il contenuto corrispondente alla chiave "\'b\'":' )</T_B0_0>
+<T_B0_0>print ( 'Ovvero "{ \'b1\': 3, \'b2\': 4 }".' )</T_B0_0>
+<T_B0_0>print ( 'A questo punto bisogna immaginarsi come se ci fosse scritto "{ \'b1\': 3, \'b2\': 4 } [ \'b1\' ]", ovvero le seconde [] indicano la posizione nel dizionario andato a leggere.' )</T_B0_0>
+<T_B0_0>print ( )</T_B0_0>
+<T_B0_0>print ( 'In altre parole le chiavi sono ripettivamente \'b\' e \'b1\', quindi bisogna andare a leggere prima nella chiave "\'b\'", ed all\'interno della chiave "\'b\'", la chiave "\'b1\'".' )</T_B0_0></pre>
+			</h7>
+			<h5>
+				Output
+			</h5>
+			<h7>
+<pre><T_B3>Se un dizionario contiene altri dizionari si può accedere ad i loro contenuti in questo modo:
+
+3
+In questo caso nelle prime [] vi è contenuto "'b'", questo indica che si debba leggere il contenuto corrispondente alla chiave "'b'":
+Ovvero "{ 'b1': 3, 'b2': 4 }".
+A questo punto bisogna immaginarsi come se ci fosse scritto "{ 'b1': 3, 'b2': 4 } [ 'b1' ]", ovvero le seconde [] indicano la posizione nel dizionario andato a leggere.
+
+In altre parole le chiavi sono ripettivamente 'b' e 'b1', quindi bisogna andare a leggere prima nella chiave "'b'", ed all'interno della chiave "'b'", la chiave "'b1'".</T_B3></pre>
+			</h7>
+		</T_E>
+	</T_H1_VariableDictionaryRead>
+</T_H0_Variable>
+
+</div>
+
+</body>
+</html>
