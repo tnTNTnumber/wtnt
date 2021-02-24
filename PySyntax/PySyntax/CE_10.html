@@ -1,0 +1,241 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Py Syntax - τnTNT_☢️</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="css.css">
+	<script src="js.js"></script>
+<style>
+
+</style>
+<script>
+
+</script>
+</head>
+<body>
+
+<div class="_A_ce">
+
+<T_H0_CodesExamples>
+	<h1>
+		<b0>Esempi di Codice</b0>
+	</h1>
+	<T_H1_CE_10>
+		<h1>
+			<b1>Prodotto di tutti i numeri tra due numeri scelti</b1>
+		</h1>
+		<T_S>
+			<h3>
+				<b2>Codice</b2>
+			</h3>
+<pre>Numero1 = int( input( 'Inserisci un numero intero: ' ) )</pre>
+<pre>Numero2 = int( input( 'Inserisci un altro numero intero: ' ) )</pre>
+<pre>Prodotto = 1</pre>
+<pre>for Iterazione in range( Numero1, Numero2 + 1 ):</pre>
+<pre>	Prodotto *= Iterazione</pre>
+<pre><T_B0>print ( Prodotto )</T_B0></pre>
+				<h5>
+					Spiegazione:
+				</h5>
+<pre>In questo esempio viene eseguito il programma per la <a class="_APS_ce" href="CE_1.html">richiesta di un numero intero</a>.</pre>
+<pre>La variabile <T_B3>Numero1</T_B3> viene dichiarata e le viene assegnato il numero inserito, tramite l'operatore di assegnazione "<a class="_APS_ce" href="Assignment.html">Assegnazione semplice</a>".</pre>
+<pre>Viene rieseguito il programma per la <a class="_APS_ce" href="CE_1.html">richiesta di un numero intero</a>.</pre>
+<pre>La variabile <T_B3>Numero2</T_B3> viene dichiarata e le viene assegnato il numero inserito, tramite l'operatore di assegnazione "<a class="_APS_ce" href="Assignment.html">Assegnazione semplice</a>".</pre>
+<pre>La variabile <T_B3>Prodotto</T_B3> viene dichiarata. Essa ci indicherà, nel corso del programma, il prodotto cumulativo dei numeri precedentemente moltiplicati, fino ad arrivare al prodotto totale.</pre>
+<pre><T_B3>1</T_B3> viene assegnato alla variabile <T_B3>Prodotto</T_B3>, in questo modo si possono moltiplicare i numeri senza avere un incremento del risultato.</pre>
+<pre>Viene eseguita l'istruzione condizionale <T_B3><a class="_APS_ce" href="For.html">for</a></T_B3> che dà modo di creare un ciclo nel quale alla variabile <T_B3>Iterazione</T_B3> vengono assegnati, man mano che viene ripetuto il ciclo,
+i numeri interi dal numero contenuto nella variabile <T_B3>Numero1</T_B3> al precedente della somma tra il numero contenuto nella variabile <T_B3>Numero2</T_B3> ed 1.</pre>
+<pre>Viene eseguito il contenuto del <T_B3><a class="_APS_ce" href="For.html">for</a></T_B3> assegnando alla variabile <T_B3>Iterazione</T_B3> rispettivamente i numeri dal numero contenuto nella variabile <T_B3>Numero1</T_B3> al precedente della somma tra
+il numero contenuto nella variabile <T_B3>Numero2</T_B3> ed 1, ovvero fino al contenuto nella variabile <T_B3>Numero2</T_B3>. Se <T_B3>Numero2</T_B3> contiene un numero minore di quello contenuto in <T_B3>Numero1</T_B3>, il ciclo non verrà eseguito.</pre>
+<pre>All'interno del <T_B3><a class="_APS_ce" href="For.html">for</a></T_B3>, la variabile <T_B3>Prodotto</T_B3> viene moltiplicata, tramite l'operatore di assegnazione "<a class="_APS_ce" href="AssignmentMultiplication.html">Assegnazione con Moltiplicazione</a>", con il valore contenuto nella variabile <T_B3>Iterazione</T_B3>.</pre>
+<pre>Alla fine del <T_B3><a class="_APS_ce" href="For.html">for</a></T_B3>, si torna all'inizio del <T_B3><a class="_APS_ce" href="For.html">for</a></T_B3>, assegnando ad <T_B3>Iterazione</T_B3>, il numero corrispondente. Una volta assegnati tutti i numeri, si esce dal ciclo <T_B3><a class="_APS_ce" href="For.html">for</a></T_B3>.</pre>
+<pre>Infine verrà visualizzato il contenuto della variabile <T_B3>Prodotto</T_B3>, tramite la funzione "<a class="_APS_ce" href="Print.html">print()</a>".</pre>
+				<h5>
+					Errori:
+				</h5>
+<pre>Il programma darà errore se verrà inseito un elemento diverso da un numero intero.</pre>
+<pre>Il programma darà errore se non verrà inseito niente.</pre>
+			</h7>
+		</T_S>
+		<T_E>
+			<h3>
+				<i>Esempio di Esecuzione</i>
+			</h3>
+			<h7>
+<pre><T_B3>Inserisci un numero intero: <T_B5>5</T_B5>
+Inserisci un altro numero intero: <T_B5>7</T_B5>
+210</T_B3></pre>
+			</h7>
+			<h3>
+				<i>Esempio di Esecuzione</i>
+			</h3>
+			<h7>
+<pre><T_B3>Inserisci un numero intero: <T_B5>5</T_B5>
+Inserisci un altro numero intero: <T_B5>5</T_B5>
+5</T_B3></pre>
+			</h7>
+			<h3>
+				<i>Esempio di Esecuzione</i>
+			</h3>
+			<h7>
+<pre><T_B3>Inserisci un numero intero: <T_B5>5</T_B5>
+Inserisci un altro numero intero: <T_B5>6</T_B5>
+30</T_B3></pre>
+			</h7>
+			<h3>
+				<i>Esempio di Esecuzione</i>
+			</h3>
+			<h7>
+<pre><T_B3>Inserisci un numero intero: <T_B5>1</T_B5>
+Inserisci un altro numero intero: <T_B5>10</T_B5>
+3628800</T_B3></pre>
+			</h7>
+			<h3>
+				<i>Esempio di Esecuzione</i>
+			</h3>
+			<h7>
+<pre><T_B3>Inserisci un numero intero: <T_B5>0</T_B5>
+Inserisci un altro numero intero: <T_B5>10</T_B5>
+0</T_B3></pre>
+			</h7>
+			<h3>
+				<i>Esempio di Esecuzione</i>
+			</h3>
+			<h7>
+<pre><T_B3>Inserisci un numero intero: <T_B5>10</T_B5>
+Inserisci un altro numero intero: <T_B5>1</T_B5>
+1</T_B3></pre>
+			</h7>
+			<h3>
+				<i>Esempio di Esecuzione</i>
+			</h3>
+			<h7>
+<pre><T_B3>Inserisci un numero intero: <T_B5>7</T_B5>
+Inserisci un altro numero intero: <T_B5>5</T_B5>
+1</T_B3></pre>
+			</h7>
+			<h3>
+				<i>Esempio di Esecuzione</i>
+			</h3>
+			<h7>
+<pre><T_B3>Inserisci un numero intero: <T_B5>5</T_B5>
+Inserisci un altro numero intero: <T_B5>-3</T_B5>
+1</T_B3></pre>
+			</h7>
+			<h3>
+				<i>Esempio di Esecuzione</i>
+			</h3>
+			<h7>
+<pre><T_B3>Inserisci un numero intero: <T_B5>-3</T_B5>
+Inserisci un altro numero intero: <T_B5>-5</T_B5>
+1</T_B3></pre>
+			</h7>
+			<h3>
+				<i>Esempio di Esecuzione</i>
+			</h3>
+			<h7>
+<pre><T_B3>Inserisci un numero intero: <T_B5>0</T_B5>
+Inserisci un altro numero intero: <T_B5>0</T_B5>
+0</T_B3></pre>
+			</h7>
+			<h3>
+				<i>Esempio di Esecuzione</i>
+			</h3>
+			<h7>
+<pre><T_B3>Inserisci un numero intero: <T_B5>-5</T_B5>
+Inserisci un altro numero intero: <T_B5>5</T_B5>
+0</T_B3></pre>
+			</h7>
+			<h3>
+				<i>Esempio di Esecuzione</i>
+			</h3>
+			<h7>
+<pre><T_B3>Inserisci un numero intero: <T_B5>-5</T_B5>
+Inserisci un altro numero intero: <T_B5>3</T_B5>
+0</T_B3></pre>
+			</h7>
+			<h3>
+				<i>Esempio di Esecuzione</i>
+			</h3>
+			<h7>
+<pre><T_B3>Inserisci un numero intero: <T_B5>-3</T_B5>
+Inserisci un altro numero intero: <T_B5>5</T_B5>
+0</T_B3></pre>
+			</h7>
+			<h3>
+				<i>Esempio di Esecuzione</i>
+			</h3>
+			<h7>
+<pre><T_B3>Inserisci un numero intero: <T_B5>-5</T_B5>
+Inserisci un altro numero intero: <T_B5>-3</T_B5>
+-60</T_B3></pre>
+			</h7>
+			<h3>
+				<i>Esempio di Esecuzione</i>
+			</h3>
+			<h7>
+<pre><T_B3>Inserisci un numero intero: <T_B5>-4</T_B5>
+Inserisci un altro numero intero: <T_B5>-1</T_B5>
+24</T_B3></pre>
+			</h7>
+			<h3>
+				<i>Esempio di Esecuzione</i>
+			</h3>
+			<h7>
+<pre><T_B3>Inserisci un numero intero: <T_B5>Ciao</T_B5>
+<T_B6>ERROR</T_B6></T_B3></pre>
+			</h7>
+			<h3>
+				<i>Esempio di Esecuzione</i>
+			</h3>
+			<h7>
+<pre><T_B3>Inserisci un numero intero: <T_B5>5</T_B5>
+Inserisci un altro numero intero: <T_B5>Ciao</T_B5>
+<T_B6>ERROR</T_B6></T_B3></pre>
+			</h7>
+			<h3>
+				<i>Esempio di Esecuzione</i>
+			</h3>
+			<h7>
+<pre><T_B3>Inserisci un numero intero: <T_B5>5.7</T_B5>
+<T_B6>ERROR</T_B6></T_B3></pre>
+			</h7>
+			<h3>
+				<i>Esempio di Esecuzione</i>
+			</h3>
+			<h7>
+<pre><T_B3>Inserisci un numero intero: <T_B5>15</T_B5>
+Inserisci un altro numero intero: <T_B5>[ 1, 2 ]</T_B5>
+<T_B6>ERROR</T_B6></T_B3></pre>
+			</h7>
+			<h3>
+				<i>Esempio di Esecuzione</i>
+			</h3>
+			<h7>
+<pre><T_B3>Inserisci un numero intero: <T_B5>True</T_B5>
+<T_B6>ERROR</T_B6></T_B3></pre>
+			</h7>
+			<h3>
+				<i>Esempio di Esecuzione</i>
+			</h3>
+			<h7>
+<pre><T_B3>Inserisci un numero intero: <T_B5>-0</T_B5>
+Inserisci un altro numero intero: <T_B5>None</T_B5>
+<T_B6>ERROR</T_B6></T_B3></pre>
+			</h7>
+			<h3>
+				<i>Esempio di Esecuzione</i>
+			</h3>
+			<h7>
+<pre><T_B3>Inserisci un numero intero: <T_B5>3</T_B5>
+Inserisci un altro numero intero: <T_B5></T_B5>
+<T_B6>ERROR</T_B6></T_B3></pre>
+			</h7>
+		</T_E>
+	</T_H1_CE_10>
+</T_H0_CodesExamples>
+
+</div>
+
+</body>
+</html>
