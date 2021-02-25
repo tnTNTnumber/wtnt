@@ -1,0 +1,163 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Py Syntax - τnTNT_☢️</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="css.css">
+	<script src="js.js"></script>
+<style>
+
+</style>
+<script>
+
+</script>
+</head>
+<body>
+
+<div class="_A_ce">
+
+<T_H0_Variable>
+	<h1>
+		<b0>Variabili</b0>
+	</h1>
+	<T_H1_VariableTupleRead>
+		<h1>
+			<b1>Leggere le <a class="_APS_ce" href="VariableTuple.html">Ennuple</a></b1>
+		</h1>
+		<T_S>
+			<h3>
+				<b2>Sintassi</b2>
+			</h3>
+			<h7>
+<pre><T_B1>ennupla</T_B1> [ <T_B1>posizione dell'elemento da leggere</T_B1> ]</pre>
+				<h5>
+					Spiegazione:
+				</h5>
+<pre>In Python, per leggere le <a class="_APS_ce" href="VariableTuple.html">ennuple</a>, dopo la ennupla (che di solito è indicata con una variabile) si scrive tra <T_B3>[</T_B3> <T_B3>]</T_B3> la posizione dell'oggetto da leggere (ricordandosi che nelle <a class="_APS_ce" href="VariableTuple.html">ennuple</a> la prima posizione è <T_B3>0</T_B3>).</pre>
+			</h7>
+		</T_S>
+		<T_E>
+			<h3>
+				<i>Esempio</i>
+			</h3>
+			<h5>
+				Codice
+			</h5>
+			<h7>
+<pre><T_B0_0>print ( 'In posizione 1 c\'è il numero 2:' )</T_B0_0>
+<T_B0_0>print ( </T_B0_0><T_B1_0>( 1, 2, 3 )</T_B1_0> [ <T_B1_0>1</T_B1_0> ]<T_B0_0> )</T_B0_0>
+<T_B0_0>print ( )</T_B0_0>
+<T_B0_0>print ( 'In posizione 0 c\'è la lettera "a":' )</T_B0_0>
+<T_B0_0>print ( </T_B0_0><T_B1_0>( 'a', 'b', 'c' )</T_B1_0> [ <T_B1_0>0</T_B1_0> ]<T_B0_0> )</T_B0_0>
+<T_B0_0>print ( )</T_B0_0>
+<T_B0_0>print ( 'In posizione 2 c\'è "None":' )</T_B0_0>
+<T_B0_0>print ( </T_B0_0><T_B1_0>( True, False, None )</T_B1_0> [ <T_B1_0>2</T_B1_0> ]<T_B0_0> )</T_B0_0></pre>
+			</h7>
+			<h5>
+				Output
+			</h5>
+			<h7>
+<pre><T_B3>In posizione 1 c'è il numero 2:
+2
+
+In posizione 0 c'è la lettera "a":
+a
+
+In posizione 2 c'è "None":
+None</T_B3></pre>
+			</h7>
+			<h3>
+				<i>Esempio</i>
+			</h3>
+			<h5>
+				Codice
+			</h5>
+			<h7>
+<pre><T_B0_0>X = 'Bistecca'</T_B0_0>
+<T_B0_0>print ( 'In posizione 3 c\'è "Bistecca":' )</T_B0_0>
+<T_B0_0>print ( </T_B0_0><T_B1_0>( 'Ciao', 5, True, X )</T_B1_0> [ <T_B1_0>3</T_B1_0> ]<T_B0_0> )</T_B0_0></pre>
+			</h7>
+			<h5>
+				Output
+			</h5>
+			<h7>
+<pre><T_B3>In posizione 3 c'è "Bistecca":
+Bistecca</T_B3></pre>
+			</h7>
+			<h3>
+				<i>Esempio</i>
+			</h3>
+			<h5>
+				Codice
+			</h5>
+			<h7>
+<pre><T_B0_0>X = 'Bistecca'</T_B0_0>
+<T_B0_0>A = ( 'Ciao', 5, True, X )</T_B0_0>
+<T_B0_0>print ( 'Una ennupla è comune che venga assegnata ad una variabile.' )</T_B0_0>
+<T_B0_0>print ( 'In questo caso è assegnata alla variabile "A", perciò per chiamarla bisogna scrivere la variabile "A" invece che la ennupla:' )</T_B0_0>
+<T_B0_0>print ( )</T_B0_0>
+<T_B0_0>print ( 'In posizione 0 c\'è "Ciao":' )</T_B0_0>
+<T_B0_0>print ( </T_B0_0><T_B1_0>A</T_B1_0> [ <T_B1_0>0</T_B1_0> ]<T_B0_0> )</T_B0_0></pre>
+			</h7>
+			<h5>
+				Output
+			</h5>
+			<h7>
+<pre><T_B3>Una ennupla è comune che venga assegnata ad una variabile.
+In questo caso è assegnata alla variabile "A", perciò per chiamarla bisogna scrivere la variabile "A" invece che la ennupla:
+
+In posizione 0 c'è "Ciao":
+Ciao</T_B3></pre>
+			</h7>
+			<h3>
+				<i>Esempio</i>
+			</h3>
+			<h5>
+				Codice
+			</h5>
+			<h7>
+<pre><T_B0_0>print ( </T_B0_0><T_B1_0>( ( 1, 2 ), ( ( 1, 2 ), 2, 3 ) )</T_B1_0> [ <T_B1_0>1</T_B1_0> ]<T_B0_0> )</T_B0_0></pre>
+			</h7>
+			<h5>
+				Output
+			</h5>
+			<h7>
+<pre><T_B3>((1, 2), 2, 3)</T_B3></pre>
+			</h7>
+			<h3>
+				<i>Esempio</i>
+			</h3>
+			<h5>
+				Codice
+			</h5>
+			<h7>
+<pre><T_B0_0>print ( 'Se una ennupla contiene altre ennuple si può accedere ad i loro contenuti in questo modo:' )</T_B0_0>
+<T_B0_0>print ( )</T_B0_0>
+<T_B0_0>print ( </T_B0_0><T_B1_0>( ( 1, 2 ), ( 3, 4 ) )</T_B1_0> [ <T_B1_0>1</T_B1_0> ] [ <T_B1_0>0</T_B1_0> ]<T_B0_0> )</T_B0_0>
+<T_B0_0>print ( 'In questo caso nelle prime [] vi è contenuto "1", questo indica che si debba leggere il contenuto in posizione 1:' )</T_B0_0>
+<T_B0_0>print ( 'Ovvero "( 3, 4 )".' )</T_B0_0>
+<T_B0_0>print ( 'A questo punto bisogna immaginarsi come se ci fosse scritto "( 3, 4 ) [ 0 ]", ovvero le seconde [] indicano la posizione nella ennupla andata a leggere.' )</T_B0_0>
+<T_B0_0>print ( )</T_B0_0>
+<T_B0_0>print ( 'In altre parole i numeri sono ripettivamente 1 e 0, quindi bisogna andare a leggere prima in posizione 1, ed all\'interno della posizione 1, in posizione 0.' )</T_B0_0></pre>
+			</h7>
+			<h5>
+				Output
+			</h5>
+			<h7>
+<pre><T_B3>Se una ennupla contiene altre ennuple si può accedere ad i loro contenuti in questo modo:
+
+3
+In questo caso nelle prime [] vi è contenuto "1", questo indica che si debba leggere il contenuto in posizione 1:
+Ovvero "( 3, 4 )".
+A questo punto bisogna immaginarsi come se ci fosse scritto "( 3, 4 ) [ 0 ]", ovvero le seconde [] indicano la posizione nella ennupla andata a leggere.
+
+In altre parole i numeri sono ripettivamente 1 e 0, quindi bisogna andare a leggere prima in posizione 1, ed all'interno della posizione 1, in posizione 0.</T_B3></pre>
+			</h7>
+		</T_E>
+	</T_H1_VariableTupleRead>
+</T_H0_Variable>
+
+</div>
+
+</body>
+</html>

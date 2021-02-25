@@ -1,0 +1,278 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Py Syntax - τnTNT_☢️</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="css.css">
+	<script src="js.js"></script>
+<style>
+
+</style>
+<script>
+
+</script>
+</head>
+<body>
+
+<div class="_A_ce">
+
+<T_H0_CodesExamples>
+	<h1>
+		<b0>Esempi di Codice</b0>
+	</h1>
+	<T_H1_CE_13>
+		<h1>
+			<b1>Assegnazione in un array di un numero a scelta di numeri casualizzati da un valore minimo scelto ad un valore massimo scelto e messi in ordine crescente</b1>
+		</h1>
+		<T_S>
+			<h3>
+				<b2>Codice</b2>
+			</h3>
+<pre>import random</pre>
+<pre>A = []</pre>
+<pre>N = int( input( 'N: ' ) )</pre>
+<pre>Min = int( input( 'Min: ' ) )</pre>
+<pre>Max = int( input( 'Max: ' ) )</pre>
+<pre>while Min > Max :</pre>
+<pre>	print( 'Min >= Max !' )</pre>
+<pre>	Min = int( input( 'Min: ' ) )</pre>
+<pre>	Max = int( input( 'Max: ' ) )</pre>
+<pre>for i in range( N ) :</pre>
+<pre>	A.append(random.randint(Min,Max))</pre>
+<pre>A.sort()</pre>
+<pre><T_B0>print(A)</T_B0></pre>
+				<h5>
+					Spiegazione:
+				</h5>
+<pre>In questo esempio viene importata la libreria <T_B3>random</T_B3>.</pre>
+<pre>La variabile <T_B3>A</T_B3> viene dichiarata e le viene assegnato un <a class="_APS_ce" href="VariableArray.html">array</a> vuoto ( <T_B3>[]</T_B3> ), tramite l'operatore di assegnazione "<a class="_APS_ce" href="Assignment.html">Assegnazione semplice</a>".</pre>
+<pre>Viene eseguito il programma il programma di <a class="_APS_ce" href="CE_1.html">richiesta di un numero intero</a> per la richiesta di inserimento della quantità di numeri da inserire.</pre>
+<pre>La variabile <T_B3>N</T_B3> viene dichiarata e le viene assegnato il numero inserito, tramite l'operatore di assegnazione "<a class="_APS_ce" href="Assignment.html">Assegnazione semplice</a>".</pre>
+<pre>Viene rieseguito il programma di <a class="_APS_ce" href="CE_1.html">richiesta di un numero intero</a> per la richiesta di inserimento del valore minimo possibile da randomizzare.</pre>
+<pre>La variabile <T_B3>Min</T_B3> viene dichiarata e le viene assegnato il numero inserito, tramite l'operatore di assegnazione "<a class="_APS_ce" href="Assignment.html">Assegnazione semplice</a>".</pre>
+<pre>Viene rieseguito il programma di <a class="_APS_ce" href="CE_1.html">richiesta di un numero intero</a> per la richiesta di inserimento del valore massimo possibile da randomizzare.</pre>
+<pre>La variabile <T_B3>Max</T_B3> viene dichiarata e le viene assegnato il numero inserito, tramite l'operatore di assegnazione "<a class="_APS_ce" href="Assignment.html">Assegnazione semplice</a>".</pre>
+<pre>Viene eseguita l'istruzione condizionale <T_B3><a class="_APS_ce" href="While.html">while</a></T_B3> nel caso la variabile <T_B3>Min</T_B3> sia maggiore della variabile <T_B3>Max</T_B3></pre>
+<pre>L'istruzione condizionale <T_B3><a class="_APS_ce" href="While.html">while</a></T_B3> permetterà, nel caso il numero minore sia maggiore del numero maggiore, di non proseguire e di reinserire i valori rispettando il criterio.</pre>
+<pre>All'interno del <T_B3><a class="_APS_ce" href="While.html">while</a></T_B3>, viene visualizzato un messaggio, tramite la funzione <T_B3><a class="_APS_ce" href="Print.html">print()</a></T_B3>, essa comunica che il numero minore deve essere minore od uguale rispetto al numero maggiore.</pre>
+<pre>All'interno del <T_B3><a class="_APS_ce" href="While.html">while</a></T_B3>, viene rieseguito il programma di <a class="_APS_ce" href="CE_1.html">richiesta di un numero intero</a>, per la richiesta di inserimento del valore minimo possibile da randomizzare.</pre>
+<pre>All'interno del <T_B3><a class="_APS_ce" href="While.html">while</a></T_B3>, alla variabile <T_B3>Min</T_B3> viene assegnato il numero inserito, tramite l'operatore di assegnazione "<a class="_APS_ce" href="Assignment.html">Assegnazione semplice</a>".</pre>
+<pre>All'interno del <T_B3><a class="_APS_ce" href="While.html">while</a></T_B3>, viene rieseguito il programma di <a class="_APS_ce" href="CE_1.html">richiesta di un numero intero</a>, per la richiesta di inserimento del valore massimo possibile da randomizzare.</pre>
+<pre>All'interno del <T_B3><a class="_APS_ce" href="While.html">while</a></T_B3>, alla variabile <T_B3>Max</T_B3> viene assegnato il numero inserito, tramite l'operatore di assegnazione "<a class="_APS_ce" href="Assignment.html">Assegnazione semplice</a>".</pre>
+<pre>Alla fine del <T_B3><a class="_APS_ce" href="While.html">while</a></T_B3>, si torna all'inizio del <T_B3><a class="_APS_ce" href="While.html">while</a></T_B3>, ritestando il la non maggioranza del numero minore, contenuto nella variabile <T_B3>Min</T_B3>, rispetto al numero maggiore, contenuto nella variabile <T_B3>Max</T_B3>.</pre>
+<pre>Viene eseguita l'istruzione condizionale <T_B3><a class="_APS_ce" href="For.html">for</a></T_B3>, essa dà modo di creare un ciclo nel quale alla variabile <T_B3>i</T_B3> vengono assegnati, durante la ripetizione del ciclo, i numeri interi da <T_B3>0</T_B3> al precedente del numero contenuto nella variabile <T_B3>N</T_B3>.</pre>
+<pre>L'istruzione condizionale <T_B3><a class="_APS_ce" href="For.html">for</a></T_B3> dà modo di creare un ciclo nel quale si va a generare tutti i numeri random, da <T_B3>Min</T_B3> a <T_B3>Max</T_B3> ed aggiungerli all'<a class="_APS_ce" href="VariableArray.html">array</a> <T_B3>A</T_B3>, tramite la funzione <T_B3>.append()</T_B3>.</pre>
+<pre>All'interno del <T_B3><a class="_APS_ce" href="For.html">for</a></T_B3>, all'<a class="_APS_ce" href="VariableArray.html">array</a> <T_B3>A</T_B3> viene aggiunto, tramite il metodo <T_B3>.append()</T_B3>, grazie alla funzione <T_B3>random.randint()</T_B3>, un numero casuale, andante dal contenuto della variabile <T_B3>Min</T_B3> a quello di <T_B3>Max</T_B3>.</pre>
+<pre>Alla fine del <T_B3><a class="_APS_ce" href="For.html">for</a></T_B3>, si torna all'inizio del <T_B3><a class="_APS_ce" href="For.html">for</a></T_B3>, assegnando ad <T_B3>i</T_B3>, il numero corrispondente. Una volta assegnati tutti i numeri, si esce dal ciclo <T_B3><a class="_APS_ce" href="For.html">for</a></T_B3>.</pre>
+<pre>I numeri contenuti nell'<a class="_APS_ce" href="VariableArray.html">array</a> <T_B3>A</T_B3> vengono riordinati, in ordine crescente, tramite la funzione <T_B3>.sort()</T_B3>.</pre>
+<pre>Infine viene visualizzato, tramite la funzione <T_B3><a class="_APS_ce" href="Print.html">print()</a></T_B3>, l'<a class="_APS_ce" href="VariableArray.html">array</a> <T_B3>A</T_B3> contenente tutti i numeri random.</pre>
+				<h5>
+					Errori:
+				</h5>
+<pre>Il programma darà errore se verrà inseito un elemento diverso da un numero intero.</pre>
+<pre>Il programma darà errore se non verrà inseito niente.</pre>
+			</h7>
+		</T_S>
+		<T_E>
+			<h3>
+				<i>Esempio di Esecuzione</i>
+			</h3>
+			<h7>
+<pre><T_B3>N: <T_B5>5</T_B5>
+Min: <T_B5>0</T_B5>
+Max: <T_B5>10</T_B5>
+[1, 3, 8, 9, 9]</T_B3></pre>
+			</h7>
+			<h3>
+				<i>Esempio di Esecuzione</i>
+			</h3>
+			<h7>
+<pre><T_B3>N: <T_B5>10</T_B5>
+Min: <T_B5>0</T_B5>
+Max: <T_B5>1</T_B5>
+[0, 0, 0, 0, 0, 0, 0, 0, 1, 1]</T_B3></pre>
+			</h7>
+			<h3>
+				<i>Esempio di Esecuzione</i>
+			</h3>
+			<h7>
+<pre><T_B3>N: <T_B5>7</T_B5>
+Min: <T_B5>-5</T_B5>
+Max: <T_B5>5</T_B5>
+[-5, -3, -3, -2, -2, 0, 3]</T_B3></pre>
+			</h7>
+			<h3>
+				<i>Esempio di Esecuzione</i>
+			</h3>
+			<h7>
+<pre><T_B3>N: <T_B5>7</T_B5>
+Min: <T_B5>-100</T_B5>
+Max: <T_B5>0</T_B5>
+[-91, -75, -69, -62, -60, -24, -7]</T_B3></pre>
+			</h7>
+			<h3>
+				<i>Esempio di Esecuzione</i>
+			</h3>
+			<h7>
+<pre><T_B3>N: <T_B5>7</T_B5>
+Min: <T_B5>5</T_B5>
+Max: <T_B5>5</T_B5>
+[5, 5, 5, 5, 5, 5, 5]</T_B3></pre>
+			</h7>
+			<h3>
+				<i>Esempio di Esecuzione</i>
+			</h3>
+			<h7>
+<pre><T_B3>N: <T_B5>3</T_B5>
+Min: <T_B5>0</T_B5>
+Max: <T_B5>-0</T_B5>
+[0, 0, 0]</T_B3></pre>
+			</h7>
+			<h3>
+				<i>Esempio di Esecuzione</i>
+			</h3>
+			<h7>
+<pre><T_B3>N: <T_B5>7</T_B5>
+Min: <T_B5>5</T_B5>
+Max: <T_B5>0</T_B5>
+Min >= Max !
+Min: <T_B5>10</T_B5>
+Max: <T_B5>20</T_B5>
+[11, 12, 13, 16, 16, 16, 17]</T_B3></pre>
+			</h7>
+			<h3>
+				<i>Esempio di Esecuzione</i>
+			</h3>
+			<h7>
+<pre><T_B3>N: <T_B5>5</T_B5>
+Min: <T_B5>7</T_B5>
+Max: <T_B5>5</T_B5>
+Min >= Max !
+Min: <T_B5>10</T_B5>
+Max: <T_B5>-5</T_B5>
+Min >= Max !
+Min: <T_B5>-20</T_B5>
+Max: <T_B5>-30</T_B5>
+Min >= Max !
+Min: <T_B5>100</T_B5>
+Max: <T_B5>-100</T_B5>
+Min >= Max !
+Min: <T_B5>-1</T_B5>
+Max: <T_B5>1</T_B5>
+[-1, -1, 0, 1, 1]</T_B3></pre>
+			</h7>
+			<h3>
+				<i>Esempio di Esecuzione</i>
+			</h3>
+			<h7>
+<pre><T_B3>N: <T_B5>5</T_B5>
+Min: <T_B5>05</T_B5>
+Max: <T_B5>000010</T_B5>
+[6, 7, 9, 9, 10]</T_B3></pre>
+			</h7>
+			<h3>
+				<i>Esempio di Esecuzione</i>
+			</h3>
+			<h7>
+<pre><T_B3>N: <T_B5>7</T_B5>
+Min: <T_B5>0</T_B5>
+Max: <T_B5>1000000000000000</T_B5>
+[32326891694565, 437398191018888, 600660616663573, 635711490960925, 814719359700361, 820402415682996, 852254342910842]</T_B3></pre>
+			</h7>
+			<h3>
+				<i>Esempio di Esecuzione</i>
+			</h3>
+			<h7>
+<pre><T_B3>N: <T_B5>7</T_B5>
+Min: <T_B5>-1000000000000000</T_B5>
+Max: <T_B5>1000000000000000</T_B5>
+[-445949191552773, -339307302958444, -77887576952517, 58648812989493, 104287535487045, 712783204020320, 825621214472251]</T_B3></pre>
+			</h7>
+			<h3>
+				<i>Esempio di Esecuzione</i>
+			</h3>
+			<h7>
+<pre><T_B3>N: <T_B5>0</T_B5>
+Min: <T_B5>5</T_B5>
+Max: <T_B5>7</T_B5>
+[]</T_B3></pre>
+			</h7>
+			<h3>
+				<i>Esempio di Esecuzione</i>
+			</h3>
+			<h7>
+<pre><T_B3>N: <T_B5>-8</T_B5>
+Min: <T_B5>111</T_B5>
+Max: <T_B5>1111</T_B5>
+[]</T_B3></pre>
+			</h7>
+			<h3>
+				<i>Esempio di Esecuzione</i>
+			</h3>
+			<h7>
+<pre><T_B3>N: <T_B5>7</T_B5>
+Min: <T_B5>0</T_B5>
+Max: <T_B5>1 000 000</T_B5>
+<T_B6>ERROR</T_B6></T_B3></pre>
+			</h7>
+			<h3>
+				<i>Esempio di Esecuzione</i>
+			</h3>
+			<h7>
+<pre><T_B3>N: <T_B5>Ciao</T_B5>
+<T_B6>ERROR</T_B6></T_B3></pre>
+			</h7>
+			<h3>
+				<i>Esempio di Esecuzione</i>
+			</h3>
+			<h7>
+<pre><T_B3>N: <T_B5>7</T_B5>
+Min: <T_B5>ciambella</T_B5>
+<T_B6>ERROR</T_B6></T_B3></pre>
+			</h7>
+			<h3>
+				<i>Esempio di Esecuzione</i>
+			</h3>
+			<h7>
+<pre><T_B3>N: <T_B5>3.5</T_B5>
+<T_B6>ERROR</T_B6></T_B3></pre>
+			</h7>
+			<h3>
+				<i>Esempio di Esecuzione</i>
+			</h3>
+			<h7>
+<pre><T_B3>N: <T_B5>7</T_B5>
+Min: <T_B5>5</T_B5>
+Max: <T_B5>-12.072</T_B5>
+<T_B6>ERROR</T_B6></T_B3></pre>
+			</h7>
+			<h3>
+				<i>Esempio di Esecuzione</i>
+			</h3>
+			<h7>
+<pre><T_B3>N: <T_B5>7</T_B5>
+Min: <T_B5>[ 0, 1, 2 ]</T_B5>
+<T_B6>ERROR</T_B6></T_B3></pre>
+			</h7>
+			<h3>
+				<i>Esempio di Esecuzione</i>
+			</h3>
+			<h7>
+<pre><T_B3>N: <T_B5>7</T_B5>
+Min: <T_B5>5</T_B5>
+Max: <T_B5>0</T_B5>
+Min >= Max !
+Min: <T_B5>7</T_B5>
+Max: <T_B5>3</T_B5>
+Min >= Max !
+Min: <T_B5>7.</T_B5>
+<T_B6>ERROR</T_B6></T_B3></pre>
+			</h7>
+		</T_E>
+	</T_H1_CE_13>
+</T_H0_CodesExamples>
+
+</div>
+
+</body>
+</html>
