@@ -188,14 +188,9 @@ function _ScreenSet_fe() {
 };
 
 function _TestADBlock_fe() {
-	if(localStorage) {alert(true);} else {alert(false);};
-	if(localStorage==null) {alert(true);} else {alert(false);};
-	if(localStorage==undefined) {alert(true);} else {alert(false);};
-	localStorage.setItem('_TestADBlock_ve','Exist!');
-	if(!localStorage._TestADBlock_ve) {
+	if(!localStorage) {
 		alert('You may have some adBlocks running.\nPlease, turn off it, otherwise we cannot keep your progress saved and the game cannot start!');
 	};
-	localStorage.removeItem('_TestADBlock_ve');
 };
 
 var AJ = { /*All Dates JSON*/
