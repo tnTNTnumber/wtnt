@@ -192,8 +192,8 @@ function _TestADBlock_fe() {
 	} else {
 		alert('You may have some adBlocks running.\nPlease, turn off it, otherwise we cannot keep your progress saved and the game cannot start!');
 	};
-	alert(A._TestADBlock_ve);
-	if(A._TestADBlock_ve) {alert(true);} else {alert(false);};
+	//~ alert(A._TestADBlock_ve);
+	//~ if(A._TestADBlock_ve) {alert(true);} else {alert(false);};
 };
 
 var AJ = { /*All Dates JSON*/
@@ -221,8 +221,9 @@ window.onload = function _O_fe() { /*Onload*/
 	G = window.MyGlobalVariables = {};
 	//~ Sr('Cultery'); /**DANGER!*/
 	Ag();
-	_TestADBlock_fe();
 	_Game_fe();
+}; window.onload = function _O_fe() {
+	_TestADBlock_fe();
 };
 
 window.addEventListener('resize', _ScreenSet_fe);
