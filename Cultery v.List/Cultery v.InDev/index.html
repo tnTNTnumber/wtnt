@@ -188,9 +188,9 @@ function _ScreenSet_fe() {
 };
 
 function _TestADBlock_fe() {
-	alert(localStorage);
-	alert(localStorage.setItem('_TestADBlock_ve','Exist!'));
-	if(localStorage.setItem('_TestADBlock_ve','Exist!')) {alert(true);} else {alert(false);};
+	if(localStorage) {alert(true);} else {alert(false);};
+	if(localStorage==null) {alert(true);} else {alert(false);};
+	if(localStorage==undefined) {alert(true);} else {alert(false);};
 	localStorage.setItem('_TestADBlock_ve','Exist!');
 	if(!localStorage._TestADBlock_ve) {
 		alert('You may have some adBlocks running.\nPlease, turn off it, otherwise we cannot keep your progress saved and the game cannot start!');
