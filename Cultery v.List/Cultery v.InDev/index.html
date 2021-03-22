@@ -219,9 +219,12 @@ window.onload = function _O_fe() { /*Onload*/
 	W = window;
 	G = window.MyGlobalVariables = {};
 	//~ Sr('Cultery'); /**DANGER!*/
-	setTimeout(function() {if(_TestADBlock_fe()==true) {alert(true+' '+_TestADBlock_fe())} else {alert(false+' '+_TestADBlock_fe())};},16);
-	Ag();
-	_Game_fe();
+	setTimeout(function() {
+		if(_TestADBlock_fe()==true) {
+			Ag();
+			_Game_fe();
+		};
+	},4);
 };
 
 window.addEventListener('resize', _ScreenSet_fe);
