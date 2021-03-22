@@ -192,8 +192,10 @@ function _TestADBlock_fe() {
 	} else {
 		alert('You may have some adBlocks running.\nPlease, turn off it, otherwise we cannot keep your progress saved and the game cannot start!');
 	};
+	setTimeout(function() {
 	alert(A._TestADBlock_ve);
 	if(A._TestADBlock_ve) {alert(true);} else {alert(false);};
+	}, 200);
 };
 
 var AJ = { /*All Dates JSON*/
