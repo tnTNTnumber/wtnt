@@ -189,6 +189,7 @@ function _ScreenSet_fe() {
 
 function _TestADBlock_fe() {
 	if(A._TestADBlock_ve) {
+	} else {
 		alert('You may have some adBlocks running.\nPlease, turn off it, otherwise we cannot keep your progress saved and the game cannot start!');
 	};
 };
@@ -208,7 +209,7 @@ var AJ = { /*All Dates JSON*/
 	AJV._WindowY_ve = W.innerWidth/AJV._AspectRatio_Prototype_ve;
 }; function AJ1(AJI) { eval(`AJV = `+AJI+`;`);
 }; function AJ2(AJI) { eval(`AJV = `+AJI+`;`);
-	AJV._TestADBlock_ve = false;
+	AJV._TestADBlock_ve = true;
 };
 
 window.onload = function _O_fe() { /*Onload*/
