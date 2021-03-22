@@ -198,6 +198,7 @@ function _TestADBlock_fe() {
 	}, 200);
 };
 
+window.addEventListener('onload', _TestADBlock_fe);
 var AJ = { /*All Dates JSON*/
 	'_GameName_ve': 'Cultery', /**!IMPORTANT*/ /**The Name MUST BE DIFFERENT between every programs used on the browser that open this file !IMPORTANT*/
 	'_CodeNumberVersion_ve': 2, /**!IMPORTANT*/
@@ -226,7 +227,6 @@ window.onload = function _O_fe() { /*Onload*/
 	_Game_fe();
 };
 
-window.addEventListener('onload', _TestADBlock_fe);
 window.addEventListener('resize', _ScreenSet_fe);
 
 function TAG(_TAG_ElementOrTag_ve,_TAG_Tag_ve) {
