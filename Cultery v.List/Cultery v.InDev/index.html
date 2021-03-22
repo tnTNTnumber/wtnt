@@ -185,9 +185,12 @@ function _ScreenSet_fe() {
 	};
 	CLASS('_LandscapeWindow_ce')[0].style.height = A._WindowY_ve+'px';
 	CLASS('_Window_ce')[0].style.width = A._WindowX_ve+'px';
-	alert(W.innerWidth+'; '+W.innerHeight);
-	alert(A._WindowX_ve+'; '+A._WindowY_ve);
-	alert(A._AspectRatio_Prototype_ve);
+};
+
+function _TestADBlock_fe() {
+	if(A._TestADBlock_ve) {
+		alert('You may have some adBlocks running.\nPlease, turn off it, otherwise we cannot keep your progress saved and the game cannot start!');
+	};
 };
 
 var AJ = { /*All Dates JSON*/
@@ -205,6 +208,7 @@ var AJ = { /*All Dates JSON*/
 	AJV._WindowY_ve = W.innerWidth/AJV._AspectRatio_Prototype_ve;
 }; function AJ1(AJI) { eval(`AJV = `+AJI+`;`);
 }; function AJ2(AJI) { eval(`AJV = `+AJI+`;`);
+	AJV._TestADBlock_ve = false;
 };
 
 window.onload = function _O_fe() { /*Onload*/
@@ -214,6 +218,7 @@ window.onload = function _O_fe() { /*Onload*/
 	G = window.MyGlobalVariables = {};
 	//~ Sr('Cultery'); /**DANGER!*/
 	Ag();
+	_TestADBlock_fe();
 	_Game_fe();
 };
 
