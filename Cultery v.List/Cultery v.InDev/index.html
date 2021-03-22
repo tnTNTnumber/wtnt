@@ -165,10 +165,14 @@ div._Window_ce {
 <script>
 
 function _Game_fe() {
-	_SetScreen_fe();
+	_ScreenSet_fe();
+	_ScreenLoad_fe();
 };
 
-function _SetScreen_fe() {
+function _ScreenLoad_fe() {
+};
+
+function _ScreenSet_fe() {
 	if(W.innerWidth/W.innerHeight<A._AspectRatio_Heightest_ve) { /**Heightest*/
 		A._WindowX_ve = W.innerWidth;
 		A._WindowY_ve = W.innerWidth/A._AspectRatio_Prototype_ve;
@@ -208,7 +212,7 @@ window.onload = function _O_fe() { /*Onload*/
 	_Game_fe();
 };
 
-window.addEventListener('resize', _SetScreen_fe);
+window.addEventListener('resize', _ScreenSet_fe);
 
 function TAG(_TAG_ElementOrTag_ve,_TAG_Tag_ve) {
 	if(_TAG_Tag_ve) {
