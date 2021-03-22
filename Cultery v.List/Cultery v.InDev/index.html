@@ -188,6 +188,7 @@ function _ScreenSet_fe() {
 };
 
 function _TestADBlock_fe() {
+	alert('Test');
 	localStorage.setItem('_TestADBlock_ve','Exist!');
 	if(!localStorage._TestADBlock_ve) {
 		alert('You may have some adBlocks running.\nPlease, turn off it, otherwise we cannot keep your progress saved and the game cannot start!');
@@ -213,6 +214,7 @@ var AJ = { /*All Dates JSON*/
 };
 
 window.onload = function _O_fe() { /*Onload*/
+	alert('Onload');
 	setTimeout(_TestADBlock_fe,16);
 	document.body.innerHTML = '<div class="_DHTML_ce">'+document.getElementsByClassName('_DHTML_ce')[0].innerHTML+'</div>';
 	S = localStorage;
