@@ -191,7 +191,7 @@ function _TestADBlock_fe() {
 	if(localStorage) {
 		return true;
 	} else {
-		alert('You may have some adBlocks running.\nPlease, turn off it, otherwise we cannot keep your progress saved and the game cannot start!');
+		alert('You may have some adBlocks running.\nPlease, turn off it, otherwise we cannot keep your progress saved\nand the game cannot start!\n\nThe problem is probably caused by blocking cookies.\nIf you want to fix it, try disabling the adBlock\nor try to set off in your adBlock, for this site, the Cookie Block.');
 		return false;
 	};
 };
@@ -224,7 +224,7 @@ window.onload = function _O_fe() { /*Onload*/
 			Ag();
 			_Game_fe();
 		};
-	},4);
+	},16);
 };
 
 window.addEventListener('resize', _ScreenSet_fe);
@@ -411,9 +411,17 @@ function Ag() { /*All Dates Go with LOG*/
 </head>
 <body class="_0_ce">
 
-<div class="_DE_ce _C_ce" style="left:50%;position:absolute;text-align:center;top:40%;">
-	<span>ERROR :/</span><br />
-	<span>Please, enable Javascripts!</span>
+<div class="_DE_ce _C_ce" style="left:50%;position:absolute;text-align:center;top:44.5%;">
+	<div>
+		<p style="margin:5px;">ERROR :/</p>
+		<p style="margin:5px;">Please, enable Javascripts!</p>
+	</div>
+	<br style="line-height:4px;"/>
+	<div style="margin:5px;transform: scale(0.8);">
+		<p style="margin:0px;">If you want to try to fix it, you can try to go in</p>
+		<p style="margin:0px;transform: scale(0.8);">Settings > Privacy and Security > Site Settings<br />(and Shields) > Recent activity > View Permissions<br />and Data Stored on Sites > wtnt.tk > JavaScript</p>
+		<p style="margin:0px;">and set it as "enabled" or "allow".</p>
+	</div>
 </div>
 
 <div class="_DHTML_ce">
