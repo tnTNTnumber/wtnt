@@ -1,0 +1,489 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Cultery - τnTNT_☢️</title>
+	<meta charset="UTF-8">
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@1,700&display=swap');
+
+body {
+	background: rgba(33,33,33,0.8);
+	color: rgba(0,0,0,0.95)!important;
+	font-family: 'Lucida Console', monospace;
+	font-family: 'Ubuntu Mono', monospace;
+	font-size: calc(1.2em + 0.2vmax); /**2.5vmin; 1vmax; 20px; 1.5em*/
+	transition-duration: 0.4s;
+}body * {
+	transition-duration: 0.4s;
+}
+
+button {
+	background: rgba(55,55,55,0.8);
+	border: 0.4vmin solid rgba(44,44,44,0.8);
+    border-radius: 0.5vmin;
+	color: rgba(0,0,0,0.8);
+	color: rgba(22,22,22,0.8);
+	font-size: 2.5vmin;
+	transition-duration: 0.2s;
+}button.focus, button:focus {
+    outline: 0;
+    box-shadow: none!important;
+}button:hover {
+	background: rgba(88,88,88,0.8)!important;
+}
+
+div {
+	transition-duration: 0.4s;
+}
+
+::placeholder {
+	color: rgba(55,55,55,0.8);
+}:-ms-input-placeholder {
+	color: rgba(55,55,55,0.8);
+}::-ms-input-placeholder {
+	color: rgba(55,55,55,0.8);
+}
+
+::selection {
+	background: rgba(99,99,99,0.8);
+}::-moz-selection {
+	background: rgba(99,99,99,0.8);
+}
+
+textarea {
+	color: rgba(0,0,0,0.8);
+	resize: none;
+	scrollbar-color: rgba(55,55,55,0.8) rgba(0,0,0,0);
+	scrollbar-width: thin;
+	transition-duration: 0.4s;
+}textarea:hover{
+	background: rgba(116,116,116,0.8)!important;
+}textarea.focus, textarea:focus {
+    outline: 0;
+    box-shadow: none!important;
+}
+
+::-webkit-scrollbar {
+	width: 0.5vw;
+	background: rgba(88,88,88,0);
+	border-radius: 0.25vw;
+	transition-duration: 0.4s;
+}::-webkit-scrollbar-track {
+	background: linear-gradient(90deg,rgba(88,88,88,0.2),rgba(0,0,0,0));
+	border-radius: 0.25vw;
+}::-webkit-scrollbar-track:hover {
+	background: rgba(88,88,88,0.4);
+}::-webkit-scrollbar-thumb {
+	background: rgba(55,55,55,0.5);
+	border-radius: 0.25vw;
+}::-webkit-scrollbar-thumb:hover {
+	background: rgba(55,55,55,0.8);
+}
+
+._0_ce { /*0*/
+	border: 0px;
+	border: 0;
+	margin: 0px;
+	margin: 0;
+	padding: 0px;
+	padding: 0;
+}
+
+._C_ce { /*Center*/
+	transform: translate(-50%,-50%);
+}._CX_ce { /*Center X*/
+	transform: translateX(-50%);
+}._CY_ce { /*Center Y*/
+	transform: translateY(-50%);
+}
+
+._DN_ce { /*Display None*/
+	display:none;
+}
+
+._DHTML_ce { /*Div HTML*/
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}_DHTML_ce * {
+}
+
+._Info_ce {
+	display: none;
+}_Info_ce * {
+}
+
+._DE_ce { /*Div Error*/
+}
+
+._noselect_ce {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+/**^^*/
+/**..*/
+
+div._Game_ce {
+	-webkit-touch-callout: text;
+	-webkit-user-select: text;
+	-khtml-user-select: text;
+	-moz-user-select: text;
+	-ms-user-select: text;
+	user-select: text;
+}
+
+div._LandscapeWindow_ce {
+	height: 0px;
+	left: 50%;
+	position: absolute;
+	transform: translate(-50%,-50%);
+	top: 50%;
+	width: 100%;
+	background: rgba(44,44,88,0.8);
+}
+
+div._Window_ce {
+	height: 100%;
+	left: 50%;
+	position: absolute;
+	top: 50%;
+	transform: translate(-50%,-50%);
+	width: 0px;
+	background: rgba(88,44,44,0.8);
+}
+
+</style>
+<script>
+
+function _Game_fe() {
+	_SetScreen_fe();
+};
+
+function _SetScreen_fe() {
+	if(W.innerWidth/W.innerHeight<A._AspectRatio_Heightest_ve) { /**Heightest*/
+		A._WindowX_ve = W.innerWidth;
+		A._WindowY_ve = W.innerWidth/A._AspectRatio_Prototype_ve;
+	} else if(W.innerWidth/W.innerHeight>A._AspectRatio_Widthest_ve) { /**Widthest*/
+		A._WindowY_ve = W.innerHeight;
+		A._WindowX_ve = W.innerHeight*A._AspectRatio_Prototype_ve;
+	} else { /**OK*/
+		A._WindowX_ve = W.innerWidth;
+		A._WindowY_ve = W.innerHeight;
+	};
+	CLASS('_LandscapeWindow_ce')[0].style.height = A._WindowY_ve+'px';
+	CLASS('_Window_ce')[0].style.width = A._WindowX_ve+'px';
+};
+
+var AJ = { /*All Dates JSON*/
+	'_GameName_ve': 'Cultery', /**!IMPORTANT*/ /**The Name MUST BE DIFFERENT between every programs used on the browser that open this file !IMPORTANT*/
+	'_CodeNumberVersion_ve': 0, /**!IMPORTANT*/
+	'_ForceUpdate_ve': 1, /**!IMPORTANT*/ /**0=true; 1=false*/ /**For Coding: true (0); For Public Release: false (1)*/
+	'_GameOpenedNTimes_ve': 0, /**!IMPORTANT*/
+}; function AJ0(AJI) { /*All Dates JSON - Updater*/
+	/*(All Dates JSON) Input*/
+	eval(`AJV = `+AJI+`;`); /*(All Dates JSON) Variable*/
+	AJV._AspectRatio_Widthest_ve = 5/7;
+	AJV._AspectRatio_Heightest_ve = 9/21;
+	AJV._AspectRatio_Prototype_ve = (AJV._AspectRatio_Widthest_ve+AJV._AspectRatio_Heightest_ve)/2;
+	AJV._WindowX_ve = W.innerWidth;
+	AJV._WindowY_ve = W.innerWidth/AJV._AspectRatio_Prototype_ve;
+};
+
+window.onload = function _O_fe() { /*Onload*/
+	document.body.innerHTML = '<div class="_DHTML_ce">'+document.getElementsByClassName('_DHTML_ce')[0].innerHTML+'</div>';
+	S = localStorage;
+	W = window;
+	G = window.MyGlobalVariables = {};
+	//~ Sr('Cultery'); /**DANGER!*/
+	Ag();
+	_Game_fe();
+};
+
+window.addEventListener('resize', _SetScreen_fe);
+
+function TAG(_TAG_ElementOrTag_ve,_TAG_Tag_ve) {
+	if(_TAG_Tag_ve) {
+		return _TAG_ElementOrTag_ve.getElementsByTagName(_TAG_Tag_ve);
+	} else {
+		return document.getElementsByTagName(_TAG_ElementOrTag_ve);
+	};
+};
+
+function ID(_TAG_ElementOrId_ve,_ID_Id_ve) {
+	if(_ID_Id_ve) {
+		return _TAG_ElementOrId_ve.getElementById(_ID_Id_ve);
+	} else {
+		return document.getElementById(_TAG_ElementOrId_ve);
+	};
+};
+
+function CLASS(_TAG_ElementOrClass_ve,_CLASS_Class_ve) {
+	if(_CLASS_Class_ve) {
+		return _TAG_ElementOrClass_ve.getElementsByClassName(_CLASS_Class_ve);
+	} else {
+		return document.getElementsByClassName(_TAG_ElementOrClass_ve);
+	};
+};
+
+function NAME(_NAME_ElementOrName_ve,_NAME_Name_ve) {
+	if(_NAME_Name_ve) {
+		return _TAG_ElementOrName_ve.getElementsByName(_NAME_Name_ve);
+	} else {
+		return document.getElementsByName(_NAME_ElementOrName_ve);
+	};
+};
+
+function ATTR(_ATTR_ElementOrName_ve,_ATTR_Name_ve) { /*get Attribute*/
+	if(_ATTR_Name_ve) {
+		return _ATTR_ElementOrName_ve.getAttribute(_ATTR_Name_ve);
+	} else {
+		return document.getAttribute(_ATTR_ElementOrName_ve);
+	};
+};
+
+//~ function ELEM(_ELEM_ElementOrName_ve,_ELEM_Name_ve) { /*custom Element*/
+	//~ if(_ELEM_Name_ve) {
+		//~ return _ELEM_ElementOrName_ve.customElements.get(_ELEM_Name_ve);
+	//~ } else {
+		//~ return document.customElements.get(_ELEM_ElementOrName_ve);
+	//~ };
+//~ };
+
+function CALHTML(_CALHTML_Element_ve,_CALHTML_Value_ve) { /*Change All Lenght innerHTML*/
+	for(var _CALHTML_Iteration_ve=0; _CALHTML_Iteration_ve<_CALHTML_Element_ve.length; _CALHTML_Iteration_ve++) {
+		_CALHTML_Element_ve[_CALHTML_Iteration_ve].innerHTML = _CALHTML_Value_ve;
+	};
+};
+
+function AREMOVE(_AREMOVE_Array_ve,_AREMOVE_Value_ve) {
+	var _AREMOVE_Index_ve = _AREMOVE_Array_ve.indexOf(_AREMOVE_Value_ve);
+	if(_AREMOVE_Index_ve>-1) {
+		_AREMOVE_Array_ve.splice(_AREMOVE_Index_ve,1);
+	};
+	return _AREMOVE_Array_ve;
+};
+
+function LOG(_LOG_Value_ve) {
+	console.log(_LOG_Value_ve);
+};
+
+function JL(_JL_Value_ve) { /*JSON.lenght*/
+	return Object.keys(_JL_Value_ve).length;
+};
+
+function SD(_SD_VariableString_ve,_SD_Value_ve) { /*local Storage JSON for Declaration and Global Declaration*/ /**Declaration*/
+	if(_SD_Value_ve) {
+		localStorage.setItem(_SD_VariableString_ve,JSON.stringify(_SD_Value_ve));
+		eval(_SD_VariableString_ve+` = _SD_Value_ve;`);
+	} else {
+		localStorage.setItem(_SD_VariableString_ve,undefined);
+		eval(_SD_VariableString_ve+` = undefined;`);
+	};
+};
+
+function Sd(_Sd_VariableString_ve,_Sd_Value_ve) { /*local Storage JSON for Declaration*/ /**Declaration*/
+	if(_Sd_Value_ve) {
+		localStorage.setItem(_Sd_VariableString_ve,JSON.stringify(_Sd_Value_ve));
+	} else {
+		localStorage.setItem(_Sd_VariableString_ve,undefined);
+	};
+};
+
+function SDJ(_SDJ_VariableString_ve) { /*local Storage JSON for Declaration and Global Declaration (set JSON)*/ /**Declaration*/
+	localStorage.setItem(_SDJ_VariableString_ve,{});
+	eval(_SDJ_VariableString_ve+` = {};`);
+};
+
+function Sdj(_Sdj_VariableString_ve) { /*local Storage JSON for Declaration (set JSON)*/ /**Declaration*/
+	localStorage.setItem(_Sdj_VariableString_ve,{});
+};
+
+function Sj(_Sj_VariableString_ve,_Sj_Variable_ve) { /*local Storage JSON for Write (stringify)*/ /**Write (stringify)*/
+	if(_Sj_Variable_ve) {
+		localStorage.setItem(_Sj_VariableString_ve,JSON.stringify(_Sj_Variable_ve));
+	} else {
+		eval(`localStorage.setItem(_Sj_VariableString_ve,JSON.stringify(`+_Sj_VariableString_ve+`));`);
+	};
+};
+
+function SJ(_SJ_VariableString_ve,_SJ_Variable_ve) { /*local Storage JSON for Write in Opposite (parse)*/ /**Write in Opposite (parse)*/
+	if(_SJ_Variable_ve) {
+		eval(_SJ_Variable_ve+` = JSON.parse(localStorage.getItem(_SJ_VariableString_ve));`);
+	} else {
+		eval(_SJ_VariableString_ve+` = JSON.parse(localStorage.getItem(_SJ_VariableString_ve));`);
+	};
+};
+
+function Se(_Se_VariableString_ve) { /*local Storage JSON for Extract (parse)*/ /**Extract (parse)*/
+	return JSON.parse(localStorage.getItem(_Se_VariableString_ve));
+};
+
+function Sr(_Sr_VariableString_ve) { /*local Storage JSON for Removing*/ /**Removing*/
+	localStorage.removeItem(_Sr_VariableString_ve);
+};
+
+function SR(_SR_VariableString_ve) { /*local Storage JSON for Removing and Remove a Global Variable*/ /**Removing*/
+	localStorage.removeItem(_SR_VariableString_ve);
+	eval(`delete `+_SR_VariableString_ve+`;`);
+};
+
+function j() { /**Write*/
+	Sj(A._GameName_ve,A);
+}; function AS() { /**All Dates Save*/
+	Sj(A._GameName_ve,A);
+};
+
+function J() { /**Read*/
+	SJ(A._GameName_ve,'A');
+}; function AE() { /**All Dates Extract*/
+	SJ(A._GameName_ve,'A');
+};
+
+function ASet() { /**All Dates Set*/
+	eval(AJ._GameName_ve+` = AJ;`);
+	eval(`A = `+AJ._GameName_ve);
+};
+
+function AD() { /**All Dates*/
+	_SavingDates_NotFirstTime_ve = false;
+	eval(`if(S.`+AJ._GameName_ve+`) {_SavingDates_NotFirstTime_ve = true;};`);
+	if(_SavingDates_NotFirstTime_ve) {
+		J();
+	} else {
+		Sd(AJ._GameName_ve,A);
+	};
+	A._GameOpenedNTimes_ve = A._GameOpenedNTimes_ve+1;
+	j();
+};
+
+function AL() { /*All Dates LOG*/
+	console.log(A);
+};
+
+function Al() { /*All Dates LOG*/
+	console.log(AJ);
+};
+
+function AG() { /*All Dates Go*/
+	ASet();
+	AD();
+	for(var _AG_I_ve=0; _AG_I_ve<AJ._CodeNumberVersion_ve+1; _AG_I_ve++) {eval(`AJ`+_AG_I_ve+`('AJ');`);};
+	for(var _AG_I_ve=A._CodeNumberVersion_ve+AJ._ForceUpdate_ve; _AG_I_ve<AJ._CodeNumberVersion_ve+1; _AG_I_ve++) {eval(`AJ`+_AG_I_ve+`('A');`);};
+	A._CodeNumberVersion_ve = AJ._CodeNumberVersion_ve;
+	j();
+};
+
+function Ag() { /*All Dates Go with LOG*/
+	AG();
+	Al();
+	AL();
+};
+
+</script>
+</head>
+<body class="_0_ce">
+
+<div class="_DE_ce _C_ce" style="left:50%;position:absolute;text-align:center;top:40%;">
+	<span>ERROR :/</span><br />
+	<span>Please, enable Javascripts!</span>
+</div>
+
+<div class="_DHTML_ce">
+	<div class="_Game_ce">
+		<div class="_LandscapeWindow_ce">
+			<div class="_Window_ce">
+			</div>
+		</div>
+	</div>
+	<div class="_Info_ce">
+		<div class="_Language_English_ce">
+			<h1 class="_Language_ce">
+				English (English):
+			</h1>
+			<p class="_Title_ce">
+				Physics
+			</p>
+			<p class="_Information_ce">
+				Physics is a program in which you are written information, mostly of the school scope, concerning the physical scope.
+			</p>
+		</div>
+		<div class="_Language_Italian_ce">
+			<h1 class="_Language_ce">
+				Italiano (Italian):
+			</h1>
+			<p class="_Title_ce">
+				Physics
+			</p>
+			<p class="_Information_ce">
+				Physics è un programma nel quale vi sono scritte informazioni, per lo più di ambito scolastico, riguardandti l'ambito fisico.
+			</p>
+		</div>
+		<div class="_Language_Spanish_ce">
+			<h1 class="_Language_ce">
+				Español (Spanish):
+			</h1>
+			<p class="_Title_ce">
+				Physics
+			</p>
+			<p class="_Information_ce">
+				Physics es un programa en el que usted está escrito información, principalmente del alcance escolar, sobre el alcance físico.
+			</p>
+		</div>
+		<div class="_Language_Russian_ce">
+			<h1 class="_Language_ce">
+				Русский (Russian):
+			</h1>
+			<p class="_Title_ce">
+				Physics
+			</p>
+			<p class="_Information_ce">
+				Physics - это программа, в которой вы написаны информация, в основном в школе, касающейся физической массы.
+			</p>
+		</div>
+		<div class="_Language_Arabic_ce">
+			<h1 class="_Language_ce">
+				عربي (Arabic):
+			</h1>
+			<p class="_Title_ce">
+				Physics
+			</p>
+			<p class="_Information_ce">
+				Physics هو برنامج مكتوب فيه معلومات، معظمها من النطاق المدرسي، فيما يتعلق بالنطاق الفيزيائي.
+			</p>
+		</div>
+		<div class="_Language_Japanese_ce">
+			<h1 class="_Language_ce">
+				日本語 (Japanese):
+			</h1>
+			<p class="_Title_ce">
+				Physics
+			</p>
+			<p class="_Information_ce">
+				Physicsは、あなたが主に学校の範囲に関して、あなたが身体の範囲に関して書かれた情報であるプログラムです。
+			</p>
+		</div>
+		<div class="_Language_Chinese_Simplified_ce">
+			<h1 class="_Language_ce">
+				简体中文 (Chinese (Simplified)):
+			</h1>
+			<p class="_Title_ce">
+				Physics
+			</p>
+			<p class="_Information_ce">
+				Physics是您是书面信息的计划，主要是学校范围，关于物理范围。
+			</p>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>
