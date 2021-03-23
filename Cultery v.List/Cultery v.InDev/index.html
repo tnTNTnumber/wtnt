@@ -148,7 +148,7 @@ div._LandscapeWindow_ce {
 	transform: translate(-50%,-50%);
 	top: 50%;
 	width: 100%;
-	background: rgba(44,44,88,0.8);
+	background: rgba(33,33,33,0.0059);
 }
 
 div._Window_ce {
@@ -159,6 +159,25 @@ div._Window_ce {
 	transform: translate(-50%,-50%);
 	width: 0px;
 	background: rgba(88,44,44,0.8);
+}
+
+button._ButtonSetting_ce {
+	left: 2vmin;
+	position: absolute;
+	top: 2vmin;
+}
+
+button._ButtonStatistics_ce {
+	position: absolute;
+	right: 2vmin;
+	top: 2vmin;
+}
+
+button._SelectReligion_ce {
+	bottom: 2vmin;
+	left: 50%;
+	position: absolute;
+	transform: translateX(-50%);
 }
 
 </style>
@@ -430,6 +449,15 @@ function Ag() { /*All Dates Go with LOG*/
 			<div class="_Window_ce">
 			</div>
 		</div>
+		<div class="_LayoutHome_ce">
+			<button class="_ButtonSetting_ce">⚙️</button>
+			<button class="_ButtonStatistics_ce">📊</button>
+			<button class="_PLayOnLine_ce _ButtonCenter_ce">Gioca On-Line</button>
+			<button class="_PLayWithFriend_ce _ButtonCenter_ce">Gioca con Amico</button>
+			<button class="_SelectReligion_ce">Scegli Religione</button>
+		</div>
+	</div>
+	<div class="_Translations_ce">
 	</div>
 	<div class="_Info_ce">
 		<div class="_Language_English_ce">
