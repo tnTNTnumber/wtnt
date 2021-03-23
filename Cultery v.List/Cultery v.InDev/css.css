@@ -1,0 +1,55 @@
+div._Game_ce {
+	-webkit-touch-callout: text;
+	-webkit-user-select: text;
+	-khtml-user-select: text;
+	-moz-user-select: text;
+	-ms-user-select: text;
+	user-select: text;
+}
+
+div._LandscapeWindow_ce {
+	height: 0px;
+	left: 50%;
+	position: absolute;
+	transform: translate(-50%,-50%);
+	top: 50%;
+	width: 100%;
+	background: rgba(33,33,33,0.0059);
+}
+
+div._Window_ce {
+	height: 100%;
+	left: 50%;
+	position: absolute;
+	top: 50%;
+	transform: translate(-50%,-50%);
+	width: 0px;
+	background: rgba(88,44,44,0.8);
+}
+
+button._ButtonSetting_ce {
+	left: 0px;
+	position: absolute;
+	top: 0px;
+}
+
+button._ButtonStatistics_ce {
+	position: absolute;
+	right: 0px;
+	top: 0px;
+}
+
+div._ElementsPlaceholder_ce {
+	display: none;
+}
+
+button._SelectReligion_ce {
+	bottom: 0px;
+	left: 50%;
+	position: absolute;
+	transform: translateX(-50%);
+}
+
+div._WindowFull_ce, div._LandscapeWindow_ce, div._Window_ce {
+	z-index: -1;
+}
