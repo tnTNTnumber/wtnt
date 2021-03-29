@@ -12,6 +12,15 @@ function _Drop_fe(_Drag_Event_ve) {
 };
 
 function _ResizeMap_fe() {
+	let _ResizeMap_Dice_ve = CLASS(CLASS('_Window_ce')[0],'_Dice_ce');
+	for(let _ResizeMap_I_ve=0; _ResizeMap_I_ve<_ResizeMap_Dice_ve.length; _ResizeMap_I_ve++) {
+		let _ResizeMap_Dice_Side_ve = 1;
+		_ResizeMap_Dice_ve[_ResizeMap_I_ve].style.right = _ResizeMap_Dice_Side_ve*2.5+'em';
+		_ResizeMap_Dice_ve[_ResizeMap_I_ve].style.top = _ResizeMap_Dice_Side_ve*2.5+'em';
+		_ResizeMap_Dice_ve[_ResizeMap_I_ve].style.width = _ResizeMap_Dice_Side_ve*0.6+'em';
+		_ResizeMap_Dice_ve[_ResizeMap_I_ve].style.height = _ResizeMap_Dice_Side_ve*0.6+'em';
+		_ResizeMap_Dice_ve[_ResizeMap_I_ve].style.transform = 'scale(6)';
+	};
 	let _ResizeMap_Islands_ve = CLASS(CLASS('_WindowCenter_ce')[0],'_Island_ce');
 	for(let _ResizeMap_I_ve=0; _ResizeMap_I_ve<_ResizeMap_Islands_ve.length; _ResizeMap_I_ve++) {
 		let _ResizeMap_Island_Side_ve = A._PxUnitOfMeasure_ve/16;
@@ -67,6 +76,22 @@ function _ScreenSet_fe() {
 	_ResizeMap_fe();
 };
 
+function _ScrollDice_fe(_ScrollDice_ValueElement_ve,_ScrollDice_Element_ve) {
+	var _ScrollDice_TimeOfScrolls_ve = [50,200,320,420,510,600,680,760,750,840,940,1060,1200,1400];
+	for(var _ScrollDice_Iteration_ve=0; _ScrollDice_Iteration_ve<_ScrollDice_TimeOfScrolls_ve.length; _ScrollDice_Iteration_ve++) {
+		setTimeout(function() {
+			_ScrollDice_NumberRolled_ve = CLASS('_DiceUsable_ce')[0].innerText[Math.floor(Math.random()*CLASS('_DiceUsable_ce')[0].innerText.length)];
+			_ScrollDice_ValueElement_ve.innerHTML = _ScrollDice_NumberRolled_ve;
+			_DrawDice_fe(_ScrollDice_ValueElement_ve,_ScrollDice_Element_ve);
+		},_ScrollDice_TimeOfScrolls_ve[_ScrollDice_Iteration_ve]);
+	};
+	return _ScrollDice_TimeOfScrolls_ve[_ScrollDice_TimeOfScrolls_ve.length-1];
+}; function _DrawDice_fe(_DrawDice_ValueElement_ve,_DrawDice_Element_ve) {
+	_DrawDice_ClassDiceRolled_ve = '_Dice'+_DrawDice_ValueElement_ve.innerHTML+'_ce';
+	_DrawDice_DiceRolled_ve = CLASS(_DrawDice_ClassDiceRolled_ve)[0].innerHTML;
+	_DrawDice_Element_ve.innerText = _DrawDice_DiceRolled_ve;
+};
+
 var A = {};
 
 window.onload = function _O_fe() { /*Onload*/
@@ -77,8 +102,9 @@ window.onload = function _O_fe() { /*Onload*/
 	_ScreenSet_fe();
 	{
 	//~ _Game_fe();
-	CLASS('_WindowCenter_ce')[0].innerHTML = CLASS('_Map1_ce')[0].innerHTML;
-	CLASS(CLASS('_WindowCenter_ce')[0],'_Island_ce')[0].innerHTML += CLASS('_BoatsSet1_ce')[0].innerHTML;
+	CLASS('_Window_ce')[0].innerHTML += CLASS('_Dice_ce')[0].outerHTML;
+	CLASS('_WindowCenter_ce')[0].innerHTML = CLASS('_Map_ce')[0].innerHTML;
+	CLASS(CLASS('_WindowCenter_ce')[0],'_Island_ce')[0].innerHTML += CLASS('_BoatsSet_ce')[0].innerHTML;
 	_ScreenSet_fe();
 	};
 };
