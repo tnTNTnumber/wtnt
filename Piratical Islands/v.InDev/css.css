@@ -1,0 +1,78 @@
+div._Game_ce {
+	-webkit-touch-callout: text;
+	-webkit-user-select: text;
+	-khtml-user-select: text;
+	-moz-user-select: text;
+	-ms-user-select: text;
+	user-select: text;
+}
+
+div._Window_ce {
+	background: rgba(40,55,70,0.8);
+	border-radius: 30px;
+	height: 0px;
+	left: 50%;
+	position: absolute;
+	top: 50%;
+	transform: rotate(0deg);
+	transform: translate(-50%,-50%);
+	width: 0px;
+	z-index: -1;
+}
+
+div._WindowCenter_ce {
+	left: 50%;
+	position: absolute;
+	top: 50%;
+}
+
+div._ElementsPlaceholder_ce {
+	display: none;
+}
+
+div._Island_ce {
+	background: rgba(40,70,55,0.8);
+	display: -webkit-box;
+	-webkit-flex-wrap: wrap;
+	height: 0px;
+	left: 0px;
+	position: absolute;
+	transform: translate(-50%,-50%);
+	top: 0px;
+	width: 0px;
+	z-index: 16;
+}
+
+div._Route_ce {
+	background: rgba(20,30,40,0.8);
+	border-radius: 1vmin;
+	height: 0px;
+	left: 0px;
+	position: absolute;
+	-webkit-transform-origin: top left;
+	-moz-transform-origin: top left;
+	-o-transform-origin: top left;
+	-ms-transform-origin: top left;
+	top: 0px;
+	transform-origin: center left;
+	transform: rotate(0turn);
+	transform: translate(-0.25vmin,-0.25vmin);
+	width: 0px;
+	z-index: 8;
+}
+
+div._Boat_ce {
+	border-radius: 50%;
+	margin: 0px;
+	transition-duration: 0.4s;
+	transform: translate(0px,0px);
+}
+
+div#_Drag_de {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
