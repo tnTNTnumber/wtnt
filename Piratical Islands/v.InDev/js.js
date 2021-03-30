@@ -39,6 +39,7 @@ _Draw_le: {
 				let _PlaceMap_Island_ve = _PlaceMap_Objects_ve.Island[_PlaceMap_I_ve];
 				let _PlaceMap_IslandScope_ve = _GenerateScope_fe(_PlaceMap_Island_ve.Scope,_Scope_ae[0]);
 				_PlaceMap_Locate_ve.innerHTML += '<div class="_Island_ce _Island'+_PlaceMap_N_ve+'_ce _'+_PlaceMap_Island_ve.Scope+'_ce" id="Island'+_PlaceMap_N_ve+'" ondragover="_DragOver_fe(event);" ondrop="_Drop_fe(event,this)"><div class="_PositionX_ce _DN_ce">'+_PlaceMap_Island_ve.X+'</div><div class="_PositionY_ce _DN_ce">'+_PlaceMap_Island_ve.Y+'</div><div class="_Discovered_ce _DN_ce">false</div><div class="_Scope_ce _DN_ce">'+_PlaceMap_IslandScope_ve+'</div></div>';
+				//~ _PlaceMap_Locate_ve.innerHTML += '<div class="_Island_ce _Island'+_PlaceMap_N_ve+'_ce _'+_PlaceMap_Island_ve.Scope+'_ce" id="Island'+_PlaceMap_N_ve+'" ondragover="_DragOver_fe(event);" ondrop="_Drop_fe(event,this)"><div class="_PositionX_ce _DN_ce">'+_PlaceMap_Island_ve.X+'</div><div class="_PositionY_ce _DN_ce">'+_PlaceMap_Island_ve.Y+'</div><div class="_Discovered_ce _DN_ce">false</div><div class="_Scope_ce _DN_ce">'+_PlaceMap_IslandScope_ve+'</div>'+_PlaceMap_N_ve+': ('+_PlaceMap_Island_ve.X+';'+_PlaceMap_Island_ve.Y+');<br />'+_PlaceMap_IslandScope_ve+'</div>';
 			};
 		};
 		_PlaceMap_DrawRoute_le: {
@@ -173,14 +174,14 @@ function _ScrollDice_fe(_ScrollDice_ValueElement_ve,_ScrollDice_Element_ve) {
 var A = {};
 var _BoatSet_ae = [
 	[
-		'background:rgba(90,40,40,0.8);',
-		'background:rgba(40,90,40,0.8);',
-		'background:rgba(40,40,90,0.8);',
-		'background:rgba(90,90,40,0.8);',
-		'background:rgba(90,40,90,0.8);',
-		'background:rgba(40,90,90,0.8);',
-		'background:rgba(40,40,40,0.8);',
-		'background:rgba(90,90,90,0.8);',
+		'background:rgba(210,80,80,0.95);',
+		'background:rgba(80,210,80,0.95);',
+		'background:rgba(80,80,210,0.95);',
+		'background:rgba(210,210,80,0.95);',
+		'background:rgba(210,80,210,0.95);',
+		'background:rgba(80,210,210,0.95);',
+		'background:rgba(80,80,80,0.95);',
+		'background:rgba(210,210,210,0.95);',
 		'background-color:rgba(200,200,200,0.8);background-image:url(\'Boat0 Background.jpeg\');background-position:center;background-repeat:no-repeat;background-size:cover;/*https://miro.medium.com/max/576/1*uOlYH9KOordU2XgVsxR1GQ.jpeg*/'
 	],
 ];
@@ -212,6 +213,41 @@ var _Map_ae = [
 				"Y": 7,
 				"Scope": "?",
 			},
+			{
+				"X": -17,
+				"Y": 12,
+				"Scope": "?",
+			},
+			{
+				"X": -19,
+				"Y": 6,
+				"Scope": "?",
+			},
+			{
+				"X": -23,
+				"Y": 10,
+				"Scope": "?",
+			},
+			{
+				"X": -24,
+				"Y": 17,
+				"Scope": "?",
+			},
+			{
+				"X": -29,
+				"Y": 16,
+				"Scope": "?",
+			},
+			{
+				"X": -35,
+				"Y": 8,
+				"Scope": "?",
+			},
+			{
+				"X": -37,
+				"Y": 15,
+				"Scope": "?",
+			},
 		],
 		"Route": [
 			/*{
@@ -238,24 +274,89 @@ var _Map_ae = [
 				"A": "Island3",
 				"B": "Island5",
 			},
+			{
+				"A": "Island5",
+				"B": "Island6",
+			},
+			{
+				"A": "Island5",
+				"B": "Island7",
+			},
+			{
+				"A": "Island6",
+				"B": "Island7",
+			},
+			{
+				"A": "Island7",
+				"B": "Island8",
+			},
+			{
+				"A": "Island8",
+				"B": "Island9",
+			},
+			{
+				"A": "Island6",
+				"B": "Island9",
+			},
+			{
+				"A": "Island9",
+				"B": "Island10",
+			},
+			{
+				"A": "Island10",
+				"B": "Island11",
+			},
+			{
+				"A": "Island10",
+				"B": "Island12",
+			},
 		],
 	},
 ];
 var _Scope_ae = [
 	[
-		['Nothing',150],
-		['Forward1',25],
-		['Forward2',15],
-		['Forward5',5],
-		['Backward1',25],
-		['Backward2',15],
-		['Backward5',5],
-		['GoToStart',10],
-		['GoToFirst',10],
-		['GoToLast',10],
-		['Skip1Turn',20],
-		['Skip2Turn',10],
-		['Skip5Turn',3],
+		['Nothing',1300],
+
+		['Forward1',250],
+		['Forward2',150],
+		['Forward5',50],
+		['Forward10',20],
+		['Forward15',10],
+		['Forward25',5],
+
+		['Backward1',250],
+		['Backward2',150],
+		['Backward5',50],
+		['Backward10',20],
+		['Backward15',10],
+		['Backward25',5],
+
+		['GoToStart',100],
+		['GoToEnd',80],
+		['GoToFirst',100],
+		['GoToSecondFirst',60],
+		['GoToLast',100],
+		['GoToSecondLast',60],
+
+		['GoToNextToStart',60],
+		['GoToNextToEnd',50],
+		['GoToNextToFirst',60],
+		['GoToNextToSecondFirst',40],
+		['GoToNextToLast',60],
+		['GoToNextToSecondLast',40],
+
+		['Skip1Turn',200],
+		['Skip2Turn',100],
+		['Skip5Turn',17],
+		['Skip10Turn',7],
+		['Skip15Turn',3],
+
+		['ReRollDices',120],
+
+		['YouWin',5],
+		['YouLose',5],
+
+		['GameOver',1],
 	],
 ];
 
