@@ -1,27 +1,27 @@
 function _DiscoverIsland_fe(_DiscoverIsland_Object_ve) {
-};
-
-function _DragOver_fe(_Drag_Event_ve) {
-	_Drag_Event_ve.preventDefault();
-};
-
-function _DragStart_fe(_Drag_Event_ve) {
-	_Drag_Event_ve.dataTransfer.setData("text", _Drag_Event_ve.target.id);
-};
-
-function _Drop_fe(_Drag_Event_ve,_Drag_Object_ve) {
-	_Drag_Event_ve.preventDefault();
-	_Drag_Event_ve.target.appendChild(ID(_Drag_Event_ve.dataTransfer.getData("text")));
-	_DiscoverIsland_fe(_Drag_Object_ve);
-};
-
-function _Game_fe() {
-	_Game_Draw_le: {
-		CLASS('_Window_ce')[0].innerHTML += CLASS('_Dice_ce')[0].outerHTML;
-		_PlaceMap_fe(CLASS('_WindowCenter_ce')[0],_Map_ae[0]);
-		_PlaceBoats_fe(CLASS(CLASS('_WindowCenter_ce')[0],'_Island_ce')[0],_BoatSet_ae[0]);
+	let _DiscoverIsland_Object_Discovered_ve = CLASS(_DiscoverIsland_Object_ve,'_Discovered_ce')[0];
+	let _DiscoverIsland_Object_Scope_ve = CLASS(_DiscoverIsland_Object_ve,'_Scope_ce')[0].innerText;
+	if(_DiscoverIsland_Object_Discovered_ve.innerText=='false') {
+		_DiscoverIsland_Object_Discovered_ve.innerHTML = 'true';
+		_DiscoverIsland_Object_ve.classList.add('_'+_DiscoverIsland_Object_Scope_ve+'_ce');
+		_DiscoverIsland_Object_ve.classList.remove('_?_ce');
 	};
-	_ScreenSet_fe();
+};
+
+_DragDrop_le: {
+	function _DragOver_fe(_Drag_Event_ve) {
+		_Drag_Event_ve.preventDefault();
+	};
+	
+	function _DragStart_fe(_Drag_Event_ve) {
+		_Drag_Event_ve.dataTransfer.setData("text", _Drag_Event_ve.target.id);
+	};
+	
+	function _Drop_fe(_Drag_Event_ve,_Drag_Object_ve) {
+		_Drag_Event_ve.preventDefault();
+		_Drag_Event_ve.target.appendChild(ID(_Drag_Event_ve.dataTransfer.getData("text")));
+		_DiscoverIsland_fe(_Drag_Object_ve);
+	};
 };
 
 _Draw_le: {
@@ -37,7 +37,8 @@ _Draw_le: {
 			for(let _PlaceMap_I_ve=0; _PlaceMap_I_ve<_PlaceMap_Objects_ve.Island.length; _PlaceMap_I_ve++) {
 				let _PlaceMap_N_ve = _PlaceMap_I_ve+1;
 				let _PlaceMap_Island_ve = _PlaceMap_Objects_ve.Island[_PlaceMap_I_ve];
-				_PlaceMap_Locate_ve.innerHTML += '<div class="_Island_ce _Island'+_PlaceMap_N_ve+'_ce" id="Island'+_PlaceMap_N_ve+'" ondragover="_DragOver_fe(event);" ondrop="_Drop_fe(event,this)"><div class="_PositionX_ce _DN_ce">'+_PlaceMap_Island_ve.X+'</div><div class="_PositionY_ce _DN_ce">'+_PlaceMap_Island_ve.Y+'</div><div class="_Scope_ce _DN_ce">'+_PlaceMap_Island_ve.Scope+'</div></div>';
+				let _PlaceMap_IslandScope_ve = _GenerateScope_fe(_PlaceMap_Island_ve.Scope,_Scope_ae[0]);
+				_PlaceMap_Locate_ve.innerHTML += '<div class="_Island_ce _Island'+_PlaceMap_N_ve+'_ce _'+_PlaceMap_Island_ve.Scope+'_ce" id="Island'+_PlaceMap_N_ve+'" ondragover="_DragOver_fe(event);" ondrop="_Drop_fe(event,this)"><div class="_PositionX_ce _DN_ce">'+_PlaceMap_Island_ve.X+'</div><div class="_PositionY_ce _DN_ce">'+_PlaceMap_Island_ve.Y+'</div><div class="_Discovered_ce _DN_ce">false</div><div class="_Scope_ce _DN_ce">'+_PlaceMap_IslandScope_ve+'</div></div>';
 			};
 		};
 		_PlaceMap_DrawRoute_le: {
@@ -59,6 +60,33 @@ _Draw_le: {
 			};
 		};
 	};
+};
+
+function _GenerateScope_fe(_GenerateScope_Scope_ve,_GenerateScope_ScopesList_ve) {
+	if(_GenerateScope_Scope_ve=='?') {
+		let _GenerateScope_ScopesProbabilityTot_ve = 0;
+		for(let _GenerateScope_I_ve=0; _GenerateScope_I_ve<_GenerateScope_ScopesList_ve.length; _GenerateScope_I_ve++) {
+			_GenerateScope_ScopesProbabilityTot_ve += _GenerateScope_ScopesList_ve[_GenerateScope_I_ve][1];
+		};
+		let _GenerateScope_Case_ve = Math.random()*_GenerateScope_ScopesProbabilityTot_ve;
+		let _GenerateScope_CaseCounter_ve = 0;
+		let _GenerateScope_CaseI_ve = 0;
+		while(_GenerateScope_CaseCounter_ve<_GenerateScope_Case_ve) {
+			_GenerateScope_CaseCounter_ve += _GenerateScope_ScopesList_ve[_GenerateScope_CaseI_ve][1];
+			_GenerateScope_CaseI_ve += 1;
+		};
+		return _GenerateScope_ScopesList_ve[_GenerateScope_CaseI_ve-1][0];
+	};
+	return _GenerateScope_Scope_ve;
+};
+
+function _Game_fe() {
+	_Game_Draw_le: {
+		CLASS('_Window_ce')[0].innerHTML += CLASS('_Dice_ce')[0].outerHTML;
+		_PlaceMap_fe(CLASS('_WindowCenter_ce')[0],_Map_ae[0]);
+		_PlaceBoats_fe(CLASS(CLASS('_WindowCenter_ce')[0],'_Island_ce')[0],_BoatSet_ae[0]);
+	};
+	_ScreenSet_fe();
 };
 
 function _ResizeMap_fe() {
@@ -162,7 +190,7 @@ var _Map_ae = [
 			{
 				"X": 5,
 				"Y": 10,
-				"Scope": "?",
+				"Scope": "Start",
 			},
 			{
 				"X": 9,
@@ -212,6 +240,23 @@ var _Map_ae = [
 			},
 		],
 	},
+];
+var _Scope_ae = [
+	[
+		['Nothing',150],
+		['Forward1',25],
+		['Forward2',15],
+		['Forward5',5],
+		['Backward1',25],
+		['Backward2',15],
+		['Backward5',5],
+		['GoToStart',10],
+		['GoToFirst',10],
+		['GoToLast',10],
+		['Skip1Turn',20],
+		['Skip2Turn',10],
+		['Skip5Turn',3],
+	],
 ];
 
 
