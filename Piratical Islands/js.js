@@ -3,6 +3,7 @@ function _DiscoverIsland_fe(_DiscoverIsland_Object_ve) {
 	let _DiscoverIsland_Object_Scope_ve = CLASS(_DiscoverIsland_Object_ve,'_Scope_ce')[0].innerText;
 	if(_DiscoverIsland_Object_Discovered_ve.innerText=='false') {
 		_DiscoverIsland_Object_Discovered_ve.innerHTML = 'true';
+		_DiscoverIsland_Object_ve.classList.add('_IslandDiscovered_ce');
 		_DiscoverIsland_Object_ve.classList.add('_'+_DiscoverIsland_Object_Scope_ve+'_ce');
 		_DiscoverIsland_Object_ve.classList.remove('_?_ce');
 	};
@@ -334,16 +335,16 @@ var _Scope_ae = [
 		['GoToStart',100],
 		['GoToEnd',80],
 		['GoToFirst',100],
-		['GoToSecondFirst',60],
+		['GoToSecondFirst',40],
 		['GoToLast',100],
-		['GoToSecondLast',60],
+		['GoToSecondLast',40],
 
-		['GoToNextToStart',60],
-		['GoToNextToEnd',50],
-		['GoToNextToFirst',60],
-		['GoToNextToSecondFirst',40],
-		['GoToNextToLast',60],
-		['GoToNextToSecondLast',40],
+		['GoToNextToStart',40],
+		['GoToNextToEnd',35],
+		['GoToNextToFirst',40],
+		['GoToNextToSecondFirst',15],
+		['GoToNextToLast',40],
+		['GoToNextToSecondLast',15],
 
 		['Skip1Turn',200],
 		['Skip2Turn',100],

@@ -61,54 +61,67 @@ div._Island_ce {
 
 div._Island_ce {
 	background-color: rgba(200,200,200,0);
-	background-position: center;
+	background-position: center, center, center;
 	background-repeat: no-repeat;
-	background-size: contain;
+	background-size: contain, contain, contain;
 	opacity: 0.6;
+} div._IslandDiscovered_ce {
+	background-position: center, center, center;
+	background-size: 100%, auto, contain;
 } div._\?_ce {
-	background-image: url('Scope Unknown.png');
+/*
+	background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="25px" width="2.4em"><text x="0" y="15" fill="rgba(44,44,22,0.9)" font-weight="bolder" font-size="14" xml:space="preserve"> ?</text></svg>'), url('Blank.png'), url('Scope Unknown.png');
+*/
+	background-image: url('Scope Script Unknown.png'), url('Blank.png'), url('Scope Unknown.png');
+/*  Forward  
+     by  5*/
+/*  Forward   
+     by  10*/
 } div._Start_ce {
-	background-image: url('Scope Start.png');
+	background-image: url('Scope Script Start.png'), url('Blank.png'), url('Scope Start.png');
+	background-position: center 60%, center, center;
 } div._End_ce {
-	background-image: url('Scope End.png');
+	background-image: url('Scope Script End.png'), url('Blank.png'), url('Scope End.png');
 } div._Treasure_ce {
-	background-image: url('Scope Treasure.png');
+	background-image: url('Scope Script Treasure.png'), url('Blank.png'), url('Scope Treasure.png');
 } div._Nothing_ce {
-	background-image: url('Scope Nothing.png');
+	background-image: url('Scope Script Nothing.png'), url('Blank.png'), url('Scope Nothing.png');
 } div._Forward1_ce {
-	background-image: url('Scope Forward.png');
+	background-image: url('Scope Script Forward x1.png'), url('Blank.png'), url('Scope Forward.png');
 } div._Forward2_ce {
-	background-image: url('Scope 2x.png'), url('Scope Forward.png');
-	background-size: auto, contain;
+	background-image: url('Scope Script Forward x2.png'), url('Scope 2x.png'), url('Scope Forward.png');
 } div._Forward5_ce {
-	background-image: url('Scope 5x.png'), url('Scope Forward.png');
-	background-size: auto, contain;
+	background-image: url('Scope Script Forward x5.png'), url('Scope 5x.png'), url('Scope Forward.png');
 } div._Forward10_ce {
-	background-image: url('Scope 10x.png'), url('Scope Forward.png');
-	background-size: auto, contain;
+	background-image: url('Scope Script Forward x10.png'), url('Scope 10x.png'), url('Scope Forward.png');
 } div._Forward15_ce {
-	background-image: url('Scope 15x.png'), url('Scope Forward.png');
-	background-size: auto, contain;
+	background-image: url('Scope Script Forward x15.png'), url('Scope 15x.png'), url('Scope Forward.png');
 } div._Forward25_ce {
-	background-image: url('Scope 25x.png'), url('Scope Forward.png');
-	background-size: auto, contain;
+	background-image: url('Scope Script Forward x25.png'), url('Scope 25x.png'), url('Scope Forward.png');
 } div._Backward1_ce {
-	background-image: url('Scope Backward.png');
+	background-image: url('Scope Script Backward x1.png'), url('Blank.png'), url('Scope Backward.png');
 } div._Backward2_ce {
-	background-image: url('Scope 2x.png'), url('Scope Backward.png');
-	background-size: auto, contain;
+	background-image: url('Scope Script Backward x2.png'), url('Scope 2x.png'), url('Scope Backward.png');
 } div._Backward5_ce {
-	background-image: url('Scope 5x.png'), url('Scope Backward.png');
-	background-size: auto, contain;
+	background-image: url('Scope Script Backward x5.png'), url('Scope 5x.png'), url('Scope Backward.png');
 } div._Backward10_ce {
-	background-image: url('Scope 10x.png'), url('Scope Backward.png');
-	background-size: auto, contain;
+	background-image: url('Scope Script Backward x10.png'), url('Scope 10x.png'), url('Scope Backward.png');
 } div._Backward15_ce {
-	background-image: url('Scope 15x.png'), url('Scope Backward.png');
-	background-size: auto, contain;
+	background-image: url('Scope Script Backward x15.png'), url('Scope 15x.png'), url('Scope Backward.png');
 } div._Backward25_ce {
-	background-image: url('Scope 25x.png'), url('Scope Backward.png');
-	background-size: auto, contain;
+	background-image: url('Scope Script Backward x25.png'), url('Scope 25x.png'), url('Scope Backward.png');
+} div._Skip1Turn_ce {
+	background-image: url('Scope Script SkipTurn x1.png'), url('Blank.png'), url('Scope SkipTurn.png');
+} div._Skip2Turn_ce {
+	background-image: url('Scope Script SkipTurn x2.png'), url('Scope 2x.png'), url('Scope SkipTurn.png');
+} div._Skip5Turn_ce {
+	background-image: url('Scope Script SkipTurn x5.png'), url('Scope 5x.png'), url('Scope SkipTurn.png');
+} div._Skip10Turn_ce {
+	background-image: url('Scope Script SkipTurn x10.png'), url('Scope 10x.png'), url('Scope SkipTurn.png');
+} div._Skip15Turn_ce {
+	background-image: url('Scope Script SkipTurn x15.png'), url('Scope 15x.png'), url('Scope SkipTurn.png');
+} div._Skip25Turn_ce {
+	background-image: url('Scope Script SkipTurn x25.png'), url('Scope 25x.png'), url('Scope SkipTurn.png');
 }
 
 div._Route_ce {
