@@ -91,17 +91,6 @@ function _Game_fe() {
 	_ScreenSet_fe();
 };
 
-function _LoadResources_fe() {
-	CLASS('_ModifyClass_ce')[0].classList.remove('_DN_ce');
-	CLASS('_ModifyClass_ce')[0].classList.add(_Scope_ae[0][0]);
-	for(let _LoadResources_I_ve=1; _LoadResources_I_ve<_Scope_ae[0].length; _LoadResources_I_ve++) {
-		CLASS('_ModifyClass_ce')[0].classList.remove(_Scope_ae[0][_LoadResources_I_ve-1]);
-		CLASS('_ModifyClass_ce')[0].classList.add(_Scope_ae[0][_LoadResources_I_ve]);
-	};
-	CLASS('_ModifyClass_ce')[0].classList.remove(_Scope_ae[0][_Scope_ae[0].length]);
-	CLASS('_ModifyClass_ce')[0].classList.add('_DN_ce');
-};
-
 function _ResizeMap_fe() {
 	let _ResizeMap_Dice_ve = CLASS(CLASS('_Window_ce')[0],'_Dice_ce');
 	for(let _ResizeMap_I_ve=0; _ResizeMap_I_ve<_ResizeMap_Dice_ve.length; _ResizeMap_I_ve++) {
@@ -379,7 +368,6 @@ window.onload = function _O_fe() { /*Onload*/
 	W = window;
 	G = window.MyGlobalVariables = {};
 	_ScreenSet_fe();
-	_LoadResources_fe();
 	_Game_fe();
 };
 
