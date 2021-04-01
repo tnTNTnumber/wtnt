@@ -69,14 +69,7 @@ div._Island_ce {
 	background-position: center, center, center;
 	background-size: 100%, auto, contain;
 } div._\?_ce {
-/*
-	background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="25px" width="2.4em"><text x="0" y="15" fill="rgba(44,44,22,0.9)" font-weight="bolder" font-size="14" xml:space="preserve"> ?</text></svg>'), url('Blank.png'), url('Scope Unknown.png');
-*/
 	background-image: url('Scope Script Unknown.png'), url('Blank.png'), url('Scope Unknown.png');
-/*  Forward  
-     by  5*/
-/*  Forward   
-     by  10*/
 } div._Start_ce {
 	background-image: url('Scope Script Start.png'), url('Blank.png'), url('Scope Start.png');
 	background-position: center 60%, center, center;
@@ -123,6 +116,18 @@ div._Island_ce {
 } div._Skip25Turn_ce {
 	background-image: url('Scope Script SkipTurn x25.png'), url('Scope 25x.png'), url('Scope SkipTurn.png');
 }
+/*  Forward  
+     by  5*/
+/*  Forward   
+     by  10*/
+/*Skip  1
+  Turn*/
+/* Skip  2
+  Turns*/
+/*Skip  10
+  Turns*/
+/*Skip  25
+   Turns*/
 
 div._Route_ce {
 	background: rgba(20,30,40,0.8);
