@@ -115,6 +115,38 @@ div._Island_ce {
 	background-image: url('Scope Script SkipTurn x15.png'), url('Scope 15x.png'), url('Scope SkipTurn.png');
 } div._Skip25Turn_ce {
 	background-image: url('Scope Script SkipTurn x25.png'), url('Scope 25x.png'), url('Scope SkipTurn.png');
+} div._GoToStart_ce {
+	background-image: url('Scope Script GoTo Start.png'), url('Scope xStart.png'), url('Scope GoTo.png');
+} div._GoToEnd_ce {
+	background-image: url('Scope Script GoTo End.png'), url('Scope xEnd.png'), url('Scope GoTo.png');
+} div._GoToFirst_ce {
+	background-image: url('Scope Script GoTo First.png'), url('Scope xFirst.png'), url('Scope GoTo.png');
+} div._GoToSecondFirst_ce {
+	background-image: url('Scope Script GoTo SecondFirst.png'), url('Scope xSecondFirst.png'), url('Scope GoTo.png');
+} div._GoToLast_ce {
+	background-image: url('Scope Script GoTo Last.png'), url('Scope xLast.png'), url('Scope GoTo.png');
+} div._GoToSecondLast_ce {
+	background-image: url('Scope Script GoTo SecondLast.png'), url('Scope xSecondLast.png'), url('Scope GoTo.png');
+} div._GoToNextToStart_ce {
+	background-image: url('Scope Script GoToNextTo Start.png'), url('Scope xStart.png'), url('Scope GoToNextTo.png');
+} div._GoToNextToEnd_ce {
+	background-image: url('Scope Script GoToNextTo End.png'), url('Scope xEnd.png'), url('Scope GoToNextTo.png');
+} div._GoToNextToFirst_ce {
+	background-image: url('Scope Script GoToNextTo First.png'), url('Scope xFirst.png'), url('Scope GoToNextTo.png');
+} div._GoToNextToSecondFirst_ce {
+	background-image: url('Scope Script GoToNextTo SecondFirst.png'), url('Scope xSecondFirst.png'), url('Scope GoToNextTo.png');
+} div._GoToNextToLast_ce {
+	background-image: url('Scope Script GoToNextTo Last.png'), url('Scope xLast.png'), url('Scope GoToNextTo.png');
+} div._GoToNextToSecondLast_ce {
+	background-image: url('Scope Script GoToNextTo SecondLast.png'), url('Scope xSecondLast.png'), url('Scope GoToNextTo.png');
+} div._ReRollDice_ce {
+	background-image: url('Scope Script ReRollDice.png'), url('Blank.png'), url('Scope ReRollDice.png');
+} div._YouWin_ce {
+	background-image: url('Scope Script YouWin.png'), url('Scope xYouWin.png'), url('Scope YouWinLose.png');
+} div._YouLose_ce {
+	background-image: url('Scope Script YouLose.png'), url('Scope xYouLose.png'), url('Scope YouWinLose.png');
+} div._GameOver_ce {
+	background-image: url('Scope Script GameOver.png'), url('Blank.png'), url('Scope GameOver.png');
 }
 /*  Forward  
      by  5*/
@@ -128,6 +160,64 @@ div._Island_ce {
   Turns*/
 /*Skip  25
    Turns*/
+/* Go To 
+ Start*/
+/* Go To 
+  End*/
+/* Go To 
+ First*/
+/*Go To
+ Last*/
+/*  Go To   
+ Second*/
+/*  Go To  
+ Second
+   Last*/
+/*   Go
+Next To
+  Start*/
+/*   Go
+Next To
+   End*/
+/*   Go
+Next To
+  First*/
+/*   Go
+Next To
+   Last*/
+/*Go Next 
+    To
+ Second*/
+/*   Go Next  
+ To Second
+      Last*/
+/* Re Roll
+    The
+    Dice*/
+/*  You
+  Win!*/
+/* You
+ Lose!*/
+/* Game
+ Over*/
+
+div._DeepSea_ce {
+	background-color: rgba(200,200,200,0);
+	background: url('DeepSea.png');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 100%;
+	bottom: 0px;
+	display: -webkit-box;
+	-webkit-flex-wrap: wrap;
+	height: 0px;
+	left: 0px;
+	opacity: 0.6;
+	position: absolute;
+	transform: translate(-50%,50%);
+	width: 0px;
+	z-index: 16;
+}
 
 div._Route_ce {
 	background: rgba(20,30,40,0.8);
