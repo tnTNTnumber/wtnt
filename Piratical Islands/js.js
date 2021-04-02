@@ -1,11 +1,13 @@
 function _DiscoverIsland_fe(_DiscoverIsland_Object_ve) {
-	let _DiscoverIsland_Object_Discovered_ve = CLASS(_DiscoverIsland_Object_ve,'_Discovered_ce')[0];
-	let _DiscoverIsland_Object_Scope_ve = CLASS(_DiscoverIsland_Object_ve,'_Scope_ce')[0].innerText;
-	if(_DiscoverIsland_Object_Discovered_ve.innerText=='false') {
-		_DiscoverIsland_Object_Discovered_ve.innerHTML = 'true';
-		_DiscoverIsland_Object_ve.classList.add('_IslandDiscovered_ce');
-		_DiscoverIsland_Object_ve.classList.add('_'+_DiscoverIsland_Object_Scope_ve+'_ce');
-		_DiscoverIsland_Object_ve.classList.remove('_?_ce');
+	if(CLASS(_DiscoverIsland_Object_ve,'_Discovered_ce')[0]!==undefined) {
+		let _DiscoverIsland_Object_Discovered_ve = CLASS(_DiscoverIsland_Object_ve,'_Discovered_ce')[0];
+		let _DiscoverIsland_Object_Scope_ve = CLASS(_DiscoverIsland_Object_ve,'_Scope_ce')[0].innerText;
+		if(_DiscoverIsland_Object_Discovered_ve.innerText=='false') {
+			_DiscoverIsland_Object_Discovered_ve.innerHTML = 'true';
+			_DiscoverIsland_Object_ve.classList.add('_IslandDiscovered_ce');
+			_DiscoverIsland_Object_ve.classList.add('_'+_DiscoverIsland_Object_Scope_ve+'_ce');
+			_DiscoverIsland_Object_ve.classList.remove('_?_ce');
+		};
 	};
 };
 
@@ -41,6 +43,13 @@ _Draw_le: {
 				let _PlaceMap_IslandScope_ve = _GenerateScope_fe(_PlaceMap_Island_ve.Scope,_Scope_ae[0]);
 				_PlaceMap_Locate_ve.innerHTML += '<div class="_Island_ce _Island'+_PlaceMap_N_ve+'_ce _'+_PlaceMap_Island_ve.Scope+'_ce" id="Island'+_PlaceMap_N_ve+'" ondragover="_DragOver_fe(event);" ondrop="_Drop_fe(event,this)"><div class="_PositionX_ce _DN_ce">'+_PlaceMap_Island_ve.X+'</div><div class="_PositionY_ce _DN_ce">'+_PlaceMap_Island_ve.Y+'</div><div class="_Discovered_ce _DN_ce">false</div><div class="_Scope_ce _DN_ce">'+_PlaceMap_IslandScope_ve+'</div></div>';
 				//~ _PlaceMap_Locate_ve.innerHTML += '<div class="_Island_ce _Island'+_PlaceMap_N_ve+'_ce _'+_PlaceMap_Island_ve.Scope+'_ce" id="Island'+_PlaceMap_N_ve+'" ondragover="_DragOver_fe(event);" ondrop="_Drop_fe(event,this)"><div class="_PositionX_ce _DN_ce">'+_PlaceMap_Island_ve.X+'</div><div class="_PositionY_ce _DN_ce">'+_PlaceMap_Island_ve.Y+'</div><div class="_Discovered_ce _DN_ce">false</div><div class="_Scope_ce _DN_ce">'+_PlaceMap_IslandScope_ve+'</div>'+_PlaceMap_N_ve+': ('+_PlaceMap_Island_ve.X+';'+_PlaceMap_Island_ve.Y+');<br />'+_PlaceMap_IslandScope_ve+'</div>';
+			};
+		};
+		_PlaceMap_DeepSea_le: {
+			for(let _PlaceMap_I_ve=0; _PlaceMap_I_ve<_PlaceMap_Objects_ve.DeepSea.length; _PlaceMap_I_ve++) {
+				let _PlaceMap_N_ve = _PlaceMap_I_ve+1;
+				let _PlaceMap_DeepSea_ve = _PlaceMap_Objects_ve.DeepSea[_PlaceMap_I_ve];
+				_PlaceMap_Locate_ve.innerHTML += '<div class="_DeepSea_ce _DeepSea'+_PlaceMap_N_ve+'_ce" id="DeepSea'+_PlaceMap_N_ve+'" ondragover="_DragOver_fe(event);" ondrop="_Drop_fe(event,this)"><div class="_PositionX_ce _DN_ce">'+_PlaceMap_DeepSea_ve.X+'</div><div class="_PositionY_ce _DN_ce">'+_PlaceMap_DeepSea_ve.Y+'</div></div>';
 			};
 		};
 		_PlaceMap_DrawRoute_le: {
@@ -108,6 +117,14 @@ function _ResizeMap_fe() {
 		_ResizeMap_Islands_ve[_ResizeMap_I_ve].style.bottom = CLASS(_ResizeMap_Islands_ve[_ResizeMap_I_ve],'_PositionY_ce')[0].innerText*A._PxUnitOfMeasure_ve/64+'px';
 		_ResizeMap_Islands_ve[_ResizeMap_I_ve].style.width = _ResizeMap_Island_Side_ve+'px';
 		_ResizeMap_Islands_ve[_ResizeMap_I_ve].style.height = _ResizeMap_Island_Side_ve+'px';
+	};
+	let _ResizeMap_DeepSea_ve = CLASS(CLASS('_WindowCenter_ce')[0],'_DeepSea_ce');
+	for(let _ResizeMap_I_ve=0; _ResizeMap_I_ve<_ResizeMap_DeepSea_ve.length; _ResizeMap_I_ve++) {
+		let _ResizeMap_DeepSea_Side_ve = A._PxUnitOfMeasure_ve/16;
+		_ResizeMap_DeepSea_ve[_ResizeMap_I_ve].style.left = CLASS(_ResizeMap_DeepSea_ve[_ResizeMap_I_ve],'_PositionX_ce')[0].innerText*A._PxUnitOfMeasure_ve/64+'px';
+		_ResizeMap_DeepSea_ve[_ResizeMap_I_ve].style.bottom = CLASS(_ResizeMap_DeepSea_ve[_ResizeMap_I_ve],'_PositionY_ce')[0].innerText*A._PxUnitOfMeasure_ve/64+'px';
+		_ResizeMap_DeepSea_ve[_ResizeMap_I_ve].style.width = _ResizeMap_DeepSea_Side_ve+'px';
+		_ResizeMap_DeepSea_ve[_ResizeMap_I_ve].style.height = _ResizeMap_DeepSea_Side_ve+'px';
 	};
 	let _ResizeMap_Route_ve = CLASS(CLASS('_WindowCenter_ce')[0],'_Route_ce');
 	for(let _ResizeMap_I_ve=0; _ResizeMap_I_ve<_ResizeMap_Route_ve.length; _ResizeMap_I_ve++) {
@@ -250,6 +267,12 @@ var _Map_ae = [
 				"Scope": "?",
 			},
 		],
+		"DeepSea": [
+			{
+				"X": -36,
+				"Y": 3,
+			},
+		],
 		"Route": [
 			/*{
 				"AX": 10,
@@ -316,7 +339,7 @@ var _Map_ae = [
 ];
 var _Scope_ae = [
 	[
-		['Nothing',1300],
+		['Nothing',2300],
 
 		['Forward1',250],
 		['Forward2',150],
@@ -339,23 +362,24 @@ var _Scope_ae = [
 		['GoToLast',100],
 		['GoToSecondLast',40],
 
-		['GoToNextToStart',40],
-		['GoToNextToEnd',35],
-		['GoToNextToFirst',40],
-		['GoToNextToSecondFirst',15],
-		['GoToNextToLast',40],
-		['GoToNextToSecondLast',15],
+		['GoToNextToStart',45],
+		['GoToNextToEnd',40],
+		['GoToNextToFirst',45],
+		['GoToNextToSecondFirst',20],
+		['GoToNextToLast',45],
+		['GoToNextToSecondLast',20],
 
 		['Skip1Turn',200],
-		['Skip2Turn',100],
-		['Skip5Turn',17],
-		['Skip10Turn',7],
-		['Skip15Turn',3],
+		['Skip2Turn',80],
+		['Skip5Turn',10],
+		['Skip10Turn',3],
+		['Skip15Turn',2],
+		['Skip25Turn',1],
 
-		['ReRollDices',120],
+		['ReRollDice',120],
 
-		['YouWin',5],
-		['YouLose',5],
+		['YouWin',2],
+		['YouLose',2],
 
 		['GameOver',1],
 	],
