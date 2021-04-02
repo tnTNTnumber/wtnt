@@ -49,7 +49,8 @@ _Draw_le: {
 			for(let _PlaceMap_I_ve=0; _PlaceMap_I_ve<_PlaceMap_Objects_ve.DeepSea.length; _PlaceMap_I_ve++) {
 				let _PlaceMap_N_ve = _PlaceMap_I_ve+1;
 				let _PlaceMap_DeepSea_ve = _PlaceMap_Objects_ve.DeepSea[_PlaceMap_I_ve];
-				_PlaceMap_Locate_ve.innerHTML += '<div class="_DeepSea_ce _DeepSea'+_PlaceMap_N_ve+'_ce" id="DeepSea'+_PlaceMap_N_ve+'" ondragover="_DragOver_fe(event);" ondrop="_Drop_fe(event,this)"><div class="_PositionX_ce _DN_ce">'+_PlaceMap_DeepSea_ve.X+'</div><div class="_PositionY_ce _DN_ce">'+_PlaceMap_DeepSea_ve.Y+'</div></div>';
+				_PlaceMap_Locate_ve.innerHTML += '<div class="_DeepSea_ce _DeepSea'+_PlaceMap_N_ve+'_ce" id="DeepSea'+_PlaceMap_N_ve+'"><div class="_PositionX_ce _DN_ce">'+_PlaceMap_DeepSea_ve.X+'</div><div class="_PositionY_ce _DN_ce">'+_PlaceMap_DeepSea_ve.Y+'</div></div>';
+				//~ _PlaceMap_Locate_ve.innerHTML += '<div class="_DeepSea_ce _DeepSea'+_PlaceMap_N_ve+'_ce" id="DeepSea'+_PlaceMap_N_ve+'"><div class="_PositionX_ce _DN_ce">'+_PlaceMap_DeepSea_ve.X+'</div><div class="_PositionY_ce _DN_ce">'+_PlaceMap_DeepSea_ve.Y+'</div>'+_PlaceMap_N_ve+':<br />('+_PlaceMap_DeepSea_ve.X+';'+_PlaceMap_DeepSea_ve.Y+');</div>';
 			};
 		};
 		_PlaceMap_DrawRoute_le: {
@@ -206,134 +207,73 @@ var _BoatSet_ae = [
 var _Map_ae = [
 	{
 		"Island": [
-			{
-				"X": 5,
-				"Y": 10,
-				"Scope": "Start",
-			},
-			{
-				"X": 9,
-				"Y": 2,
-				"Scope": "?",
-			},
-			{
-				"X": -1,
-				"Y": 12,
-				"Scope": "?",
-			},
-			{
-				"X": 1,
-				"Y": 18,
-				"Scope": "?",
-			},
-			{
-				"X": -13,
-				"Y": 7,
-				"Scope": "?",
-			},
-			{
-				"X": -17,
-				"Y": 12,
-				"Scope": "?",
-			},
-			{
-				"X": -19,
-				"Y": 6,
-				"Scope": "?",
-			},
-			{
-				"X": -23,
-				"Y": 10,
-				"Scope": "?",
-			},
-			{
-				"X": -24,
-				"Y": 17,
-				"Scope": "?",
-			},
-			{
-				"X": -29,
-				"Y": 16,
-				"Scope": "?",
-			},
-			{
-				"X": -35,
-				"Y": 8,
-				"Scope": "?",
-			},
-			{
-				"X": -37,
-				"Y": 15,
-				"Scope": "?",
-			},
+			{"X": 5, "Y": 10, "Scope": "Start", },
+			{"X": 9, "Y": 2, "Scope": "?", },
+			{"X": -1, "Y": 12, "Scope": "?", },
+			{"X": 1, "Y": 18, "Scope": "?", },
+			{"X": -13, "Y": 7, "Scope": "?", },
+			{"X": -17, "Y": 12, "Scope": "?", },
+			{"X": -19, "Y": 6, "Scope": "?", },
+			{"X": -23, "Y": 10, "Scope": "?", },
+			{"X": -24, "Y": 17, "Scope": "?", },
+			{"X": -29, "Y": 16, "Scope": "?", },
+			{"X": -35, "Y": 8, "Scope": "?", },
+			{"X": -37, "Y": 15, "Scope": "?", },
+			{"X": -35, "Y": -7, "Scope": "?", },
+			{"X": -37, "Y": -17, "Scope": "?", },
+			{"X": -33, "Y": -15, "Scope": "?", },
+			{"X": -26, "Y": -16, "Scope": "?", },
+			{"X": -28, "Y": -11, "Scope": "?", },
+			{"X": -24, "Y": -12, "Scope": "?", },
+			{"X": -25, "Y": -8, "Scope": "?", },
+			//~ {"X": 0, "Y": 0, "Scope": "?", },
 		],
 		"DeepSea": [
-			{
-				"X": -36,
-				"Y": 3,
-			},
+			{"X": -36, "Y": 3, },
+			{"X": -36, "Y": -2, },
+			{"X": -33, "Y": -11, },
+			{"X": -20, "Y": -2, },
+			{"X": -27, "Y": 2, },
+			{"X": -7, "Y": 9.5, },
+			{"X": -32, "Y": 12, },
+			//~ {"X": 0, "Y": 0, },
 		],
 		"Route": [
-			/*{
-				"AX": 10,
-				"AY": 0,
-				"BX": 7,
-				"BY": 0,
-			},*/
+			/*{"AX": 10, "AY": 0, "BX": 7, "BY": 0, },*/
 		],
 		"RouteLocate": [
-			{
-				"A": "Island1",
-				"B": "Island2",
-			},
-			{
-				"A": "Island1",
-				"B": "Island3",
-			},
-			{
-				"A": "Island3",
-				"B": "Island4",
-			},
-			{
-				"A": "Island3",
-				"B": "Island5",
-			},
-			{
-				"A": "Island5",
-				"B": "Island6",
-			},
-			{
-				"A": "Island5",
-				"B": "Island7",
-			},
-			{
-				"A": "Island6",
-				"B": "Island7",
-			},
-			{
-				"A": "Island7",
-				"B": "Island8",
-			},
-			{
-				"A": "Island8",
-				"B": "Island9",
-			},
-			{
-				"A": "Island6",
-				"B": "Island9",
-			},
-			{
-				"A": "Island9",
-				"B": "Island10",
-			},
-			{
-				"A": "Island10",
-				"B": "Island11",
-			},
-			{
-				"A": "Island10",
-				"B": "Island12",
-			},
+			{"A": "Island1", "B": "Island2", },
+			{"A": "Island1", "B": "Island3", },
+			{"A": "Island3", "B": "Island4", },
+			{"A": "Island3", "B": "DeepSea6", },
+			{"A": "DeepSea6", "B": "Island5", },
+			{"A": "Island5", "B": "Island6", },
+			{"A": "Island5", "B": "Island7", },
+			{"A": "Island6", "B": "Island7", },
+			{"A": "Island7", "B": "Island8", },
+			{"A": "Island8", "B": "Island9", },
+			{"A": "Island6", "B": "Island9", },
+			{"A": "Island9", "B": "Island10", },
+			{"A": "Island10", "B": "DeepSea7", },
+			{"A": "DeepSea7", "B": "Island11", },
+			{"A": "Island10", "B": "Island12", },
+			{"A": "DeepSea1", "B": "Island11", },
+			{"A": "DeepSea1", "B": "DeepSea2", },
+			{"A": "DeepSea2", "B": "Island13", },
+			{"A": "Island14", "B": "Island15", },
+			{"A": "Island16", "B": "Island15", },
+			{"A": "Island15", "B": "Island17", },
+			{"A": "Island16", "B": "Island18", },
+			{"A": "Island18", "B": "Island19", },
+			{"A": "Island19", "B": "Island17", },
+			{"A": "Island13", "B": "DeepSea3", },
+			{"A": "Island15", "B": "DeepSea3", },
+			{"A": "Island17", "B": "DeepSea3", },
+			{"A": "Island13", "B": "DeepSea4", },
+			{"A": "Island19", "B": "DeepSea4", },
+			{"A": "DeepSea1", "B": "DeepSea5", },
+			{"A": "DeepSea4", "B": "DeepSea5", },
+			//~ {"A": "Island17", "B": "DeepSea3", },
 		],
 	},
 ];
@@ -350,10 +290,10 @@ var _Scope_ae = [
 
 		['Backward1',250],
 		['Backward2',150],
-		['Backward5',50],
-		['Backward10',20],
-		['Backward15',10],
-		['Backward25',5],
+		['Backward5',45],
+		['Backward10',15],
+		['Backward15',7],
+		['Backward25',3],
 
 		['GoToStart',100],
 		['GoToEnd',80],
