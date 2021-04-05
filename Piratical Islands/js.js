@@ -52,19 +52,19 @@ _Draw_le: {
 					break;
 				};
 			};
-			for(let _PlaceMap_I_ve=0; _PlaceMap_I_ve<CLASS(_PlaceMap_Locate_ve,'_Island_ce').length; _PlaceMap_I_ve++) {
-				let _PlaceMap_N_ve = _PlaceMap_I_ve+1;
-				let _PlaceMap_Island_ve = _PlaceMap_Objects_ve.Island[_PlaceMap_I_ve];
-				let _PlaceMap_IslandDiv_ve = CLASS(_PlaceMap_Locate_ve,'_Island_ce')[_PlaceMap_I_ve];
-				_PlaceMap_IslandDiv_ve.innerHTML += _PlaceMap_N_ve+': ('+_PlaceMap_Island_ve.X+';'+_PlaceMap_Island_ve.Y+');<br />'+CLASS(_PlaceMap_IslandDiv_ve,'_Scope_ce')[0].innerText;
-			};
+			//~ for(let _PlaceMap_I_ve=0; _PlaceMap_I_ve<CLASS(_PlaceMap_Locate_ve,'_Island_ce').length; _PlaceMap_I_ve++) {
+				//~ let _PlaceMap_N_ve = _PlaceMap_I_ve+1;
+				//~ let _PlaceMap_Island_ve = _PlaceMap_Objects_ve.Island[_PlaceMap_I_ve];
+				//~ let _PlaceMap_IslandDiv_ve = CLASS(_PlaceMap_Locate_ve,'_Island_ce')[_PlaceMap_I_ve];
+				//~ _PlaceMap_IslandDiv_ve.innerHTML += _PlaceMap_N_ve+': ('+_PlaceMap_Island_ve.X+';'+_PlaceMap_Island_ve.Y+');<br />'+CLASS(_PlaceMap_IslandDiv_ve,'_Scope_ce')[0].innerText;
+			//~ };
 		};
 		_PlaceMap_DeepSea_le: {
 			for(let _PlaceMap_I_ve=0; _PlaceMap_I_ve<_PlaceMap_Objects_ve.DeepSea.length; _PlaceMap_I_ve++) {
 				let _PlaceMap_N_ve = _PlaceMap_I_ve+1;
 				let _PlaceMap_DeepSea_ve = _PlaceMap_Objects_ve.DeepSea[_PlaceMap_I_ve];
-				//~ _PlaceMap_Locate_ve.innerHTML += '<div class="_DeepSea_ce _DeepSea'+_PlaceMap_N_ve+'_ce" id="DeepSea'+_PlaceMap_N_ve+'"><div class="_PositionX_ce _DN_ce">'+_PlaceMap_DeepSea_ve.X+'</div><div class="_PositionY_ce _DN_ce">'+_PlaceMap_DeepSea_ve.Y+'</div></div>';
-				_PlaceMap_Locate_ve.innerHTML += '<div class="_DeepSea_ce _DeepSea'+_PlaceMap_N_ve+'_ce" id="DeepSea'+_PlaceMap_N_ve+'"><div class="_PositionX_ce _DN_ce">'+_PlaceMap_DeepSea_ve.X+'</div><div class="_PositionY_ce _DN_ce">'+_PlaceMap_DeepSea_ve.Y+'</div>'+_PlaceMap_N_ve+':<br />('+_PlaceMap_DeepSea_ve.X+';'+_PlaceMap_DeepSea_ve.Y+');</div>';
+				_PlaceMap_Locate_ve.innerHTML += '<div class="_DeepSea_ce _DeepSea'+_PlaceMap_N_ve+'_ce" id="DeepSea'+_PlaceMap_N_ve+'"><div class="_PositionX_ce _DN_ce">'+_PlaceMap_DeepSea_ve.X+'</div><div class="_PositionY_ce _DN_ce">'+_PlaceMap_DeepSea_ve.Y+'</div></div>';
+				//~ _PlaceMap_Locate_ve.innerHTML += '<div class="_DeepSea_ce _DeepSea'+_PlaceMap_N_ve+'_ce" id="DeepSea'+_PlaceMap_N_ve+'"><div class="_PositionX_ce _DN_ce">'+_PlaceMap_DeepSea_ve.X+'</div><div class="_PositionY_ce _DN_ce">'+_PlaceMap_DeepSea_ve.Y+'</div>'+_PlaceMap_N_ve+':<br />('+_PlaceMap_DeepSea_ve.X+';'+_PlaceMap_DeepSea_ve.Y+');</div>';
 			};
 		};
 		_PlaceMap_DrawRoute_le: {
