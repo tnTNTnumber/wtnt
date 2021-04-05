@@ -1,0 +1,256 @@
+div._Game_ce {
+	-webkit-touch-callout: text;
+	-webkit-user-select: text;
+	-khtml-user-select: text;
+	-moz-user-select: text;
+	-ms-user-select: text;
+	user-select: text;
+}
+
+div._Window_ce {
+	background: rgba(40,55,70,0.8);
+	border-radius: 30px;
+	height: 0px;
+	left: 50%;
+	position: absolute;
+	top: 50%;
+	transform: rotate(0deg);
+	transform: translate(-50%,-50%);
+	width: 0px;
+	z-index: -1;
+}
+
+div._WindowCenter_ce {
+	left: 50%;
+	position: absolute;
+	top: 50%;
+}
+
+div._ElementsPlaceholder_ce {
+	display: none;
+}
+
+div._Dice_ce {
+	background: rgba(77,77,77,0.8);
+	height: 1em;
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	width: 1em;
+}
+
+div._DiceChar_ce {
+	left: 50%;
+	position: absolute;
+	top: 31%;
+	transform: translate(-51%,-51%);
+}
+
+div._Island_ce {
+	background: rgba(40,70,55,0.8);
+	bottom: 0px;
+	display: -webkit-box;
+	-webkit-flex-wrap: wrap;
+	height: 0px;
+	left: 0px;
+	position: absolute;
+	transform: translate(-50%,50%);
+	width: 0px;
+	z-index: 16;
+}
+
+div._Island_ce {
+	background-color: rgba(200,200,200,0);
+	background-position: center, center, center;
+	background-repeat: no-repeat;
+	background-size: contain, contain, contain;
+	opacity: 0.6;
+} div._IslandDiscovered_ce {
+	background-position: center, center, center;
+	background-size: 100%, auto, contain;
+} div._\?_ce {
+	background-image: url('Scope Script Unknown.png'), url('Blank.png'), url('Scope Unknown.png');
+} div._Start_ce {
+	background-image: url('Scope Script Start.png'), url('Blank.png'), url('Scope Start.png');
+	background-position: center 60%, center, center;
+} div._End_ce {
+	background-image: url('Scope Script End.png'), url('Blank.png'), url('Scope End.png');
+	background-position: center 60%, center, center;
+	background-size: 80%, auto, contain;
+} div._Treasure_ce {
+	background-image: url('Scope Script Treasure.png'), url('Blank.png'), url('Scope Treasure.png');
+} div._Nothing_ce {
+	background-image: url('Scope Script Nothing.png'), url('Blank.png'), url('Scope Nothing.png');
+} div._Forward1_ce {
+	background-image: url('Scope Script Forward x1.png'), url('Blank.png'), url('Scope Forward.png');
+} div._Forward2_ce {
+	background-image: url('Scope Script Forward x2.png'), url('Scope 2x.png'), url('Scope Forward.png');
+} div._Forward5_ce {
+	background-image: url('Scope Script Forward x5.png'), url('Scope 5x.png'), url('Scope Forward.png');
+} div._Forward10_ce {
+	background-image: url('Scope Script Forward x10.png'), url('Scope 10x.png'), url('Scope Forward.png');
+} div._Forward15_ce {
+	background-image: url('Scope Script Forward x15.png'), url('Scope 15x.png'), url('Scope Forward.png');
+} div._Forward25_ce {
+	background-image: url('Scope Script Forward x25.png'), url('Scope 25x.png'), url('Scope Forward.png');
+} div._Backward1_ce {
+	background-image: url('Scope Script Backward x1.png'), url('Blank.png'), url('Scope Backward.png');
+} div._Backward2_ce {
+	background-image: url('Scope Script Backward x2.png'), url('Scope 2x.png'), url('Scope Backward.png');
+} div._Backward5_ce {
+	background-image: url('Scope Script Backward x5.png'), url('Scope 5x.png'), url('Scope Backward.png');
+} div._Backward10_ce {
+	background-image: url('Scope Script Backward x10.png'), url('Scope 10x.png'), url('Scope Backward.png');
+} div._Backward15_ce {
+	background-image: url('Scope Script Backward x15.png'), url('Scope 15x.png'), url('Scope Backward.png');
+} div._Backward25_ce {
+	background-image: url('Scope Script Backward x25.png'), url('Scope 25x.png'), url('Scope Backward.png');
+} div._Skip1Turn_ce {
+	background-image: url('Scope Script SkipTurn x1.png'), url('Blank.png'), url('Scope SkipTurn.png');
+} div._Skip2Turn_ce {
+	background-image: url('Scope Script SkipTurn x2.png'), url('Scope 2x.png'), url('Scope SkipTurn.png');
+} div._Skip5Turn_ce {
+	background-image: url('Scope Script SkipTurn x5.png'), url('Scope 5x.png'), url('Scope SkipTurn.png');
+} div._Skip10Turn_ce {
+	background-image: url('Scope Script SkipTurn x10.png'), url('Scope 10x.png'), url('Scope SkipTurn.png');
+} div._Skip15Turn_ce {
+	background-image: url('Scope Script SkipTurn x15.png'), url('Scope 15x.png'), url('Scope SkipTurn.png');
+} div._Skip25Turn_ce {
+	background-image: url('Scope Script SkipTurn x25.png'), url('Scope 25x.png'), url('Scope SkipTurn.png');
+} div._GoToStart_ce {
+	background-image: url('Scope Script GoTo Start.png'), url('Scope xStart.png'), url('Scope GoTo.png');
+} div._GoToEnd_ce {
+	background-image: url('Scope Script GoTo End.png'), url('Scope xEnd.png'), url('Scope GoTo.png');
+} div._GoToFirst_ce {
+	background-image: url('Scope Script GoTo First.png'), url('Scope xFirst.png'), url('Scope GoTo.png');
+} div._GoToSecondFirst_ce {
+	background-image: url('Scope Script GoTo SecondFirst.png'), url('Scope xSecondFirst.png'), url('Scope GoTo.png');
+} div._GoToLast_ce {
+	background-image: url('Scope Script GoTo Last.png'), url('Scope xLast.png'), url('Scope GoTo.png');
+} div._GoToSecondLast_ce {
+	background-image: url('Scope Script GoTo SecondLast.png'), url('Scope xSecondLast.png'), url('Scope GoTo.png');
+} div._GoToNextToStart_ce {
+	background-image: url('Scope Script GoToNextTo Start.png'), url('Scope xStart.png'), url('Scope GoToNextTo.png');
+} div._GoToNextToEnd_ce {
+	background-image: url('Scope Script GoToNextTo End.png'), url('Scope xEnd.png'), url('Scope GoToNextTo.png');
+} div._GoToNextToFirst_ce {
+	background-image: url('Scope Script GoToNextTo First.png'), url('Scope xFirst.png'), url('Scope GoToNextTo.png');
+} div._GoToNextToSecondFirst_ce {
+	background-image: url('Scope Script GoToNextTo SecondFirst.png'), url('Scope xSecondFirst.png'), url('Scope GoToNextTo.png');
+} div._GoToNextToLast_ce {
+	background-image: url('Scope Script GoToNextTo Last.png'), url('Scope xLast.png'), url('Scope GoToNextTo.png');
+} div._GoToNextToSecondLast_ce {
+	background-image: url('Scope Script GoToNextTo SecondLast.png'), url('Scope xSecondLast.png'), url('Scope GoToNextTo.png');
+} div._ReRollDice_ce {
+	background-image: url('Scope Script ReRollDice.png'), url('Blank.png'), url('Scope ReRollDice.png');
+} div._YouWin_ce {
+	background-image: url('Scope Script YouWin.png'), url('Scope xYouWin.png'), url('Scope YouWinLose.png');
+} div._YouLose_ce {
+	background-image: url('Scope Script YouLose.png'), url('Scope xYouLose.png'), url('Scope YouWinLose.png');
+} div._GameOver_ce {
+	background-image: url('Scope Script GameOver.png'), url('Blank.png'), url('Scope GameOver.png');
+}
+/*  Forward  
+     by  5*/
+/*  Forward   
+     by  10*/
+/*Skip  1
+  Turn*/
+/* Skip  2
+  Turns*/
+/*Skip  10
+  Turns*/
+/*Skip  25
+   Turns*/
+/* Go To 
+ Start*/
+/* Go To 
+  End*/
+/* Go To 
+ First*/
+/*Go To
+ Last*/
+/*  Go To   
+ Second*/
+/*  Go To  
+ Second
+   Last*/
+/*   Go
+Next To
+  Start*/
+/*   Go
+Next To
+   End*/
+/*   Go
+Next To
+  First*/
+/*   Go
+Next To
+   Last*/
+/*Go Next 
+    To
+ Second*/
+/*   Go Next  
+ To Second
+      Last*/
+/* Re Roll
+    The
+    Dice*/
+/*  You
+  Win!*/
+/* You
+ Lose!*/
+/* Game
+ Over*/
+
+div._DeepSea_ce {
+	background-color: rgba(200,200,200,0);
+	background: url('DeepSea.png');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 100%;
+	bottom: 0px;
+	display: -webkit-box;
+	-webkit-flex-wrap: wrap;
+	height: 0px;
+	left: 0px;
+	opacity: 0.6;
+	position: absolute;
+	transform: translate(-50%,50%);
+	width: 0px;
+	z-index: 16;
+}
+
+div._Route_ce {
+	background: rgba(20,30,40,0.8);
+	border-radius: 1vmin;
+	bottom: 0px;
+	height: 0px;
+	left: 0px;
+	position: absolute;
+	-webkit-transform-origin: top left;
+	-moz-transform-origin: top left;
+	-o-transform-origin: top left;
+	-ms-transform-origin: top left;
+	transform-origin: center left;
+	transform: rotate(0turn);
+	transform: translate(-0.25vmin,0.25vmin);
+	width: 0px;
+	z-index: 8;
+}
+
+div._Boat_ce {
+	border-radius: 50%;
+	margin: 0px;
+	transition-duration: 0.4s;
+	transform: translate(0px,0px);
+}
+
+div#_Drag_de {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
