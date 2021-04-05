@@ -42,8 +42,22 @@ _Draw_le: {
 				let _PlaceMap_Island_ve = _PlaceMap_Objects_ve.Island[_PlaceMap_I_ve];
 				let _PlaceMap_IslandScope_ve = _GenerateScope_fe(_PlaceMap_Island_ve.Scope,_Scope_ae[0]);
 				_PlaceMap_Locate_ve.innerHTML += '<div class="_Island_ce _Island'+_PlaceMap_N_ve+'_ce _'+_PlaceMap_Island_ve.Scope+'_ce" id="Island'+_PlaceMap_N_ve+'" ondragover="_DragOver_fe(event);" ondrop="_Drop_fe(event,this)"><div class="_PositionX_ce _DN_ce">'+_PlaceMap_Island_ve.X+'</div><div class="_PositionY_ce _DN_ce">'+_PlaceMap_Island_ve.Y+'</div><div class="_Discovered_ce _DN_ce">false</div><div class="_Scope_ce _DN_ce">'+_PlaceMap_IslandScope_ve+'</div></div>';
-				//~ _PlaceMap_Locate_ve.innerHTML += '<div class="_Island_ce _Island'+_PlaceMap_N_ve+'_ce _'+_PlaceMap_Island_ve.Scope+'_ce" id="Island'+_PlaceMap_N_ve+'" ondragover="_DragOver_fe(event);" ondrop="_Drop_fe(event,this)"><div class="_PositionX_ce _DN_ce">'+_PlaceMap_Island_ve.X+'</div><div class="_PositionY_ce _DN_ce">'+_PlaceMap_Island_ve.Y+'</div><div class="_Discovered_ce _DN_ce">false</div><div class="_Scope_ce _DN_ce">'+_PlaceMap_IslandScope_ve+'</div>'+_PlaceMap_N_ve+': ('+_PlaceMap_Island_ve.X+';'+_PlaceMap_Island_ve.Y+');<br />'+_PlaceMap_IslandScope_ve+'</div>';
 			};
+			while(true) {
+				let _PlaceMap_TreasureIsland_ve = CLASS(_PlaceMap_Locate_ve,'_Island_ce')[Math.floor(Math.random()*CLASS(_PlaceMap_Locate_ve,'_Island_ce').length)];
+				if(CLASS(_PlaceMap_TreasureIsland_ve,'_Scope_ce')[0].innerText=='Start'||CLASS(_PlaceMap_TreasureIsland_ve,'_Scope_ce')[0].innerText=='End') {
+					continue;
+				} else {
+					CLASS(_PlaceMap_TreasureIsland_ve,'_Scope_ce')[0].innerHTML = 'Treasure';
+					break;
+				};
+			};
+			//~ for(let _PlaceMap_I_ve=0; _PlaceMap_I_ve<CLASS(_PlaceMap_Locate_ve,'_Island_ce').length; _PlaceMap_I_ve++) {
+				//~ let _PlaceMap_N_ve = _PlaceMap_I_ve+1;
+				//~ let _PlaceMap_Island_ve = _PlaceMap_Objects_ve.Island[_PlaceMap_I_ve];
+				//~ let _PlaceMap_IslandDiv_ve = CLASS(_PlaceMap_Locate_ve,'_Island_ce')[_PlaceMap_I_ve];
+				//~ _PlaceMap_IslandDiv_ve.innerHTML += _PlaceMap_N_ve+': ('+_PlaceMap_Island_ve.X+';'+_PlaceMap_Island_ve.Y+');<br />'+CLASS(_PlaceMap_IslandDiv_ve,'_Scope_ce')[0].innerText;
+			//~ };
 		};
 		_PlaceMap_DeepSea_le: {
 			for(let _PlaceMap_I_ve=0; _PlaceMap_I_ve<_PlaceMap_Objects_ve.DeepSea.length; _PlaceMap_I_ve++) {
@@ -226,6 +240,36 @@ var _Map_ae = [
 			{"X": -28, "Y": -11, "Scope": "?", },
 			{"X": -24, "Y": -12, "Scope": "?", },
 			{"X": -25, "Y": -8, "Scope": "?", },
+			{"X": -18, "Y": -17, "Scope": "?", },
+			{"X": -8, "Y": -6, "Scope": "?", },
+			{"X": 0, "Y": -14, "Scope": "?", },
+			{"X": -12, "Y": -8, "Scope": "?", },
+			{"X": -16, "Y": -9, "Scope": "?", },
+			{"X": -14, "Y": -13, "Scope": "?", },
+			{"X": -10, "Y": -16, "Scope": "?", },
+			{"X": -9, "Y": -11, "Scope": "?", },
+			{"X": -3, "Y": -9, "Scope": "?", },
+			{"X": 14, "Y": -12, "Scope": "?", },
+			{"X": 6, "Y": -7, "Scope": "?", },
+			{"X": -4, "Y": -3, "Scope": "End", },
+			{"X": -8, "Y": 19, "Scope": "?", },
+			{"X": -12, "Y": 18, "Scope": "?", },
+			{"X": -9, "Y": 15, "Scope": "?", },
+			{"X": 9, "Y": 17, "Scope": "?", },
+			{"X": 5, "Y": -12, "Scope": "?", },
+			{"X": 12, "Y": -7, "Scope": "?", },
+			{"X": 27, "Y": 14, "Scope": "?", },
+			{"X": 31, "Y": 14, "Scope": "?", },
+			{"X": 34, "Y": 17, "Scope": "?", },
+			{"X": 35, "Y": 13, "Scope": "?", },
+			{"X": 29, "Y": 10.5, "Scope": "?", },
+			{"X": 33, "Y": 9.5, "Scope": "?", },
+			{"X": 25, "Y": 10.5, "Scope": "?", },
+			{"X": 27, "Y": 7, "Scope": "?", },
+			{"X": 31, "Y": 6, "Scope": "?", },
+			{"X": 35, "Y": 5, "Scope": "?", },
+			{"X": 23, "Y": 16, "Scope": "?", },
+			{"X": 15, "Y": 5, "Scope": "?", },
 			//~ {"X": 0, "Y": 0, "Scope": "?", },
 		],
 		"DeepSea": [
@@ -236,6 +280,15 @@ var _Map_ae = [
 			{"X": -27, "Y": 2, },
 			{"X": -7, "Y": 9.5, },
 			{"X": -32, "Y": 12, },
+			{"X": -22, "Y": -16.5, },
+			{"X": -14, "Y": -16.5, },
+			{"X": -2, "Y": -17, },
+			{"X": 0, "Y": 7, },
+			{"X": -3, "Y": 3, },
+			{"X": 3, "Y": -1, },
+			{"X": 14.5, "Y": 16.6, },
+			{"X": 17.5, "Y": 16.4, },
+			{"X": 15, "Y": -2.5, },
 			//~ {"X": 0, "Y": 0, },
 		],
 		"Route": [
@@ -273,6 +326,55 @@ var _Map_ae = [
 			{"A": "Island19", "B": "DeepSea4", },
 			{"A": "DeepSea1", "B": "DeepSea5", },
 			{"A": "DeepSea4", "B": "DeepSea5", },
+			{"A": "Island16", "B": "DeepSea8", },
+			{"A": "Island20", "B": "DeepSea8", },
+			{"A": "Island25", "B": "Island20", },
+			{"A": "Island25", "B": "Island24", },
+			{"A": "Island23", "B": "Island24", },
+			{"A": "Island23", "B": "Island21", },
+			{"A": "Island20", "B": "DeepSea9", },
+			{"A": "Island26", "B": "DeepSea9", },
+			{"A": "Island26", "B": "Island27", },
+			{"A": "Island21", "B": "Island27", },
+			{"A": "Island21", "B": "Island28", },
+			{"A": "Island22", "B": "Island28", },
+			{"A": "Island22", "B": "DeepSea10", },
+			{"A": "Island26", "B": "DeepSea10", },
+			{"A": "Island29", "B": "DeepSea10", },
+			{"A": "Island31", "B": "Island21", },
+			{"A": "Island32", "B": "Island4", },
+			{"A": "Island32", "B": "Island33", },
+			{"A": "Island34", "B": "Island33", },
+			{"A": "Island34", "B": "Island32", },
+			{"A": "Island34", "B": "DeepSea11", },
+			{"A": "DeepSea12", "B": "DeepSea11", },
+			{"A": "DeepSea12", "B": "DeepSea13", },
+			{"A": "DeepSea4", "B": "DeepSea12", },
+			{"A": "Island31", "B": "DeepSea13", },
+			{"A": "Island35", "B": "Island4", },
+			{"A": "Island36", "B": "Island22", },
+			{"A": "Island36", "B": "Island30", },
+			{"A": "DeepSea13", "B": "Island30", },
+			{"A": "Island37", "B": "Island30", },
+			{"A": "Island37", "B": "Island29", },
+			{"A": "DeepSea14", "B": "Island35", },
+			{"A": "DeepSea15", "B": "Island48", },
+			{"A": "DeepSea15", "B": "DeepSea14", },
+			{"A": "Island48", "B": "Island38", },
+			{"A": "Island38", "B": "Island39", },
+			{"A": "Island44", "B": "Island42", },
+			{"A": "Island44", "B": "Island38", },
+			{"A": "Island42", "B": "Island39", },
+			{"A": "Island42", "B": "Island45", },
+			{"A": "Island44", "B": "Island45", },
+			{"A": "Island46", "B": "Island45", },
+			{"A": "Island39", "B": "Island40", },
+			{"A": "Island41", "B": "Island40", },
+			{"A": "Island41", "B": "Island43", },
+			{"A": "Island46", "B": "Island43", },
+			{"A": "Island46", "B": "Island47", },
+			{"A": "Island43", "B": "Island47", },
+			{"A": "Island2", "B": "Island49", },
 			//~ {"A": "Island17", "B": "DeepSea3", },
 		],
 	},
@@ -295,19 +397,19 @@ var _Scope_ae = [
 		['Backward15',7],
 		['Backward25',3],
 
-		['GoToStart',100],
-		['GoToEnd',80],
-		['GoToFirst',100],
-		['GoToSecondFirst',40],
-		['GoToLast',100],
-		['GoToSecondLast',40],
+		['GoToStart',55],
+		['GoToEnd',24],
+		['GoToFirst',55],
+		['GoToSecondFirst',21],
+		['GoToLast',55],
+		['GoToSecondLast',21],
 
-		['GoToNextToStart',45],
-		['GoToNextToEnd',40],
-		['GoToNextToFirst',45],
-		['GoToNextToSecondFirst',20],
-		['GoToNextToLast',45],
-		['GoToNextToSecondLast',20],
+		['GoToNextToStart',25],
+		['GoToNextToEnd',33],
+		['GoToNextToFirst',25],
+		['GoToNextToSecondFirst',15],
+		['GoToNextToLast',25],
+		['GoToNextToSecondLast',15],
 
 		['Skip1Turn',200],
 		['Skip2Turn',80],
@@ -316,7 +418,7 @@ var _Scope_ae = [
 		['Skip15Turn',2],
 		['Skip25Turn',1],
 
-		['ReRollDice',120],
+		['ReRollDice',129],
 
 		['YouWin',2],
 		['YouLose',2],
