@@ -75,6 +75,8 @@ div._Island_ce {
 	background-position: center 60%, center, center;
 } div._End_ce {
 	background-image: url('Scope Script End.png'), url('Blank.png'), url('Scope End.png');
+	background-position: center 60%, center, center;
+	background-size: 80%, auto, contain;
 } div._Treasure_ce {
 	background-image: url('Scope Script Treasure.png'), url('Blank.png'), url('Scope Treasure.png');
 } div._Nothing_ce {
@@ -200,6 +202,8 @@ Next To
  Lose!*/
 /* Game
  Over*/
+/*   It's the   
+ Treasure!  */
 
 div._DeepSea_ce {
 	background-color: rgba(200,200,200,0);
