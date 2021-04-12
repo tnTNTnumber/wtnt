@@ -1,0 +1,838 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Uniform Circular Motion - τnTNT_☢️</title>
+	<meta charset="UTF-8">
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@1,700&display=swap');
+
+body {
+	background: rgba(33,33,33,0.8);
+	color: rgba(0,0,0,0.95)!important;
+	font-family: 'Lucida Console', monospace;
+	font-family: 'Ubuntu Mono', monospace;
+	font-size: calc(1em + 0.18vmax);
+	transition-duration: 0.4s;
+}body * {
+	transition-duration: 0.4s;
+}
+
+button {
+	background: rgba(55,55,55,0.8);
+	border: 0.4vmin solid rgba(44,44,44,0.8);
+    border-radius: 0.5vmin;
+	color: rgba(0,0,0,0.8);
+	color: rgba(22,22,22,0.8);
+	font-size: 2.5vmin;
+	transition-duration: 0.2s;
+}button.focus, button:focus {
+    outline: 0;
+    box-shadow: none!important;
+}button:hover {
+	background: rgba(88,88,88,0.8)!important;
+}
+
+div {
+	transition-duration: 0.4s;
+}
+
+::placeholder {
+	color: rgba(55,55,55,0.8);
+}:-ms-input-placeholder {
+	color: rgba(55,55,55,0.8);
+}::-ms-input-placeholder {
+	color: rgba(55,55,55,0.8);
+}
+
+::selection {
+	background: rgba(99,99,99,0.8);
+}::-moz-selection {
+	background: rgba(99,99,99,0.8);
+}
+
+textarea {
+	color: rgba(0,0,0,0.8);
+	resize: none;
+	scrollbar-color: rgba(55,55,55,0.8) rgba(0,0,0,0);
+	scrollbar-width: thin;
+	transition-duration: 0.4s;
+}textarea:hover{
+	background: rgba(116,116,116,0.8)!important;
+}textarea.focus, textarea:focus {
+    outline: 0;
+    box-shadow: none!important;
+}
+
+::-webkit-scrollbar {
+	width: 0.5vw;
+	background: rgba(88,88,88,0);
+	border-radius: 0.25vw;
+	transition-duration: 0.4s;
+}::-webkit-scrollbar-track {
+	background: linear-gradient(90deg,rgba(88,88,88,0.2),rgba(0,0,0,0));
+	border-radius: 0.25vw;
+}::-webkit-scrollbar-track:hover {
+	background: rgba(88,88,88,0.4);
+}::-webkit-scrollbar-thumb {
+	background: rgba(55,55,55,0.5);
+	border-radius: 0.25vw;
+}::-webkit-scrollbar-thumb:hover {
+	background: rgba(55,55,55,0.8);
+}
+
+._0_ce { /*0*/
+	border: 0px;
+	border: 0;
+	margin: 0px;
+	margin: 0;
+	padding: 0px;
+	padding: 0;
+}
+
+._C_ce { /*Center*/
+	transform: translate(-50%,-50%);
+}
+
+._DN_ce { /*Display None*/
+	display:none;
+}
+
+._DHTML_ce { /*Div HTML*/
+}_DHTML_ce * {
+}
+
+._Info_ce {
+	display: none;
+}_Info_ce * {
+}
+
+._DE_ce { /*Div Error*/
+}
+
+._noselect_ce {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+/**^^*/
+/**..*/
+
+._Program_ce div {
+	padding: 10px 50px;
+}
+
+br._Small_ce {
+	line-height: 0px;
+}
+
+div h3 {
+	font-size: 1.35em;
+}
+
+</style>
+<script>
+
+window.onload = function _O_fe() { /*Onload*/
+	document.body.innerHTML = '<div class="_DHTML_ce">'+document.getElementsByClassName('_DHTML_ce')[0].innerHTML+'</div>';
+	S = localStorage;
+	W = window;
+	G = window.MyGlobalVariables = {};
+	CLASS('_Program_ce')[0].innerHTML = CLASS('_Program_ce')[0].innerHTML.split('.PI').join('π');
+	CLASS('_Program_ce')[0].innerHTML = CLASS('_Program_ce')[0].innerHTML.split('.DLT').join('Δ');
+	CLASS('_Program_ce')[0].innerHTML = CLASS('_Program_ce')[0].innerHTML.split('.theta').join('θ');
+	CLASS('_Program_ce')[0].innerHTML = CLASS('_Program_ce')[0].innerHTML.split('.omega').join('ω');
+	CLASS('_Program_ce')[0].innerHTML = CLASS('_Program_ce')[0].innerHTML.split('.sqrt').join('√');
+	CLASS('_Program_ce')[0].innerHTML = CLASS('_Program_ce')[0].innerHTML.split('.^(').join('<span style="font-size:0px;">^</span><sup>');
+	CLASS('_Program_ce')[0].innerHTML = CLASS('_Program_ce')[0].innerHTML.split('.^)').join('</sup>');
+	CLASS('_Program_ce')[0].innerHTML = CLASS('_Program_ce')[0].innerHTML.split('._(').join('<span style="font-size:0px;">_</span><sub>');
+	CLASS('_Program_ce')[0].innerHTML = CLASS('_Program_ce')[0].innerHTML.split('._)').join('</sub>');
+	//~ CLASS('_Program_ce')[0].innerHTML = CLASS('_Program_ce')[0].innerHTML.split('*').join('<span style="font-size:60%;">*</span>');
+	CLASS('_Program_ce')[0].innerHTML = CLASS('_Program_ce')[0].innerHTML.split(' * ').join('<span style="font-size:0px;"> * </span><span style="font-size:20%;">&nbsp;</span>');
+	CLASS('_Program_ce')[0].innerHTML = CLASS('_Program_ce')[0].innerHTML.split('.(').join('<span style="color:rgba(55,55,55,0.8);">(</span>');
+	CLASS('_Program_ce')[0].innerHTML = CLASS('_Program_ce')[0].innerHTML.split('.)').join('<span style="color:rgba(55,55,55,0.8);">)</span>');
+	CLASS('_Program_ce')[0].innerHTML = CLASS('_Program_ce')[0].innerHTML.split('<h1>').join('<h1><span style="font-size:16px;position:absolute;right:0px;vertical-align:middle;">1°</span>');
+	CLASS('_Program_ce')[0].innerHTML = CLASS('_Program_ce')[0].innerHTML.split('<h2>').join('<h2><span style="font-size:13px;position:absolute;right:3px;vertical-align:middle;">2°</span>');
+	CLASS('_Program_ce')[0].innerHTML = CLASS('_Program_ce')[0].innerHTML.split('<h3>').join('<h3><span style="font-size:10px;position:absolute;right:6px;vertical-align:middle;">3°</span>');
+};
+
+function TAG(_TAG_ElementOrTag_ve,_TAG_Tag_ve) {
+	if(_TAG_Tag_ve) {
+		return _TAG_ElementOrTag_ve.getElementsByTagName(_TAG_Tag_ve);
+	} else {
+		return document.getElementsByTagName(_TAG_ElementOrTag_ve);
+	};
+};
+
+function ID(_TAG_ElementOrId_ve,_ID_Id_ve) {
+	if(_ID_Id_ve) {
+		return _TAG_ElementOrId_ve.getElementById(_ID_Id_ve);
+	} else {
+		return document.getElementById(_TAG_ElementOrId_ve);
+	};
+};
+
+function CLASS(_TAG_ElementOrClass_ve,_CLASS_Class_ve) {
+	if(_CLASS_Class_ve) {
+		return _TAG_ElementOrClass_ve.getElementsByClassName(_CLASS_Class_ve);
+	} else {
+		return document.getElementsByClassName(_TAG_ElementOrClass_ve);
+	};
+};
+
+function NAME(_NAME_ElementOrName_ve,_NAME_Name_ve) {
+	if(_NAME_Name_ve) {
+		return _TAG_ElementOrName_ve.getElementsByName(_NAME_Name_ve);
+	} else {
+		return document.getElementsByName(_NAME_ElementOrName_ve);
+	};
+};
+
+function ATTR(_ATTR_ElementOrName_ve,_ATTR_Name_ve) { /*get Attribute*/
+	if(_ATTR_Name_ve) {
+		return _ATTR_ElementOrName_ve.getAttribute(_ATTR_Name_ve);
+	} else {
+		return document.getAttribute(_ATTR_ElementOrName_ve);
+	};
+};
+
+//~ function ELEM(_ELEM_ElementOrName_ve,_ELEM_Name_ve) { /*custom Element*/
+	//~ if(_ELEM_Name_ve) {
+		//~ return _ELEM_ElementOrName_ve.customElements.get(_ELEM_Name_ve);
+	//~ } else {
+		//~ return document.customElements.get(_ELEM_ElementOrName_ve);
+	//~ };
+//~ };
+
+function CALHTML(_CALHTML_Element_ve,_CALHTML_Value_ve) { /*Change All Lenght innerHTML*/
+	for(var _CALHTML_Iteration_ve=0; _CALHTML_Iteration_ve<_CALHTML_Element_ve.length; _CALHTML_Iteration_ve++) {
+		_CALHTML_Element_ve[_CALHTML_Iteration_ve].innerHTML = _CALHTML_Value_ve;
+	};
+};
+
+function AREMOVE(_AREMOVE_Array_ve,_AREMOVE_Value_ve) {
+	var _AREMOVE_Index_ve = _AREMOVE_Array_ve.indexOf(_AREMOVE_Value_ve);
+	if(_AREMOVE_Index_ve>-1) {
+		_AREMOVE_Array_ve.splice(_AREMOVE_Index_ve,1);
+	};
+	return _AREMOVE_Array_ve;
+};
+
+function LOG(_LOG_Value_ve) {
+	console.log(_LOG_Value_ve);
+};
+
+function JL(_JL_Value_ve) { /*JSON.lenght*/
+	return Object.keys(_JL_Value_ve).length;
+};
+
+function SD(_SD_VariableString_ve,_SD_Value_ve) { /*local Storage JSON for Declaration and Global Declaration*/ /**Declaration*/
+	if(_SD_Value_ve) {
+		localStorage.setItem(_SD_VariableString_ve,JSON.stringify(_SD_Value_ve));
+		eval(_SD_VariableString_ve+` = _SD_Value_ve;`);
+	} else {
+		localStorage.setItem(_SD_VariableString_ve,undefined);
+		eval(_SD_VariableString_ve+` = undefined;`);
+	};
+};
+
+function Sd(_Sd_VariableString_ve,_Sd_Value_ve) { /*local Storage JSON for Declaration*/ /**Declaration*/
+	if(_Sd_Value_ve) {
+		localStorage.setItem(_Sd_VariableString_ve,JSON.stringify(_Sd_Value_ve));
+	} else {
+		localStorage.setItem(_Sd_VariableString_ve,undefined);
+	};
+};
+
+function SDJ(_SDJ_VariableString_ve) { /*local Storage JSON for Declaration and Global Declaration (set JSON)*/ /**Declaration*/
+	localStorage.setItem(_SDJ_VariableString_ve,{});
+	eval(_SDJ_VariableString_ve+` = {};`);
+};
+
+function Sdj(_Sdj_VariableString_ve) { /*local Storage JSON for Declaration (set JSON)*/ /**Declaration*/
+	localStorage.setItem(_Sdj_VariableString_ve,{});
+};
+
+function Sj(_Sj_VariableString_ve,_Sj_Variable_ve) { /*local Storage JSON for Write (stringify)*/ /**Write (stringify)*/
+	if(_Sj_Variable_ve) {
+		localStorage.setItem(_Sj_VariableString_ve,JSON.stringify(_Sj_Variable_ve));
+	} else {
+		eval(`localStorage.setItem(_Sj_VariableString_ve,JSON.stringify(`+_Sj_VariableString_ve+`));`);
+	};
+};
+
+function SJ(_SJ_VariableString_ve,_SJ_Variable_ve) { /*local Storage JSON for Write in Opposite (parse)*/ /**Write in Opposite (parse)*/
+	if(_SJ_Variable_ve) {
+		eval(_SJ_Variable_ve+` = JSON.parse(localStorage.getItem(_SJ_VariableString_ve));`);
+	} else {
+		eval(_SJ_VariableString_ve+` = JSON.parse(localStorage.getItem(_SJ_VariableString_ve));`);
+	};
+};
+
+function Se(_Se_VariableString_ve) { /*local Storage JSON for Extract (parse)*/ /**Extract (parse)*/
+	return JSON.parse(localStorage.getItem(_Se_VariableString_ve));
+};
+
+function Sr(_Sr_VariableString_ve) { /*local Storage JSON for Removing*/ /**Removing*/
+	localStorage.removeItem(_Sr_VariableString_ve);
+};
+
+function SR(_SR_VariableString_ve) { /*local Storage JSON for Removing and Remove a Global Variable*/ /**Removing*/
+	localStorage.removeItem(_SR_VariableString_ve);
+	eval(`delete `+_SR_VariableString_ve+`;`);
+};
+
+</script>
+</head>
+<body class="_0_ce">
+
+<div class="_DE_ce">
+	<span>ERROR :/</span><br />
+	<span>Please enable Javascripts.</span>
+</div>
+
+<div class="_DHTML_ce">
+	<div class="_Program_ce">
+		<h1>Moto Circolare Uniforme</h1>
+		<div>
+			<h1>Definizione</h1>
+			<div>
+				<p>Il moto circolare uniforme (abbreviato MCU) è un tipo di moto in cui un corpo si muove in rotazione lungo una traiettoria circolare con un valore di velocità costante, e che viene descritto da una formula detta "legge oraria del moto circolare uniforme".</p>
+				<br class="_Small_ce"/>
+				<p>Movimento circolare a velocità costante.</p>
+				<br class="_Small_ce"/>
+				<p>Movimento in cerchio a velocità costante.</p>
+			</div>
+		</div>
+		<div>
+			<h1>r</h1>
+			<h2>Raggio</h2>
+			<div>
+				<h3>Definizione:</h3>
+				<p>Distanza tra l'origine di un cerchio e la sua circonferenza.</p>
+				<p>Metà della corda massima di un cerchio.</p>
+				<br class="_Small_ce"/>
+				<h3>Unità di misura (del SI):</h3>
+				<p>m</p>
+				<br class="_Small_ce"/>
+				<h3>Formula:</h3>
+				<p>r = d / 2</p>
+				<p>r = c / ( 2 * .PI )</p>
+				<p>r = v * T / ( 2 * .PI )</p>
+				<p>r = v / .omega</p>
+				<p>r = v.^(2.^) / a._(c._)</p>
+				<p>r = a._(c._) / .omega.^(2.^)</p>
+			</div>
+		</div>
+		<div>
+			<h1>d</h1>
+			<h2>Diametro</h2>
+			<div>
+				<h3>Definizione:</h3>
+				<p>Corda massima di un cerchio.</p>
+				<p>Doppia distanza tra l'origine di un cerchio e la sua circonferenza.</p>
+				<br class="_Small_ce"/>
+				<h3>Unità di misura (del SI):</h3>
+				<p>m</p>
+				<br class="_Small_ce"/>
+				<h3>Formula:</h3>
+				<p>d = 2 * r</p>
+				<p>d = c / .PI</p>
+				<p>d = v * T / .PI</p>
+				<p>d = 2 * v / .omega</p>
+				<p>d = 2 * v.^(2.^) / a._(c._)</p>
+				<p>d = 2 * a._(c._) / .omega.^(2.^)</p>
+			</div>
+		</div>
+		<div>
+			<h1>c</h1>
+			<h2>Circonferenza</h2>
+			<div>
+				<h3>Definizione:</h3>
+				<p>Curva piana chiusa costituente il luogo dei punti del piano equidistanti da un punto fisso detto centro.</p>
+				<br class="_Small_ce"/>
+				<h3>Descrizione:</h3>
+				<p>Prodotto tra .PI ed il doppio del raggio.<br />
+				Prodotto tra .PI ed il diametro.</p>
+				<br class="_Small_ce"/>
+				<h3>Unità di misura (del SI):</h3>
+				<p>m</p>
+				<br class="_Small_ce"/>
+				<h3>Formula:</h3>
+				<p>c = 2 * .PI * r</p>
+				<p>c = .PI * d</p>
+				<p>c = v * T</p>
+				<p>c = 2 * .PI * v / .omega</p>
+				<p>c = 2 * .PI * v.^(2.^) / a._(c._)</p>
+				<p>c = 2 * .PI * a._(c._) / .omega.^(2.^)</p>
+			</div>
+		</div>
+		<div>
+			<h1>s</h1>
+			<h2>Spazio</h2>
+			<div>
+				<h3>Definizione:</h3>
+				<p>Spazio percorso sulla circonferenza.</p>
+				<br class="_Small_ce"/>
+				<h3>Descrizione:</h3>
+				<p>Distanza percorsa attorno ad un cerchio.<br />
+				Arco di circonferenza percorso</p>
+				<br class="_Small_ce"/>
+				<h3>Unità di misura (del SI):</h3>
+				<p>m</p>
+				<br class="_Small_ce"/>
+				<h3>Formula:</h3>
+				<p>s = .DLTs</p>
+				<p>s = v * t</p>
+				<p>s = v * .DLTt</p>
+				<p>s = .theta * r</p>
+				<p>s = .DLT.theta * r</p>
+			</div>
+		</div>
+		<div>
+			<h1>.DLTs</h1>
+			<h2>Delta spazio</h2>
+			<div>
+				<h3>Definizione:</h3>
+				<p>Intervallo di spazio percorso sulla circonferenza.</p>
+				<br class="_Small_ce"/>
+				<h3>Descrizione:</h3>
+				<p>Distanza percorsa attorno ad un cerchio.<br />
+				Arco di circonferenza percorso</p>
+				<br class="_Small_ce"/>
+				<h3>Unità di misura (del SI):</h3>
+				<p>m</p>
+				<br class="_Small_ce"/>
+				<h3>Formula:</h3>
+				<p>.DLTs = s</p>
+				<p>.DLTs = v * t</p>
+				<p>.DLTs = v * .DLTt</p>
+				<p>.DLTs = .theta * r</p>
+				<p>.DLTs = .DLT.theta * r</p>
+			</div>
+		</div>
+		<div>
+			<h1>t</h1>
+			<h2>Tempo</h2>
+			<div>
+				<h3>Definizione:</h3>
+				<p>Tempo impiegato a percorrere un arco di circonferenza.</p>
+				<br class="_Small_ce"/>
+				<h3>Descrizione:</h3>
+				<p>Tempo impiegato a percorrere una distanza attorno ad un cerchio.<br />
+				Tempo impiegato</p>
+				<br class="_Small_ce"/>
+				<h3>Unità di misura (del SI):</h3>
+				<p>s</p>
+				<p>1 / Hz</p>
+				<p>Hz.^(-1.^)</p>
+				<br class="_Small_ce"/>
+				<h3>Formula:</h3>
+				<p>t = .DLTt</p>
+				<p>t = s / v</p>
+				<p>t = .DLTs / v</p>
+				<p>t = .omega / .theta</p>
+				<p>t = .omega / .DLT.theta</p>
+			</div>
+		</div>
+		<div>
+			<h1>.DLTt</h1>
+			<h2>Delta tempo</h2>
+			<div>
+				<h3>Definizione:</h3>
+				<p>Intervallo di tempo impiegato a percorrere un arco di circonferenza.</p>
+				<br class="_Small_ce"/>
+				<h3>Descrizione:</h3>
+				<p>Intrervallo di tempo impiegato a percorrere una distanza attorno ad un cerchio.<br />
+				Intrervallo di tempo impiegato</p>
+				<br class="_Small_ce"/>
+				<h3>Unità di misura (del SI):</h3>
+				<p>s</p>
+				<p>1 / Hz</p>
+				<p>Hz.^(-1.^)</p>
+				<br class="_Small_ce"/>
+				<h3>Formula:</h3>
+				<p>.DLTt = t</p>
+				<p>.DLTt = s / v</p>
+				<p>.DLTt = .DLTs / v</p>
+				<p>.DLTt = .omega / .theta</p>
+				<p>.DLTt = .omega / .DLT.theta</p>
+			</div>
+		</div>
+		<div>
+			<h1>T</h1>
+			<h2>Periodo</h2>
+			<div>
+				<h3>Definizione:</h3>
+				<p>Tempo necessario per una rivoluzione.</p>
+				<br class="_Small_ce"/>
+				<h3>Descrizione:</h3>
+				<p>Inversamente proporzionale alla frequenza.</p>
+				<br class="_Small_ce"/>
+				<h3>Unità di misura (del SI):</h3>
+				<p>s</p>
+				<p>1 / Hz</p>
+				<p>Hz.^(-1.^)</p>
+				<br class="_Small_ce"/>
+				<h3>Formula:</h3>
+				<p>T = f.^(-1.^)</p>
+				<p>T = 1 / f</p>
+				<p>T = 2 * .PI / .omega</p>
+				<p>T = 2 * .PI * r / v</p>
+			</div>
+		</div>
+		<div>
+			<h1>1°f</h1>
+			<h2>Frequenza</h2>
+			<div>
+				<h3>Definizione:</h3>
+				<p>Numero di giri al secondo per un oggetto rotante.</p>
+				<br class="_Small_ce"/>
+				<h3>Descrizione:</h3>
+				<p>Inversamente proporzionale al periodo.</p>
+				<br class="_Small_ce"/>
+				<h3>Unità di misura (del SI):</h3>
+				<p>Hz</p>
+				<p>1 / s</p>
+				<p>s.^(-1.^)</p>
+				<br class="_Small_ce"/>
+				<h3>Formula:</h3>
+				<p>f = T.^(-1.^)</p>
+				<p>f = .( 1 / T .)</p>
+				<p>f = .omega / .( 2 * .PI .)</p>
+				<p>f = v / .( 2 * .PI * r .)</p>
+			</div>
+		</div>
+		<div>
+			<h1>v</h1>
+			<h2>Velocità</h2>
+			<div>
+				<h3>Definizione:</h3>
+				<p>Distanza percorsa in una data misura di tempo.</p>
+				<br class="_Small_ce"/>
+				<h3>Descrizione:</h3>
+				<p>Rapporto tra spazio e tempo.<br />
+				Direttamente proporzionale allo spazio percorso.<br />
+				Inversamente proporzionale al tempo impiegato.</p>
+				<br class="_Small_ce"/>
+				<h3>Unità di misura (del SI):</h3>
+				<p>m / s</p>
+				<br class="_Small_ce"/>
+				<h3>Formula:</h3>
+				<p>v = s / t</p>
+				<p>v = .DLTs / t</p>
+				<p>v = s / .DLTt</p>
+				<p>v = .DLTs / .DLTt</p>
+				<p>v = ( 2 * .PI * r ) / T</p>
+				<p>v = .omega * r</p>
+				<p>v = .sqrt( a._(c._) * r )</p>
+			</div>
+		</div>
+		<div>
+			<h1>.theta</h1>
+			<h2>Theta</h2>
+			<div>
+				<p>Spazio angolare percorso.</p>
+				<br class="_Small_ce"/>
+				<h3>Descrizione:</h3>
+				<p>Angolo di rotazione percorso in un cerchio.</p>
+				<br class="_Small_ce"/>
+				<h3>Unità di misura (del SI):</h3>
+				<p>Non ha alcuna unità di misura.</p>
+				<br class="_Small_ce"/>
+				<h3>Formula:</h3>
+				<p>.theta = .( .DLT.theta .)</p>
+				<p>.theta = .( s / r .)</p>
+				<p>.theta = .( .DLTs / r .)</p>
+				<p>.theta = .( .omega / t .)</p>
+				<p>.theta = .( .omega / .DLTt .)</p>
+			</div>
+		</div>
+		<div>
+			<h1>.DLT.theta</h1>
+			<h2>Delta theta</h2>
+			<div>
+				<p>Intervallo di spazio angolare percorso.</p>
+				<br class="_Small_ce"/>
+				<h3>Descrizione:</h3>
+				<p>Angolo di rotazione percorso in un cerchio.</p>
+				<br class="_Small_ce"/>
+				<h3>Unità di misura (del SI):</h3>
+				<p>Non ha alcuna unità di misura.</p>
+				<br class="_Small_ce"/>
+				<h3>Formula:</h3>
+				<p>.DLT.theta = .( .theta .)</p>
+				<p>.DLT.theta = .( s / r .)</p>
+				<p>.DLT.theta = .( .DLTs / r .)</p>
+				<p>.DLT.theta = .( .omega / t .)</p>
+				<p>.DLT.theta = .( .omega / .DLTt .)</p>
+			</div>
+		</div>
+		<div>
+			<h1>.omega</h1>
+			<h2>Velocità angolare</h2>
+			<div>
+				<h3>Definizione:</h3>
+				<p>Variazione di un angolo in funzione del tempo.</p>
+				<br class="_Small_ce"/>
+				<h3>Descrizione:</h3>
+				<p>Misura come cambia un angolo nel tempo.<br />
+				Quantità vettoriale con senso antiorario definito come direzione positiva.<br />
+				L'analogo rotazionale della velocità lineare.</p>
+				<br class="_Small_ce"/>
+				<h3>Unità di misura (del SI):</h3>
+				<p>rad / s</p>
+				<p>rad * s.^(-1.^)</p>
+				<p>1 / s</p>
+				<p>s.^(-1.^)</p>
+				<br class="_Small_ce"/>
+				<h3>Formula:</h3>
+				<p>.omega = .( .theta / t .)</p>
+				<p>.omega = .( .DLT.theta / t .)</p>
+				<p>.omega = .( .theta / .DLTt .)</p>
+				<p>.omega = .( .DLT.theta / .DLTt .)</p>
+				<p>.omega = .( v / r .)</p>
+				<p>.omega = 2 * .PI * f</p>
+				<p>.omega = .( 2 * .PI / T .)</p>
+				<p>.omega = 2 * .PI * T.^(-1.^)</p>
+				<p>.omega = .sqrt( a._(c._) / r )</p>
+			</div>
+		</div>
+		<div>
+			<h1>A._(c._)</h1>
+			<h2>Accelerazione centripeta</h2>
+			<div>
+				<h3>Definizione:</h3>
+				<p>Accelerazione puntata verso il centro di un percorso curvo e perpendicolare alla velocità dell'oggetto.</p>
+				<br class="_Small_ce"/>
+				<h3>Descrizione:</h3>
+				<p>Fa sì che un oggetto cambi la sua direzione e non la sua velocità lungo un percorso circolare.<br />
+				Chiamata anche accelerazione radiale.</p>
+				<br class="_Small_ce"/>
+				<h3>Unità di misura (del SI):</h3>
+				<p>m / s.^(2.^)</p>
+				<p>m * s.^(-2.^)</p>
+				<br class="_Small_ce"/>
+				<h3>Formula:</h3>
+				<p>A._(c._) = v.^(2.^) / r</p>
+				<p>A._(c._) = .omega.^(2.^) * r</p>
+			</div>
+		</div>
+		<div>
+			<h1>F._(c._)</h1>
+			<h2>Forza centripeta</h2>
+			<div>
+				<h3>Definizione:</h3>
+				<p>Forza puntata verso il centro di un percorso curvo e perpendicolare alla velocità dell'oggetto.</p>
+				<br class="_Small_ce"/>
+				<h3>Descrizione:</h3>
+				<p>Data dal prodotto tra accelerazione centripeta e massa dell'oggetto.</p>
+				<br class="_Small_ce"/>
+				<h3>Unità di misura (del SI):</h3>
+				<p>kg * m / s.^(2.^)</p>
+				<p>kg * m * s.^(-2.^)</p>
+				<br class="_Small_ce"/>
+				<h3>Formula:</h3>
+				<p>F._(c._) = m * v.^(2.^) / r</p>
+				<p>F._(c._) = m * .omega.^(2.^) * r</p>
+			</div>
+		</div>
+		<div>
+			<h1>m</h1>
+			<h2>Massa</h2>
+			<div>
+				<h3>Definizione:</h3>
+				<p>Grandezza fisica intrinseca di un corpo.</p>
+				<br class="_Small_ce"/>
+				<h3>Unità di misura (del SI):</h3>
+				<p>kg</p>
+				<p>N * s.^(2.^) / m</p>
+				<p>N * s.^(2.^) * m.^(-1.^)</p>
+				<br class="_Small_ce"/>
+				<h3>Formula:</h3>
+				<p>m = F._(c._) * r / v.^(2.^)</p>
+				<p>m = F._(c._) / .( .omega.^(2.^) * r .)</p>
+			</div>
+		</div>
+		<div>
+			<h1>rad</h1>
+			<h2>Radiante</h2>
+			<div>
+				<h3>Definizione:</h3>
+				<p>Rapporto tra la lunghezza di un arco e il suo raggio.</p>
+				<br class="_Small_ce"/>
+				<h3>Descrizione:</h3>
+				<p>Ci sono 2 * .PI radianti in 360°, un cerchio di gradi (o un giro).</p>
+				<br class="_Small_ce"/>
+				<h3>Unità di misura (del SI):</h3>
+				<p>Non ha alcuna unità di misura.</p>
+			</div>
+		</div>
+		<div>
+			<h1>.PI</h1>
+			<h2>Pi Greco</h2>
+			<div>
+				<h3>Definizione:</h3>
+				<p>Di un cerchio, rapporto tra la misura della circonferenza e del diametro.</p>
+				<br class="_Small_ce"/>
+				<h3>Descrizione:</h3>
+				<p>É una costante.<br />
+				Equivale ad un numero irrazionale.<br />
+				Ha infinite cifre decimali, non periodiche.</p>
+				<br class="_Small_ce"/>
+				<h3>Unità di misura (del SI):</h3>
+				<p>Non ha alcuna unità di misura.</p>
+				<h3>Formula:</h3>
+				<p>.PI = 3.14159265358979323..</p>
+			</div>
+		</div>
+<!--
+		<div>
+			<h1>.DLT</h1>
+			<h2>Delta</h2>
+			<div>
+				<p>Parabola: y = .( a .) x^2 + .( b .) x + .( c .)</p>
+				<p>.DLT = .( b^2 .) - .( 4 * a * c .)</p>
+			</div>
+		</div>
+		<div>
+			<h1>F</h1>
+			<h2>Fuoco</h2>
+			<div>
+				<p>Parabola: y = .( a .) x^2 + .( b .) x + .( c .)</p>
+				<p>F_x = .( - b .) / .( 2 * a .)</p>
+				<p>F_y = .( 1 - .DLT .) / .( 4 * a .)</p>
+			</div>
+			<div>
+				<p>Vertice: ( v_x ; v_y )</p>
+				<p>Direttrice: y = D</p>
+				<p>F_x = v_x</p>
+				<p>F_y = .( 2 * v_y .) - D</p>
+			</div>
+		</div>
+		<div>
+			<h1>v</h1>
+			<h2>Vertice</h2>
+			<div>
+				<p>Parabola: y = .( a .) x^2 + .( b .) x + .( c .)</p>
+				<p>v_x = .( - b .) / .( 2 * a .)</p>
+				<p>v_y = .( - .DLT .) / .( 4 * a .)</p>
+			</div>
+			<div>
+				<p>Parabola: y = .( a .) x^2 + .( b .) x + .( c .)</p>
+				<p>v_x = .( - b .) / .( 2 * a .)</p>
+				<p>v_y = ⨍( .( - b .) / .( 2 * a .) )</p>
+			</div>
+		</div>
+		<div>
+			<h1>Direttrice</h1>
+			<div>
+				<p>Parabola: y = .( a .) x^2 + .( b .) x + .( c .)</p>
+				<p>y = .( - 1 - .DLT .) / .( 4 * a .)</p>
+			</div>
+			<div>
+				<p>Fuoco: ( F_x ; F_y )</p>
+				<p>Vertice: ( v_x ; v_y )</p>
+				<p>Direttrice: .( 2 * v_y .) - F_y</p>
+			</div>
+		</div>
+		<div>
+			<h1>Asse di simmetria</h1>
+			<div>
+				<p>Parabola: y = .( a .) x^2 + .( b .) x + .( c .)</p>
+				<p>Asse: x = .( - b .) / .( 2 * a .)</p>
+			</div>
+			<div>
+				<p>Fuoco: ( F_x ; F_y )</p>
+				<p>Asse: x = F_x</p>
+			</div>
+			<div>
+				<p>Vertice: ( v_x ; v_y )</p>
+				<p>Asse: x = v_x</p>
+			</div>
+		</div>
+		<div>
+			<h1>Posizione di una retta</h1>
+			<div>
+				<p>Parabola: y = .( a .) x^2 + .( b .) x + .( c .)</p>
+				<p>Retta: y = .( m .) x + .( q .)</p>
+				<p>.DLT = ( b - m )^2 - .( ( c - q ) * .( 4 * a .) .)</p>
+				<p>Se .( .DLT > 0 .) :<br />
+				Secante</p>
+				<p>Se .( .DLT = 0 .) :<br />
+				Tangente</p>
+				<p>Se .( .DLT < 0 .) :<br />
+				Esterna</p>
+			</div>
+		</div>
+		<div>
+			<h1>Parabola translata di Vettore</h1>
+			<div>
+				<p>Parabola: y = .( a .) x^2 + .( b .) x + .( c .)</p>
+				<p>Vettore: ( V_x ; V_y )</p>
+				<p>Parabola translata: y' = .( a .) x'^2 + .( b - 2 * a * V_x .) x' + .( .( a * V_x^2 .) + .( c .) + .( V_y .) - .( b * V_x .) .)</p>
+			</div>
+		</div>
+		<div>
+			<h1>Parabola specchiata rispetto alla bisettreice del 1° e 3° quadrante</h1>
+			<div>
+				<p>Parabola: y = .( a .) x^2 + .( b .) x + .( c .)</p>
+				<p>Parabola specchiata: x' = .( a .) y'^2 + .( b .) y' + .( c .)</p>
+			</div>
+		</div>
+		<div>
+			<h1>Parabola specchiata rispetto alla bisettreice del 2° e 4° quadrante</h1>
+			<div>
+				<p>Parabola: y = .( a .) x^2 + .( b .) x + .( c .)</p>
+				<p>Parabola specchiata: x' = .( a .) y'^2 + .( b .) y' + .( - c .)</p>
+			</div>
+		</div>
+		<div>
+			<h1>Determinare una Parabola con noti Fuoco e Direttrice</h1>
+			<h2>Luogo Geometrico della Parabola</h2>
+			<div>
+				<p>Parabola: y = .( a .) x^2 + .( b .) x + .( c .)</p>
+				<p>Fuoco: ( F_x ; F_y )</p>
+				<p>Direttrice: y = D</p>
+				<p>Parabola:<br />
+				{ y = .( a .) x^2 + .( b .) x + .( c .)<br />
+				{ F_x = .( - b .) / .( 2 * a .)<br />
+				{ F_y = .( 1 - .DLT .) / .( 4 * a .)<br />
+				{ D = .( - 1 - .DLT .) / .( 4 * a .)<br />
+				</p>
+			</div>
+			<div>
+				<p>Parabola: y = .( a .) x^2 + .( b .) x + .( c .)</p>
+				<p>Fuoco: ( F_x ; F_y )</p>
+				<p>Direttrice: y = D</p>
+				<p>Parabola:<br />
+				{ y = .( a .) x^2 + .( b .) x + .( c .)<br />
+				{ .( a * b .) = .( - 2 * F_x .)<br />
+				{ a + .( 4 * a^2 * c .) = .( a * b^2 .) + .( 4 * F_y .)<br />
+				{ a + .( a * b^2 .) = .( 4 * a^2 * c .) - .( 4 * D .)<br />
+				</p>
+			</div>
+		</div>
+-->
+<!--
+		<div>
+			<h1><a href="https://www.emathhelp.net/calculators/algebra-2/parabola-calculator/" style="color:rgba(30,30,49,0.8);">Parabola Caluclator >></a></h1>
+			<h1><a href="https://www.symbolab.com/solver/tangent-line-calculator/" style="color:rgba(30,30,49,0.8);">Tangent Caluclator >></a></h1>
+			<h1><a href="https://www.geogebra.org/calculator" style="color:rgba(30,30,49,0.8);">Graphing Calculator >></a></h1>
+		</div>
+-->
+		<div>
+			<h1><a href="http://www.edutecnica.it/meccanica/circo/circo.htm" style="color:rgba(30,30,49,0.8);">Dynamic Graphic Calculator >></a></h1>
+		</div>
+		<div style="padding-bottom:30px;"></div>
+	</div>
+	<div class="_Info_ce">
+	</div>
+</div>
+
+</body>
+</html>

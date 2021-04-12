@@ -1,0 +1,435 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Math Parabola - τnTNT_☢️</title>
+	<meta charset="UTF-8">
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@1,700&display=swap');
+
+body {
+	background: rgba(33,33,33,0.8);
+	color: rgba(0,0,0,0.95)!important;
+	font-family: 'Lucida Console', monospace;
+	font-family: 'Ubuntu Mono', monospace;
+	font-size: calc(1em + 0.18vmax);
+	transition-duration: 0.4s;
+}body * {
+	transition-duration: 0.4s;
+}
+
+button {
+	background: rgba(55,55,55,0.8);
+	border: 0.4vmin solid rgba(44,44,44,0.8);
+    border-radius: 0.5vmin;
+	color: rgba(0,0,0,0.8);
+	color: rgba(22,22,22,0.8);
+	font-size: 2.5vmin;
+	transition-duration: 0.2s;
+}button.focus, button:focus {
+    outline: 0;
+    box-shadow: none!important;
+}button:hover {
+	background: rgba(88,88,88,0.8)!important;
+}
+
+div {
+	transition-duration: 0.4s;
+}
+
+::placeholder {
+	color: rgba(55,55,55,0.8);
+}:-ms-input-placeholder {
+	color: rgba(55,55,55,0.8);
+}::-ms-input-placeholder {
+	color: rgba(55,55,55,0.8);
+}
+
+::selection {
+	background: rgba(99,99,99,0.8);
+}::-moz-selection {
+	background: rgba(99,99,99,0.8);
+}
+
+textarea {
+	color: rgba(0,0,0,0.8);
+	resize: none;
+	scrollbar-color: rgba(55,55,55,0.8) rgba(0,0,0,0);
+	scrollbar-width: thin;
+	transition-duration: 0.4s;
+}textarea:hover{
+	background: rgba(116,116,116,0.8)!important;
+}textarea.focus, textarea:focus {
+    outline: 0;
+    box-shadow: none!important;
+}
+
+::-webkit-scrollbar {
+	width: 0.5vw;
+	background: rgba(88,88,88,0);
+	border-radius: 0.25vw;
+	transition-duration: 0.4s;
+}::-webkit-scrollbar-track {
+	background: linear-gradient(90deg,rgba(88,88,88,0.2),rgba(0,0,0,0));
+	border-radius: 0.25vw;
+}::-webkit-scrollbar-track:hover {
+	background: rgba(88,88,88,0.4);
+}::-webkit-scrollbar-thumb {
+	background: rgba(55,55,55,0.5);
+	border-radius: 0.25vw;
+}::-webkit-scrollbar-thumb:hover {
+	background: rgba(55,55,55,0.8);
+}
+
+._0_ce { /*0*/
+	border: 0px;
+	border: 0;
+	margin: 0px;
+	margin: 0;
+	padding: 0px;
+	padding: 0;
+}
+
+._C_ce { /*Center*/
+	transform: translate(-50%,-50%);
+}
+
+._DN_ce { /*Display None*/
+	display:none;
+}
+
+._DHTML_ce { /*Div HTML*/
+}_DHTML_ce * {
+}
+
+._Info_ce {
+	display: none;
+}_Info_ce * {
+}
+
+._DE_ce { /*Div Error*/
+}
+
+._noselect_ce {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+/**^^*/
+/**..*/
+
+._Program_ce div {
+	padding: 10px 50px;
+}
+
+</style>
+<script>
+
+window.onload = function _O_fe() { /*Onload*/
+	document.body.innerHTML = '<div class="_DHTML_ce">'+document.getElementsByClassName('_DHTML_ce')[0].innerHTML+'</div>';
+	S = localStorage;
+	W = window;
+	G = window.MyGlobalVariables = {};
+	CLASS('_Program_ce')[0].innerHTML = CLASS('_Program_ce')[0].innerHTML.split('.(').join('<span style="color:rgba(55,55,55,0.8);">(</span>');
+	CLASS('_Program_ce')[0].innerHTML = CLASS('_Program_ce')[0].innerHTML.split('.)').join('<span style="color:rgba(55,55,55,0.8);">)</span>');
+	CLASS('_Program_ce')[0].innerHTML = CLASS('_Program_ce')[0].innerHTML.split('^2').join('<span style="font-size:0px;">^</span><sup>2</sup>');
+	CLASS('_Program_ce')[0].innerHTML = CLASS('_Program_ce')[0].innerHTML.split('_x').join('<span style="font-size:0px;">_</span><sub>x</sub>');
+	CLASS('_Program_ce')[0].innerHTML = CLASS('_Program_ce')[0].innerHTML.split('_y').join('<span style="font-size:0px;">_</span><sub>y</sub>');
+	//~ CLASS('_Program_ce')[0].innerHTML = CLASS('_Program_ce')[0].innerHTML.split('*').join('<span style="font-size:60%;">*</span>');
+	CLASS('_Program_ce')[0].innerHTML = CLASS('_Program_ce')[0].innerHTML.split(' * ').join('<span style="font-size:0px;"> * </span><span style="font-size:20%;">&nbsp;</span>');
+};
+
+function TAG(_TAG_ElementOrTag_ve,_TAG_Tag_ve) {
+	if(_TAG_Tag_ve) {
+		return _TAG_ElementOrTag_ve.getElementsByTagName(_TAG_Tag_ve);
+	} else {
+		return document.getElementsByTagName(_TAG_ElementOrTag_ve);
+	};
+};
+
+function ID(_TAG_ElementOrId_ve,_ID_Id_ve) {
+	if(_ID_Id_ve) {
+		return _TAG_ElementOrId_ve.getElementById(_ID_Id_ve);
+	} else {
+		return document.getElementById(_TAG_ElementOrId_ve);
+	};
+};
+
+function CLASS(_TAG_ElementOrClass_ve,_CLASS_Class_ve) {
+	if(_CLASS_Class_ve) {
+		return _TAG_ElementOrClass_ve.getElementsByClassName(_CLASS_Class_ve);
+	} else {
+		return document.getElementsByClassName(_TAG_ElementOrClass_ve);
+	};
+};
+
+function NAME(_NAME_ElementOrName_ve,_NAME_Name_ve) {
+	if(_NAME_Name_ve) {
+		return _TAG_ElementOrName_ve.getElementsByName(_NAME_Name_ve);
+	} else {
+		return document.getElementsByName(_NAME_ElementOrName_ve);
+	};
+};
+
+function ATTR(_ATTR_ElementOrName_ve,_ATTR_Name_ve) { /*get Attribute*/
+	if(_ATTR_Name_ve) {
+		return _ATTR_ElementOrName_ve.getAttribute(_ATTR_Name_ve);
+	} else {
+		return document.getAttribute(_ATTR_ElementOrName_ve);
+	};
+};
+
+//~ function ELEM(_ELEM_ElementOrName_ve,_ELEM_Name_ve) { /*custom Element*/
+	//~ if(_ELEM_Name_ve) {
+		//~ return _ELEM_ElementOrName_ve.customElements.get(_ELEM_Name_ve);
+	//~ } else {
+		//~ return document.customElements.get(_ELEM_ElementOrName_ve);
+	//~ };
+//~ };
+
+function CALHTML(_CALHTML_Element_ve,_CALHTML_Value_ve) { /*Change All Lenght innerHTML*/
+	for(var _CALHTML_Iteration_ve=0; _CALHTML_Iteration_ve<_CALHTML_Element_ve.length; _CALHTML_Iteration_ve++) {
+		_CALHTML_Element_ve[_CALHTML_Iteration_ve].innerHTML = _CALHTML_Value_ve;
+	};
+};
+
+function AREMOVE(_AREMOVE_Array_ve,_AREMOVE_Value_ve) {
+	var _AREMOVE_Index_ve = _AREMOVE_Array_ve.indexOf(_AREMOVE_Value_ve);
+	if(_AREMOVE_Index_ve>-1) {
+		_AREMOVE_Array_ve.splice(_AREMOVE_Index_ve,1);
+	};
+	return _AREMOVE_Array_ve;
+};
+
+function LOG(_LOG_Value_ve) {
+	console.log(_LOG_Value_ve);
+};
+
+function JL(_JL_Value_ve) { /*JSON.lenght*/
+	return Object.keys(_JL_Value_ve).length;
+};
+
+function SD(_SD_VariableString_ve,_SD_Value_ve) { /*local Storage JSON for Declaration and Global Declaration*/ /**Declaration*/
+	if(_SD_Value_ve) {
+		localStorage.setItem(_SD_VariableString_ve,JSON.stringify(_SD_Value_ve));
+		eval(_SD_VariableString_ve+` = _SD_Value_ve;`);
+	} else {
+		localStorage.setItem(_SD_VariableString_ve,undefined);
+		eval(_SD_VariableString_ve+` = undefined;`);
+	};
+};
+
+function Sd(_Sd_VariableString_ve,_Sd_Value_ve) { /*local Storage JSON for Declaration*/ /**Declaration*/
+	if(_Sd_Value_ve) {
+		localStorage.setItem(_Sd_VariableString_ve,JSON.stringify(_Sd_Value_ve));
+	} else {
+		localStorage.setItem(_Sd_VariableString_ve,undefined);
+	};
+};
+
+function SDJ(_SDJ_VariableString_ve) { /*local Storage JSON for Declaration and Global Declaration (set JSON)*/ /**Declaration*/
+	localStorage.setItem(_SDJ_VariableString_ve,{});
+	eval(_SDJ_VariableString_ve+` = {};`);
+};
+
+function Sdj(_Sdj_VariableString_ve) { /*local Storage JSON for Declaration (set JSON)*/ /**Declaration*/
+	localStorage.setItem(_Sdj_VariableString_ve,{});
+};
+
+function Sj(_Sj_VariableString_ve,_Sj_Variable_ve) { /*local Storage JSON for Write (stringify)*/ /**Write (stringify)*/
+	if(_Sj_Variable_ve) {
+		localStorage.setItem(_Sj_VariableString_ve,JSON.stringify(_Sj_Variable_ve));
+	} else {
+		eval(`localStorage.setItem(_Sj_VariableString_ve,JSON.stringify(`+_Sj_VariableString_ve+`));`);
+	};
+};
+
+function SJ(_SJ_VariableString_ve,_SJ_Variable_ve) { /*local Storage JSON for Write in Opposite (parse)*/ /**Write in Opposite (parse)*/
+	if(_SJ_Variable_ve) {
+		eval(_SJ_Variable_ve+` = JSON.parse(localStorage.getItem(_SJ_VariableString_ve));`);
+	} else {
+		eval(_SJ_VariableString_ve+` = JSON.parse(localStorage.getItem(_SJ_VariableString_ve));`);
+	};
+};
+
+function Se(_Se_VariableString_ve) { /*local Storage JSON for Extract (parse)*/ /**Extract (parse)*/
+	return JSON.parse(localStorage.getItem(_Se_VariableString_ve));
+};
+
+function Sr(_Sr_VariableString_ve) { /*local Storage JSON for Removing*/ /**Removing*/
+	localStorage.removeItem(_Sr_VariableString_ve);
+};
+
+function SR(_SR_VariableString_ve) { /*local Storage JSON for Removing and Remove a Global Variable*/ /**Removing*/
+	localStorage.removeItem(_SR_VariableString_ve);
+	eval(`delete `+_SR_VariableString_ve+`;`);
+};
+
+</script>
+</head>
+<body class="_0_ce">
+
+<div class="_DE_ce">
+	<span>ERROR :/</span><br />
+	<span>Please enable Javascripts.</span>
+</div>
+
+<div class="_DHTML_ce">
+	<div class="_Program_ce">
+		<h1>Parabola</h1>
+		<div>
+			<h1>Δ</h1>
+			<h2>Delta</h2>
+			<div>
+				<p>Parabola: y = .( a .) x^2 + .( b .) x + .( c .)</p>
+				<p>Δ = .( b^2 .) - .( 4 * a * c .)</p>
+			</div>
+		</div>
+		<div>
+			<h1>F</h1>
+			<h2>Fuoco</h2>
+			<div>
+				<p>Parabola: y = .( a .) x^2 + .( b .) x + .( c .)</p>
+				<p>F_x = .( - b .) / .( 2 * a .)</p>
+				<p>F_y = .( 1 - Δ .) / .( 4 * a .)</p>
+			</div>
+			<div>
+				<p>Vertice: ( v_x ; v_y )</p>
+				<p>Direttrice: y = D</p>
+				<p>F_x = v_x</p>
+				<p>F_y = .( 2 * v_y .) - D</p>
+			</div>
+		</div>
+		<div>
+			<h1>v</h1>
+			<h2>Vertice</h2>
+			<div>
+				<p>Parabola: y = .( a .) x^2 + .( b .) x + .( c .)</p>
+				<p>v_x = .( - b .) / .( 2 * a .)</p>
+				<p>v_y = .( - Δ .) / .( 4 * a .)</p>
+			</div>
+			<div>
+				<p>Parabola: y = .( a .) x^2 + .( b .) x + .( c .)</p>
+				<p>v_x = .( - b .) / .( 2 * a .)</p>
+				<p>v_y = ⨍( .( - b .) / .( 2 * a .) )</p>
+			</div>
+		</div>
+		<div>
+			<h1>Direttrice</h1>
+			<div>
+				<p>Parabola: y = .( a .) x^2 + .( b .) x + .( c .)</p>
+				<p>y = .( - 1 - Δ .) / .( 4 * a .)</p>
+			</div>
+			<div>
+				<p>Fuoco: ( F_x ; F_y )</p>
+				<p>Vertice: ( v_x ; v_y )</p>
+				<p>Direttrice: .( 2 * v_y .) - F_y</p>
+			</div>
+		</div>
+		<div>
+			<h1>Asse di simmetria</h1>
+			<div>
+				<p>Parabola: y = .( a .) x^2 + .( b .) x + .( c .)</p>
+				<p>Asse: x = .( - b .) / .( 2 * a .)</p>
+			</div>
+			<div>
+				<p>Fuoco: ( F_x ; F_y )</p>
+				<p>Asse: x = F_x</p>
+			</div>
+			<div>
+				<p>Vertice: ( v_x ; v_y )</p>
+				<p>Asse: x = v_x</p>
+			</div>
+		</div>
+		<div>
+			<h1>Posizione di una retta</h1>
+			<div>
+				<p>Parabola: y = .( a .) x^2 + .( b .) x + .( c .)</p>
+				<p>Retta: y = .( m .) x + .( q .)</p>
+				<p>Δ = ( b - m )^2 - .( ( c - q ) * .( 4 * a .) .)</p>
+				<p>Se .( Δ > 0 .) :<br />
+				Secante</p>
+				<p>Se .( Δ = 0 .) :<br />
+				Tangente</p>
+				<p>Se .( Δ < 0 .) :<br />
+				Esterna</p>
+			</div>
+		</div>
+<!--
+		<div>
+			<h1>Rette Tangenti ad una Parabola e passanti per un Punto</h1>
+			<div>
+				<p>Parabola: y = .( a .) x^2 + .( b .) x + .( c .)</p>
+				//~ <p>Retta: y = .( m .) x + .( q .)</p>
+				<p>Vertice: ( P_x ; P_y )</p>
+				<p>Retta:<br />
+				{ y = ax^2 + bx + c<br />
+				{ y - y' = m * ( x - x' )</p>
+			</div>
+		</div>
+-->
+		<div>
+			<h1>Parabola translata di Vettore</h1>
+			<div>
+				<p>Parabola: y = .( a .) x^2 + .( b .) x + .( c .)</p>
+				<p>Vettore: ( V_x ; V_y )</p>
+				<p>Parabola translata: y' = .( a .) x'^2 + .( b - 2 * a * V_x .) x' + .( .( a * V_x^2 .) + .( c .) + .( V_y .) - .( b * V_x .) .)</p>
+			</div>
+		</div>
+		<div>
+			<h1>Parabola specchiata rispetto alla bisettreice del 1° e 3° quadrante</h1>
+			<div>
+				<p>Parabola: y = .( a .) x^2 + .( b .) x + .( c .)</p>
+				<p>Parabola specchiata: x' = .( a .) y'^2 + .( b .) y' + .( c .)</p>
+			</div>
+		</div>
+		<div>
+			<h1>Parabola specchiata rispetto alla bisettreice del 2° e 4° quadrante</h1>
+			<div>
+				<p>Parabola: y = .( a .) x^2 + .( b .) x + .( c .)</p>
+				<p>Parabola specchiata: x' = .( a .) y'^2 + .( b .) y' + .( - c .)</p>
+			</div>
+		</div>
+		<div>
+			<h1>Determinare una Parabola con noti Fuoco e Direttrice</h1>
+			<h2>Luogo Geometrico della Parabola</h2>
+			<div>
+				<p>Parabola: y = .( a .) x^2 + .( b .) x + .( c .)</p>
+				<p>Fuoco: ( F_x ; F_y )</p>
+				<p>Direttrice: y = D</p>
+				<p>Parabola:<br />
+				{ y = .( a .) x^2 + .( b .) x + .( c .)<br />
+				{ F_x = .( - b .) / .( 2 * a .)<br />
+				{ F_y = .( 1 - Δ .) / .( 4 * a .)<br />
+				{ D = .( - 1 - Δ .) / .( 4 * a .)<br />
+				</p>
+			</div>
+			<div>
+				<p>Parabola: y = .( a .) x^2 + .( b .) x + .( c .)</p>
+				<p>Fuoco: ( F_x ; F_y )</p>
+				<p>Direttrice: y = D</p>
+				<p>Parabola:<br />
+				{ y = .( a .) x^2 + .( b .) x + .( c .)<br />
+				{ .( a * b .) = .( - 2 * F_x .)<br />
+				{ a + .( 4 * a^2 * c .) = .( a * b^2 .) + .( 4 * F_y .)<br />
+				{ a + .( a * b^2 .) = .( 4 * a^2 * c .) - .( 4 * D .)<br />
+				</p>
+			</div>
+		</div>
+		<div>
+			<h1><a href="https://www.emathhelp.net/calculators/algebra-2/parabola-calculator/" style="color:rgba(30,30,49,0.8);">Parabola Caluclator >></a></h1>
+			<h1><a href="https://www.symbolab.com/solver/tangent-line-calculator/" style="color:rgba(30,30,49,0.8);">Tangent Caluclator >></a></h1>
+			<h1><a href="https://www.geogebra.org/calculator" style="color:rgba(30,30,49,0.8);">Graphing Calculator >></a></h1>
+		</div>
+		<div style="padding-bottom:30px;"></div>
+	</div>
+	<div class="_Info_ce">
+	</div>
+</div>
+
+</body>
+</html>
