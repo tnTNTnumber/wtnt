@@ -321,11 +321,15 @@ function SR(_SR_VariableString_ve) { /*local Storage JSON for Removing and Remov
 				<br class="_Small_ce"/>
 				<h3>Formula:</h3>
 				<p>r = d / 2</p>
-				<p>r = c / ( 2 * .PI )</p>
-				<p>r = v * T / ( 2 * .PI )</p>
+				<p>r = c / .( 2 * .PI .)</p>
+				<p>r = v * T / .( 2 * .PI .)</p>
 				<p>r = v / .omega</p>
+				<p>r = v * .omega.^(-1.^)</p>
 				<p>r = v.^(2.^) / a._(c._)</p>
+				<p>r = v.^(2.^) * a._(c._).^(-1.^)</p>
 				<p>r = a._(c._) / .omega.^(2.^)</p>
+				<p>r = a._(c._) * .omega.^(-2.^)</p>
+				<p>r = v / .( 2 * .PI * f .)</p>
 			</div>
 		</div>
 		<div>
@@ -342,10 +346,15 @@ function SR(_SR_VariableString_ve) { /*local Storage JSON for Removing and Remov
 				<h3>Formula:</h3>
 				<p>d = 2 * r</p>
 				<p>d = c / .PI</p>
+				<p>d = c * .PI.^(-1.^)</p>
 				<p>d = v * T / .PI</p>
+				<p>d = v * T * .PI.^(-1.^)</p>
 				<p>d = 2 * v / .omega</p>
+				<p>d = 2 * v * .omega.^(-1.^)</p>
 				<p>d = 2 * v.^(2.^) / a._(c._)</p>
+				<p>d = 2 * v.^(2.^) * a._(c._).^(-1.^)</p>
 				<p>d = 2 * a._(c._) / .omega.^(2.^)</p>
+				<p>d = 2 * a._(c._) * .omega.^(-2.^)</p>
 			</div>
 		</div>
 		<div>
@@ -367,8 +376,11 @@ function SR(_SR_VariableString_ve) { /*local Storage JSON for Removing and Remov
 				<p>c = .PI * d</p>
 				<p>c = v * T</p>
 				<p>c = 2 * .PI * v / .omega</p>
+				<p>c = 2 * .PI * v * .omega.^(-1.^)</p>
 				<p>c = 2 * .PI * v.^(2.^) / a._(c._)</p>
+				<p>c = 2 * .PI * v.^(2.^) * a._(c._).^(-1.^)</p>
 				<p>c = 2 * .PI * a._(c._) / .omega.^(2.^)</p>
+				<p>c = 2 * .PI * a._(c._) * .omega.^(-2.^)</p>
 			</div>
 		</div>
 		<div>
@@ -434,9 +446,13 @@ function SR(_SR_VariableString_ve) { /*local Storage JSON for Removing and Remov
 				<h3>Formula:</h3>
 				<p>t = .DLTt</p>
 				<p>t = s / v</p>
+				<p>t = s * v.^(-1.^)</p>
 				<p>t = .DLTs / v</p>
+				<p>t = .DLTs * v.^(-1.^)</p>
 				<p>t = .omega / .theta</p>
+				<p>t = .omega * .theta.^(-1.^)</p>
 				<p>t = .omega / .DLT.theta</p>
+				<p>t = .omega * .DLT.theta.^(-1.^)</p>
 			</div>
 		</div>
 		<div>
@@ -458,9 +474,13 @@ function SR(_SR_VariableString_ve) { /*local Storage JSON for Removing and Remov
 				<h3>Formula:</h3>
 				<p>.DLTt = t</p>
 				<p>.DLTt = s / v</p>
+				<p>.DLTt = s * v.^(-1.^)</p>
 				<p>.DLTt = .DLTs / v</p>
+				<p>.DLTt = .DLTs * v.^(-1.^)</p>
 				<p>.DLTt = .omega / .theta</p>
+				<p>.DLTt = .omega * .theta.^(-1.^)</p>
 				<p>.DLTt = .omega / .DLT.theta</p>
+				<p>.DLTt = .omega * .DLT.theta.^(-1.^)</p>
 			</div>
 		</div>
 		<div>
@@ -482,7 +502,9 @@ function SR(_SR_VariableString_ve) { /*local Storage JSON for Removing and Remov
 				<p>T = f.^(-1.^)</p>
 				<p>T = 1 / f</p>
 				<p>T = 2 * .PI / .omega</p>
+				<p>T = 2 * .PI * .omega.^(-1.^)</p>
 				<p>T = 2 * .PI * r / v</p>
+				<p>T = 2 * .PI * r * v.^(-1.^)</p>
 			</div>
 		</div>
 		<div>
@@ -502,7 +524,7 @@ function SR(_SR_VariableString_ve) { /*local Storage JSON for Removing and Remov
 				<br class="_Small_ce"/>
 				<h3>Formula:</h3>
 				<p>f = T.^(-1.^)</p>
-				<p>f = .( 1 / T .)</p>
+				<p>f = 1 / T</p>
 				<p>f = .omega / .( 2 * .PI .)</p>
 				<p>f = v / .( 2 * .PI * r .)</p>
 			</div>
@@ -524,10 +546,16 @@ function SR(_SR_VariableString_ve) { /*local Storage JSON for Removing and Remov
 				<br class="_Small_ce"/>
 				<h3>Formula:</h3>
 				<p>v = s / t</p>
+				<p>v = s * t.^(-1.^)</p>
 				<p>v = .DLTs / t</p>
+				<p>v = .DLTs * t.^(-1.^)</p>
 				<p>v = s / .DLTt</p>
+				<p>v = s * .DLTt.^(-1.^)</p>
 				<p>v = .DLTs / .DLTt</p>
-				<p>v = ( 2 * .PI * r ) / T</p>
+				<p>v = .DLTs * .DLTt.^(-1.^)</p>
+				<p>v = 2 * .PI * r / T</p>
+				<p>v = 2 * .PI * r * T.^(-1.^)</p>
+				<p>v = 2 * .PI * r * f</p>
 				<p>v = .omega * r</p>
 				<p>v = .sqrt( a._(c._) * r )</p>
 			</div>
@@ -545,11 +573,15 @@ function SR(_SR_VariableString_ve) { /*local Storage JSON for Removing and Remov
 				<p>Non ha alcuna unità di misura.</p>
 				<br class="_Small_ce"/>
 				<h3>Formula:</h3>
-				<p>.theta = .( .DLT.theta .)</p>
-				<p>.theta = .( s / r .)</p>
-				<p>.theta = .( .DLTs / r .)</p>
-				<p>.theta = .( .omega / t .)</p>
-				<p>.theta = .( .omega / .DLTt .)</p>
+				<p>.theta = .DLT.theta</p>
+				<p>.theta = s / r</p>
+				<p>.theta = s * r.^(-1.^)</p>
+				<p>.theta = .DLTs / r</p>
+				<p>.theta = .DLTs * r.^(-1.^)</p>
+				<p>.theta = .omega / t</p>
+				<p>.theta = .omega * t.^(-1.^)</p>
+				<p>.theta = .omega / .DLTt</p>
+				<p>.theta = .omega * .DLTt.^(-1.^)</p>
 			</div>
 		</div>
 		<div>
@@ -565,11 +597,15 @@ function SR(_SR_VariableString_ve) { /*local Storage JSON for Removing and Remov
 				<p>Non ha alcuna unità di misura.</p>
 				<br class="_Small_ce"/>
 				<h3>Formula:</h3>
-				<p>.DLT.theta = .( .theta .)</p>
-				<p>.DLT.theta = .( s / r .)</p>
-				<p>.DLT.theta = .( .DLTs / r .)</p>
-				<p>.DLT.theta = .( .omega / t .)</p>
-				<p>.DLT.theta = .( .omega / .DLTt .)</p>
+				<p>.DLT.theta = .theta</p>
+				<p>.DLT.theta = s / r</p>
+				<p>.DLT.theta = s * r.^(-1.^)</p>
+				<p>.DLT.theta = .DLTs / r</p>
+				<p>.DLT.theta = .DLTs * r.^(-1.^)</p>
+				<p>.DLT.theta = .omega / t</p>
+				<p>.DLT.theta = .omega * t.^(-1.^)</p>
+				<p>.DLT.theta = .omega / .DLTt</p>
+				<p>.DLT.theta = .omega * .DLTt.^(-1.^)</p>
 			</div>
 		</div>
 		<div>
@@ -591,15 +627,21 @@ function SR(_SR_VariableString_ve) { /*local Storage JSON for Removing and Remov
 				<p>s.^(-1.^)</p>
 				<br class="_Small_ce"/>
 				<h3>Formula:</h3>
-				<p>.omega = .( .theta / t .)</p>
-				<p>.omega = .( .DLT.theta / t .)</p>
-				<p>.omega = .( .theta / .DLTt .)</p>
-				<p>.omega = .( .DLT.theta / .DLTt .)</p>
-				<p>.omega = .( v / r .)</p>
+				<p>.omega = .theta / t</p>
+				<p>.omega = .theta * t.^(-1.^)</p>
+				<p>.omega = .DLT.theta / t</p>
+				<p>.omega = .DLT.theta * t.^(-1.^)</p>
+				<p>.omega = .theta / .DLTt</p>
+				<p>.omega = .theta * .DLTt.^(-1.^)</p>
+				<p>.omega = .DLT.theta / .DLTt</p>
+				<p>.omega = .DLT.theta * .DLTt.^(-1.^)</p>
+				<p>.omega = v / r</p>
+				<p>.omega = v * r.^(-1.^)</p>
 				<p>.omega = 2 * .PI * f</p>
-				<p>.omega = .( 2 * .PI / T .)</p>
+				<p>.omega = 2 * .PI / T</p>
 				<p>.omega = 2 * .PI * T.^(-1.^)</p>
 				<p>.omega = .sqrt( a._(c._) / r )</p>
+				<p>.omega = .sqrt( a._(c._) * r.^(-1.^) )</p>
 			</div>
 		</div>
 		<div>
@@ -616,9 +658,12 @@ function SR(_SR_VariableString_ve) { /*local Storage JSON for Removing and Remov
 				<h3>Unità di misura (del SI):</h3>
 				<p>m / s.^(2.^)</p>
 				<p>m * s.^(-2.^)</p>
+				<p>N / kg</p>
+				<p>N * kg.^(-1.^)</p>
 				<br class="_Small_ce"/>
 				<h3>Formula:</h3>
 				<p>A._(c._) = v.^(2.^) / r</p>
+				<p>A._(c._) = v.^(2.^) * r.^(-1.^)</p>
 				<p>A._(c._) = .omega.^(2.^) * r</p>
 			</div>
 		</div>
@@ -633,11 +678,13 @@ function SR(_SR_VariableString_ve) { /*local Storage JSON for Removing and Remov
 				<p>Data dal prodotto tra accelerazione centripeta e massa dell'oggetto.</p>
 				<br class="_Small_ce"/>
 				<h3>Unità di misura (del SI):</h3>
+				<p>N</p>
 				<p>kg * m / s.^(2.^)</p>
 				<p>kg * m * s.^(-2.^)</p>
 				<br class="_Small_ce"/>
 				<h3>Formula:</h3>
 				<p>F._(c._) = m * v.^(2.^) / r</p>
+				<p>F._(c._) = m * v.^(2.^) * r.^(-1.^)</p>
 				<p>F._(c._) = m * .omega.^(2.^) * r</p>
 			</div>
 		</div>
@@ -655,7 +702,9 @@ function SR(_SR_VariableString_ve) { /*local Storage JSON for Removing and Remov
 				<br class="_Small_ce"/>
 				<h3>Formula:</h3>
 				<p>m = F._(c._) * r / v.^(2.^)</p>
+				<p>m = F._(c._) * r * v.^(-2.^)</p>
 				<p>m = F._(c._) / .( .omega.^(2.^) * r .)</p>
+				<p>m = F._(c._) * .omega.^(-2.^) * r.^(-1.^)</p>
 			</div>
 		</div>
 		<div>
@@ -690,141 +739,6 @@ function SR(_SR_VariableString_ve) { /*local Storage JSON for Removing and Remov
 				<p>.PI = 3.14159265358979323..</p>
 			</div>
 		</div>
-<!--
-		<div>
-			<h1>.DLT</h1>
-			<h2>Delta</h2>
-			<div>
-				<p>Parabola: y = .( a .) x^2 + .( b .) x + .( c .)</p>
-				<p>.DLT = .( b^2 .) - .( 4 * a * c .)</p>
-			</div>
-		</div>
-		<div>
-			<h1>F</h1>
-			<h2>Fuoco</h2>
-			<div>
-				<p>Parabola: y = .( a .) x^2 + .( b .) x + .( c .)</p>
-				<p>F_x = .( - b .) / .( 2 * a .)</p>
-				<p>F_y = .( 1 - .DLT .) / .( 4 * a .)</p>
-			</div>
-			<div>
-				<p>Vertice: ( v_x ; v_y )</p>
-				<p>Direttrice: y = D</p>
-				<p>F_x = v_x</p>
-				<p>F_y = .( 2 * v_y .) - D</p>
-			</div>
-		</div>
-		<div>
-			<h1>v</h1>
-			<h2>Vertice</h2>
-			<div>
-				<p>Parabola: y = .( a .) x^2 + .( b .) x + .( c .)</p>
-				<p>v_x = .( - b .) / .( 2 * a .)</p>
-				<p>v_y = .( - .DLT .) / .( 4 * a .)</p>
-			</div>
-			<div>
-				<p>Parabola: y = .( a .) x^2 + .( b .) x + .( c .)</p>
-				<p>v_x = .( - b .) / .( 2 * a .)</p>
-				<p>v_y = ⨍( .( - b .) / .( 2 * a .) )</p>
-			</div>
-		</div>
-		<div>
-			<h1>Direttrice</h1>
-			<div>
-				<p>Parabola: y = .( a .) x^2 + .( b .) x + .( c .)</p>
-				<p>y = .( - 1 - .DLT .) / .( 4 * a .)</p>
-			</div>
-			<div>
-				<p>Fuoco: ( F_x ; F_y )</p>
-				<p>Vertice: ( v_x ; v_y )</p>
-				<p>Direttrice: .( 2 * v_y .) - F_y</p>
-			</div>
-		</div>
-		<div>
-			<h1>Asse di simmetria</h1>
-			<div>
-				<p>Parabola: y = .( a .) x^2 + .( b .) x + .( c .)</p>
-				<p>Asse: x = .( - b .) / .( 2 * a .)</p>
-			</div>
-			<div>
-				<p>Fuoco: ( F_x ; F_y )</p>
-				<p>Asse: x = F_x</p>
-			</div>
-			<div>
-				<p>Vertice: ( v_x ; v_y )</p>
-				<p>Asse: x = v_x</p>
-			</div>
-		</div>
-		<div>
-			<h1>Posizione di una retta</h1>
-			<div>
-				<p>Parabola: y = .( a .) x^2 + .( b .) x + .( c .)</p>
-				<p>Retta: y = .( m .) x + .( q .)</p>
-				<p>.DLT = ( b - m )^2 - .( ( c - q ) * .( 4 * a .) .)</p>
-				<p>Se .( .DLT > 0 .) :<br />
-				Secante</p>
-				<p>Se .( .DLT = 0 .) :<br />
-				Tangente</p>
-				<p>Se .( .DLT < 0 .) :<br />
-				Esterna</p>
-			</div>
-		</div>
-		<div>
-			<h1>Parabola translata di Vettore</h1>
-			<div>
-				<p>Parabola: y = .( a .) x^2 + .( b .) x + .( c .)</p>
-				<p>Vettore: ( V_x ; V_y )</p>
-				<p>Parabola translata: y' = .( a .) x'^2 + .( b - 2 * a * V_x .) x' + .( .( a * V_x^2 .) + .( c .) + .( V_y .) - .( b * V_x .) .)</p>
-			</div>
-		</div>
-		<div>
-			<h1>Parabola specchiata rispetto alla bisettreice del 1° e 3° quadrante</h1>
-			<div>
-				<p>Parabola: y = .( a .) x^2 + .( b .) x + .( c .)</p>
-				<p>Parabola specchiata: x' = .( a .) y'^2 + .( b .) y' + .( c .)</p>
-			</div>
-		</div>
-		<div>
-			<h1>Parabola specchiata rispetto alla bisettreice del 2° e 4° quadrante</h1>
-			<div>
-				<p>Parabola: y = .( a .) x^2 + .( b .) x + .( c .)</p>
-				<p>Parabola specchiata: x' = .( a .) y'^2 + .( b .) y' + .( - c .)</p>
-			</div>
-		</div>
-		<div>
-			<h1>Determinare una Parabola con noti Fuoco e Direttrice</h1>
-			<h2>Luogo Geometrico della Parabola</h2>
-			<div>
-				<p>Parabola: y = .( a .) x^2 + .( b .) x + .( c .)</p>
-				<p>Fuoco: ( F_x ; F_y )</p>
-				<p>Direttrice: y = D</p>
-				<p>Parabola:<br />
-				{ y = .( a .) x^2 + .( b .) x + .( c .)<br />
-				{ F_x = .( - b .) / .( 2 * a .)<br />
-				{ F_y = .( 1 - .DLT .) / .( 4 * a .)<br />
-				{ D = .( - 1 - .DLT .) / .( 4 * a .)<br />
-				</p>
-			</div>
-			<div>
-				<p>Parabola: y = .( a .) x^2 + .( b .) x + .( c .)</p>
-				<p>Fuoco: ( F_x ; F_y )</p>
-				<p>Direttrice: y = D</p>
-				<p>Parabola:<br />
-				{ y = .( a .) x^2 + .( b .) x + .( c .)<br />
-				{ .( a * b .) = .( - 2 * F_x .)<br />
-				{ a + .( 4 * a^2 * c .) = .( a * b^2 .) + .( 4 * F_y .)<br />
-				{ a + .( a * b^2 .) = .( 4 * a^2 * c .) - .( 4 * D .)<br />
-				</p>
-			</div>
-		</div>
--->
-<!--
-		<div>
-			<h1><a href="https://www.emathhelp.net/calculators/algebra-2/parabola-calculator/" style="color:rgba(30,30,49,0.8);">Parabola Caluclator >></a></h1>
-			<h1><a href="https://www.symbolab.com/solver/tangent-line-calculator/" style="color:rgba(30,30,49,0.8);">Tangent Caluclator >></a></h1>
-			<h1><a href="https://www.geogebra.org/calculator" style="color:rgba(30,30,49,0.8);">Graphing Calculator >></a></h1>
-		</div>
--->
 		<div>
 			<h1><a href="http://www.edutecnica.it/meccanica/circo/circo.htm" style="color:rgba(30,30,49,0.8);">Dynamic Graphic Calculator >></a></h1>
 		</div>
