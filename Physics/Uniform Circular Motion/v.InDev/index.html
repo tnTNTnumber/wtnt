@@ -325,10 +325,10 @@ function SR(_SR_VariableString_ve) { /*local Storage JSON for Removing and Remov
 				<p>r = v * T / .( 2 * .PI .)</p>
 				<p>r = v / .omega</p>
 				<p>r = v * .omega.^(-1.^)</p>
-				<p>r = v.^(2.^) / a._(c._)</p>
-				<p>r = v.^(2.^) * a._(c._).^(-1.^)</p>
-				<p>r = a._(c._) / .omega.^(2.^)</p>
-				<p>r = a._(c._) * .omega.^(-2.^)</p>
+				<p>r = v.^(2.^) / a._(cp._)</p>
+				<p>r = v.^(2.^) * a._(cp._).^(-1.^)</p>
+				<p>r = a._(cp._) / .omega.^(2.^)</p>
+				<p>r = a._(cp._) * .omega.^(-2.^)</p>
 				<p>r = v / .( 2 * .PI * f .)</p>
 			</div>
 		</div>
@@ -351,10 +351,10 @@ function SR(_SR_VariableString_ve) { /*local Storage JSON for Removing and Remov
 				<p>d = v * T * .PI.^(-1.^)</p>
 				<p>d = 2 * v / .omega</p>
 				<p>d = 2 * v * .omega.^(-1.^)</p>
-				<p>d = 2 * v.^(2.^) / a._(c._)</p>
-				<p>d = 2 * v.^(2.^) * a._(c._).^(-1.^)</p>
-				<p>d = 2 * a._(c._) / .omega.^(2.^)</p>
-				<p>d = 2 * a._(c._) * .omega.^(-2.^)</p>
+				<p>d = 2 * v.^(2.^) / a._(cp._)</p>
+				<p>d = 2 * v.^(2.^) * a._(cp._).^(-1.^)</p>
+				<p>d = 2 * a._(cp._) / .omega.^(2.^)</p>
+				<p>d = 2 * a._(cp._) * .omega.^(-2.^)</p>
 			</div>
 		</div>
 		<div>
@@ -377,10 +377,10 @@ function SR(_SR_VariableString_ve) { /*local Storage JSON for Removing and Remov
 				<p>c = v * T</p>
 				<p>c = 2 * .PI * v / .omega</p>
 				<p>c = 2 * .PI * v * .omega.^(-1.^)</p>
-				<p>c = 2 * .PI * v.^(2.^) / a._(c._)</p>
-				<p>c = 2 * .PI * v.^(2.^) * a._(c._).^(-1.^)</p>
-				<p>c = 2 * .PI * a._(c._) / .omega.^(2.^)</p>
-				<p>c = 2 * .PI * a._(c._) * .omega.^(-2.^)</p>
+				<p>c = 2 * .PI * v.^(2.^) / a._(cp._)</p>
+				<p>c = 2 * .PI * v.^(2.^) * a._(cp._).^(-1.^)</p>
+				<p>c = 2 * .PI * a._(cp._) / .omega.^(2.^)</p>
+				<p>c = 2 * .PI * a._(cp._) * .omega.^(-2.^)</p>
 			</div>
 		</div>
 		<div>
@@ -557,7 +557,7 @@ function SR(_SR_VariableString_ve) { /*local Storage JSON for Removing and Remov
 				<p>v = 2 * .PI * r * T.^(-1.^)</p>
 				<p>v = 2 * .PI * r * f</p>
 				<p>v = .omega * r</p>
-				<p>v = .sqrt( a._(c._) * r )</p>
+				<p>v = .sqrt( a._(cp._) * r )</p>
 			</div>
 		</div>
 		<div>
@@ -640,12 +640,12 @@ function SR(_SR_VariableString_ve) { /*local Storage JSON for Removing and Remov
 				<p>.omega = 2 * .PI * f</p>
 				<p>.omega = 2 * .PI / T</p>
 				<p>.omega = 2 * .PI * T.^(-1.^)</p>
-				<p>.omega = .sqrt( a._(c._) / r )</p>
-				<p>.omega = .sqrt( a._(c._) * r.^(-1.^) )</p>
+				<p>.omega = .sqrt( a._(cp._) / r )</p>
+				<p>.omega = .sqrt( a._(cp._) * r.^(-1.^) )</p>
 			</div>
 		</div>
 		<div>
-			<h1>A._(c._)</h1>
+			<h1>A._(cp._)</h1>
 			<h2>Accelerazione centripeta</h2>
 			<div>
 				<h3>Definizione:</h3>
@@ -662,30 +662,28 @@ function SR(_SR_VariableString_ve) { /*local Storage JSON for Removing and Remov
 				<p>N * kg.^(-1.^)</p>
 				<br class="_Small_ce"/>
 				<h3>Formula:</h3>
-				<p>A._(c._) = v.^(2.^) / r</p>
-				<p>A._(c._) = v.^(2.^) * r.^(-1.^)</p>
-				<p>A._(c._) = .omega.^(2.^) * r</p>
+				<p>A._(cp._) = v.^(2.^) / r</p>
+				<p>A._(cp._) = v.^(2.^) * r.^(-1.^)</p>
+				<p>A._(cp._) = .omega.^(2.^) * r</p>
 			</div>
 		</div>
 		<div>
-			<h1>F._(c._)</h1>
-			<h2>Forza centripeta</h2>
+			<h1>A._(cf._)</h1>
+			<h2>Accelerazione centrifuga apparente</h2>
 			<div>
-				<h3>Definizione:</h3>
-				<p>Forza puntata verso il centro di un percorso curvo e perpendicolare alla velocità dell'oggetto.</p>
-				<br class="_Small_ce"/>
 				<h3>Descrizione:</h3>
-				<p>Data dal prodotto tra accelerazione centripeta e massa dell'oggetto.</p>
+				<p>Per esempio, in un'auto che svolta, è l'accelerazione che subiscono i passegerri al suo interno.<br />
+				Essa non influenza la traettoria dell'oggetto, poiché vale solo per gli oggetti all'interno del sistema non inerziale dell'oggetto con moto circolare uniforme.</p>
 				<br class="_Small_ce"/>
 				<h3>Unità di misura (del SI):</h3>
-				<p>N</p>
-				<p>kg * m / s.^(2.^)</p>
-				<p>kg * m * s.^(-2.^)</p>
+				<p>m / s.^(2.^)</p>
+				<p>m * s.^(-2.^)</p>
+				<p>N / kg</p>
+				<p>N * kg.^(-1.^)</p>
 				<br class="_Small_ce"/>
 				<h3>Formula:</h3>
-				<p>F._(c._) = m * v.^(2.^) / r</p>
-				<p>F._(c._) = m * v.^(2.^) * r.^(-1.^)</p>
-				<p>F._(c._) = m * .omega.^(2.^) * r</p>
+				<p>A._(cf._) = .omega * v</p>
+				<p>A._(cf._) = .omega.^(2.^) * r</p>
 			</div>
 		</div>
 		<div>
@@ -701,10 +699,50 @@ function SR(_SR_VariableString_ve) { /*local Storage JSON for Removing and Remov
 				<p>N * s.^(2.^) * m.^(-1.^)</p>
 				<br class="_Small_ce"/>
 				<h3>Formula:</h3>
-				<p>m = F._(c._) * r / v.^(2.^)</p>
-				<p>m = F._(c._) * r * v.^(-2.^)</p>
-				<p>m = F._(c._) / .( .omega.^(2.^) * r .)</p>
-				<p>m = F._(c._) * .omega.^(-2.^) * r.^(-1.^)</p>
+				<p>m = F._(cp._) * r / v.^(2.^)</p>
+				<p>m = F._(cp._) * r * v.^(-2.^)</p>
+				<p>m = F._(cp._) / .( .omega.^(2.^) * r .)</p>
+				<p>m = F._(cp._) * .omega.^(-2.^) * r.^(-1.^)</p>
+			</div>
+		</div>
+		<div>
+			<h1>F._(cp._)</h1>
+			<h2>Forza centripeta</h2>
+			<div>
+				<h3>Definizione:</h3>
+				<p>Forza puntata verso il centro di un percorso curvo e perpendicolare alla velocità dell'oggetto.</p>
+				<br class="_Small_ce"/>
+				<h3>Descrizione:</h3>
+				<p>Data dal prodotto tra accelerazione centripeta e massa dell'oggetto.</p>
+				<br class="_Small_ce"/>
+				<h3>Unità di misura (del SI):</h3>
+				<p>N</p>
+				<p>kg * m / s.^(2.^)</p>
+				<p>kg * m * s.^(-2.^)</p>
+				<br class="_Small_ce"/>
+				<h3>Formula:</h3>
+				<p>F._(cp._) = m * v.^(2.^) / r</p>
+				<p>F._(cp._) = m * v.^(2.^) * r.^(-1.^)</p>
+				<p>F._(cp._) = m * .omega.^(2.^) * r</p>
+			</div>
+		</div>
+		<div>
+			<h1>F._(cf._)</h1>
+			<h2>Forza centrifuga apparente</h2>
+			<div>
+				<h3>Descrizione:</h3>
+				<p>Per esempio, in un'auto che svolta, è la forza che subiscono i passegerri al suo interno.<br />
+				Essa non influenza la traettoria dell'oggetto, poiché vale solo per gli oggetti all'interno del sistema non inerziale dell'oggetto con moto circolare uniforme.</p>
+				<br class="_Small_ce"/>
+				<h3>Unità di misura (del SI):</h3>
+				<p>N</p>
+				<p>kg * m / s.^(2.^)</p>
+				<p>kg * m * s.^(-2.^)</p>
+				<br class="_Small_ce"/>
+				<h3>Formula:</h3>
+				<p>m._(oggetto._) = massa di un elemento facente parte del sistema non inerziale dell'elemento compiente moto circolare uniforme.</p>
+				<p>F._(cf._) = m._(oggetto._) * .omega * v</p>
+				<p>F._(cf._) = m._(oggetto._) * .omega.^(2.^) * r</p>
 			</div>
 		</div>
 		<div>
