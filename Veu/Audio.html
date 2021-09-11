@@ -1,0 +1,553 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>τnTNT_☢️</title>
+	<meta charset="UTF-8">
+<style>
+
+body {
+	background: rgba(33,33,33,0.8);
+	font-family: 'Lucida Console', monospace;
+	font-family: 'Ubuntu Mono', monospace;
+	transition-duration: 0.4s;
+}
+
+button {
+	background: rgba(55,55,55,0.8);
+	border: 0.4vmin solid rgba(44,44,44,0.8);
+    border-radius: 10%;
+	color: rgba(0,0,0,0.8);
+	color: rgba(22,22,22,0.8);
+	font-size: 2.5vmin;
+	transition-duration: 0.2s;
+}button.hover, button:hover {
+	background: rgba(77,77,77,0.8)!important;
+}button.focus, button:focus {
+	background: rgba(88,88,88,0.8)!important;
+    outline: 0;
+    box-shadow: none!important;
+}
+
+._B_ce { /*Button*/
+	background: rgba(55,55,55,0.8);
+	border: 0.4vmin solid rgba(44,44,44,0.8);
+    border-radius: 0.5vmin;
+	color: rgba(0,0,0,0.8);
+	color: rgba(22,22,22,0.8);
+	font-size: 2.5vmin;
+	height: 5vmin;
+	margin: 0.2vmin;
+	transition-duration: 0.2s;
+	width: 5vmin;
+	z-index: 16;
+}
+
+input {
+	background: rgba(111,111,111,0.8);
+	border-color: rgba(55,55,55,0.8);
+	border-radius: 0.5vmin;
+	border-style: solid;
+	border-width: 3px;
+	color: rgba(0,0,0,0.8);
+	resize: none;
+	scrollbar-color: rgba(55,55,55,0.8) rgba(0,0,0,0);
+	scrollbar-width: thin;
+	transition-duration: 0.4s;
+}input.hover, input:hover{
+	background: rgba(116,116,116,0.8)!important;
+}input.focus, input:focus {
+	background: rgba(122,122,122,0.8)!important;
+    outline: 0;
+    box-shadow: none!important;
+}
+
+::placeholder {
+	color: rgba(55,55,55,0.8);
+}:-ms-input-placeholder {
+	color: rgba(55,55,55,0.8);
+}::-ms-input-placeholder {
+	color: rgba(55,55,55,0.8);
+}
+
+::selection {
+  background: rgba(99,99,99,0.8);
+}::-moz-selection {
+  background: rgba(99,99,99,0.8);
+}
+
+textarea {
+	background: rgba(111,111,111,0.8);
+	border-color: rgba(55,55,55,0.8);
+	border-radius: 0.5vmin;
+	border-style: solid;
+	border-width: 3px;
+	color: rgba(0,0,0,0.8);
+	resize: none;
+	scrollbar-color: rgba(55,55,55,0.8) rgba(0,0,0,0);
+	scrollbar-width: thin;
+	transition-duration: 0.4s;
+}textarea.hover, textarea:hover {
+	background: rgba(116,116,116,0.8)!important;
+}textarea.focus, textarea:focus {
+	background: rgba(122,122,122,0.8)!important;
+    outline: 0;
+    box-shadow: none!important;
+}
+
+::-webkit-scrollbar {
+	width: 12px;
+	background: rgba(88,88,88,0);
+	border-radius: 6px;
+	transition-duration: 0.4s;
+}::-webkit-scrollbar-track {
+	background: linear-gradient(90deg,rgba(88,88,88,0.2),rgba(0,0,0,0));
+	border-radius: 6px;
+}::-webkit-scrollbar-track:hover {
+	background: rgba(88,88,88,0.4);
+}::-webkit-scrollbar-thumb {
+	background: rgba(55,55,55,0.5);
+	border-radius: 6px;
+}::-webkit-scrollbar-thumb:hover {
+	background: rgba(55,55,55,0.8);
+}
+
+._0_ce { /*0*/
+	border: 0px;
+	margin: 0px;
+	padding: 0px;
+}
+
+._C_ce { /*Center*/
+	transform: translate(-50%,-50%);
+}
+
+._D1_ce{
+	background: rgba(55,55,55,0.2);
+	position: absolute;
+	transition-duration: 0s;
+}
+
+._DN_ce { /*Display None*/
+	display:none;
+}
+
+._IT_ce { /*Input Textarea*/
+	margin-left: 0px;
+	height: 97.6vh;
+	position: absolute;
+	right: 8px;
+	top: 8px;
+	width: 20vw;
+}
+
+._KD_ce { /*Keys Div*/
+	background: rgba(55,55,55,0.2);
+	border: 0.4vmin solid rgba(44,44,44,0.1);
+	border-radius: 1vmin;
+	left: 50%;
+	position: absolute;
+	bottom: 15%;
+	transition-duration: 0.4s !important;
+}
+
+._PA_I_ce { /*Play Audio /Input*/
+}
+
+._PA_IR_ce { /*Play Audio /Input Range*/
+}
+
+._PA_IT_ce { /*Play Audio /Input Textarea*/
+	width: 3em;
+}
+
+._PA_DI_ce { /*Play Audio /Duration Input*/
+}
+
+._PA_DS_ce { /*Play Audio /Duration Span*/
+}
+
+._PA_DIN_ce { /*Play Audio /Duration Input Number*/
+}
+
+._PA_FI_ce { /*Play Audio /Frequency Input*/
+}
+
+._PA_FS_ce { /*Play Audio /Frequency Span*/
+}
+
+._PA_FIN_ce { /*Play Audio /Frequency Input Number*/
+}
+
+._PA_TI_ce { /*Play Audio /Type Input*/
+}
+
+._PA_TS_ce { /*Play Audio /Type Span*/
+}
+
+._PA_VI_ce { /*Play Audio /Volume Input*/
+}
+
+._PA_VS_ce { /*Play Audio /Volume Span*/
+}
+
+._PA_VIN_ce { /*Play Audio /Volume Input Number*/
+}
+
+._PA_DetI_ce { /*Play Audio /Detune Input*/
+}
+
+._PA_DetS_ce { /*Play Audio /Detune Span*/
+}
+
+._PA_DetIN_ce { /*Play Audio /Detune Input Number*/
+}
+
+._PreApostrophe_ce { /*Pre Apostrophe*/
+}
+
+._PreLF_ce { /*Pre Line Feed*/
+}
+
+._PreHT_ce { /*Pre Horizontal Tabulation*/
+}
+
+._PreRS_ce { /*Pre Reverse Solidus*/
+}
+
+._V_ce { /*Versions*/
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@1,700&display=swap');
+
+</style>
+<script>
+
+function _GB_fe(_GB_C_ve,_GB_SC_ve) { /*Generate Buttons*/
+	/*Char*/
+	/*String Code*/
+	document.getElementsByClassName('_KD_ce')[0].innerHTML += '<button class="_B_ce" onclick="_OKD_fe(`'+_GB_SC_ve+'`)">'+_GB_C_ve+'</button>';
+};
+
+function _OKD_fe(_OKD_I_ve) { /*On Key Down*/
+	/*Input*/
+	var _OKD_V_ve; /*Value*/
+	if(typeof _OKD_I_ve=='number') {
+		_OKD_V_ve = _OKD_I_ve;
+	} else if(typeof _OKD_I_ve=='string') {
+		_OKD_V_ve = _OKD_I_ve;
+	} else {
+		_OKD_V_ve = _OKD_I_ve.which||_OKD_I_ve.keyCode;
+	};
+	if(_OKD_V_ve==8||_OKD_V_ve=='Backspace') {
+	};
+	if(_OKD_V_ve==9||_OKD_V_ve=='Tab') {
+	};
+	if(_OKD_V_ve==12||_OKD_V_ve=='Clear') {
+	};
+	if(_OKD_V_ve==13||_OKD_V_ve=='Enter') {
+	};
+	if(_OKD_V_ve==16||_OKD_V_ve=='Shift') {
+	};
+	if(_OKD_V_ve==17||_OKD_V_ve=='Control') {
+	};
+	if(_OKD_V_ve==18||_OKD_V_ve=='Alt') {
+	};
+	if(_OKD_V_ve==19||_OKD_V_ve=='Pause') {
+	};
+	if(_OKD_V_ve==20||_OKD_V_ve=='CapsLock') {
+	};
+	if(_OKD_V_ve==27||_OKD_V_ve=='Escape') {
+	};
+	if(_OKD_V_ve==32||_OKD_V_ve==' ') {
+	};
+	if(_OKD_V_ve==33||_OKD_V_ve=='PageUp') {
+	};
+	if(_OKD_V_ve==34||_OKD_V_ve=='PageDown') {
+	};
+	if(_OKD_V_ve==35||_OKD_V_ve=='End') {
+	};
+	if(_OKD_V_ve==36||_OKD_V_ve=='Home') {
+	};
+	if(_OKD_V_ve==37||_OKD_V_ve=='ArrowLeft') {
+	};
+	if(_OKD_V_ve==38||_OKD_V_ve=='ArrowUp') {
+	};
+	if(_OKD_V_ve==39||_OKD_V_ve=='ArrowRight') {
+	};
+	if(_OKD_V_ve==40||_OKD_V_ve=='ArrowDown') {
+	};
+	if(_OKD_V_ve==45||_OKD_V_ve=='Insert') {
+	};
+	if(_OKD_V_ve==46||_OKD_V_ve=='Delete') {
+	};
+	if(_OKD_V_ve==65||_OKD_V_ve=='a') {
+	};
+	if(_OKD_V_ve==66||_OKD_V_ve=='b') {
+	};
+	if(_OKD_V_ve==67||_OKD_V_ve=='c') {
+	};
+	if(_OKD_V_ve==68||_OKD_V_ve=='d') {
+	};
+	if(_OKD_V_ve==69||_OKD_V_ve=='e') {
+	};
+	if(_OKD_V_ve==70||_OKD_V_ve=='f') {
+	};
+	if(_OKD_V_ve==71||_OKD_V_ve=='g') {
+	};
+	if(_OKD_V_ve==72||_OKD_V_ve=='h') {
+	};
+	if(_OKD_V_ve==73||_OKD_V_ve=='i') {
+	};
+	if(_OKD_V_ve==74||_OKD_V_ve=='j') {
+	};
+	if(_OKD_V_ve==75||_OKD_V_ve=='k') {
+	};
+	if(_OKD_V_ve==76||_OKD_V_ve=='l') {
+	};
+	if(_OKD_V_ve==77||_OKD_V_ve=='m') {
+	};
+	if(_OKD_V_ve==78||_OKD_V_ve=='n') {
+	};
+	if(_OKD_V_ve==79||_OKD_V_ve=='o') {
+	};
+	if(_OKD_V_ve==80||_OKD_V_ve=='p') {
+		_PA_P_fe();
+	};
+	if(_OKD_V_ve==81||_OKD_V_ve=='q') {
+	};
+	if(_OKD_V_ve==82||_OKD_V_ve=='r') {
+	};
+	if(_OKD_V_ve==83||_OKD_V_ve=='s') {
+	};
+	if(_OKD_V_ve==84||_OKD_V_ve=='t') {
+	};
+	if(_OKD_V_ve==85||_OKD_V_ve=='u') {
+	};
+	if(_OKD_V_ve==86||_OKD_V_ve=='v') {
+	};
+	if(_OKD_V_ve==87||_OKD_V_ve=='w') {
+	};
+	if(_OKD_V_ve==88||_OKD_V_ve=='x') {
+	};
+	if(_OKD_V_ve==89||_OKD_V_ve=='y') {
+	};
+	if(_OKD_V_ve==90||_OKD_V_ve=='z') {
+	};
+	if(_OKD_V_ve==92||_OKD_V_ve=='Meta') {
+	};
+	if(_OKD_V_ve==93||_OKD_V_ve=='ContextMenu') {
+	};
+	if(_OKD_V_ve==112||_OKD_V_ve=='F1') {
+	};
+	if(_OKD_V_ve==113||_OKD_V_ve=='F2') {
+	};
+	if(_OKD_V_ve==114||_OKD_V_ve=='F3') {
+	};
+	if(_OKD_V_ve==115||_OKD_V_ve=='F4') {
+	};
+	if(_OKD_V_ve==116||_OKD_V_ve=='F5') {
+	};
+	if(_OKD_V_ve==117||_OKD_V_ve=='F6') {
+	};
+	if(_OKD_V_ve==118||_OKD_V_ve=='F7') {
+	};
+	if(_OKD_V_ve==119||_OKD_V_ve=='F8') {
+	};
+	if(_OKD_V_ve==120||_OKD_V_ve=='F9') {
+	};
+	if(_OKD_V_ve==121||_OKD_V_ve=='F10') {
+	};
+	if(_OKD_V_ve==122||_OKD_V_ve=='F11') {
+	};
+	if(_OKD_V_ve==123||_OKD_V_ve=='F12') {
+	};
+	if(_OKD_V_ve==144||_OKD_V_ve=='NumLock') {
+	};
+	if(_OKD_V_ve==145||_OKD_V_ve=='ScrollLock') {
+	};
+	if(_OKD_V_ve==220||_OKD_V_ve=='&#92;') { /**\*/
+	};
+	if(_OKD_V_ve==225||_OKD_V_ve=='AltGraph') {
+	};
+};
+
+function _OKP_fe(_OKP_I_ve) { /*On Key Press*/
+	/*Input*/
+	var _OKP_V_ve; /*Value*/
+	if(_OKP_I_ve*1) {
+		_OKP_V_ve = _OKP_I_ve;
+	} else {
+		_OKP_V_ve = _OKP_I_ve.which||_OKP_I_ve.keyCode;
+	};
+};
+
+var _PA_D_ve; /*Play Audio /Duration*/
+var _PA_Det_ve; /*Play Audio /Detune*/
+var _PA_F_ve; /*Play Audio /Frequency*/
+var _PA_T_ve; /*Play Audio /Type*/
+var _PA_V_ve; /*Play Audio /Volume*/
+
+window.onload = function() {
+	_GB_fe('▶️','p');
+	_PA_AC_ve = new(window.AudioContext||window.webkitAudioContext)(); /*Play Audio /Audio Context*/
+	_PA_L_fe('');
+};
+
+function _PA_L_fe(_PA_L_C_ve) { /*Play Audio /Load*/
+	/*Case*/
+	_PA_F_ve = Number(document.getElementsByClassName('_PA_FI'+_PA_L_C_ve+'_ce')[0].value);
+	document.getElementsByClassName('_PA_FS_ce')[0].innerHTML = String(_PA_F_ve)+' Hz';
+	document.getElementsByClassName('_PA_FI_ce')[0].value = _PA_F_ve;
+	document.getElementsByClassName('_PA_FIN_ce')[0].value = _PA_F_ve;
+	switch(document.getElementsByClassName('_PA_TI_ce')[0].value*1) {
+		case 0: _PA_T_ve = 'sine'; break;
+		case 1: _PA_T_ve = 'square'; break;
+		case 2: _PA_T_ve = 'sawtooth'; break;
+		case 3: _PA_T_ve = 'triangle'; break;
+	};
+	document.getElementsByClassName('_PA_TS_ce')[0].innerHTML = _PA_T_ve;
+	_PA_V_ve = Number(document.getElementsByClassName('_PA_VI'+_PA_L_C_ve+'_ce')[0].value);
+	document.getElementsByClassName('_PA_VS_ce')[0].innerHTML = String(_PA_V_ve)+' %';
+	document.getElementsByClassName('_PA_VI_ce')[0].value = _PA_V_ve;
+	document.getElementsByClassName('_PA_VIN_ce')[0].value = _PA_V_ve;
+	_PA_D_ve = Number(document.getElementsByClassName('_PA_DI'+_PA_L_C_ve+'_ce')[0].value);
+	document.getElementsByClassName('_PA_DS_ce')[0].innerHTML = String(_PA_D_ve)+' ms';
+	document.getElementsByClassName('_PA_DI_ce')[0].value = _PA_D_ve;
+	document.getElementsByClassName('_PA_DIN_ce')[0].value = _PA_D_ve;
+	_PA_Det_ve = Number(document.getElementsByClassName('_PA_DetI'+_PA_L_C_ve+'_ce')[0].value);
+	document.getElementsByClassName('_PA_DetS_ce')[0].innerHTML = '';
+	if(_PA_Det_ve>=0) {
+		document.getElementsByClassName('_PA_DetS_ce')[0].innerHTML = '+';
+	};
+	document.getElementsByClassName('_PA_DetS_ce')[0].innerHTML += _PA_Det_ve;
+	document.getElementsByClassName('_PA_DetI_ce')[0].value = _PA_Det_ve;
+	document.getElementsByClassName('_PA_DetIN_ce')[0].value = _PA_Det_ve;
+};
+
+function _PA_P_fe() { /*Play Audio /Play*/
+	var _PA_P_O_ve = _PA_AC_ve.createOscillator(); /*Oscillator*/
+	var _PA_P_N_ve = _PA_AC_ve.createGain(); /*gainNode*/
+	_PA_P_O_ve.connect(_PA_P_N_ve);
+	_PA_P_N_ve.connect(_PA_AC_ve.destination);
+	_PA_P_N_ve.gain.value = _PA_V_ve/100;
+	_PA_P_O_ve.frequency.value = _PA_F_ve;
+	_PA_P_O_ve.type = _PA_T_ve;
+	_PA_P_O_ve.detune.setValueAtTime(_PA_Det_ve, _PA_AC_ve.currentTime);
+	_PA_P_O_ve.onended = function() {};
+	_PA_P_O_ve.start();
+	setTimeout(function() {_PA_P_O_ve.stop();}, _PA_D_ve);
+};
+
+</script>
+</head>
+<body onkeydown="_OKD_fe(event)" onkeypress="_OKP_fe(event)">
+
+<table>
+	<tr>
+		<th>
+			frequency
+		</th>
+		<th>
+			<input class="_PA_I_ce _PA_IR_ce _PA_FI_ce" min="1" max="20000" oninput="_PA_L_fe('')" type="range" value="2000"></input>
+		</th>
+		<th>
+			<input class="_PA_I_ce _PA_IT_ce _PA_FIN_ce" cols="6" oninput="_PA_L_fe('N')" rows="1" type="textarea" value="!"></input>
+		</th>
+		<th>
+			<span class="_PA_FS_ce"></span>
+		</th>
+		<th>
+		</th>
+	</tr>
+	<tr>
+		<th>
+			type
+		</th>
+		<th>
+			<input class="_PA_I_ce _PA_IR_ce _PA_TI_ce" min="0" max="3" oninput="_PA_L_fe('')" type="range" value="0"></input>
+		</th>
+		<th>
+		</th>
+		<th>
+			<span class="_PA_TS_ce"></span>
+		</th>
+		<th>
+		</th>
+	</tr>
+	<tr>
+		<th>
+			volume
+		</th>
+		<th>
+			<input class="_PA_I_ce _PA_IR_ce _PA_VI_ce" min="0" max="100" oninput="_PA_L_fe('')" type="range" value="50"></input>
+		</th>
+		<th>
+			<input class="_PA_I_ce _PA_IT_ce _PA_VIN_ce" cols="6" oninput="_PA_L_fe('N')" rows="1" type="textarea" value="!"></input>
+		</th>
+		<th>
+			<span class="_PA_VS_ce"></span>
+		</th>
+		<th>
+		</th>
+	</tr>
+	<tr>
+		<th>
+			duration
+		</th>
+		<th>
+			<input class="_PA_I_ce _PA_IR_ce _PA_DI_ce" min="1" max="10000" oninput="_PA_L_fe('')" type="range" value="1000"></input>
+		</th>
+		<th>
+			<input class="_PA_I_ce _PA_IT_ce _PA_DIN_ce" cols="6" oninput="_PA_L_fe('N')" rows="1" type="textarea" value="!"></input>
+		</th>
+		<th>
+			<span class="_PA_DS_ce"></span>
+		</th>
+		<th>
+		</th>
+	</tr>
+	<tr>
+		<th>
+			detune
+		</th>
+		<th>
+			<input class="_PA_I_ce _PA_IR_ce _PA_DetI_ce" min="-7500" max="4000" oninput="_PA_L_fe('')" type="range" value="0"></input>
+		</th>
+		<th>
+			<input class="_PA_I_ce _PA_IT_ce _PA_DetIN_ce" cols="6" oninput="_PA_L_fe('N')" rows="1" type="textarea" value="!"></input>
+		</th>
+		<th>
+			<span class="_PA_DetS_ce"></span>
+		</th>
+		<th>
+		</th>
+	</tr>
+</table>
+
+<textarea class="_IT_ce" placeholder="Here is the song code."></textarea>
+
+<div class="_KD_ce _C_ce"><div>
+
+<div class="_DN_ce">
+	<pre class="_PreApostrophe_ce">/'</pre>
+	<pre class="_PreHT_ce">/	</pre>
+	<pre class="_PreLF_ce">/
+</pre>
+	<pre class="_PreRS_ce">/\</pre>
+	<div class="_V_ce">
+		Versions
+		<T_V>
+			<h1>
+				0.0.0
+			</h1>
+			<p>
+			</p>
+		</T_V>
+	</div>
+</div>
+
+</body>
+<!--
+<link rel="preconnect" href="https://fonts.gstatic.com"><link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&amp;display=swap" rel="stylesheet"><style>.sim {font-family: 'Ubuntu Mono', monospace;}</style>
+-->
+</html>

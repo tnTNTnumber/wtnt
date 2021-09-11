@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+
+<head>
+
+<title>Calc</title>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="CSS.css">
+<script src="JS.js"></script>
+
+</head>
+
+<body>
+
+<div id="calc">
+	<input class="num" id="n1" name="n1" type="number"></input><br />
+	<input class="operator" id="op" name="op" list="oplist"></input><br />
+	<datalist id="oplist">
+		<option value="+">
+		<option value="-">
+		<option value="*">
+		<option value="/">
+		<option value="^">
+	</datalist>
+	<input class="num" id="n2" name="n2" type="number"></input><br />
+	<span class="operator" name="uguale"> = </span><br />
+	<span class="num" name="result" for="n1 n2">0</span>
+</div>
+
+</body>
+
+</html>
