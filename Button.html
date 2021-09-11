@@ -1,0 +1,183 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+
+<head>
+
+<title>File</title>
+<meta charset="UTF-8">
+<!--link rel="stylesheet" href="CSS.css"-->
+<!--script src="JS.js"></script-->
+<style>
+
+* {
+	transition-duration: 1000ms;
+}
+
+body {
+	background: rgba(0, 0, 128, 0.9);
+  -webkit-touch-callout: none;
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+}
+
+ol {
+	float: right;
+	margin: 25px;
+	list-style-type: none;
+}
+
+li {
+	margin: 2px !important;
+}
+
+.divButton, li {
+    margin: 0em;
+	display: inline-block;
+    text-align: center;
+	box-sizing: border-box;
+}
+
+.divButton button, li button {
+	width: 50px;
+	height: 50px;
+    margin: 0px;
+    padding: 1px 6px;
+	background: white;
+	border: 4px solid rgb(192,192,192);
+	border-radius: 5px;
+    text-align: center;
+	box-sizing: border-box;
+}
+
+#bigDiv {
+	pointer-events: none;
+	transform: scale(1.4);
+	margin: 0px 10px;
+}
+
+#allButtons {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+</style>
+<script>
+
+var Style = [
+	[
+		'&nbsp;',
+		'',
+		'',
+		'',
+		'',
+		'',
+	],
+	[
+		'ツ',
+		'Click',
+		'Click',
+		'ツ',
+		'Click',
+		'Click',
+	],
+	[
+		'=',
+		'Color',
+		'Opacity',
+		'=',
+		'Rotate',
+		'Scale',
+	],
+	[
+		'·',
+		'&nbsp;',
+		'&nbsp;',
+		'·',
+		'&nbsp;',
+		'&nbsp;',
+	],
+	[
+		'!',
+		'1',
+		'2',
+		'!',
+		'3',
+		'4',
+	],
+	[
+		'😊',
+		'🎨',
+		'💡',
+		'😊',
+		'🔄',
+		'📏',
+	],
+	[
+		'🎃',
+		'🎨',
+		'💡',
+		'🎃',
+		'🎡',
+		'💗',
+	],
+];
+
+window.onload = function() {
+	for(i=0; i<Style.length; i++) {
+		document.getElementById("ol").innerHTML += '<li><button onclick="AssignNames('+i+')">'+Style[i][0]+'</button></li>';
+	};
+	AssignNames(Math.floor(Math.random()*Style.length));
+};
+
+function AssignNames(N) {
+	let buttons = document.getElementById("allButtons").getElementsByTagName("button");
+	for(i=0; i<buttons.length; i++) {
+		buttons[i].innerHTML = Style[N][i+1];
+	};
+};
+
+function buttonC() { /*Change color*/
+	let H = Math.floor(Math.random() * 360);
+	document.getElementById("buttonC").style.background = document.getElementById("bigDiv").style.background = "hsl("+H+", 100%, 50%)";
+	document.getElementById("buttonC").style.borderColor = document.getElementById("bigDiv").style.borderColor= "hsl("+H+", 90%, 33%)";
+};
+
+function buttonT() { /*Change transparency*/
+	let T = Math.random();
+	document.getElementById("buttonT").style.opacity = document.getElementById("bigDiv").style.opacity = T;
+};
+
+function buttonR() { /*Change rotation*/
+	let R = Math.random();
+	document.getElementById("divR").style.transform = document.getElementById("divBR").style.transform = "rotate("+R+"turn)";
+};
+
+function buttonS() { /*Change scale*/
+	let S = Math.random()*(1.5-1/4)+1/4;
+	document.getElementById("divS").style.transform = document.getElementById("divBS").style.transform = "scale("+S+")";
+};
+
+</script>
+
+</head>
+<body>
+
+<div id="allButtons" name="allButtons">
+	<div class="divButton" id="divC" name="divC"><button id="buttonC" name="buttonC" onclick="buttonC()"></button></div>
+	<div class="divButton" id="divT" name="divT"><button id="buttonT" name="buttonT" onclick="buttonT()"></button></div>
+	<div class="divButton" id="divB" name="divB"><div id="divBR" name="divBR"><div id="divBS" name="divBS"><button id="bigDiv" name="bigDiv"></button></div></div></div>
+	<div class="divButton" id="divR" name="divR"><button id="buttonR" name="buttonR" onclick="buttonR()"></button></div>
+	<div class="divButton" id="divS" name="divS"><button id="buttonS" name="buttonS" onclick="buttonS()"></button></div>
+</div>
+
+<ol id="ol" name="ol">
+</ol>
+
+</body>
+
+</html>
