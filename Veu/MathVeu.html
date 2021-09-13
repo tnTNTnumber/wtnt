@@ -1,0 +1,596 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta charset="UTF-8">
+<title>❤️Veronica❤️ - τnTNT_☢️</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0">
+<style>
+
+:root {
+	--border: 2px;
+}
+
+body {
+	background: rgba(33,33,33,0.8);
+}
+
+select {
+	background: rgba(255,104,196,0.2);
+	border: 0;
+	border-radius: 1em;
+	font-size: 1em;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	text-indent: 1px;
+	text-overflow: '';
+}
+
+.clear {
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+
+.NDisplay {
+	display: none;
+}
+
+.center {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	text-align: center;
+}
+
+.NSelect {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.button, .area {
+	position: fixed;
+	background: rgba(255,104,196,0.2);
+	border: var(--border) solid rgba(0,0,0,0.95);
+	border-radius: 5px;
+}
+
+.button {
+	width: calc(25% - var(--border) * 2);
+	height: calc(10% - var(--border) * 2);
+}
+
+#area {
+	top: 0px;
+	left: 0px;
+	width: calc(100% - var(--border) * 2);
+	height: calc(80% - var(--border)* 2);
+}
+
+</style>
+<script>
+
+function Q() {return document.getElementById('Quiz');};
+function QS() {return document.getElementById('Quiz').getElementsByTagName('select');};
+var _FullsceenElem_ve = document.documentElement;
+var _Lvl_ve = 0;
+var J = {
+	"ButtonInner": [
+		'Ok',
+		'',
+		'',
+		'Open Fullscreen',
+		'?',
+		'',
+		'',
+		'Close Fullscreen',
+	],
+	"ButtonOutput": [
+		'_OkValidator_fe()',
+		'',
+		'',
+		'openFullscreen()',
+		'Hint()',
+		'',
+		'',
+		'closeFullscreen()',
+	],
+	"Lvl": { /*11.9.2-0-2-1*/ /*1,2,3,5,7,11,13,17,19,23,29; 1,2,3,5,7,11,13,17,19; 1,2;_;1,2;1;*/
+		0: ['<p>Start!</p>(Click "Ok")', 'Clicca il bottone "Ok".'],
+
+		1: ['X Te, da Leo', 'Clicca "Ok".'],
+
+		2: ['❤️', '"Ok".'],
+		3: ['🥺', '"Ok".'],
+
+		4: ['<select style="width:1em;"><option></option></select>', 'Usa la selezione.'], /**/
+		5: ['<select><option></option><option>❤️</option></select>', 'Un cuore.'], /*Q*/
+		6: ['<select><option></option><option>🥺</option></select>', 'Una faccina delusa.'], /*T*/
+
+		7: ['<select><option></option><option>❤️</option><option>🥺</option></select>', 'Pirma il primo.'], /*Q*/
+		8: ['<select><option></option><option>❤️</option><option>🥺</option></select>', 'Poi il secondo.'], /*T*/
+		9: ['<select><option></option><option>❤️❤️</option><option>🥺❤️</option></select>', 'Ciò che c\'era prima.'], /*QQ*/
+		10: ['<select><option></option><option>❤️🥺</option><option>🥺🥺</option></select>', 'Ciò che è venuto dopo.'], /*TT*/
+		11: ['<select><option></option><option>🥺❤️</option><option>❤️🥺</option></select>', 'Prima e dopo.'], /*QT*/
+
+		12: ['❤️❤️❤️❤️❤️<select><option></option><option>❤️</option><option>🥺</option></select>❤️❤️', '='], /*Q*/
+		13: ['❤️❤️<select><option></option><option>❤️</option><option>🥺</option></select>❤️🥺🥺🥺🥺', 'Diviso in 2.'], /*Q*/
+		14: ['❤️🥺❤️🥺❤️<select><option></option><option>❤️</option><option>🥺</option></select>❤️🥺', 'Alternato.'], /*T*/
+		15: ['<select><option></option><option>❤️</option><option>🥺</option></select>🥺❤️❤️🥺🥺❤️❤️', 'Ripetuto.'], /*T*/
+		16: ['🥺❤️<select><option></option><option>❤️</option><option>🥺</option></select>❤️❤️🥺❤️🥺', 'Simmetrico.'], /*T*/
+		17: ['🥺❤️❤️🥺❤️<select><option></option><option>❤️</option><option>🥺</option></select>🥺❤️', 'Ripetuto.'], /*Q*/
+		18: ['<select><option></option><option>❤️</option><option>🥺</option></select>❤️❤️🥺❤️❤️🥺❤️', 'Il numero del livello.'], /*Q*/
+
+		19: ['❤️🥺🥺🥺❤️❤️❤️🥺🥺<select><option></option><option>❤️</option><option>🥺</option></select>❤️❤️❤️🥺🥺🥺❤️❤️<select><option></option><option>❤️</option><option>🥺</option></select>🥺🥺🥺❤️❤️', 'Ripetuto.'], /*T Q*/
+		20: ['❤️❤️🥺🥺<select><option></option><option>❤️</option><option>🥺</option></select>🥺🥺❤️❤️❤️❤️❤️❤️🥺🥺🥺🥺🥺❤️❤️<select><option></option><option>❤️</option><option>🥺</option></select><select><option></option><option>❤️</option><option>🥺</option></select>❤️❤️', 'Ripetuto.'], /*T Q Q*/
+		21: ['🥺🥺❤️❤️🥺🥺🥺❤️❤️🥺🥺❤️<select><option></option><option>❤️</option><option>🥺</option></select>🥺❤️<select><option></option><option>❤️</option><option>🥺</option></select>🥺🥺❤️❤️🥺<select><option></option><option>❤️</option><option>🥺</option></select>🥺❤️', '1, 2, 3, 2, 1, …'], /*Q Q T*/
+		22: ['🥺🥺🥺❤️<select><option></option><option>❤️</option><option>🥺</option></select>🥺🥺❤️❤️🥺🥺❤️❤️❤️🥺❤️<select><option></option><option>❤️</option><option>🥺</option></select>❤️🥺🥺❤️❤️🥺<select><option></option><option>❤️</option><option>🥺</option></select>', '1, 2, 3, 2, 1, …\n3, 2, 1, 2, 3, …'], /*T Q T*/
+		23: ['🥺🥺🥺❤️❤️<select><option></option><option>❤️</option><option>🥺</option></select><select><option></option><option>❤️</option><option>🥺</option></select>🥺🥺🥺❤️❤️❤️❤️🥺🥺<select><option></option><option>❤️</option><option>🥺</option></select>🥺❤️<select><option></option><option>❤️</option><option>🥺</option></select>❤️🥺🥺🥺', 'Simmetria.'], /*Q T T Q*/
+		24: ['🥺<select><option></option><option>❤️</option><option>🥺</option></select>🥺🥺🥺🥺<select><option></option><option>❤️</option><option>🥺</option></select>🥺🥺🥺🥺🥺🥺🥺🥺🥺❤️🥺🥺🥺🥺<select><option></option><option>❤️</option><option>🥺</option></select><select><option></option><option>❤️</option><option>🥺</option></select><select><option></option><option>❤️</option><option>🥺</option></select>', 'Quadrati perfetti.'], /*Q Q T T T*/
+		25: ['<select><option></option><option>❤️</option><option>🥺</option></select>❤️❤️🥺❤️❤️❤️<select><option></option><option>❤️</option><option>🥺</option></select>🥺❤️❤️❤️❤️❤️❤️🥺❤️❤️❤️<select><option></option><option>❤️</option><option>🥺</option></select><select><option></option><option>❤️</option><option>🥺</option></select>❤️❤️❤️', 'Quadrati perfetti.\nOppure una tabellina :).'], /*T Q Q Q*/
+		26: ['🥺🥺🥺<select><option></option><option>❤️</option><option>🥺</option></select><select><option></option><option>❤️</option><option>🥺</option></select>❤️❤️❤️❤️🥺🥺🥺❤️❤️🥺🥺❤️🥺❤️❤️<select><option></option><option>❤️</option><option>🥺</option></select>❤️<select><option></option><option>❤️</option><option>🥺</option></select>❤️', 'Primi.'], /*T T Q Q*/
+		27: ['🥺❤️🥺❤️❤️🥺❤️❤️❤️🥺❤️❤️❤️❤️🥺❤️❤️❤️<select><option></option><option>❤️</option><option>🥺</option></select><select><option></option><option>❤️</option><option>🥺</option></select><select><option></option><option>❤️</option><option>🥺</option></select><select><option></option><option>❤️</option><option>🥺</option></select>❤️❤️', 'Larghezze dei numeri.'], /*Q Q T Q*/
+		28: ['🥺❤️🥺❤️🥺❤️❤️🥺❤️❤️🥺❤️<select><option></option><option>❤️</option><option>🥺</option></select><select><option></option><option>❤️</option><option>🥺</option></select>❤️❤️🥺❤️❤️<select><option></option><option>❤️</option><option>🥺</option></select><select><option></option><option>❤️</option><option>🥺</option></select><select><option></option><option>❤️</option><option>🥺</option></select>❤️❤️', 'Larghezze dei numeri (base 2).'], /*Q T Q T Q*/
+		29: ['🥺🥺❤️🥺🥺🥺❤️❤️🥺❤️🥺🥺🥺❤️🥺🥺🥺<select><option></option><option>❤️</option><option>🥺</option></select><select><option></option><option>❤️</option><option>🥺</option></select><select><option></option><option>❤️</option><option>🥺</option></select><select><option></option><option>❤️</option><option>🥺</option></select>🥺❤️❤️', 'Numeri uno dopo l\'altro (rappresentabili in faccine (b2)).'], /*T Q Q Q*/
+
+		30: ['❤️❤️ ❤️❤️ ❤️❤️ ❤️❤️ ❤️❤️ ❤️❤️<br />❤️❤️ ❤️❤️ ❤️❤️ ❤️❤️ ❤️❤️ ❤️❤️<br />❤️❤️ ❤️❤️ ❤️❤️ ❤️❤️ <select><option></option><option>❤️❤️</option><option>❤️🥺</option><option>🥺❤️</option><option>🥺🥺</option></select> ❤️❤️<br />❤️❤️ ❤️❤️ ❤️❤️ ❤️❤️ ❤️❤️ ❤️❤️', '='], /*QQ*/
+		31: ['❤️❤️ 🥺🥺 <select><option></option><option>❤️❤️</option><option>❤️🥺</option><option>🥺❤️</option><option>🥺🥺</option></select> 🥺🥺 ❤️❤️ 🥺🥺<br />🥺🥺 ❤️❤️ 🥺🥺 ❤️❤️ <select><option></option><option>❤️❤️</option><option>❤️🥺</option><option>🥺❤️</option><option>🥺🥺</option></select> ❤️❤️<br />❤️❤️ 🥺🥺 ❤️❤️ 🥺🥺 ❤️❤️ 🥺🥺<br />🥺🥺 ❤️❤️ 🥺🥺 <select><option></option><option>❤️❤️</option><option>❤️🥺</option><option>🥺❤️</option><option>🥺🥺</option></select> 🥺🥺 ❤️❤️', 'Scacchiera.'], /*QQ TT QQ*/
+		32: ['❤️🥺 🥺❤️ ❤️🥺 🥺❤️ <select><option></option><option>❤️❤️</option><option>❤️🥺</option><option>🥺❤️</option><option>🥺🥺</option></select> 🥺❤️<br />❤️🥺 🥺❤️ ❤️<select><option></option><option>❤️&nbsp;&nbsp;❤️</option><option>❤️&nbsp;&nbsp;🥺</option><option>🥺&nbsp;&nbsp;❤️</option><option>🥺&nbsp;&nbsp;🥺</option></select>❤️ ❤️🥺 🥺❤️<br /><select><option></option><option>❤️❤️</option><option>❤️🥺</option><option>🥺❤️</option><option>🥺🥺</option></select> 🥺❤️ ❤️🥺 🥺❤️ ❤️🥺 🥺❤️<br />❤️🥺 🥺❤️ ❤️🥺 <select><option></option><option>❤️❤️</option><option>❤️🥺</option><option>🥺❤️</option><option>🥺🥺</option></select> ❤️🥺 🥺❤️', 'Alternato alternato,\ncome la rima baciata :).'], /*QT T-T QT TQ*/
+		33: ['❤️❤️ <select><option></option><option>❤️❤️</option><option>❤️🥺</option><option>🥺❤️</option><option>🥺🥺</option></select> ❤️❤️ ❤️❤️ 🥺🥺 ❤️❤️<br />❤️❤️ <select><option></option><option>❤️❤️</option><option>❤️🥺</option><option>🥺❤️</option><option>🥺🥺</option></select> ❤️❤️ ❤️❤️ 🥺🥺 ❤️❤️<br />❤️❤️ <select><option></option><option>❤️❤️</option><option>❤️🥺</option><option>🥺❤️</option><option>🥺🥺</option></select> ❤️❤️ 🥺🥺 ❤️❤️ ❤️❤️<br />❤️❤️ <select><option></option><option>❤️❤️</option><option>❤️🥺</option><option>🥺❤️</option><option>🥺🥺</option></select> ❤️❤️ 🥺🥺 ❤️❤️ ❤️❤️', 'A blocchi, divisori di 5.'], /*QQ QQ QQ QQ*/
+		34: ['<select><option></option><option>❤️</option><option>🥺</option></select>🥺 🥺❤️ ❤️❤️ 🥺🥺 🥺🥺 🥺🥺<br />❤️❤️ ❤️❤️ ❤️❤️ ❤️🥺 🥺🥺 🥺🥺<br />🥺🥺 <select><option></option><option>❤️❤️</option><option>❤️🥺</option><option>🥺❤️</option><option>🥺🥺</option></select> 🥺🥺 🥺🥺 🥺❤️ ❤️❤️<br />❤️❤️ ❤️❤️ ❤️❤️ ❤️❤️ <select><option></option><option>❤️</option><option>🥺</option></select><select><option></option><option>❤️</option><option>🥺</option></select> <select><option></option><option>❤️❤️</option><option>❤️🥺</option><option>🥺❤️</option><option>🥺🥺</option></select>', 'Cuore: "+1",\ntesta: "x2".'], /*Q TT Q Q QQ*/
+		35: ['🥺🥺 🥺🥺 🥺🥺 ❤️❤️ 🥺🥺 ❤️❤️<br />🥺🥺 ❤️❤️ ❤️❤️ ❤️❤️ 🥺🥺 ❤️❤️<br />🥺🥺 ❤️❤️ <select><option></option><option>❤️❤️</option><option>❤️🥺</option><option>🥺❤️</option><option>🥺🥺</option></select> <select><option></option><option>❤️❤️</option><option>❤️🥺</option><option>🥺❤️</option><option>🥺🥺</option></select> 🥺🥺 <select><option></option><option>❤️❤️</option><option>❤️🥺</option><option>🥺❤️</option><option>🥺🥺</option></select><br /><select><option></option><option>❤️❤️</option><option>❤️🥺</option><option>🥺❤️</option><option>🥺🥺</option></select> <select><option></option><option>❤️❤️</option><option>❤️🥺</option><option>🥺❤️</option><option>🥺🥺</option></select> ❤️❤️ <select><option></option><option>❤️❤️</option><option>❤️🥺</option><option>🥺❤️</option><option>🥺🥺</option></select> <select><option></option><option>❤️❤️</option><option>❤️🥺</option><option>🥺❤️</option><option>🥺🥺</option></select> <select><option></option><option>❤️❤️</option><option>❤️🥺</option><option>🥺❤️</option><option>🥺🥺</option></select>', 'Primi.'], /*QQ QQ QQ TT QQ QQ TT QQ*/
+		36: ['<select><option></option><option>❤️❤️</option><option>❤️🥺</option><option>🥺❤️</option><option>🥺🥺</option></select> <select><option></option><option>❤️❤️</option><option>❤️🥺</option><option>🥺❤️</option><option>🥺🥺</option></select> <select><option></option><option>❤️❤️</option><option>❤️🥺</option><option>🥺❤️</option><option>🥺🥺</option></select> ❤️❤️ 🥺🥺 ❤️🥺<br /><select><option></option><option>❤️❤️</option><option>❤️🥺</option><option>🥺❤️</option><option>🥺🥺</option></select> <select><option></option><option>❤️❤️</option><option>❤️🥺</option><option>🥺❤️</option><option>🥺🥺</option></select> <select><option></option><option>❤️❤️</option><option>❤️🥺</option><option>🥺❤️</option><option>🥺🥺</option></select> 🥺🥺 ❤️❤️ 🥺❤️<br />❤️🥺 ❤️❤️ 🥺🥺 <select><option></option><option>❤️❤️</option><option>❤️🥺</option><option>🥺❤️</option><option>🥺🥺</option></select> <select><option></option><option>❤️❤️</option><option>❤️🥺</option><option>🥺❤️</option><option>🥺🥺</option></select> <select><option></option><option>❤️❤️</option><option>❤️🥺</option><option>🥺❤️</option><option>🥺🥺</option></select><br />🥺❤️ 🥺🥺 ❤️❤️ <select><option></option><option>❤️❤️</option><option>❤️🥺</option><option>🥺❤️</option><option>🥺🥺</option></select> <select><option></option><option>❤️❤️</option><option>❤️🥺</option><option>🥺❤️</option><option>🥺🥺</option></select> <select><option></option><option>❤️❤️</option><option>❤️🥺</option><option>🥺❤️</option><option>🥺🥺</option></select>', 'Simmetrico.'], /*TQ TT QQ QT QQ TT TT QQ TQ QQ TT QT*/
+		37: ['🥺❤️ ❤️❤️ 🥺❤️ <select><option></option><option>❤️❤️</option><option>❤️🥺</option><option>🥺❤️</option><option>🥺🥺</option></select> 🥺<select><option></option><option>❤️</option><option>🥺</option></select> ❤️❤️<br />❤️❤️ 🥺❤️ ❤️❤️ 🥺<select><option></option><option>❤️</option><option>🥺</option></select> ❤️❤️ <select><option></option><option>❤️❤️</option><option>❤️🥺</option><option>🥺❤️</option><option>🥺🥺</option></select><br />❤️❤️ ❤️❤️ 🥺❤️ ❤️<select><option></option><option>❤️&nbsp;&nbsp;❤️</option><option>❤️&nbsp;&nbsp;🥺</option><option>🥺&nbsp;&nbsp;❤️</option><option>🥺&nbsp;&nbsp;🥺</option></select>❤️ ❤️❤️<br />❤️❤️ ❤️❤️ ❤️❤️ 🥺❤️ <select><option></option><option>❤️❤️</option><option>❤️🥺</option><option>🥺❤️</option><option>🥺🥺</option></select> <select><option></option><option>❤️</option><option>🥺</option></select>❤️', 'In alto a destra-destra e\nin basso a destra-destra.'], /*QQ Q Q TQ Q-T QQ T*/
+		38: ['<select><option></option><option>❤️❤️</option><option>❤️🥺</option><option>🥺❤️</option><option>🥺🥺</option></select> ❤️❤️ <select><option></option><option>❤️❤️</option><option>❤️🥺</option><option>🥺❤️</option><option>🥺🥺</option></select> 🥺❤️ 🥺❤️ ❤️🥺<br />❤️🥺 🥺🥺 <select><option></option><option>❤️❤️</option><option>❤️🥺</option><option>🥺❤️</option><option>🥺🥺</option></select> 🥺🥺 ❤️🥺 ❤️🥺<br />🥺<select><option></option><option>❤️&nbsp;&nbsp;❤️</option><option>❤️&nbsp;&nbsp;🥺</option><option>🥺&nbsp;&nbsp;❤️</option><option>🥺&nbsp;&nbsp;🥺</option></select>❤️ 🥺🥺 <select><option></option><option>❤️❤️</option><option>❤️🥺</option><option>🥺❤️</option><option>🥺🥺</option></select> <select><option></option><option>❤️❤️</option><option>❤️🥺</option><option>🥺❤️</option><option>🥺🥺</option></select> <select><option></option><option>❤️❤️</option><option>❤️🥺</option><option>🥺❤️</option><option>🥺🥺</option></select><br />🥺<select><option></option><option>❤️&nbsp;&nbsp;❤️</option><option>❤️&nbsp;&nbsp;🥺</option><option>🥺&nbsp;&nbsp;❤️</option><option>🥺&nbsp;&nbsp;🥺</option></select>🥺 ❤️🥺 <select><option></option><option>❤️❤️</option><option>❤️🥺</option><option>🥺❤️</option><option>🥺🥺</option></select> <select><option></option><option>❤️❤️</option><option>❤️🥺</option><option>🥺❤️</option><option>🥺🥺</option></select> 🥺🥺', 'Ruotato.'], /*QQ QT TT TT Q-T TT TT TQ Q-Q TQ QQ TT*/
+		39: ['🥺❤️ ❤️❤️ ❤️🥺 ❤️❤️ ❤️❤️ ❤️🥺<br />🥺🥺 🥺🥺 🥺🥺 🥺🥺 ❤️❤️ 🥺🥺<br />🥺🥺 🥺🥺 ❤️❤️ ❤️❤️ ❤️🥺 🥺🥺<br /><select><option></option><option>❤️❤️&nbsp;&nbsp;❤️❤️</option><option>❤️❤️&nbsp;&nbsp;❤️🥺</option><option>❤️❤️&nbsp;&nbsp;🥺❤️</option><option>❤️❤️&nbsp;&nbsp;🥺🥺</option><option>❤️🥺&nbsp;&nbsp;❤️❤️</option><option>❤️🥺&nbsp;&nbsp;❤️🥺</option><option>❤️🥺&nbsp;&nbsp;🥺❤️</option><option>❤️🥺&nbsp;&nbsp;🥺🥺</option><option>🥺❤️&nbsp;&nbsp;❤️❤️</option><option>🥺❤️&nbsp;&nbsp;❤️🥺</option><option>🥺❤️&nbsp;&nbsp;🥺❤️</option><option>🥺❤️&nbsp;&nbsp;🥺🥺</option><option>🥺🥺&nbsp;&nbsp;❤️❤️</option><option>🥺🥺&nbsp;&nbsp;❤️🥺</option><option>🥺🥺&nbsp;&nbsp;🥺❤️</option><option>🥺🥺&nbsp;&nbsp;🥺🥺</option></select> <select><option></option><option>❤️❤️&nbsp;&nbsp;❤️❤️</option><option>❤️❤️&nbsp;&nbsp;❤️🥺</option><option>❤️❤️&nbsp;&nbsp;🥺❤️</option><option>❤️❤️&nbsp;&nbsp;🥺🥺</option><option>❤️🥺&nbsp;&nbsp;❤️❤️</option><option>❤️🥺&nbsp;&nbsp;❤️🥺</option><option>❤️🥺&nbsp;&nbsp;🥺❤️</option><option>❤️🥺&nbsp;&nbsp;🥺🥺</option><option>🥺❤️&nbsp;&nbsp;❤️❤️</option><option>🥺❤️&nbsp;&nbsp;❤️🥺</option><option>🥺❤️&nbsp;&nbsp;🥺❤️</option><option>🥺❤️&nbsp;&nbsp;🥺🥺</option><option>🥺🥺&nbsp;&nbsp;❤️❤️</option><option>🥺🥺&nbsp;&nbsp;❤️🥺</option><option>🥺🥺&nbsp;&nbsp;🥺❤️</option><option>🥺🥺&nbsp;&nbsp;🥺🥺</option></select> <select><option></option><option>❤️❤️&nbsp;&nbsp;❤️❤️</option><option>❤️❤️&nbsp;&nbsp;❤️🥺</option><option>❤️❤️&nbsp;&nbsp;🥺❤️</option><option>❤️❤️&nbsp;&nbsp;🥺🥺</option><option>❤️🥺&nbsp;&nbsp;❤️❤️</option><option>❤️🥺&nbsp;&nbsp;❤️🥺</option><option>❤️🥺&nbsp;&nbsp;🥺❤️</option><option>❤️🥺&nbsp;&nbsp;🥺🥺</option><option>🥺❤️&nbsp;&nbsp;❤️❤️</option><option>🥺❤️&nbsp;&nbsp;❤️🥺</option><option>🥺❤️&nbsp;&nbsp;🥺❤️</option><option>🥺❤️&nbsp;&nbsp;🥺🥺</option><option>🥺🥺&nbsp;&nbsp;❤️❤️</option><option>🥺🥺&nbsp;&nbsp;❤️🥺</option><option>🥺🥺&nbsp;&nbsp;🥺❤️</option><option>🥺🥺&nbsp;&nbsp;🥺🥺</option></select>', '𝜋'], /*QQ-QQ QT-TT TT-QQ*/
+		40: ['🥺❤️ ❤️🥺 🥺❤️ 🥺❤️ ❤️❤️ ❤️🥺<br />❤️🥺 ❤️🥺 🥺❤️ 🥺❤️ 🥺❤️ 🥺🥺<br />❤️❤️ ❤️🥺 🥺🥺 🥺❤️ 🥺❤️ 🥺🥺<br /><select><option></option><option>❤️❤️&nbsp;&nbsp;❤️❤️</option><option>❤️❤️&nbsp;&nbsp;❤️🥺</option><option>❤️❤️&nbsp;&nbsp;🥺❤️</option><option>❤️❤️&nbsp;&nbsp;🥺🥺</option><option>❤️🥺&nbsp;&nbsp;❤️❤️</option><option>❤️🥺&nbsp;&nbsp;❤️🥺</option><option>❤️🥺&nbsp;&nbsp;🥺❤️</option><option>❤️🥺&nbsp;&nbsp;🥺🥺</option><option>🥺❤️&nbsp;&nbsp;❤️❤️</option><option>🥺❤️&nbsp;&nbsp;❤️🥺</option><option>🥺❤️&nbsp;&nbsp;🥺❤️</option><option>🥺❤️&nbsp;&nbsp;🥺🥺</option><option>🥺🥺&nbsp;&nbsp;❤️❤️</option><option>🥺🥺&nbsp;&nbsp;❤️🥺</option><option>🥺🥺&nbsp;&nbsp;🥺❤️</option><option>🥺🥺&nbsp;&nbsp;🥺🥺</option></select> <select><option></option><option>❤️❤️&nbsp;&nbsp;❤️❤️</option><option>❤️❤️&nbsp;&nbsp;❤️🥺</option><option>❤️❤️&nbsp;&nbsp;🥺❤️</option><option>❤️❤️&nbsp;&nbsp;🥺🥺</option><option>❤️🥺&nbsp;&nbsp;❤️❤️</option><option>❤️🥺&nbsp;&nbsp;❤️🥺</option><option>❤️🥺&nbsp;&nbsp;🥺❤️</option><option>❤️🥺&nbsp;&nbsp;🥺🥺</option><option>🥺❤️&nbsp;&nbsp;❤️❤️</option><option>🥺❤️&nbsp;&nbsp;❤️🥺</option><option>🥺❤️&nbsp;&nbsp;🥺❤️</option><option>🥺❤️&nbsp;&nbsp;🥺🥺</option><option>🥺🥺&nbsp;&nbsp;❤️❤️</option><option>🥺🥺&nbsp;&nbsp;❤️🥺</option><option>🥺🥺&nbsp;&nbsp;🥺❤️</option><option>🥺🥺&nbsp;&nbsp;🥺🥺</option></select> <select><option></option><option>❤️❤️&nbsp;&nbsp;❤️❤️</option><option>❤️❤️&nbsp;&nbsp;❤️🥺</option><option>❤️❤️&nbsp;&nbsp;🥺❤️</option><option>❤️❤️&nbsp;&nbsp;🥺🥺</option><option>❤️🥺&nbsp;&nbsp;❤️❤️</option><option>❤️🥺&nbsp;&nbsp;❤️🥺</option><option>❤️🥺&nbsp;&nbsp;🥺❤️</option><option>❤️🥺&nbsp;&nbsp;🥺🥺</option><option>🥺❤️&nbsp;&nbsp;❤️❤️</option><option>🥺❤️&nbsp;&nbsp;❤️🥺</option><option>🥺❤️&nbsp;&nbsp;🥺❤️</option><option>🥺❤️&nbsp;&nbsp;🥺🥺</option><option>🥺🥺&nbsp;&nbsp;❤️❤️</option><option>🥺🥺&nbsp;&nbsp;❤️🥺</option><option>🥺🥺&nbsp;&nbsp;🥺❤️</option><option>🥺🥺&nbsp;&nbsp;🥺🥺</option></select>', '𝜋,\nma in verticale.'], /*QQ-TT TT-TQ TQ-TQ*/
+		41: ['🥺❤️ ❤️🥺 🥺🥺 ❤️❤️ 🥺🥺 🥺❤️<br />❤️❤️ ❤️🥺 🥺🥺 🥺🥺 ❤️❤️ ❤️❤️<br />❤️❤️ 🥺🥺 🥺🥺 🥺🥺 🥺❤️ ❤️❤️<br />❤️❤️ ❤️❤️ <select><option></option><option>❤️❤️&nbsp;&nbsp;❤️❤️</option><option>❤️❤️&nbsp;&nbsp;❤️🥺</option><option>❤️❤️&nbsp;&nbsp;🥺❤️</option><option>❤️❤️&nbsp;&nbsp;🥺🥺</option><option>❤️🥺&nbsp;&nbsp;❤️❤️</option><option>❤️🥺&nbsp;&nbsp;❤️🥺</option><option>❤️🥺&nbsp;&nbsp;🥺❤️</option><option>❤️🥺&nbsp;&nbsp;🥺🥺</option><option>🥺❤️&nbsp;&nbsp;❤️❤️</option><option>🥺❤️&nbsp;&nbsp;❤️🥺</option><option>🥺❤️&nbsp;&nbsp;🥺❤️</option><option>🥺❤️&nbsp;&nbsp;🥺🥺</option><option>🥺🥺&nbsp;&nbsp;❤️❤️</option><option>🥺🥺&nbsp;&nbsp;❤️🥺</option><option>🥺🥺&nbsp;&nbsp;🥺❤️</option><option>🥺🥺&nbsp;&nbsp;🥺🥺</option></select> <select><option></option><option>❤️❤️</option><option>❤️🥺</option><option>🥺❤️</option><option>🥺🥺</option></select> <select><option></option><option>❤️❤️</option><option>❤️🥺</option><option>🥺❤️</option><option>🥺🥺</option></select>', '"❤️" precedenti +1, "🥺" precedenti +1,\n "❤️" precedenti +1, tutte le "🥺"÷2.'], /*QT-TT TT TT*/
+		42: ['❤️❤️ ❤️❤️ ❤️❤️ ❤️❤️ 🥺🥺 ❤️❤️<br />❤️❤️ ❤️❤️ ❤️❤️ ❤️❤️ 🥺🥺 🥺🥺<br /><select><option></option><option>❤️❤️</option><option>❤️🥺</option><option>🥺❤️</option><option>🥺🥺</option></select> <select><option></option><option>❤️❤️</option><option>❤️🥺</option><option>🥺❤️</option><option>🥺🥺</option></select> <select><option></option><option>❤️❤️</option><option>❤️🥺</option><option>🥺❤️</option><option>🥺🥺</option></select> <select><option></option><option>❤️❤️</option><option>❤️🥺</option><option>🥺❤️</option><option>🥺🥺</option></select> <select><option></option><option>❤️❤️</option><option>❤️🥺</option><option>🥺❤️</option><option>🥺🥺</option></select> <select><option></option><option>❤️❤️</option><option>❤️🥺</option><option>🥺❤️</option><option>🥺🥺</option></select><br />❤️❤️ ❤️❤️ ❤️❤️ ❤️❤️ ❤️🥺 ❤️🥺', '"Love" in numeri binari\ncorrispondenti alle lettere.'], /*QQ QQ QQ QT QT TQ*/
+
+		/*..*/ 43: ['Continua …', 'Aspetta aggiornamenti …'], /**/
+
+		//~ 43: ['❤️❤️❤️❤️❤️❤️❤️❤️', ''], /**/
+		//~ 44: ['❤️❤️❤️❤️❤️❤️❤️❤️', ''], /**/
+		//~ 45: ['❤️❤️❤️❤️❤️❤️❤️❤️', ''], /**/
+		//~ 46: ['❤️❤️❤️❤️❤️❤️❤️❤️', ''], /**/
+		//~ 47: ['❤️❤️❤️❤️❤️❤️❤️❤️', ''], /**/
+		//~ 48: ['❤️❤️❤️❤️❤️❤️❤️❤️', ''], /**/
+		//~ 49: ['❤️❤️❤️❤️❤️❤️❤️❤️', ''], /**/
+		//~ 50: ['❤️❤️❤️❤️❤️❤️❤️❤️', ''], /**/
+		//~ 51: ['❤️❤️❤️❤️❤️❤️❤️❤️', ''], /**/
+		//~ 52: ['❤️❤️❤️❤️❤️❤️❤️❤️', ''], /**/
+		//~ 53: ['❤️❤️❤️❤️❤️❤️❤️❤️', ''], /**/
+		//~ 54: ['❤️❤️❤️❤️❤️❤️❤️❤️', ''], /**/
+		//~ 55: ['❤️❤️❤️❤️❤️❤️❤️❤️', ''], /**/
+		//~ 56: ['❤️❤️❤️❤️❤️❤️❤️❤️', ''], /**/
+		//~ 57: ['❤️❤️❤️❤️❤️❤️❤️❤️', ''], /**/
+		//~ 58: ['❤️❤️❤️❤️❤️❤️❤️❤️', ''], /**/
+		//~ 59: ['❤️❤️❤️❤️❤️❤️❤️❤️', ''], /**/
+
+		//~ 1000: ['❤️❤️❤️❤️❤️❤️❤️❤️', ''],
+		//~ 1000: ['❤️❤️❤️❤️❤️<select><option></option><option>❤️</option><option>🥺</option></select>❤️❤️😘', ''],
+		/*<select><option></option><option>❤️</option><option>🥺</option></select>*/
+		/*<select><option></option><option>❤️❤️</option><option>❤️🥺</option><option>🥺❤️</option><option>🥺🥺</option></select>*/
+		/*<select><option></option><option>❤️&nbsp;&nbsp;❤️</option><option>❤️&nbsp;&nbsp;🥺</option><option>🥺&nbsp;&nbsp;❤️</option><option>🥺&nbsp;&nbsp;🥺</option></select>*/
+		/**/
+		/**/
+		/*<select><option></option><option>❤️❤️&nbsp;&nbsp;❤️❤️</option><option>❤️❤️&nbsp;&nbsp;❤️🥺</option><option>❤️❤️&nbsp;&nbsp;🥺❤️</option><option>❤️❤️&nbsp;&nbsp;🥺🥺</option><option>❤️🥺&nbsp;&nbsp;❤️❤️</option><option>❤️🥺&nbsp;&nbsp;❤️🥺</option><option>❤️🥺&nbsp;&nbsp;🥺❤️</option><option>❤️🥺&nbsp;&nbsp;🥺🥺</option><option>🥺❤️&nbsp;&nbsp;❤️❤️</option><option>🥺❤️&nbsp;&nbsp;❤️🥺</option><option>🥺❤️&nbsp;&nbsp;🥺❤️</option><option>🥺❤️&nbsp;&nbsp;🥺🥺</option><option>🥺🥺&nbsp;&nbsp;❤️❤️</option><option>🥺🥺&nbsp;&nbsp;❤️🥺</option><option>🥺🥺&nbsp;&nbsp;🥺❤️</option><option>🥺🥺&nbsp;&nbsp;🥺🥺</option></select>*/
+	},
+};
+
+function openFullscreen() {
+	if(_FullsceenElem_ve.requestFullscreen) {
+		_FullsceenElem_ve.requestFullscreen();
+	} else if(_FullsceenElem_ve.webkitRequestFullscreen) {
+		_FullsceenElem_ve.webkitRequestFullscreen();
+	} else if(_FullsceenElem_ve.msRequestFullscreen) {
+		_FullsceenElem_ve.msRequestFullscreen();
+	} else if(_FullsceenElem_ve.mozRequestFullscreen) {
+		_FullsceenElem_ve.mozRequestFullscreen();
+	};
+};
+
+function closeFullscreen() {
+	if(document.exitFullscreen) {
+		document.exitFullscreen();
+	} else if(document.webkitExitFullscreen) {
+		document.webkitExitFullscreen();
+	} else if(document.msExitFullscreen) {
+		document.msExitFullscreen();
+	} else if(document.mozCancelFullScreen) {
+		document.mozCancelFullScreen();
+	};
+};
+
+function ciak() {
+  setTimeout(function() {
+    alert(_Lvl_ve);
+  }, 400)
+};
+
+window.onbeforeunload = function(event) {
+	return confirm('Confirm refresh');
+};
+
+window.onload = function _Onload_fe() {
+	//~ for(i1=0; i1<60; i1++) {
+		//~ setTimeout(openFullscreen, i1*1000);
+	//~ };
+	//~ setTimeout(function() {if(openFullscreen) {openFullscreen}}, 3000);
+	setTimeout(openFullscreen, 3000);
+	for(i0=0; i0<8; i0++) {
+		let _Height_ve = 80;
+		let _Width_ve = i0;
+		if(i0>=4) {
+			_Height_ve = 90;
+			_Width_ve -= 4;
+		};
+		document.body.innerHTML += '<div class="clear button" id="button'+i0+'" name="button'+i0+'" onclick="'+J.ButtonOutput[i0]+'" style="top:'+_Height_ve+'%;left:'+_Width_ve*25+'%;"><div class="center">'+J.ButtonInner[i0]+'</div></div>';
+	};
+	LoadLvl();
+};
+
+function _OkValidator_fe() {
+	switch(_Lvl_ve) {
+		case 0:
+			OkLvl();
+			break;
+		case 1:
+			OkLvl();
+			break;
+		case 2:
+			OkLvl();
+			break;
+		case 3:
+			OkLvl();
+			break;
+		case 4:
+			if(QS()[0].value=='') {
+				OkLvl();
+			};
+			break;
+		case 5:
+			if(QS()[0].value=='❤️') {
+				OkLvl();
+			};
+			break;
+		case 6:
+			if(QS()[0].value=='🥺') {
+				OkLvl();
+			};
+			break;
+		case 7:
+			if(QS()[0].value=='❤️') {
+				OkLvl();
+			};
+			break;
+		case 8:
+			if(QS()[0].value=='🥺') {
+				OkLvl();
+			};
+			break;
+		case 9:
+			if(QS()[0].value=='❤️❤️') {
+				OkLvl();
+			};
+			break;
+		case 10:
+			if(QS()[0].value=='🥺🥺') {
+				OkLvl();
+			};
+			break;
+		case 11:
+			if(QS()[0].value=='❤️🥺') {
+				OkLvl();
+			};
+			break;
+		case 12:
+			if(QS()[0].value=='❤️') {
+				OkLvl();
+			};
+			break;
+		case 13:
+			if(QS()[0].value=='❤️') {
+				OkLvl();
+			};
+			break;
+		case 14:
+			if(QS()[0].value=='🥺') {
+				OkLvl();
+			};
+			break;
+		case 15:
+			if(QS()[0].value=='🥺') {
+				OkLvl();
+			};
+			break;
+		case 16:
+			if(QS()[0].value=='🥺') {
+				OkLvl();
+			};
+			break;
+		case 17:
+			if(QS()[0].value=='❤️') {
+				OkLvl();
+			};
+			break;
+		case 18:
+			if(QS()[0].value=='❤️') {
+				OkLvl();
+			};
+			break;
+		case 19:
+			if(QS()[0].value=='🥺'&QS()[1].value=='❤️') {
+				OkLvl();
+			};
+			break;
+		case 20:
+			if(QS()[0].value=='🥺'&QS()[1].value=='❤️'&QS()[2].value=='❤️') {
+				OkLvl();
+			};
+			break;
+		case 21:
+			if(QS()[0].value=='❤️'&QS()[1].value=='❤️'&QS()[2].value=='🥺') {
+				OkLvl();
+			};
+			break;
+		case 22:
+			if(QS()[0].value=='🥺'&QS()[1].value=='❤️'&QS()[2].value=='🥺') {
+				OkLvl();
+			};
+			break;
+		case 23:
+			if(QS()[0].value=='❤️'&QS()[1].value=='🥺'&QS()[2].value=='🥺'&QS()[3].value=='❤️') {
+				OkLvl();
+			};
+			break;
+		case 24:
+			if(QS()[0].value=='❤️'&QS()[1].value=='❤️'&QS()[2].value=='🥺'&QS()[3].value=='🥺'&QS()[4].value=='🥺') {
+				OkLvl();
+			};
+			break;
+		case 25:
+			if(QS()[0].value=='🥺'&QS()[1].value=='❤️'&QS()[2].value=='❤️'&QS()[3].value=='❤️') {
+				OkLvl();
+			};
+			break;
+		case 26:
+			if(QS()[0].value=='🥺'&QS()[1].value=='🥺'&QS()[2].value=='❤️'&QS()[3].value=='❤️') {
+				OkLvl();
+			};
+			break;
+		case 27:
+			if(QS()[0].value=='❤️'&QS()[1].value=='❤️'&QS()[2].value=='🥺'&QS()[3].value=='❤️') {
+				OkLvl();
+			};
+			break;
+		case 28:
+			if(QS()[0].value=='❤️'&QS()[1].value=='🥺'&QS()[2].value=='❤️'&QS()[3].value=='🥺'&QS()[4].value=='❤️') {
+				OkLvl();
+			};
+			break;
+		case 29:
+			if(QS()[0].value=='🥺'&QS()[1].value=='❤️'&QS()[2].value=='❤️'&QS()[3].value=='❤️') {
+				OkLvl();
+			};
+			break;
+		case 30:
+			if(QS()[0].value=='❤️❤️') {
+				OkLvl();
+			};
+			break;
+		case 31:
+			if(QS()[0].value=='❤️❤️'&QS()[1].value=='🥺🥺'&QS()[2].value=='❤️❤️') {
+				OkLvl();
+			};
+			break;
+		case 32:
+			if(QS()[0].value=='❤️🥺'&QS()[1].value=='🥺  🥺'&QS()[2].value=='❤️🥺'&QS()[3].value=='🥺❤️') {
+				OkLvl();
+			};
+			break;
+		case 33:
+			if(QS()[0].value=='❤️❤️'&QS()[1].value=='❤️❤️'&QS()[2].value=='❤️❤️'&QS()[3].value=='❤️❤️') {
+				OkLvl();
+			};
+			break;
+		case 34:
+			if(QS()[0].value=='❤️'&QS()[1].value=='🥺🥺'&QS()[2].value=='❤️'&QS()[3].value=='❤️'&QS()[4].value=='❤️❤️') {
+				OkLvl();
+			};
+			break;
+		case 35:
+			if(QS()[0].value=='❤️❤️'&QS()[1].value=='❤️❤️'&QS()[2].value=='❤️❤️'&QS()[3].value=='🥺🥺'&QS()[4].value=='❤️❤️'&QS()[5].value=='❤️❤️'&QS()[6].value=='🥺🥺'&QS()[7].value=='❤️❤️') {
+				OkLvl();
+			};
+			break;
+		case 36:
+			if(QS()[0].value=='🥺❤️'&QS()[1].value=='🥺🥺'&QS()[2].value=='❤️❤️'&QS()[3].value=='❤️🥺'&QS()[4].value=='❤️❤️'&QS()[5].value=='🥺🥺'&QS()[6].value=='🥺🥺'&QS()[7].value=='❤️❤️'&QS()[8].value=='🥺❤️'&QS()[9].value=='❤️❤️'&QS()[10].value=='🥺🥺'&QS()[11].value=='❤️🥺') {
+				OkLvl();
+			};
+			break;
+		case 37:
+			if(QS()[0].value=='❤️❤️'&QS()[1].value=='❤️'&QS()[2].value=='❤️'&QS()[3].value=='🥺❤️'&QS()[4].value=='❤️  🥺'&QS()[5].value=='❤️❤️'&QS()[6].value=='🥺') {
+				OkLvl();
+			};
+			break;
+		case 38:
+			if(QS()[0].value=='🥺🥺'&QS()[1].value=='❤️🥺'&QS()[2].value=='🥺🥺'&QS()[3].value=='❤️  🥺'&QS()[4].value=='🥺🥺'&QS()[5].value=='🥺🥺'&QS()[6].value=='🥺❤️'&QS()[7].value=='❤️  ❤️'&QS()[8].value=='🥺❤️'&QS()[9].value=='❤️❤️') {
+				OkLvl();
+			};
+			break;
+		case 39:
+			if(QS()[0].value=='❤️❤️  ❤️❤️'&QS()[1].value=='❤️🥺  🥺🥺'&QS()[2].value=='🥺🥺  🥺🥺') {
+				OkLvl();
+			};
+			break;
+		case 40:
+			if(QS()[0].value=='❤️❤️  🥺🥺'&QS()[1].value=='🥺🥺  🥺❤️'&QS()[2].value=='🥺❤️  🥺🥺') {
+				OkLvl();
+			};
+			break;
+		case 41:
+			if(QS()[0].value=='❤️🥺  🥺🥺'&QS()[1].value=='🥺🥺'&QS()[2].value=='🥺🥺') {
+				OkLvl();
+			};
+			break;
+		case 42:
+			if(QS()[0].value=='❤️❤️'&QS()[1].value=='❤️❤️'&QS()[2].value=='❤️❤️'&QS()[3].value=='❤️🥺'&QS()[4].value=='❤️🥺'&QS()[5].value=='🥺❤️') {
+				OkLvl();
+			};
+			break;
+		/*..*/ case 43:
+			break;
+		//~ case 43:
+			//~ if(QS()[0].value=='❤️🥺'&QS()[1].value=='❤️🥺'&QS()[2].value=='❤️🥺'&QS()[3].value=='❤️🥺'&QS()[4].value=='❤️🥺'&QS()[5].value=='❤️🥺'&QS()[6].value=='❤️🥺'&QS()[7].value=='❤️🥺'&QS()[8].value=='❤️🥺'&QS()[9].value=='❤️🥺'&QS()[10].value=='❤️🥺'&QS()[11].value=='❤️🥺') {
+				//~ OkLvl();
+			//~ };
+			//~ break;
+		//~ case 44:
+			//~ if(QS()[0].value=='❤️🥺'&QS()[1].value=='❤️🥺'&QS()[2].value=='❤️🥺'&QS()[3].value=='❤️🥺'&QS()[4].value=='❤️🥺'&QS()[5].value=='❤️🥺'&QS()[6].value=='❤️🥺'&QS()[7].value=='❤️🥺'&QS()[8].value=='❤️🥺'&QS()[9].value=='❤️🥺'&QS()[10].value=='❤️🥺'&QS()[11].value=='❤️🥺') {
+				//~ OkLvl();
+			//~ };
+			//~ break;
+		//~ case 45:
+			//~ if(QS()[0].value=='❤️🥺'&QS()[1].value=='❤️🥺'&QS()[2].value=='❤️🥺'&QS()[3].value=='❤️🥺'&QS()[4].value=='❤️🥺'&QS()[5].value=='❤️🥺'&QS()[6].value=='❤️🥺'&QS()[7].value=='❤️🥺'&QS()[8].value=='❤️🥺'&QS()[9].value=='❤️🥺'&QS()[10].value=='❤️🥺'&QS()[11].value=='❤️🥺') {
+				//~ OkLvl();
+			//~ };
+			//~ break;
+		//~ case 46:
+			//~ if(QS()[0].value=='❤️🥺'&QS()[1].value=='❤️🥺'&QS()[2].value=='❤️🥺'&QS()[3].value=='❤️🥺'&QS()[4].value=='❤️🥺'&QS()[5].value=='❤️🥺'&QS()[6].value=='❤️🥺'&QS()[7].value=='❤️🥺'&QS()[8].value=='❤️🥺'&QS()[9].value=='❤️🥺'&QS()[10].value=='❤️🥺'&QS()[11].value=='❤️🥺') {
+				//~ OkLvl();
+			//~ };
+			//~ break;
+		//~ case 47:
+			//~ if(QS()[0].value=='❤️🥺'&QS()[1].value=='❤️🥺'&QS()[2].value=='❤️🥺'&QS()[3].value=='❤️🥺'&QS()[4].value=='❤️🥺'&QS()[5].value=='❤️🥺'&QS()[6].value=='❤️🥺'&QS()[7].value=='❤️🥺'&QS()[8].value=='❤️🥺'&QS()[9].value=='❤️🥺'&QS()[10].value=='❤️🥺'&QS()[11].value=='❤️🥺') {
+				//~ OkLvl();
+			//~ };
+			//~ break;
+		//~ case 48:
+			//~ if(QS()[0].value=='❤️🥺'&QS()[1].value=='❤️🥺'&QS()[2].value=='❤️🥺'&QS()[3].value=='❤️🥺'&QS()[4].value=='❤️🥺'&QS()[5].value=='❤️🥺'&QS()[6].value=='❤️🥺'&QS()[7].value=='❤️🥺'&QS()[8].value=='❤️🥺'&QS()[9].value=='❤️🥺'&QS()[10].value=='❤️🥺'&QS()[11].value=='❤️🥺') {
+				//~ OkLvl();
+			//~ };
+			//~ break;
+		//~ case 49:
+			//~ if(QS()[0].value=='❤️🥺'&QS()[1].value=='❤️🥺'&QS()[2].value=='❤️🥺'&QS()[3].value=='❤️🥺'&QS()[4].value=='❤️🥺'&QS()[5].value=='❤️🥺'&QS()[6].value=='❤️🥺'&QS()[7].value=='❤️🥺'&QS()[8].value=='❤️🥺'&QS()[9].value=='❤️🥺'&QS()[10].value=='❤️🥺'&QS()[11].value=='❤️🥺') {
+				//~ OkLvl();
+			//~ };
+			//~ break;
+		//~ case 50:
+			//~ if(QS()[0].value=='❤️🥺'&QS()[1].value=='❤️🥺'&QS()[2].value=='❤️🥺'&QS()[3].value=='❤️🥺'&QS()[4].value=='❤️🥺'&QS()[5].value=='❤️🥺'&QS()[6].value=='❤️🥺'&QS()[7].value=='❤️🥺'&QS()[8].value=='❤️🥺'&QS()[9].value=='❤️🥺'&QS()[10].value=='❤️🥺'&QS()[11].value=='❤️🥺') {
+				//~ OkLvl();
+			//~ };
+			//~ break;
+		//~ case 51:
+			//~ if(QS()[0].value=='❤️🥺'&QS()[1].value=='❤️🥺'&QS()[2].value=='❤️🥺'&QS()[3].value=='❤️🥺'&QS()[4].value=='❤️🥺'&QS()[5].value=='❤️🥺'&QS()[6].value=='❤️🥺'&QS()[7].value=='❤️🥺'&QS()[8].value=='❤️🥺'&QS()[9].value=='❤️🥺'&QS()[10].value=='❤️🥺'&QS()[11].value=='❤️🥺') {
+				//~ OkLvl();
+			//~ };
+			//~ break;
+		//~ case 52:
+			//~ if(QS()[0].value=='❤️🥺'&QS()[1].value=='❤️🥺'&QS()[2].value=='❤️🥺'&QS()[3].value=='❤️🥺'&QS()[4].value=='❤️🥺'&QS()[5].value=='❤️🥺'&QS()[6].value=='❤️🥺'&QS()[7].value=='❤️🥺'&QS()[8].value=='❤️🥺'&QS()[9].value=='❤️🥺'&QS()[10].value=='❤️🥺'&QS()[11].value=='❤️🥺') {
+				//~ OkLvl();
+			//~ };
+			//~ break;
+		//~ case 53:
+			//~ if(QS()[0].value=='❤️🥺'&QS()[1].value=='❤️🥺'&QS()[2].value=='❤️🥺'&QS()[3].value=='❤️🥺'&QS()[4].value=='❤️🥺'&QS()[5].value=='❤️🥺'&QS()[6].value=='❤️🥺'&QS()[7].value=='❤️🥺'&QS()[8].value=='❤️🥺'&QS()[9].value=='❤️🥺'&QS()[10].value=='❤️🥺'&QS()[11].value=='❤️🥺') {
+				//~ OkLvl();
+			//~ };
+			//~ break;
+		//~ case 54:
+			//~ if(QS()[0].value=='❤️🥺'&QS()[1].value=='❤️🥺'&QS()[2].value=='❤️🥺'&QS()[3].value=='❤️🥺'&QS()[4].value=='❤️🥺'&QS()[5].value=='❤️🥺'&QS()[6].value=='❤️🥺'&QS()[7].value=='❤️🥺'&QS()[8].value=='❤️🥺'&QS()[9].value=='❤️🥺'&QS()[10].value=='❤️🥺'&QS()[11].value=='❤️🥺') {
+				//~ OkLvl();
+			//~ };
+			//~ break;
+		//~ case 55:
+			//~ if(QS()[0].value=='❤️🥺'&QS()[1].value=='❤️🥺'&QS()[2].value=='❤️🥺'&QS()[3].value=='❤️🥺'&QS()[4].value=='❤️🥺'&QS()[5].value=='❤️🥺'&QS()[6].value=='❤️🥺'&QS()[7].value=='❤️🥺'&QS()[8].value=='❤️🥺'&QS()[9].value=='❤️🥺'&QS()[10].value=='❤️🥺'&QS()[11].value=='❤️🥺') {
+				//~ OkLvl();
+			//~ };
+			//~ break;
+		//~ case 56:
+			//~ if(QS()[0].value=='❤️🥺'&QS()[1].value=='❤️🥺'&QS()[2].value=='❤️🥺'&QS()[3].value=='❤️🥺'&QS()[4].value=='❤️🥺'&QS()[5].value=='❤️🥺'&QS()[6].value=='❤️🥺'&QS()[7].value=='❤️🥺'&QS()[8].value=='❤️🥺'&QS()[9].value=='❤️🥺'&QS()[10].value=='❤️🥺'&QS()[11].value=='❤️🥺') {
+				//~ OkLvl();
+			//~ };
+			//~ break;
+		//~ case 57:
+			//~ if(QS()[0].value=='❤️🥺'&QS()[1].value=='❤️🥺'&QS()[2].value=='❤️🥺'&QS()[3].value=='❤️🥺'&QS()[4].value=='❤️🥺'&QS()[5].value=='❤️🥺'&QS()[6].value=='❤️🥺'&QS()[7].value=='❤️🥺'&QS()[8].value=='❤️🥺'&QS()[9].value=='❤️🥺'&QS()[10].value=='❤️🥺'&QS()[11].value=='❤️🥺') {
+				//~ OkLvl();
+			//~ };
+			//~ break;
+		//~ case 58:
+			//~ if(QS()[0].value=='❤️🥺'&QS()[1].value=='❤️🥺'&QS()[2].value=='❤️🥺'&QS()[3].value=='❤️🥺'&QS()[4].value=='❤️🥺'&QS()[5].value=='❤️🥺'&QS()[6].value=='❤️🥺'&QS()[7].value=='❤️🥺'&QS()[8].value=='❤️🥺'&QS()[9].value=='❤️🥺'&QS()[10].value=='❤️🥺'&QS()[11].value=='❤️🥺') {
+				//~ OkLvl();
+			//~ };
+			//~ break;
+		//~ case 59:
+			//~ if(QS()[0].value=='❤️🥺'&QS()[1].value=='❤️🥺'&QS()[2].value=='❤️🥺'&QS()[3].value=='❤️🥺'&QS()[4].value=='❤️🥺'&QS()[5].value=='❤️🥺'&QS()[6].value=='❤️🥺'&QS()[7].value=='❤️🥺'&QS()[8].value=='❤️🥺'&QS()[9].value=='❤️🥺'&QS()[10].value=='❤️🥺'&QS()[11].value=='❤️🥺') {
+				//~ OkLvl();
+			//~ };
+			//~ break;
+		//~ case 60:
+			//~ if(QS()[0].value=='❤️🥺'&QS()[1].value=='❤️🥺'&QS()[2].value=='❤️🥺'&QS()[3].value=='❤️🥺'&QS()[4].value=='❤️🥺'&QS()[5].value=='❤️🥺'&QS()[6].value=='❤️🥺'&QS()[7].value=='❤️🥺'&QS()[8].value=='❤️🥺'&QS()[9].value=='❤️🥺'&QS()[10].value=='❤️🥺'&QS()[11].value=='❤️🥺') {
+				//~ OkLvl();
+			//~ };
+			//~ break;
+		//~ case 61:
+			//~ if(QS()[0].value=='❤️🥺'&QS()[1].value=='❤️🥺'&QS()[2].value=='❤️🥺'&QS()[3].value=='❤️🥺'&QS()[4].value=='❤️🥺'&QS()[5].value=='❤️🥺'&QS()[6].value=='❤️🥺'&QS()[7].value=='❤️🥺'&QS()[8].value=='❤️🥺'&QS()[9].value=='❤️🥺'&QS()[10].value=='❤️🥺'&QS()[11].value=='❤️🥺') {
+				//~ OkLvl();
+			//~ };
+			//~ break;
+		//~ case 62:
+			//~ if(QS()[0].value=='❤️🥺'&QS()[1].value=='❤️🥺'&QS()[2].value=='❤️🥺'&QS()[3].value=='❤️🥺'&QS()[4].value=='❤️🥺'&QS()[5].value=='❤️🥺'&QS()[6].value=='❤️🥺'&QS()[7].value=='❤️🥺'&QS()[8].value=='❤️🥺'&QS()[9].value=='❤️🥺'&QS()[10].value=='❤️🥺'&QS()[11].value=='❤️🥺') {
+				//~ OkLvl();
+			//~ };
+			//~ break;
+		//~ case 63:
+			//~ if(QS()[0].value=='❤️🥺'&QS()[1].value=='❤️🥺'&QS()[2].value=='❤️🥺'&QS()[3].value=='❤️🥺'&QS()[4].value=='❤️🥺'&QS()[5].value=='❤️🥺'&QS()[6].value=='❤️🥺'&QS()[7].value=='❤️🥺'&QS()[8].value=='❤️🥺'&QS()[9].value=='❤️🥺'&QS()[10].value=='❤️🥺'&QS()[11].value=='❤️🥺') {
+				//~ OkLvl();
+			//~ };
+			//~ break;
+		//~ case 64:
+			//~ if(QS()[0].value=='❤️🥺'&QS()[1].value=='❤️🥺'&QS()[2].value=='❤️🥺'&QS()[3].value=='❤️🥺'&QS()[4].value=='❤️🥺'&QS()[5].value=='❤️🥺'&QS()[6].value=='❤️🥺'&QS()[7].value=='❤️🥺'&QS()[8].value=='❤️🥺'&QS()[9].value=='❤️🥺'&QS()[10].value=='❤️🥺'&QS()[11].value=='❤️🥺') {
+				//~ OkLvl();
+			//~ };
+			//~ break;
+		//~ case 65:
+			//~ if(QS()[0].value=='❤️🥺'&QS()[1].value=='❤️🥺'&QS()[2].value=='❤️🥺'&QS()[3].value=='❤️🥺'&QS()[4].value=='❤️🥺'&QS()[5].value=='❤️🥺'&QS()[6].value=='❤️🥺'&QS()[7].value=='❤️🥺'&QS()[8].value=='❤️🥺'&QS()[9].value=='❤️🥺'&QS()[10].value=='❤️🥺'&QS()[11].value=='❤️🥺') {
+				//~ OkLvl();
+			//~ };
+			//~ break;
+		default:
+			LoadLvl();
+	};
+};
+
+function OkLvl() {
+	_Lvl_ve += 1;
+	LoadLvl();
+};
+
+function LoadLvl() {
+	Q().innerHTML = J.Lvl[_Lvl_ve][0];
+};
+
+function Hint() {
+	alert(J.Lvl[_Lvl_ve][1]);
+};
+
+function ToLvl(_ToLvl_L_ve) {
+	_Lvl_ve = _ToLvl_L_ve;
+	LoadLvl();
+	return 'Level se to '+_Lvl_ve+' ;)!';
+};
+
+</script>
+</head>
+<body class="NSelect">
+
+<div class="clear area" id="area" name="area">
+	<div class="center" id="Quiz"></div>
+</div>
+
+</body>
+</html>
