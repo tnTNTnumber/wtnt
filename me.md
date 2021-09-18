@@ -1,0 +1,39 @@
+Ciao,
+
+17 anni (15 gennaio 2004)
+Liceo scientifico IIS Mari Curie Sraffa
+Milano Z7 San Siro
+Insta: @leo.anga (instagram.com/leo.anga) @tntnt_number (instagram.com/tntnt_number)
+"Sito": www.wtnt.tk
+
+Mi piace andare in bici, suonare e imparare, sono curioso ed ho voglia di fare.
+
+🎶Musica🎶
+Ho fatto 5 anni di percussioni, ovvero tutte le percussioni dai rullanti alla batteria, dal vibrafono ad i timpani ...
+Ho imparato a suonare il pianoforte da solo, a casa ho un pianoforte a muro.
+Ultimamente mi è capitato di provare la chitarra, l'armonica e la fisarmonica.
+Mi piacerebbe anche suonare assieme a qualcun altro.
+
+⚙️Logica⚙️
+Mi piace molto pensare in modo razionale, ho fatto alcune gare di matematica con la scuola.
+Mi piace scoprire come funziona la realtà, osservo e mi pongo domande, ma non basta porsi domande, infatti io cerco anche di dare risposte.
+Logica è metà dell'essenza umana, l'altra è emozione, unendo le due si può arrivare alla meraviglia della filosofia. Non ho grandi conoscenze in storia della filosofia ma fin da quando ero piccolo mi sono appassionato a risolvere problemi filosofici, il primo è stato "che senso ha a vita".
+
+🎚️Programmazione🎚️
+Ormai è qualche anno che programmo, ho scritto qualche codice in C++, meglio in Python ma soprattutto programmo in HTML JavaScript e CSS.
+Ho abbastanza esperienza in HTML, anche se rispetto a chi lo pratica come professione ne so molto meno. Nonostante mi piace tantissimo programmare e negli anni ho scritto centinaia di codici.
+Attualmente (2021) ho un sito nel quale ci carico alcuni dei miei codici www.wtnt.tk.
+
+📓Scuola📓
+Attualmente (Settembre 2021) frequento il quarto anno di liceo scientifico applicato al IIS Marie Curie Sraffa.
+Ho dei buoni voti ma non la sopporto comunque la scuola, io mi appassiono da me ad imparare e trovo che la scuola, a causa dei continui compiti e verifiche, sia un ostacolo per chi sia veramente appassionato e curioso, come me.
+In questi ultimi 2 anni vorrei provare a fare dei piccoli gruppi studio (2 o 3 persone) perché non ne ho mai avuto l'occasione.
+
+🎲Hobby🎲
+Se dovessi scrivere, e lo scrivo, un elenco di hobby:
+⚽ Ciclismo, Arrampicata, Passeggiate in alta montagna, Allenamento a corpo libero ...
+🎼 Ascoltare musica e suonare Percussioni, Batteria, Pianoforte, Armonica, e mi va bene qualsiasi strumento musicale ...
+👥 Chiaccherare (ma di buoni argomenti) ma anche Giocare a videogiochi creativi.
+🗒️ Disegnare, a volte Scrivere, Costruire qualsiasi cosa, Programmare ...
+💡 Filosofia, Imparare, Pensare, Inventare ...
+❤️ Ed ovviamente mi piace anche stare con le Ragazze
