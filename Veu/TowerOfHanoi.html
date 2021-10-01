@@ -93,6 +93,10 @@ br {
 	margin-top: 20px;
 }
 
+#iTimeBar {
+	width: 4em;
+}
+
 </style>
 <script>
 
@@ -105,6 +109,7 @@ var Elem = null;
 var StickPut = null;
 var A = ''; /*Sequenzes of Moves*/
 var Interval;
+var Timei = [0,31,31]; /*info of Time*/ /*Passed, Left, Total*/
 
 function Submit() {
 	n = document.getElementById('NumberOfLayers').value;
@@ -121,28 +126,40 @@ function SetGame() {
 		document.getElementsByClassName('Stick')[0].innerHTML += '<div class="Layer" id="LayerWidth'+(i0+1)+'" style="height:'+100/n+'%;width:'+(i0+1)*100/n+'%;margin:0% '+(n-i0-1)*50/n+'%;"></div>';
 	};
 	ResetMoves();
-	document.getElementById('iMoves').innerHTML = Math.pow(2,n)-1;
-	CalcTime: {
-		let Time = ''; /*The result*/
-		TimeA = [Math.pow(2,n)-1,null,null,null,null]; /*The Array that contain time values*/
-		let Times = [60,60,24,365]; /*The measure of times*/
-		let TimesUnit = ['s','m','h','d','y']; /*The unit measures of times*/
-		for(i3=0; i3<4; i3++) {
-			if(TimeA[i3]>Times[i3]) {
-				TimeA[i3+1] = ~~(TimeA[i3]/Times[i3]);
-				TimeA[i3] = TimeA[i3]%Times[i3];
-			};
+	let TotMoves = Math.pow(2,n)-1;
+	document.getElementById('iMoves').innerHTML = TotMoves;
+	let LeftTime = CalcTime(TotMoves);
+	Timei[0] = 0;
+	Timei[1] = Timei[2] = TotMoves;
+	document.getElementById('iTime').innerHTML = LeftTime;
+	document.getElementById('iTime0').innerHTML = '0s';
+	document.getElementById('iTimeBar').value = Timei[0];
+	document.getElementById('iTimeBar').max = Timei[2];
+	document.getElementById('iTimeBar').innerHTML = '0%';
+	document.getElementById('iTime1').innerHTML = LeftTime;
+	document.getElementById('iTime%').innerHTML = '(0%)';
+};
+
+function CalcTime(t) { /*time in seconds*/
+	let Time = ''; /*The result*/
+	TimeA = [t,null,null,null,null]; /*The Array that contain time values*/
+	let Times = [60,60,24,365]; /*The measure of times*/
+	let TimesUnit = ['s','m','h','d','y']; /*The unit measures of times*/
+	for(i3=0; i3<4; i3++) {
+		if(TimeA[i3]>Times[i3]) {
+			TimeA[i3+1] = ~~(TimeA[i3]/Times[i3]);
+			TimeA[i3] = TimeA[i3]%Times[i3];
 		};
-		for(i4=4; i4>-1; i4--) {
-			if(TimeA[i4]) {
-				Time += ' '+TimeA[i4]+TimesUnit[i4];
-			};
-		};
-		if(Time=='') {
-			Time = '0s';
-		};
-		document.getElementById('iTime').innerHTML = Time;
 	};
+	for(i4=4; i4>-1; i4--) {
+		if(TimeA[i4]) {
+			Time += ' '+TimeA[i4]+TimesUnit[i4];
+		};
+	};
+	if(Time=='') {
+		Time = '0s';
+	};
+	return Time;
 };
 
 function TakePut(s) { /*number of Stick*/
@@ -188,54 +205,88 @@ function ResetMoves() {
 };
 
 function DemoStart() {
-	SetGame();
-	A = '1';
-	for(i1=1; i1<n; i1++) {
-		let temp = A;
-		A += i1+1;
-		A += temp;
-	};
-	i2 = 0;
-	Interval = setInterval(function(Arr) {
-		if(i2<Arr.length) {
-			let l = Arr[i2];
-			let Pos0 = document.getElementById('LayerWidth'+l).parentElement.id.slice(-1);
-			let Pos1 = null;
-			if(l%2==0) {
-				switch(Pos0) {
-					case '0':
-						Pos1 = 1;
-						break;
-					case '1':
-						Pos1 = 2;
-						break;
-					case '2':
-						Pos1 = 0;
-						break;
-				};
-			} else {
-				switch(Pos0) {
-					case '0':
-						Pos1 = 2;
-						break;
-					case '1':
-						Pos1 = 0;
-						break;
-					case '2':
-						Pos1 = 1;
-						break;
-				};
-			};
-			TakePut(Pos0);
-			setTimeout(function(Pos) {
-				TakePut(Pos);
-			}, 800, Pos1);
-			console.log(l+': ('+Pos0+'; '+Pos1+') '+i2);
-			i2 += 1;
-		} else {
-			clearInterval(Interval);
+	DmStrt: {
+		SetGame();
+		if(n==0) {
+			A = [];
+			document.getElementById('iTimeBar').value = 1;
+			document.getElementById('iTimeBar').innerHTML = '100%';
+			document.getElementById('iTime%').innerHTML = '(100%)';
+			break DmStrt;
 		};
-	}, 1000, A);
+		A = [1];
+		for(i1=1; i1<n; i1++) {
+			A = A.concat(i1+1).concat(A);
+		};
+		i2 = 0;
+		Interval = setInterval(function(Arr) {
+			if(i2<Arr.length) {
+				let l = Arr[i2];
+				let Pos0 = document.getElementById('LayerWidth'+l).parentElement.id.slice(-1);
+				let Pos1 = null;
+				if(l%2==0) {
+					switch(Pos0) {
+						case '0':
+							Pos1 = 1;
+							break;
+						case '1':
+							Pos1 = 2;
+							break;
+						case '2':
+							Pos1 = 0;
+							break;
+					};
+				} else {
+					switch(Pos0) {
+						case '0':
+							Pos1 = 2;
+							break;
+						case '1':
+							Pos1 = 0;
+							break;
+						case '2':
+							Pos1 = 1;
+							break;
+					};
+				};
+				TakePut(Pos0);
+				setTimeout(function(Pos) {
+					TakePut(Pos);
+					Timei[0] += 1;
+					Timei[1] -= 1;
+					let Percent = null;
+					if(Timei[2]<10) {
+						Percent = (Timei[0]/Timei[2]).toFixed(String(Timei[2]).length)*100+'%';
+					} else {
+						Percent = (Timei[0]/Timei[2]*100).toFixed(String(Timei[2]).length-2)+'%';
+					};
+					document.getElementById('iTime0').innerHTML = CalcTime(Timei[0]);
+					document.getElementById('iTimeBar').value = Timei[0];
+					document.getElementById('iTimeBar').max = Timei[2];
+					document.getElementById('iTimeBar').innerHTML = '≈'+Percent;
+					document.getElementById('iTime1').innerHTML = CalcTime(Timei[1]);
+					document.getElementById('iTime%').innerHTML = '(≈'+Percent+')';
+				}, 800, Pos1);
+				console.log(l+': ('+Pos0+'; '+Pos1+') '+i2);
+				i2 += 1;
+			} else {
+				clearInterval(Interval);
+			};
+		}, 1000, A);
+	};
+};
+
+function multiply(multiply_a, multiply_b) {
+	console.log(multiply_a+', '+multiply_b);
+	let multiply_c = multiply_a;
+	for(i5=0; i5<multiply_b-1; i5++) {
+		multiply_c += multiply_a;
+	};
+	return multiply_c;
+};
+
+function multiply_v2(multiply_a, multiply_b) {
+	return multiply_a/(1/multiply_b);
 };
 
 window.onload = function() {
@@ -247,7 +298,7 @@ window.onload = function() {
 <body>
 
 <div class="Center" id="Game">
-	<input id="NumberOfLayers" type="number" min="0" step="1" pattern="\d+" />
+	<input id="NumberOfLayers" type="number" min="0" step="1" pattern="\d+" value="5" />
 	<br />
 	<button id="Submit" onclick="Submit();">Ok</button>
 	<div id="Towers">
@@ -262,11 +313,24 @@ window.onload = function() {
 	<table id="TableValues">
 		<tr>
 			<td>Minimun moves:</td>
+			<td></td>
 			<td id="iMoves">31</td>
+			<td></td>
+			<td></td>
 		</tr>
 		<tr>
 			<td>Left time:<br />(Demo)</td>
+			<td></td>
 			<td id="iTime">31s</td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>Time info:</td>
+			<td id="iTime0">0s</td>
+			<td><progress id="iTimeBar" value="0" max="31">0%</progress></td>
+			<td id="iTime1">31s</td>
+			<td id="iTime%">(0%)</td>
 		</tr>
 	</table>
 </div>
