@@ -1,0 +1,225 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>τnTNT_☢️</title>
+	<meta charset="UTF-8">
+	<link rel="preconnect" href="https://fonts.gstatic.com"><link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&amp;display=swap" rel="stylesheet"><style>.sim {font-family: 'Ubuntu Mono', monospace;}</style>
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@1,700&display=swap');
+
+:root {
+	--Side: 20vh;
+	--ColorOfLayers: rgba(122,188,55,0.7);
+}
+
+* {
+	transition-duration: 800ms;
+}
+
+body {
+	background: rgba(33,33,33,0.8);
+	font-family: 'Lucida Console', monospace;
+	font-family: 'Ubuntu Mono', monospace;
+}
+
+input {
+	background: rgba(222,222,222,0.7);
+	border: 2px double rgba(00,00,00,0.08);
+}
+
+.Center {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+}
+
+.Stick {
+	background: rgba(88,88,88,0.4);
+	border: 2px double rgba(00,00,00,0.08);
+	width: var(--Side);
+	height: var(--Side);
+	max-width: 30vw;
+	max-height: 30vw;
+	text-align: center;
+	/*display: -moz-box;
+	display: -webkit-box;
+	display: box;
+	-webkit-box-align: end;*/
+}
+
+.Layer {
+	background: var(--ColorOfLayers);
+	/*-moz-box-flex: 1.0;
+	-webkit-box-flex: 1.0;
+	box-flex: 1.0;*/
+}
+
+#Game {
+	text-align: center;
+}
+
+#NumberOfLayers, #Submit {
+	width: var(--Side);
+	max-width: 90vw;
+}
+
+#Towers {
+	display: flex;
+}
+
+#Moves {
+	background: rgba(88,88,88,0.05);
+	border: 2px double rgba(00,00,00,0.08);
+}
+
+#DemoBtn {
+	background: rgba(88,88,88,0.4);
+	border: 2px double rgba(00,00,00,0.08);
+}
+
+</style>
+<script>
+
+var n = 5; /*N of Layers*/
+var Moves = 0;
+var Take = true; /*For TakePut func*/
+var TakeStick = 0; /*For TakePut func*/
+var PutStick = 0; /*For TakePut func*/
+var Elem = null;
+var StickPut = null;
+var Stick = [
+	[],
+	[],
+	[],
+];
+
+function Submit() {
+	n = document.getElementById('NumberOfLayers').value;
+	SetGame();
+};
+
+function SetGame() {
+	document.getElementsByClassName('Stick')[0].innerHTML = '';
+	document.getElementsByClassName('Stick')[1].innerHTML = '';
+	document.getElementsByClassName('Stick')[2].innerHTML = '';
+	for(i0=0; i0<n; i0++) {
+		document.getElementsByClassName('Stick')[0].innerHTML += '<div class="Layer" id="LayerWidth'+(i0+1)+'" style="height:'+100/n+'%;width:'+(i0+1)*100/n+'%;margin:0% '+(n-i0-1)*50/n+'%;"></div>';
+	};
+};
+
+function TakePut(s) { /*number of Stick*/
+	if(Take) {
+		TakeStick = s;
+		Elem = document.getElementsByClassName('Stick')[TakeStick].firstChild;
+		Elem.style.background = 'blue';
+		Take = false;
+	} else {
+		PutStick = s;
+		StickPut = document.getElementsByClassName('Stick')[PutStick];
+		if(StickPut.childElementCount==0) {
+			TakePutOk();
+		} else if(StickPut.firstChild.style.width>=Elem.style.width) {
+			TakePutOk();
+		};
+	};
+};
+function TakePutOk() {
+	Elem.style.background = 'var(--ColorOfLayers)';
+	if(TakeStick!=PutStick) {
+		let fragment = document.createDocumentFragment();
+		fragment.appendChild(Elem);
+		StickPut.insertBefore(fragment, StickPut.childNodes[0]);
+		document.getElementById('Moves').innerHTML = '0';
+		Moves += 1;
+		DisplayMoves();
+	};
+	Take = true;
+};
+
+function DisplayMoves() {
+	document.getElementById('Moves').innerHTML = Moves;
+};
+
+function ResetMoves() {
+	Moves = 0;
+	DisplayMoves();
+};
+
+function DemoStart() {
+	SetGame();
+	let A = [];
+	for(i1=0; i1<n; i1++) {
+		let temp = A;
+		A.push(i1+1);
+		A.push(temp);
+	};
+	let i2 = 0;
+	Interval = setInterval(function(Arr) {
+		if(i2<Arr.length) {
+			let l = Arr[i2];
+			let Pos0 = document.getElementById('LayerWidth'+l).parentElement.id.slice(-1);
+			let Pos1 = null;
+			if(l%2==0) {
+				switch(Pos0) {
+					case 0:
+						Pos1 = 1;
+						break;
+					case 1:
+						Pos1 = 2;
+						break;
+					case 2:
+						Pos1 = 0;
+						break;
+				};
+			} else {
+				switch(Pos0) {
+					case 0:
+						Pos1 = 2;
+						break;
+					case 1:
+						Pos1 = 0;
+						break;
+					case 2:
+						Pos1 = 1;
+						break;
+				};
+			};
+			TakePut(Pos0);
+			setTimeout(function(Pos) {
+				TakePut(Pos);
+			}, 800, Pos1);
+			i2 += 1
+		} else {
+			clearInterval(Interval);
+		};
+	}, 1000, A);
+};
+
+window.onload = function() {
+	SetGame();
+};
+
+</script>
+</head>
+<body>
+
+<div class="Center" id="Game">
+	<input id="NumberOfLayers" type="number" min="0" step="1" pattern="\d+" />
+	<br />
+	<button id="Submit" onclick="Submit();">Ok</button>
+	<br />
+	<div id="Towers">
+		<div class="Stick" id="Stick_0" onclick="TakePut(0);"></div>
+		<div class="Stick" id="Stick_1" onclick="TakePut(1);"></div>
+		<div class="Stick" id="Stick_2" onclick="TakePut(2);"></div>
+	</div>
+	<br />
+	<button id="Moves" onclick="ResetMoves();">0</button>
+	<br />
+	<button id="DemoBtn" onclick="DemoStart();">Start Demo of Perfect Solution</button>
+</div>
+
+</body>
+</html>
