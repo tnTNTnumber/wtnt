@@ -28,6 +28,10 @@ input {
 	border: 2px double rgba(00,00,00,0.08);
 }
 
+br {
+	height: 0;
+}
+
 .Center {
 	position: absolute;
 	left: 50%;
@@ -67,6 +71,7 @@ input {
 
 #Towers {
 	display: flex;
+	margin: 20px;
 }
 
 #Moves {
@@ -77,6 +82,11 @@ input {
 #DemoBtn {
 	background: rgba(88,88,88,0.4);
 	border: 2px double rgba(00,00,00,0.08);
+}
+
+#TableValues {
+	display: inline-block;
+	margin-top: 20px;
 }
 
 </style>
@@ -90,6 +100,7 @@ var PutStick = 0; /*For TakePut func*/
 var Elem = null;
 var StickPut = null;
 var A = ''; /*Sequenzes of Moves*/
+var Interval;
 
 function Submit() {
 	n = document.getElementById('NumberOfLayers').value;
@@ -97,11 +108,36 @@ function Submit() {
 };
 
 function SetGame() {
+	clearInterval(Interval);
+	Take = true;
 	document.getElementsByClassName('Stick')[0].innerHTML = '';
 	document.getElementsByClassName('Stick')[1].innerHTML = '';
 	document.getElementsByClassName('Stick')[2].innerHTML = '';
 	for(i0=0; i0<n; i0++) {
 		document.getElementsByClassName('Stick')[0].innerHTML += '<div class="Layer" id="LayerWidth'+(i0+1)+'" style="height:'+100/n+'%;width:'+(i0+1)*100/n+'%;margin:0% '+(n-i0-1)*50/n+'%;"></div>';
+	};
+	ResetMoves();
+	document.getElementById('iMoves').innerHTML = Math.pow(2,n)-1;
+	CalcTime: {
+		let Time = ''; /*The result*/
+		TimeA = [Math.pow(2,n)-1,null,null,null,null]; /*The Array that contain time values*/
+		let Times = [60,60,24,365]; /*The measure of times*/
+		let TimesUnit = ['s','m','h','d','y']; /*The unit measures of times*/
+		for(i3=0; i3<4; i3++) {
+			if(TimeA[i3]>Times[i3]) {
+				TimeA[i3+1] = ~~(TimeA[i3]/Times[i3]);
+				TimeA[i3] = TimeA[i3]%Times[i3];
+			};
+		};
+		for(i4=4; i4>-1; i4--) {
+			if(TimeA[i4]) {
+				Time += ' '+TimeA[i4]+TimesUnit[i4];
+			};
+		};
+		if(Time=='') {
+			Time = '0s';
+		};
+		document.getElementById('iTime').innerHTML = Time;
 	};
 };
 
@@ -210,16 +246,25 @@ window.onload = function() {
 	<input id="NumberOfLayers" type="number" min="0" step="1" pattern="\d+" />
 	<br />
 	<button id="Submit" onclick="Submit();">Ok</button>
-	<br />
 	<div id="Towers">
 		<div class="Stick" id="Stick_0" onclick="TakePut(0);"></div>
 		<div class="Stick" id="Stick_1" onclick="TakePut(1);"></div>
 		<div class="Stick" id="Stick_2" onclick="TakePut(2);"></div>
 	</div>
-	<br />
 	<button id="Moves" onclick="ResetMoves();">0</button>
 	<br />
 	<button id="DemoBtn" onclick="DemoStart();">Start Demo of Perfect Solution</button>
+	<br />
+	<table id="TableValues">
+		<tr>
+			<td>Minimun moves:</td>
+			<td id="iMoves">31</td>
+		</tr>
+		<tr>
+			<td>Left time:</td>
+			<td id="iTime">31s</td>
+		</tr>
+	</table>
 </div>
 
 </body>
