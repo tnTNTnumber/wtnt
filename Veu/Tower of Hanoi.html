@@ -89,11 +89,7 @@ var TakeStick = 0; /*For TakePut func*/
 var PutStick = 0; /*For TakePut func*/
 var Elem = null;
 var StickPut = null;
-var Stick = [
-	[],
-	[],
-	[],
-];
+var A = ''; /*Sequenzes of Moves*/
 
 function Submit() {
 	n = document.getElementById('NumberOfLayers').value;
@@ -149,13 +145,13 @@ function ResetMoves() {
 
 function DemoStart() {
 	SetGame();
-	let A = [];
-	for(i1=0; i1<n; i1++) {
+	A = '1';
+	for(i1=1; i1<n; i1++) {
 		let temp = A;
-		A.push(i1+1);
-		A.push(temp);
+		A += i1+1;
+		A += temp;
 	};
-	let i2 = 0;
+	i2 = 0;
 	Interval = setInterval(function(Arr) {
 		if(i2<Arr.length) {
 			let l = Arr[i2];
@@ -163,25 +159,25 @@ function DemoStart() {
 			let Pos1 = null;
 			if(l%2==0) {
 				switch(Pos0) {
-					case 0:
+					case '0':
 						Pos1 = 1;
 						break;
-					case 1:
+					case '1':
 						Pos1 = 2;
 						break;
-					case 2:
+					case '2':
 						Pos1 = 0;
 						break;
 				};
 			} else {
 				switch(Pos0) {
-					case 0:
+					case '0':
 						Pos1 = 2;
 						break;
-					case 1:
+					case '1':
 						Pos1 = 0;
 						break;
-					case 2:
+					case '2':
 						Pos1 = 1;
 						break;
 				};
@@ -190,7 +186,8 @@ function DemoStart() {
 			setTimeout(function(Pos) {
 				TakePut(Pos);
 			}, 800, Pos1);
-			i2 += 1
+			console.log(l+': ('+Pos0+'; '+Pos1+') '+i2);
+			i2 += 1;
 		} else {
 			clearInterval(Interval);
 		};
