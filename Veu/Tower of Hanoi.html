@@ -116,8 +116,12 @@ function TakePut(s) { /*number of Stick*/
 		StickPut = document.getElementsByClassName('Stick')[PutStick];
 		if(StickPut.childElementCount==0) {
 			TakePutOk();
-		} else if(StickPut.firstChild.style.width>=Elem.style.width) {
-			TakePutOk();
+		} else {
+			let Elem0Width = Number(StickPut.firstChild.style.width.slice(0,-1));
+			let Elem1Width = Number(Elem.style.width.slice(0,-1));
+			if(Elem0Width>=Elem1Width) {
+				TakePutOk();
+			};
 		};
 	};
 };
