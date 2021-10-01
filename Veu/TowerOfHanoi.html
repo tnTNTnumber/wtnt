@@ -24,8 +24,10 @@ body {
 	font-family: 'Ubuntu Mono', monospace;
 }
 
-button:hover, input:hover, progress:hover {
+button:hover, input:hover {
 	transform: scale(1.25);
+} button:active, input:active {
+	transform: scale(1.2);
 }
 
 td:hover {
@@ -41,7 +43,11 @@ br {
 	height: 0;
 }
 
-progress[value] {
+progress:hover {
+	transform: scale(1.05);
+} progress:active {
+	transform: scale(4);
+} progress[value] {
 	border: 4px double rgba(0,0,0,0.08);
 	border-width: 4px 0px;
 	border-radius: 5px;
@@ -95,6 +101,8 @@ progress[value] {
 	-webkit-box-align: end;*/
 } .Stick:hover {
 	transform: scale(1.1);
+} .Stick:active {
+	transform: scale(1.05);
 }
 
 .Layer {
