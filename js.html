@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>wtnt.tk - τnTNT_☢️</title>
+	<meta charset="UTF-8">
+	<link  href="https://fonts.googleapis.com/css?family=PT+Mono" rel="stylesheet">
+<!--
+	<link  href="https://wtnt.tk/css.css" rel="stylesheet">
+	<script src="https://wtnt.tk/js.js"></script>
+-->
+	<link  href="css.css" rel="stylesheet">
+	<script src="js.js"></script>
+<style>
+
+* {
+	transition-duration: 800ms;
+}
+
+body {
+	transition-duration: 2400ms;
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+	transition-duration: 800ms;
+} body::-webkit-scrollbar {
+    display: none;
+}
+
+.dn {
+	display: none;
+}
+
+.bmp {
+	border: none;
+	margin: 0;
+	padding: 0;
+}
+
+.ns {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.c {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+
+#textarea {
+	position: absolute;
+	height: calc( 100% - 2em );
+	width: calc( 100% - 2em );
+	top: 0px;
+	left: 0px;
+	padding: 1em;
+	font-family: 'PT Mono', monospace;
+	font-size: 1em;
+	resize: none;
+	overflow: hidden;
+	transition-duration: 1200ms;
+}
+
+#BtnDiv {
+	position: fixed;
+	top: calc( 100% - 16rem );
+	height: 0;
+	width: 0;
+	border-radius: 10%;
+	z-index: 4;
+}
+
+#Button {
+	top: 0px;
+	height: 100%;
+	width: 100%;
+	border-radius: 10%;
+	transition-duration: 1200ms;
+	z-index: 6;
+} #Button:hover {
+	transform: scale(1.2) rotate(4grad);
+} #Button:active {
+	transform: scale(1.2) rotate(360grad);
+	transition-duration: 2400ms;
+} #Button:focus {
+	outline: none;
+}
+
+#ButtonImg {
+	position: absolute;
+	width: 84%;
+	height: 84%;
+	max-width: 100%;
+	max-height: 100%;
+	object-fit: contain;
+	z-index: 8;
+}
+
+</style>
+<script>
+
+function BtnOnClick() {
+	eval(document.getElementById('textarea').value);
+};
+
+function handleError(evt) {
+	if(evt.message) {
+		alert("error: "+evt.message+" at linenumber: "+evt.lineno+" of file: "+evt.filename);
+	} else {
+		alert("error: "+evt.type+" from element: "+(evt.srcElement||evt.target));
+	};
+};
+
+window.onload = function() {
+	setTimeout(function() {
+		document.getElementById('BtnDiv').style.width = '15rem';
+		document.getElementById('BtnDiv').style.height = '15rem';
+		document.getElementById('textarea').placeholder = document.getElementById('placeholder').innerText;
+	}, 0);
+};
+
+window.addEventListener("error", handleError, true);
+
+</script>
+</head>
+<body class="bmp ns">
+
+<textarea class="bmp" id="textarea" placeholder=""></textarea>
+<pre class="dn" id="placeholder">Here is the JavaScript code ..
+
+Eg: alert( 'Hello World!' );</pre>
+<div id="BtnDiv" class="c">
+	<button id="Button" class="bmp" onclick="BtnOnClick();">
+		<img id="ButtonImg" class="c" src="https://media3.giphy.com/media/tKHaUiUMkoWX0wOeXb/giphy.gif?cid=790b761155905aee5f23949e463abe7acad74c4a152e41b6&rid=giphy.gif&ct=s"></img>
+	</button>
+</div>
+
+</body>
+</html>
