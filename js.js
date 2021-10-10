@@ -165,7 +165,7 @@ function _jHelp(_0,_12) {
 				`LRange`+_8+`·Desc : a number from 0 to 100, pre is 100. It is the lightness range, expressed as a percentage.`+_8+`·Eg   : _jChronoHSL({'Elem': 'document.body.style.backgroundColor', 'LRange': 12.5 })`,
 				`Opacity`+_8+`·Desc : a number from 0 to 1, pre is 1. It is the alpha parameter of HSLA scale, expressed as a unit measure.`+_8+`·Eg   : _jChronoHSL({'Elem': 'document.body.style.backgroundColor', 'Opacity': 30 })`,
 				`OpacityRange`+_8+`·Desc : a number from 0 to 1, pre is 0. It is the alpha parameter range of HSLA scale, expressed as a unit measure.`+_8+`·Eg   : _jChronoHSL({'Elem': 'document.body.style.backgroundColor', 'OpacityRange': 12.5 })`,
-				`NotReplace`+_8+`·Desc : "true" or "false", pre is "false". If it is "false" the content of the element "Elem" will be replaced, otherwise if it is "true" it will be added.`+_8+`·Eg   : _jChronoHSL({'Elem': 'document.body.style.backgroundColor', 'NotReplace': true })`,
+				`NotReplace`+_8+`·Desc : "true" or "false", pre is "false". If it is "false" the content of the element "Elem" will be replaced, otherwise if it is "true" it will be added.`+_8+`·Eg   : _jChronoHSL({'Elem': 'Gradient', 'NotReplace': true }) ;document.body.style.background='linear-gradient(var(--gradient))';var GradientChange='to right';Object.defineProperty(this,'Gradient',{get:function(){return GradientChange;},set:function(Value){GradientChange=Value;document.body.style.setProperty('--gradient',Gradient);}});`,
 			],
 			[
 				`({'Elem': 'document.body.style.backgroundColor' })`,
@@ -174,7 +174,7 @@ function _jHelp(_0,_12) {
 				`({'Elem': 'document.body.style.backgroundColor', 'S': 14, 'SRange': 7 })`,
 				`({'Elem': 'document.body.style.backgroundColor', 'L': 14, 'LRange': 7 })`,
 				`({'Elem': 'document.body.style.backgroundColor', 'Opacity': 0.25, 'OpacityRange': 0.5 })`,
-				`({'Elem': 'Gradient', 'NotReplace': true }) ;document.getElementById('textarea').style.background='radial-gradient(var(--gradient))';var GradientChange='circle';Object.defineProperty(this,'Gradient',{get:function(){return GradientChange;},set:function(Value){GradientChange=Value;document.getElementById('textarea').style.setProperty('--gradient',Gradient);}});`,
+				`({'Elem': 'Gradient', 'NotReplace': true }) ;document.body.style.background='radial-gradient(var(--gradient))';var GradientChange='circle';Object.defineProperty(this,'Gradient',{get:function(){return GradientChange;},set:function(Value){GradientChange=Value;document.body.style.setProperty('--gradient',Gradient);}});`,
 			],
 		],
 		[	['Help','H'],
