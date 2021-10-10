@@ -59,23 +59,67 @@ function _jArrayCommaDouble(_0,_1,_2,_3) {
 	return _4;
 }; function _JACD(_0,_1,_2,_3) { return _jArrayCommaDouble(_0,_1,_2,_3) };
 
-function _jChronoFor(_0) {
-	if(!_0) {
-		//! return `Is required a JSON with at least the element "Elem" that you want to change color. Eg: _jChronoHSL({'Elem': 'document.body.style.backgroundColor' })`;
+function _jChronoFor(_0,_1,_2,_3) {
+	let _5 = String.fromCharCode(13, 10);
+	if(typeof _0==='function') {
+		if(!_1) {
+			_1 = [0,0,1];
+		} else if(!(Array.isArray(_1))) {
+			if(isNaN(_1)) {
+				return `The second parameter must be a number.`+_5+`Eg: _jChronoFor(function() {alert('Hi!')}, 3)`+_5+`For more information type: _jHelp('ChronoFor')`;
+			};
+			_1 = [0,_1,1];
+		} else if(_1.length==0) {
+			_1 = [0,0,1];
+		} else if(_1.length==1) {
+			if(isNaN(_1[0])) {
+				return `The array of second parameter must contain a number.`+_5+`Eg: _jChronoFor(function() {alert('Hi!')}, [3])`+_5+`For more information type: _jHelp('ChronoFor')`;
+			};
+			_1 = [0,_1[0],1];
+		} else if(_1.length==2) {
+			if(isNaN(_1[0])||isNaN(_1[1])) {
+				return `The array of second parameter must contain numbers.`+_5+`Eg: _jChronoFor(function() {alert('Hi!')}, [0, 3])`+_5+`For more information type: _jHelp('ChronoFor')`;
+			};
+			_1 = [_1[0],_1[1],1];
+		} else {
+			if(isNaN(_1[0])||isNaN(_1[1])||isNaN(_1[2])) {
+				return `The array of second parameter must contain numbers.`+_5+`Eg: _jChronoFor(function() {alert('Hi!')}, [0, 3, 1])`+_5+`For more information type: _jHelp('ChronoFor')`;
+			};
+			_1 = [_1[0],_1[1],_1[2]];
+		};
+		if(!_2) {
+			_2 = 1000;
+		};
+		if(!_3) {
+			_3 = [];
+		};
+		let _7 = '_4 = _4.concat(setTimeout(_0,_2*_8,';
+		console.log(_3);
+		for(let _6=0; _6<_3.length; _6++) {
+			if(typeof _3[_6]==='string') {
+				_7 += '`'+_3[_6].replaceAll('|i|', '`+_8+`').replaceAll('|I|', '`+(_8+1)+`').replaceAll('|l|', '`+(_1[1]-_8)+`').replaceAll('|L|', '`+(_1[1]-_8-1)+`').replaceAll('|m|', '`+_1[0]+`').replaceAll('|M|', '`+_1[1]+`').replaceAll('|s|', '`+_1[2]+`').replaceAll('|t|', '`+_2+`')+'`,';
+				// iteration
+				// Iteration (iteration+1)
+				// left
+				// Left (left-1)
+				// min
+				// Max
+				// step
+				// time
+			} else {
+				_7 += '_3['+_6+'],';
+			};
+		};
+		let _4 = [];
+		for(let _8=_1[0]; _8<_1[1]; _8=_8+_1[2]) {
+			eval(_7.slice(0, -1)+'));');
+		};
+		return _4;
+	} else {
+		return `Is required at least the function that you want to run, and it must be a function. Eg: _jChronoFor( function(i) { alert('Iteration'+i) }, 3, 1000, [' N. \i'] )`;
+		//~ _jChronoFor( function(p) { alert('Param: '+p) }, 5, 1000, ['i=|i|, I=|I|, l=|l|, L=|L|, m=|m|, M=|M|, s=|s|, t=|t|'] )
 	};
-	let _1 = [
-		['Code',''],
-		['SSS',[0,0,1]], /*Start Stop Step*/
-	];
-	for(let _2=0; _2<_1.length; _2++) {
-		eval(
-			`if(!_0.`+_1[_2][0]+`) {
-				_0.`+_1[_2][0]+` = _1[_2][1];
-			};`
-		);
-	};
-	return 0;
-}; function _JCF(_0) { return _jChronoFor(_0) };
+}; function _JCF(_0,_1,_2,_3) { return _jChronoFor(_0,_1,_2,_3) };
 
 function _jChronoHSL(_0) {
 	if(!_0) {
