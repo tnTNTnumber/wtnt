@@ -20,9 +20,16 @@ body {
 	transition-duration: 2400ms;
 	-ms-overflow-style: none;
 	scrollbar-width: none;
+	overflow: hidden;
 	transition-duration: 800ms;
 } body::-webkit-scrollbar {
     display: none;
+}
+
+textarea, pre {
+	-moz-tab-size : 4;
+	  -o-tab-size : 4;
+	     tab-size : 4;
 }
 
 .dn {
@@ -37,11 +44,11 @@ body {
 
 .ns {
 	-webkit-touch-callout: none;
-	-webkit-user-select: none;
-	-khtml-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
+	  -webkit-user-select: none;
+	   -khtml-user-select: none;
+	     -moz-user-select: none;
+	      -ms-user-select: none;
+	          user-select: none;
 }
 
 .c {
@@ -61,8 +68,15 @@ body {
 	font-family: 'PT Mono', monospace;
 	font-size: 1em;
 	resize: none;
-	overflow: hidden;
 	transition-duration: 1200ms;
+} #textarea::-webkit-scrollbar {
+	width: 1.5rem;
+} #textarea::-webkit-scrollbar-track {
+	display: none;
+} #textarea::-webkit-scrollbar-thumb {
+	background-color: lightgrey;
+	border: 0.5rem solid rgba(255,255,255,1);
+	border-radius: 1.5rem;
 }
 
 #BtnDiv {
@@ -129,7 +143,7 @@ window.addEventListener("error", handleError, true);
 </head>
 <body class="bmp ns">
 
-<textarea class="bmp" id="textarea" placeholder=""></textarea>
+<textarea class="bmp" id="textarea" placeholder="" onkeydown="if(event.keyCode===9){var v=this.value,s=this.selectionStart,e=this.selectionEnd;this.value=v.substring(0,s)+'\t'+v.substring(e);this.selectionStart=this.selectionEnd=s+1;return false;}"></textarea>
 <pre class="dn" id="placeholder">Here is the JavaScript code ..
 
 Eg: alert( 'Hello World!' );</pre>

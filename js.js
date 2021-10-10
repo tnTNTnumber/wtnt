@@ -59,12 +59,70 @@ function _jArrayCommaDouble(_0,_1,_2,_3) {
 	return _4;
 }; function _JACD(_0,_1,_2,_3) { return _jArrayCommaDouble(_0,_1,_2,_3) };
 
+function _jChronoFor(_0) {
+	if(!_0) {
+		//! return `Is required a JSON with at least the element "Elem" that you want to change color. Eg: _jChronoHSL({'Elem': 'document.body.style.backgroundColor' })`;
+	};
+	let _1 = [
+		['Code',''],
+		['SSS',[0,0,1]], /*Start Stop Step*/
+	];
+	for(let _2=0; _2<_1.length; _2++) {
+		eval(
+			`if(!_0.`+_1[_2][0]+`) {
+				_0.`+_1[_2][0]+` = _1[_2][1];
+			};`
+		);
+	};
+	return 0;
+}; function _JCF(_0) { return _jChronoFor(_0) };
+
+function _jChronoHSL(_0) {
+	if(!_0) {
+		return `Is required a JSON with at least the element "Elem" that you want to change color. Eg: _jChronoHSL({'Elem': 'document.body.style.backgroundColor' })`;
+	};
+	let _1 = [
+		['Elem',null],
+		['Interval',1000],
+		['IntervalRange',0],
+		['H',127.5],
+		['HRange',255],
+		['S',50],
+		['SRange',100],
+		['L',50],
+		['LRange',100],
+		['Opacity',1],
+		['OpacityRange',0],
+		['NotReplace',false],
+	];
+	for(let _2=0; _2<_1.length; _2++) {
+		eval(
+			`if(!_0.`+_1[_2][0]+`) {
+				_0.`+_1[_2][0]+` = _1[_2][1];
+			};`
+		);
+	};
+	if(!_0.Elem) {
+		return `Is required the element "Elem" that you want to change color. And it cannot be "", "0", "null", "''" or "false". Eg: _jChronoHSL({'Elem': 'document.body.style.backgroundColor' })`;
+	};
+	if(!_0.NotReplace) {
+		return setInterval(function(_0) {
+			eval(_0.Elem+` = 'hsla('+(Math.random()*_0.HRange-_0.HRange/2+_0.H)+','+(Math.random()*_0.SRange-_0.SRange/2+_0.S)+'%,'+(Math.random()*_0.LRange-_0.LRange/2+_0.L)+'%,'+(Math.random()*_0.OpacityRange-_0.OpacityRange/2+_0.Opacity)+')';`);
+		}, Math.random()*_0.IntervalRange+_0.Interval, _0);
+	} else {
+		return setInterval(function(_0) {
+			eval(_0.Elem+` += ', hsla('+(Math.random()*_0.HRange-_0.HRange/2+_0.H)+','+(Math.random()*_0.SRange-_0.SRange/2+_0.S)+'%,'+(Math.random()*_0.LRange-_0.LRange/2+_0.L)+'%,'+(Math.random()*_0.OpacityRange-_0.OpacityRange/2+_0.Opacity)+')';`);
+		}, Math.random()*_0.IntervalRange-_0.IntervalRange/2+_0.Interval, _0);
+	};
+}; function _JCHSL(_0) { return _jChronoHSL(_0) };
+
 function _jHelp(_0,_12) {
 	if(!_0) {
-		return `Is required the name of the function that you want to have information about. Eg: _jHelp('Help')`
+		return `Is required the name of the function that you want to have information about. Eg: _jHelp('Help')`;
 	};
 	let _1 = _2 = [];
 	let _3 = _4 = '';
+	let _8 = String.fromCharCode(13, 10);
 	let _9 = [
 		[	['ArrayComma','AC'],
 			[
@@ -81,13 +139,42 @@ function _jHelp(_0,_12) {
 			[
 			],
 			[
-				'( [ List 1, List 2, List 3, .. ] , [ Sep 1, Sep 2, Sep 3, .. ] , Comma Sep , Crop )',
+				'( [ List_1, List_2, List_3, .. ] , [ Sep_1, Sep_2, Sep_3, .. ] , Comma_Sep , Crop )',
 			],
 			[
 				`([[1,2,3],['a','b','c'],[true,false,null]])`,
 				`([[1,2,3],['a','b','c'],[true,false,null]], ['-','·','~'])`,
 				`([[1,2,3],['a','b','c'],[true,false,null]], ['-','·','~'], '; ')`,
 				`([[1,2,3],['a','b','c'],[true,false,null]], ['-','·','~'], '; ', true)`,
+			],
+		],
+		[	['ChronoHSL','CHSL'],
+			[
+			],
+			[
+				`( { 'Elem': Elem , 'Interval': Interval , 'IntervalRange': Interval_Range , 'H': Hue , 'S': Saturation , 'L': Lightness , 'Opacity': Opacity , 'HRange': Hue_Range , 'SRange': Saturation_Range , 'LRange': Lightness_Range , 'OpacityRange': Opacity_Range , 'NotReplace': Not_Replace } )`,
+				``,
+				`Elem`+_8+`·Desc : a style element. Is it the element that you want to change color ( it is essential and it cannot be "", "0", "null", "''" or "false" ).`+_8+`·Eg   : _jChronoHSL({'Elem': 'document.body.style.backgroundColor' })`,
+				`Interval`+_8+`·Desc : a number, pre is 1000. It is the time interval, expressed in ms, in which you want to change color.`+_8+`·Eg   : _jChronoHSL({'Elem': 'document.body.style.backgroundColor', 'Interval': 1400 })`,
+				`IntervalRange`+_8+`·Desc : a number, pre is 0. It is the time interval range, expressed in ms, in which the color can change.`+_8+`·Eg   : _jChronoHSL({'Elem': 'document.body.style.backgroundColor', 'IntervalRange': 1000 })`,
+				`H`+_8+`·Desc : a number from 0 to 255, pre is 127.5. It is the color, expressed in hue gradation.`+_8+`·Eg   : _jChronoHSL({'Elem': 'document.body.style.backgroundColor', 'H': 0 })`,
+				`HRange`+_8+`·Desc : a number from 0 to 255, pre is 255. It is the color range.`+_8+`·Eg   : _jChronoHSL({'Elem': 'document.body.style.backgroundColor', 'HRange': 32 })`,
+				`S`+_8+`·Desc : a number from 0 to 100, pre is 50. It is the saturation, expressed as a percentage.`+_8+`·Eg   : _jChronoHSL({'Elem': 'document.body.style.backgroundColor', 'S': 12.5 })`,
+				`SRange`+_8+`·Desc : a number from 0 to 100, pre is 0. It is the saturation range, expressed as a percentage.`+_8+`·Eg   : _jChronoHSL({'Elem': 'document.body.style.backgroundColor', 'SRange': 12.5 })`,
+				`L`+_8+`·Desc : a number from 0 to 100, pre is 50. It is the lightness, expressed as a percentage.`+_8+`·Eg   : _jChronoHSL({'Elem': 'document.body.style.backgroundColor', 'L': 12.5 })`,
+				`LRange`+_8+`·Desc : a number from 0 to 100, pre is 100. It is the lightness range, expressed as a percentage.`+_8+`·Eg   : _jChronoHSL({'Elem': 'document.body.style.backgroundColor', 'LRange': 12.5 })`,
+				`Opacity`+_8+`·Desc : a number from 0 to 1, pre is 1. It is the alpha parameter of HSLA scale, expressed as a unit measure.`+_8+`·Eg   : _jChronoHSL({'Elem': 'document.body.style.backgroundColor', 'Opacity': 30 })`,
+				`OpacityRange`+_8+`·Desc : a number from 0 to 1, pre is 0. It is the alpha parameter range of HSLA scale, expressed as a unit measure.`+_8+`·Eg   : _jChronoHSL({'Elem': 'document.body.style.backgroundColor', 'OpacityRange': 12.5 })`,
+				`NotReplace`+_8+`·Desc : "true" or "false", pre is "false". If it is "false" the content of the element "Elem" will be replaced, otherwise if it is "true" it will be added.`+_8+`·Eg   : _jChronoHSL({'Elem': 'document.body.style.backgroundColor', 'NotReplace': true })`,
+			],
+			[
+				`({'Elem': 'document.body.style.backgroundColor' })`,
+				`({'Elem': 'document.body.style.backgroundColor', 'Interval': 500, 'IntervalRange': 1000 })`,
+				`({'Elem': 'document.body.style.backgroundColor', 'H': 239, 'HRange': 32 })`,
+				`({'Elem': 'document.body.style.backgroundColor', 'S': 14, 'SRange': 7 })`,
+				`({'Elem': 'document.body.style.backgroundColor', 'L': 14, 'LRange': 7 })`,
+				`({'Elem': 'document.body.style.backgroundColor', 'Opacity': 0.25, 'OpacityRange': 0.5 })`,
+				`({'Elem': 'Gradient', 'NotReplace': true }) ;document.getElementById('textarea').style.background='radial-gradient(var(--gradient))';var GradientChange='circle';Object.defineProperty(this,'Gradient',{get:function(){return GradientChange;},set:function(Value){GradientChange=Value;document.getElementById('textarea').style.setProperty('--gradient',Gradient);}});`,
 			],
 		],
 		[	['Help','H'],
@@ -138,7 +225,6 @@ function _jHelp(_0,_12) {
 			],
 		],
 	];
-	let _8 = String.fromCharCode(13, 10);
 	if(!_12) {
 		let _10 = 0;
 		while(true) {
@@ -155,7 +241,15 @@ function _jHelp(_0,_12) {
 		_2 = _9[_10][3];
 		_3 = _9[_10][1];
 		_4 = _9[_10][2];
-		let _7 = 'Info:'+_8+_3+_8+_8+_8+'Syntax:'+_8+_4+_8+_8+_8+'Eg:'+_8;
+		let _7 = 'Info:'+_8
+		for(let _13=0; _13<_3.length; _13++) {
+			_7 += _3[_13]+_8;
+		};
+		_7 += _8+_8+'Syntax:'+_8;
+		for(let _13=0; _13<_4.length; _13++) {
+			_7 += _4[_13]+_8;
+		};
+		_7 += _8+_8+'Eg:'+_8;
 		for(let _6=0; _6<_2.length; _6++) {
 			_7 += '_j'+_1[0]+_2[_6];
 			_7 += _8;
@@ -206,5 +300,3 @@ function _jTextareaOutput(_0) {
 	};
 	document.getElementById('textarea').value = _0;
 }; function _JTO(_0) { return _jTextareaOutput(_0) };
-
-// setInterval(function() {document.getElementById('textarea').style.background = 'hsl('+Math.random()*256+','+Math.random()*100+'%,'+Math.random()*100+'%)';},2400)
