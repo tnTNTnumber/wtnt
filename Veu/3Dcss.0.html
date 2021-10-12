@@ -8,7 +8,7 @@
 :root {
 	--scale: 5;
 	--body-background: rgba(0,0,0,1);
-	--cube-color: rgba(25,90,110,0.6);
+	--cube-color: rgba(25,90,110,.6);
 	--ball-color: rgba(22,99,81,.9);
 	--rotate-speed-delay: 30000ms;
 	--rotate-speed: 30000ms;
@@ -204,6 +204,8 @@ body {
 	left: -1em;
 	height: 1.5em;
 	width: 2em;
+} .cube:hover {
+	--cube-color: rgba(95,90,110,.6);
 } .cube .face {
 	position: absolute;
 	height: 1.5em;
@@ -253,6 +255,8 @@ body {
 		0ms,
 		var(--rotate-speed-delay),
 		0ms;
+} .ball:hover {
+	--ball-color: rgba(95,79,131,.9);
 }
 
 .ballShadow {
