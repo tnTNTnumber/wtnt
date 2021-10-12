@@ -7,6 +7,33 @@
 
 :root {
 	--scale: 5;
+	--body-background: rgba(0,0,0,1);
+	--cube-color: rgba(25,90,110,0.6);
+	--ball-color: rgba(22,99,81,.9);
+	--rotate-speed: 30000ms;
+	--bounce-speed: 2000ms;
+}
+
+@keyframes scene-rotate {
+	to {
+		transform: scale(var(--scale, 1)) rotateY(1turn);
+	}
+}
+
+@keyframes scene-rotate-ball {
+	to {
+		transform: rotateY(1turn);
+	}
+}
+
+@keyframes ball-bounce {
+	0%, 100% {
+		bottom: 1em;
+	}
+	50% {
+		bottom: 3em;
+		animation-timing-function: ease-in;
+	}
 }
 
 * {
@@ -19,8 +46,8 @@ body {
 	padding: 0;
 	height: 100vh;
 	width: 100vw;
-	background-color: rgba(0,0,0,.95);
-	perspective: calc( 20em / var(--scale, 1) );
+	background-color: var(--body-background);
+	perspective: calc( 30em / var(--scale, 1) );
 	perspective-origin: center calc( 50% - calc( 2.5em * var(--scale, 1) ) );
 }
 
@@ -32,17 +59,22 @@ body {
 	width: 0px;
 	transform: scale(var(--scale, 1));
 	transform-style: preserve-3d;
+	animation: scene-rotate var(--rotate-speed) infinite linear;
 }
 
 .floor {
 	position: absolute;
-	top: -5em; /*-4.96155em;*/
-	left: -5em;
-	height: 10em;
-	width: 10em;
-	background-image: repeating-conic-gradient(from .125turn, #000 0turn .125turn, #111 .125turn .25turn);
-	background-size: 1em 1em;
-	transform: rotateX(.25turn);
+	top: -8em; /*-4.96155em;*/
+	left: -8em;
+	height: 16em;
+	width: 16em;
+	border-radius: 50%;
+	background-image:
+		radial-gradient(rgba(0,0,0,0),
+		var(--body-background) 9em),
+		repeating-conic-gradient(from .2turn, #000 0turn .25turn, #111 .25turn .45turn, #222 .45turn .5turn);
+	background-size: 100%, 1em 1em;
+	transform: rotateX(.25turn) rotateZ(-.125turn);
 }
 
 .cube {
@@ -56,7 +88,9 @@ body {
 	position: absolute;
 	height: 100%;
 	width: 100%;
-	background: rgba(25,90,110,0.6);
+	background: var(--cube-color);
+} .cube .front, .cube .back, .cube .right, .cube .left {
+	box-shadow: 0 0 .5em rgba(0,0,0,0.9) inset;
 } .cube .front {
 	transform: rotateY(0turn) translateZ(1em);
 } .cube .back {
@@ -68,6 +102,9 @@ body {
 } .cube .left {
 	transform: rotateY(.75turn) translateZ(1em);
 } .cube .bottom {
+	bottom: 0;
+	background: rgba(0,0,0,0.45);
+	box-shadow: 0 0 .5em rgba(0,0,0,1);
 	transform: rotateX(.75turn) translateZ(1em);
 }
 
@@ -78,7 +115,25 @@ body {
 	height: 1.2em;
 	width: 1.2em;
 	border-radius: 50%;
-	background: rgba(25,110,90,0.4);
+	background: var(--ball-color);
+	background-image:
+		radial-gradient(circle at top, var(--ball-color), rgba(0,0,0,1)),
+		radial-gradient(circle at bottom, var(--cube-color), rgba(0,0,0,0) 50%);
+	animation:
+		ball-bounce var(--bounce-speed) infinite ease-out,
+		scene-rotate-ball var(--rotate-speed) infinite linear reverse;
+}
+
+.ballShadow {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 1.2em;
+	height: 1.2em;
+	background-image:
+		radial-gradient(rgba(0,0,0,.3),
+		rgba(0,0,0,0));
+	transform: translate(-50%,-50%);
 }
 
 </style>
@@ -90,7 +145,9 @@ body {
 		<div class="face front"></div>
 		<div class="face back"></div>
 		<div class="face right"></div>
-		<div class="face top"></div>
+		<div class="face top">
+			<div class="ballShadow"></div>
+		</div>
 		<div class="face left"></div>
 		<div class="face bottom"></div>
 	</div>
