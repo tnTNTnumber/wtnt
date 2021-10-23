@@ -40,6 +40,7 @@ textarea, pre {
 	border: none;
 	margin: 0;
 	padding: 0;
+	outline: 0;
 }
 
 .ns {
@@ -131,7 +132,14 @@ function handleError(evt) {
 	};
 };
 
+function Save() {
+	localStorage.SavingData = document.getElementById('textarea').value;
+};
+
 window.onload = function() {
+	if(typeof(Storage)!=="undefined"&&localStorage.SavingData) {
+		document.getElementById('textarea').value = localStorage.SavingData;
+	};
 	setTimeout(function() {
 		document.getElementById('BtnDiv').style.width = '15rem';
 		document.getElementById('BtnDiv').style.height = '15rem';
@@ -145,7 +153,7 @@ window.addEventListener("error", handleError, true);
 </head>
 <body class="bmp ns">
 
-<textarea class="bmp" id="textarea" placeholder="" onkeydown="if(event.keyCode===9){var v=this.value,s=this.selectionStart,e=this.selectionEnd;this.value=v.substring(0,s)+'\t'+v.substring(e);this.selectionStart=this.selectionEnd=s+1;return false;}"></textarea>
+<textarea class="bmp" id="textarea" onkeydown="Save();if(event.keyCode===9){var v=this.value,s=this.selectionStart,e=this.selectionEnd;this.value=v.substring(0,s)+'\t'+v.substring(e);this.selectionStart=this.selectionEnd=s+1;return false;};" onkeypress="Save();" onkeyup="Save();" placeholder=""></textarea>
 <pre class="dn" id="placeholder">Here is the JavaScript code ..
 
 Eg: alert( 'Hello World!' );</pre>

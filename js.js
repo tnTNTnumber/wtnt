@@ -90,22 +90,53 @@ function _jChronoFor(_0,_1,_2,_3) {
 		if(!_2) {
 			_2 = 1000;
 		};
+		//~ if(!_2) {
+			//~ _2 = [1000,0];
+		//~ } else if(!(Array.isArray(_2))) {
+			//~ if(isNaN(_2)) {
+				//~ return `The third parameter must be a number.`+_5+`Eg: _jChronoFor(function() {alert('Hi!')}, 3, 1500)`+_5+`For more information type: _jHelp('ChronoFor')`;
+			//~ };
+			//~ _2 = [_2,0];
+		//~ } else if(_2.length==0) {
+			//~ _2 = [1000,0];
+		//~ } else if(_2.length==1) {
+			//~ if(isNaN(_2[0])) {
+				//~ return `The array of third parameter must contain a number.`+_5+`Eg: _jChronoFor(function() {alert('Hi!')}, 3, [1500])`+_5+`For more information type: _jHelp('ChronoFor')`;
+			//~ };
+			//~ _2 = [_2[0],0];
+		//~ } else {
+			//~ if(isNaN(_2[0])||isNaN(_2[1])) {
+				//~ return `The array of third parameter must contain numbers.`+_5+`Eg: _jChronoFor(function() {alert('Hi!')}, 3, [1000, 800])`+_5+`For more information type: _jHelp('ChronoFor')`;
+			//~ };
+			//~ _2 = [_2[0],_2[1]];
+		//~ };
 		if(!_3) {
 			_3 = [];
 		};
+		//~ let _9 = [];
+		//~ function _10() {
+			//~ return (Math.random()-.5)*_2[1];
+		//~ };
+		//~ _9.push(_10());
+		//~ for(let _6=0; _6<Math.floor((_1[1]-_1[0]); _6=_6+_1[2]) {
+		//~ let _7 = '_4 = _4.concat(setTimeout(_0,(_2[0]-_9)*_8,';
 		let _7 = '_4 = _4.concat(setTimeout(_0,_2*_8,';
-		console.log(_3);
 		for(let _6=0; _6<_3.length; _6++) {
 			if(typeof _3[_6]==='string') {
-				_7 += '`'+_3[_6].replaceAll('|i|', '`+_8+`').replaceAll('|I|', '`+(_8+1)+`').replaceAll('|l|', '`+(_1[1]-_8)+`').replaceAll('|L|', '`+(_1[1]-_8-1)+`').replaceAll('|m|', '`+_1[0]+`').replaceAll('|M|', '`+_1[1]+`').replaceAll('|s|', '`+_1[2]+`').replaceAll('|t|', '`+_2+`')+'`,';
+				_7 += '`'+_3[_6].replaceAll('|i|', '`+_8+`').replaceAll('|I|', '`+(_8+1)+`').replaceAll('|l|', '`+(_1[1]-_8)+`').replaceAll('|L|', '`+(_1[1]-_8-1)+`').replaceAll('|m|', '`+_1[0]+`').replaceAll('|M|', '`+_1[1]+`').replaceAll('|s|', '`+_1[2]+`').replaceAll('|t|', '`+_2+`')/*.replaceAll('|R|', '`+???+`')*/.replaceAll('|T|', '`+_8*_2+`').replaceAll('|p|', '`+_3+`').replaceAll('|f|', '`+_0+`').replaceAll('|r|', '`+Math.random()+`')+'`,';
 				// iteration
-				// Iteration (iteration+1)
+				// Iterator (iteration+1)
 				// left
 				// Left (left-1)
 				// min
 				// Max
 				// step
 				// time
+				// Range time
+				// Time elapsed (theoric, in ms, from the for execution beginning)
+				// parameters
+				// function
+				// random number
 			} else {
 				_7 += '_3['+_6+'],';
 			};
@@ -117,7 +148,6 @@ function _jChronoFor(_0,_1,_2,_3) {
 		return _4;
 	} else {
 		return `Is required at least the function that you want to run, and it must be a function. Eg: _jChronoFor( function(i) { alert('Iteration'+i) }, 3, 1000, [' N. \i'] )`;
-		//~ _jChronoFor( function(p) { alert('Param: '+p) }, 5, 1000, ['i=|i|, I=|I|, l=|l|, L=|L|, m=|m|, M=|M|, s=|s|, t=|t|'] )
 	};
 }; function _JCF(_0,_1,_2,_3) { return _jChronoFor(_0,_1,_2,_3) };
 
@@ -190,6 +220,65 @@ function _jHelp(_0,_12) {
 				`([[1,2,3],['a','b','c'],[true,false,null]], ['-','·','~'])`,
 				`([[1,2,3],['a','b','c'],[true,false,null]], ['-','·','~'], '; ')`,
 				`([[1,2,3],['a','b','c'],[true,false,null]], ['-','·','~'], '; ', true)`,
+			],
+		],
+		[	['ChronoFor','CF'],
+			[
+				`It's a timed "for".`,
+			],
+			[
+				'( Function , i_Values , Interval , [ Param_1, Param_2, Param_3, .. ] )',
+				``,
+				`Function:`,
+				`	It's the function that will be executed.`,
+				``,
+				`i_Values:`,
+				`Desc:`,
+				`	Are the "Start", "Stop" and "Step" parameters of an iteration and must be of type "number".`,
+				`Syntax:`,
+				`	[ i_Min, i_Max, i_Step ] or`,
+				`	[ i_Min, i_Max ] or `,
+				`	[ i_Num ] or`,
+				`	i_Num`,
+				`Values:`,
+				`	i_Num: number of times that the function will have to be repeated (default: 0)`,
+				`	i_Max: max value that the iterator that checks the repetition of the function (default: 0)`,
+				`	i_Min: value from which the iterator that checks the repetition of the function (default: 0)`,
+				`	i_Step: value by which it is incremented the iterator that checks the repetition of the function (default: 1)`,
+				``,
+				`Interval:`,
+				`	Is the time interval (in ms) for which the function is executed.`,
+				``,
+				`Params:`,
+				`	Are the parameters that will be passed to the function.`,
+				`	The strings of these parameters will be parsed and if the following writes are found they will be replaced with the following values:`,
+				`Special writes:`,
+				`	"|i|" is the iteration, it counts the number of times the function has been repeated (starts from 0).`,
+				`	"|I|" is the Iterator, it counts the number of times the function has been repeated (starts from 1).`,
+				`	"|l|" is the left, it counts the number of times the function must still be repeated (starts from i_Max - i_Min).`,
+				`	"|L|" is the Lefter, it counts the number of times the function must still be repeated (starts from i_Max - i_Min - 1).`,
+				`	"|m|" is the min and it's i_Min.`,
+				`	"|M|" is the Max and it's i_Max.`,
+				`	"|s|" is the step and it's i_Step.`,
+				`	"|t|" is the time and it's Interval.`,
+				`	"|T|" is the Time elapsed, it's the theoretical time interval (expressed in ms) from which the for started.`,
+				`	"|p|" is the parameters and it's the list containing "Param_1", "Param_2", "Param_3", .. .`,
+				`	"|f|" is the function and it's Function.`,
+				`	"|r|" is the random, it's a random number (between 0 and 1).`,
+			],
+			[
+				`( function() { alert('Hello World!') } )`,
+				`( function() { alert('Hello World!') }, 3 )`,
+				`( function() { alert('Hello World!') }, [ 3 ] )`,
+				`( function() { alert('Hello World!') }, [ 2, 5 ] )`,
+				`( function() { alert('Hello World!') }, [ 2, 4, .5 ] )`,
+				`( function() { alert('Hello World!') }, 3, 1800 )`,
+				`( function() { alert('Hello World!') }, 3, 1000, [] )`,
+				`( function(str) { alert(str) }, 3, 1000, ['Hello World!'] )`,
+				`( function(n) { alert('Hello for '+n+' time(s)!') }, 3, 1000, ['|I|.'] )`,
+				`( function(params) { alert('Params example: '+params) }, 5, 1000, ['i=|i|, I=|I|, l=|l|, L=|L|, m=|m|, M=|M|, s=|s|, t=|t|, T=|T|, p=|p|, f=|f|, r=|r|'] )`,
+				`( function(params) { alert('Params example: '+params) }, [ 2, 4, .5 ], 1400, ['i=|i|, I=|I|, l=|l|, L=|L|, m=|m|, M=|M|, s=|s|, t=|t|, T=|T|, p=|p|, f=|f|, r=|r|'] )`,
+				`( function(i) { let suffix = null; let plural = 's'; switch(i) { case '1': suffix = 'st'; plural = ''; break; case '2': suffix = 'nd'; break; case '3': suffix = 'rd'; break; default: suffix = 'th'; }; alert('Hello for '+i+suffix+' time'+plural+'!') }, 5, 1000, ['|I|'] )`,
 			],
 		],
 		[	['ChronoHSL','CHSL'],
