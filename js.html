@@ -27,36 +27,9 @@ body {
 }
 
 textarea, pre {
-	-moz-tab-size : 4;
-	  -o-tab-size : 4;
-	     tab-size : 4;
-}
-
-.dn {
-	display: none;
-}
-
-.bmp {
-	border: none;
-	margin: 0;
-	padding: 0;
-	outline: 0;
-}
-
-.ns {
-	-webkit-touch-callout: none;
-	  -webkit-user-select: none;
-	   -khtml-user-select: none;
-	     -moz-user-select: none;
-	      -ms-user-select: none;
-	          user-select: none;
-}
-
-.c {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%,-50%);
+	-moz-tab-size: 4;
+	  -o-tab-size: 4;
+	     tab-size: 4;
 }
 
 #textarea {
@@ -149,17 +122,69 @@ window.onload = function() {
 
 window.addEventListener("error", handleError, true);
 
+window.addEventListener('keydown', e=>{
+	if(e.ctrlKey&&e.key==='s') {
+		e.preventDefault();
+		let FileNameCounter = '';
+		if(typeof(Storage)!=="undefined") {
+			if(localStorage.FileNameCounter) {
+				localStorage.FileNameCounter = Number(localStorage.FileNameCounter)+1;
+			} else {
+				localStorage.FileNameCounter = 1;
+			};
+			FileNameCounter = ' N.'+localStorage.FileNameCounter;
+		};
+		let ElemDate =  new Date();
+		let DateDayWeek = ElemDate.getDay();
+		let DateDay = ' '+ElemDate.getDate();
+		let DateMonth = ElemDate.getMonth();
+		let DateYear = ' '+ElemDate.getFullYear();
+		let DateHours = ElemDate.getHours();
+		let DateMinutes = ElemDate.getMinutes();
+		let DateSeconds = ElemDate.getSeconds();
+		let DateMilliseconds = ElemDate.getMilliseconds();
+		let DateDayWeekName = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+		let DateMonthName = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+		if(DateHours<10) {
+			DateHours = '0'+DateHours;
+		};
+		DateHours += ':';
+		if(DateMinutes<10) {
+			DateMinutes = '0'+DateMinutes;
+		};
+		DateMinutes += ':';
+		if(DateSeconds<10) {
+			DateSeconds = '0'+DateSeconds;
+		};
+		DateSeconds += ':';
+		if(DateMilliseconds<100) {
+			if(DateMilliseconds<10) {
+				DateMilliseconds = '00'+DateMilliseconds;
+			} else {
+				DateMilliseconds = '0'+DateMilliseconds;
+			};
+		};
+		let Elem = document.createElement('a');
+		Elem.setAttribute('href','data:text/plain;charset=utf-8,'+encodeURIComponent(_JTR()));
+		Elem.setAttribute('download',prompt('Enter the file name:', 'Project'+FileNameCounter+' of '+DateDayWeekName[DateDayWeek]+DateDay+' '+DateMonthName[DateMonth]+DateYear+' at '+DateHours+DateMinutes+DateSeconds+DateMilliseconds+'.js'));
+		Elem.style.display = 'none';
+		document.body.appendChild(Elem);
+		Elem.click();
+		document.body.removeChild(Elem);
+	};
+});
+
 </script>
 </head>
-<body class="bmp ns">
+<body class="_BOMP _NS">
 
-<textarea class="bmp" id="textarea" onkeydown="Save();if(event.keyCode===9){var v=this.value,s=this.selectionStart,e=this.selectionEnd;this.value=v.substring(0,s)+'\t'+v.substring(e);this.selectionStart=this.selectionEnd=s+1;return false;};" onkeypress="Save();" onkeyup="Save();" placeholder=""></textarea>
-<pre class="dn" id="placeholder">Here is the JavaScript code ..
+<textarea class="_BOMP" id="textarea" onkeydown="Save();if(event.keyCode===9){var v=this.value,s=this.selectionStart,e=this.selectionEnd;this.value=v.substring(0,s)+'\t'+v.substring(e);this.selectionStart=this.selectionEnd=s+1;return false;};" onkeypress="Save();" onkeyup="Save();" placeholder=""></textarea>
+<pre class="_DN" id="placeholder">Here is the JavaScript code ..
 
 Eg: alert( 'Hello World!' );</pre>
-<div id="BtnDiv" class="c">
-	<button id="Button" class="bmp" onclick="BtnOnClick();">
-		<img id="ButtonImg" class="c" src="https://media3.giphy.com/media/tKHaUiUMkoWX0wOeXb/giphy.gif?cid=790b761155905aee5f23949e463abe7acad74c4a152e41b6&rid=giphy.gif&ct=s"></img>
+<div id="BtnDiv" class="_C">
+	<button id="Button" class="_BOMP" onclick="BtnOnClick();">
+		<img id="ButtonImg" class="_C" src="https://media3.giphy.com/media/tKHaUiUMkoWX0wOeXb/giphy.gif?cid=790b761155905aee5f23949e463abe7acad74c4a152e41b6&rid=giphy.gif&ct=s"></img>
 	</button>
 </div>
 

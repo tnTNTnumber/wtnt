@@ -190,6 +190,90 @@ function _jChronoHSL(_0) {
 	};
 }; function _JCHSL(_0) { return _jChronoHSL(_0) };
 
+function _jDateGetDayweek(_0) {
+	if(_0) {
+		return new Date().getDay()+1;
+	} else {
+		return new Date().getDay();
+	};
+}; function _JDGDw(_0) { return _jDateGetDayweek(_0) };
+
+function _jDateGetDayweekName(_0,_1) {
+	if(!_0&&_0!=0) {
+		_0 = new Date().getDay();
+		if(_0==0) {
+			_0 = 7;
+		};
+	};
+	if(_1) {
+		_0 -= 1;
+	};
+	return ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'][Math.floor(_0%7)];
+}; function _JDGDwN(_0,_1) { return _jDateGetDayweekName(_0,_1) };
+
+function _jDateGetDay() {
+	return new Date().getDate();
+}; function _JDGD(_0) { return _jDateGetDay(_0) };
+
+function _jDateGetMonth(_0) {
+	if(_0) {
+		return new Date().getMonth()+1;
+	} else {
+		return new Date().getMonth();
+	};
+}; function _JDGM(_0) { return _jDateGetMonth(_0) };
+
+function _jDateGetMonthName(_0,_1) {
+	if(!_0&&_0!=0) {
+		_0 = new Date().getMonth();
+		if(_0==0) {
+			_0 = 12;
+		};
+	};
+	if(_1) {
+		_0 -= 1;
+	};
+	return ['January','February','March','April','May','June','July','August','September','October','November','December'][Math.floor(_0%12)];
+}; function _JDGMN(_0,_1) { return _jDateGetMonthName(_0,_1) };
+
+function _jDateGetYear() {
+	return new Date().getFullYear();
+}; function _JDGY(_0) { return _jDateGetYear(_0) };
+
+function _jDateGetHours(_0) {
+	let _1 = new Date().getHours();
+	if(!_0&&_1<10) {
+		_1 = '0'+_1;
+	};
+	return _1;
+}; function _JDGh(_0) { return _jDateGetHours(_0) };
+
+function _jDateGetMinutes(_0) {
+	let _1 = new Date().getMinutes();
+	if(!_0&&_1<10) {
+		_1 = '0'+_1;
+	};
+	return _1;
+}; function _JDGm(_0) { return _jDateGetMinutes(_0) };
+
+function _jDateGetSeconds(_0) {
+	let _1 = new Date().getSeconds();
+	if(!_0&&_1<10) {
+		_1 = '0'+_1;
+	};
+	return _1;
+}; function _JDGs(_0) { return _jDateGetSeconds(_0) };
+
+function _jDateGetMilliseconds(_0) {
+	let _1 = new Date().getMilliseconds();
+	if(!_0&&_1<10) {
+		_1 = '00'+_1;
+	} else if(!_0&&_1<100) {
+		_1 = '0'+_1;
+	};
+	return _1;
+}; function _JDGms(_0) { return _jDateGetMilliseconds(_0) };
+
 function _jHelp(_0,_12) {
 	if(!_0) {
 		return `Is required the name of the function that you want to have information about. Eg: _jHelp('Help')`;
@@ -310,6 +394,128 @@ function _jHelp(_0,_12) {
 				`({'Elem': 'Gradient', 'NotReplace': true }) ;document.body.style.background='radial-gradient(var(--gradient))';var GradientChange='circle';Object.defineProperty(this,'Gradient',{get:function(){return GradientChange;},set:function(Value){GradientChange=Value;document.body.style.setProperty('--gradient',Gradient);}});`,
 			],
 		],
+		[	['DateGetDayweek','DGDw'],
+			[
+				`returns the week day number, in 0-6 format or, if "Type" is true, 1-7 format.`,
+			],
+			[
+				'( Type )',
+			],
+			[
+				`()`,
+				`(true)`,
+			],
+		],
+		[	['DateGetDayweekName','DGDwN'],
+			[
+				`returns the week day name.`,
+			],
+			[
+				'( Day, Type )',
+			],
+			[
+				`()`,
+				`(0)`,
+				`(1,true)`,
+				`(,true)`,
+			],
+		],
+		[	['DateGetDay','DGD'],
+			[
+				`returns the day number.`,
+			],
+			[
+				'( )',
+			],
+			[
+				`()`,
+			],
+		],
+		[	['DateGetMonth','DGM'],
+			[
+				`returns the month number, in 0-11 format or, if "Type" is true, 1-12 format.`,
+			],
+			[
+				'( Type )',
+			],
+			[
+				`()`,
+				`(true)`,
+			],
+		],
+		[	['DateGetMonthName','DGMN'],
+			[
+				`returns the month name.`,
+			],
+			[
+				'( Day, Type )',
+			],
+			[
+				`()`,
+				`(0)`,
+				`(1,true)`,
+				`(,true)`,
+			],
+		],
+		[	['DateGetYear','DGY'],
+			[
+				`returns the year.`,
+			],
+			[
+				'( )',
+			],
+			[
+				`()`,
+			],
+		],
+		[	['DateGetHours','DGh'],
+			[
+				`returns the hours, in "hh" format or, if "Type" is true, in type "number".`,
+			],
+			[
+				'( Type )',
+			],
+			[
+				`()`,
+				`(true)`,
+			],
+		],
+		[	['DateGetMinutes','DGm'],
+			[
+				`returns the minutes, in "mm" format or, if "Type" is true, in type "number".`,
+			],
+			[
+				'( Type )',
+			],
+			[
+				`()`,
+				`(true)`,
+			],
+		],
+		[	['DateGetSeconds','DGs'],
+			[
+				`returns the minutes, in "ss" format or, if "Type" is true, in type "number".`,
+			],
+			[
+				'( Type )',
+			],
+			[
+				`()`,
+				`(true)`,
+			],
+		],
+		[	['DateGetMilliseconds','DGms'],
+			[
+				`returns the minutes, in "μμμ" format or, if "Type" is true, in type "number".`,
+			],
+			[
+				'( Type )',
+			],
+			[
+				`()`,
+				`(true)`,
+			],
+		],
 		[	['Help','H'],
 			[
 			],
@@ -335,6 +541,17 @@ function _jHelp(_0,_12) {
 			[
 				`()`,
 				`('Hello World!')`,
+			],
+		],
+		[	['TextareaRead','TR'],
+			[
+				'This function returns ".value" of the element which "id" is "textarea".'
+			],
+			[
+				'( )',
+			],
+			[
+				`()`,
 			],
 		],
 	];
@@ -433,3 +650,9 @@ function _jTextareaOutput(_0) {
 	};
 	document.getElementById('textarea').value = _0;
 }; function _JTO(_0) { return _jTextareaOutput(_0) };
+
+function _jTextareaRead() {
+	if(document&&document.getElementById('textarea')) {
+		return document.getElementById('textarea').value;
+	};
+}; function _JTR() { return _jTextareaRead() };
