@@ -1,3 +1,5 @@
+var _ = null;
+
 function _jArrayComma(_0,_1) {
 	if(!_0) {
 		return `At least one argument is required. For more information type: _jHelp('ArrayComma')`;
@@ -190,13 +192,16 @@ function _jChronoHSL(_0) {
 	};
 }; function _JCHSL(_0) { return _jChronoHSL(_0) };
 
-function _jDateGetDayweek(_0) {
-	if(_0) {
-		return new Date().getDay()+1;
-	} else {
-		return new Date().getDay();
+function _jDateGetDayweek(_0,_1) {
+	if(!_0||!_0.getDay) {
+		_0 = new Date();
 	};
-}; function _JDGDw(_0) { return _jDateGetDayweek(_0) };
+	if(_1) {
+		return _0.getDay()+1;
+	} else {
+		return _0.getDay();
+	};
+}; function _JDGDw(_0,_1) { return _jDateGetDayweek(_0,_1) };
 
 function _jDateGetDayweekName(_0,_1) {
 	if(!_0&&_0!=0) {
@@ -205,23 +210,39 @@ function _jDateGetDayweekName(_0,_1) {
 			_0 = 7;
 		};
 	};
-	if(_1) {
-		_0 -= 1;
+	if(typeof _0==='number') {
+		if(_1) {
+			_0 -= 1;
+		};
+		return ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'][Math.floor(_0%7)];
+	} else if(typeof _0==='string') {
+		_0 = ['sunday','monday','tuesday','wednesday','thursday','friday','saturday'].indexOf(_0.toLowerCase());
+		if(_1) {
+			_0 += 1;
+		};
+		return _0;
+	} else {
+		return `the first parameter must be a number between 0 and 6 (or, if the second parameters is "true", between 1 and 7) or a name of a week day. For more information use: _jHelp('DateGetDayweekName')`;
 	};
-	return ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'][Math.floor(_0%7)];
 }; function _JDGDwN(_0,_1) { return _jDateGetDayweekName(_0,_1) };
 
-function _jDateGetDay() {
-	return new Date().getDate();
+function _jDateGetDay(_0) {
+	if(!_0||!_0.getDate) {
+		_0 = new Date();
+	};
+	return _0.getDate();
 }; function _JDGD(_0) { return _jDateGetDay(_0) };
 
-function _jDateGetMonth(_0) {
-	if(_0) {
-		return new Date().getMonth()+1;
-	} else {
-		return new Date().getMonth();
+function _jDateGetMonth(_0,_1) {
+	if(!_0||!_0.getMonth) {
+		_0 = new Date();
 	};
-}; function _JDGM(_0) { return _jDateGetMonth(_0) };
+	if(_1) {
+		return _0.getMonth()+1;
+	} else {
+		return _0.getMonth();
+	};
+}; function _JDGM(_0,_1) { return _jDateGetMonth(_0,_1) };
 
 function _jDateGetMonthName(_0,_1) {
 	if(!_0&&_0!=0) {
@@ -230,49 +251,117 @@ function _jDateGetMonthName(_0,_1) {
 			_0 = 12;
 		};
 	};
-	if(_1) {
-		_0 -= 1;
+	if(typeof _0==='number') {
+		if(_1) {
+			_0 -= 1;
+		};
+		return ['January','February','March','April','May','June','July','August','September','October','November','December'][Math.floor(_0%12)];
+	} else if(typeof _0==='string') {
+		_0 = ['january','february','march','april','may','june','july','august','september','october','november','december'].indexOf(_0.toLowerCase());
+		if(_1) {
+			_0 += 1;
+		};
+		return _0;
+	} else {
+		return `the first parameter must be a number between 0 and 11 (or, if the second parameters is "true", between 1 and 12) or a name of a month. For more information use: _jHelp('DateGetMonthName')`;
 	};
-	return ['January','February','March','April','May','June','July','August','September','October','November','December'][Math.floor(_0%12)];
 }; function _JDGMN(_0,_1) { return _jDateGetMonthName(_0,_1) };
 
-function _jDateGetYear() {
-	return new Date().getFullYear();
+function _jDateGetYear(_0) {
+	if(!_0||!_0.getFullYear) {
+		_0 = new Date();
+	};
+	return _0.getFullYear();
 }; function _JDGY(_0) { return _jDateGetYear(_0) };
 
-function _jDateGetHours(_0) {
-	let _1 = new Date().getHours();
-	if(!_0&&_1<10) {
-		_1 = '0'+_1;
+function _jDateGetHours(_0,_1) {
+	if(!_0||!_0.getHours) {
+		_0 = new Date();
 	};
-	return _1;
-}; function _JDGh(_0) { return _jDateGetHours(_0) };
+	_0 = _0.getHours();
+	if(!_1&&_0<10) {
+		_0 = '0'+_0;
+	};
+	return _0;
+}; function _JDGh(_0,_1) { return _jDateGetHours(_0,_1) };
 
-function _jDateGetMinutes(_0) {
-	let _1 = new Date().getMinutes();
-	if(!_0&&_1<10) {
-		_1 = '0'+_1;
+function _jDateGetMinutes(_0,_1) {
+	if(!_0||!_0.getMinutes) {
+		_0 = new Date();
 	};
-	return _1;
-}; function _JDGm(_0) { return _jDateGetMinutes(_0) };
+	_0 = _0.getMinutes();
+	if(!_1&&_0<10) {
+		_0 = '0'+_0;
+	};
+	return _0;
+}; function _JDGm(_0,_1) { return _jDateGetMinutes(_0,_1) };
 
-function _jDateGetSeconds(_0) {
-	let _1 = new Date().getSeconds();
-	if(!_0&&_1<10) {
-		_1 = '0'+_1;
+function _jDateGetSeconds(_0,_1) {
+	if(!_0||!_0.getSeconds) {
+		_0 = new Date();
 	};
-	return _1;
-}; function _JDGs(_0) { return _jDateGetSeconds(_0) };
+	_0 = _0.getSeconds();
+	if(!_1&&_0<10) {
+		_0 = '0'+_0;
+	};
+	return _0;
+}; function _JDGs(_0,_1) { return _jDateGetSeconds(_0,_1) };
 
-function _jDateGetMilliseconds(_0) {
-	let _1 = new Date().getMilliseconds();
-	if(!_0&&_1<10) {
-		_1 = '00'+_1;
-	} else if(!_0&&_1<100) {
-		_1 = '0'+_1;
+function _jDateGetMilliseconds(_0,_1) {
+	if(!_0||!_0.getMilliseconds) {
+		_0 = new Date();
 	};
-	return _1;
-}; function _JDGms(_0) { return _jDateGetMilliseconds(_0) };
+	_0 = _0.getMilliseconds();
+	if(!_1&&_0<10) {
+		_0 = '00'+_0;
+	} else if(!_1&&_0<100) {
+		_0 = '0'+_0;
+	};
+	return _0;
+}; function _JDGms(_0,_1) { return _jDateGetMilliseconds(_0,_1) };
+
+function _jDateGetString(_0) {
+	if(!_0) {
+		_0 = {};
+	};
+	let _3 = new Date();
+	if(_0.Date) {
+		if(_0.Date.getTime) {
+			_3 = _0.Date;
+		};
+	};
+	if(_0.MN&&!_0.M) {
+		_0.M = _JDGMN(_0.MN);
+	} else if(!_0.MN&&_0.M) {
+		_0.MN = _JDGMN(_0.M);
+	};
+	if(_0.DwN&&!_0.Dw) {
+		_0.Dw = _JDGDwN(_0.DwN);
+	} else if(!_0.DwN&&_0.Dw) {
+		_0.DwN = _JDGDwN(_0.Dw);
+	};
+	let _1 = [
+		['Date',_3],
+		['Y',_JDGY(_3)],
+		['M',_JDGM(_3)],
+		['MN',_JDGMN(_3.getMonth())],
+		['D',_JDGD(_3)],
+		['Dw',_JDGDw(_3)],
+		['DwN',_JDGDwN(_3.getDay())],
+		['h',_JDGh(_3)],
+		['m',_JDGm(_3)],
+		['s',_JDGs(_3)],
+		['ms',_JDGms(_3)],
+	];
+	for(let _2=0; _2<_1.length; _2++) {
+		eval(
+			`if(!_0.`+_1[_2][0]+`) {
+				_0.`+_1[_2][0]+` = _1[_2][1];
+			};`
+		);
+	};
+	return _0.DwN+' '+_0.D+' '+_0.MN+' '+_0.Y+' at '+_0.h+':'+_0.m+':'+_0.s+':'+_0.ms;
+}; function _JDGS(_0) { return _jDateGetString(_0) };
 
 function _jHelp(_0,_12) {
 	if(!_0) {
@@ -396,124 +485,154 @@ function _jHelp(_0,_12) {
 		],
 		[	['DateGetDayweek','DGDw'],
 			[
-				`returns the week day number, in 0-6 format or, if "Type" is true, 1-7 format.`,
+				`Returns the week day number, in 0-6 format or, if "Type" is true, 1-7 format.`,
 			],
 			[
-				'( Type )',
+				'( Date , Type )',
 			],
 			[
 				`()`,
-				`(true)`,
+				`(new Date())`,
+				`(_,true)`,
+				`(new Date(),true)`,
 			],
 		],
 		[	['DateGetDayweekName','DGDwN'],
 			[
-				`returns the week day name.`,
+				`Returns the week day name.`,
 			],
 			[
-				'( Day, Type )',
+				'( Dayweek , Type )',
 			],
 			[
 				`()`,
 				`(0)`,
 				`(1,true)`,
-				`(,true)`,
+				`(_,true)`,
 			],
 		],
 		[	['DateGetDay','DGD'],
 			[
-				`returns the day number.`,
+				`Returns the day number.`,
 			],
 			[
-				'( )',
+				'( Date )',
 			],
 			[
 				`()`,
+				`(new Date())`,
 			],
 		],
 		[	['DateGetMonth','DGM'],
 			[
-				`returns the month number, in 0-11 format or, if "Type" is true, 1-12 format.`,
+				`Returns the month number, in 0-11 format or, if "Type" is true, 1-12 format.`,
 			],
 			[
-				'( Type )',
+				'( Date , Type )',
 			],
 			[
 				`()`,
-				`(true)`,
+				`(new Date())`,
+				`(_,true)`,
+				`(new Date(),true)`,
 			],
 		],
 		[	['DateGetMonthName','DGMN'],
 			[
-				`returns the month name.`,
+				`Returns the month name.`,
 			],
 			[
-				'( Day, Type )',
+				'( Month , Type )',
 			],
 			[
 				`()`,
 				`(0)`,
 				`(1,true)`,
-				`(,true)`,
+				`(_,true)`,
 			],
 		],
 		[	['DateGetYear','DGY'],
 			[
-				`returns the year.`,
+				`Returns the year.`,
 			],
 			[
-				'( )',
+				'( Date )',
 			],
 			[
 				`()`,
+				`(new Date())`,
 			],
 		],
 		[	['DateGetHours','DGh'],
 			[
-				`returns the hours, in "hh" format or, if "Type" is true, in type "number".`,
+				`Returns the hours, in "hh" format or, if "Type" is true, in type "number".`,
 			],
 			[
-				'( Type )',
+				'( Date , Fill_YoN )',
 			],
 			[
 				`()`,
-				`(true)`,
+				`(new Date())`,
+				`(_,true)`,
+				`(new Date(),true)`,
 			],
 		],
 		[	['DateGetMinutes','DGm'],
 			[
-				`returns the minutes, in "mm" format or, if "Type" is true, in type "number".`,
+				`Returns the minutes, in "mm" format or, if "Type" is true, in type "number".`,
 			],
 			[
-				'( Type )',
+				'( Date , Fill_YoN )',
 			],
 			[
 				`()`,
-				`(true)`,
+				`(new Date())`,
+				`(_,true)`,
+				`(new Date(),true)`,
 			],
 		],
 		[	['DateGetSeconds','DGs'],
 			[
-				`returns the minutes, in "ss" format or, if "Type" is true, in type "number".`,
+				`Returns the minutes, in "ss" format or, if "Type" is true, in type "number".`,
 			],
 			[
-				'( Type )',
+				'( Date , Fill_YoN )',
 			],
 			[
 				`()`,
-				`(true)`,
+				`(new Date())`,
+				`(_,true)`,
+				`(new Date(),true)`,
 			],
 		],
 		[	['DateGetMilliseconds','DGms'],
 			[
-				`returns the minutes, in "μμμ" format or, if "Type" is true, in type "number".`,
+				`Returns the minutes, in "μμμ" format or, if "Type" is true, in type "number".`,
 			],
 			[
-				'( Type )',
+				'( Date , Fill_YoN )',
 			],
 			[
 				`()`,
-				`(true)`,
+				`(new Date())`,
+				`(_,true)`,
+				`(new Date(),true)`,
+			],
+		],
+		[	['DateGetString','DGS'],
+			[
+				`Returns a string containing date and time information.`,
+			],
+			[
+				`( { 'Date': Date , 'Y': Year , 'M': Month , 'MN': Month_Name , 'D': Day , 'Dw': Dayweek , 'DwN': Dayweek_Name , 'h': Hours , 'm': Minutes , 's': Seconds , 'ms': Milliseconds } )`,
+			],
+			[
+				`()`,
+				`({'Date': new Date() })`,
+				`({'M': 6 })`,
+				`({'MN': 'My-Month' })`,
+				`({'M': 8, 'MN': 'Bad-Month' })`,
+				`({'Date': new Date(), 'Y': 134340+'-2ndA.D.', 'M': 1, 'MN': 'Yellowny', 'D': 32, 'Dw': 0, 'DwN': 'Plutoday', 'h': 33, 'm': 77, 's': 99, 'ms': 'lol' })`,
 			],
 		],
 		[	['Help','H'],
@@ -644,6 +763,105 @@ function _jHelp(_0,_12) {
 	};
 }; function _JH(_0,_1) { return _jHelp(_0,_1) };
 
+/*function _jHSL(_0) {
+	if(!_0) {
+		_0 = document.body.style.backgroundColor;
+		 //~ = 'hsla('+Math.random()*255+','+Math.random()*100+'%,'+Math.random()*100+'%,1)';
+		//~ return;
+	};
+	//~ try {
+		_0.TestIfItIsAssignable = _;
+		if(_0.TestIfItIsAssignable!=_) {
+			return 'err';
+		};
+	//~ } catch(e) {
+		//~ return 'errOk';
+	//~ };
+	//~ if(_0.TestIfItIsAssignable=5) {
+		//~ console.log(5);
+	//~ };
+	console.log(_0.TestIfItIsAssignable);
+	console.log(_0);
+	console.log(Object.keys(_0).lenght);
+	if(_0.TestIfItIsAssignable=_=='null') {
+		console.log(4);
+	};
+	console.log(109);
+	let _1 = [
+		['Elem',null],
+		['Interval',0],
+		['IntervalRange',0],
+		['H',127.5],
+		['HRange',255],
+		['S',50],
+		['SRange',100],
+		['L',50],
+		['LRange',100],
+		['Opacity',1],
+		['OpacityRange',0],
+		['NotReplace',false],
+	];
+	for(let _2=0; _2<_1.length; _2++) {
+		eval(
+			`if(!_0.`+_1[_2][0]+`) {
+				_0.`+_1[_2][0]+` = _1[_2][1];
+			};`
+		);
+	};
+	if(!_0.Elem) {
+		return `Is required the element "Elem" that you want to change color. And it cannot be "", "0", "null", "''" or "false". Eg: _jChronoHSL({'Elem': 'document.body.style.backgroundColor' })`;
+	};
+	if(!_0.NotReplace) {
+		return setInterval(function(_0) {
+			eval(_0.Elem+` = 'hsla('+(Math.random()*_0.HRange-_0.HRange/2+_0.H)+','+(Math.random()*_0.SRange-_0.SRange/2+_0.S)+'%,'+(Math.random()*_0.LRange-_0.LRange/2+_0.L)+'%,'+(Math.random()*_0.OpacityRange-_0.OpacityRange/2+_0.Opacity)+')';`);
+		}, Math.random()*_0.IntervalRange+_0.Interval, _0);
+	} else {
+		return setInterval(function(_0) {
+			eval(_0.Elem+` += ', hsla('+(Math.random()*_0.HRange-_0.HRange/2+_0.H)+','+(Math.random()*_0.SRange-_0.SRange/2+_0.S)+'%,'+(Math.random()*_0.LRange-_0.LRange/2+_0.L)+'%,'+(Math.random()*_0.OpacityRange-_0.OpacityRange/2+_0.Opacity)+')';`);
+		}, Math.random()*_0.IntervalRange-_0.IntervalRange/2+_0.Interval, _0);
+	};
+}; function _JHSL(_0) { return _jHSL(_0) };*/
+
+function _jMakePadGestureGrid(_0) {
+	//~ if(!_0) {
+		//~ return `Is required a JSON with at least the element "Elem" that you want to change color. Eg: _jChronoHSL({'Elem': 'document.body.style.backgroundColor' })`;
+	//~ };
+	//~ let _1 = [
+		//~ ['Elem',null],
+		//~ ['Interval',1000],
+		//~ ['IntervalRange',0],
+		//~ ['H',127.5],
+		//~ ['HRange',255],
+		//~ ['S',50],
+		//~ ['SRange',100],
+		//~ ['L',50],
+		//~ ['LRange',100],
+		//~ ['Opacity',1],
+		//~ ['OpacityRange',0],
+		//~ ['NotReplace',false],
+	//~ ];
+	//~ for(let _2=0; _2<_1.length; _2++) {
+		//~ eval(
+			//~ `if(!_0.`+_1[_2][0]+`) {
+				//~ _0.`+_1[_2][0]+` = _1[_2][1];
+			//~ };`
+		//~ );
+	//~ };
+	//~ if(!_0.Elem) {
+		//~ return `Is required the element "Elem" that you want to change color. And it cannot be "", "0", "null", "''" or "false". Eg: _jChronoHSL({'Elem': 'document.body.style.backgroundColor' })`;
+	//~ };
+	//~ if(!_0.NotReplace) {
+		//~ return setInterval(function(_0) {
+			//~ eval(_0.Elem+` = 'hsla('+(Math.random()*_0.HRange-_0.HRange/2+_0.H)+','+(Math.random()*_0.SRange-_0.SRange/2+_0.S)+'%,'+(Math.random()*_0.LRange-_0.LRange/2+_0.L)+'%,'+(Math.random()*_0.OpacityRange-_0.OpacityRange/2+_0.Opacity)+')';`);
+		//~ }, Math.random()*_0.IntervalRange+_0.Interval, _0);
+	//~ } else {
+		//~ return setInterval(function(_0) {
+			//~ eval(_0.Elem+` += ', hsla('+(Math.random()*_0.HRange-_0.HRange/2+_0.H)+','+(Math.random()*_0.SRange-_0.SRange/2+_0.S)+'%,'+(Math.random()*_0.LRange-_0.LRange/2+_0.L)+'%,'+(Math.random()*_0.OpacityRange-_0.OpacityRange/2+_0.Opacity)+')';`);
+		//~ }, Math.random()*_0.IntervalRange-_0.IntervalRange/2+_0.Interval, _0);
+	//~ };
+}; function _JMPGG(_0) { return _jMakePadGestureGrid(_0) };
+//~ _jMakePadGesture( { 'Function': Function, 'Side': [ 3, 3 ], 'Format': 'auto'||'standard'||'std'||'array'||.., 'InverseXY': false } )
+
 function _jTextareaOutput(_0) {
 	if(!_0) {
 		_0 = '';
@@ -656,3 +874,6 @@ function _jTextareaRead() {
 		return document.getElementById('textarea').value;
 	};
 }; function _JTR() { return _jTextareaRead() };
+
+//~ Made by Angaroni Leonardo,
+//~ Instagram: @leo.anga, @wtnt.tk

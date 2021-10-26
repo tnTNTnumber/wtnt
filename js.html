@@ -134,39 +134,14 @@ window.addEventListener('keydown', e=>{
 			};
 			FileNameCounter = ' N.'+localStorage.FileNameCounter;
 		};
-		let ElemDate =  new Date();
-		let DateDayWeek = ElemDate.getDay();
-		let DateDay = ' '+ElemDate.getDate();
-		let DateMonth = ElemDate.getMonth();
-		let DateYear = ' '+ElemDate.getFullYear();
-		let DateHours = ElemDate.getHours();
-		let DateMinutes = ElemDate.getMinutes();
-		let DateSeconds = ElemDate.getSeconds();
-		let DateMilliseconds = ElemDate.getMilliseconds();
-		let DateDayWeekName = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-		let DateMonthName = ['January','February','March','April','May','June','July','August','September','October','November','December'];
-		if(DateHours<10) {
-			DateHours = '0'+DateHours;
-		};
-		DateHours += ':';
-		if(DateMinutes<10) {
-			DateMinutes = '0'+DateMinutes;
-		};
-		DateMinutes += ':';
-		if(DateSeconds<10) {
-			DateSeconds = '0'+DateSeconds;
-		};
-		DateSeconds += ':';
-		if(DateMilliseconds<100) {
-			if(DateMilliseconds<10) {
-				DateMilliseconds = '00'+DateMilliseconds;
-			} else {
-				DateMilliseconds = '0'+DateMilliseconds;
-			};
-		};
 		let Elem = document.createElement('a');
+		let FileNameStd = 'Project'+FileNameCounter+' of '+_JDGS()+'.js';
+		let FileName = prompt('Enter the file name:',FileNameStd);
+		if(FileName==null) {
+			FileName = FileNameStd;
+		};
 		Elem.setAttribute('href','data:text/plain;charset=utf-8,'+encodeURIComponent(_JTR()));
-		Elem.setAttribute('download',prompt('Enter the file name:', 'Project'+FileNameCounter+' of '+DateDayWeekName[DateDayWeek]+DateDay+' '+DateMonthName[DateMonth]+DateYear+' at '+DateHours+DateMinutes+DateSeconds+DateMilliseconds+'.js'));
+		Elem.setAttribute('download',FileName);
 		Elem.style.display = 'none';
 		document.body.appendChild(Elem);
 		Elem.click();
