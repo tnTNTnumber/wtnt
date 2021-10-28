@@ -763,32 +763,13 @@ function _jHelp(_0,_12) {
 	};
 }; function _JH(_0,_1) { return _jHelp(_0,_1) };
 
-/*function _jHSL(_0) {
+function _jHSL(_0) {
 	if(!_0) {
-		_0 = document.body.style.backgroundColor;
-		 //~ = 'hsla('+Math.random()*255+','+Math.random()*100+'%,'+Math.random()*100+'%,1)';
-		//~ return;
+		document.body.style.backgroundColor = 'hsla('+Math.random()*255+','+Math.random()*100+'%,'+Math.random()*100+'%,1)';
+		return;
 	};
-	//~ try {
-		_0.TestIfItIsAssignable = _;
-		if(_0.TestIfItIsAssignable!=_) {
-			return 'err';
-		};
-	//~ } catch(e) {
-		//~ return 'errOk';
-	//~ };
-	//~ if(_0.TestIfItIsAssignable=5) {
-		//~ console.log(5);
-	//~ };
-	console.log(_0.TestIfItIsAssignable);
-	console.log(_0);
-	console.log(Object.keys(_0).lenght);
-	if(_0.TestIfItIsAssignable=_=='null') {
-		console.log(4);
-	};
-	console.log(109);
 	let _1 = [
-		['Elem',null],
+		['Elem','document.body.style.backgroundColor'],
 		['Interval',0],
 		['IntervalRange',0],
 		['H',127.5],
@@ -808,59 +789,124 @@ function _jHelp(_0,_12) {
 			};`
 		);
 	};
-	if(!_0.Elem) {
-		return `Is required the element "Elem" that you want to change color. And it cannot be "", "0", "null", "''" or "false". Eg: _jChronoHSL({'Elem': 'document.body.style.backgroundColor' })`;
-	};
 	if(!_0.NotReplace) {
-		return setInterval(function(_0) {
-			eval(_0.Elem+` = 'hsla('+(Math.random()*_0.HRange-_0.HRange/2+_0.H)+','+(Math.random()*_0.SRange-_0.SRange/2+_0.S)+'%,'+(Math.random()*_0.LRange-_0.LRange/2+_0.L)+'%,'+(Math.random()*_0.OpacityRange-_0.OpacityRange/2+_0.Opacity)+')';`);
-		}, Math.random()*_0.IntervalRange+_0.Interval, _0);
+		_0.NotReplace = '=';
 	} else {
-		return setInterval(function(_0) {
-			eval(_0.Elem+` += ', hsla('+(Math.random()*_0.HRange-_0.HRange/2+_0.H)+','+(Math.random()*_0.SRange-_0.SRange/2+_0.S)+'%,'+(Math.random()*_0.LRange-_0.LRange/2+_0.L)+'%,'+(Math.random()*_0.OpacityRange-_0.OpacityRange/2+_0.Opacity)+')';`);
-		}, Math.random()*_0.IntervalRange-_0.IntervalRange/2+_0.Interval, _0);
+		_0.NotReplace = '+=';
 	};
-}; function _JHSL(_0) { return _jHSL(_0) };*/
+	return setTimeout(function(_0) {
+		eval(_0.Elem+_0.NotReplace+`'hsla('+(Math.random()*_0.HRange-_0.HRange/2+_0.H)+','+(Math.random()*_0.SRange-_0.SRange/2+_0.S)+'%,'+(Math.random()*_0.LRange-_0.LRange/2+_0.L)+'%,'+(Math.random()*_0.OpacityRange-_0.OpacityRange/2+_0.Opacity)+')';`);
+	}, Math.random()*_0.IntervalRange+_0.Interval, _0);
+}; function _JHSL(_0) { return _jHSL(_0) };
+
+//~ const capitalizeKeys = (obj) => { /*_jJSONKeyCapitalize*/
+  //~ const isObject = o => Object.prototype.toString.apply(o) === '[object Object]'
+  //~ const isArray = o => Object.prototype.toString.apply(o) === '[object Array]'
+  
+  //~ let transformedObj = isArray(obj) ? [] : {}
+  
+  //~ for (let key in obj) {
+    //~ // replace the following with any transform function
+    //~ const transformedKey = key.replace(/^\w/, (c, _) => c.toUpperCase())
+
+    //~ if (isObject(obj[key]) || isArray(obj[key])) {
+      //~ transformedObj[transformedKey] = capitalizeKeys(obj[key])
+    //~ } else {
+      //~ transformedObj[transformedKey] = obj[key]
+    //~ }
+  //~ }
+  //~ return transformedObj
+//~ } https://newbedev.com/changing-the-case-of-javascript-object-keys
 
 function _jMakePadGestureGrid(_0) {
-	//~ if(!_0) {
-		//~ return `Is required a JSON with at least the element "Elem" that you want to change color. Eg: _jChronoHSL({'Elem': 'document.body.style.backgroundColor' })`;
-	//~ };
-	//~ let _1 = [
-		//~ ['Elem',null],
-		//~ ['Interval',1000],
-		//~ ['IntervalRange',0],
-		//~ ['H',127.5],
-		//~ ['HRange',255],
-		//~ ['S',50],
-		//~ ['SRange',100],
-		//~ ['L',50],
-		//~ ['LRange',100],
-		//~ ['Opacity',1],
-		//~ ['OpacityRange',0],
-		//~ ['NotReplace',false],
-	//~ ];
-	//~ for(let _2=0; _2<_1.length; _2++) {
-		//~ eval(
-			//~ `if(!_0.`+_1[_2][0]+`) {
-				//~ _0.`+_1[_2][0]+` = _1[_2][1];
-			//~ };`
-		//~ );
-	//~ };
-	//~ if(!_0.Elem) {
-		//~ return `Is required the element "Elem" that you want to change color. And it cannot be "", "0", "null", "''" or "false". Eg: _jChronoHSL({'Elem': 'document.body.style.backgroundColor' })`;
-	//~ };
-	//~ if(!_0.NotReplace) {
-		//~ return setInterval(function(_0) {
-			//~ eval(_0.Elem+` = 'hsla('+(Math.random()*_0.HRange-_0.HRange/2+_0.H)+','+(Math.random()*_0.SRange-_0.SRange/2+_0.S)+'%,'+(Math.random()*_0.LRange-_0.LRange/2+_0.L)+'%,'+(Math.random()*_0.OpacityRange-_0.OpacityRange/2+_0.Opacity)+')';`);
-		//~ }, Math.random()*_0.IntervalRange+_0.Interval, _0);
-	//~ } else {
-		//~ return setInterval(function(_0) {
-			//~ eval(_0.Elem+` += ', hsla('+(Math.random()*_0.HRange-_0.HRange/2+_0.H)+','+(Math.random()*_0.SRange-_0.SRange/2+_0.S)+'%,'+(Math.random()*_0.LRange-_0.LRange/2+_0.L)+'%,'+(Math.random()*_0.OpacityRange-_0.OpacityRange/2+_0.Opacity)+')';`);
-		//~ }, Math.random()*_0.IntervalRange-_0.IntervalRange/2+_0.Interval, _0);
-	//~ };
+	if(!_0) {
+		_0 = {};
+	};
+	if(!_0.Function&&!_0.Param) {
+		_0.Param = [/*Result*/];
+	};
+	if(_0.Class&&!_0.Class.length) {
+		_0.Class = [_0.Class];
+	};
+	let _1 = [
+		['Elem',document.body],
+		['Function',function(Result) {alert(Result);}],
+		['Param',[]],
+		['Grid',[3,3]],
+		['PositionX',false],
+		['PositionY',false],
+		['DistanceX','-12em'],
+		['DistanceY','4%'],
+		['PadWidth','15em'],
+		['PadHeight','15em'],
+		['PadColor',''],
+		['PadBorder','2px'],
+		['PadBorderColor',''],
+		['PadBorderRadius','5%'],
+		['PadPadding','5%'],
+		['PadOpacity',1],
+		['PadOpacityRange',0],
+		['GridWidth','68%'],
+		['GridHeight','100%'],
+		['GridColor',''],
+		['GridBorder','0%'],
+		['GridBorderColor',''],
+		['GridBorderRadius','4%'],
+		['GridPadding','-4%'],
+		['GridOpacity',1],
+		['GridOpacityRange',0],
+		['CellsWidth','33%'],
+		['CellsHeight','33%'],
+		['CellsColor',''],
+		['CellsBorder','1px'],
+		['CellsBorderColor',''],
+		['CellsBorderRadius','0%'],
+		['CellsPadding','-4%'],
+		['CellsOpacity',.8],
+		['CellsOpacityRange',0],
+		['BarWidth','18%'],
+		['BarHeight','100%'],
+		['BarColor',''],
+		['BarBorder','5%'],
+		['BarBorderColor',''],
+		['BarBorderRadius','0%'],
+		['BarPadding','-4%'],
+		['BarOpacity',.97],
+		['BarOpacityRange',.03],
+		['Format','auto'], /*auto,standard,std,array,..*/
+		['InverseXY','false'],
+		['TransDur',800],
+		['TransDurRange',50],
+		['FullWidth','80%'],
+		['FullHeight','80%'],
+		['FullOpacity',.95],
+		['FullOpacityRange',.01],
+		['Id','_jPadGestureGrid'],
+		['Class',[]],
+	];
+	for(let _2=0; _2<_1.length; _2++) {
+		eval(
+			`if(!_0.`+_1[_2][0]+`) {
+				_0.`+_1[_2][0]+` = _1[_2][1];
+			};`
+		);
+	};
+	let _2 = ['right','bottom'];
+	if(_0.PositionX) {
+		_2[0] = 'left';
+	};
+	if(_0.PositionY) {
+		_2[1] = 'top';
+	};
+	let _4 = '';
+	for(let _3=0; _3<_0.Class.length; _3++) {
+		_4 += ' '+_0.Class[_3];
+	};
+	_0.Elem.innerHTML += '<div class="_PA _jPadGestureGrid'+_4+'" id="'+_0.Id+'" style="'+_2[0]+':'+_0.DistanceX+';'+_2[1]+':'+_0.DistanceY+';width:'+_0.PadWidth+';height:'+_0.PadHeight+';background:red;"></div>';
+	const _5 = _0.Elem.getElementsByClassName('_jPadGestureGrid')[_0.Elem.getElementsByClassName('_jPadGestureGrid').length-1];
+	return _5;
 }; function _JMPGG(_0) { return _jMakePadGestureGrid(_0) };
-//~ _jMakePadGesture( { 'Function': Function, 'Side': [ 3, 3 ], 'Format': 'auto'||'standard'||'std'||'array'||.., 'InverseXY': false } )
+//~ _jMakePadGestureGrid( { 'Function': Function, 'Side': [ 3, 3 ], 'Format': 'auto'||'standard'||'std'||'array'||.., 'InverseXY': false } )
 
 function _jTextareaOutput(_0) {
 	if(!_0) {
