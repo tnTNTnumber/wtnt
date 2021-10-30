@@ -1,0 +1,136 @@
+<html>
+<head>
+	<script src="https://wtnt.tk/js.js"></script>
+	<link rel="stylesheet" href="https://wtnt.tk/css.css">
+<style>
+
+:root {
+	---AllElemTransDur: 2000ms;
+}
+
+#Grid {
+	background: radial-gradient(rgba(99,99,99,.05) 80%, rgba(99,99,99,0));
+	border-radius: 15px;
+}
+
+.BallDiv {
+	border-radius: 50%;
+	transition-duration: 8000ms;
+}
+
+.Ball {
+	width: 100%;
+	height: 100%;
+	border: 2px solid rgba(99,99,99,0);
+	border-radius: 50%;
+	transition-duration: 1400ms;
+}
+
+</style>
+<script>
+
+function BallClick(i0,i1) {
+	if(Select) {
+		if(Select[0]==i0&&Select[1]==i1) {
+			document.getElementsByClassName('SetN'+i0)[i1].style.borderColor = 'rgba(99,99,99,0)';
+			Select = _;
+		} else if(Select[0]==i0) {
+			for(let i2=0; i2<2; i2++) {
+				clearInterval(IntervalList[i0][i2]);
+				document.getElementsByClassName('SetN'+i0+'Div')[0].outerHTML = '';
+			};
+			Select = _;
+			RemainingBalls -= 1;
+		} else {
+			document.getElementsByClassName('SetN'+Select[0])[Select[1]].style.borderColor = 'rgba(99,99,99,0)';
+			Select = [i0,i1];
+			document.getElementsByClassName('SetN'+Select[0])[Select[1]].style.borderColor = BorderColor;
+		};
+	} else {
+		Select = [i0,i1];
+		document.getElementsByClassName('SetN'+Select[0])[Select[1]].style.borderColor = BorderColor;
+	};
+	if(RemainingBalls==0) {
+		GenLvl();
+	};
+};
+
+function GenBalls(x) {
+	for(let i0=0; i0<x; i0++) {
+		IntervalList.push([_,_]);
+		let Color = 'hsla('+Math.random()*255+','+Math.random()*100+'%,'+Math.random()*100+'%,1)';
+		for(let i1=0; i1<2; i1++) {
+			Grid.innerHTML += '<div class="_PA _BOMP BallDiv SetN'+i0+'Div" onclick="BallClick('+i0+','+i1+')"><div class="_BOMP Ball SetN'+i0+'" style="background:radial-gradient('+Color+' 30%,rgba(0,0,0,0) 50%);opacity:0;"></div></div>';
+			GenInt(i0,i1);
+			setTimeout(SetRndPos,1,i0,i1);
+			setTimeout(function() {document.getElementsByClassName('SetN'+i0)[i1].style.opacity = 1;},1,i0,i1);
+		};
+	};
+};
+
+function GenInt(i0,i1) {
+	SetRndPos(i0,i1);
+	IntervalList[i0][i1] = setTimeout(function(i0,i1) {
+		GenInt(i0,i1);
+	}, Math.random()*TimeRange+TimeMin, i0, i1);
+};
+
+function GenLvl() {
+	Lvl += 1; //1
+	Grid.innerHTML = '';
+	let HSLValue = [Math.random()*255,Math.random()*100,Math.random()*100];
+	if(CHSL) {
+		clearInterval(CHSL);
+	};
+	_JHSL({'Elem':'document.body.style.backgroundColor','H':HSLValue[0],'HRange':4,'S':HSLValue[1],'SRange':4,'L':HSLValue[2],'LRange':4});
+	CHSL = _JCHSL({'Elem':'document.body.style.backgroundColor','Interval':1400,'IntervalRange':1200,'H':HSLValue[0],'HRange':4,'S':HSLValue[1],'SRange':8,'L':HSLValue[2],'LRange':8});
+	RemainingBalls = Lvl;
+	GenBalls(Lvl);
+	//~ alert('lvl'+Lvl);
+};
+
+function SetRndPos(i0,i1) {
+	document.getElementsByClassName('SetN'+i0+'Div')[i1].style.left = Math.floor(Math.random()*X)*CellSidePX+'px';
+	document.getElementsByClassName('SetN'+i0+'Div')[i1].style.top = Math.floor(Math.random()*Y)*CellSidePX+'px';
+};
+
+var CellSidePX = 80;
+var XSize = window.innerWidth;
+var YSize = window.innerHeight;
+var X = Math.floor(XSize/CellSidePX);
+var Y = Math.floor(YSize/CellSidePX);
+var XBorders = XSize%CellSidePX;
+var YBorders = YSize%CellSidePX;
+var XBorder = XSize%CellSidePX/2;
+var YBorder = YSize%CellSidePX/2;
+var Grid = null;
+var BallClass = null;
+var Lvl = 0;
+var IntervalList = [];
+var TimeRange = 7000;
+var TimeMin = 1000;
+var Select = _;
+var RemainingBalls = _;
+var BorderColor = 'rgba(99,99,99,.9)';
+var CHSL = _;
+
+window.onload = function Onload() {
+	document.body.innerHTML += '<div id="Grid" class="_PA _C" style="width:'+(XSize-XBorders)+'px;height:'+(YSize-YBorders)+'px;"></div>';
+	Grid = document.getElementById('Grid');
+	BallClass = document.createElement('style');
+	BallClass.type = 'text/css';
+	BallClass.innerHTML = '.Ball {width:'+CellSidePX+'px;height:'+CellSidePX+'px;}';
+	document.getElementsByTagName('head')[0].appendChild(BallClass);
+	GenLvl();
+};
+
+/*var x = _JCHSL({'Elem':"document.getElementById('textarea').style.background"})
+setTimeout(function() {clearInterval(x)},1000)*/
+
+</script>
+</head>
+<body class="_NS _HideScrollBar">
+
+
+</body>
+</html>
