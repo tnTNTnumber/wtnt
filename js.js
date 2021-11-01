@@ -825,6 +825,56 @@ function _jMakePadGestureGrid(_0) {
 	if(!_0.Function&&!_0.Param) {
 		_0.Param = [/*Result*/];
 	};
+	/*if(_0.Palette) {
+		let _2 = [
+			'PadColor','PadBorderColor','GridColor','GridBorderColor','CellsColor','CellsBorderColor','BarColor','BarBorderColor','HelpColor','HelpBorderColor',
+			'FullPadColor','FullPadBorderColor','FullGridColor','FullGridBorderColor','FullCellsColor','FullCellsBorderColor','FullBarColor','FullBarBorderColor','FullHelpColor','FullHelpBorderColor'
+		];
+		let _3 = [
+			{	'N': 'Alice', 'P': [
+					[245,46,91,1],false,[0,0,100,1],false,[78,80,43,1],false,[4,100,43,1],false,[45,100,55,1],
+					false,false,false,false,false,false,false,false,false,false
+			],	},
+			{	'N': 'Blake', 'P': [
+					[245,52,91,1],false,[4,100,47,1],false,[65,73,49,1],false,[219,74,32,1],false,[46,100,50,1],
+					false,false,false,false,false,false,false,false,false,false
+			],	},
+			{	'N': 'Cathy', 'P': [
+					[4,100,47,1],false,[218,39,39,1],false,[39,100,50,1],false,[82,100,39,1],false,[53,100,67,1],
+					false,false,false,false,false,false,false,false,false,false
+			],	},
+			{	'N': 'David', 'P': [
+					[207,100,12,1],false,[0,0,100,1],false,[214,80,25,1],false,[4,100,47,1],false,[207,100,12,1],
+					false,false,false,false,false,false,false,false,false,false
+			],	},
+			{	'N': 'Erica', 'P': [
+					[82,100,39,1],false,[0,0,100,1],false,[324,80,35,1],false,[46,100,50,1],false,[4,100,47,1],
+					false,false,false,false,false,false,false,false,false,false
+			],	},
+			{	'N': 'Teo', 'P': [
+					[0,0,0,1],false,[221,34,39,1],false,[0,0,0,1],false,[45,100,55,1],false,[0,0,0,1],
+					false,false,false,false,false,false,false,false,false,false
+			],	},
+			{	'N': 'Warm', 'P': [
+					[249,155,31,1],false,[248,188,24,1],false,[241,85,35,1],false,[241,85,35,1],false,[249,155,31,1],
+					false,false,false,false,false,false,false,false,false,false
+			],	},
+			{	'N': 'auto', 'P': [
+					[,,,1],false,[,,,1],false,[,,,1],false,[,,,1],false,[,,,1],
+					false,false,false,false,false,false,false,false,false,false
+			],	},
+		];
+		//~ switch(_0.Palette) {
+			//~ case '':
+				//~ _3 = [];
+				//~ break;
+			//~ default:
+				//~ _0.Palette = _;
+		//~ };
+	};
+	if(!_0.Palette) {
+		_0.Palette = '';
+	};*/
 	if(_0.Class&&!_0.Class.length) {
 		_0.Class = [_0.Class];
 	};
@@ -833,54 +883,132 @@ function _jMakePadGestureGrid(_0) {
 		['Function',function(Result) {alert(Result);}],
 		['Param',[]],
 		['Grid',[3,3]],
+		['Palette',_],
 		['PositionX',false],
 		['PositionY',false],
-		['DistanceX','-12em'],
+		['DistanceX','calc( -14.8em + 4px )'], //-12em
 		['DistanceY','4%'],
-		['PadWidth','15em'],
-		['PadHeight','15em'],
-		['PadColor',''],
+		['PadWidth','16.6em'],
+		['PadHeight','13.6em'],
+		['PadColor','red'], //
 		['PadBorder','2px'],
-		['PadBorderColor',''],
-		['PadBorderRadius','5%'],
-		['PadPadding','5%'],
+		['PadBorderColor','black'], //
+		['PadBorderStyle','solid'],
+		['PadBorderRadius','1em'],
+		['PadPadding','.8em'],
 		['PadOpacity',1],
 		['PadOpacityRange',0],
-		['GridWidth','68%'],
-		['GridHeight','100%'],
-		['GridColor',''],
-		['GridBorder','0%'],
-		['GridBorderColor',''],
-		['GridBorderRadius','4%'],
-		['GridPadding','-4%'],
+		['GridWidth','12em'],
+		['GridHeight','12em'],
+		['GridColor','orange'], //
+		['GridBorder','2px'],
+		['GridBorderColor','black'], //
+		['GridBorderStyle','solid'],
+		['GridBorderRadius','1em'],
+		['GridMargin','0em'],
 		['GridOpacity',1],
 		['GridOpacityRange',0],
-		['CellsWidth','33%'],
-		['CellsHeight','33%'],
-		['CellsColor',''],
+		['DivWidth','100%'],
+		['DivHeight','100%'],
+		['DivColor','rgba(0,0,0,.3)'], ////////
+		['DivBorder','unset'],
+		['DivBorderColor','rgba(0,0,0,0)'],
+		['DivBorderStyle','none'],
+		['DivBorderRadius','unset'],
+		/*['DivMargin','none'],*/
+		['DivOpacity',1],
+		['DivOpacityRange',0],
+		['CellsWidth','3.6em'],
+		['CellsHeight','3.6em'],
+		['CellsColor','yellow'], //
 		['CellsBorder','1px'],
-		['CellsBorderColor',''],
-		['CellsBorderRadius','0%'],
-		['CellsPadding','-4%'],
+		['CellsBorderColor','black'], //
+		['CellsBorderStyle','solid'],
+		['CellsBorderRadius','0em'],
+		['CellsMargin','0em'],
 		['CellsOpacity',.8],
 		['CellsOpacityRange',0],
-		['BarWidth','18%'],
-		['BarHeight','100%'],
-		['BarColor',''],
-		['BarBorder','5%'],
-		['BarBorderColor',''],
-		['BarBorderRadius','0%'],
-		['BarPadding','-4%'],
+		['BarWidth','2em'],
+		['BarHeight','12em'],
+		['BarColor','blue'], //
+		['BarBorder','2px'],
+		['BarBorderColor','Black'], //
+		['BarBorderStyle','solid'],
+		['BarBorderRadius','1em'],
+		['BarMargin','0em'],
 		['BarOpacity',.97],
 		['BarOpacityRange',.03],
-		['Format','auto'], /*auto,standard,std,array,..*/
-		['InverseXY','false'],
+		['HelpSize','1.8em'],
+		['HelpColor','brown'], //
+		['HelpBorder','5%'],
+		['HelpBorderColor','black'], //
+		['HelpBorderStyle','solid'],
+		['HelpBorderRadius','50%'],
+		['HelpOpacity',.9],
+		['HelpOpacityRange',0],
 		['TransDur',800],
 		['TransDurRange',50],
-		['FullWidth','80%'],
-		['FullHeight','80%'],
-		['FullOpacity',.95],
-		['FullOpacityRange',.01],
+		['FullPadScale',false], /*Else Eg: 3*/
+		['FullPadWidth','80%'],
+		['FullPadHeight','80%'],
+		['FullPadColor',false],
+		['FullPadBorder',false],
+		['FullPadBorderColor',false],
+		['FullPadBorderStyle',false],
+		['FullPadBorderRadius',false],
+		['FullPadPadding',false],
+		['FullPadOpacity',.95],
+		['FullPadOpacityRange',.01],
+		['FullGridWidth',false],
+		['FullGridHeight',false],
+		['FullGridColor',false],
+		['FullGridBorder',false],
+		['FullGridBorderColor',false],
+		['FullGridBorderStyle',false],
+		['FullGridBorderRadius',false],
+		['FullGridMargin',false],
+		['FullGridOpacity',false],
+		['FullGridOpacityRange',false],
+		['FullDivWidth',false],
+		['FullDivHeight',false],
+		['FullDivColor',false],
+		['FullDivBorder',false],
+		['FullDivBorderColor',false],
+		['FullDivBorderStyle',false],
+		['FullDivBorderRadius',false],
+		/*['FullDivMargin',false],*/
+		['FullDivOpacity',false],
+		['FullDivOpacityRange',false],
+		['FullCellsWidth',false],
+		['FullCellsHeight',false],
+		['FullCellsColor',false],
+		['FullCellsBorder',false],
+		['FullCellsBorderColor',false],
+		['FullCellsBorderStyle',false],
+		['FullCellsBorderRadius',false],
+		['FullCellsMargin',false],
+		['FullCellsOpacity',false],
+		['FullCellsOpacityRange',false],
+		['FullBarWidth',false],
+		['FullBarHeight',false],
+		['FullBarColor',false],
+		['FullBarBorder',false],
+		['FullBarBorderColor',false],
+		['FullBarBorderStyle',false],
+		['FullBarBorderRadius',false],
+		['FullBarMargin',false],
+		['FullBarOpacity',false],
+		['FullBarOpacityRange',false],
+		['FullHelpSize',false],
+		['FullHelpColor',false],
+		['FullHelpBorder',false],
+		['FullHelpBorderColor',false],
+		['FullHelpBorderStyle',false],
+		['FullHelpBorderRadius',false],
+		['FullHelpOpacity',false],
+		['FullHelpOpacityRange',false],
+		['Format','auto'], /*auto,standard,std,array,..*/
+		['InverseXY','false'],
 		['Id','_jPadGestureGrid'],
 		['Class',[]],
 	];
@@ -902,8 +1030,34 @@ function _jMakePadGestureGrid(_0) {
 	for(let _3=0; _3<_0.Class.length; _3++) {
 		_4 += ' '+_0.Class[_3];
 	};
-	_0.Elem.innerHTML += '<div class="_PA _jPadGestureGrid'+_4+'" id="'+_0.Id+'" style="'+_2[0]+':'+_0.DistanceX+';'+_2[1]+':'+_0.DistanceY+';width:'+_0.PadWidth+';height:'+_0.PadHeight+';background:red;"></div>';
+	{
+		let _3 = document.createElement('style');
+		_3.type = 'text/css';
+		//~ _3.innerHTML = '._jPadGestureGrid {-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;}';
+		_3.innerHTML = '._jPadGestureGrid {} ._jPadGestureGrid:hover {'+_2[0]+':1em!important;} ._jPadGestureGridCells:hover {background-color:rgba(170,170,30,.8)!important;}';
+		document.getElementsByTagName('head')[0].appendChild(_3);
+	};
+	_0.Elem.innerHTML += '<div class="_PA _BOMP _jPadGestureGrid _jPadGestureGridPad'+_4+'" id="'+_0.Id+'" style="'+_2[0]+':'+_0.DistanceX+';'+_2[1]+':'+_0.DistanceY+';width:'+_0.PadWidth+';height:'+_0.PadHeight+';background-color:'+_0.PadColor+';border-style:'+_0.PadBorderStyle+';border-width:'+_0.PadBorder+';border-color:'+_0.PadBorderColor+';border-radius:'+_0.PadBorderRadius+';opacity:'+(_0.PadOpacity+_0.PadOpacityRange*(Math.random()-.5))+';"></div>';
 	const _5 = _0.Elem.getElementsByClassName('_jPadGestureGrid')[_0.Elem.getElementsByClassName('_jPadGestureGrid').length-1];
+	_5.innerHTML = '<div class="_PA _BOMP _jPadGestureGridDiv" style="margin:'+_0.PadPadding+';top:0%;left:0%;width:calc( '+_0.PadWidth+' - calc( '+_0.PadPadding+' * 2 ) );height:calc( '+_0.PadHeight+' - calc( '+_0.PadPadding+' * 2 ) );background-color:'+_0.DivColor+';border-style:'+_0.DivBorderStyle+';border-width:'+_0.DivBorder+';border-color:'+_0.DivBorderColor+';border-radius:'+_0.DivBorderRadius+';opacity:'+(_0.DivOpacity+_0.DivOpacityRange*(Math.random()-.5))+';"></div>';
+	_5.getElementsByClassName('_jPadGestureGridDiv')[0].innerHTML += '<div class="_PA _BOMP _jPadGestureGridGrid" style="top:50%;transform:translateY(-50%);left:calc( 100% - '+_0.GridWidth+' - calc( '+_0.GridBorder+' * 2 ) );width:'+_0.GridWidth+';height:'+_0.GridHeight+';margin:0% '+_0.GridMargin+';background-color:'+_0.GridColor+';border-style:'+_0.GridBorderStyle+';border-width:'+_0.GridBorder+';border-color:'+_0.GridBorderColor+';border-radius:'+_0.GridBorderRadius+';opacity:'+(_0.GridOpacity+_0.GridOpacityRange*(Math.random()-.5))+';"></div>';
+	_5.getElementsByClassName('_jPadGestureGridGrid')[0].innerHTML += '<div class="_PA _BOMP _jPadGestureGridGridDiv" style="left:50%;top:50%;transform:translate(-50%,-50%);margin:'+_0.CellsMargin+';"></div>';
+	{
+		//~ let _7 = '<table>';
+		let _7 = '<table class="_PA" style="left:50%;top:50%;transform:translate(-50%,-50%);width:calc( '+_0.CellsWidth+' * '+_0.Grid[0]+' );height:calc( '+_0.CellsHeight+' * '+_0.Grid[1]+' );">';
+		for(let _3=0; _3<_0.Grid[1]; _3++) {
+			//~ _7 += '<tr style="height:'+_0.CellsHeight+';">';
+			_7 += '<tr style="">';
+			for(let _6=0; _6<_0.Grid[0]; _6++) {
+				//~ _7 += '<td class="_PR _BOMP _jPadGestureGridCells" style="top:50%;transform:translateY(-50%);width:'+_0.CellsWidth+';height:'+_0.CellsHeight+';background-color:'+_0.CellsColor+';border-style:'+_0.CellsBorderStyle+';border-width:'+_0.CellsBorder+';border-color:'+_0.CellsBorderColor+';border-radius:'+_0.CellsBorderRadius+';opacity:'+(_0.CellsOpacity+_0.CellsOpacityRange*(Math.random()-.5))+';"></td>';
+				_7 += '<td class="_PR _BOMP _jPadGestureGridCells" style="background-color:'+_0.CellsColor+';border-style:'+_0.CellsBorderStyle+';border-width:'+_0.CellsBorder+';border-color:'+_0.CellsBorderColor+';border-radius:'+_0.CellsBorderRadius+';opacity:'+(_0.CellsOpacity+_0.CellsOpacityRange*(Math.random()-.5))+';"></td>';
+			};
+			_7 += '</tr>';
+		};
+		_5.getElementsByClassName('_jPadGestureGridGridDiv')[0].innerHTML += _7+'</table>';
+	};
+	_5.getElementsByClassName('_jPadGestureGridDiv')[0].innerHTML += '<div class="_PA _BOMP _jPadGestureGridBar" style="top:50%;transform:translateY(-50%);left:0%;width:'+_0.BarWidth+';height:'+_0.BarHeight+';margin:0% '+_0.BarMargin+';background-color:'+_0.BarColor+';border-style:'+_0.BarBorderStyle+';border-width:'+_0.BarBorder+';border-color:'+_0.BarBorderColor+';border-radius:'+_0.BarBorderRadius+';opacity:'+(_0.BarOpacity+_0.BarOpacityRange*(Math.random()-.5))+';"></div>';
+	_5.getElementsByClassName('_jPadGestureGridBar')[0].innerHTML += '<div class="_PA _BOMP _jPadGestureGridHelp" style="top:calc( '+_0.PadWidth+' / 2 );left:100%;transform:translateX(-50%);width:'+_0.HelpWidth+';height:'+_0.HelpHeight+';margin:0% '+_0.HelpMargin+';background-color:'+_0.HelpColor+';border-style:'+_0.HelpBorderStyle+';border-width:'+_0.HelpBorder+';border-color:'+_0.HelpBorderColor+';border-radius:'+_0.HelpBorderRadius+';opacity:'+(_0.HelpOpacity+_0.HelpOpacityRange*(Math.random()-.5))+';"></div>';
 	return _5;
 }; function _JMPGG(_0) { return _jMakePadGestureGrid(_0) };
 //~ _jMakePadGestureGrid( { 'Function': Function, 'Side': [ 3, 3 ], 'Format': 'auto'||'standard'||'std'||'array'||.., 'InverseXY': false } )
