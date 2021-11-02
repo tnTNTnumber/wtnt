@@ -1,0 +1,868 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>NNN 4 all Year - en - wtnt.tk - τnTNT_☢️</title>
+	<meta charset="UTF-8">
+	<script src="https://wtnt.tk/js.js"></script>
+	<link rel="stylesheet" href="https://wtnt.tk/css.css">
+	<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=GTrans"></script>
+<script>
+</script>
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@1,700&display=swap');
+
+:root {
+	---BodyBackgroundColor: hsla(215,100%,20%,1);
+	---AllElemSelectionBackground: lightcyan;
+	---AllElemSelectionColor: darkorange;
+}
+
+*:not(pre) {
+	font-family: 'Ubuntu Mono', monospace;
+}
+
+body {
+} body::-webkit-scrollbar {
+	width: 1.5rem;
+} body::-webkit-scrollbar-track {
+	display: none;
+} body::-webkit-scrollbar-thumb {
+	background-color: hsla(160,57%,48%,.8);
+	border: 0.5rem solid var(---BodyBackgroundColor);
+	border-radius: 1.5rem;
+} body::-webkit-scrollbar-thumb:hover {
+	background-color: hsla(170,90%,30%,.8);
+}
+
+pre {
+	white-space: pre-wrap;       /* css-3 */
+	white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+	white-space: -pre-wrap;      /* Opera 4-6 */
+	white-space: -o-pre-wrap;    /* Opera 7 */
+	word-wrap: break-word;
+}
+
+#ViewOut {
+	border: 0em solid transparent;
+	border-width: 7em 0em;
+	width: 100%;
+	max-width: 80%;
+}
+
+#View {
+	width: 100%;
+	max-width: 80em;
+	padding-bottom: 7em;
+}
+
+.ContainerExt {
+}
+
+.Container {
+	width: 100%;
+	min-height: 40px;
+	background-color: hsla(72,90%,70%,.8);
+	border: 3px solid hsla(72,90%,40%,.8);
+	border-radius: .7em;
+	margin: 2em 0em;
+} .Container:hover {
+	background-color: hsla(80,90%,70%,.8);
+	border: 3px solid hsla(75,90%,40%,.8);
+	transform: scale(1.05);
+}
+
+.Content {
+} .Content h1 {
+	color: hsla(0,35%,35%,1);
+	font-size: 1.4em;
+	font-weight: bold;
+} .Content h2 {
+	color: hsla(0,25%,25%,1);
+	font-size: 1.3em;
+	font-weight: bold;
+} .Content h3 {
+	color: hsla(0,15%,15%,1);
+	font-size: 1.1em;
+	font-weight: bold;
+}
+
+.Btn {
+	width: 1em;
+	height: 1em;
+	background-color: hsla(72,90%,70%,.8);
+	border: 3px solid hsla(72,90%,40%,.8);
+	border-radius: 50%;
+	transform-origin: center bottom;
+} .Btn:hover {
+	background-color: hsla(190,90%,70%,.8);
+	border: 3px solid hsla(180,90%,20%,.8);
+	transform: scale(2.5);
+}
+
+.BtnChar {
+} .BtnChar:hover {
+}
+
+.ImgLink {
+	width: 1em;
+	height: 1em;
+}
+
+.Sug {
+	position: absolute;
+	right: 0em;
+	top: 0em;
+	trasform: translateX(-100%);
+}
+
+.h1Esc {
+	display: inline;
+	font-size: 15px;
+	font-weight: 400;
+	margin: unset;
+	padding: unset;
+	color: black;
+}
+
+</style>
+<script type="text/javascript">
+
+function GTrans() {
+	new google.translate.TranslateElement({pageLanguage:'en'},'GTrans');
+};
+
+function Switch(N,Class,Type) {
+	if(Pos[N][1]>0) {
+		if(Type) {
+			Pos[N][0] += 1;
+			if(Pos[N][0]>Pos[N][1]) {
+				Pos[N][0] = 0;
+			};
+		} else {
+			Pos[N][0] -= 1;
+			if(Pos[N][0]<0) {
+				Pos[N][0] = Pos[N][1];
+			};
+		};
+		View.getElementsByClassName('Content'+Class+'Id')[0].innerHTML = Tpt.getElementsByClassName(Class)[Pos[N][0]].innerHTML;
+	};
+};
+
+const Months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+var Tpt = _;
+var View = _;
+var Pos = [];
+
+window.onload = function Onload() {
+	Tpt = document.getElementById('Templates');
+	View = document.getElementById('View');
+	for(let i1=0; i1<12; i1++) {
+		Pos.push([0,Tpt.getElementsByClassName(Months[i1]).length-1]);
+	};
+	setTimeout(function() {
+		for(let i0=0; i0<Months.length; i0++) {
+			let Content = '';
+			if(Tpt.getElementsByClassName(Months[i0])[0]) {
+				Content = '<div class="Content Content'+Months[i0]+'Id">'+Tpt.getElementsByClassName(Months[i0])[0].innerHTML+'</div>';
+			};
+			let Btn = [['left','<',false],['right','>',true]];
+			for(let i1=0; i1<2; i1++) {
+				Btn[i1] = '<div class="_PA _CY _NS Btn" style="'+Btn[i1][0]+':-3em;" onclick="Switch('+i0+',`'+Months[i0]+'`,'+Btn[i1][2]+');" translate=no><div class="_PA _C _NS BtnChar">'+Btn[i1][1]+'</div></div>';
+			};
+			View.innerHTML += '<div class="_PR ContainerExt">'+Btn[0]+Btn[1]+'<div class="Container"><h1><pre>'+Months[i0].charAt(0).repeat(3)+' - '+Months[i0]+'</pre></h1>'+Content+'</div></div>';
+		};
+	}, 2);
+	document.getElementById('GTransDiv').style.top = '10px';
+	setInterval(function() {
+		document.getElementById('GTransDiv').style.top = 'calc( '+document.body.style.top+' + 10px';
+	}, 1000);
+	for(let i0=0; i0<document.getElementsByClassName('Sug').length; i0++) {
+		let OthTxt = '';
+		if(document.getElementsByClassName('Sug')[i0].innerText!='') {
+			OthTxt = ', '+document.getElementsByClassName('Sug')[i0].innerText;
+		};
+		document.getElementsByClassName('Sug')[i0].innerText = '(Suggested'+OthTxt+')';
+	};
+};
+
+</script>
+</head>
+<body class="_BOMP">
+
+<div class="_PF _CX" id="GTransDiv" style="top:-10%;text-align:center;z-index:100;">
+	<div id="GTrans"></div>
+</div>
+
+<div class="_DN" id="Templates">
+	<div class="Jan">
+		<div class="Sug"></div>
+		<h1 translate=no>Jerk Jangle January</h1>
+		<p>
+			<h2>Goal:</h2>
+				· Jerk of in every part of the house for the rest of January.<br />
+		</p>
+		ref: <a href="https://www.urbandictionary.com/define.php?term=JERK+jangle+January" target="_blank"><img class="ImgLink" src="https://www.urbandictionary.com/favicon.ico"></a>
+	</div>
+	<div class="Jan">
+		<h1 translate=no>Jiggly Junk January</h1>
+		<p>
+			Is a phenomena which happens to your Dick if you are a participant of the "<span translate=no>Destroy Dick December</span>" that cause to over stress on the male appendage, will likely cause malfunctions in the next month - hence <span translate=no>Jiggle Junk January</span>.<br />
+			If you experience symptoms which may include ED, PD, or just straight Jiggly Dick. Consult you local Urologist for proper treatment.
+		</p>
+		ref: <a href="https://www.urbandictionary.com/define.php?term=JJJ%20-%20Jiggly%20Junk%20January" target="_blank"><img class="ImgLink" src="https://www.urbandictionary.com/favicon.ico"></a>
+	</div>
+	<div class="Jan">
+		<h1 translate=no>Jolly Jack January</h1>
+		<p>It involves jacking off to Christmas music in the Fibonacci pattern:</p>
+		<p>
+			<div id="DivToFibonacciSeq"></div>
+			<script>
+				window.addEventListener('load',function() {
+					let str = '<h2>Calculator:</h2>Day: <select id="SelectToFibonacciSeq" onchange="FibonacciAlert(this)">';
+					str += '</tr><tr><th>N.:</th>';
+					let n = [0,1];
+					for(let i0=1; i0<32; i0++) {
+						n = [n[1],n[0]+n[1]];
+						str += '<option value="'+(n[0])+'">'+i0+'</option>';
+					};
+					document.getElementById('DivToFibonacciSeq').outerHTML = str+'</select>';
+				});
+				function FibonacciAlert(value) {
+					alert(value.value+` nut(s)`);
+				};
+			</script>
+		</p>
+		<p>
+			<h2>Eligibility:</h2>
+				· only the people who have completed NNN and DDD may do this!<br />
+				· the song must be always the same one and it has to be played at full volume on a speaker.<br />
+				· headphones don't count but phone speaker counts as long as it's loud, 60dB.<br />
+		</p>
+		<p>
+			<h2>The winners will ..</h2>
+				· obtain the 3Js badge for the their courage, strength and resilience.<br />
+				· qualify for the next round, fingerless February.<br />
+		</p>
+		ref: <a href="https://www.urbandictionary.com/define.php?term=Jolly%20Jack%20January%20%28JJJ%29" target="_blank"><img class="ImgLink" src="https://www.urbandictionary.com/favicon.ico"></a>
+	</div>
+	<div class="Jan">
+		<h1 translate=no>Jack Jack January</h1>
+		<p>Where you need to jack doubling the times each day.</p>
+		<p>
+			<div id="DivToPow2Seq"></div>
+			<script>
+				window.addEventListener('load',function() {
+					let str = '<h2>Calculator:</h2>Day: <select id="SelectToPow2Seq" onchange="Pow2SeqAlert(this)">';
+					str += '</tr><tr><th>N.:</th>';
+					for(let i0=1; i0<32; i0++) {
+						str += '<option value="'+Math.pow(2,i0)+'">'+i0+'</option>';
+					};
+					document.getElementById('DivToPow2Seq').outerHTML = str+'</select>';
+				});
+				function Pow2SeqAlert(value) {
+					alert(value.value+` nut(s)`);
+				};
+			</script>
+		</p>
+		ref: ?
+	</div>
+	<div class="Jan">
+		<h1 translate=no>Jesus Jamming January</h1>
+		ref: <a href="https://www.reddit.com/r/teenagers/comments/e49j95/nnn_ddd_jjj/" target="_blank"><img class="ImgLink" src="https://www.redditstatic.com/desktop2x/img/favicon/android-icon-192x192.png"></a>
+	</div>
+	<div class="Jan">
+		<h1 translate=no>Juicy Jug January</h1>
+		ref: <a href="https://www.urbandictionary.com/define.php?term=JJJ+%28Juicy+Jug+January%29" target="_blank"><img class="ImgLink" src="https://www.urbandictionary.com/favicon.ico"></a>
+	</div>
+	<div class="Jan">
+		<h1 translate=no>Jumbo Jizz January</h1>
+		ref: <a href="https://www.urbandictionary.com/define.php?term=JUMBO+JIZZ+JANUARY" target="_blank"><img class="ImgLink" src="https://www.urbandictionary.com/favicon.ico"></a>
+	</div>
+	<div class="Jan">
+		<h1 translate=no>Just Jerk January</h1>
+		ref: <a href="https://www.dictionary.com/e/pop-culture/destroy-dick-december/" target="_blank"><img class="ImgLink" src="https://www.dictionary.com/e/wp-content/uploads/2020/10/Dictionary_Favicon.jpg"></a>
+	</div>
+	<div class="Jan">
+		<h1 translate=no>Just Jizz January</h1>
+		ref: ?
+	</div>
+	<div class="Jan">
+		<h1 translate=no>Juicy Jug January</h1>
+		ref: <a href="https://www.urbandictionary.com/define.php?term=JJJ%20%28Juicy%20Jug%20January%29" target="_blank"><img class="ImgLink" src="https://www.urbandictionary.com/favicon.ico"></a>
+	</div>
+	<div class="Feb">
+		<div class="Sug"></div>
+		<h1 translate=no>Finger Free February<span class="h1Esc">, </span>Finger Fistless February<span class="h1Esc"> or </span>Flick Free February</h1>
+		<p>It’s a challange for females.</p>
+		<p>
+			<h2>Rules:</h2>
+				· Girls CANNOT masturbate for the whole month of February.<br />
+				· They can have a maximum of 3 orgasms through masturbation.<br />
+				· They can have a maximum of 1 involuntary orgasm during the night.<br />
+				· They can have a maximum of 1 orgasm through sexual intercourse.<br />
+		</p>
+		ref: <a href="https://www.urbandictionary.com/define.php?term=FFF%20%28Finger%20Free%20February%29" target="_blank"><img class="ImgLink" src="https://www.urbandictionary.com/favicon.ico"></a>
+			 <a href="https://www.urbandictionary.com/define.php?term=Finger+Fistless+February" target="_blank"><img class="ImgLink" src="https://www.urbandictionary.com/favicon.ico"></a>
+			 <a href="https://www.webboh.it/no-finger-february/" target="_blank"><img class="ImgLink" src="https://www.webboh.it/wp-content/uploads/2020/11/cropped-W3-32x32.jpg?x87114"></a>
+			 me
+	</div>
+	<div class="Feb">
+		<div class="Sug"></div>
+		<h1 translate=no>Fizz Free February</h1>
+		<div class="_PA" style="right:0px;top:1.5em;"><img src="https://www.sugarsmartuk.org/resources/images/FizzFreeFeb_GD.jpg" style="max-height:5em;"></div>
+		<p>
+			<h2>Rules:</h2>
+				· You can't drink fizzy dinks for the entire month of February.<br />
+		</p>
+		ref: <a href="https://www.sugarsmartuk.org/news/fizz_free_february_2019/" target="_blank"><img class="ImgLink" src="https://www.sugarsmartuk.org/favicon.ico"></a>
+	</div>
+	<div class="Feb">
+		<div class="Sug"></div>
+		<h1 translate=no>Fuck Free February</h1>
+		<p>
+			<h2>Rules:</h2>
+				· You can’t fuck anyone in the month of February.<br />
+		</p>
+		ref: <a href="https://www.urbandictionary.com/define.php?term=F*ck+Free+February" target="_blank"><img class="ImgLink" src="https://www.urbandictionary.com/favicon.ico"></a>
+	</div>
+	<div class="Feb">
+		<div class="Sug">for Fortnite players</div>
+		<h1 translate=no>Forbidden Fortnite February</h1>
+		<p>
+			<h2>Rules:</h2>
+				· You CANNOT play Fortnite for the whole month of february.<br />
+		</p>
+		ref: <a href="https://www.urbandictionary.com/define.php?term=Forbidden+Fortnite+February" target="_blank"><img class="ImgLink" src="https://www.urbandictionary.com/favicon.ico"></a>
+	</div>
+	<div class="Feb">
+		<h1 translate=no>Frequently Fap February</h1>
+		ref: <a href="https://www.dictionary.com/e/pop-culture/destroy-dick-december/" target="_blank"><img class="ImgLink" src="https://www.dictionary.com/e/wp-content/uploads/2020/10/Dictionary_Favicon.jpg"></a>
+	</div>
+	<div class="Feb">
+		<h1 translate=no>Face Fuck February</h1>
+		ref: ?
+	</div>
+	<div class="Feb">
+		<h1 translate=no>Free Fuck February<span class="h1Esc"> or </span>Fuck Free February</h1>
+	</div>
+	<div class="Feb">
+		<h1 translate=no>Fucking fingers February</h1>
+		ref: <a href="https://www.reddit.com/r/teenagers/comments/e49j95/nnn_ddd_jjj/" target="_blank"><img class="ImgLink" src="https://www.redditstatic.com/desktop2x/img/favicon/android-icon-192x192.png"></a>
+	</div>
+	<div class="Mar">
+		<div class="Sug">for March Madness players</div>
+		<h1 translate=no>Masturbatory Madness March</h1>
+		<p><span translate=no>Masturbatory Madness March</span> is a March Madness related challenge.</p>
+		<p>
+			<h2>Rules:</h2>
+				· Whenever you get a match wrong you must masturbate for 1 hour following the conclusion of the series.<br />
+		</p>
+		ref: <a href="https://www.urbandictionary.com/define.php?term=Masturbatory+March+Madness" target="_blank"><img class="ImgLink" src="https://www.urbandictionary.com/favicon.ico"></a>
+	</div>
+	<div class="Mar">
+		<h1 translate=no>Mega Milk March</h1>
+		ref: ?
+	</div>
+	<div class="Mar">
+		<h1 translate=no>Mash Meat March</h1>
+		ref: <a href="https://www.dictionary.com/e/pop-culture/destroy-dick-december/" target="_blank"><img class="ImgLink" src="https://www.dictionary.com/e/wp-content/uploads/2020/10/Dictionary_Favicon.jpg"></a>
+	</div>
+	<div class="Mar">
+		<h1 translate=no>Mega Meatbeat March</h1>
+		ref: <a href="https://9gag.com/gag/azqpepj" target="_blank"><img class="ImgLink" src="https://9gag.com/favicon.ico"></a>
+	</div>
+	<div class="Mar">
+		<h1 translate=no>Mashing mons March</h1>
+		ref: <a href="https://www.reddit.com/r/teenagers/comments/e49j95/nnn_ddd_jjj/" target="_blank"><img class="ImgLink" src="https://www.redditstatic.com/desktop2x/img/favicon/android-icon-192x192.png"></a>
+	</div>
+	<div class="Mar">
+		<h1 translate=no>Mustn't Masturbate March</h1>
+		<p>
+			<h2>Rules:</h2>
+				· You cannot masturbate for the whole month of March.<br />
+		</p>
+		ref: <a href="https://www.urbandictionary.com/define.php?term=Must%20not%20Masturbate%20March%20%28%20MMM%20%29" target="_blank"><img class="ImgLink" src="https://www.urbandictionary.com/favicon.ico"></a>
+	</div>
+	<div class="Apr">
+		<div class="Sug"></div>
+		<h1 translate=no>Anal Ass April<span class="h1Esc"> or </span>Anal All April</h1>
+		<p>
+			<h2>Rules:</h2>
+				· You must get fucked in the ass at least once everyday until the last day of April.<br />
+		</p>
+		ref: <a href="https://www.urbandictionary.com/define.php?term=Anal+Ass+April" target="_blank"><img class="ImgLink" src="https://www.urbandictionary.com/favicon.ico"></a>
+	</div>
+	<div class="Apr">
+		<div class="Sug"></div>
+		<h1 translate=no>Avoid Arousal April</h1>
+		<p>
+			<h2>Rules:</h2>
+				· You have to avoid the arousal for the whole month of April, which means no sexual arousal.<br />
+		</p>
+		ref: <a href="https://www.urbandictionary.com/define.php?term=Avoid+Arousal+April" target="_blank"><img class="ImgLink" src="https://www.urbandictionary.com/favicon.ico"></a>
+	</div>
+	<div class="Apr">
+		<h1 translate=no>Advanced Alleviation April</h1>
+		ref: <a href="https://www.dictionary.com/e/pop-culture/destroy-dick-december/" target="_blank"><img class="ImgLink" src="https://www.dictionary.com/e/wp-content/uploads/2020/10/Dictionary_Favicon.jpg"></a>
+	</div>
+	<div class="Apr">
+		<h1 translate=no>Asshole Attraction April</h1>
+		ref: <a href="https://9gag.com/gag/azqpepj" target="_blank"><img class="ImgLink" src="https://9gag.com/favicon.ico"></a>
+	</div>
+	<div class="Apr">
+		<h1 translate=no>Am Alone April</h1>
+		ref: <a href="https://www.reddit.com/r/teenagers/comments/e49j95/nnn_ddd_jjj/" target="_blank"><img class="ImgLink" src="https://www.redditstatic.com/desktop2x/img/favicon/android-icon-192x192.png"></a>
+	</div>
+	<div class="May">
+		<div class="Sug"></div>
+		<h1 translate=no>Minus Makeup May</h1>
+		<p>
+			<h2>Rules:</h2>
+				· Girls can't wear makeup for the whole month of May.<br />
+		</p>
+		<p>Evrey girl could be prettier in May.</p>
+		ref: <a href="https://www.urbandictionary.com/define.php?term=minus+makeup+may" target="_blank"><img class="ImgLink" src="https://www.urbandictionary.com/favicon.ico"></a>
+	</div>
+	<div class="May">
+		<h1 translate=no>Mega Milk May</h1>
+		ref: ?
+	</div>
+	<div class="May">
+		<h1 translate=no>Mostly Masturbate May</h1>
+		ref: <a href="https://www.dictionary.com/e/pop-culture/destroy-dick-december/" target="_blank"><img class="ImgLink" src="https://www.dictionary.com/e/wp-content/uploads/2020/10/Dictionary_Favicon.jpg"></a>
+	</div>
+	<div class="May">
+		<h1 translate=no>Making Murder May</h1>
+		<p>Insert ejaculation is "<span translate=no>murder</span>" sign.</p>
+		ref: <a href="https://www.reddit.com/r/teenagers/comments/e49j95/nnn_ddd_jjj/" target="_blank"><img class="ImgLink" src="https://www.redditstatic.com/desktop2x/img/favicon/android-icon-192x192.png"></a>
+	</div>
+	<div class="May">
+		<h1 translate=no>More Meatbeat May</h1>
+		ref: <a href="https://9gag.com/gag/azqpepj" target="_blank"><img class="ImgLink" src="https://9gag.com/favicon.ico"></a>
+	</div>
+	<div class="Jun">
+		<h1 translate=no>Justified Jizzing June</h1>
+		ref: <a href="https://www.dictionary.com/e/pop-culture/destroy-dick-december/" target="_blank"><img class="ImgLink" src="https://www.dictionary.com/e/wp-content/uploads/2020/10/Dictionary_Favicon.jpg"></a>
+	</div>
+	<div class="Jun">
+		<h1 translate=no>Just Jack June</h1>
+		ref: <a href="https://9gag.com/gag/azqpepj" target="_blank"><img class="ImgLink" src="https://9gag.com/favicon.ico"></a>
+	</div>
+	<div class="Jun">
+		<h1 translate=no>Just Jerk June</h1>
+		ref: ?
+	</div>
+	<div class="Jul">
+		<h1 translate=no>Juicy Jizz July</h1>
+		ref: <a href="https://9gag.com/gag/azqpepj" target="_blank"><img class="ImgLink" src="https://9gag.com/favicon.ico"></a>
+	</div>
+	<div class="Jul">
+		<h1 translate=no>Jizzin to Julia July</h1>
+		ref: <a href="https://www.reddit.com/r/teenagers/comments/e49j95/nnn_ddd_jjj/" target="_blank"><img class="ImgLink" src="https://www.redditstatic.com/desktop2x/img/favicon/android-icon-192x192.png"></a>
+	</div>
+	<div class="Jul">
+		<h1 translate=no>Junk Jacking July</h1>
+		ref: <a href="https://www.dictionary.com/e/pop-culture/destroy-dick-december/" target="_blank"><img class="ImgLink" src="https://www.dictionary.com/e/wp-content/uploads/2020/10/Dictionary_Favicon.jpg"></a>
+	</div>
+	<div class="Jul">
+		<h1 translate=no>Just Jerk July</h1>
+		ref: ?
+	</div>
+	<div class="Aug">
+		<div class="Sug"></div>
+		<h1 translate=no>Avoid Arousal August</h1>
+		<p>
+			<h2>Rules:</h2>
+				· You have to avoid the arousal for the whole month of August, which means no sexual arousal.<br />
+		</p>
+		ref: me
+	</div>
+	<div class="Aug">
+		<div class="Sug"></div>
+		<h1 translate=no>Anal All August<span class="h1Esc"> or </span>Anal Ass August</h1>
+		<p>
+			<h2>Rules:</h2>
+				· You must get fucked in the ass at least once everyday until the last day of August.<br />
+		</p>
+		ref: ?,
+			 me
+	</div>
+	<div class="Aug">
+		<h1 translate=no>Award Arousal August</h1>
+		ref: <a href="https://www.dictionary.com/e/pop-culture/destroy-dick-december/" target="_blank"><img class="ImgLink" src="https://www.dictionary.com/e/wp-content/uploads/2020/10/Dictionary_Favicon.jpg"></a>
+	</div>
+	<div class="Aug">
+		<h1 translate=no>Awful Aftermath August</h1>
+		ref: <a href="https://9gag.com/gag/azqpepj" target="_blank"><img class="ImgLink" src="https://9gag.com/favicon.ico"></a>
+	</div>
+	<div class="Aug">
+		<h1 translate=no>i'Am Alone August</h1>
+		ref: <a href="https://www.reddit.com/r/teenagers/comments/e49j95/nnn_ddd_jjj/" target="_blank"><img class="ImgLink" src="https://www.redditstatic.com/desktop2x/img/favicon/android-icon-192x192.png"></a>
+	</div>
+	<div class="Sep">
+		<div class="Sug"></div>
+		<h1 translate=no>Stop Simping September</h1>
+		<p>
+			<h2>Rules:</h2>
+				· Do not simp in September, you have not to flirt all month.<br />
+		</p>
+		ref: <a href="https://www.urbandictionary.com/define.php?term=sss%20september" target="_blank"><img class="ImgLink" src="https://www.urbandictionary.com/favicon.ico"></a>
+	</div>
+	<div class="Sep">
+		<div class="Sug"></div>
+		<h1 translate=no>Seductive Sex September</h1>
+		ref: ?
+	</div>
+	<div class="Sep">
+		<div class="Sug"></div>
+		<h1 translate=no>Stop Squirt September</h1>
+		<p>
+			<h2>Rules:</h2>
+				· Females are not allowed to squirt for the whole month of September.<br />
+		</p>
+		ref: <a href="https://www.urbandictionary.com/define.php?term=Stop%20Squirt%20September" target="_blank"><img class="ImgLink" src="https://www.urbandictionary.com/favicon.ico"></a>
+	</div>
+	<div class="Sep">
+		<div class="Sug"></div>
+		<h1 translate=no>Sugar Smart September</h1>
+		<p>
+			<h2>Rules:</h2>
+				· Eat as little sugar as possible.<br />
+		</p>
+		ref: <a href="https://www.sugarsmartuk.org/news/jul19_get_involved_in_sugar_smart_september_2019/" target="_blank"><img class="ImgLink" src="https://www.sugarsmartuk.org/favicon.ico"></a>
+	</div>
+	<div class="Sep">
+		<div class="Sug"></div>
+		<h1 translate=no>Simple Sex September</h1>
+		ref: <a href="https://9gag.com/gag/azqpepj" target="_blank"><img class="ImgLink" src="https://9gag.com/favicon.ico"></a>
+	</div>
+	<div class="Sep">
+		<h1 translate=no>Sexual Satisfaction September</h1>
+		ref: <a href="https://www.dictionary.com/e/pop-culture/destroy-dick-december/" target="_blank"><img class="ImgLink" src="https://www.dictionary.com/e/wp-content/uploads/2020/10/Dictionary_Favicon.jpg"></a>
+	</div>
+	<div class="Oct">
+		<div class="Sug"></div>
+		<h1 translate=no>Onahole Only October</h1>
+		<p>
+			<h2>Rules:</h2>
+				· You can only use sex toys.<br />
+		</p>
+		ref: ?,
+			 me
+	</div>
+	<div class="Oct">
+		<div class="Sug"></div>
+		<h1 translate=no>Orgasm Omission October</h1>
+		<p>
+			<h2>Rules:</h2>
+				· Same rules as the "<span translate=no>No Nut November</span>".<br />
+				· If you can complete the <span translate=no>Orgasm Omission October</span> you can not do the <span translate=no>No Nut November</span>, considering it won anyway.<br />
+				· If you successfully pass both <span translate=no>Orgasm Omission October</span> and <span translate=no>No Nut November</span> consecutive you are a pro :)<br />
+		</p>
+		ref: <a href="https://www.urbandictionary.com/define.php?term=Omission%20from%20Orgasm%20October%20%28OOO%29" target="_blank"><img class="ImgLink" src="https://www.urbandictionary.com/favicon.ico"></a>
+			 me
+	</div>
+	<div class="Oct">
+		<h1 translate=no>Overly Offgetting October</h1>
+		ref: <a href="https://9gag.com/gag/azqpepj" target="_blank"><img class="ImgLink" src="https://9gag.com/favicon.ico"></a>
+	</div>
+	<div class="Oct">
+		<h1 translate=no>Obtain Orgasm October</h1>
+		ref: <a href="https://www.dictionary.com/e/pop-culture/destroy-dick-december/" target="_blank"><img class="ImgLink" src="https://www.dictionary.com/e/wp-content/uploads/2020/10/Dictionary_Favicon.jpg"></a>
+	</div>
+	<div class="Nov">
+		<div class="Sug"></div>
+		<h1 translate=no>No Nut November<span class="h1Esc"> or </span>Never Nut November</h1>
+		<p>
+			<h2>Rules:</h2>
+				· You can't masturbate for the whole month of November.<br />
+				· You can have a maximum of 3 orgasms through masturbation.<br />
+				· You can have a maximum of 1 involuntary orgasm during the night.<br />
+				· You can have a maximum of 1 orgasm through sexual intercourse.<br />
+				· If you complete the <span translate=no>No Nut November</span> you can access the <span translate=no>Destroy Dick December</span> :)<br />
+		</p>
+		ref: <a href="https://www.wikiwand.com/it/No_Nut_November" target="_blank"><img class="ImgLink" src="https://wikiwand-19431.kxcdn.com/favicon.ico"></a>
+			 me
+	</div>
+	<div class="Nov">
+		<div class="Sug"></div>
+		<h1 translate=no>Never Nice November</h1>
+		<p>A fake word to cover up <span translate=no>No Nut November</span>, in case your crush asked what is "<span translate=no>NNN</span>".</p>
+		<p>
+			<h2>Rules:</h2>
+				· You can do anything you want by saying that you are doing the challenge, because you are really doing the <span translate=no>Never Nice November</span> ;)<br />
+		</p>
+		ref: <a href="https://www.urbandictionary.com/define.php?term=Never+Nice+November" target="_blank"><img class="ImgLink" src="https://www.urbandictionary.com/favicon.ico"></a>
+			 me
+	</div>
+	<div class="Dec">
+		<h1 translate=no>Destroy Dick December<span class="h1Esc"> or </span>Destroying Dick December</h1>
+		<p>
+			<h2>Rules:</h2>
+				· You have to masturbate every day as much as the day number ( day 1. once, 2. twice, 3. 3 times .. ).<br />
+		</p>
+		<p>
+			<div id="DivToDDDSeq"></div>
+			<script>
+				window.addEventListener('load',function() {
+					let str = '<h2>Calculator:</h2>Day: <select id="SelectToDDDSeq" onchange="DDDAlert(this)">';
+					str += '</tr><tr><th>N.:</th>';
+					for(let i0=1; i0<31; i0++) {
+						str += '<option value="'+i0+'">'+i0+'</option>';
+					};
+					document.getElementById('DivToDDDSeq').outerHTML = str+'</select>';
+				});
+				function DDDAlert(value) {
+					alert(value.value+` nut(s)`);
+				};
+			</script>
+		</p>
+		ref: <a href="https://www.wikiwand.com/it/Ddd" target="_blank"><img class="ImgLink" src="https://wikiwand-19431.kxcdn.com/favicon.ico"></a>
+			 me
+	</div>
+	<div class="Dec">
+		<div class="Sug"></div>
+		<h1 translate=no>Decreased Destroy December</h1>
+		<p>it is a feasible version of the "<span translate=no>Destroy Dick December</span>".</p>
+		<p>
+			<h2>Rules:</h2>
+				· You have to masturbate every day 1, 2, 3, .. and the last day 10 times. Follow the calculator:<br />
+		</p>
+		<p>
+			<div id="DivToAltDDDSeq"></div>
+			<script>
+				window.addEventListener('load',function() {
+					let str = '<h2>Calculator (easy mode):</h2>Day: <select id="SelectToAltDDDSeq" onchange="AltDDDAlert(this)">';
+					str += '</tr><tr><th>N.:</th>';
+					str += '<option value="1">1</option>';
+					str += '<option value="1">2</option>';
+					str += '<option value="1">3</option>';
+					str += '<option value="1">4</option>';
+					str += '<option value="1">5</option>';
+					str += '<option value="1">6</option>';
+					str += '<option value="2">7</option>';
+					str += '<option value="2">8</option>';
+					str += '<option value="2">9</option>';
+					str += '<option value="2">10</option>';
+					str += '<option value="2">11</option>';
+					str += '<option value="2">12</option>';
+					str += '<option value="3">13</option>';
+					str += '<option value="3">14</option>';
+					str += '<option value="3">15</option>';
+					str += '<option value="3">16</option>';
+					str += '<option value="3">17</option>';
+					str += '<option value="3">18</option>';
+					str += '<option value="4">19</option>';
+					str += '<option value="4">20</option>';
+					str += '<option value="4">21</option>';
+					str += '<option value="4">22</option>';
+					str += '<option value="4">23</option>';
+					str += '<option value="4">24</option>';
+					str += '<option value="5">25</option>';
+					str += '<option value="5">26</option>';
+					str += '<option value="5">27</option>';
+					str += '<option value="5">28</option>';
+					str += '<option value="5">29</option>';
+					str += '<option value="5">30</option>';
+					str += '<option value="10">31</option>';
+					str += '</select> (changes every 6 days)';
+					str += '<h2>Calculator (normal mode):</h2>Day: <select id="SelectToAltDDDSeq" onchange="AltDDDAlert(this)">';
+					str += '</tr><tr><th>N.:</th>';
+					str += '<option value="1">1</option>';
+					str += '<option value="1">2</option>';
+					str += '<option value="1">3</option>';
+					str += '<option value="1">4</option>';
+					str += '<option value="1">5</option>';
+					str += '<option value="2">6</option>';
+					str += '<option value="2">7</option>';
+					str += '<option value="2">8</option>';
+					str += '<option value="2">9</option>';
+					str += '<option value="2">10</option>';
+					str += '<option value="3">11</option>';
+					str += '<option value="3">12</option>';
+					str += '<option value="3">13</option>';
+					str += '<option value="3">14</option>';
+					str += '<option value="3">15</option>';
+					str += '<option value="4">16</option>';
+					str += '<option value="4">17</option>';
+					str += '<option value="4">18</option>';
+					str += '<option value="4">19</option>';
+					str += '<option value="4">20</option>';
+					str += '<option value="5">21</option>';
+					str += '<option value="5">22</option>';
+					str += '<option value="5">23</option>';
+					str += '<option value="5">24</option>';
+					str += '<option value="5">25</option>';
+					str += '<option value="6">26</option>';
+					str += '<option value="6">27</option>';
+					str += '<option value="6">28</option>';
+					str += '<option value="6">29</option>';
+					str += '<option value="6">30</option>';
+					str += '<option value="10">31</option>';
+					str += '</select> (changes every 5 days)';
+					str += '<h2>Calculator (hard mode):</h2>Day: <select id="SelectToAltDDDSeq" onchange="AltDDDAlert(this)">';
+					str += '</tr><tr><th>N.:</th>';
+					str += '<option value="1">1</option>';
+					str += '<option value="1">2</option>';
+					str += '<option value="1">3</option>';
+					str += '<option value="1">4</option>';
+					str += '<option value="2">5</option>';
+					str += '<option value="2">6</option>';
+					str += '<option value="2">7</option>';
+					str += '<option value="2">8</option>';
+					str += '<option value="3">9</option>';
+					str += '<option value="3">10</option>';
+					str += '<option value="3">11</option>';
+					str += '<option value="3">12</option>';
+					str += '<option value="4">13</option>';
+					str += '<option value="4">14</option>';
+					str += '<option value="4">15</option>';
+					str += '<option value="4">16</option>';
+					str += '<option value="5">17</option>';
+					str += '<option value="5">18</option>';
+					str += '<option value="5">19</option>';
+					str += '<option value="5">20</option>';
+					str += '<option value="6">21</option>';
+					str += '<option value="6">22</option>';
+					str += '<option value="6">23</option>';
+					str += '<option value="6">24</option>';
+					str += '<option value="7">25</option>';
+					str += '<option value="7">26</option>';
+					str += '<option value="7">27</option>';
+					str += '<option value="7">28</option>';
+					str += '<option value="8">29</option>';
+					str += '<option value="9">30</option>';
+					str += '<option value="10">31</option>';
+					str += '</select> (changes every 4 days)';
+					str += '<h2>Calculator (very hard mode):</h2>Day: <select id="SelectToAltDDDSeq" onchange="AltDDDAlert(this)">';
+					str += '</tr><tr><th>N.:</th>';
+					str += '<option value="1">1</option>';
+					str += '<option value="1">2</option>';
+					str += '<option value="1">3</option>';
+					str += '<option value="2">4</option>';
+					str += '<option value="2">5</option>';
+					str += '<option value="2">6</option>';
+					str += '<option value="3">7</option>';
+					str += '<option value="3">8</option>';
+					str += '<option value="3">9</option>';
+					str += '<option value="4">10</option>';
+					str += '<option value="4">11</option>';
+					str += '<option value="4">12</option>';
+					str += '<option value="5">13</option>';
+					str += '<option value="5">14</option>';
+					str += '<option value="5">15</option>';
+					str += '<option value="6">16</option>';
+					str += '<option value="6">17</option>';
+					str += '<option value="6">18</option>';
+					str += '<option value="7">19</option>';
+					str += '<option value="7">20</option>';
+					str += '<option value="7">21</option>';
+					str += '<option value="8">22</option>';
+					str += '<option value="8">23</option>';
+					str += '<option value="8">24</option>';
+					str += '<option value="9">25</option>';
+					str += '<option value="9">26</option>';
+					str += '<option value="9">27</option>';
+					str += '<option value="10">28</option>';
+					str += '<option value="10">29</option>';
+					str += '<option value="10">30</option>';
+					str += '<option value="11">31</option>';
+					document.getElementById('DivToAltDDDSeq').outerHTML = str+'</select> (changes every 3 days)';
+				});
+				function AltDDDAlert(value) {
+					alert(value.value+` nut(s)`);
+				};
+			</script>
+		</p>
+		ref: me
+			 <a href="https://nonutnovember.fandom.com/wiki/Destroy_Dick_December" target="_blank"><img class="ImgLink" src="https://nonutnovember.fandom.com/skins-ucp/common/favicon.ico"></a>
+	</div>
+	<div class="Dec">
+		<div class="Sug"></div>
+		<h1 translate=no>Dry Dick December</h1>
+		<p>Is for those who have failed "<span translate=no>Destroy Dick December</span>".</p>
+		<p>
+			<h2>Rules:</h2>
+				· You don't ejaculate for the entire month.<br />
+		</p>
+		ref: <a href="https://www.urbandictionary.com/define.php?term=Dry+Dick+December" target="_blank"><img class="ImgLink" src="https://www.urbandictionary.com/favicon.ico"></a>
+	</div>
+	<div class="Dec">
+		<div class="Sug"></div>
+		<h1 translate=no>Daily Dash December</h1>
+		<p>
+			<h2>Rules:</h2>
+				· Run, walk or jog 5k every day.<br />
+		</p>
+		ref: <a href="https://www.decemberdailydash.com/" target="_blank"><img class="ImgLink" src="https://images.prismic.io/sue-ryder-daily-dash/4aa8ec06-6b3f-4d37-8ff7-b5498d205ec3_DDD-2020-Master-Logo.png?&rect=0,0,567,567&w=32&h=32"></a>
+	</div>
+	<div class="Dec">
+		<div class="Sug"></div>
+		<h1 translate=no>Dodge Dick December</h1>
+		<p>In case you have failed the "<span traslate=no>Not Nat November</span>" this is the chance to try again.</p>
+		<p>The rules are the same as in the <span traslate=no>Not Nat November</span>:</p>
+		<p>
+			<h2>Rules:</h2>
+				· If you're a guy you can't ejaculate consciously.<br />
+				· If you're a girl you can't have dick in any possible holes.<br />
+				· You can have a maximum of 3 orgasms through masturbation.<br />
+				· You can have a maximum of 1 involuntary orgasm during the night.<br />
+				· You can have a maximum of 1 orgasm through sexual intercourse.<br />
+		</p>
+		ref: <a href="https://www.urbandictionary.com/define.php?term=Dodge+dick+december" target="_blank"><img class="ImgLink" src="https://www.urbandictionary.com/favicon.ico"></a>
+			 me
+	</div>
+	<div class="Dec">
+		<h1 translate=no>Destroy Dishwasher December</h1>
+		<p>The month where you destroy the nearest female to let out the pent up sexual desires.</p>
+		ref: <a href="https://www.urbandictionary.com/define.php?term=ddd%20december" target="_blank"><img class="ImgLink" src="https://www.urbandictionary.com/favicon.ico"></a>
+	</div>
+	<div class="Dec">
+		<h1 translate=no>Damage Dick December</h1>
+		<p>The easy version of "<span translate=no>Destroy Dick December</span>".</p>
+		<p>
+			<h2>Rules:</h2>
+				· You have to ejaculate 3 times a day or more by any means that involves physical stimulation of the penis.<br />
+		</p>
+		<p>Once you've completed the challenge, you'll have ejaculated at least 93 times in one month.</p>
+		ref: <a href="https://www.urbandictionary.com/define.php?term=Damage+Dick+December" target="_blank"><img class="ImgLink" src="https://www.urbandictionary.com/favicon.ico"></a>
+	</div>
+	<div class="Dec">
+		<h1 translate=no>Drop all Drama December</h1>
+		<p>
+			<h2>Rules:</h2>
+				· For one month, all girls have to drop all of their drama.<br />
+		</p>
+		ref: <a href="https://www.urbandictionary.com/define.php?term=Drop+Drama+December" target="_blank"><img class="ImgLink" src="https://www.urbandictionary.com/favicon.ico"></a>
+	</div>
+	<div class="Dec">
+		<h1 translate=no>Don’t Die December</h1>
+		<p>
+			<h2>Rules:</h2>
+				· You have to try not to die by not doing the "<span translate=no>Destroy Dick December</span>".<br />
+		</p>
+		ref: <a href="https://www.urbandictionary.com/define.php?term=Don%E2%80%99t+die+December" target="_blank"><img class="ImgLink" src="https://www.urbandictionary.com/favicon.ico"></a>
+	</div>
+	<div class="Dec">
+		<h1 translate=no>Dink Dick December</h1>
+		<p>Is mostly for the girls. It's based on slap ass month that mostly boys got to slap girls bootys and the girls are allowed to grab/punch or slap boys dicks. "<span translate=no>Dinking</span>" means hurting someone so the girls can dink the boys dicks.</p>
+		ref: <a href="https://www.urbandictionary.com/define.php?term=Dink+dick+december" target="_blank"><img class="ImgLink" src="https://www.urbandictionary.com/favicon.ico"></a>
+	</div>
+	<div class="Dec">
+		<h1 translate=no>Dick Destroyer December</h1>
+		<p>Literally means wank your boi until destroyed.</p>
+		<p>
+			<h2>Rules:</h2>
+				· Just break it.<br />
+		</p>
+		ref: <a href="https://www.urbandictionary.com/define.php?term=dick+destroyer+december" target="_blank"><img class="ImgLink" src="https://www.urbandictionary.com/favicon.ico"></a>
+	</div>
+</div>
+
+<div class="_PA _CX" id="ViewOut">
+	<div class="_PA _CX" id="View"></div>
+</div>
+
+</body>
+</html>
