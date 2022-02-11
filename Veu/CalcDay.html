@@ -1,0 +1,618 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>2wtnt.tk - τnTNT_☢️</title>
+	<meta charset="UTF-8">
+	<link href="https://fonts.googleapis.com/css?family=PT+Mono" rel="stylesheet">
+	<link href="https://2wtnt.tk/css.css" rel="stylesheet">
+	<script src="https://2wtnt.tk/js.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+<style>
+
+@media (orientation: landscape) {
+
+}
+
+@media (orientation: portrait) {
+
+}
+
+:root {
+	--scale: 1.5;
+	--body-background: hsla(0,0%,0%,1);
+	--BckColor: hsla(0,0%,76%,.2);
+	--BckColor2: hsla(0,0%,56%,.2);
+	--BckColor3: hsla(0,0%,56%,.1);
+	--MainColor: hsla(6,17%,94%,.95);
+	--OppositeColor: hsla(6,17%,6%,.95);
+	--GSU: 2vw;
+}
+
+* {
+	color: var(--MainColor);
+	font-family: 'PT Mono', monospace;
+	font-family: 'Ubuntu Mono', monospace;
+	transform-style: preserve-3d;
+}
+
+html, body {
+	overflow-x: hidden;
+}
+
+body {
+	background: hsla(0,0%,0%,1);
+} body::-webkit-scrollbar {
+	width: 1.5rem;
+} body::-webkit-scrollbar-track {
+	display: none;
+} body::-webkit-scrollbar-thumb {
+	background: silver;
+	background:
+		linear-gradient(top, transparent 5px, black 5px, black 50%, transparent 50%),	linear-gradient(bottom, transparent 5px, black 5px, black 50%, transparent 50%),
+		radial-gradient(circle, black 5px, transparent 5px) -2px 59%,
+		radial-gradient(circle, black 5px, transparent 5px) -2px 41%;
+	background-size: 100% 100%, 100% 100%, 15px 50%, 15px 50%;
+	background-clip: padding-box;
+	border: 0.5rem solid transparent;
+	border-radius: 1.5rem;
+	z-index: -1;
+	/*credits: https://gist.github.com/zoreet/1550217/8dff57fc6941ae4652faea7ff62f2b9a5c8767ef*/
+} body::-webkit-scrollbar-thumb:hover {
+	background-color: hsla(170,3%,33%,.8);
+}
+
+input, select, option {
+	color: black;
+}
+
+textarea, pre {
+	-moz-tab-size: 4;
+	  -o-tab-size: 4;
+	     tab-size: 4;
+}
+
+#ExIm {
+	top: 2.5em;
+}
+
+#ExIm, #ResetDiv {
+	background: var(--BckColor2);
+	position: absolute;
+	/*right: -3.98em;*/
+	left: calc( 100vw - 1.70em );
+	padding: .8em;
+	border-radius: 1em;
+} #ExIm:hover, #ResetDiv:hover {
+	background: var(--BckColor3);
+	/*right: 1em;*/
+	left: calc( 100vw - 7em );
+} #ExIm h2, #ResetDiv h2 {
+	margin: .2em;
+} #ExIm h2:hover, #ResetDiv h2:hover {
+	color: hsla(200,62%,86%,.95);
+	transform: scale(1.08);
+} #ExIm h2:active, #ResetDiv h2:active {
+	color: hsla(240,68%,78%,.95);
+	transform: scale(.94);
+}
+
+</style>
+<script>
+
+function Im() {
+	console.log('Importing ..');
+	console.log('Imported !');
+};
+
+function Ex() {
+	console.log('Exporting ..');
+	//~ var element = document.createElement('a');
+	//~ element.setAttribute('href','data:text/plain;charset=utf-8,'+encodeURIComponent(ExText()));
+	//~ element.setAttribute('download','File Exported.js');
+	//~ document.body.appendChild(element);
+	//~ element.click();
+	//~ document.body.removeChild(element);
+	console.log('Exported !');
+};
+
+function Cc() {
+	console.log('Coping ..');
+	//~ navigator.clipboard.writeText(ExText());
+	//~ alert('Text Copied!');
+	console.log('Copied !');
+};
+
+function Pa() {
+	console.log('Pasting ..');
+	//~ console.log(navigator.clipboard.read());
+	eval(navigator.clipboard.read());
+	UpdateGraph();
+	console.log('Pasted !');
+};
+
+function ExText() {
+	//~ let nl = String.fromCharCode(13, 10);
+	//~ return 'Friends = '+ExFriends()+'FirstTime = '+FirstTime+';'+nl+'UnnammedFriends = '+UnnammedFriends+';'+nl+'Saved = '+Saved+';'+nl+'TimesOpen = '+TimesOpen+';'+nl+'Exports = '+Exports+';'+nl;
+};
+
+function ExFriends() {
+	let nl = String.fromCharCode(13, 10);
+	let temp = '[';
+	for(let i0=0; i0<Friends.length; i0++) {
+		temp += nl+'	[\''+Friends[i0][0]+'\'';
+		for(let i1=1; i1<Friends[i0].length; i1++) {
+			temp += ','+Friends[i0][i1];
+		};
+		temp += '],';
+	};
+	return temp+nl+'];'+nl;
+};
+
+function Reset() {
+	console.log('Resetting ..');
+	/*Friends = [
+		['Example of a Friend',67,17,49],
+		['Example of a Perfect Friend :)',100,100,100],
+		['Example of a Terrible Friend :(',0,0,0],
+	];
+	FirstTime = true;
+	UnnammedFriends = 0;
+	Saved = false;
+	TimesOpen = undefined;
+	Exports = 0;
+	ClearLSOfThis();
+	//~ TestLocalStorage();
+	//~ UpdateGraph();
+	console.log('Resetted !');
+	location.reload();*/
+	console.log('Reloading ..');
+};
+
+function LaunchLocalStorage(name) {
+	if(!(localStorage!==null?localStorage:0)) {
+		let err = '¡⚠️¡ In your browser there is no "LocalStorage", so the program may not work correctly ! ¡⚠️¡';
+		console.log(err);
+		alert(err);
+		return err;
+	};
+	if(!name) {
+		let err = '¡⚠️¡ An identifying name must be passed to the "LaunchLocalStorage(name)" function ! ¡⚠️¡';
+		console.log(err);
+		return err;
+	};
+	if(!globalThis.DataOrg) globalThis.DataOrg = {} ; /*Data Ὄργᾰνον*/
+	if(!globalThis.DataPre) globalThis.DataPre = {} ; /*Data Predefined*/
+	if(!globalThis.Data) globalThis.Data = {} ;
+	DataOrg.Name = name;
+	DataOrg.Launch = LaunchLocalStorage;
+	DataOrg.Test = function() {
+		console.log('Testing Local Storage ..');
+		if(eval(`localStorage.`+DataOrg.Name)) {
+			console.log('local Storage Exists !');
+			DataOrg.Read();
+			Data.TimesOpen += 1;
+			DataOrg.Save();
+		} else {
+			console.log('Local Storage Doesn\'t Exist !');
+			Data = {
+				...{"TimesOpen":0},
+				...DataPre,
+			};
+			localStorage.setItem(DataOrg.Name,JSON.stringify(Data));
+		};
+		console.log('Local Storage Tested !');
+	};
+	DataOrg.Save = function() {
+		console.log('Saving ..');
+		localStorage.setItem(DataOrg.Name,JSON.stringify(Data));
+		console.log('Saved !');
+	};
+	DataOrg.Read = function() {
+		console.log('Reading Local Storage ..');
+		Data = JSON.parse(localStorage.getItem(DataOrg.Name));
+		console.log('Local Storage Readed !');
+	};
+	DataOrg.Clear = function() {
+		console.log('Clearing Local Storage ..');
+		localStorage.removeItem(DataOrg.Name);
+		console.log('Local Storage Cleared !');
+	};
+	DataOrg.Reset = function() {
+		console.log('Resetting Local Storage ..');
+		DataOrg.Clear();
+		location.reload();
+		console.log('Local Storage Resetted !');
+	};
+	DataOrg.Test();
+};
+
+const average = arr => arr.reduce((p,c)=>p+c,0)/arr.length;
+
+var WW = _;
+var WH = _;
+var Wmin = _;
+var Wmax = _;
+
+function ResizedWindow() {
+	console.log('Window resizing ..');
+	GetWindowMeasures();
+	console.log('Window resized !');
+};
+
+function GetWindowMeasures() {
+	WW = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+	WH = window.innerHeight|| document.documentElement.clientHeight|| document.body.clientHeight;
+	if(WW<WH) {
+		Wmin = WW;
+		Wmax = WH;
+	} else {
+		Wmin = WH;
+		Wmax = WW;
+	};
+};
+
+var DataPre = {
+	"Options": [],
+	"DB": [],
+	"UndefinedActivities": 0,
+};
+
+/* Data.DB.example = [
+	{
+		"Date": 'yyyyMMddhhmmssμμμ',
+		"Cat": 'category', // Category
+		"Val": 'seconds', // Value in s
+	},
+	{
+		"Date": '20230317235244023',
+		"Cat": 'videogame', // Category
+		"Val": '1803', // Value in s
+	},
+	..
+];*/
+
+window.onload = function Onload() {
+	LaunchLocalStorage('Data20220110ProgramCalcDay');
+	GetWindowMeasures();
+	SetComponents();
+};
+
+window.addEventListener('resize', ResizedWindow);
+
+function SetComponents() {
+	for(let i0=0; i0<Data.Options.length; i0++) {
+		SetOption(Data.Options[i0]);
+	};
+	DisplayCharts();
+};
+
+function SetOption(OptionValue) {
+	document.getElementById('GenElem').getElementsByTagName('select')[0].innerHTML += '<option value="E-'+OptionValue+'">'+OptionValue+'</option>';
+};
+
+function AddElem() {
+	let Month = String(_JDGM(false,true));
+	if(Month.length==1) Month = '0'+Month ;
+	let SelectElem = document.getElementById('GenElem').getElementsByTagName('select')[0];
+	let Cat = '';
+	if(SelectElem.value=='G-new') {
+		let InputCat = document.getElementById('GenElem').getElementsByClassName('InputCat')[0];
+		if(InputCat.value=='') {
+			Data.UndefinedActivities += 1;
+			Cat = 'Undefined activity n.'+(Data.UndefinedActivities)+' :/';
+		} else {
+			Cat = InputCat.value;
+		};
+		if(!Data.Options.includes(Cat)) {
+			Data.Options.push(Cat);
+			SetOption(Cat);
+		};
+		InputCat.value = '';
+	} else {
+		Cat = SelectElem.value.slice(2);
+	};
+	let ValEl = document.getElementById('GenElem').getElementsByClassName('InputTime')[0];
+	let Value = 0;
+	if(ValEl.value&&ValEl.value!=' '&&ValEl.value!=0) Value = CalcTimeFromFormat(ValEl.value) ;
+	let res = {
+		"Date": String(_JDGY())+Month+String(_JDGD())+String(_JDGh())+String(_JDGm())+String(_JDGs())+String(_JDGms()), /**Date in yyyyMMddhhmmssμμμ*/
+		"Cat": Cat, /**Category*/
+		"Val": Value, /**Value in s*/
+	};
+	Data.DB.push(res);
+	SelectElem.value = 'G-new';
+	ValEl.value = '';
+	DataOrg.Save();
+	DisplayCharts();
+};
+
+function CalcTimeFromFormat(temp) {
+	let res = 0;
+	let TimeVals = [
+		   'I',Infinity,
+		 'HBY',31557600*100000000000000000000000000000000000,
+		 'DBY',31557600*10000000000000000000000000000000000,
+		'daBY',31557600*10000000000000000000000000000000000,
+		  'BY',31557600*1000000000000000000000000000000000,
+		 'HQY',31557600*100000000000000000000000000000000,
+		 'DQY',31557600*10000000000000000000000000000000,
+		'daQY',31557600*10000000000000000000000000000000,
+		  'QY',31557600*1000000000000000000000000000000,
+		 'HRY',31557600*100000000000000000000000000000,
+		 'DRY',31557600*10000000000000000000000000000,
+		'daRY',31557600*10000000000000000000000000000,
+		  'RY',31557600*1000000000000000000000000000,
+		 'HYY',31557600*100000000000000000000000000,
+		 'DYY',31557600*10000000000000000000000000,
+		'daYY',31557600*10000000000000000000000000,
+		  'YY',31557600*1000000000000000000000000,
+		 'HZY',31557600*100000000000000000000000,
+		 'DZY',31557600*10000000000000000000000,
+		'daZY',31557600*10000000000000000000000,
+		  'ZY',31557600*1000000000000000000000,
+		 'HEY',31557600*100000000000000000000,
+		 'DEY',31557600*10000000000000000000,
+		'daEY',31557600*10000000000000000000,
+		  'EY',31557600*1000000000000000000,
+		 'HPY',31557600*100000000000000000,
+		 'DPY',31557600*10000000000000000,
+		'daPY',31557600*10000000000000000,
+		  'PY',31557600*1000000000000000,
+		 'HTY',31557600*100000000000000,
+		 'DTY',31557600*10000000000000,
+		'daTY',31557600*10000000000000,
+		  'TY',31557600*1000000000000,
+		 'HGY',31557600*100000000000,
+		 'DGY',31557600*10000000000,
+		'daGY',31557600*10000000000,
+		  'GY',31557600*1000000000,
+		 'HMY',31557600*100000000,
+		 'DMY',31557600*10000000,
+		'daMY',31557600*10000000,
+		  'MY',31557600*1000000,
+		 'HKY',31557600*100000,
+		 'DKY',31557600*10000,
+		'daKY',31557600*10000,
+		  'KY',31557600*1000,
+		  'HY',31557600*100,
+		  'LY',31557600*50,
+		  'DY',31557600*10,
+		 'daY',31557600*10,
+		  'PY',31557600*5,
+		 'RdY',31622400, /* D*366 */
+		   'Y',31557600, /* D*365.25 or M*12 */
+		 'rdY',31536000, /* D*365 */
+		   'S',7889400, /* Y/4 or M*3 */
+		  'SA',undefined,
+		  'SB',undefined,
+		  'SC',undefined,
+		  'SD',undefined,
+		 'RdM',2678400, /* D*31 */
+		   'M',2629800, /* D*30.4375 */
+		 'rdM',2592000, /* D*30 */
+		   'W',604800, /* D*7 */
+		   'w',604800, /* D*7 */
+		   'D',86400, /* h*24 */
+		   'd',86400, /* h*24 */
+		   'H',3600, /* m*60 */
+		   'h',3600, /* m*60 */
+		   'm',60, /* s*60 */
+		   's',1,
+		  'ds',1/10,
+		  'cs',1/100,
+		  'ms',1/1000,
+		 'dms',1/10000,
+		 'cms',1/100000,
+		 'mms',1/1000000,
+		'dmms',1/10000000,
+		'cmms',1/100000000,
+		  'ns',1/1000000000,
+		 'dns',1/10000000000,
+		 'cns',1/100000000000,
+		  'ps',1/1000000000000,
+		 'dps',1/10000000000000,
+		 'cps',1/100000000000000,
+		  'fs',1/1000000000000000,
+		 'dfs',1/10000000000000000,
+		 'cfs',1/100000000000000000,
+		  'as',1/1000000000000000000,
+		 'das',1/10000000000000000000,
+		 'cas',1/100000000000000000000,
+		  'zs',1/1000000000000000000000,
+		 'dzs',1/10000000000000000000000,
+		 'czs',1/100000000000000000000000,
+		  'ys',1/1000000000000000000000000,
+		 'dys',1/10000000000000000000000000,
+		 'cys',1/100000000000000000000000000,
+		  'rs',1/1000000000000000000000000000,
+		 'drs',1/10000000000000000000000000000,
+		 'crs',1/100000000000000000000000000000,
+		  'qs',1/1000000000000000000000000000000,
+		 'dqs',1/10000000000000000000000000000000,
+		 'cqs',1/100000000000000000000000000000000,
+		  'bs',1/1000000000000000000000000000000000,
+		 'dbs',1/10000000000000000000000000000000000,
+		 'cbs',1/100000000000000000000000000000000000,
+		   'i',1/Infinity,
+		   'z',0,
+	];
+	let CharN = ['0','1','2','3','4','5','6','7','8','9','-','+','*','/','%'];
+	let CharX = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+	let CharV = [' ','\n','\t','\r'];
+	let SetN = [];
+	let SetX = [];
+	let temp2 = ['','']; /* [Numb,Unit] */
+	let TestType = 0; /* 0=null; 1=Numb; 2=Unit; 3=Special_Sep; 4=Other */
+	function Set() {
+		if(!temp2[0]) {
+			if(!temp2[1]) return ;
+			temp2[0] = '0';
+		};
+		SetN.push(Number(eval(temp2[0])));
+		if(!temp2[1]) temp2[1] = 's' ;
+		SetX.push(temp2[1]);
+		temp2 = ['',''];
+		TestType = 0;
+	};
+	while(temp.length) {
+		let TElem = temp[temp.length-1];
+		if(CharN.includes(TElem)) {
+			temp2[0] = TElem+temp2[0];
+			TestType = 1;
+		} else if(CharX.includes(TElem)) {
+			if(TestType!=2&&TestType!=0) Set() ;
+			temp2[1] = TElem+temp2[1];
+			TestType = 2;
+		} else if(CharV.includes(TElem)) {
+			if(TestType!=3&&TestType!=0) Set() ;
+			TestType = 3;
+		};
+		temp = temp.slice(0,-1);
+	};
+	Set();
+	for(let i0=0; i0<SetX.length; i0++) {
+		let Index = TimeVals.indexOf(SetX[i0])+1;
+		if(Index) res += SetN[i0]*TimeVals[Index] ;
+	};
+	return res;
+};
+
+function DisplayCharts() {
+	let DataDay = [[],[]];
+	let DataWeek = [[],[]];
+	let DataAll = [[],[]];
+	if(Data.DB.length==0) {
+		DataDay = [['Meal','Sleep'],[6176,29607]];
+		DataWeek = [['Meal','Sleep'],[6176,29607]];
+		DataAll = [['Meal','Sleep'],[6176,29607]];
+		/* To Continue .. */
+	} else {
+		let DateForm = String(_JDGM(false,true));
+		if(DateForm.length==1) DateForm = '0'+DateForm ;
+		DateForm = Number(String(_JDGY())+DateForm+String(_JDGD())+String(_JDGh())+String(_JDGm())+String(_JDGs())+String(_JDGms()));
+		function Push(el,v0,v1) {
+			if(eval(el+`[0].includes(v0)`)) {
+				eval(el+`[1][`+el+`[0].indexOf(v0)]+=v1`);
+			} else {
+				eval(el+`[0].push(v0);`+el+`[1].push(v1);`);
+			};
+		};
+		for(let i0=0; i0<Data.DB.length; i0++) {
+			let DataEl = Data.DB[i0];
+			let PastTime = DateForm-Number(DataEl.Date);
+			if(PastTime<86400000) { /**A Day in ms*/
+				Push('DataDay',DataEl.Cat,DataEl.Val);
+				Push('DataWeek',DataEl.Cat,DataEl.Val);
+			} else if(PastTime<604800000) { /**A Week in ms*/
+				Push('DataWeek',DataEl.Cat,DataEl.Val);
+			};
+			Push('DataAll',DataEl.Cat,DataEl.Val);
+		};
+	};
+	new Chart("LastDayChart",{
+		type: "pie",
+		data: {
+			labels: DataDay[0],
+			datasets: [{
+				label: 'Last Day Chart',
+				//~ barPercentage: 1,
+				//~ categoryPercentage: 1,
+				backgroundColor: "DarkSlateGrey",
+				hoverOffset: 4,
+				data: DataDay[1],
+			}]
+		},
+		options: {
+			title: {
+				display: true,
+				text: "Last Day Chart",
+			},
+		},
+	});
+	new Chart("LastWeekChart",{
+		type: "pie",
+		data: {
+			labels: DataWeek[0],
+			datasets: [{
+				label: 'Last Week Chart',
+				//~ barPercentage: 1,
+				//~ categoryPercentage: 1,
+				backgroundColor: "DarkBlue",
+				hoverOffset: 4,
+				data: DataWeek[1],
+			}]
+		},
+		options: {
+			title: {
+				display: true,
+				text: "Last Week Chart",
+			},
+		},
+	});
+	new Chart("AllTimeChart",{
+		type: "pie",
+		data: {
+			labels: DataAll[0],
+			datasets: [{
+				label: 'All Time Chart',
+				//~ barPercentage: 1,
+				//~ categoryPercentage: 1,
+				backgroundColor: "DarkRed",
+				hoverOffset: 4,
+				data: DataAll[1],
+			}]
+		},
+		options: {
+			title: {
+				display: true,
+				text: "All Time Chart 2",
+			},
+		},
+	});
+};
+
+function OnChangeSelectMk() {
+	if(document.getElementById('GenElem').getElementsByTagName('select')[0].value=='G-new') {
+		document.getElementById('GenElem').getElementsByClassName('InputCat')[0].style.display = 'block';
+	} else {
+		document.getElementById('GenElem').getElementsByClassName('InputCat')[0].style.display = 'none';
+	};
+};
+
+</script>
+</head>
+<body class="_BOMP _NS">
+
+<!--div id="ExIm">
+	<div id="Im" onclick="Im()"><h2>Import</h2></div>
+	<div id="Ex" onclick="Ex()"><h2>Export</h2></div>
+	<div id="Cc" onclick="Cc()"><h2>Copy</h2></div>
+	<div id="Pa" onclick="Pa()"><h2>Paste</h2></div>
+</div-->
+
+<div id="GenElem">
+	<select onchange="OnChangeSelectMk()">
+		<option value="G-new">&lt; new &gt;</option>
+	</select>
+	<input class="InputCat" placeholder="Enter the activity .." type="text" />
+	<input class="InputTime" placeholder="Enter how long time .." type="text" />
+	<input onclick="AddElem();" type="submit" value="Done" />
+</div>
+
+<div id="ChartsContainer">
+	<div class="ChartDiv" id="LastDayChartDiv">
+		<h1>Last about 24 hours</h1>
+		<canvas class="Chart" id="LastDayChart"></canvas>
+	</div>
+	<div class="ChartDiv" id="LastWeekChartDiv">
+		<h1>Last about 7 days</h1>
+		<canvas class="Chart" id="LastWeekChart"></canvas>
+	</div>
+	<div class="ChartDiv" id="AllTimeChartDiv">
+		<h1>All time</h1>
+		<canvas class="Chart" id="AllTimeChart"></canvas>
+	</div>
+</div>
+
+</body>
+</html>
