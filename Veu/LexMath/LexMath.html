@@ -1,0 +1,733 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>2wtnt.tk - τnTNT_☢️</title>
+	<meta charset="UTF-8">
+	<link href="https://fonts.googleapis.com/css?family=PT+Mono" rel="stylesheet">
+	<!--link href="CrystalItalic-R6A.ttf" rel="stylesheet"-->
+	<link href="https://2wtnt.tk/css.css" rel="stylesheet">
+	<script src="https://2wtnt.tk/js.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=PT+Mono&display=swap');
+
+@media (orientation: landscape) {
+
+}
+
+@media (orientation: portrait) {
+
+}
+
+@font-face {
+	font-family: Digital7;
+	src: URL('CrystalItalic-R6A.otf'); 
+}
+
+:root {
+	--scale: 1.5;
+	--body-background: hsla(0,0%,0%,1);
+	--BckColor: hsla(0,0%,76%,.2);
+	--BckColor2: hsla(0,0%,56%,.2);
+	--BckColor3: hsla(0,0%,56%,.1);
+	--MainColor: hsla(6,17%,94%,.95);
+	--OppositeColor: hsla(6,17%,6%,.95);
+	--GSU: 2vw;
+}
+
+* {
+	color: var(--MainColor);
+	font-family: 'PT Mono', monospace;
+	font-family: 'Ubuntu Mono', monospace;
+	transform-style: preserve-3d;
+}
+
+html, body {
+	overflow-x: hidden;
+}
+
+body {
+	background: hsla(0,0%,0%,1);
+} body::-webkit-scrollbar {
+	width: 1.5rem;
+} body::-webkit-scrollbar-track {
+	display: none;
+} body::-webkit-scrollbar-thumb {
+	background: silver;
+	background:
+		linear-gradient(top, transparent 5px, black 5px, black 50%, transparent 50%),	linear-gradient(bottom, transparent 5px, black 5px, black 50%, transparent 50%),
+		radial-gradient(circle, black 5px, transparent 5px) -2px 59%,
+		radial-gradient(circle, black 5px, transparent 5px) -2px 41%;
+	background-size: 100% 100%, 100% 100%, 15px 50%, 15px 50%;
+	background-clip: padding-box;
+	border: 0.5rem solid transparent;
+	border-radius: 1.5rem;
+	z-index: -1;
+	/*credits: https://gist.github.com/zoreet/1550217/8dff57fc6941ae4652faea7ff62f2b9a5c8767ef*/
+} body::-webkit-scrollbar-thumb:hover {
+	background-color: hsla(170,3%,33%,.8);
+}
+
+input, select, option, textarea, button {
+	color: black;
+}
+
+textarea, pre {
+	-moz-tab-size: 4;
+	  -o-tab-size: 4;
+	     tab-size: 4;
+}
+
+#ExIm {
+	top: 2.5em;
+}
+
+#ExIm, #ResetDiv {
+	background: var(--BckColor2);
+	position: absolute;
+	/*right: -3.98em;*/
+	left: calc( 100vw - 1.9em );
+	padding: .8em;
+	border-radius: 1em;
+	z-index: 500;
+} #ExIm:hover, #ResetDiv:hover {
+	background: var(--BckColor3);
+	/*right: 1em;*/
+	left: calc( 100vw - 7.2em );
+} #ExIm h2, #ResetDiv h2 {
+	margin: .2em;
+} #ExIm h2:hover, #ResetDiv h2:hover {
+	color: hsla(200,62%,86%,.95);
+	transform: scale(1.08);
+} #ExIm h2:active, #ResetDiv h2:active {
+	color: hsla(240,68%,78%,.95);
+	transform: scale(.94);
+}
+
+body {
+	min-width: 100vw;
+	min-height: 100vh;
+}
+
+#AreaDisplay {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: calc( 100vw - 1em );
+	height: calc( 100vh - 1em );
+	transform: translate(-50%,-50%);
+	background: hsla(0,0%,10%,.2);
+}
+
+#AreaDisplay div {
+	text-align: center;
+} #AreaDisplay div.text {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+}
+
+#SPscreen {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%) scale(3);
+	font-family: 'PT Mono', monospace;
+}
+
+#Hub {
+	position: absolute;
+	width: 8em;
+	height: 7em;
+	left: 50%;
+	border-radius: 100% 100% 0% 0%;
+	transform: translate(-50%,0%);
+	background: darkGreen;
+}
+
+#CollimatorGraphic {
+	position: absolute;
+	width: 1em;
+	height: 1em;
+	left: calc( 50% - .5em );
+	top: calc( 0% - .5em );
+	border-radius: 100%;
+	transform: translate(-50%,-50%);
+	background: indigo;
+}
+
+#Collimator {
+	position: absolute;
+	width: 0px;
+	height: 0px;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+}
+
+.Laser {
+	height: .4em;
+	border-radius: .2em;
+	background: blueViolet;
+	transform-origin: center left;
+}
+
+#Counter {
+	position: absolute;
+	height: 2em;
+	width: 7em;
+	left: 50%;
+	top: 60%;
+	transform: translate(-50%,-50%);
+	background: darkgray;
+}
+
+#CounterText {
+	position: absolute;
+	left: 50%;
+	top: 57%;
+	transform: translate(-50%,-50%);
+	color: hsla(1,50%,10%,.95);
+	font-family: Digital7;
+	font-size: 2.5em;
+	/*word-break: break-all;
+	overflow-wrap: break-word;
+	font-size: 2em;*/
+}
+
+.Stronghold {
+	position: absolute;
+	width: 6em;
+	height: 5em;
+	transform: translate(-50%,0%);
+	background: darkBlue;
+}
+
+.Attack {
+	position: absolute;
+	width: 3em;
+	height: 2em;
+	transform: translate(-50%,-50%);
+	background: hsla(1,100%,40%,.7);
+	transition-duration: 0ms;
+	font-size: 160%;
+	color: white;
+	/*-webkit-text-stroke: 1.5px black;*/
+	text-shadow: -1.5px 0 black, 0 1.5px black, 1.5px 0 black, 0 -1.5px black;
+}
+
+</style>
+<script>
+
+function Im() {
+	console.log('Importing ..');
+	console.log('Imported !');
+};
+
+function Ex() {
+	console.log('Exporting ..');
+	//~ var element = document.createElement('a');
+	//~ element.setAttribute('href','data:text/plain;charset=utf-8,'+encodeURIComponent(ExText()));
+	//~ element.setAttribute('download','File Exported.js');
+	//~ document.body.appendChild(element);
+	//~ element.click();
+	//~ document.body.removeChild(element);
+	console.log('Exported !');
+};
+
+function Cc() {
+	console.log('Coping ..');
+	//~ navigator.clipboard.writeText(ExText());
+	//~ alert('Text Copied!');
+	console.log('Copied !');
+};
+
+function Pa() {
+	console.log('Pasting ..');
+	//~ console.log(navigator.clipboard.read());
+	eval(navigator.clipboard.read());
+	//~ UpdateGraph();
+	console.log('Pasted !');
+};
+
+function ExText() {
+	//~ let nl = String.fromCharCode(13, 10);
+	//~ return 'Friends = '+ExFriends()+'FirstTime = '+FirstTime+';'+nl+'UnnammedFriends = '+UnnammedFriends+';'+nl+'Saved = '+Saved+';'+nl+'TimesOpen = '+TimesOpen+';'+nl+'Exports = '+Exports+';'+nl;
+};
+
+/*function ExFriends() {
+	let nl = String.fromCharCode(13, 10);
+	let temp = '[';
+	for(let i0=0; i0<Friends.length; i0++) {
+		temp += nl+'	[\''+Friends[i0][0]+'\'';
+		for(let i1=1; i1<Friends[i0].length; i1++) {
+			temp += ','+Friends[i0][i1];
+		};
+		temp += '],';
+	};
+	return temp+nl+'];'+nl;
+};*/
+
+function Reset() {
+	console.log('Resetting ..');
+	/*Friends = [
+		['Example of a Friend',67,17,49],
+		['Example of a Perfect Friend :)',100,100,100],
+		['Example of a Terrible Friend :(',0,0,0],
+	];
+	FirstTime = true;
+	UnnammedFriends = 0;
+	Saved = false;
+	TimesOpen = undefined;
+	Exports = 0;
+	ClearLSOfThis();
+	//~ TestLocalStorage();
+	//~ UpdateGraph();
+	console.log('Resetted !');
+	location.reload();*/
+	console.log('Reloading ..');
+};
+
+function LaunchLocalStorage(name) {
+	if(!(localStorage!==null?localStorage:0)) {
+		let err = '¡⚠️¡ In your browser there is no "LocalStorage", so the program may not work correctly ! ¡⚠️¡';
+		console.log(err);
+		alert(err);
+		return err;
+	};
+	if(!name) {
+		let err = '¡⚠️¡ An identifying name must be passed to the "LaunchLocalStorage(name)" function ! ¡⚠️¡';
+		console.log(err);
+		return err;
+	};
+	if(!globalThis.DataOrg) globalThis.DataOrg = {} ; /*Data Ὄργᾰνον*/
+	if(!globalThis.DataPre) globalThis.DataPre = {} ; /*Data Predefined*/
+	if(!globalThis.Data) globalThis.Data = {} ;
+	DataOrg.Name = name;
+	DataOrg.Launch = LaunchLocalStorage;
+	DataOrg.Test = function() {
+		console.log('Testing Local Storage ..');
+		if(eval(`localStorage.`+DataOrg.Name)) {
+			console.log('local Storage Exists !');
+			DataOrg.Read();
+			Data.TimesOpen += 1;
+			DataOrg.Save();
+		} else {
+			console.log('Local Storage Doesn\'t Exist !');
+			Data = {
+				...{"TimesOpen":0},
+				...DataPre,
+			};
+			localStorage.setItem(DataOrg.Name,JSON.stringify(Data));
+		};
+		console.log('Local Storage Tested !');
+	};
+	DataOrg.Save = function() {
+		console.log('Saving ..');
+		localStorage.setItem(DataOrg.Name,JSON.stringify(Data));
+		console.log('Saved !');
+	};
+	DataOrg.Read = function() {
+		console.log('Reading Local Storage ..');
+		Data = JSON.parse(localStorage.getItem(DataOrg.Name));
+		console.log('Local Storage Readed !');
+	};
+	DataOrg.Clear = function() {
+		console.log('Clearing Local Storage ..');
+		localStorage.removeItem(DataOrg.Name);
+		console.log('Local Storage Cleared !');
+	};
+	DataOrg.Reset = function() {
+		console.log('Resetting Local Storage ..');
+		DataOrg.Clear();
+		location.reload();
+		console.log('Local Storage Resetted !');
+	};
+	DataOrg.Test();
+};
+
+const average = arr => arr.reduce((p,c)=>p+c,0)/arr.length;
+
+var WW = _;
+var WH = _;
+var Wmin = _;
+var Wmax = _;
+
+function ResizedWindow() {
+	console.log('Window resizing ..');
+	GetWindowMeasures();
+	console.log('Window resized !');
+};
+
+function GetWindowMeasures() {
+	WW = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+	WH = window.innerHeight|| document.documentElement.clientHeight|| document.body.clientHeight;
+	if(WW<WH) {
+		Wmin = WW;
+		Wmax = WH;
+	} else {
+		Wmin = WH;
+		Wmax = WW;
+	};
+};
+
+var DataPre = {
+};
+
+var InputNumTemp = _;
+var Scene = _;
+var Interval = _;
+var audio = {
+	"soundtracksoft": [
+		new Audio('Sounds/soundtracksoft0.wav'), /** 320980__littlerobotsoundfactory__loop-the-seven-seas-02 */
+		new Audio('Sounds/soundtracksoft1.mp3'), /** 367162__frankum__extract-of-white-spirit-soundtrack */
+		new Audio('Sounds/soundtracksoft2.wav'), /** 496892__bloodpixelhero__mega-game-loop */
+		new Audio('Sounds/soundtracksoft3.mp3'), /** 579847__kbrecordzz__string-section-game-soundtrack */
+		new Audio('Sounds/soundtracksoft4.wav'), /** 257869__jba-music__fastbeat */
+		new Audio('Sounds/soundtracksoft5.wav'), /** 477480__x3nus__waves-of-melancholy */
+	],
+	"soundtrack": [
+		new Audio('Sounds/soundtrack0.wav'), /** 367536__veeru5656__game-music-alien */
+		new Audio('Sounds/soundtrack1.mp3'), /** 514154__edwardszakal__game-music */
+		new Audio('Sounds/soundtrack2.wav'), /** 573803__sami-hiltunen__boss-battle-music */
+		new Audio('Sounds/soundtrack3.wav'), /** 516637__tictac9__break-loop-tictac9 */
+		new Audio('Sounds/soundtrack4.wav'), /** 476786__x3nus__sudden-run */
+		new Audio('Sounds/soundtrack5.wav'), /** 423457__zagi2__wb-breakbeat */
+		new Audio('Sounds/soundtrack6.wav'), /** 261463__zagi2__metal-jungle */
+		new Audio('Sounds/soundtrack7.wav'), /** 251260__zagi2__jolly-cartoon-groove */
+	],
+	"laser": [
+		new Audio('Sounds/laser.wav'),
+	],
+	"stronghold": [
+		new Audio('Sounds/strongholdbreak.mp3'),
+		new Audio('Sounds/strongholddamaged.wav'),
+	],
+	"gameover": [
+		new Audio('Sounds/gameoverwin.wav'),
+		new Audio('Sounds/gameoverlose.wav'),
+	],
+}; //~ Eg.: audio.soundtracksoft[0].cloneNode(true).play();
+
+window.onload = function Onload() {
+	LaunchLocalStorage('Data20220224ProgramLexMath');
+	GetWindowMeasures();
+	SetComponents();
+};
+
+window.addEventListener('resize', ResizedWindow);
+
+function SetComponents() {
+	Scene = document.getElementById('AreaDisplay');
+	Display('SPscreen');
+	//~ DisplayArea();
+	UpdateCounter();
+};
+
+function Display(screen) {
+	switch(screen) {
+		case 'SPscreen':
+			Scene.innerHTML = '<p id="SPscreen">S to START<br />P to PAUSE<br />R to RLOAD</p>';
+			break;
+		case 'launchgame':
+			DisplayArea();
+			break;
+		default:
+	};
+};
+
+function DisplayArea() {
+	let Trajectories = [.15,.225,.3,.7,.775,.85];
+	let HubHeight = .04; /**in %*/
+	let StrongholdHeight = .05; /**in %*/
+	let Attacks = 520;
+	let Timing = 5000;
+	let Speed = 1/40000; /**Ratio over ms*/
+	let LPms = 50; /**~FPS*/
+	let Nmin = -1;
+	let Nmax = 16;
+	let DFa = 1; /* DigitsFixedAt */ /** 88.88 => 0.01→88.88, 0.1→88.9, 1→89, 10→90, 100→100 */
+	let Operators = '+*- ';
+	GenHub(HubHeight);
+	GenStronghold(Trajectories,StrongholdHeight);
+	GenAttacks(Attacks,Trajectories,Nmin,Nmax,DFa,Operators,Timing);
+	GenDescending(LPms,Speed);
+	for(let i0=0; i0<audio.soundtrack.length; i0++) {
+		if (typeof audio.soundtrack[i0].loop == 'boolean') {
+			audio.soundtrack[i0].loop = true;
+		} else {
+			audio.soundtrack[i0].addEventListener('ended',function() {
+				this.currentTime = 0;
+				this.play();
+			}, false);
+		};
+	};
+	audio.soundtrack[Math.floor(Math.random()*audio.soundtrack.length)].play();
+};
+
+function GenHub(HubHeight) {
+	Scene.innerHTML = '<div id="Hub" style="bottom:'+HubHeight*100+'%;"><div id="CollimatorGraphic"><div id="Collimator"></div></div><div id="Counter"><div id="CounterText"></div></div></div>';
+};
+
+function GenStronghold(StrongholdPositions,StrongholdHeight) {
+	for(let i0=0; i0<StrongholdPositions.length; i0++) {
+		Scene.innerHTML += '<div class="Stronghold isPos'+String(StrongholdPositions[i0]).replace('.','_')+'" style="left:'+StrongholdPositions[i0]*100+'%;bottom:'+StrongholdHeight*100+'%;"></div>';
+	};
+};
+
+function GenAttacks(Attacks,Trajectories,Nmin,Nmax,DFa,Operators,Timing) {
+	_JCF(function(Trajectories,Nmin,Nmax,DFa,Operators) {
+		let res = _;
+		let num0 = _;
+		let num1 = _;
+		let Out = '';
+		function TestCondition() { return res>Nmax||res<Nmin||res==undefined||res!=Math.floor(res/DFa)*DFa; };
+		function GenN() { return Math.floor(Math.random()*(Nmax-Nmin)/DFa)*DFa+Nmin; };
+		function AssignN() { num0 = GenN(); num1 = GenN(); };
+		switch(Operators[Math.floor(Math.random()*Operators.length)]) {
+			case '+':
+				while(TestCondition()) {
+					AssignN();
+					res = num0+num1;
+				};
+				Out = num0+'+'+num1;
+				break;
+			case '-':
+				while(TestCondition()) {
+					AssignN();
+					res = num0-num1;
+				};
+				Out = num0+'-'+num1;
+				break;
+			case '*':
+				while(TestCondition()) {
+					AssignN();
+					res = num0*num1;
+				};
+				Out = num0+'×'+num1;
+				break;
+			case '/':
+				while(TestCondition()) {
+					AssignN();
+					res = num0/num1;
+				};
+				Out = num0+'÷'+num1;
+				break;
+			default:
+				res = Math.floor(Math.random()*(Nmax-Nmin))+Nmin;
+				Out = res;
+		};
+		Scene.innerHTML += '<div class="Attack isRes'+String(res).replace('.','_')+'" style="left:'+Trajectories[Math.floor(Math.random()*Trajectories.length)]*100+'%;bottom:105%;"><div class="text">'+Out+'</div></div>';
+		//~ console.log(num0,num1,res);
+	},Attacks,Timing,[Trajectories,Nmin,Nmax,DFa,Operators]);
+};
+
+function GenDescending(LPms,Speed) {
+	Interval = setInterval(function(Speed) {
+		let CurrentAttacks = Scene.getElementsByClassName('Attack');
+		for(let i0=0; i0<CurrentAttacks.length; i0++) {
+			let pos = CurrentAttacks[i0].style.bottom.replace(/[^-\d\.]/g,'')/100;
+			if(pos>Scene.getElementsByClassName('Stronghold')[0].style.bottom.replace(/[^-\d\.]/g,'')/100) {
+				CurrentAttacks[i0].style.bottom = (pos-Speed)*100+'%';
+			} else {
+				let elems = Scene.getElementsByClassName('isPos'+String(CurrentAttacks[i0].style.left.replace(/[^-\d\.]/g,'')/100).replace('.','_'));
+				for(let i1=0; i1<elems.length; i1++) {
+					StrongholdShooted(elems[i1]);
+					AttackArrived(CurrentAttacks[i0]);
+					console.log('A stronghold has been hit !');
+				};
+			};
+		};
+	},LPms,Speed*LPms);
+};
+
+function StrongholdShooted(elem) {
+	if(elem.innerHTML=='') {
+		elem.innerHTML = '<div class="text">!</div>';
+		audio.stronghold[1].cloneNode(true).play();
+	} else {
+		elem.outerHTML = '';
+		audio.stronghold[0].cloneNode(true).play();
+		if(Scene.getElementsByClassName('Stronghold').length==0) GameOver(false) ;
+	};
+};
+
+function AttackArrived(elem) {
+	DeleteAttack(elem);
+};
+
+function GameOver(win) {
+	let message = '';
+	if(win) {
+		message = '^_^ YOU WON ! ^_^';
+		audio.gameover[0].play();
+	} else {
+		message = '¡!¡ GAME OVER ! ¡!¡';
+		audio.gameover[1].play();
+	};
+	clearInterval(Interval);
+	setTimeout(function() {UpdateCounter(message);},800);
+};
+
+function LaunchResult(result) {
+	let Objectives = Scene.getElementsByClassName('isRes'+String(result).replace('.','_'));
+	console.log(Objectives.length);
+	_JCF(function(i0) {
+		i0 = Number(i0);
+		let PosCollimator = document.getElementById('Collimator').getBoundingClientRect();
+		let PosObjective = Objectives[i0].getBoundingClientRect();
+		let xD = PosObjective.left-PosCollimator.left;
+		let yD = PosObjective.bottom-PosCollimator.bottom;
+		let dD = Math.sqrt(Math.pow(xD,2)+Math.pow(yD,2));
+		document.getElementById('Collimator').innerHTML += '<div class="Laser" style="width:'+dD+'px;transform:rotate('+(-Math.acos(xD/dD))+'rad);"></div>';
+		audio.laser[0].cloneNode(true).play();
+		setTimeout(function() {
+			Scene.getElementsByClassName('Laser')[Scene.getElementsByClassName('Laser').length-1].outerHTML = '';
+		},200);
+		DeleteAttack(Objectives[i0]);
+		console.log('Destroyed Element !');
+	},Objectives.length,300,['|i|']);
+};
+
+function LaunchResultCommand() {
+	LaunchResult(InputNumTemp);
+	InputNumTemp = undefined;
+};
+
+function UpdateCounter(text) {
+	let Counter = document.getElementById('CounterText');
+	Counter.innerText = InputNumTemp;
+	if(!InputNumTemp) Counter.innerText = '_____' ;
+	if(text) Counter.innerText = text ;
+};
+
+function DeleteAttack(Attack) {
+	Attack.outerHTML = '';
+	if(Scene.getElementsByClassName('Attack').length==0) GameOver(true) ;
+};
+
+function OnKeyDown(event) { /*On Key Down*/
+	var val;
+	if(event*1) {
+		val = event;
+	} else {
+		val = event.which||event.keyCode;
+	};
+	if(!isNaN(event.key)||event.key=='.'||event.key==','||event.key=='-') {
+		if(InputNumTemp) {
+			InputNumTemp += event.key.replace(',','.') ;
+		} else {
+			InputNumTemp = event.key.replace(',','.') ;
+		};
+	};
+	switch(val) {
+		case 8: /**backspace*/
+			InputNumTemp = InputNumTemp.slice(0,-1);
+			LaunchResult(InputNumTemp);
+			break;
+		case 9: /**tab*/
+			break;
+		case 13: /**enter*/
+			LaunchResultCommand();
+			break;
+		case 16: /**shift*/
+			break;
+		case 17: /**ctrl*/
+			break;
+		case 18: /**alt*/
+			break;
+		case 20: /**block maiusc*/
+			break;
+		case 32: /** */
+			LaunchResultCommand();
+			break;
+		case 37: /**left*/
+			break;
+		case 38: /**up*/
+			break;
+		case 39: /**right*/
+			break;
+		case 40: /**down*/
+			break;
+		case 46: /**delete*/
+			InputNumTemp = undefined;
+			LaunchResult(InputNumTemp);
+			break;
+		case 65: /**A*/
+			break;
+		case 66: /**B*/
+			break;
+		case 67: /**C*/
+			break;
+		case 68: /**D*/
+			break;
+		case 69: /**E*/
+			break;
+		case 70: /**F*/
+			break;
+		case 71: /**G*/
+			break;
+		case 72: /**H*/
+			break;
+		case 73: /**I*/
+			break;
+		case 74: /**J*/
+			break;
+		case 75: /**K*/
+			break;
+		case 76: /**L*/
+			break;
+		case 77: /**M*/
+			break;
+		case 78: /**N*/
+			break;
+		case 79: /**O*/
+			break;
+		case 80: /**P*/
+			break;
+		case 81: /**Q*/
+			break;
+		case 82: /**R*/
+			location.reload();
+			break;
+		case 83: /**S*/
+			Display('launchgame');
+			break;
+		case 84: /**T*/
+			break;
+		case 85: /**U*/
+			break;
+		case 86: /**V*/
+			break;
+		case 87: /**W*/
+			break;
+		case 88: /**X*/
+			break;
+		case 89: /**Y*/
+			break;
+		case 90: /**Z*/
+			break;
+		case 220: /**\*/
+			break;
+		default:
+	};
+	UpdateCounter();
+};
+
+</script>
+</head>
+<body class="_BOMP _NS" onkeydown="OnKeyDown(event)">
+
+<div id="ExIm">
+	<div id="Im" onclick="Im()"><h2>Import</h2></div>
+	<div id="Ex" onclick="Ex()"><h2>Export</h2></div>
+	<div id="Cc" onclick="Cc()"><h2>Copy</h2></div>
+	<div id="Pa" onclick="Pa()"><h2>Paste</h2></div>
+</div>
+
+<div id="AreaDisplay"></div>
+
+</body>
+</html>
