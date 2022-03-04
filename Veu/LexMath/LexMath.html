@@ -144,7 +144,10 @@ body {
 	left: 50%;
 	border-radius: 100% 100% 0% 0%;
 	transform: translate(-50%,0%);
-	background: darkGreen;
+	background: url("Texture/Hub.png") /*darkGreen*/;
+	background-repeat: no-repeat;
+	background-size: 100%;
+	background-position: center;
 }
 
 #CollimatorGraphic {
@@ -179,7 +182,7 @@ body {
 	height: 2em;
 	width: 7em;
 	left: 50%;
-	top: 60%;
+	top: 50%;
 	transform: translate(-50%,-50%);
 	background: darkgray;
 }
@@ -202,7 +205,15 @@ body {
 	width: 6em;
 	height: 5em;
 	transform: translate(-50%,0%);
-	background: darkBlue;
+	background: url("Texture/Stronghold.png") /*darkBlue*/;
+	background-repeat: no-repeat;
+	background-size: 100%;
+	background-position: center;
+} .Stronghold.damaged {
+	background: url("Texture/StrongholdDamaged.png");
+	background-repeat: no-repeat;
+	background-size: 100%;
+	background-position: center;
 }
 
 .Attack {
@@ -442,17 +453,25 @@ function DisplayArea() {
 	let Trajectories = [.15,.225,.3,.7,.775,.85];
 	let HubHeight = .04; /**in %*/
 	let StrongholdHeight = .05; /**in %*/
-	let Attacks = 520;
+	let Attacks = 120;
 	let Timing = 5000;
 	let Speed = 1/40000; /**Ratio over ms*/
 	let LPms = 50; /**~FPS*/
-	let Nmin = -1;
-	let Nmax = 16;
-	let DFa = 1; /* DigitsFixedAt */ /** 88.88 => 0.01→88.88, 0.1→88.9, 1→89, 10→90, 100→100 */
-	let Operators = '+*- ';
+	//~ let inPar = {
+		//~ "type": 'standard',
+		//~ "min": 0,
+		//~ "max": 10,
+		//~ "DFa": 1, /* DigitsFixedAt */ /** 88.88 => 0.01→88.88, 0.1→88.9, 1→89, 10→90, 100→100 */
+		//~ "op": ['|','+'], /** '+-/* |' */
+	//~ };
+	let inPar = {
+		"type": 'times-table', /** n*i=? → n0*n1=? */
+		"n0": [2,5],
+		"n1": [0,1,2,3,4,5,6,7,8,9,10],
+	};
 	GenHub(HubHeight);
 	GenStronghold(Trajectories,StrongholdHeight);
-	GenAttacks(Attacks,Trajectories,Nmin,Nmax,DFa,Operators,Timing);
+	GenAttacks(Attacks,Trajectories,Timing,inPar);
 	GenDescending(LPms,Speed);
 	for(let i0=0; i0<audio.soundtrack.length; i0++) {
 		if (typeof audio.soundtrack[i0].loop == 'boolean') {
@@ -477,51 +496,70 @@ function GenStronghold(StrongholdPositions,StrongholdHeight) {
 	};
 };
 
-function GenAttacks(Attacks,Trajectories,Nmin,Nmax,DFa,Operators,Timing) {
-	_JCF(function(Trajectories,Nmin,Nmax,DFa,Operators) {
-		let res = _;
-		let num0 = _;
-		let num1 = _;
+function GenAttacks(Attacks,Trajectories,Timing,inPar) {
+	_JCF(function(Trajectories,V) { /** inPar→V */
 		let Out = '';
-		function TestCondition() { return res>Nmax||res<Nmin||res==undefined||res!=Math.floor(res/DFa)*DFa; };
-		function GenN() { return Math.floor(Math.random()*(Nmax-Nmin)/DFa)*DFa+Nmin; };
-		function AssignN() { num0 = GenN(); num1 = GenN(); };
-		switch(Operators[Math.floor(Math.random()*Operators.length)]) {
-			case '+':
-				while(TestCondition()) {
-					AssignN();
-					res = num0+num1;
+		let Res = '';
+		switch(V.type) {
+			case 'standard':
+				let res = _;
+				let num0 = _;
+				let num1 = _;
+				let OutS = '';
+				function TestCondition() { return res>V.max||res<V.min||res==undefined||res!=Math.floor(res/V.DFa)*V.DFa; };
+				function GenN() { return Math.floor(Math.random()*(V.max-V.min)/V.DFa)*V.DFa+V.min; };
+				function AssignN() { num0 = GenN(); num1 = GenN(); };
+				switch(V.op[Math.floor(Math.random()*V.op.length)]) {
+					case '+':
+						while(TestCondition()) {
+							AssignN();
+							res = num0+num1;
+						};
+						OutS = num0+'+'+num1;
+						break;
+					case '-':
+						while(TestCondition()) {
+							AssignN();
+							res = num0-num1;
+						};
+						OutS = num0+'-'+num1;
+						break;
+					case '*':
+						while(TestCondition()) {
+							AssignN();
+							res = num0*num1;
+						};
+						OutS = num0+'×'+num1;
+						break;
+					case '/':
+						while(TestCondition()) {
+							AssignN();
+							res = num0/num1;
+						};
+						OutS = num0+'÷'+num1;
+						break;
+					case '|':
+						let num = GenN();
+						OutS = '|'+num+'|';
+						res = Math.abs(num);
+						break;
+					default:
+						res = Math.floor(Math.random()*(V.max-V.min))+V.min;
+						OutS = res;
 				};
-				Out = num0+'+'+num1;
+				Out = OutS;
+				Res = String(res).replace('.','_');
 				break;
-			case '-':
-				while(TestCondition()) {
-					AssignN();
-					res = num0-num1;
-				};
-				Out = num0+'-'+num1;
-				break;
-			case '*':
-				while(TestCondition()) {
-					AssignN();
-					res = num0*num1;
-				};
-				Out = num0+'×'+num1;
-				break;
-			case '/':
-				while(TestCondition()) {
-					AssignN();
-					res = num0/num1;
-				};
-				Out = num0+'÷'+num1;
+			case 'times-table':
+				let n0 = V.n0[Math.floor(Math.random()*V.n0.length)];
+				let n1 = V.n1[Math.floor(Math.random()*V.n1.length)];
+				Out = n0+'×'+n1;
+				Res = String(n0*n1).replace('.','_');
 				break;
 			default:
-				res = Math.floor(Math.random()*(Nmax-Nmin))+Nmin;
-				Out = res;
 		};
-		Scene.innerHTML += '<div class="Attack isRes'+String(res).replace('.','_')+'" style="left:'+Trajectories[Math.floor(Math.random()*Trajectories.length)]*100+'%;bottom:105%;"><div class="text">'+Out+'</div></div>';
-		//~ console.log(num0,num1,res);
-	},Attacks,Timing,[Trajectories,Nmin,Nmax,DFa,Operators]);
+		Scene.innerHTML += '<div class="Attack isRes'+Res+'" style="left:'+Trajectories[Math.floor(Math.random()*Trajectories.length)]*100+'%;bottom:105%;"><div class="text">'+Out+'</div></div>';
+	},Attacks,Timing,[Trajectories,inPar]);
 };
 
 function GenDescending(LPms,Speed) {
@@ -544,8 +582,8 @@ function GenDescending(LPms,Speed) {
 };
 
 function StrongholdShooted(elem) {
-	if(elem.innerHTML=='') {
-		elem.innerHTML = '<div class="text">!</div>';
+	if(!elem.classList.contains("damaged")) {
+		elem.className += ' damaged';
 		audio.stronghold[1].cloneNode(true).play();
 	} else {
 		elem.outerHTML = '';
@@ -686,6 +724,7 @@ function OnKeyDown(event) { /*On Key Down*/
 		case 79: /**O*/
 			break;
 		case 80: /**P*/
+			
 			break;
 		case 81: /**Q*/
 			break;
