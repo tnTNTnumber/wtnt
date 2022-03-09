@@ -967,6 +967,14 @@ function Display(screen) {
 
 function DisplayArea(In,DLvl) {
 	document.body.focus();
+	function openKeyBoard(){
+    document.body.click();
+    setTimeout(function(){
+        document.body.focus()},1)
+    return "keyboard open";
+
+}
+	openKeyBoard();
 	let Trajectories = In.Trajectories||[.15,.3,.7,.85]||[.15,.225,.3,.7,.775,.85];
 	let HubHeight = In.HubHeight||.04; /**in %*/
 	let StrongholdHeight = In.StrongholdHeight||.05; /**in %*/
