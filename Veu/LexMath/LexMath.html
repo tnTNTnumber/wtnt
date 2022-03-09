@@ -2,12 +2,15 @@
 <html>
 <head>
 	<title>2wtnt.tk - τnTNT_☢️</title>
+	<link rel="icon" type="image/x-icon" href="Texture/IconTransparent.png">
 	<meta charset="UTF-8">
 	<link href="https://fonts.googleapis.com/css?family=PT+Mono" rel="stylesheet">
 	<!--link href="CrystalItalic-R6A.ttf" rel="stylesheet"-->
 	<link href="https://2wtnt.tk/css.css" rel="stylesheet">
 	<script src="https://2wtnt.tk/js.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+	<!--script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script-->
+	<SCRIPT SRC='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></SCRIPT>
+	<SCRIPT>MathJax.Hub.Config({ tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}})</SCRIPT>
 <style>
 
 @import url('https://fonts.googleapis.com/css2?family=PT+Mono&display=swap');
@@ -41,6 +44,9 @@
 	font-family: 'PT Mono', monospace;
 	font-family: 'Ubuntu Mono', monospace;
 	transform-style: preserve-3d;
+	/*cursor: url("https://www.w3docs.com/uploads/media/default/0001/02/53f34c2d574ce31a424df7855ef3e8f2ece589d6.png"), auto !important;*/
+	/*cursor: url("custom.gif"), url("custom.cur"), default;*/
+	cursor: url("Texture/Cursor.cur"), url("Texture/Cursor.png"), url("Texture/Cursor.gif"), url("Texture/CursorSmall.cur"), url("Texture/CursorSmall.png"), url("Texture/CursorSmall.gif"), default !important;
 }
 
 html, body {
@@ -116,6 +122,7 @@ body {
 	top: 50%;
 	width: calc( 100vw - 1em );
 	height: calc( 100vh - 1em );
+	min-height: 100%;
 	transform: translate(-50%,-50%);
 	background: hsla(0,0%,10%,.2);
 }
@@ -135,6 +142,44 @@ body {
 	top: 50%;
 	transform: translate(-50%,-50%) scale(3);
 	font-family: 'PT Mono', monospace;
+}
+
+#SPscreenOut {
+	text-align: center;
+	width: 100%;
+	font-size: 200%;
+	font-family: 'PT Mono', monospace;
+} #SPscreenOut h1 {
+	font-family: Digital7;
+	margin-bottom: 0px;
+} #SPscreenOut p {
+	margin-bottom: 0px;
+}
+
+#Menu {
+	position: absolute;
+	left: 50%;
+	max-width: 85%;
+	padding: 1.7em 0px 2.7em 0px;
+	transform-origin: center left;
+	font-family: 'PT Mono', monospace;
+} #Menu div, #Menu p {
+	transform: translate(-50%,0%);
+}
+
+.MenuOpt {
+	width: 100%;
+	text-align: center;
+	color: hsla(2,14%,70%,.95);
+	font-size: 300%;
+	text-shadow: 0px 3px 10px hsla(7,30%,70%,.8);
+	padding: .5em 1em;
+	background-repeat: no-repeat !important;
+	background-size: 100% 100% !important;
+	background-position: center !important;
+	transform-origin: 550% center;
+} .MenuOpt:hover {
+	transform: scale(1.1) !important;
 }
 
 #Hub {
@@ -432,12 +477,65 @@ window.addEventListener('resize', ResizedWindow);
 
 function SetComponents() {
 	Scene = document.getElementById('AreaDisplay');
-	Display('SPscreen');
+	Display('optionList0');
 	//~ DisplayArea();
 	UpdateCounter();
 };
 
+function InsertDifficulty() {
+	let n = Number(prompt("Insert DIFFICULTY:\n0 ← of Course\n1 ← Very Easy\n2 ← Easy\n3 ← Normal\n4 ← Hard\n5 ← Very Hard\n6 ← Impossible",3));
+	if(isNaN(n)) return 'Normal' ;
+	switch(n) {
+		case 0:
+			n = 'ofCourse';
+			break;
+		case 1:
+			n = 'VeryEasy';
+			break;
+		case 2:
+			n = 'Easy';
+			break;
+		case 3:
+			n = 'Normal';
+			break;
+		case 4:
+			n = 'Hard';
+			break;
+		case 5:
+			n = 'VeryHard';
+			break;
+		case 6:
+			n = 'Impossible';
+			break;
+		default:
+			n = 'Normal';
+	};
+	return n;
+};
+
 function Display(screen) {
+	let outP = '';
+	let outPS = '<div id="Menu">';
+	function outPR(opts,R) {
+		return '<div class="MenuOpt" style="background:url(Texture/MenuText'+Math.floor((Math.random()||R)*3)+'.png);" '+(opts||'')+' ';
+	};
+	let outPE = '</div>';
+	let Opts = _;
+	function OLR(Opts) { /*Option List Returns*/
+		let res = '';
+		for(let i0=1; i0<Opts.length; i0+=3) {
+			//~ res += outPR()+'onclick=\'DisplayArea('+JSON.stringify(Opts[i0+1])+',"'+Opts[i0]+'");\'>'+Opts[i0-1]+'</div>';
+			res += outPR()+'onclick=\'DisplayArea('+JSON.stringify(Opts[i0+1])+',InsertDifficulty());\'>'+Opts[i0-1]+'</div>';
+		};
+		Scene.innerHTML = '<div id="SPscreenOut"><h1>LexMath</h1></div>'+outPS+outPR()+'onclick="Display(`optionList0`);">↑ Home ↑</div>'+res+outPE;
+	};
+	function NumberToA(n) {
+		let res = [];
+		for(let i0=0; i0<n; i0++) {
+			res.push(i0+1);
+		};
+		return res;
+	};
 	switch(screen) {
 		case 'SPscreen':
 			Scene.innerHTML = '<p id="SPscreen">S to START<br />P to PAUSE<br />R to RLOAD</p>';
@@ -445,29 +543,484 @@ function Display(screen) {
 		case 'launchgame':
 			DisplayArea();
 			break;
+		case 'optionList0':
+			outP = '<div id="SPscreenOut"><h1>LexMath</h1><p>P to PAUSE<br />R to RLOAD</p></div>'+outPS;
+			Opts = [
+				'Type the Numbers','optionListAs',
+				'Sums','optionListSums',
+				'Subtractions','optionListSubs',
+				'Multiplications','optionListMuls',
+				'Divisions','optionListDivs',
+				'Absolute Values','optionListAbs',
+				'Times Tables','optionListMulT',
+				//~ 'Other','optionListOth',
+				//~ 'Custom','optionListCustom',
+			];
+			for(let i0=0; i0<Opts.length; i0+=2) {
+				outP += outPR()+'onclick="Display(`'+Opts[i0+1]+'`);">'+Opts[i0]+'</div>';
+			};
+			Scene.innerHTML = outP+outPE;
+			break;
+		case 'optionListAs':
+			OLR([
+				'Type the numbers between 1 and 5','Normal',
+				{"inPar": {"type": 'standard',"min": 1,"max": 5,"DFa": 1,"op": [' '] }},
+				'Type the numbers between 0 and 10','Normal',
+				{"inPar": {"type": 'standard',"min": 0,"max": 10,"DFa": 1,"op": [' '] }},
+				'Type the tens between 0 and 100','Normal',
+				{"inPar": {"type": 'standard',"min": 0,"max": 100,"DFa": 10,"op": [' '] }},
+				'Type the numbers between 0 and 100','Normal',
+				{"inPar": {"type": 'standard',"min": 0,"max": 100,"DFa": 1,"op": [' '] }},
+				'Type the hundreds between 0 and 1\'000','Normal',
+				{"inPar": {"type": 'standard',"min": 0,"max": 1000,"DFa": 100,"op": [' '] }},
+				'Type the numbers between 0 and 1\'000','Normal',
+				{"inPar": {"type": 'standard',"min": 0,"max": 1000,"DFa": 1,"op": [' '] }},
+				'Type the thousands between 0 and 10\'000','Normal',
+				{"inPar": {"type": 'standard',"min": 0,"max": 10000,"DFa": 1000,"op": [' '] }},
+				'Type the numbers between 0 and 1\'000\'000','Normal',
+				{"inPar": {"type": 'standard',"min": 0,"max": 1000000,"DFa": 1,"op": [' '] }},
+				'Type the millions between 0 and 10\'000\'000','Normal',
+				{"inPar": {"type": 'standard',"min": 0,"max": 10000000,"DFa": 1000000,"op": [' '] }},
+				'Type the numbers between -10 and 10','Normal',
+				{"inPar": {"type": 'standard',"min": -10,"max": 10,"DFa": 1,"op": [' '] }},
+				'Type the numbers between -100 and 100','Normal',
+				{"inPar": {"type": 'standard',"min": -100,"max": 100,"DFa": 1,"op": [' '] }},
+				'Type the decimals between 0.0 and 10.0','Normal',
+				{"inPar": {"type": 'standard',"min": 0,"max": 10,"DFa": .1,"op": [' '] }},
+				'Type the hundredths between 0.00 and 10.00','Normal',
+				{"inPar": {"type": 'standard',"min": 0,"max": 10,"DFa": .01,"op": [' '] }},
+				'Type the thousandths between 0.000 and 10.000','Normal',
+				{"inPar": {"type": 'standard',"min": 0,"max": 10,"DFa": .001,"op": [' '] }},
+				'Type the millionths between 0.000000 and 10.000000','Normal',
+				{"inPar": {"type": 'standard',"min": 0,"max": 10,"DFa": .000001,"op": [' '] }},
+				'Type the thousandths between -1\'000.000 and 1\'000.000','Normal',
+				{"inPar": {"type": 'standard',"min": -1000,"max": 1000,"DFa": .001,"op": [' '] }},
+				'Type the millionths between -1\'000\'000.000000 and 1\'000\'000.000000','Normal',
+				{"inPar": {"type": 'standard',"min": -1000000,"max": 1000000,"DFa": .000001,"op": [' '] }},
+			]);
+			break;
+		case 'optionListSums':
+			OLR([
+				'Sums between 1 and 5','Normal',
+				{"inPar": {"type": 'standard',"min": 1,"max": 5,"DFa": 1,"op": ['+'], }},
+				'Sums between 0 and 10','Normal',
+				{"inPar": {"type": 'standard',"min": 0,"max": 10,"DFa": 1,"op": ['+'], }},
+				'Sums of tens between 0 and 100','Normal',
+				{"inPar": {"type": 'standard',"min": 0,"max": 100,"DFa": 10,"op": ['+'], }},
+				'Sums between 0 and 100','Normal',
+				{"inPar": {"type": 'standard',"min": 0,"max": 100,"DFa": 1,"op": ['+'], }},
+				'Sums of hundreds between 0 and 1\'000','Normal',
+				{"inPar": {"type": 'standard',"min": 0,"max": 1000,"DFa": 100,"op": ['+'] }},
+				'Sums between 0 and 1\'000','Normal',
+				{"inPar": {"type": 'standard',"min": 0,"max": 1000,"DFa": 1,"op": ['+'] }},
+				'Sums of thousands between 0 and 10\'000','Normal',
+				{"inPar": {"type": 'standard',"min": 0,"max": 10000,"DFa": 1000,"op": ['+'] }},
+				'Sums between 0 and 1\'000\'000','Normal',
+				{"inPar": {"type": 'standard',"min": 0,"max": 1000000,"DFa": 1,"op": ['+'] }},
+				'Sums of millions between 0 and 10\'000\'000','Normal',
+				{"inPar": {"type": 'standard',"min": 0,"max": 10000000,"DFa": 1000000,"op": ['+'] }},
+				'Sums between -10 and 10','Normal',
+				{"inPar": {"type": 'standard',"min": -10,"max": 10,"DFa": 1,"op": ['+'] }},
+				'Sums between -100 and 100','Normal',
+				{"inPar": {"type": 'standard',"min": -100,"max": 100,"DFa": 1,"op": ['+'] }},
+				'Sums of decimals between 0.0 and 10.0','Normal',
+				{"inPar": {"type": 'standard',"min": 0,"max": 10,"DFa": .1,"op": ['+'] }},
+				'Sums of hundredths between 0.00 and 10.00','Normal',
+				{"inPar": {"type": 'standard',"min": 0,"max": 10,"DFa": .01,"op": ['+'] }},
+				'Sums of thousandths between 0.000 and 10.000','Normal',
+				{"inPar": {"type": 'standard',"min": 0,"max": 10,"DFa": .001,"op": ['+'] }},
+				'Sums of millionths between 0.000000 and 10.000000','Normal',
+				{"inPar": {"type": 'standard',"min": 0,"max": 10,"DFa": .000001,"op": ['+'] }},
+				'Sums of thousandths between -1\'000.000 and 1\'000.000','Normal',
+				{"inPar": {"type": 'standard',"min": -1000,"max": 1000,"DFa": .001,"op": ['+'] }},
+				'Sums of millionths between -1\'000\'000.000000 and 1\'000\'000.000000','Normal',
+				{"inPar": {"type": 'standard',"min": -1000000,"max": 1000000,"DFa": .000001,"op": ['+'] }},
+			]);
+			break;
+		case 'optionListSubs':
+			OLR([
+				'Subtractions between 1 and 5','Normal',
+				{"inPar": {"type": 'standard',"min": 1,"max": 5,"DFa": 1,"op": ['-'], }},
+				'Subtractions between 0 and 10','Normal',
+				{"inPar": {"type": 'standard',"min": 0,"max": 10,"DFa": 1,"op": ['-'], }},
+				'Subtractions of tens between 0 and 100','Normal',
+				{"inPar": {"type": 'standard',"min": 0,"max": 100,"DFa": 10,"op": ['-'], }},
+				'Subtractions between 0 and 100','Normal',
+				{"inPar": {"type": 'standard',"min": 0,"max": 100,"DFa": 1,"op": ['-'], }},
+				'Subtractions of hundreds between 0 and 1\'000','Normal',
+				{"inPar": {"type": 'standard',"min": 0,"max": 1000,"DFa": 100,"op": ['-'] }},
+				'Subtractions between 0 and 1\'000','Normal',
+				{"inPar": {"type": 'standard',"min": 0,"max": 1000,"DFa": 1,"op": ['-'] }},
+				'Subtractions of thousands between 0 and 10\'000','Normal',
+				{"inPar": {"type": 'standard',"min": 0,"max": 10000,"DFa": 1000,"op": ['-'] }},
+				'Subtractions between 0 and 1\'000\'000','Normal',
+				{"inPar": {"type": 'standard',"min": 0,"max": 1000000,"DFa": 1,"op": ['-'] }},
+				'Subtractions of millions between 0 and 10\'000\'000','Normal',
+				{"inPar": {"type": 'standard',"min": 0,"max": 10000000,"DFa": 1000000,"op": ['-'] }},
+				'Subtractions between -10 and 10','Normal',
+				{"inPar": {"type": 'standard',"min": -10,"max": 10,"DFa": 1,"op": ['-'] }},
+				'Subtractions between -100 and 100','Normal',
+				{"inPar": {"type": 'standard',"min": -100,"max": 100,"DFa": 1,"op": ['-'] }},
+				'Subtractions of decimals between 0.0 and 10.0','Normal',
+				{"inPar": {"type": 'standard',"min": 0,"max": 10,"DFa": .1,"op": ['-'] }},
+				'Subtractions of hundredths between 0.00 and 10.00','Normal',
+				{"inPar": {"type": 'standard',"min": 0,"max": 10,"DFa": .01,"op": ['-'] }},
+				'Subtractions of thousandths between 0.000 and 10.000','Normal',
+				{"inPar": {"type": 'standard',"min": 0,"max": 10,"DFa": .001,"op": ['-'] }},
+				'Subtractions of millionths between 0.000000 and 10.000000','Normal',
+				{"inPar": {"type": 'standard',"min": 0,"max": 10,"DFa": .000001,"op": ['-'] }},
+				'Subtractions of thousandths between -1\'000.000 and 1\'000.000','Normal',
+				{"inPar": {"type": 'standard',"min": -1000,"max": 1000,"DFa": .001,"op": ['-'] }},
+				'Subtractions of millionths between -1\'000\'000.000000 and 1\'000\'000.000000','Normal',
+				{"inPar": {"type": 'standard',"min": -1000000,"max": 1000000,"DFa": .000001,"op": ['-'] }},
+			]);
+			break;
+		case 'optionListMuls':
+			OLR([
+				'Multiplications between 1 and 5','Normal',
+				{"inPar": {"type": 'standard',"min": 1,"max": 5,"DFa": 1,"op": ['*'], }},
+				'Multiplications between 0 and 10','Normal',
+				{"inPar": {"type": 'standard',"min": 0,"max": 10,"DFa": 1,"op": ['*'], }},
+				//~ 'Multiplications of tens between 0 and 100','Normal',
+				//~ {"inPar": {"type": 'standard',"min": 0,"max": 100,"DFa": 10,"op": ['*'], }},
+				'Multiplications between 0 and 100','Normal',
+				{"inPar": {"type": 'standard',"min": 0,"max": 100,"DFa": 1,"op": ['*'], }},
+				//~ 'Multiplications of hundreds between 0 and 1\'000','Normal',
+				//~ {"inPar": {"type": 'standard',"min": 0,"max": 1000,"DFa": 100,"op": ['*'] }},
+				'Multiplications between 0 and 1\'000','Normal',
+				{"inPar": {"type": 'standard',"min": 0,"max": 1000,"DFa": 1,"op": ['*'] }},
+				//~ 'Multiplications of thousands between 0 and 10\'000','Normal',
+				//~ {"inPar": {"type": 'standard',"min": 0,"max": 10000,"DFa": 1000,"op": ['*'] }},
+				'Multiplications between 0 and 1\'000\'000','Normal',
+				{"inPar": {"type": 'standard',"min": 0,"max": 1000000,"DFa": 1,"op": ['*'] }},
+				//~ 'Multiplications of millions between 0 and 10\'000\'000','Normal',
+				//~ {"inPar": {"type": 'standard',"min": 0,"max": 10000000,"DFa": 1000000,"op": ['*'] }},
+				'Multiplications between -10 and 10','Normal',
+				{"inPar": {"type": 'standard',"min": -10,"max": 10,"DFa": 1,"op": ['*'] }},
+				'Multiplications between -100 and 100','Normal',
+				{"inPar": {"type": 'standard',"min": -100,"max": 100,"DFa": 1,"op": ['*'] }},
+				'Multiplications of decimals between 0.0 and 10.0','Normal',
+				{"inPar": {"type": 'standard',"min": 0,"max": 10,"DFa": .1,"op": ['*'] }},
+				'Multiplications of hundredths between 0.00 and 10.00','Normal',
+				{"inPar": {"type": 'standard',"min": 0,"max": 10,"DFa": .01,"op": ['*'] }},
+				'Multiplications of thousandths between 0.000 and 10.000','Normal',
+				{"inPar": {"type": 'standard',"min": 0,"max": 10,"DFa": .001,"op": ['*'] }},
+				'Multiplications of millionths between 0.000000 and 10.000000','Normal',
+				{"inPar": {"type": 'standard',"min": 0,"max": 10,"DFa": .000001,"op": ['*'] }},
+				'Multiplications of thousandths between -1\'000.000 and 1\'000.000','Normal',
+				{"inPar": {"type": 'standard',"min": -1000,"max": 1000,"DFa": .001,"op": ['*'] }},
+				'Multiplications of millionths between -1\'000\'000.000000 and 1\'000\'000.000000','Normal',
+				{"inPar": {"type": 'standard',"min": -1000000,"max": 1000000,"DFa": .000001,"op": ['*'] }},
+			]);
+			break;
+		case 'optionListDivs':
+			OLR([
+				'Divisions between 1 and 5','Normal',
+				{"inPar": {"type": 'standard',"min": 1,"max": 5,"DFa": 1,"op": ['/'], }},
+				'Divisions between 0 and 10','Normal',
+				{"inPar": {"type": 'standard',"min": 0,"max": 10,"DFa": 1,"op": ['/'], }},
+				//~ 'Divisions of tens between 0 and 100','Normal',
+				//~ {"inPar": {"type": 'standard',"min": 0,"max": 100,"DFa": 10,"op": ['/'], }},
+				'Divisions between 0 and 100','Normal',
+				{"inPar": {"type": 'standard',"min": 0,"max": 100,"DFa": 1,"op": ['/'], }},
+				//~ 'Divisions of hundreds between 0 and 1\'000','Normal',
+				//~ {"inPar": {"type": 'standard',"min": 0,"max": 1000,"DFa": 100,"op": ['/'] }},
+				'Divisions between 0 and 1\'000','Normal',
+				{"inPar": {"type": 'standard',"min": 0,"max": 1000,"DFa": 1,"op": ['/'] }},
+				//~ 'Divisions of thousands between 0 and 10\'000','Normal',
+				//~ {"inPar": {"type": 'standard',"min": 0,"max": 10000,"DFa": 1000,"op": ['/'] }},
+				'Divisions between 0 and 1\'000\'000','Normal',
+				{"inPar": {"type": 'standard',"min": 0,"max": 1000000,"DFa": 1,"op": ['/'] }},
+				//~ 'Divisions of millions between 0 and 10\'000\'000','Normal',
+				//~ {"inPar": {"type": 'standard',"min": 0,"max": 10000000,"DFa": 1000000,"op": ['/'] }},
+				'Divisions between -10 and 10','Normal',
+				{"inPar": {"type": 'standard',"min": -10,"max": 10,"DFa": 1,"op": ['/'] }},
+				'Divisions between -100 and 100','Normal',
+				{"inPar": {"type": 'standard',"min": -100,"max": 100,"DFa": 1,"op": ['/'] }},
+				'Divisions of decimals between 0.0 and 10.0','Normal',
+				{"inPar": {"type": 'standard',"min": 0,"max": 10,"DFa": .1,"op": ['/'] }},
+				'Divisions of hundredths between 0.00 and 10.00','Normal',
+				{"inPar": {"type": 'standard',"min": 0,"max": 10,"DFa": .01,"op": ['/'] }},
+				'Divisions of thousandths between 0.000 and 10.000','Normal',
+				{"inPar": {"type": 'standard',"min": 0,"max": 10,"DFa": .001,"op": ['/'] }},
+				'Divisions of millionths between 0.000000 and 10.000000','Normal',
+				{"inPar": {"type": 'standard',"min": 0,"max": 10,"DFa": .000001,"op": ['/'] }},
+				'Divisions of thousandths between -1\'000.000 and 1\'000.000','Normal',
+				{"inPar": {"type": 'standard',"min": -1000,"max": 1000,"DFa": .001,"op": ['/'] }},
+				'Divisions of millionths between -1\'000\'000.000000 and 1\'000\'000.000000','Normal',
+				{"inPar": {"type": 'standard',"min": -1000000,"max": 1000000,"DFa": .000001,"op": ['*'] }},
+			]);
+			break;
+		case 'optionListAbs':
+			OLR([
+				'Absolute Values between 1 and 5','Normal',
+				{"inPar": {"type": 'standard',"min": 1,"max": 5,"DFa": 1,"op": ['|'], }},
+				'Absolute Values between 0 and 10','Normal',
+				{"inPar": {"type": 'standard',"min": 0,"max": 10,"DFa": 1,"op": ['|'], }},
+				'Absolute Values of tens between 0 and 100','Normal',
+				{"inPar": {"type": 'standard',"min": 0,"max": 100,"DFa": 10,"op": ['|'], }},
+				'Absolute Values between 0 and 100','Normal',
+				{"inPar": {"type": 'standard',"min": 0,"max": 100,"DFa": 1,"op": ['|'], }},
+				'Absolute Values of hundreds between 0 and 1\'000','Normal',
+				{"inPar": {"type": 'standard',"min": 0,"max": 1000,"DFa": 100,"op": ['|'] }},
+				'Absolute Values between 0 and 1\'000','Normal',
+				{"inPar": {"type": 'standard',"min": 0,"max": 1000,"DFa": 1,"op": ['|'] }},
+				'Absolute Values of thousands between 0 and 10\'000','Normal',
+				{"inPar": {"type": 'standard',"min": 0,"max": 10000,"DFa": 1000,"op": ['|'] }},
+				'Absolute Values between 0 and 1\'000\'000','Normal',
+				{"inPar": {"type": 'standard',"min": 0,"max": 1000000,"DFa": 1,"op": ['|'] }},
+				'Absolute Values of millions between 0 and 10\'000\'000','Normal',
+				{"inPar": {"type": 'standard',"min": 0,"max": 10000000,"DFa": 1000000,"op": ['|'] }},
+				'Absolute Values between -10 and 10','Normal',
+				{"inPar": {"type": 'standard',"min": -10,"max": 10,"DFa": 1,"op": ['|'] }},
+				'Absolute Values between -100 and 100','Normal',
+				{"inPar": {"type": 'standard',"min": -100,"max": 100,"DFa": 1,"op": ['|'] }},
+				'Absolute Values of decimals between 0.0 and 10.0','Normal',
+				{"inPar": {"type": 'standard',"min": 0,"max": 10,"DFa": .1,"op": ['|'] }},
+				'Absolute Values of hundredths between 0.00 and 10.00','Normal',
+				{"inPar": {"type": 'standard',"min": 0,"max": 10,"DFa": .01,"op": ['|'] }},
+				'Absolute Values of thousandths between 0.000 and 10.000','Normal',
+				{"inPar": {"type": 'standard',"min": 0,"max": 10,"DFa": .001,"op": ['|'] }},
+				'Absolute Values of millionths between 0.000000 and 10.000000','Normal',
+				{"inPar": {"type": 'standard',"min": 0,"max": 10,"DFa": .000001,"op": ['|'] }},
+				'Absolute Values of thousandths between -1\'000.000 and 1\'000.000','Normal',
+				{"inPar": {"type": 'standard',"min": -1000,"max": 1000,"DFa": .001,"op": ['|'] }},
+				'Absolute Values of millionths between -1\'000\'000.000000 and 1\'000\'000.000000','Normal',
+				{"inPar": {"type": 'standard',"min": -1000000,"max": 1000000,"DFa": .000001,"op": ['|'] }},
+			]);
+			break;
+		case 'optionListMulT':
+			OLR([
+				'Sums between 0 and 10 · Very Easy','VeryEasy',
+				{
+					"inPar": {
+						"type": 'times-table',
+						"n0": [1,2,3],
+						"n1": [0,1,2,3,4,5,6,7,8,9,10],
+					},
+				},
+			]);
+			OLR([
+				'Standard&numsp;Times&numsp;Tables','Normal',
+				{"inPar": {"type": 'times-table',"n0": [0,1,2,3,4,5,6,7,8,9,10],"n1": [0,1,2,3,4,5,6,7,8,9,10] }},
+				'Times Tables of 0','Normal',
+				{"inPar": {"type": 'times-table',"n0": [0],"n1": [0,1,2,3,4,5,6,7,8,9,10] }},
+				'Times Tables of 1','Normal',
+				{"inPar": {"type": 'times-table',"n0": [1],"n1": [0,1,2,3,4,5,6,7,8,9,10] }},
+				'Times Tables of 2','Normal',
+				{"inPar": {"type": 'times-table',"n0": [2],"n1": [0,1,2,3,4,5,6,7,8,9,10] }},
+				'Times Tables of 3','Normal',
+				{"inPar": {"type": 'times-table',"n0": [3],"n1": [0,1,2,3,4,5,6,7,8,9,10] }},
+				'Times Tables of 4','Normal',
+				{"inPar": {"type": 'times-table',"n0": [4],"n1": [0,1,2,3,4,5,6,7,8,9,10] }},
+				'Times Tables of 5','Normal',
+				{"inPar": {"type": 'times-table',"n0": [5],"n1": [0,1,2,3,4,5,6,7,8,9,10] }},
+				'Times Tables of 6','Normal',
+				{"inPar": {"type": 'times-table',"n0": [6],"n1": [0,1,2,3,4,5,6,7,8,9,10] }},
+				'Times Tables of 7','Normal',
+				{"inPar": {"type": 'times-table',"n0": [7],"n1": [0,1,2,3,4,5,6,7,8,9,10] }},
+				'Times Tables of 8','Normal',
+				{"inPar": {"type": 'times-table',"n0": [8],"n1": [0,1,2,3,4,5,6,7,8,9,10] }},
+				'Times Tables of 9','Normal',
+				{"inPar": {"type": 'times-table',"n0": [9],"n1": [0,1,2,3,4,5,6,7,8,9,10] }},
+				'Times Tables of 10','Normal',
+				{"inPar": {"type": 'times-table',"n0": [10],"n1": [0,1,2,3,4,5,6,7,8,9,10] }},
+				'Times Tables of 11','Normal',
+				{"inPar": {"type": 'times-table',"n0": [11],"n1": [0,1,2,3,4,5,6,7,8,9,10] }},
+				'Times Tables of 12','Normal',
+				{"inPar": {"type": 'times-table',"n0": [12],"n1": [0,1,2,3,4,5,6,7,8,9,10] }},
+				'Times Tables of 13','Normal',
+				{"inPar": {"type": 'times-table',"n0": [13],"n1": [0,1,2,3,4,5,6,7,8,9,10] }},
+				'Times Tables of 14','Normal',
+				{"inPar": {"type": 'times-table',"n0": [14],"n1": [0,1,2,3,4,5,6,7,8,9,10] }},
+				'Times Tables of 15','Normal',
+				{"inPar": {"type": 'times-table',"n0": [15],"n1": [0,1,2,3,4,5,6,7,8,9,10] }},
+				'Times Tables of 16','Normal',
+				{"inPar": {"type": 'times-table',"n0": [16],"n1": [0,1,2,3,4,5,6,7,8,9,10] }},
+				'Times Tables of 17','Normal',
+				{"inPar": {"type": 'times-table',"n0": [17],"n1": [0,1,2,3,4,5,6,7,8,9,10] }},
+				'Times Tables of 18','Normal',
+				{"inPar": {"type": 'times-table',"n0": [18],"n1": [0,1,2,3,4,5,6,7,8,9,10] }},
+				'Times Tables of 19','Normal',
+				{"inPar": {"type": 'times-table',"n0": [19],"n1": [0,1,2,3,4,5,6,7,8,9,10] }},
+				'Times Tables of 20','Normal',
+				{"inPar": {"type": 'times-table',"n0": [20],"n1": [0,1,2,3,4,5,6,7,8,9,10] }},
+				'Times Tables of 30','Normal',
+				{"inPar": {"type": 'times-table',"n0": [30],"n1": [0,1,2,3,4,5,6,7,8,9,10] }},
+				'Times Tables of 40','Normal',
+				{"inPar": {"type": 'times-table',"n0": [40],"n1": [0,1,2,3,4,5,6,7,8,9,10] }},
+				'Times Tables of 50','Normal',
+				{"inPar": {"type": 'times-table',"n0": [50],"n1": [0,1,2,3,4,5,6,7,8,9,10] }},
+				'Times Tables of 60','Normal',
+				{"inPar": {"type": 'times-table',"n0": [60],"n1": [0,1,2,3,4,5,6,7,8,9,10] }},
+				'Times Tables of 70','Normal',
+				{"inPar": {"type": 'times-table',"n0": [70],"n1": [0,1,2,3,4,5,6,7,8,9,10] }},
+				'Times Tables of 80','Normal',
+				{"inPar": {"type": 'times-table',"n0": [80],"n1": [0,1,2,3,4,5,6,7,8,9,10] }},
+				'Times Tables of 90','Normal',
+				{"inPar": {"type": 'times-table',"n0": [90],"n1": [0,1,2,3,4,5,6,7,8,9,10] }},
+				'Times Tables of 100','Normal',
+				{"inPar": {"type": 'times-table',"n0": [100],"n1": [0,1,2,3,4,5,6,7,8,9,10] }},
+				'Times Tables of 200','Normal',
+				{"inPar": {"type": 'times-table',"n0": [200],"n1": [0,1,2,3,4,5,6,7,8,9,10] }},
+				'Times Tables of 500','Normal',
+				{"inPar": {"type": 'times-table',"n0": [500],"n1": [0,1,2,3,4,5,6,7,8,9,10] }},
+				'Times Tables of 1\'000','Normal',
+				{"inPar": {"type": 'times-table',"n0": [1000],"n1": [0,1,2,3,4,5,6,7,8,9,10] }},
+				'Times Tables of 1\'000\'000','Normal',
+				{"inPar": {"type": 'times-table',"n0": [1000000],"n1": [0,1,2,3,4,5,6,7,8,9,10] }},
+				'Times Tables of<br />0 and 1','Normal',
+				{"inPar": {"type": 'times-table',"n0": [0,1],"n1": [0,1,2,3,4,5,6,7,8,9,10] }},
+				'Times Tables of<br />1 and 2','Normal',
+				{"inPar": {"type": 'times-table',"n0": [1,2],"n1": [0,1,2,3,4,5,6,7,8,9,10] }},
+				'Times Tables of<br />2 and 3','Normal',
+				{"inPar": {"type": 'times-table',"n0": [2,3],"n1": [0,1,2,3,4,5,6,7,8,9,10] }},
+				'Times Tables of<br />3 and 4','Normal',
+				{"inPar": {"type": 'times-table',"n0": [3,4],"n1": [0,1,2,3,4,5,6,7,8,9,10] }},
+				'Times Tables of<br />4 and 5','Normal',
+				{"inPar": {"type": 'times-table',"n0": [4,5],"n1": [0,1,2,3,4,5,6,7,8,9,10] }},
+				'Times Tables of<br />5 and 6','Normal',
+				{"inPar": {"type": 'times-table',"n0": [5,6],"n1": [0,1,2,3,4,5,6,7,8,9,10] }},
+				'Times Tables of<br />6 and 7','Normal',
+				{"inPar": {"type": 'times-table',"n0": [6,7],"n1": [0,1,2,3,4,5,6,7,8,9,10] }},
+				'Times Tables of<br />7 and 8','Normal',
+				{"inPar": {"type": 'times-table',"n0": [7,8],"n1": [0,1,2,3,4,5,6,7,8,9,10] }},
+				'Times Tables of<br />8 and 9','Normal',
+				{"inPar": {"type": 'times-table',"n0": [8,9],"n1": [0,1,2,3,4,5,6,7,8,9,10] }},
+				'Times Tables of<br />9 and 10','Normal',
+				{"inPar": {"type": 'times-table',"n0": [9,10],"n1": [0,1,2,3,4,5,6,7,8,9,10] }},
+				'Times Tables of<br />10 and 11','Normal',
+				{"inPar": {"type": 'times-table',"n0": [10,11],"n1": [0,1,2,3,4,5,6,7,8,9,10] }},
+				'Times Tables of<br />11 and 12','Normal',
+				{"inPar": {"type": 'times-table',"n0": [11,12],"n1": [0,1,2,3,4,5,6,7,8,9,10] }},
+				'Times Tables of<br />12 and 13','Normal',
+				{"inPar": {"type": 'times-table',"n0": [12,13],"n1": [0,1,2,3,4,5,6,7,8,9,10] }},
+				'Times Tables of<br />5 and 10','Normal',
+				{"inPar": {"type": 'times-table',"n0": [5,10],"n1": [0,1,2,3,4,5,6,7,8,9,10] }},
+				'Times Tables of<br />10 and 20','Normal',
+				{"inPar": {"type": 'times-table',"n0": [10,20],"n1": [0,1,2,3,4,5,6,7,8,9,10] }},
+				'Times Tables of<br />5 and 15','Normal',
+				{"inPar": {"type": 'times-table',"n0": [5,15],"n1": [0,1,2,3,4,5,6,7,8,9,10] }},
+				'Times Tables of<br />15 and 20','Normal',
+				{"inPar": {"type": 'times-table',"n0": [15,20],"n1": [0,1,2,3,4,5,6,7,8,9,10] }},
+				'Times Tables of<br />1 and 10','Normal',
+				{"inPar": {"type": 'times-table',"n0": [1,10],"n1": [0,1,2,3,4,5,6,7,8,9,10] }},
+				'Times Tables of<br />10 and 100','Normal',
+				{"inPar": {"type": 'times-table',"n0": [10,100],"n1": [0,1,2,3,4,5,6,7,8,9,10] }},
+				'Times Tables of<br />100 and 1000','Normal',
+				{"inPar": {"type": 'times-table',"n0": [100,1000],"n1": [0,1,2,3,4,5,6,7,8,9,10] }},
+				'Times Tables of<br />0, 1 and 2','Normal',
+				{"inPar": {"type": 'times-table',"n0": [0,1,2],"n1": [0,1,2,3,4,5,6,7,8,9,10] }},
+				'Times Tables of<br />1, 2 and 3','Normal',
+				{"inPar": {"type": 'times-table',"n0": [1,2,3],"n1": [0,1,2,3,4,5,6,7,8,9,10] }},
+				'Times Tables of<br />2, 3 and 4','Normal',
+				{"inPar": {"type": 'times-table',"n0": [2,3,4],"n1": [0,1,2,3,4,5,6,7,8,9,10] }},
+				'Times Tables of<br />3, 4 and 5','Normal',
+				{"inPar": {"type": 'times-table',"n0": [3,4,5],"n1": [0,1,2,3,4,5,6,7,8,9,10] }},
+				'Times Tables of<br />6, 7 and 8','Normal',
+				{"inPar": {"type": 'times-table',"n0": [6,7,8],"n1": [0,1,2,3,4,5,6,7,8,9,10] }},
+				'Times Tables of<br />8, 9 and 10','Normal',
+				{"inPar": {"type": 'times-table',"n0": [8,9,10],"n1": [0,1,2,3,4,5,6,7,8,9,10] }},
+				'Times Tables of<br />10, 11 and 12','Normal',
+				{"inPar": {"type": 'times-table',"n0": [10,11,12],"n1": [0,1,2,3,4,5,6,7,8,9,10] }},
+				'Times Tables of<br />0, 1, 2 and 3','Normal',
+				{"inPar": {"type": 'times-table',"n0": [0,1,2,3],"n1": [0,1,2,3,4,5,6,7,8,9,10] }},
+				'Times Tables of<br />4, 5, 6 and 7','Normal',
+				{"inPar": {"type": 'times-table',"n0": [4,5,6,7],"n1": [0,1,2,3,4,5,6,7,8,9,10] }},
+				'Times Tables of<br />8, 9, 10 and 11','Normal',
+				{"inPar": {"type": 'times-table',"n0": [8,9,10,11],"n1": [0,1,2,3,4,5,6,7,8,9,10] }},
+				'Times Tables between 1 and 5','Normal',
+				{"inPar": {"type": 'times-table',"n0": [1,2,3,4,5],"n1": [0,1,2,3,4,5,6,7,8,9,10] }},
+				'Times Tables between 0 and 5','Normal',
+				{"inPar": {"type": 'times-table',"n0": [0,1,2,3,4,5],"n1": [0,1,2,3,4,5,6,7,8,9,10] }},
+				'Times Tables between 6 and 10','Normal',
+				{"inPar": {"type": 'times-table',"n0": [6,7,8,9,10],"n1": [0,1,2,3,4,5,6,7,8,9,10] }},
+				'Times Tables between 1 and 10<br />(all&numsp;times&numsp;tables)','Normal',
+				{"inPar": {"type": 'times-table',"n0": [1,2,3,4,5,6,7,8,9,10],"n1": [0,1,2,3,4,5,6,7,8,9,10] }},
+				'Times Tables between 0 and 10<br />(all&numsp;times&numsp;tables)','Normal',
+				{"inPar": {"type": 'times-table',"n0": [0,1,2,3,4,5,6,7,8,9,10],"n1": [0,1,2,3,4,5,6,7,8,9,10] }},
+				'Times Tables between 0 and 15','Normal',
+				{"inPar": {"type": 'times-table',"n0": [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15],"n1": [0,1,2,3,4,5,6,7,8,9,10] }},
+				'Times Tables between 0 and 20','Normal',
+				{"inPar": {"type": 'times-table',"n0": [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20],"n1": [0,1,2,3,4,5,6,7,8,9,10] }},
+				'Times Tables between 0 and 100','Normal',
+				{"inPar": {"type": 'times-table',"n0": NumberToA(100),"n1": [0,1,2,3,4,5,6,7,8,9,10] }},
+				'Times Tables between 0 and 20 of 20','Normal',
+				{"inPar": {"type": 'times-table',"n0": NumberToA(20),"n1": NumberToA(20) }},
+				'Times Tables between 0 and 100 of 100','Normal',
+				{"inPar": {"type": 'times-table',"n0": NumberToA(100),"n1": NumberToA(100) }},
+				'Times Tables between 0 and 1\'000 of 1\'000','Normal',
+				{"inPar": {"type": 'times-table',"n0": NumberToA(1000),"n1": NumberToA(1000) }},
+				'Times Tables between 0 and 1\'000\'000 of 1\'000\'000','Normal',
+				{"inPar": {"type": 'times-table',"n0": NumberToA(1000000),"n1": NumberToA(1000000) }},
+			]);
+			break;
+		case 'optionListOth':
+			//~ To continueeeee ..
+			break;
+		case 'optionListCustom':
+			//~ To continueeeee ..
+			break;
 		default:
 	};
 };
 
-function DisplayArea() {
-	let Trajectories = [.15,.225,.3,.7,.775,.85];
-	let HubHeight = .04; /**in %*/
-	let StrongholdHeight = .05; /**in %*/
-	let Attacks = 120;
-	let Timing = 5000;
-	let Speed = 1/40000; /**Ratio over ms*/
-	let LPms = 50; /**~FPS*/
-	//~ let inPar = {
-		//~ "type": 'standard',
-		//~ "min": 0,
-		//~ "max": 10,
-		//~ "DFa": 1, /* DigitsFixedAt */ /** 88.88 => 0.01→88.88, 0.1→88.9, 1→89, 10→90, 100→100 */
-		//~ "op": ['|','+'], /** '+-/* |' */
-	//~ };
-	let inPar = {
+function DisplayArea(In,DLvl) {
+	let Trajectories = In.Trajectories||[.15,.3,.7,.85]||[.15,.225,.3,.7,.775,.85];
+	let HubHeight = In.HubHeight||.04; /**in %*/
+	let StrongholdHeight = In.StrongholdHeight||.05; /**in %*/
+	let Attacks = In.Attacks||40;
+	let Timing = In.Timing||5000;
+	let Speed = In.Speed||1/40000; /**Ratio over ms*/
+	let LPms = In.LPms||50; /**~FPS*/
+	let inPar = In.inPar||{
+		"type": 'standard',
+		"min": 0,
+		"max": 10,
+		"DFa": 1, /* DigitsFixedAt */ /** 88.88 => 0.01→88.88, 0.1→88.9, 1→89, 10→90, 100→100 */
+		"op": ['|','+'], /** '+-/* |' */
+	}||{
 		"type": 'times-table', /** n*i=? → n0*n1=? */
 		"n0": [2,5],
 		"n1": [0,1,2,3,4,5,6,7,8,9,10],
+	};
+	switch(DLvl) {
+		case 'ofCourse':
+			Attacks = 6;
+			Timing = 16000;
+			Speed = 1/60000;
+			break;
+		case 'VeryEasy':
+			Attacks = 13;
+			Timing = 8000;
+			Speed = 1/40000;
+			break;
+		case 'Easy':
+			Attacks = 25;
+			Timing = 4000;
+			Speed = 1/30000;
+			break;
+		case 'Normal':
+			Attacks = 50;
+			Timing = 2000;
+			Speed = 1/20000;
+			break;
+		case 'Hard':
+			Attacks = 100;
+			Timing = 1000;
+			Speed = 1/10000;
+			break;
+		case 'VeryHard':
+			Attacks = 200;
+			Timing = 500;
+			Speed = 1/5000;
+			break;
+		case 'Impossible':
+			Attacks = 400;
+			Timing = 250;
+			Speed = 1/2500;
+			break;
+		default:
 	};
 	GenHub(HubHeight);
 	GenStronghold(Trajectories,StrongholdHeight);
@@ -544,7 +1097,7 @@ function GenAttacks(Attacks,Trajectories,Timing,inPar) {
 						res = Math.abs(num);
 						break;
 					default:
-						res = Math.floor(Math.random()*(V.max-V.min))+V.min;
+						res = Math.floor(Math.random()*(V.max-V.min)/V.DFa)*V.DFa+V.min;
 						OutS = res;
 				};
 				Out = OutS;
@@ -610,8 +1163,11 @@ function GameOver(win) {
 };
 
 function LaunchResult(result) {
-	let Objectives = Scene.getElementsByClassName('isRes'+String(result).replace('.','_'));
-	console.log(Objectives.length);
+	let ObjectivesTemp = Scene.getElementsByClassName('isRes'+String(result).replace('.','_'));
+	let Objectives = [];
+	for(let i0=0; i0<ObjectivesTemp.length; i0++) {
+		Objectives.push(ObjectivesTemp[i0]);
+	};
 	_JCF(function(i0) {
 		i0 = Number(i0);
 		let PosCollimator = document.getElementById('Collimator').getBoundingClientRect();
@@ -636,9 +1192,11 @@ function LaunchResultCommand() {
 
 function UpdateCounter(text) {
 	let Counter = document.getElementById('CounterText');
-	Counter.innerText = InputNumTemp;
-	if(!InputNumTemp) Counter.innerText = '_____' ;
-	if(text) Counter.innerText = text ;
+	if(Counter) {
+		Counter.innerText = InputNumTemp ;
+		if(!InputNumTemp) Counter.innerText = '_____' ;
+		if(text) Counter.innerText = text ;
+	};
 };
 
 function DeleteAttack(Attack) {
@@ -759,12 +1317,12 @@ function OnKeyDown(event) { /*On Key Down*/
 </head>
 <body class="_BOMP _NS" onkeydown="OnKeyDown(event)">
 
-<div id="ExIm">
+<!--div id="ExIm">
 	<div id="Im" onclick="Im()"><h2>Import</h2></div>
 	<div id="Ex" onclick="Ex()"><h2>Export</h2></div>
 	<div id="Cc" onclick="Cc()"><h2>Copy</h2></div>
 	<div id="Pa" onclick="Pa()"><h2>Paste</h2></div>
-</div>
+</div-->
 
 <div id="AreaDisplay"></div>
 
