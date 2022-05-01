@@ -1,0 +1,416 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>math</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Mono">
+	<link rel="stylesheet" href="https://2wtnt.tk/css.css">
+	<script type="text/javascript" src="https://2wtnt.tk/js.js"></script>
+	<script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML' async></script>
+	<script type="text/javascript">try{MathJax.Hub.Config({tex2jax:{inlineMath:[['$','$'],["//(","//)"]],processEscapes:true}})}catch{}</script>
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@1,700&display=swap');
+
+/* *:not(pre):not(textarea) {
+	font-family: 'Lucida Console', monospace;
+	font-family: 'Ubuntu Mono', monospace;
+} */
+
+* {
+	margin: 10px auto;
+} *::first-letter {
+	font-weight: unset;
+	color: unset;
+	background: unset;
+} *::first-line {
+	font-weight: unset;
+	color: unset;
+	background: unset;
+}
+
+::-moz-selection {
+	background: rgba(0,255,255,.2);
+	color: unset;
+} ::selection {
+	background: rgba(0,255,255,.2);
+	color: unset;
+}
+
+body {
+} body::-webkit-scrollbar {
+	width: 1.5rem;
+} body::-webkit-scrollbar-track {
+	display: none;
+} body::-webkit-scrollbar-thumb {
+	background: silver;
+	background:
+		linear-gradient(top, transparent 5px, black 5px, black 50%, transparent 50%),	linear-gradient(bottom, transparent 5px, black 5px, black 50%, transparent 50%),
+		radial-gradient(circle, black 5px, transparent 5px) -2px 59%,
+		radial-gradient(circle, black 5px, transparent 5px) -2px 41%;
+	background-size: 100% 100%, 100% 100%, 15px 50%, 15px 50%;
+	background-clip: padding-box;
+	border: 0.5rem solid transparent;
+	border-radius: 1.5rem;
+	z-index: -1;
+	/*credits: https://gist.github.com/zoreet/1550217/8dff57fc6941ae4652faea7ff62f2b9a5c8767ef*/
+} body::-webkit-scrollbar-thumb:hover {
+	background-color: hsla(170,3%,33%,.8);
+}
+
+textarea, pre {
+	-moz-tab-size: 4;
+	  -o-tab-size: 4;
+	     tab-size: 4;
+}
+
+table {
+	border: 2px solid black;
+	border-radius: 4px;
+	padding: 1px;
+	border-collapse: collapse;
+} table tr, table td, table th {
+	border: 2px;
+	padding: 2px;
+} table td, table th {
+	border: 1px solid black;
+	text-align: center;
+} table th {
+	background: rgba(88,88,88,.5);
+	font-weight: normal;
+}
+
+ol {
+	counter-reset: item
+} ol li{
+	display: block
+} ol li:before {
+	content: counters(item, ".") ")\00A0\00A0";
+	counter-increment: item
+}
+
+.intro {
+	text-align: center;
+}
+
+.comment {
+	opacity: .54;
+} .comment:before {
+	/*content: '(';*/
+} .comment:after {
+	/*content: ')';*/
+}
+
+.paragraph {
+	background: rgba(180,180,200,.02);
+	margin: 20px auto 30px 0px;
+	border-radius: 1em;
+	padding: 0px 4px;
+	border: 1px solid rgba(180,180,200,.3);
+}
+
+.title {
+	/*font-weight: bold;*/
+} .title::first-letter {
+	text-transform: uppercase;
+}
+
+.titles {
+} .titles > .titel {
+	/*font-weight: bold;*/
+} .titles > .titel::first-letter {
+	text-transform: uppercase !important;
+}
+
+.title, .titles {
+	margin: 50px auto 20px auto;
+	font-size: 150%;
+}
+
+img {
+	height: 90%;
+	width: 90%;
+	max-height: 8em;
+	max-width: 8em;
+	object-fit: contain;
+}
+
+.qot {
+	font-style: italic;
+} .qot:before {
+	/*content: '“';*/
+} .qot:after {
+	/*content: '”';*/
+}
+
+.red-evidence {
+	color: rgba(128,0,0,1);
+}
+
+.ref-step a, .comment a, internal-ref {
+	color: unset;
+}
+
+</style>
+<script>
+
+function interpreter() {
+	let tab = [
+		['¦','</div>'],
+
+		['|§|','<br />'],
+		['|ms|','\\('],
+		['|me|','\\)'],
+		['|Ms|','$$$'],
+		['|Me|','$$$'],
+		['|cs|','\\(\\ce{'],
+		['|ce|','}\\)'],
+		['|Cs|','$$$\\ce{'],
+		['|Ce|','}$$$'],
+		['|eg|','e.g.'],
+		//~ ['|pus|','\\(\\pu{'], // \pu doesn't work
+		//~ ['|pue|','}\\)'],
+		//~ ['|PUs|','$$$\\pu{'],
+		//~ ['|PUe|','}$$$'],
+		['|t|','	'],
+		['|dash|','-'],
+		['|min|','<'],
+		['|max|','>'],
+		//~ ['|intro|','<div class="intro">'],
+		//~ ['|title|','<div class="title">'],
+		//~ ['|paragraph|','<div class="paragraph">'],
+		//~ ['|comment|','<div class="comment">'],
+		//~ ['|b|','<div class="b">'],
+		['|NaOH|','<b>idrossido di sodio</b> (\\(\\ce{NaOH}\\))'],
+		['|H2O|','<b>acqua</b> distillata (\\(\\ce{H2O}\\))'],
+		['|pH|','<b>pH</b>'],
+		['|H+|','<b>idrone</b> (ione \\(\\ce{H+}\\))'],
+		['|H+s|','<b>idroni</b> (ioni \\(\\ce{H+}\\))'],
+		['|OH-|','<b>gruppo idrossido</b> (ione \\(\\ce{OH-}\\))'],
+		['|OH-s|','<b>gruppi idrossido</b> (ioni \\(\\ce{OH-}\\))'],
+
+		['| ','">'],
+		['|\n','">'],
+		['|','<div class="'],
+	];
+	let tabclasstag = [
+		//~ Detect class, Tag->Tag, More
+		['b','b',''],
+		['i','i',''],
+		['div','div',''],
+		['span','span',''],
+		['tab','table',''],
+	];
+	let tabchangediv = [
+		//~ Detect class, Div->Tag, Class, More, [pre, post]
+		['comment','span','comment','',['(',')']],
+		['qot','span','qot','',['“','”']],
+		['ref-step','span','ref-step','',['passaggio ','']],
+		['titel','span','titel','',['','']],
+	];
+	let doc = document.body; // or document.getElementById('rel')
+	let str = doc.innerHTML;
+	for(i0=0; i0<tab.length; i0++) {
+		str = str.replaceAll(tab[i0][0],tab[i0][1]);
+	};
+	doc.innerHTML = str;
+	for(i0=0; i0<tabclasstag.length; i0++) {
+		while(doc.getElementsByClassName(tabclasstag[i0][0]).length) {
+			doc.getElementsByClassName(tabclasstag[i0][0])[0].outerHTML = '<'+tabclasstag[i0][1]+' '+tabclasstag[i0][2]+'>'+doc.getElementsByClassName(tabclasstag[i0][0])[0].innerHTML+'</'+tabclasstag[i0][1]+'>';
+		};
+	};
+	for(i0=0; i0<tabchangediv.length; i0++) {
+		for(i1=0; i1<doc.getElementsByClassName(tabchangediv[i0][0]).length; i1++) {
+			doc.getElementsByClassName(tabchangediv[i0][0])[i1].outerHTML = '<'+tabchangediv[i0][1]+' class="'+tabchangediv[i0][2]+'" '+tabchangediv[i0][3]+'>'+tabchangediv[i0][4][0]+doc.getElementsByClassName(tabchangediv[i0][0])[i1].innerHTML+tabchangediv[i0][4][1]+'</'+tabchangediv[i0][1]+'>';
+		};
+	};
+	while(doc.getElementsByClassName('a').length) {
+		doc.getElementsByClassName('a')[0].outerHTML = '<a href="'+doc.getElementsByClassName('a')[0].innerHTML+'">'+doc.getElementsByClassName('a')[0].innerHTML+'</a>';
+	};
+	while(doc.getElementsByClassName('img').length) {
+		doc.getElementsByClassName('img')[0].outerHTML = '<img src="'+doc.getElementsByClassName('img')[0].innerHTML+'">';
+	};
+};
+
+function classmodifier() {
+	function func(c,tag,inner) {
+		for(i0=0; i0<document.getElementsByClassName(c).length; i0++) {
+			let obj = document.getElementsByClassName(c)[i0];
+			obj.outerHTML = '<'+tag[0]+' class="'+c+'">'+inner+'</'+tag[1]+'>';
+		};
+	};
+	func('tr-sep',['tr','tr'],'<th colspan="1000"/>');
+}
+
+window.onload = function() {
+	_JCHSL({'Elem':'document.body.style.backgroundColor','L':96.5,'LRange':.5,'Interval':2000,'IntervalRange':1000});
+	interpreter();
+	classmodifier();
+};
+
+</script>
+</head>
+<body class="_BOMP">
+
+<div class="_DN">
+	|Ms|
+		\require{mhchem}
+		\newcommand{\[}{\mathtt{[}}
+		\newcommand{\]}{\mathtt{]}}
+	|Me|
+	|comment| ref: |a| https://mhchem.github.io/MathJax-mhchem/¦¦
+	|comment| ref: |a| https://math.meta.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference¦¦
+</div>
+
+<div class="_PA _CX" id="rel">
+	|intro|
+		Angaroni Leonardo|§|
+		|img| https://www.mathjax.org/badge/mj-logo.svg¦|§|
+		|ms|\LaTeX|me|
+	¦
+	|paragraph|
+		|title| math graphic|dash|script¦
+		<a id="a-href-0"/>
+		<ul>ref:
+			<li>|a| https://mhchem.github.io/MathJax-mhchem/¦</li>
+		</ul>
+	¦
+	|paragraph|
+		|title| chemestry graphic|dash|script extension |comment| by ( <a class="internal-ref" href="#a-href-0">math graphic|dash|script</a> )¦¦
+		<ul>ref:
+			<li>|a| https://math.meta.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference¦</li>
+		</ul>
+	¦
+	|paragraph|
+		|title| Spazio di Hilbert, TO READ¦
+		|a| https://dainoequinoziale.it/resources/scienze/matematica/hilbertspace.pdf¦
+	¦
+	|paragraph|
+		|title| my definitions¦
+		<ul>
+			<li>|comment| \deq:
+				|ms|\def\deq{\triangleq}
+				\deq|me| ¦
+			</li>
+		</ul>
+	¦
+	|paragraph|
+		|title| MathJax font size¦
+		<ul>
+			<li>\Huge{ } → |ms|\Huge{\text{font Huge}}|me|</li>
+			<li>\huge{ } → |ms|\huge{\text{font huge}}|me|</li>
+			<li>\LARGE{ } → |ms|\LARGE{\text{font LARGE}}|me|</li>
+			<li>\Large{ } → |ms|\Large{\text{font Large}}|me|</li>
+			<li>\large{ } → |ms|\large{\text{font large}}|me|</li>
+			<li>\normalsize{ } → |ms|\normalsize{\text{font normalsize}}|me|</li>
+			<li>\small{ } → |ms|\small{\text{font small}}|me|</li>
+			<li>\scriptsize{ } → |ms|\scriptsize{\text{font scriptsize}}|me|</li>
+			<li>\Tiny{ } → |ms|\Tiny{\text{font Tiny}}|me|</li>
+			<li>\tiny{ } → |ms|\tiny{\text{font tiny}}|me|</li>
+		</ul>
+		<ul>ref:
+			<li>|a| https://stackoverflow.com/questions/19086152/changing-mathjaxs-font-size¦</li>
+		</ul>
+	¦
+	|paragraph|
+		<ul>
+			<li>
+				|title| length:¦
+				|Ms|\#U=\text{length of }U|Me||§|
+				|eg|:
+				|Ms|
+					\begin{aligned}
+						\#\{1,2,3\}&=3\\
+						\#\{6,13\}&=2\\
+						\#\{\text{“}a\text{”},\text{“}l\text{”},\text{“}m\text{”},\text{“}o\text{”},\text{“}s\text{”},\text{“}t\text{”}\}&=6\\
+						\#\{3,\text{“}hey\text{”},x,2.5,\lvert \vec V\rvert,0\}&=6
+					\end{aligned}
+				|Me|
+			</li>
+			<li>
+				|title| index:¦
+				|Ms|U\[i\]=\text{element of }U\text{ at index }i|Me||§|
+				|eg|:
+				|Ms|
+					\begin{aligned}
+						\{1,2,3\}\[2\]&=2\\
+						\{\text{“}a\text{”},\text{“}l\text{”},\text{“}m\text{”},\text{“}o\text{”},\text{“}s\text{”},\text{“}t\text{”}\}\[4\]&=\text{“}o\text{”}\\
+						\{3,\text{“}hey\text{”},x,2.5,\lvert \vec V\rvert,0\}\[5\]&=\lvert \vec V\rvert\\
+						\\
+						[1,2,3]\[2\]&=3\\
+						[\text{“}a\text{”},\text{“}l\text{”},\text{“}m\text{”},\text{“}o\text{”},\text{“}s\text{”},\text{“}t\text{”}]\[4\]&=\text{“}s\text{”}\\
+						[3,\text{“}hey\text{”},x,2.5,\lvert \vec V\rvert,0]\[6\]&=0
+					\end{aligned}
+				|Me|
+			</li>
+		</ul>
+	¦
+	|paragraph|
+		|title| unit vectors |comment| or |qot| versors¦¦¦
+		|paragraph|
+			|Ms|
+				e_v=\{\text{“}x\text{”},\text{“}y\text{”},\text{“}z\text{”},\text{“}w\text{”},\dots\}\\
+				\scriptsize{\text{but is common }e_i=e_v\[i\]\land e_j=e_v\[j\]}
+			|Me|
+			<ul>ref:
+				<li>|a| https://www.youtube.com/watch?v=kV9V_5SkKss?t=1100¦</li>
+			</ul>
+		¦
+		|paragraph|
+			|Ms|
+				\frac{\vec e_i}{\lvert\vec e_i\rvert}=:\widehat e_i\\
+				\scriptsize{\text{with temporarily }e_i=e_v\[i\]}
+			|Me|
+			<ul>ref:
+				<li>|a| https://www.youtube.com/watch?v=kV9V_5SkKss?t=850¦</li>
+			</ul>
+		¦
+		|paragraph|
+			|Ms|
+				\begin{cases}
+					\delta_{ij}\triangleq{\langle\hat e_i,\hat e_j\rangle}\\
+					\text{con}\quad
+					{
+						\delta_{ij}
+						:=
+						{
+							\begin{cases}
+								1,&\text{if }i=j\\
+								0,&\text{if }i\neq j
+							\end{cases}
+						}
+					}
+				\end{cases}
+				\\
+				\scriptsize{\text{with temporarily }e_i=e_v\[i\]\land e_j=e_v\[j\]}
+			|Me|
+			<ul>ref:
+				<li>|a| https://www.youtube.com/watch?v=kV9V_5SkKss?t=1079¦</li>
+				<li>|a| https://en.wikipedia.org/wiki/Kronecker_delta¦</li>
+			</ul>
+		¦
+	¦
+	|paragraph|
+		|Ms|
+			\begin{cases}
+				\text{Domain: }\Bbb{R}^3\\
+				v:\ \langle v_x,v_y,v_z\rangle\\
+				\lVert\vec v\rVert:=\sqrt{v_x^2+v_y^2+v_z^2}
+			\end{cases}
+			\small{
+				\overset{\land\ }{\Rightarrow}
+				\begin{cases}
+					\text{Domain: }\Bbb{R}^n\mid n\in\Bbb{N}\\
+					v:\ \langle\bigcup\limits_{i=1}^n e_v\[i\]\rangle\mid e_v=\{\text{“}x\text{”},\text{“}y\text{”},\text{“}z\text{”},\text{“}w\text{”},\dots\}\\
+					\lVert\vec v\rVert:=\sqrt{\sum\limits_{i=1}^n v\[i\]}
+				\end{cases}
+			}
+		|Me|
+		<ul>ref:
+			<li>|a| https://youtu.be/9mylq4AKDzk?t=184¦</li>
+		</ul>
+	¦
+</div>
+
+</body>
+</html>
