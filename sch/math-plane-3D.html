@@ -1,0 +1,677 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Piano</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Mono">
+	<link rel="stylesheet" href="https://2wtnt.tk/css.css">
+	<script type="text/javascript" src="https://2wtnt.tk/js.js"></script>
+	<script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML' async></script>
+	<script type="text/javascript">try{MathJax.Hub.Config({tex2jax:{inlineMath:[['$','$'],["//(","//)"]],processEscapes:true}})}catch{}</script>
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@1,700&display=swap');
+
+/* *:not(pre):not(textarea) {
+	font-family: 'Lucida Console', monospace;
+	font-family: 'Ubuntu Mono', monospace;
+} */
+
+* {
+	margin: 10px auto;
+} *::first-letter {
+	font-weight: unset;
+	color: unset;
+	background: unset;
+} *::first-line {
+	font-weight: unset;
+	color: unset;
+	background: unset;
+}
+
+::-moz-selection {
+	background: rgba(0,255,255,.2);
+	color: unset;
+} ::selection {
+	background: rgba(0,255,255,.2);
+	color: unset;
+}
+
+body {
+} body::-webkit-scrollbar {
+	width: 1.5rem;
+} body::-webkit-scrollbar-track {
+	display: none;
+} body::-webkit-scrollbar-thumb {
+	background: silver;
+	background:
+		linear-gradient(top, transparent 5px, black 5px, black 50%, transparent 50%),	linear-gradient(bottom, transparent 5px, black 5px, black 50%, transparent 50%),
+		radial-gradient(circle, black 5px, transparent 5px) -2px 59%,
+		radial-gradient(circle, black 5px, transparent 5px) -2px 41%;
+	background-size: 100% 100%, 100% 100%, 15px 50%, 15px 50%;
+	background-clip: padding-box;
+	border: 0.5rem solid transparent;
+	border-radius: 1.5rem;
+	z-index: -1;
+	/*credits: https://gist.github.com/zoreet/1550217/8dff57fc6941ae4652faea7ff62f2b9a5c8767ef*/
+} body::-webkit-scrollbar-thumb:hover {
+	background-color: hsla(170,3%,33%,.8);
+}
+
+textarea, pre {
+	-moz-tab-size: 4;
+	  -o-tab-size: 4;
+	     tab-size: 4;
+}
+
+table {
+	border: 2px solid black;
+	border-radius: 4px;
+	padding: 1px;
+	border-collapse: collapse;
+} table tr, table td, table th {
+	border: 2px;
+	padding: 2px;
+} table td, table th {
+	border: 1px solid black;
+	text-align: center;
+} table th {
+	background: rgba(88,88,88,.5);
+	font-weight: normal;
+}
+
+ol {
+	counter-reset: item
+} ol li{
+	display: block
+} ol li:before {
+	content: counters(item, ".") ")\00A0\00A0";
+	counter-increment: item
+}
+
+.intro {
+	text-align: center;
+}
+
+.comment {
+	opacity: .54;
+} .comment:before {
+	/*content: '(';*/
+} .comment:after {
+	/*content: ')';*/
+}
+
+.paragraph {
+	background: rgba(180,180,200,.02);
+	margin: 20px auto 30px 0px;
+	border-radius: 1em;
+	padding: 0px 4px;
+}
+
+.title {
+	/*font-weight: bold;*/
+} .title::first-letter {
+	text-transform: uppercase;
+}
+
+.titles {
+} .titles > .titel {
+	/*font-weight: bold;*/
+} .titles > .titel::first-letter {
+	text-transform: uppercase !important;
+}
+
+.title, .titles {
+	margin: 50px auto 20px auto;
+	font-size: 150%;
+}
+
+img {
+	height: 90%;
+	width: 90%;
+	max-height: 8em;
+	max-width: 8em;
+	object-fit: contain;
+}
+
+.qot {
+	font-style: italic;
+} .qot:before {
+	/*content: '“';*/
+} .qot:after {
+	/*content: '”';*/
+}
+
+.red-evidence {
+	color: rgba(128,0,0,1);
+}
+
+.ref-step a, .comment a {
+	color: unset;
+}
+
+</style>
+<script>
+
+function interpreter() {
+	let tab = [
+		['¦','</div>'],
+
+		['|§|','<br />'],
+		['|ms|','\\('],
+		['|me|','\\)'],
+		['|Ms|','$$$'],
+		['|Me|','$$$'],
+		['|cs|','\\(\\ce{'],
+		['|ce|','}\\)'],
+		['|Cs|','$$$\\ce{'],
+		['|Ce|','}$$$'],
+		//~ ['|pus|','\\(\\pu{'], // \pu doesn't work
+		//~ ['|pue|','}\\)'],
+		//~ ['|PUs|','$$$\\pu{'],
+		//~ ['|PUe|','}$$$'],
+		['|t|','	'],
+		['|dash|','-'],
+		['|min|','<'],
+		['|max|','>'],
+		//~ ['|intro|','<div class="intro">'],
+		//~ ['|title|','<div class="title">'],
+		//~ ['|paragraph|','<div class="paragraph">'],
+		//~ ['|comment|','<div class="comment">'],
+		//~ ['|b|','<div class="b">'],
+		['|NaOH|','<b>idrossido di sodio</b> (\\(\\ce{NaOH}\\))'],
+		['|H2O|','<b>acqua</b> distillata (\\(\\ce{H2O}\\))'],
+		['|pH|','<b>pH</b>'],
+		['|H+|','<b>idrone</b> (ione \\(\\ce{H+}\\))'],
+		['|H+s|','<b>idroni</b> (ioni \\(\\ce{H+}\\))'],
+		['|OH-|','<b>gruppo idrossido</b> (ione \\(\\ce{OH-}\\))'],
+		['|OH-s|','<b>gruppi idrossido</b> (ioni \\(\\ce{OH-}\\))'],
+
+		['| ','">'],
+		['|\n','">'],
+		['|','<div class="'],
+	];
+	let tabclasstag = [
+		//~ Detect class, Tag->Tag, More
+		['b','b',''],
+		['i','i',''],
+		['div','div',''],
+		['span','span',''],
+		['tab','table',''],
+	];
+	let tabchangediv = [
+		//~ Detect class, Div->Tag, Class, More, [pre, post]
+		['comment','span','comment','',['(',')']],
+		['qot','span','qot','',['“','”']],
+		['ref-step','span','ref-step','',['passaggio ','']],
+		['titel','span','titel','',['','']],
+	];
+	let doc = document.body; // or document.getElementById('rel')
+	let str = doc.innerHTML;
+	for(i0=0; i0<tab.length; i0++) {
+		str = str.replaceAll(tab[i0][0],tab[i0][1]);
+	};
+	doc.innerHTML = str;
+	for(i0=0; i0<tabclasstag.length; i0++) {
+		while(doc.getElementsByClassName(tabclasstag[i0][0]).length) {
+			doc.getElementsByClassName(tabclasstag[i0][0])[0].outerHTML = '<'+tabclasstag[i0][1]+' '+tabclasstag[i0][2]+'>'+doc.getElementsByClassName(tabclasstag[i0][0])[0].innerHTML+'</'+tabclasstag[i0][1]+'>';
+		};
+	};
+	for(i0=0; i0<tabchangediv.length; i0++) {
+		for(i1=0; i1<doc.getElementsByClassName(tabchangediv[i0][0]).length; i1++) {
+			doc.getElementsByClassName(tabchangediv[i0][0])[i1].outerHTML = '<'+tabchangediv[i0][1]+' class="'+tabchangediv[i0][2]+'" '+tabchangediv[i0][3]+'>'+tabchangediv[i0][4][0]+doc.getElementsByClassName(tabchangediv[i0][0])[i1].innerHTML+tabchangediv[i0][4][1]+'</'+tabchangediv[i0][1]+'>';
+		};
+	};
+	while(doc.getElementsByClassName('a').length) {
+		doc.getElementsByClassName('a')[0].outerHTML = '<a href="'+doc.getElementsByClassName('a')[0].innerHTML+'">'+doc.getElementsByClassName('a')[0].innerHTML+'</a>';
+	};
+	while(doc.getElementsByClassName('img').length) {
+		doc.getElementsByClassName('img')[0].outerHTML = '<img src="'+doc.getElementsByClassName('img')[0].innerHTML+'">';
+	};
+};
+
+function classmodifier() {
+	function func(c,tag,inner) {
+		for(i0=0; i0<document.getElementsByClassName(c).length; i0++) {
+			let obj = document.getElementsByClassName(c)[i0];
+			obj.outerHTML = '<'+tag[0]+' class="'+c+'">'+inner+'</'+tag[1]+'>';
+		};
+	};
+	func('tr-sep',['tr','tr'],'<th colspan="1000"/>');
+}
+
+window.onload = function() {
+	_JCHSL({'Elem':'document.body.style.backgroundColor','L':96.5,'LRange':.5,'Interval':2000,'IntervalRange':1000});
+	interpreter();
+	classmodifier();
+};
+
+</script>
+</head>
+<body class="_BOMP">
+
+<div class="_DN">
+	|Ms|\require{mhchem}|Me|
+	|comment| ref: |a| https://mhchem.github.io/MathJax-mhchem/¦¦
+</div>
+
+<div class="_PA _CX" id="rel">
+	|intro|
+		Angaroni Leonardo|§|
+		Piano nello Spazio Euclideo 3D
+	¦
+	ref: |a| https://www.youmath.it/lezioni/algebra-lineare/geometria-dello-spazio/682-equazione-del-piano.html¦
+	|paragraph|
+		|Ms|
+			\begin{align}
+				\vec v(v_x,v_y,v_z)
+				\\
+				\text{piano per 3 punti: }
+				&\begin{cases}
+					ad+by+cz+d=0
+					\\
+					\dots
+				\end{cases}
+				\\
+				\text{piani coincidenti: }
+				&\begin{cases}
+					\alpha:\ a_1x+b_1y+c_1z+d_1=0 \\
+					\beta:\ a_2x+b_2y+c_2z+d_2=0 \\
+					\text{true if }\frac{a_1}{a_2}=\frac{b_1}{b_2}=\frac{c_1}{c_2}=\frac{d_1}{d_2}
+				\end{cases}
+				\\
+				\text{piani paralleli: }
+				&\begin{cases}
+					\alpha:\ a_1x+b_1y+c_1z+d_1=0 \\
+					\beta:\ a_2x+b_2y+c_2z+d_2=0 \\
+					\text{true if }\frac{a_1}{a_2}=\frac{b_1}{b_2}=\frac{c_1}{c_2}\neq\frac{d_1}{d_2}
+				\end{cases}
+				\\
+				\text{piani perpendicolari: }
+				&\begin{cases}
+					\alpha:\ a_1x+b_1y+c_1z+d_1=0 \\
+					\beta:\ a_2x+b_2y+c_2z+d_2=0 \\
+					\text{true if }a_1·a_2=b_1·b_2=c_1·c_2=d_1·d_2
+				\end{cases}
+				\\
+				\text{retta: }
+				r:\ 
+				&\begin{cases}
+					P+t·\vec v \\
+					P=(P_x;P_y;P_z) \\
+					\vec v=(v_x;v_y;v_z)
+				\end{cases}
+				\lor
+				\frac{x-P_x}{a}=\frac{y-P_y}{b}=\frac{z-P_z}{c}
+			\end{align}
+		|Me|
+	¦
+	|paragraph|
+		|title| materiale¦
+		<table>
+			<tr>
+				<th>sostanza</th>
+				<th>formula|§||comment| se presente¦</th>
+				<th>quantità</th>
+				<th>descrizione</th>
+				<th>immagine|§||comment| se presente¦</th>
+			</tr>
+			<tr>
+				<td>|b| acqua¦ distillata</td>
+				<td>|cs|H2O|ce|</td>
+				<td>|Cs|\sim550mL|Ce||comment| |ms|150+100·4|me|¦</td>
+				<td></td>
+				<td>|img| https://useruploads.socratic.org/hdkH7RCQkOl7E9AubaxQ_770px-Water-2D-flat.png¦</td>
+			</tr>
+			<tr>
+				<td>|b| rosso cresolo¦|§||comment| misuratore di pH¦</td>
+				<td>|cs|C21H17NaO5S|ce|</td>
+				<td>|Cs|12 gocce|Ce||comment| |ms|3+(3+2·3)|me|¦</td>
+				<td>utilizzato per misurare la concentrazione di pH delle soluzioni</td>
+				<td>|img| https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Kresolrot.svg/1200px-Kresolrot.svg.png¦</td>
+			</tr>
+			<tr>
+				<td>|b| idrossido di sodio¦|§|0.2 M</td>
+				<td>|cs|NaOH|ce|</td>
+				<td>|Cs|\sim75mL|Ce||comment| |ms|25+25·2|me|¦</td>
+				<td></td>
+				<td>|img| https://upload.wikimedia.org/wikipedia/commons/7/76/Potassium-hydroxide-xtal-3D-vdW.png¦</td>
+			</tr>
+			<tr>
+				<td>|b| acido acetico¦</td>
+				<td>CH3COOH</td>
+				<td>|Cs|3mL|Ce|</td>
+				<td>acido da confrontare col |b| succo di limone¦</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>|b| succo di limone¦</td>
+				<td>|dash|</td>
+				<td>|Cs|12mL|Ce||comment| |ms|3·4|me|¦</td>
+				<td>sostanza acida da confrontare con l'|b| acido acetico¦</td>
+				<td></td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<th>attrezzo</th>
+				<th>quantità</th>
+				<th>descrizione</th>
+				<th>immagine|§||comment| se presente¦</th>
+			</tr>
+			<tr>
+				<td>|b| porta burette¦</td>
+				<td>|Cs|2|Ce|</td>
+				<td>utilizzato per tenere la |b| buretta¦</td>
+				<td>|img| https://www.hobbycantina.it/wp-content/uploads/2015/03/products-54edd74507b9c27728eeb8bfa0504396-600x600.jpg¦</td>
+			</tr>
+			<tr>
+				<td>|b| spruzzetta¦ in polietilene</td>
+				<td>|Cs|2|Ce|</td>
+				<td>utilizzato per contenere l'|H2O|</td>
+				<td>|img| http://www.tardivello.com/images/bottiglia-spruzzetta.png¦</td>
+			</tr>
+			<tr>
+				<td>|b| becher¦</td>
+				<td>|Cs|2|Ce|</td>
+				<td>utilizzato per contenere l'|NaOH|</td>
+				<td>|img| https://www.wpclipart.com/dl.php?img=/science/chemistry/beaker/Beakers_T.png¦</td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<th>strumento di misura</th>
+				<th>quantità</th>
+				<th>sensibilità</th>
+				<th>portata</th>
+				<th>portata / sensibilità</th>
+				<th>descrizione</th>
+				<th>immagine|§||comment| se presente¦</th>
+			</tr>
+			<tr>
+				<td>|b| buretta¦</td>
+				<td>|Cs|2|Ce|</td>
+				<td>|Cs|0\ldotp05mL|Ce||comment| tarato a |cs|20°C|ce|¦</td>
+				<td>|Cs|25\ldotp00mL|Ce||comment| da |cs|0\ldotp00|ce| a |cs|25\ldotp00|ce|¦</td>
+				<td>|Ms|500|Me|</td>
+				<td>utilizzato per versare con precisione l'|NaOH| nella soluzione</td>
+				<td>|img| https://prints.ultracoloringpages.com/55bbd8b61fc794323e6169e83da4cfea.png¦</td>
+			</tr>
+			<tr>
+				<td>|b| becher¦</td>
+				<td>|Cs|2|Ce|</td>
+				<td>|Cs|50mL|Ce|</td>
+				<td>|Cs|\sim250mL|Ce||comment| da |cs|0|ce| a |cs|250|ce|¦</td>
+				<td>|Ms|\sim5|Me|</td>
+				<td>utilizzato per contenere la soluzione finale</td>
+				<td>|img| https://www.wpclipart.com/dl.php?img=/science/chemistry/beaker/Beakers_T.png¦</td>
+			</tr>
+			<tr>
+				<td>|b| micropipetta¦</td>
+				<td>|Cs|2|Ce|</td>
+				<td>|Cs|0\ldotp005mL|Ce|</td>
+				<td>|Cs|\sim0\ldotp975mL|Ce||comment| da |cs|\sim0\ldotp100|ce| a |cs|\sim1\ldotp075|ce|¦</td>
+				<td>|Ms|\sim195|Me|</td>
+				<td>utilizzato per prelevare o l'|b| acido acetico¦ o il |b| succo di limone¦</td>
+				<td>|img| https://sc04.alicdn.com/kf/H7c84f2037f3f4fd187f4b301a0c5b2f4E.png¦</td>
+			</tr>
+		</table>
+		<span style="display:block;text-align:center;">foglio e penna per prendere appunti</span>
+	¦
+	|paragraph|
+		|title| procedimento¦
+		Attività di Mercoledì 23 Marzo 2022:
+		<ol>
+			<li>Preparazione del piano di lavoro.
+				<ol>
+					<li>È stato predisposto dall’assistente di laboratorio l'|NaOH| 0.2 M e delle |b| micropipette¦.</li>
+					<li>Ho preso la |b| buretta¦ il |b| porta burette¦, la |b| spruzzetta¦, un |b| becher¦ e una |b| micropipetta¦.</li>
+					<li>Ho messo dell'|H2O| nella |b| spruzzetta¦ per poterla prelevare più comodamente su necessità.</li>
+					<li>Il professore ha predisposto dell'|b| acido acetico¦ contenuto in una bottiglia.</li>
+				</ol>
+			</li>
+			<li>Procedura esperimento.
+				<ol>
+					<li>Ho versato nel |b| becher¦ 150 mL di |H2O|.</li>
+					<li>Ho versato nel |b| becher¦ 3 mL di |b| acido acetico¦ tramite la |b| micropipetta¦.</li>
+					<li>Ho versato nella |b| buretta¦ circa 25 mL di |NaOH|, più precisamente fino ad arrivare alla tacchetta |qot| 25 mL¦ della |b| buretta¦.</li>
+					<li>Ho montato la |b| buretta¦ sul |b| porta burette¦.</li>
+					<li>Ho versato nel |b| becher¦ 3 gocce di |b| rosso cresolo¦ tramite la |b| pipetta¦ del suo barattolo.</li>
+					<li>Ho posto il |b| becher¦ sotto alla |b| buretta¦.</li>
+					<li>Ho versato lentamente l'|NaOH| dalla |b| buretta¦ nel |b| becher¦ controllando il colore della soluzione risultante.</li>
+					<li>Per tutto il tempo nel quale veniva ad aggiungersi l'|NaOH| nella soluzione finale ho continuato a scuotere il |b| becher¦ per far diluire il |b| rosso cresolo¦ nella soluzione.</li>
+				</ol>
+			</li>
+			<li>Appena la soluzione è passata dal colore <span style="color:rgba(64,0,64,1);">viola</span> al colore <span style="color:rgba(96,0,0,1);">rosso</span> ho chiuso la valvola della |b| buretta¦.</li>
+			<li>Dopodiché ho preso nota della quantità di |NaOH| che era stato versato dalla |b| buretta¦ al |b| becher¦ |comment| 15.55 mL¦.</li>
+			<li>Successivamente ho riaperto leggermente la valvola della |b| buretta¦ versando una minima quantità di |NaOH|  nel |b| becher¦.</li>
+			<li>E ho preso nota sia della quantità di |NaOH| che è stato versato dalla |b| buretta¦ al |b| becher¦ a partire dall'inizio |comment| 15.60 mL¦ sia del colore che aveva assunto.</li>
+			<li>Successivamente nuovamente aperto leggermente la valvola della |b| buretta¦ versando un'altra minima quantità di |NaOH|  nel |b| becher¦.</li>
+			<li>E ho preso nuovamente nota della quantità di |NaOH| che è stato versato dalla |b| buretta¦ al |b| becher¦ a partire dall'inizio |comment| 15.75 mL¦ e del colore che aveva assunto.</li>
+			<li>Avendo sotto mano i 3 risultati ho determinato quale fosse il più accurato e l'ho evidenziato sul foglio |comment| 15.55 mL¦.</li>
+			<li>Infine ho pulito l’attrezzatura utilizzata.</li>
+		</ol>
+		|§|
+		Attività di Mercoledì 30 Marzo 2022:
+		<ol>
+			<li>Preparazione del piano di lavoro.
+				<ol>
+					<li>È stato predisposto dall’assistente di laboratorio l'|NaOH| 0.2 M e delle |b| micropipette¦.</li>
+					<li>Ho preso la |b| buretta¦ il |b| porta burette¦, la |b| spruzzetta¦, un |b| becher¦ e una |b| micropipetta¦.</li>
+					<li>Ho messo dell'|H2O| nella |b| spruzzetta¦ per poterla prelevare più comodamente su successiva necessità.</li>
+					<li>Il professore ha predisposto del |b| succo di limone¦ contenuto in un |b| becher¦.</li>
+				</ol>
+			</li>
+			<li id="a-href-0">Procedura esperimento.
+				<ol>
+					<li>Ho versato nel |b| becher¦ 100 mL di |H2O|.</li>
+					<li>Ho versato nel |b| becher¦ 3 mL di |b| succo di limone¦ tramite la |b| micropipetta¦.</li>
+					<li>Ho versato nella |b| buretta¦ circa 25 mL di |NaOH|, più precisamente fino ad arrivare alla tacchetta |qot| 25 mL¦ della |b| buretta¦.</li>
+					<li>Ho montato la |b| buretta¦ sul |b| porta burette¦.</li>
+					<li>Ho versato nel |b| becher¦ 3 gocce di |b| rosso cresolo¦ tramite la |b| pipetta¦ del suo barattolo.</li>
+					<li>Ho posto il |b| becher¦ sotto alla |b| buretta¦.</li>
+					<li>Ho versato lentamente l'|NaOH| dalla |b| buretta¦ nel |b| becher¦ controllando il colore della soluzione risultante.</li>
+					<li>Per tutto il tempo nel quale veniva ad aggiungersi l'|NaOH| nella soluzione finale ho continuato a scuotere il |b| becher¦ per far diluire il |b| rosso cresolo¦ nella soluzione.</li>
+					<li>Appena la soluzione è passata dal colore <span style="color:rgba(64,0,64,1);">viola</span> al colore <span style="color:rgba(96,0,0,1);">rosso</span> ho chiuso la valvola della |b| buretta¦.</li>
+					<li>Dopodiché ho preso nota della quantità di |NaOH| che era stato versato dalla |b| buretta¦ al |b| becher¦.</li>
+				</ol>
+			</li>
+			<li>Siccome il valore ottenuto |comment| circa 4 mL¦ non era logicamente corretto ho rieseguito la procedura dell'esperimento |comment| <a href="#a-href-0">|ref-step| 2¦</a>¦, questa volta utilizzando 2 gocce di |b| rosso cresolo¦ anziché 3 e senza riempire nuovamente la |b| buretta¦ di |NaOH|.</li>
+			<li>Siccome nuovamente il valore ottenuto |comment| circa 3 mL¦ non era logicamente corretto ho rieseguito la procedura dell'esperimento |comment| <a href="#a-href-0">|ref-step| 2¦</a>¦, sempre utilizzando 2 gocce di |b| rosso cresolo¦ anziché 3, senza riempire nuovamente la |b| buretta¦ di |NaOH| e prelevando il |b| succo di limone¦ da un |b| becher¦ in cui era filtrato anziché quello ordinale in cui il |b| succo di limone¦ vi era contenuto non filtrato.</li>
+			<li>Successivamente, avendo ottenuto un risultato abbastanza accurato |comment| 14.80 mL¦ ma non quanto sperato poiché la soluzione era diventata parzialmente violacea, ho rieseguito un'ultima volta la procedura dell'esperimento |comment| <a href="#a-href-0">|ref-step| 2¦</a>¦ utilizzando 2 gocce di |b| rosso cresolo¦ e prelevando nuovamente il |b| succo di limone¦ dal |b| becher¦ in cui era filtrato.</li>
+			<li>Avendo ottenuto un risultato soddisfacente |comment| 14.55 mL¦ l'ho trascritto ed evidenziato sul foglio degli appunti.</li>
+			<li>Infine ho pulito l’attrezzatura utilizzata.</li>
+		</ol>
+		|§|
+		Dopodiché ho steso la relazione di laboratorio.
+	¦
+	|paragraph|
+		|title| premesse teoriche¦
+		<table>
+			<tr>
+				<th>tradizionale</th>
+				<th>IUPAC</th>
+				<th>formula</th>
+				<th>immagine|§||comment| se presente¦</th>
+			</tr>
+			<tr>
+				<td>|b| acqua¦ distillata</td>
+				<td>ossido di diidrogeno</td>
+				<td>|cs|H2O|ce|</td>
+				<td>|img| https://useruploads.socratic.org/hdkH7RCQkOl7E9AubaxQ_770px-Water-2D-flat.png¦</td>
+			</tr>
+			<tr>
+				<td>|b| idrossido di sodio¦</td>
+				<td>idrossido di sodio</td>
+				<td>|cs|NaOH|ce|</td>
+				<td>|img| https://www.chemspider.com/ImagesHandler.ashx?id=14114&w=250&h=250¦</td>
+			</tr>
+			<tr>
+				<td>|b| acido acetico¦</td>
+				<td>acido etanoico</td>
+				<td>|cs|CH3COOH|ce|</td>
+				<td>|img| https://5.imimg.com/data5/SELLER/Default/2022/2/TY/VO/FT/47975843/acetic-acid-500x500.png¦</td>
+			</tr>
+			<tr>
+				<td>|b| acido citrico¦</td>
+				<td>acido 3-carbossi-3-idrossi-1,5-pentandioico</td>
+				<td>|cs|C6H8O7|ce|</td>
+				<td>|img| http://www.chemspider.com/ImagesHandler.ashx?id=305&w=500&h=500¦</td>
+			</tr>
+			<tr>
+				<td>|b| rosso cresolo¦</td>
+				<td>4-[ 3-( 4-Idrossi-3-metilfenil )-1, 1-diossobenzo [c] ossatiolo-3-il ]-2-metilfenolo</td>
+				<td>|cs|C21H17NaO5S|ce|</td>
+				<td>|img| https://www.chemspider.com/ImagesHandler.ashx?id=101179&w=500&h=500¦</td>
+			</tr>
+			<tr class="tr-sep"/>
+			<tr>
+				<td>|b| idrone¦</td>
+				<td>idrone</td>
+				<td>|cs|H+|ce|</td>
+				<td>|img| https://www.chemspider.com/ImagesHandler.ashx?id=1010&w=150&h=150¦</td>
+			</tr>
+			<tr>
+				<td>|b| gruppo idrossile¦</td>
+				<td>gruppo idrossilico</td>
+				<td>|cs|OH-|ce|</td>
+				<td>|img| https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Hydroxide_lone_pairs-2D.svg/640px-Hydroxide_lone_pairs-2D.svg.png¦</td>
+			</tr>
+		</table>
+		|paragraph|
+			Il |pH| (pondus hydrogenii) è una grandezza che misura l’|b| acidità¦ o la |b| basicità¦ di una soluzione. Esso è determinato dal rapporto tra il numero di |H+s| ed il numero di |OH-s|.
+			<ul>
+				<li>
+					Se il numero di |H+s| è <span class="red-evidence">maggiore</span> del numero di |OH-s|:|§|
+					la soluzione è acida e il |pH| è inferiore a 7.
+					|Ms|\ce{pH}\lt7\text{ }\Rightarrow\text{acida}|Me|
+				</li>
+				<li>
+					Se il numero di |H+s| è <span class="red-evidence">pari</span> al numero di |OH-s|:|§|
+					la soluzione è neutra e il |pH| è equivalente a 7.
+					|Ms|\ce{pH}=7\text{ }\Rightarrow\text{neutra}|Me|
+				</li>
+				<li>
+					Se il numero di |H+s| è <span class="red-evidence">minore</span> del numero di |OH-s|:|§|
+					la soluzione è basica e il |pH| è superiore a 7.
+					|Ms|\ce{pH}\gt7\text{ }\Rightarrow\text{basica}|Me|
+				</li>
+			</ul>
+		¦
+		|paragraph|
+			La misura |qot| |ms|1|me| Molare¦ equivale al rapporto tra una mole ed un litro:
+			|Ms|\ce{1M}=\frac{\ce{1mol}}{\ce{1L}}|Me|
+			ergo una misura |cs|n|ce| Molare equivarrà al rapporto tra |cs|n|ce| moli ed un litro:
+			|Ms|\ce{n·M}=\frac{\ce{n·mol}}{\ce{1L}}|Me|
+			Quindi data una soluzione |ms|Z|me| la sua Molarità sarà:
+			|Ms|
+				{{\text{Molarità di }Z}={\frac{\text{moli di }Z}{\text{volume di }Z}}}
+				\quad\text{con}\quad
+				{{\text{moli di }Z}={\frac{\text{massa soluto}}{\text{massa molare}}}}
+			|Me|
+		¦
+		|paragraph|
+			Quando l'|b| acido acetico¦ (\(\ce{CH3COOH}\)) viene a trovarsi in soluzione con l'|NaOH| viene a originarsi una reazione spontanea avente i precendenti reagenti e |b| acetato di sodio¦ (\(\ce{CH3COONa}\)) e |H2O| come prodotti:
+			|Cs| CH3COOH_{(aq)} + NaOH_{(aq)} -> CH3COONa_{(aq)} + H2O_{(l)} |Ce|
+		¦
+	¦
+	|paragraph|
+		|titles| |titel| Calcoli¦ e |titel| Procedimento logico¦¦
+		|paragraph|
+			Sviluppo dell'attività di Mercoledì 23 Marzo 2022 |comment| riguardante l'|b| acido acetico¦¦:
+				|paragraph|
+				Chiamando la soluzione |ms|Z|me|, data la relazione:
+				|Ms|
+					{{\ce{1mol}}:{\ce{1L}}}={{\text{moli di }Z}:{\text{volume di }Z}}\\
+					\text{o}\\
+					{\frac{\ce{1mol}}{\ce{1L}}}={\frac{\text{moli di }Z}{\text{volume di }Z}}
+				|Me|
+				e sapendo che abbiamo introdotto |cs|3mL|ce| |comment| ovvero |cs|0\ldotp003L|ce|¦ di |b| acido acetico¦ possiamo ricavarci le moli della soluzione:
+				|Ms|
+					\begin{cases}
+						{\frac{\ce{1mol}}{\ce{1L}}}={\frac{\text{moli di }Z}{\text{volume di }Z}}\\
+						\text{con}\quad{{\text{volume di }Z}={\ce{0\ldotp003L}}}
+					\end{cases}
+					\quad\Rightarrow\quad
+					{\frac{\ce{1mol}}{\ce{1L}}}={\frac{\text{moli di }Z}{\ce{0\ldotp003L}}}
+					\quad\Rightarrow\quad
+					{\text{moli di }Z}={\ce{0\ldotp003mol}}
+				|Me|
+			¦
+			|paragraph|
+				Conoscendo la Molarità dell'|NaOH| |comment| |cs|0\ldotp2M|ce|¦ possiamo trovare il volume di soluzione da prelevare di quest'ultima in base alla quantità di |b| acido acetico¦ aggiunto |comment| |cs|3mL|ce|¦:
+				|Ms|
+					{\frac{\ce{0\ldotp2mol}}{\ce{1L}}}={\frac{\ce{0\ldotp003mol}}{\text{volume}}}
+					\quad\Rightarrow\quad
+					{\text{volume}}={\ce{0\ldotp015L}}={\ce{15mL}}
+				|Me|
+			¦
+			|paragraph|
+				Conoscendo la quantità di |NaOH| versato per neutralizzare la soluzione risultante |comment| |cs|15\ldotp55mL|ce|¦ possiamo concludere che il valore teorico ottenuto, rispetto al valore ottenuto empiricamente, combaci al:
+				|Ms|
+					{\frac{\ce{15mL}}{\ce{15\ldotp55mL}}}
+					\approx{0.96}
+					={0.96/1}
+					={96/100}
+					={96\%}
+				|Me|
+			¦
+		¦
+		|paragraph|
+			Sviluppo dell'attività di Mercoledì 30 Marzo 2022 |comment| riguardante il |b| succo di limone¦¦:
+			|paragraph|
+				Considerando le precedenti premesse e sapendo che abbiamo introdotto |cs|3mL|ce| |comment| ovvero |cs|0\ldotp003L|ce|¦ di |b| acido citrico¦ |comment| ovvero |qot| |b| succo di limone¦¦¦ possiamo ricavarci le moli della soluzione:
+				|Ms|
+					{\frac{\ce{1mol}}{\ce{1L}}}={\frac{\text{moli}}{\ce{0\ldotp003L}}}
+					\quad\Rightarrow\quad
+					{\text{moli}}={\ce{0\ldotp003mol}}
+				|Me|
+			¦
+			|paragraph|
+				Conoscendo la Molarità dell'|NaOH| |comment| |cs|0\ldotp2M|ce|¦ possiamo trovare il volume di soluzione da prelevare di quest'ultima in base alla quantità di |b| acido citrico¦ aggiunto |comment| |cs|3mL|ce|¦:
+				|Ms|
+					{\frac{\ce{0\ldotp2mol}}{\ce{1L}}}={\frac{\ce{0\ldotp003mol}}{\text{volume}}}
+					\quad\Rightarrow\quad
+					{\text{volume}}={\ce{0\ldotp015L}}={\ce{15mL}}
+				|Me|
+			¦
+			|paragraph|
+				Conoscendo la quantità di |NaOH| versato per neutralizzare la soluzione risultante |comment| |cs|14\ldotp55mL|ce|¦ possiamo concludere che il valore ottenuto empiricamente, rispetto al valore teorico ottenuto, combaci al:
+				|Ms|
+					{\frac{\ce{14\ldotp55mL}}{\ce{15mL}}}
+					={0.97}
+					={0.97/1}
+					={97/100}
+					={97\%}
+				|Me|
+			¦
+		¦
+		|paragraph|
+			Acidità tra |b| acido acetico¦ e |acido citrico¦:
+			|paragraph|
+				Avendo usato |cs|15\ldotp55mL|ce| di |NaOH| per neutralizzare l'|b| acido acetico¦ e |cs|14\ldotp55mL|ce| di |NaOH| per neutralizzare l'|b| acido citrico¦ possiamo affermare che l'acidità dell'|b| acido acetico¦ sia superiore dell'acidità dell'|b| acido citrico¦ e perciò arrivare a concludere che tra i due sia più acido l'|b| acido acetico¦:
+				|Ms|{\ce{15\ldotp55mL}}>{\ce{14\ldotp55mL}}|Me|
+				perciò avrà un |pH| inferiore.
+			¦
+		¦
+	¦
+	|paragraph|
+		|title| osservazioni¦
+		|paragraph|
+			Il misuratore di |pH| |comment| ovvero il |b| rosso cresolo¦¦ non era immediato a dissolversi e ciò comportava una non rapidità della restuzione della colorazione del |pH| della soluzione che doveva essere sopperita da un costante impegno alla miscelazione della soluzione.
+		¦
+		|paragraph|
+			L'esperienza sarebbe dovuta essere svolta in un'unica sessione ma, causa lo scarso tempo a disposizione, si è prolungata a due distinte occasioni; La prima Mercoledì 23 Marzo 2022 dalle ore 13:20 alle ore 15:00 e la seguente Mercoledì 30 Marzo 2022 negli stessi orari.
+		¦
+		|paragraph|
+			La |b| micropipetta¦ non funzionava correttamente con il |b| succo di limone¦ non filtrato, causa i grumi che si andavano ad incastrare ed impedivano il prelievo della corretta quantità di sostanza da prelevare. Ciò mi ha portato a dover eseguire la pocedura |comment| <a href="#a-href-0">|ref-step| 2¦</a>¦ un numero di volte superiore e pari a 2.
+		¦
+	¦
+	|paragraph|
+		|title| conclusioni¦
+		Sono riuscito a determinare il composto con la magiore acidità e posso affermare che questo sia l'|b| acido acetico¦.
+	¦
+</div>
+
+</body>
+</html>
