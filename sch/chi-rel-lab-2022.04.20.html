@@ -1,0 +1,835 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Relazione di Laboratorio</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Mono">
+	<link rel="stylesheet" href="https://2wtnt.tk/css.css">
+	<script type="text/javascript" src="https://2wtnt.tk/js.js"></script>
+	<script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML' async></script>
+	<script type="text/javascript">try{MathJax.Hub.Config({tex2jax:{inlineMath:[['$','$'],["//(","//)"]],processEscapes:true}})}catch{}</script>
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@1,700&display=swap');
+
+/* *:not(pre):not(textarea) {
+	font-family: 'Lucida Console', monospace;
+	font-family: 'Ubuntu Mono', monospace;
+} */
+
+* {
+	font-family: Helvetica, sans-serif;
+	margin: 10px auto;
+} *::first-letter {
+	font-weight: unset;
+	color: unset;
+	background: unset;
+} *::first-line {
+	font-weight: unset;
+	color: unset;
+	background: unset;
+}
+
+::-moz-selection {
+	background: rgba(0,255,255,.2);
+	color: unset;
+} ::selection {
+	background: rgba(0,255,255,.2);
+	color: unset;
+}
+
+body {
+} body::-webkit-scrollbar {
+	width: 1.5rem;
+} body::-webkit-scrollbar-track {
+	display: none;
+} body::-webkit-scrollbar-thumb {
+	background: silver;
+	background:
+		linear-gradient(top, transparent 5px, black 5px, black 50%, transparent 50%),	linear-gradient(bottom, transparent 5px, black 5px, black 50%, transparent 50%),
+		radial-gradient(circle, black 5px, transparent 5px) -2px 59%,
+		radial-gradient(circle, black 5px, transparent 5px) -2px 41%;
+	background-size: 100% 100%, 100% 100%, 15px 50%, 15px 50%;
+	background-clip: padding-box;
+	border: 0.5rem solid transparent;
+	border-radius: 1.5rem;
+	z-index: -1;
+	/*credits: https://gist.github.com/zoreet/1550217/8dff57fc6941ae4652faea7ff62f2b9a5c8767ef*/
+} body::-webkit-scrollbar-thumb:hover {
+	background-color: hsla(170,3%,33%,.8);
+}
+
+textarea, pre {
+	-moz-tab-size: 4;
+	  -o-tab-size: 4;
+	     tab-size: 4;
+}
+
+#no-js {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100vw;
+	height: 100vh;
+	padding: 0px;
+	margin: 0px;
+	border: 0px;
+	background: rgba(245,245,245,1);
+	z-index: 1000000;
+} #no-js > p {
+	position: absolute;
+	left: 50%;
+	top: 45%;
+	transform: translate(-50%,-50%);
+}
+
+table {
+	border: 2px solid black;
+	border-radius: 4px;
+	padding: 1px;
+	border-collapse: collapse;
+} table tr, table td, table th {
+	border: 2px;
+	padding: 2px;
+} table td, table th {
+	border: 1px solid black;
+	text-align: center;
+} table th {
+	background: rgba(88,88,88,.5);
+	font-weight: normal;
+}
+
+ol {
+	counter-reset: item;
+} ol li:not(ul li) {
+	display: block;
+} ol li:before {
+	content: counters(item,".") ")\00A0\00A0";
+	counter-increment: item;
+} ul li:before {
+	content: none;
+}
+
+.intro {
+	text-align: center;
+}
+
+.comment {
+	opacity: .54;
+} .comment:before {
+	/*content: '(';*/
+} .comment:after {
+	/*content: ')';*/
+}
+
+.paragraph {
+	background: rgba(180,180,200,.02);
+	margin: 20px auto 30px 0px;
+	border-radius: 1em;
+	padding: 0px 4px;
+}
+
+.title {
+	/*font-weight: bold;*/
+} .title::first-letter {
+	text-transform: uppercase;
+}
+
+.titles {
+} .titles > .titel {
+	/*font-weight: bold;*/
+} .titles > .titel::first-letter {
+	text-transform: uppercase !important;
+}
+
+.title, .titles {
+	margin: 50px auto 20px auto;
+	font-size: 150%;
+}
+
+.WTable {
+	width: 100%;
+}
+
+img {
+	height: 90%;
+	width: 90%;
+	max-height: 8em;
+	max-width: 8em;
+	object-fit: contain;
+}
+
+.qot {
+	font-style: italic;
+} .qot:before {
+	/*content: '“';*/
+} .qot:after {
+	/*content: '”';*/
+}
+
+.red-evidence {
+	color: rgba(128,0,0,1);
+}
+
+.ref-step a, .comment a {
+	color: unset;
+}
+
+.egp {
+	font-size: 86%;
+	opacity: .86;
+}
+
+.dem {
+	font-size: 93%;
+	opacity: .93;
+}
+
+.MathJax_Display {
+	margin: 1em 0em 1.2em 0em !important;
+}
+
+</style>
+<script>
+
+function interpreter() {
+	let tab = [
+		['¦','</div>'],
+
+		['|§|','<br />'],
+		['|ms|','\\('],
+		['|me|','\\)'],
+		['|Ms|','$$$'],
+		['|Me|','$$$'],
+		['|cs|','\\(\\ce{'],
+		['|ce|','}\\)'],
+		['|Cs|','$$$\\ce{'],
+		['|Ce|','}$$$'],
+		['|eg|','e.g.'],
+		['|Eg|','E.g.'],
+		//~ ['|pus|','\\(\\pu{'], // \pu doesn't work
+		//~ ['|pue|','}\\)'],
+		//~ ['|PUs|','$$$\\pu{'],
+		//~ ['|PUe|','}$$$'],
+		['|t|','	'],
+		['|dash|','-'],
+		['|min|','<'],
+		['|max|','>'],
+		//~ ['|intro|','<div class="intro">'],
+		//~ ['|title|','<div class="title">'],
+		//~ ['|paragraph|','<div class="paragraph">'],
+		//~ ['|comment|','<div class="comment">'],
+		//~ ['|b|','<div class="b">'],
+		['|CH3COOH|','<b>acido acetico</b> (\\(\\ce{CH3COOH}\\))'],
+		['|H3PO4|','<b>acido ortofosforico</b> (\\(\\ce{H3PO4}\\))'],
+		['|HCl|','<b>acido cloridrico</b> (\\(\\ce{HCl}\\))'],
+		['|NaOH|','<b>idrossido di sodio</b> (\\(\\ce{NaOH}\\))'],
+		['|H2O|','<b>acqua</b> distillata (\\(\\ce{H2O}\\))'],
+		['|pH|','<b>pH</b>'],
+		['|H+|','<b>idrone</b> (ione \\(\\ce{H+}\\))'],
+		['|H+s|','<b>idroni</b> (ioni \\(\\ce{H+}\\))'],
+		['|OH-|','<b>gruppo idrossido</b> (ione \\(\\ce{OH-}\\))'],
+		['|OH-s|','<b>gruppi idrossido</b> (ioni \\(\\ce{OH-}\\))'],
+
+		['| ','">'],
+		['|\n','">'],
+		['|','<div class="'],
+	];
+	let tabclasstag = [
+		//~ Detect class, Tag->Tag, More
+		['b','b',''],
+		['i','i',''],
+		['div','div',''],
+		['span','span',''],
+		['tab','table',''],
+	];
+	let tabchangediv = [
+		//~ Detect class, Div->Tag, Class, More, [pre, post]
+		['comment','span','comment','',['(',')']],
+		['qot','span','qot','',['“','”']],
+		['ref-step','span','ref-step','',['passaggio ','']],
+		['titel','span','titel','',['','']],
+		['egp','div','paragraph egp','',['','']],
+		['dem','div','dem','',['','']], /*Demostration*/
+	];
+	let doc = document.body; // or document.getElementById('rel')
+	let str = doc.innerHTML;
+	for(i0=0; i0<tab.length; i0++) {
+		str = str.replaceAll(tab[i0][0],tab[i0][1]);
+	};
+	doc.innerHTML = str;
+	for(i0=0; i0<tabclasstag.length; i0++) {
+		while(doc.getElementsByClassName(tabclasstag[i0][0]).length) {
+			doc.getElementsByClassName(tabclasstag[i0][0])[0].outerHTML = '<'+tabclasstag[i0][1]+' '+tabclasstag[i0][2]+'>'+doc.getElementsByClassName(tabclasstag[i0][0])[0].innerHTML+'</'+tabclasstag[i0][1]+'>';
+		};
+	};
+	for(i0=0; i0<tabchangediv.length; i0++) {
+		for(i1=0; i1<doc.getElementsByClassName(tabchangediv[i0][0]).length; i1++) {
+			doc.getElementsByClassName(tabchangediv[i0][0])[i1].outerHTML = '<'+tabchangediv[i0][1]+' class="'+tabchangediv[i0][2]+'" '+tabchangediv[i0][3]+'>'+tabchangediv[i0][4][0]+doc.getElementsByClassName(tabchangediv[i0][0])[i1].innerHTML+tabchangediv[i0][4][1]+'</'+tabchangediv[i0][1]+'>';
+		};
+	};
+	while(doc.getElementsByClassName('a').length) {
+		doc.getElementsByClassName('a')[0].outerHTML = '<a href="'+doc.getElementsByClassName('a')[0].innerHTML+'">'+doc.getElementsByClassName('a')[0].innerHTML+'</a>';
+	};
+	while(doc.getElementsByClassName('img').length) {
+		doc.getElementsByClassName('img')[0].outerHTML = '<img src="'+doc.getElementsByClassName('img')[0].innerHTML+'">';
+	};
+};
+
+function classmodifier() {
+	function func(c,tag,inner) {
+		for(i0=0; i0<document.getElementsByClassName(c).length; i0++) {
+			let obj = document.getElementsByClassName(c)[i0];
+			obj.outerHTML = '<'+tag[0]+' class="'+c+'">'+inner+'</'+tag[1]+'>';
+		};
+	};
+	func('tr-sep',['tr','tr'],'<th colspan="1000"/>');
+}
+
+function nojs() {
+	document.getElementById('no-js').outerHTML = '';
+};
+
+window.onload = function() {
+	nojs();
+	_JCHSL({'Elem':'document.body.style.backgroundColor','L':96.5,'LRange':.5,'Interval':2000,'IntervalRange':1000});
+	interpreter();
+	classmodifier();
+};
+
+</script>
+</head>
+<body class="_BOMP">
+
+<div id="no-js">
+	<p>Sorry,<br />your browser may not support JavaScript<br />or, if you have them disabled, please enable them.</p>
+</div>
+
+<div class="_DN">
+	|Ms|
+		\require{mhchem}
+		\newcommand{\[}{\mathtt{[}}
+		\newcommand{\]}{\mathtt{]}}
+	|Me|
+	|comment| ref: |a| https://mhchem.github.io/MathJax-mhchem/¦¦
+	|comment| ref: |a| https://math.meta.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference¦¦
+</div>
+
+<div class="_PA _CX" id="rel">
+	|intro|
+		Angaroni Leonardo 4Ds|§|
+		Scienze, relazione dell’esperienza di laboratorio|§|
+		|b| Molarità tra soluzioni¦|§|
+		Condotto dal professore S. Scarselli|§|
+		Mercoledì 20 Aprile 2022
+	¦
+	|paragraph|
+		|title| obbiettivo¦
+		Provare qualitativamente e quantitativamente l'|CH3COOH|, l'|HCl| e l'|H3PO4|.
+		<!--ul>
+			<li>Migliorare le abilità nell’utilizzo della strumentazione da laboratorio.</li>
+		</ul-->
+	¦
+	|paragraph|
+		|title| materiale¦
+		<table class="WTable">
+			<tr>
+				<th>sostanza</th>
+				<th>formula|§||comment| se presente¦</th>
+				<th>quantità</th>
+				<th>descrizione</th>
+				<th>immagine</th>
+			</tr>
+			<tr>
+				<td>|b| acqua¦ distillata</td>
+				<td>|cs|H2O|ce|</td>
+				<td>|Cs|210mL|Ce||comment| |ms|25·3+45·3|me|¦</td>
+				<td>utilizzata per portare l'|CH3COOH|, l'|HCl| e l'|H3PO4| da |cs|1M|ce| a |cs|0\ldotp5M|ce| e |cs|0\ldotp1M|ce|</td>
+				<td>|img| https://useruploads.socratic.org/hdkH7RCQkOl7E9AubaxQ_770px-Water-2D-flat.png¦</td>
+			</tr>
+			<tr>
+				<td>|b| rosso cresolo¦|§||comment| misuratore di pH¦</td>
+				<td>|cs|C21H17NaO5S|ce|</td>
+				<td>|Cs|12 gocce|Ce||comment| |ms|3+(3+2·3)|me|¦</td>
+				<td>utilizzato per misurare la concentrazione di pH delle soluzioni</td>
+				<td>|img| https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Kresolrot.svg/1200px-Kresolrot.svg.png¦</td>
+			</tr>
+			<tr class="tr-sep"/>
+			<tr>
+				<td>|b| acido acetico¦|§||cs|1M|ce|</td>
+				<td>|cs|CH3COOH|ce|</td>
+				<td>|Cs|30mL|Ce||comment| |ms|25+5|me|¦</td>
+				<td>sostanza acida da utilizzare</td>
+				<td>|img| https://5.imimg.com/data5/SELLER/Default/2022/2/TY/VO/FT/47975843/acetic-acid-500x500.png¦</td>
+			</tr>
+			<tr>
+				<td>|b| acido cloridrico¦|§||cs|1M|ce|</td>
+				<td>|cs|HCl|ce|</td>
+				<td>|Cs|30mL|Ce||comment| |ms|25+5|me|¦</td>
+				<td>sostanza acida da utilizzare</td>
+				<td>|img| https://alchetron.com/cdn/hydrogen-chloride-be6f4c1c-f10f-4a56-b049-fd919d2a15c-resize-750.gif¦</td>
+			</tr>
+			<tr>
+				<td>|b| acido ortofosforico¦|§||cs|1M|ce|</td>
+				<td>|cs|H3PO4|ce|</td>
+				<td>|Cs|30mL|Ce||comment| |ms|25+5|me|¦</td>
+				<td>sostanza acida da utilizzare</td>
+				<td>|img| https://upload.wikimedia.org/wikipedia/commons/5/58/Phosphoric-acid-2D-dimensions.png¦</td>
+			</tr>
+		</table>
+		<table class="WTable">
+			<tr>
+				<th>attrezzo</th>
+				<th>quantità</th>
+				<th>descrizione</th>
+				<th>immagine</th>
+			</tr>
+			<tr>
+				<td>|b| spruzzetta¦ in polietilene</td>
+				<td>|Cs|1|Ce|</td>
+				<td>utilizzato per contenere l'|H2O|</td>
+				<td>|img| http://www.tardivello.com/images/bottiglia-spruzzetta.png¦</td>
+			</tr>
+			<tr>
+				<td>|b| portaprovette¦</td>
+				<td>|Cs|1|Ce|</td>
+				<td>utilizzato per tenere le |b| provette¦</td>
+				<td>|img| https://www.sentineldiagnostics.com/wp-content/uploads/sites/3/clinica-chimica-overlay.png¦</td>
+			</tr>
+			<tr class="tr-sep"/>
+			<tr>
+				<td>|b| matraccio¦</td>
+				<td>|Cs|6|Ce|</td>
+				<td>utilizzato per contenere le soluzioni</td>
+				<td>|img| https://sc04.alicdn.com/kf/H46b7400b319943fd8309b2cfbf8b6011X.png¦</td>
+			</tr>
+			<tr>
+				<td>|b| tappo¦ per matraccio</td>
+				<td>|Cs|6|Ce|</td>
+				<td>utilizzato per contenere le soluzioni dentro ai |b| matracci¦ nel momento in cui si debbano mescolare scuotendole</td>
+				<td><img src="https://www.biosigma.it/images/products/0H-13-06.jpg" style="border-radius:.8em;"></img></td>
+			</tr>
+			<tr>
+				<td>|b| provetta¦</td>
+				<td>|Cs|6|Ce|</td>
+				<td>utilizzata per contenere le soluzioni</td>
+				<td>|img| https://images.emojiterra.com/openmoji/v13.1/512px/1f9ea.png¦</td>
+			</tr>
+		</table>
+		<table class="WTable">
+			<tr>
+				<th>strumento di misura</th>
+				<th>quantità</th>
+				<th>descrizione</th>
+				<th>immagine</th>
+			</tr>
+			<tr>
+				<td>|b| contagocce¦</td>
+				<td>|Cs|2|Ce|</td>
+				<td>utilizzati per prelevare l'|H2O|</td>
+				<td>|img| https://static.bormiolipharma.com/AF722VPVB05.png¦</td>
+			</tr>
+			<tr>
+				<td>|b| pipetta¦ graduata</td>
+				<td>|Cs|3|Ce|</td>
+				<td>utilizzati per prelevare i tre acidi</td>
+				<td>|img| https://cdn.lifestylepackaging.com/wp-content/uploads/grad-dropper.png¦</td>
+			</tr>
+		</table>
+		<span style="display:block;text-align:center;">foglio e penna per prendere appunti</span>
+	¦
+	|paragraph|
+		|title| procedimento¦
+		Osservazione del procedimento compiuto dal gruppo di |i| Bertazzi Mattia¦, |i| Casalino Francesco Vito¦ e |i| Necciari Edoardo¦:
+		<ol>
+			<li>Hanno preso posto in una postazione precedentemente preparata dall'assistente di laboratorio.</li>
+			<li>Preparazione del piano di lavoro.
+				<ol>
+					<li>Erano precedentemente stati predisposti dall’assistente di laboratorio i tre acidi in distinti contenitori:
+						<ul>
+							<li>|CH3COOH| |cs|1M|ce|</li>
+							<li>|HCl| |cs|1M|ce|</li>
+							<li>|H3PO4| |cs|1M|ce|</li>
+						</ul>
+					</li>
+					<li>È stato precedentemente predisposto dall'assistente di laboratorio il |b| rosso cresolo¦.</li>
+					<li>Erano precedentemente stati predisposti dall’assistente di laboratorio:
+						<ul>
+							<li>il |b| portaprovette¦,</li>
+							<li>le |cs|6|ce| |b| provette¦,</li>
+							<li>le |cs|3|ce| |b| pipette¦ graduate e</li>
+							<li>la |b| spruzzetta¦ contenente |H2O|.</li>
+						</ul>
+					</li>
+				</ol>
+			</li>
+			<li>Dopodiché il professore e l'assistente di laboratorio hanno esposto la procedura da eseguire.</li>
+			|i| Inizio procedura esperimento:¦
+			<li>Hanno svolto i calcoli per determinare le quantità di |H2O| e di rispettivo |b| acido¦ da introdurre nei |b| matracci¦ affinché si ottenessero, per ogni |b| acido¦, una soluzione |cs|0\ldotp5M|ce| e |cs|0\ldotp1M|ce|.</li>
+			<li>Nei primi |cs|3|ce| |b| matracci¦:
+				<ol>
+					<li>Hanno versato, tramite l'ausilio delle |b| pipette¦ graduate, rispettivamente:
+						<ul>
+							<li>|cs|25mL|ce| di |CH3COOH| |cs|1M|ce|</li>
+							<li>|cs|25mL|ce| di |HCl| |cs|1M|ce|</li>
+							<li>|cs|25mL|ce| di |H3PO4| |cs|1M|ce|</li>
+						</ul>
+					</li>
+					<li>E hanno introdotto in ciascuno di essi |cs|25mL|ce| di |H2O| per portare i rispettivi acidi ad una Molarità pari a |cs|0\ldotp5|ce| e un volume pari a |cs|50mL|ce|.</li>
+				</ol>
+			</li>
+			<li>Nei successivi |cs|3|ce| |b| matracci¦:
+				<ol>
+					<li>Hanno versato, tramite l'ausilio delle |b| pipette¦ graduate, rispettivamente:
+						<ul>
+							<li>|cs|5mL|ce| di |CH3COOH| |cs|1M|ce|</li>
+							<li>|cs|5mL|ce| di |HCl| |cs|1M|ce|</li>
+							<li>|cs|5mL|ce| di |H3PO4| |cs|1M|ce|</li>
+						</ul>
+					</li>
+					<li>E hanno introdotto in ciascuno di essi |cs|45mL|ce| di |H2O| per portare i rispettivi acidi ad una Molarità pari a |cs|0\ldotp1|ce| e un volume pari a |cs|50mL|ce|.</li>
+				</ol>
+			</li>
+			<li>Dopodiché hanno miscelato le soluzioni:
+				<ol>
+					<li>Hanno chiuso i |cs|6|ce| |b| matracci¦ con i rispettivi |b| tappi¦ per matracci.</li>
+					<li>Hanno scosso i |b| matracci¦ sul lavandino.</li>
+					<li>Hanno rimosso i |b| tappi¦ per matracci dai |b| matracci¦.</li>
+				</ol>
+			</li>
+			<li>Successivamente hanno riversato la soluzione contenuta in ciascun |b| matraccio¦ nella rispettiva |b| provetta¦ posta sul |b| portaprovette¦ riempiedole, quest'ultime, fino a metà.</li>
+			<li>In seguito hanno introdotto |cs|3 gocce|ce| di |b| rosso cresolo¦ |comment| l'indicatore di pH¦ in ciascuna |b| provetta¦. Potendo osservare le colorazioni che assumevano.</li>
+			<li>Infine hanno pulito l’attrezzatura utilizzata tramite i lavandini del laboratorio.</li>
+		</ol>
+		|§|
+		Dopodiché ho steso la relazione di laboratorio.
+	¦
+	|paragraph|
+		|title| premesse teoriche¦
+		<table>
+			<tr>
+				<th>tradizionale</th>
+				<th>IUPAC</th>
+				<th>formula</th>
+				<th>immagine|§||comment| se presente¦</th>
+			</tr>
+			<tr>
+				<td>|b| acqua¦ distillata</td>
+				<td>ossido di diidrogeno</td>
+				<td>|cs|H2O|ce|</td>
+				<td>|img| https://useruploads.socratic.org/hdkH7RCQkOl7E9AubaxQ_770px-Water-2D-flat.png¦</td>
+			</tr>
+			<tr>
+				<td>|b| rosso cresolo¦</td>
+				<td>4-[ 3-( 4-Idrossi-3-metilfenil )-1, 1-diossobenzo [c] ossatiolo-3-il ]-2-metilfenolo</td>
+				<td>|cs|C21H17NaO5S|ce|</td>
+				<td>|img| https://www.chemspider.com/ImagesHandler.ashx?id=101179&w=500&h=500¦</td>
+			</tr>
+			<tr class="tr-sep"/>
+			<tr>
+				<td>|b| acido acetico¦</td>
+				<td>acido etanoico</td>
+				<td>|cs|CH3COOH|ce|</td>
+				<td>|img| https://5.imimg.com/data5/SELLER/Default/2022/2/TY/VO/FT/47975843/acetic-acid-500x500.png¦</td>
+			</tr>
+			<tr>
+				<td>|b| acido cloridrico¦</td>
+				<td>cloruro di idrogeno</td>
+				<td>|cs|HCl|ce|</td>
+				<td>|img| https://alchetron.com/cdn/hydrogen-chloride-be6f4c1c-f10f-4a56-b049-fd919d2a15c-resize-750.gif¦</td>
+			</tr>
+			<tr>
+				<td>|b| acido ortofosforico¦</td>
+				<td>acido tetraossofosforico (V)</td>
+				<td>|cs|H3PO4|ce|</td>
+				<td>|img| https://upload.wikimedia.org/wikipedia/commons/5/58/Phosphoric-acid-2D-dimensions.png¦</td>
+			</tr>
+			<tr class="tr-sep"/>
+			<tr>
+				<td>|b| idrone¦</td>
+				<td>idrone</td>
+				<td>|cs|H+|ce|</td>
+				<td>|img| https://www.chemspider.com/ImagesHandler.ashx?id=1010&w=150&h=150¦</td>
+			</tr>
+			<tr>
+				<td>|b| gruppo idrossile¦</td>
+				<td>gruppo idrossilico</td>
+				<td>|cs|OH-|ce|</td>
+				<td>|img| https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Hydroxide_lone_pairs-2D.svg/640px-Hydroxide_lone_pairs-2D.svg.png¦</td>
+			</tr>
+		</table>
+		|paragraph|
+			Il |pH| (pondus hydrogenii) è una grandezza che misura l’|b| acidità¦ o la |b| basicità¦ di una soluzione. Esso è determinato dal rapporto tra il numero di |H+s| ed il numero di |OH-s|.
+			<ul>
+				<li>
+					Se il numero di |H+s| è <span class="red-evidence">maggiore</span> del numero di |OH-s|:|§|
+					la soluzione è acida e il |pH| è inferiore a 7.
+					|Ms|\ce{pH}\lt7\text{ }\Rightarrow\text{acida}|Me|
+				</li>
+				<li>
+					Se il numero di |H+s| è <span class="red-evidence">pari</span> al numero di |OH-s|:|§|
+					la soluzione è neutra e il |pH| è equivalente a 7.
+					|Ms|\ce{pH}=7\text{ }\Rightarrow\text{neutra}|Me|
+				</li>
+				<li>
+					Se il numero di |H+s| è <span class="red-evidence">minore</span> del numero di |OH-s|:|§|
+					la soluzione è basica e il |pH| è superiore a 7.
+					|Ms|\ce{pH}\gt7\text{ }\Rightarrow\text{basica}|Me|
+				</li>
+			</ul>
+		¦
+		|paragraph|
+			La misura |qot| |ms|1|me| Molare¦ equivale al rapporto tra una mole ed un litro:
+			|Ms|\ce{1M}=\frac{\ce{1mol}}{\ce{1L}}|Me|
+			ergo una misura |cs|n|ce| Molare equivarrà al rapporto tra |cs|n|ce| moli ed un litro:
+			|Ms|\ce{n·M}=\frac{\ce{n·mol}}{\ce{1L}}|Me|
+			Quindi data una soluzione |ms|Z|me| la sua Molarità sarà:
+			|Ms|
+				{{\text{Molarità di }Z}={\frac{\text{moli di }Z}{\text{volume di }Z}}}
+				\quad\text{con}\quad
+				{{\text{moli di }Z}={\frac{\text{massa soluto}}{\text{massa molare}}}}
+			|Me|
+			Da ciò possiamo osservare che Molarità e volume abbiano una proporzionalità, e più specificatamente, questa sia inversa:
+			|Ms|{\text{Molarità di }Z}\ \propto \ {\left({\text{volume di }Z}\right)^{-1}}|Me|
+		¦
+		|paragraph|
+			In una diluizione avremo:
+			<ul>
+				<li>una |i| Molarità iniziale¦ di una soluzione: |ms|{\text{1ª Molarità di }Z}|me|</li>
+				<li>la |i| Molarità finale¦ della stessa soluzione: |ms|{\text{2ª Molarità di }Z}|me|</li>
+				<li>un |i| volume iniziale¦ di questa: |ms|{\text{1º volume di }Z}|me|</li>
+				<li>e un |i| volume finale¦ della medesima: |ms|{\text{2º volume di }Z}|me|</li>
+			</ul>
+			in cui la |i| Molarità finale¦ sarà equivalente al prodotto tra la |i| Molarità iniziale¦ e il rapporto tra il |i| volume iniziale¦ e il medesimo |i| finale¦:
+			|Ms|{\text{2ª Molarità di }Z}={\text{1ª Molarità di }Z}·\frac{\text{1º volume di }Z}{\text{2º volume di }Z}|Me|
+			|egp|
+				|Eg|:|§|
+				Data una soluzione |cs|0\ldotp6M|ce|, avente inizialmente un volume pari a |cs|2L|ce| e volume finale pari a |cs|3L|ce|, questo avrà una Molarità finale pari a:
+				|Ms|
+					{\text{2ª Molarità di }Z}={\text{1ª Molarità di }Z}·\frac{\text{1º volume di }Z}{\text{2º volume di }Z}
+					\quad \text{con} \quad
+					\begin{cases}
+						\begin{align}
+							{\text{1ª Molarità di }Z}&=\ce{0\ldotp6M}\\
+							{\text{1º volume di }Z}&=\ce{2L}\\
+							{\text{2º volume di }Z}&=\ce{3L}
+						\end{align}
+					\end{cases}
+					\\ \Downarrow \\
+					{\text{2ª Molarità di }Z}={\ce{0\ldotp6M}}·\frac{\ce{2L}}{\ce{3L}}
+					\\ \Downarrow \\
+					{\text{2ª Molarità di }Z}={\ce{0\ldotp4M}}
+				|Me|
+			¦
+			Basandoci invece sul volume della soluzione iniziale e volume dell'acqua distillata (|cs|H2O|ce|), introdotta nella soluzione allo scopo di diluirla, avremo:
+			<ul>
+				<li>una |i| Molarità iniziale¦ di una soluzione: |ms|{\text{1ª Molarità di }Z}|me|</li>
+				<li>la |i| Molarità finale¦ della stessa soluzione: |ms|{\text{2ª Molarità di }Z}|me|</li>
+				<li>il |i| volume¦ di questa: |ms|{\text{volume di }Z}|me|</li>
+				<li>e il |i| volume introdotto¦ ai fini di diluirla: |ms|{\text{volume introdotto}}|me|</li>
+			</ul>
+			in cui la |i| Molarità finale¦ sarà equivalente al prodotto tra la |i| Molarità iniziale¦ e il rapporto tra il |i| volume¦ e la somma tra |i| quest'ultimo¦ e quello |i| introdotto¦:
+			|Ms|{\text{2ª Molarità di }Z}={\text{1ª Molarità di }Z}·\frac{\text{volume di }Z}{{\text{volume di }Z}+{\text{volume introdotto}}}|Me|
+			|dem|
+				poichè essa costituirebbe il precedente enunciato al quale sia posto il |i| volume¦ della soluzione come il |i| volume iniziale¦ della soluzione e il |i| volume introdotto¦ come differenza tra il |i| volume finale¦ e il |i| volume iniziale¦:
+				|Ms|
+					\left\{\begin{align}
+						&{\text{2ª Molarità di }Z}={\text{1ª Molarità di }Z}·\frac{\text{1º volume di }Z}{\text{2º volume di }Z}\\
+						&\small{
+							\text{con} \
+							\begin{cases}
+								\begin{aligned}
+									{\text{volume di }Z}&={\text{1º volume di }Z}\\
+									{\text{volume introdotto}}&={{\text{2º volume di }Z}-{\text{1º volume di }Z}}
+								\end{aligned}
+							\end{cases}
+						}
+					\end{align}\right.
+				|Me|
+				|Ms|
+					\\ \Downarrow \\
+				|Me|
+				|Ms|
+					\left\{\begin{align}
+						&{\text{2ª Molarità di }Z}={\text{1ª Molarità di }Z}·\frac{\text{1º volume di }Z}{\text{2º volume di }Z}\\
+						&\small{
+							\text{con} \
+							\begin{cases}
+								\begin{aligned}
+									{\text{1º volume di }Z}&={\text{volume di }Z}\\
+									{\text{2º volume di }Z}&={{\text{volume introdotto}}+{\text{1º volume di }Z}}
+								\end{aligned}
+							\end{cases}
+						}
+					\end{align}\right.
+				|Me|
+				|Ms|
+					\\ \Downarrow \\
+				|Me|
+				|Ms|{\text{2ª Molarità di }Z}={\text{1ª Molarità di }Z}·\frac{\text{volume di }Z}{{\text{volume di }Z}+{\text{volume introdotto}}}|Me|
+			¦
+			|egp|
+				|Eg|:|§|
+				Avendo una soluzione |cs|0\ldotp6M|ce| con volume pari a |cs|2L|ce| e miscelandola con |cs|1L|ce| di acqua distillata (|cs|H2O|ce|) questo assumerà una Molarità finale pari a:
+				|Ms|
+					\left\{\begin{align}
+						&{\text{2ª Molarità di }Z}={\text{1ª Molarità di }Z}·\frac{\text{volume di }Z}{{\text{volume di }Z}+{\text{volume introdotto}}}\\
+						&\small{
+							\text{con} \
+							\begin{cases}
+								\begin{aligned}
+									{\text{1ª Molarità di }Z}&=\ce{0\ldotp6M}\\
+									{\text{volume di }Z}&=\ce{2L}\\
+									{\text{volume introdotto}}&=\ce{1L}
+								\end{aligned}
+							\end{cases}
+						}
+					\end{align}\right.
+					\\ \Downarrow \\
+					{\text{2ª Molarità di }Z}={\ce{0\ldotp6M}}·\frac{\ce{2L}}{{\ce{2L}}+{\ce{1L}}}
+					\\ \Downarrow \\
+					{\text{2ª Molarità di }Z}={\ce{0\ldotp4M}}
+				|Me|
+			¦
+		¦
+		|paragraph|
+			Considerando la Molarità |i| iniaizle¦ e |i| finale¦ di una soluzione come primo e secondo elemento dell'insieme |ms|M|me| delle molarità della soluzione possiamo indicare:
+			|Ms|
+				M:\ \{{\ \text{1ª Molarità di }Z},\ {\text{2ª Molarità di }Z}\ \}\\
+				\begin{align}
+					{\text{1ª Molarità di }Z}&=M\[1\]\\
+					{\text{2ª Molarità di }Z}&=M\[2\]
+				\end{align}
+			|Me|
+			Considerando il volume |i| iniaizle¦ e |i| finale¦ di una soluzione come primo e secondo elemento dell'insieme |ms|V|me| dei volumi possiamo indicare:
+			|Ms|
+				V:\ \{{\ \text{1º Volume di }Z},\ {\text{2º Volume di }Z}\ \}\\
+				\begin{align}
+					{\text{1º Volume di }Z}&=V\[1\]\\
+					{\text{2º Volume di }Z}&=V\[2\]
+				\end{align}
+			|Me|
+			E considerando il |i| volume¦ della soluzione e il |i| volume introdotto¦ come elementi |ms|Z|me| e |ms|d|me| dell'insieme |ms|V|me| dei volumi possiamo indicare:
+			|Ms|
+				V:\ \{{\ \text{Volume di }Z},\ {\text{Volume introdotto}}\ \}\\
+				\begin{align}
+					{\text{Volume di }Z}&=V\[Z\]\\
+					{\text{Volume introdotto}}&=V\[d\]
+				\end{align}
+			|Me|
+			Di conseguenza possiamo comprimere le formule in:
+			|Ms|
+				\begin{cases}{
+					\begin{cases}
+						\begin{align}
+							{\text{2ª Molarità di }Z}&={\text{1ª Molarità di }Z}·\frac{\text{1º volume di }Z}{\text{2º volume di }Z}\\
+							{\text{2ª Molarità di }Z}&={\text{1ª Molarità di }Z}·\frac{\text{volume di }Z}{{\text{volume di }Z}+{\text{volume introdotto}}}
+						\end{align}
+					\end{cases}\\
+					\begin{cases}
+						\begin{aligned}
+							{\text{1ª Molarità di }Z}&=M\[1\]\\
+							{\text{2ª Molarità di }Z}&=M\[2\]\\
+							{\text{1º Volume di }Z}&=V\[1\]\\
+							{\text{2º Volume di }Z}&=V\[2\]\\
+							{\text{Volume di }Z}&=V\[Z\]\\
+							{\text{Volume introdotto}}&=V\[d\]
+						\end{aligned}
+					\end{cases}
+				}\end{cases}
+				\\ \Downarrow \\
+				\begin{cases}
+					\begin{aligned}
+						{M\[2\]}&={M\[1\]}·\frac{V\[1\]}{V\[2\]}\\
+						{M\[2\]}&={M\[1\]}·\frac{V\[Z\]}{{V\[Z\]}+{V\[d\]}}
+					\end{aligned}
+				\end{cases}
+			|Me|
+		¦
+	¦
+	|paragraph|
+		|titles| |titel| Calcoli¦ e |titel| Procedimento logico¦¦
+		|paragraph|
+			Tramite le precedenti premesse possiamo trovare il volume dei |cs|3|ce| |b| acidi¦ |cs|1M|ce| e di |H2O| da aggiungere ai questi ultimi affinché si ottengano delle soluzioni |cs|0\ldotp5M|ce| e |cs|0\ldotp1M|ce|.|§|
+			|§|
+			Sappiamo infatti che la |i| Molarità finale¦ in una diluizione con dell'acqua distillata (|cs|H2O|ce|) equivalga al prodotto tra la |i| Molarità iniziale¦ dell'|b| acido¦ e il rapporto tra il |i| volume iniziale¦ dell'|b| acido¦ e il |i| volume finale¦ della soluzione:
+			|Ms|{M\[2\]}={M\[1\]}·\frac{V\[1\]}{V\[2\]}|Me|
+			conoscendo ciò possiamo trovare che il |i| volume iniziale¦ dell'|b| acido¦ sia uguale al prodotto tra il |i| volume finale¦ della soluzione e il rapporto tra la |i| Molarità finale¦ da ottenere e la |i| Molarità iniziale¦ dell'|b| acido¦, poiché formula inversa:
+			|Ms|{V\[1\]}={V\[2\]}·\frac{M\[2\]}{M\[1\]}|Me|
+			Dopodiché possiamo ottenere il |i| volume iniziale¦ di |b| acido¦ da aggiungere sapendo che le |i| molarità iniziali¦ siano equivalenti a |cs|1M|ce|, che le |i| molarità¦ da raggiungere siano |cs|0\ldotp5M|ce| e |cs|0\ldotp1M|ce| e che il |i| volume¦ da raggiungere sia equivalente a |cs|50mL|ce|:
+			|Ms|
+				{V\[1\]}={V\[2\]}·\frac{M\[2\]}{M\[1\]}
+				\quad \text{con} \
+				\begin{cases}
+					\begin{align}
+						M\[1\]&=\ce{1M} \\
+						M\[2\]&=\ce{0\ldotp5M} \land \ce{0\ldotp1M} \\
+						V\[1\]&=\ce{50mL}
+					\end{align}
+				\end{cases}
+				\\ \Downarrow \\
+				{V\[1\]}={\ce{50mL}}·\frac{\ce{0\ldotp5M}}{\ce{1M}}
+				\ \land \
+				{V\[1\]}={\ce{50mL}}·\frac{\ce{0\ldotp1M}}{\ce{1M}}
+				\\ \Downarrow \\
+				{V\[1\]}={\ce{25mL}}
+				\ \land \
+				{V\[1\]}={\ce{5mL}}
+			|Me|
+			Infine, sapendo il |i| volume finale¦ della soluzione da ottenere sia |cs|50mL|ce| e che i |i| volumi¦ di |b| acido¦ da introdurre in ciascuno dei |cs|6|ce| |b| matracci¦ sono rispettivamente |cs|25mL|ce| e |cs|5mL|ce|, come appena calcolato, possiamo esprimere il |i| volume da introdurre¦ di |H2O| come la differenza tra il |i| volume finale¦ e il |i| volume di |b| acido¦¦ già presente:
+			|Ms|{{\text{volume da introdurre}}={\text{volume finale di }Z}-{\text{volume iniziale di }Z}}|Me|
+			e possiamo quindi calcolarlo:
+			|Ms|
+				{{\text{volume da introdurre}}={\text{volume finale di }Z}-{\text{volume iniziale di }Z}}
+				\quad \text{con} \
+				\begin{cases}
+					\begin{align}
+						{\text{volume finale di }Z}&=\ce{50mL} \\
+						{\text{volume iniziale di }Z}&=\ce{25mL} \land \ce{5mL}
+					\end{align}
+				\end{cases}
+				\\ \Downarrow \\
+				{{\text{volume da introdurre}}=\ce{50mL}-\ce{25mL}}
+				\ \land \
+				{{\text{volume da introdurre}}=\ce{50mL}-\ce{5mL}}
+				\\ \Downarrow \\
+				{{\text{volume da introdurre}}=\ce{25mL}}
+				\ \land \
+				{{\text{volume da introdurre}}=\ce{45mL}}
+			|Me|
+			ottenendo che i volumi di |H2O| da introdurre nei |cs|6|ce| |b| matracci¦ sono rispettivamente |cs|25mL|ce| e |cs|45mL|ce|.
+		¦
+		Possiamo quindi riassumere i risultati ottenuti in una tabella riassuntiva:
+		<table>
+			<tr>
+				<th></th>
+				<th>rispettivo volume di |b| acido¦ da introdurre</th>
+				<th>volume di |H2O| da introdurre</th>
+			</tr>
+			<tr>
+				<th>primi |ms|3|me| |b| matracci¦|§||comment| |cs|0\ldotp5M|ce|¦</th>
+				<td>|cs|25mL|ce|</td>
+				<td>|cs|25mL|ce|</td>
+			</tr>
+			<tr>
+				<th>secondi |ms|3|me| |b| matracci¦|§||comment| |cs|0\ldotp1M|ce|¦</th>
+				<td>|cs|5mL|ce|</td>
+				<td>|cs|45mL|ce|</td>
+			</tr>
+		</table>
+	¦
+	|paragraph|
+		|title| osservazioni¦
+		|paragraph|
+			Successvamente all'esperienza, il professore con l'assistente di laboratorio hanno provato a misurare il |pH| di alcune soluzioni con uno strumento digitale ma non sembrava funzionare correttamente.
+		¦
+	¦
+	|paragraph|
+		|title| conclusioni¦
+		L'esperienza di laboratorio sull'|CH3COOH|, l'|HCl| e l'|H3PO4| è stata svolta.|§|
+		Inoltre sono riusciti a decretare un ordine relativo di acidità dei |ms|3|me| |b| acidi¦ confrontando le colorazioni assunte dalle |b| soluzioni¦ con l'introduzione di |b| rosso cresolo¦.
+	¦
+</div>
+
+</body>
+</html>
