@@ -1,0 +1,163 @@
+
+:root {
+	---BodyBackground: auto;
+	---BodyBackgroundColor: auto;
+	---AllElemTransDur: 800ms;
+	---AllElemFirstLetterBackground: auto;
+	---AllElemFirstLetterColor: auto;
+	---AllElemFirstLetterFontSize: auto;
+	---AllElemFirstLetterFontWeight: normal;
+	---AllElemFirstLetterTextShadow: auto;
+	---AllElemFirstLetterTransform: ;
+	---AllElemFirstLineBackground: auto;
+	---AllElemFirstLineColor: auto;
+	---AllElemFirstLineFontSize: auto;
+	---AllElemFirstLineFontWeight: normal;
+	---AllElemFirstLineTextShadow: auto;
+	---AllElemFirstLineTransform: ;
+	---AllElemMarkerBackground: auto;
+	---AllElemMarkerColor: auto;
+	---AllElemMarkerFontSize: auto;
+	---AllElemMarkerFontWeight: normal;
+	---AllElemMarkerTextShadow: auto;
+	---AllElemMarkerTransform: ;
+	---AllElemSelectionBackground: #69B1FD; /*rgb(104.85714285714, 177.28571428571, 253.14285714286)*/
+	---AllElemSelectionColor: #FFF;
+	---AllElemSelectionFontSize: auto;
+	---AllElemSelectionFontWeight: normal;
+	---AllElemSelectionTextShadow: none;
+	---AllElemSelectionTransform: ;
+	---TabSize: 4;
+}
+
+* {
+	transition-duration: var(---AllElemTransDur);
+} *::first-letter {
+	background: var(---AllElemFirstLetterBackground);
+	color: var(---AllElemFirstLetterColor);
+	font-size: var(---AllElemFirstLetterFontSize);
+	font-weight: var(---AllElemFirstLetterFontWeight);
+	text-shadow: var(---AllElemFirstLetterTextShadow);
+	transform: var(---AllElemFirstLetterTransform);
+} *::first-letter::selection {
+	background: var(---AllElemSelectionBackground);
+	color: var(---AllElemSelectionColor);
+	font-size: var(---AllElemSelectionFontSize);
+	font-weight: var(---AllElemSelectionFontWeight);
+	text-shadow: var(---AllElemSelectionTextShadow);
+	transform: var(---AllElemSelectionTransform);
+} *::first-line {
+	background: var(---AllElemFirstLineBackground);
+	color: var(---AllElemFirstLineColor);
+	font-size: var(---AllElemFirstLineFontSize);
+	font-weight: var(---AllElemFirstLineFontWeight);
+	text-shadow: var(---AllElemFirstLineTextShadow);
+	transform: var(---AllElemFirstLineTransform);
+} *::marker {
+	background: var(---AllElemMarkerBackground);
+	color: var(---AllElemMarkerColor);
+	font-size: var(---AllElemMarkerFontSize);
+	font-weight: var(---AllElemMarkerFontWeight);
+	text-shadow: var(---AllElemMarkerTextShadow);
+	transform: var(---AllElemMarkerTransform);
+} *::selection {
+	background: var(---AllElemSelectionBackground);
+	color: var(---AllElemSelectionColor);
+	font-size: var(---AllElemSelectionFontSize);
+	font-weight: var(---AllElemSelectionFontWeight);
+	text-shadow: var(---AllElemSelectionTextShadow);
+	transform: var(---AllElemSelectionTransform);
+}
+
+body {
+	border: none;
+	outline: 0;
+	margin: 0;
+	padding: 1em;
+	background: var(---BodyBackground);
+	background-color: var(---BodyBackgroundColor);
+}
+
+pre, textarea {
+	-moz-tab-size: var(---TabSize);
+	  -o-tab-size: var(---TabSize);
+	     tab-size: var(---TabSize);
+}
+
+#_Help, #_H {
+	visibility: hidden;
+} #_Help *, #_H * {
+	display: none;
+	height: 0;
+	width: 0;
+} #_Help::before, #_H::before { 
+	display: block;
+	visibility: visible;
+	font-family: inherit;
+	font-family: 'Courier New', monospace;
+	font-family: "Tahoma", monospace;
+	content: 'Vars (--):\a \a ---AllElemTransDur: 800ms\a ---AllElemFirstLetterBackground: auto\a ---AllElemFirstLetterColor: auto\a ---AllElemFirstLetterFontSize: auto\a ---AllElemFirstLetterFontWeight: normal\a ---AllElemFirstLetterTextShadow: auto\a ---AllElemFirstLetterTransform:\a ---AllElemFirstLineBackground: auto\a ---AllElemFirstLineColor: auto\a ---AllElemFirstLineFontSize: auto\a ---AllElemFirstLineFontWeight: normal\a ---AllElemFirstLineTextShadow: auto\a ---AllElemFirstLineTransform:\a ---AllElemMarkerBackground: auto\a ---AllElemMarkerColor: auto\a ---AllElemMarkerFontSize: auto\a ---AllElemMarkerFontWeight: normal\a ---AllElemMarkerTextShadow: auto\a ---AllElemMarkerTransform:\a ---AllElemSelectionBackground: #69B1FD\a ---AllElemSelectionColor: #FFF\a ---AllElemSelectionFontSize: auto\a ---AllElemSelectionFontWeight: normal\a ---AllElemSelectionTextShadow: none\a ---AllElemSelectionTransform: \a ---TabSize: 4\a \a Tag ( ):\a \a *\a body\a pre\a textarea\a \a \a Id (#):\a \a #_Help, #_H\a \a \a Classes (.):\a \a ._BorderMarginPadding0, ._BMP\a ._BorderOutlineMarginPadding0, ._BOMP\a ._Center, ._C\a ._DisplayNone, ._DN\a ._HideScrollBar, ._HSB\a ._NoSelect, ._NS\a ._PositionRelative, ._PR\a ._PositionAbsolute, ._PA\a ._PositionFixed, ._PF\a ';
+	white-space: pre;
+}
+
+._BorderMarginPadding0, ._BMP {
+	border: none;
+	margin: 0;
+	padding: 0;
+}
+
+._BorderOutlineMarginPadding0, ._BOMP {
+	border: none;
+	outline: 0;
+	margin: 0;
+	padding: 0;
+}
+
+._Center, ._C {
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+
+._CenterX, ._CX {
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+._CenterY, ._CY {
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+._DisplayNone, ._DN {
+	display: none;
+}
+
+._HideScrollBar, ._HSB {
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+	overflow: hidden;
+} ._HideScrollBar::-webkit-scrollbar, ._HSB::-webkit-scrollbar {
+    display: none;
+}
+
+._NoSelect, ._NS {
+	-webkit-touch-callout: none;
+	  -webkit-user-select: none;
+	   -khtml-user-select: none;
+	     -moz-user-select: none;
+	      -ms-user-select: none;
+	          user-select: none;
+}
+
+._PositionRelative, ._PR {
+	position: relative;
+}
+
+._PositionAbsolute, ._PA {
+	position: absolute;
+}
+
+._PositionFixed, ._PF {
+	position: fixed;
+}
