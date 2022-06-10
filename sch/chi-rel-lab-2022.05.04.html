@@ -1,0 +1,1148 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Relazione di Laboratorio</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Mono">
+	<link rel="stylesheet" href="https://2wtnt.tk/css.css">
+	<script type="text/javascript" src="https://2wtnt.tk/js.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+	<script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML' async></script>
+	<script type="text/javascript">try{MathJax.Hub.Config({tex2jax:{inlineMath:[['$','$'],["//(","//)"]],processEscapes:true}})}catch{}</script>
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@1,700&display=swap');
+
+/* *:not(pre):not(textarea) {
+	font-family: 'Lucida Console', monospace;
+	font-family: 'Ubuntu Mono', monospace;
+} */
+
+* {
+	font-family: Helvetica, sans-serif;
+	margin: 10px auto;
+} *::first-letter {
+	font-weight: unset;
+	color: unset;
+	background: unset;
+} *::first-line {
+	font-weight: unset;
+	color: unset;
+	background: unset;
+}
+
+::-moz-selection {
+	background: rgba(0,255,255,.2);
+	color: unset;
+} ::selection {
+	background: rgba(0,255,255,.2);
+	color: unset;
+}
+
+body {
+} body::-webkit-scrollbar {
+	width: 1.5rem;
+} body::-webkit-scrollbar-track {
+	display: none;
+} body::-webkit-scrollbar-thumb {
+	background: silver;
+	background:
+		linear-gradient(top, transparent 5px, black 5px, black 50%, transparent 50%),	linear-gradient(bottom, transparent 5px, black 5px, black 50%, transparent 50%),
+		radial-gradient(circle, black 5px, transparent 5px) -2px 59%,
+		radial-gradient(circle, black 5px, transparent 5px) -2px 41%;
+	background-size: 100% 100%, 100% 100%, 15px 50%, 15px 50%;
+	background-clip: padding-box;
+	border: 0.5rem solid transparent;
+	border-radius: 1.5rem;
+	z-index: -1;
+	/*credits: https://gist.github.com/zoreet/1550217/8dff57fc6941ae4652faea7ff62f2b9a5c8767ef*/
+} body::-webkit-scrollbar-thumb:hover {
+	background-color: hsla(170,3%,33%,.8);
+}
+
+textarea, pre {
+	-moz-tab-size: 4;
+	  -o-tab-size: 4;
+	     tab-size: 4;
+}
+
+#no-js {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100vw;
+	height: 100vh;
+	padding: 0px;
+	margin: 0px;
+	border: 0px;
+	background: rgba(245,245,245,1);
+	z-index: 1000000;
+} #no-js > p {
+	position: absolute;
+	left: 50%;
+	top: 45%;
+	transform: translate(-50%,-50%);
+}
+
+table {
+	border: 2px solid black;
+	border-radius: 4px;
+	padding: 1px;
+	border-collapse: collapse;
+} table tr, table td, table th {
+	border: 2px;
+	padding: 2px;
+} table td, table th {
+	border: 1px solid black;
+	text-align: center;
+} table th {
+	background: rgba(88,88,88,.5);
+	font-weight: normal;
+}
+
+ol {
+	counter-reset: item;
+} ol li:not(ul li) {
+	display: block;
+} ol li:before {
+	content: counters(item,".") ")\00A0\00A0";
+	counter-increment: item;
+} ul li:before {
+	content: none;
+}
+
+.intro {
+	text-align: center;
+}
+
+.comment {
+	opacity: .54;
+} .comment:before {
+	/*content: '(';*/
+} .comment:after {
+	/*content: ')';*/
+}
+
+.paragraph {
+	background: rgba(180,180,200,.02);
+	margin: 20px auto 30px 0px;
+	border-radius: 1em;
+	padding: 0px 4px;
+}
+
+.title {
+	/*font-weight: bold;*/
+} .title::first-letter {
+	text-transform: uppercase;
+}
+
+.titles {
+} .titles > .titel {
+	/*font-weight: bold;*/
+} .titles > .titel::first-letter {
+	text-transform: uppercase !important;
+}
+
+.title, .titles {
+	margin: 50px auto 20px auto;
+	font-size: 150%;
+}
+
+.WTable {
+	width: 100%;
+}
+
+img {
+	height: 90%;
+	width: 90%;
+	max-height: 8em;
+	max-width: 8em;
+	object-fit: contain;
+}
+
+.qot {
+	font-style: italic;
+} .qot:before {
+	/*content: '“';*/
+} .qot:after {
+	/*content: '”';*/
+}
+
+.red-evidence {
+	color: rgba(128,0,0,1);
+}
+
+.ref-step a, .comment a {
+	color: unset;
+}
+
+.egp {
+	font-size: 86%;
+	opacity: .86;
+}
+
+.dem {
+	font-size: 93%;
+	opacity: .93;
+}
+
+.MathJax_Display {
+	margin: 1em 0em 1.2em 0em !important;
+}
+
+</style>
+<script>
+
+function interpreter() {
+	let tab = [
+		['¦','</div>'],
+
+		['|§|','<br />'],
+		['|ms|','\\('],
+		['|me|','\\)'],
+		['|Ms|','$$$'],
+		['|Me|','$$$'],
+		['|cs|','\\(\\ce{'],
+		['|ce|','}\\)'],
+		['|Cs|','$$$\\ce{'],
+		['|Ce|','}$$$'],
+		['|eg|','e.g.'],
+		['|Eg|','E.g.'],
+		//~ ['|pus|','\\(\\pu{'], // \pu doesn't work
+		//~ ['|pue|','}\\)'],
+		//~ ['|PUs|','$$$\\pu{'],
+		//~ ['|PUe|','}$$$'],
+		['|t|','	'],
+		['|dash|','-'],
+		['|min|','<'],
+		['|max|','>'],
+		//~ ['|intro|','<div class="intro">'],
+		//~ ['|title|','<div class="title">'],
+		//~ ['|paragraph|','<div class="paragraph">'],
+		//~ ['|comment|','<div class="comment">'],
+		//~ ['|b|','<div class="b">'],
+		['|H2Oice|','<b>acqua</b> distillata (\\(\\ce{H2O}\\)) con <b>cubetti di ghiaccio</b>'],
+		['|H2Ocold|','<b>acqua fredda</b> distillata (\\(\\ce{H2O}\\))'],
+		['|H2Ohot|','<b>acqua calda</b> distillata (\\(\\ce{H2O}\\))'],
+		['|Na2S2O3|','<b>tiosolfato di sodio</b> (\\(\\ce{Na2S2O3}\\))'],
+		['|CH3COOH|','<b>acido acetico</b> (\\(\\ce{CH3COOH}\\))'],
+		['|H3PO4|','<b>acido ortofosforico</b> (\\(\\ce{H3PO4}\\))'],
+		['|HCl|','<b>acido cloridrico</b> (\\(\\ce{HCl}\\))'],
+		['|NaCl|','<b>cloruro di sodio</b> (\\(\\ce{NaCl}\\))'],
+		['|NaOH|','<b>idrossido di sodio</b> (\\(\\ce{NaOH}\\))'],
+		['|SO2|','<b>anidride solforosa</b> (\\(\\ce{SO2}\\))'],
+		['|H2O|','<b>acqua</b> distillata (\\(\\ce{H2O}\\))'],
+		['|pH|','<b>pH</b>'],
+		['|H+|','<b>idrone</b> (ione \\(\\ce{H+}\\))'],
+		['|H+s|','<b>idroni</b> (ioni \\(\\ce{H+}\\))'],
+		['|OH-|','<b>gruppo idrossido</b> (ione \\(\\ce{OH-}\\))'],
+		['|OH-s|','<b>gruppi idrossido</b> (ioni \\(\\ce{OH-}\\))'],
+		['|ce-S|','<b>zolfo</b> (\\(\\ce{S}\\))'],
+
+		['| ','">'],
+		['|\n','">'],
+		['|','<div class="'],
+	];
+	let tabclasstag = [
+		//~ Detect class, Tag->Tag, More
+		['b','b',''],
+		['i','i',''],
+		['div','div',''],
+		['span','span',''],
+		['tab','table',''],
+	];
+	let tabchangediv = [
+		//~ Detect class, Div->Tag, Class, More, [pre, post]
+		['comment','span','comment','',['(',')']],
+		['qot','span','qot','',['“','”']],
+		['ref-step','span','ref-step','',['passaggio ','']],
+		['titel','span','titel','',['','']],
+		['egp','div','paragraph egp','',['','']],
+		['dem','div','dem','',['','']], /*Demostration*/
+	];
+	let doc = document.body; // or document.getElementById('rel')
+	let str = doc.innerHTML;
+	for(i0=0; i0<tab.length; i0++) {
+		str = str.replaceAll(tab[i0][0],tab[i0][1]);
+	};
+	doc.innerHTML = str;
+	for(i0=0; i0<tabclasstag.length; i0++) {
+		while(doc.getElementsByClassName(tabclasstag[i0][0]).length) {
+			doc.getElementsByClassName(tabclasstag[i0][0])[0].outerHTML = '<'+tabclasstag[i0][1]+' '+tabclasstag[i0][2]+'>'+doc.getElementsByClassName(tabclasstag[i0][0])[0].innerHTML+'</'+tabclasstag[i0][1]+'>';
+		};
+	};
+	for(i0=0; i0<tabchangediv.length; i0++) {
+		for(i1=0; i1<doc.getElementsByClassName(tabchangediv[i0][0]).length; i1++) {
+			doc.getElementsByClassName(tabchangediv[i0][0])[i1].outerHTML = '<'+tabchangediv[i0][1]+' class="'+tabchangediv[i0][2]+'" '+tabchangediv[i0][3]+'>'+tabchangediv[i0][4][0]+doc.getElementsByClassName(tabchangediv[i0][0])[i1].innerHTML+tabchangediv[i0][4][1]+'</'+tabchangediv[i0][1]+'>';
+		};
+	};
+	while(doc.getElementsByClassName('a').length) {
+		doc.getElementsByClassName('a')[0].outerHTML = '<a href="'+doc.getElementsByClassName('a')[0].innerHTML+'">'+doc.getElementsByClassName('a')[0].innerHTML+'</a>';
+	};
+	while(doc.getElementsByClassName('img').length) {
+		doc.getElementsByClassName('img')[0].outerHTML = '<img src="'+doc.getElementsByClassName('img')[0].innerHTML+'">';
+	};
+};
+
+function GenChart(j) {
+	if(!j) j={} ;
+	if(!j.id) return 'Err! The function must contain "id" !' ;
+	if(!j.type) j.type='line' ;
+	if(!j.label) j.label=null ;
+	if(!j.color) j.color='' ;
+	if(!j.data) j.data=[] ;
+	/** pointRadius */
+	/** pointRadiusHover */
+	if(!j.title) j.title='' ;
+	if(!j.ltit) j.ltit='' ;
+	if(!j.btit) j.btit='' ;
+	/** padding */
+	return new Chart(j.id, {
+		type: j.type,
+		data: {
+			labels: j.label,
+			datasets: [{
+				backgroundColor: j.color,
+				data: j.data,
+				pointRadius: j.pointRadius,
+				pointHoverRadius: j.pointRadiusHover,
+			}]
+		},
+		options: {
+			legend: {
+				display: false,
+			},
+			title: {
+				display: true,
+				text: j.title,
+			},
+			scales: {
+				yAxes: [{
+					scaleLabel: {
+						display: true,
+						labelString: j.ltit,
+					}
+				}],
+				xAxes: [{
+					scaleLabel: {
+						display: true,
+						labelString: j.btit,
+					},
+				}],
+			},
+			layout: {
+				padding: j.padding,
+			},
+		},
+	});
+};
+
+function DrawChart() {
+	def_color = "rgba(4, 170, 109, 0.64)";
+	def_color_1 = "rgba(4, 110, 179, 0.64)";
+	def_color_2 = "rgba(164, 70, 79, 0.64)";
+	let dc_1 = { /** Data Chart */
+		"n": [1,2,3,4,5,6],
+		"r1": [10.0,8.0,5.0,2.0,8.0,8.0],
+		"r2": [10.0,10.0,10.0,10.0,10.0,10.0],
+		"w": [0.00,2.00,5.00,8.00,2.00,2.00],
+		"t": [8.00,8.29,12.69,35.14,1.44,11.80],
+		"s": [1.25,.965,.394,.0569,5.56,.678],
+	};
+	let dc_2 = { /** Data Chart */
+		"n": [1,2,3,4],
+		"r1": [10.0,8.0,5.0,2.0],
+		"r2": [10.0,10.0,10.0,10.0],
+		"w": [0.00,2.00,5.00,8.00],
+		"t": [8.00,8.29,12.69,35.14],
+		"s": [1.25,.965,.394,.0569],
+	};
+	function GenData2D(xa,ya) {
+		let r = [];
+		for(let i=0; i<xa.length; i++) {
+			r.push({x:xa[i],y:ya[i]});
+		};
+		return r;
+	};
+	//~ for(let i0=0; i0<data_chart_1.fAssoluta.length; i0++) {
+		//~ data_chart_1.fRelativa.push(data_chart_1.fAssoluta[i0]/data_chart_1.fAssoluta.reduce((partialSum, a) => partialSum + a, 0));
+	//~ };
+	GenChart({
+		"id": 'Chart_1',
+		"type": 'bar',
+		"label": dc_1.n,
+		"data": dc_1.t,
+		"color": [def_color,def_color,def_color,def_color,def_color_2,def_color_1],
+		"btit": 'numero della reazione',
+		"ltit": 'tempo rilevato, in secondi',
+	});
+	GenChart({
+		"id": 'Chart_2',
+		"type": 'bar',
+		"label": dc_2.n,
+		"data": dc_2.t,
+		"color": def_color,
+		"btit": 'numero della reazione',
+		"ltit": 'tempo rilevato, in secondi',
+	});
+	GenChart({
+		"id": 'Chart_3',
+		"type": 'scatter',
+		"data": GenData2D(dc_2.r1,dc_2.t),
+		"color": def_color,
+		"btit": 'quantità di tiosolfato di sodio, in millilitri',
+		"ltit": 'tempo rilevato, in secondi',
+		"pointRadius": 12,
+		"pointRadiusHover": 17,
+	});
+	GenChart({
+		"id": 'Chart_4',
+		"type": 'scatter',
+		"data": GenData2D(dc_2.t,dc_2.s),
+		"color": def_color,
+		"btit": 'tempo rilevato, in secondi',
+		"ltit": 'velocità della reazione, in millilitri al secondo',
+		"pointRadius": 12,
+		"pointRadiusHover": 17,
+	});
+	GenChart({
+		"id": 'Chart_5',
+		"type": 'scatter',
+		"data": GenData2D(dc_1.t,dc_1.s),
+		"color": [def_color,def_color,def_color,def_color,def_color_2,def_color_1],
+		"btit": 'tempo rilevato, in secondi',
+		"ltit": 'velocità della reazione, in millilitri al secondo',
+		"pointRadius": 12,
+		"pointRadiusHover": 17,
+	});
+	GenChart({
+		"id": 'Chart_6',
+		"type": 'scatter',
+		"data": [
+			{x:dc_1.t[1],y:dc_1.s[1]},
+			{x:dc_1.t[4],y:dc_1.s[4]},
+		],
+		"color": [def_color,def_color_2],
+		"btit": 'tempo rilevato, in secondi',
+		"ltit": 'velocità della reazione, in millilitri al secondo',
+		"pointRadius": 12,
+		"pointRadiusHover": 17,
+	});
+	GenChart({
+		"id": 'Chart_7',
+		"type": 'scatter',
+		"data": [
+			{x:dc_1.t[1],y:dc_1.s[1]},
+			{x:dc_1.t[5],y:dc_1.s[5]},
+		],
+		"color": [def_color,def_color_1],
+		"btit": 'tempo rilevato, in secondi',
+		"ltit": 'velocità della reazione, in millilitri al secondo',
+		"pointRadius": 12,
+		"pointRadiusHover": 17,
+	});
+};
+
+function classmodifier() {
+	function func(c,tag,inner) {
+		for(i0=0; i0<document.getElementsByClassName(c).length; i0++) {
+			let obj = document.getElementsByClassName(c)[i0];
+			obj.outerHTML = '<'+tag[0]+' class="'+c+'">'+inner+'</'+tag[1]+'>';
+		};
+	};
+	func('tr-sep',['tr','tr'],'<th colspan="1000"/>');
+}
+
+function nojs() {
+	document.getElementById('no-js').style.display = 'none';
+};
+
+window.onload = function() {
+	nojs();
+	_JCHSL({'Elem':'document.body.style.backgroundColor','L':96.5,'LRange':.5,'Interval':2000,'IntervalRange':1000});
+	interpreter();
+	classmodifier();
+	DrawChart();
+};
+
+</script>
+</head>
+<body class="_BOMP">
+
+<div id="no-js">
+	<p>Sorry,<br />your browser may not support JavaScript<br />or, if you have them disabled, please enable them.</p>
+</div>
+
+<div class="_DN">
+	|Ms|
+		\require{mhchem}
+		\newcommand{\[}{\mathtt{[}}
+		\newcommand{\]}{\mathtt{]}}
+	|Me|
+	|comment| ref: |a| https://mhchem.github.io/MathJax-mhchem/¦¦
+	|comment| ref: |a| https://math.meta.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference¦¦
+	<div id="PreLoad"></div>
+</div>
+
+<div class="_PA _CX" id="rel">
+	|intro|
+		Angaroni Leonardo 4Ds, Fassina Simone 4Ds, Riello Riccardo 4Ds|§|
+		Scienze, relazione dell’esperienza di laboratorio|§|
+		|b| Velocità delle reazioni¦|§|
+		Condotto dal professore S. Scarselli|§|
+		Mercoledì 4 Maggio 2022
+	¦
+	|paragraph|
+		|title| obiettivo¦
+		<ul>
+			<li>Verificare se esista una relazione di proporzionalità tra la |b| quantità di soluto¦, la |b| velocità di reazione¦ e la |b| temperatura della soluzione¦.</li>
+			<li>Migliorare le abilità nell’utilizzo della strumentazione da laboratorio.</li>
+		</ul>
+	¦
+	|paragraph|
+		|title| materiale¦
+		<table class="WTable">
+			<tr>
+				<th>sostanza</th>
+				<th>formula</th>
+				<th>quantità</th>
+				<th>descrizione</th>
+				<th>immagine</th>
+			</tr>
+			<tr>
+				<td>|b| acqua¦ distillata</td>
+				<td>|cs|H2O|ce|</td>
+				<td>|Cs|17mL|Ce||comment| |ms|0+2+5+8+2|me|¦</td>
+				<td>utilizzato per diluire il |Na2S2O3| ottenendo soluzioni di varia concentrazione</td>
+				<td>|img| chi-rel-lab-img/water.png¦</td>
+			</tr>
+			<tr>
+				<td>|b| acqua¦ distillata con |b| cubetti di ghiaccio¦</td>
+				<td>|cs|H2O|ce|</td>
+				<td>|Cs|2mL|Ce|</td>
+				<td>utilizzato per diluire il |Na2S2O3| ottenendo l'ultima soluzione</td>
+				<td>|img| chi-rel-lab-img/ice-cube.png¦</td>
+			</tr>
+			<tr class="tr-sep"/>
+			<tr>
+				<td>|b| acido cloridrico¦|§||cs|1M|ce|</td>
+				<td>|cs|HCl|ce|</td>
+				<td>|Cs|60mL|Ce||comment| |ms|10·6|me|¦</td>
+				<td>secondo reagente</td>
+				<td>|img| chi-rel-lab-img/HCl.png¦</td>
+			</tr>
+			<tr>
+				<td>|b| tiosolfato di sodio¦|§||cs|1M|ce|</td>
+				<td>|cs|Na2S2O3|ce|</td>
+				<td>|Cs|41mL|Ce||comment| |ms|10+8+5+2+8+8|me|¦</td>
+				<td>primo reagente</td>
+				<td>|img| chi-rel-lab-img/Na2S2O3.png¦</td>
+			</tr>
+		</table>
+		<table class="WTable">
+			<tr>
+				<th>attrezzo</th>
+				<th>quantità</th>
+				<th>descrizione</th>
+				<th>immagine</th>
+			</tr>
+			<tr>
+				<td>|b| bacchetta¦ di vetro</td>
+				<td>|Cs|1|Ce|</td>
+				<td>utilizzato per mescolare le soluzioni</td>
+				<td>|img| chi-rel-lab-img/bacchetta.png¦</td>
+			</tr>
+			<tr>
+				<td>|b| becher¦</td>
+				<td>|Cs|1|Ce|</td>
+				<td>posto dall'assistente di laboratorio e utilizzato per prelevare |b| acqua distillata fredda¦.</td>
+				<td>|img| chi-rel-lab-img/becher.png¦</td>
+			</tr>
+			<tr>
+				<td>|b| foglio¦ di carta</td>
+				<td>|Cs|1|Ce|</td>
+				<td>diviso in 8 foglietti e posto sotto ai |b| becher¦ con una croce disegnata sopra tramite il |b| pennarello¦ per cronometrare le velocità delle reazioni</td>
+				<td>|img| chi-rel-lab-img/foglio.png¦</td>
+			</tr>
+			<tr>
+				<td>|b| fornello¦ elettrico</td>
+				<td>|Cs|1|Ce|</td>
+				<td>utilizzato per scaldare una soluzione per testare la velocità di reazione anche al variare della temperatura della soluzione</td>
+				<td>|img| chi-rel-lab-img/fornello.png¦</td>
+			</tr>
+			<tr>
+				<td>|b| pennarello¦ indelebile</td>
+				<td>|Cs|1|Ce|</td>
+				<td>utilizzato per tracciare le |i| X¦ sui |b| fogli¦ di carta</td>
+				<td>|img| chi-rel-lab-img/pennarello.png¦</td>
+			</tr>
+			<tr>
+				<td>|b| portaprovette¦</td>
+				<td>|Cs|1|Ce|</td>
+				<td>utilizzato per reggere le |b| provette¦</td>
+				<td>|img| chi-rel-lab-img/portaprovette.png¦</td>
+			</tr>
+			<tr>
+				<td>|b| provetta¦</td>
+				<td>|Cs|2|Ce|</td>
+				<td>utilizzato per contenere temporaneamente le soluzioni prima di versarle nel momento in cui si sarebbe fatto partire il |b| cronometro¦</td>
+				<td>|img| chi-rel-lab-img/provetta.png¦</td>
+			</tr>
+		</table>
+		<table class="WTable">
+			<tr>
+				<th>strumento di misura</th>
+				<th>quantità</th>
+				<th>sensibilità</th>
+				<th>portata</th>
+				<th>portata / sensibilità</th>
+				<th>descrizione</th>
+				<th>immagine</th>
+			</tr>
+			<tr>
+				<td>|b| becher¦</td>
+				<td>|Cs|6|Ce|</td>
+				<td>|Cs|10mL|Ce|</td>
+				<td>|Cs|\sim100mL|Ce||comment| da |cs|0|ce| a |cs|100|ce|¦</td>
+				<td>|Ms|\sim10|Me|</td>
+				<td>utilizzato come contenitore per far avvenire le |ms|6|me| reazioni</td>
+				<td>|img| chi-rel-lab-img/StrudMi-becher.png¦</td>
+			</tr>
+			<tr>
+				<td>|b| buretta¦</td>
+				<td>|Cs|2|Ce|</td>
+				<td>|Cs|0\ldotp1mL|Ce||comment| tarato a |cs|20°C|ce|¦</td>
+				<td>|Cs|9\ldotp0mL|Ce||comment| da |cs|0\ldotp0|ce| a |cs|9\ldotp0|ce|¦</td>
+				<td>|Ms|90|Me|</td>
+				<td></td>
+				<td>|img| chi-rel-lab-img/StrudMi-buretta.png¦</td>
+			</tr>
+			<tr>
+				<td>|b| cilindro¦</td>
+				<td>|Cs|2|Ce|</td>
+				<td>|Cs|1mL|Ce|</td>
+				<td>|Cs|25mL|Ce||comment| da |cs|0|ce| a |cs|25|ce|¦</td>
+				<td>|Ms|25|Me|</td>
+				<td></td>
+				<td>|img| chi-rel-lab-img/StrudMi-cilindro.png¦</td>
+			</tr>
+			<tr>
+				<td>|b| cronometro¦ del telefono</td>
+				<td>|Cs|1|Ce|</td>
+				<td>|Cs|0\ldotp01s|Ce|</td>
+				<td>|Cs|sconosciuta|Ce||comment| da |cs|0\ldotp00|ce| a |cs|sconosciuta|ce|¦</td>
+				<td>sconosciuta</td>
+				<td>utilizzato per prendere i tempi delle reazioni</td>
+				<td>|img| chi-rel-lab-img/StrudMi-telefono-cronometro.png¦</td>
+			</tr>
+			<tr>
+				<td>|b| micropipetta¦</td>
+				<td>|Cs|1|Ce|</td>
+				<td>|Cs|0\ldotp005mL|Ce|</td>
+				<td>|Cs|\sim0\ldotp975mL|Ce||comment| da |cs|\sim0\ldotp100|ce| a |cs|\sim1\ldotp075|ce|¦</td>
+				<td>|Ms|\sim195|Me|</td>
+				<td>.. utilizzato per prelevare o l'|b| acido acetico¦ o il |b| succo di limone¦</td>
+				<td>|img| chi-rel-lab-img/StrudMi-micropipetta.png¦</td>
+			</tr>
+		</table>
+		<span style="display:block;text-align:center;">foglio e penna per prendere appunti</span>
+	¦
+	|paragraph|
+		|title| procedimento¦
+		<ol>
+			<li>Abbiamo preso posto in una delle postazioni precedentemente preparate dall'assistente di laboratorio.</li>
+			<li>Preparazione del piano di lavoro.
+				<ol>
+					<li>Erano precedentemente stati predisposti dall’assistente di laboratorio i due acidi in distinti contenitori:
+						<ul>
+							<li>|HCl| |cs|1M|ce|</li>
+							<li>|Na2S2O3| |cs|1M|ce|</li>
+						</ul>
+					</li>
+					<li>Erano, inoltre, stati forniti dall’assistente di laboratorio:
+						<ul>
+							<li>l'|H2Oice| e</li>
+							<li>|b| fornello¦ elettrico.</li>
+						</ul>
+					</li>
+					<li>Dopodiché abbiamo preso
+						<ul>
+							<li>la |b| bacchetta¦ di vetro;</li>
+							<li>il |b| portaprovette¦;</li>
+							<li>un paio di |b| provette¦;</li>
+							<li>la |b| spruzzetta¦ in polietilene per contenere l'|H2O|;</li>
+							<li>mezza dozzina di |b| becher¦;</li>
+							<li>un paio di |b| burette¦;</li>
+							<li>un paio di |b| cilindri¦;</li>
+							<li>una |b| micropipetta¦ e</li>
+							<li>abbiamo scelto un cellulare da utilizzare come |b| cronometro¦.</li>
+						</ul>
+					</li>
+					<li>Inifine ci sono stati distribuiti
+						<ul>
+							<li>il |b| foglio¦ di carta e</li>
+							<li>il |b| pennarello¦ indelebile.</li>
+						</ul>
+					</li>
+				</ol>
+			</li>
+			<li>Dopodiché il professore e l'assistente di laboratorio hanno esposto la procedura da eseguire.</li>
+			|i| Inizio procedura esperimento:¦
+			<li>Come prima operazione abbiamo preso appunti sulla procedura e ci siamo segnati i dati riguardanti tutto il materiale che avevamo.</li>
+			<li>In seguito abbiamo diviso il |b| foglio¦ di carta in 8 parti, pigandolo e strappandolo lungo le pieghe, e vi abbiamo segnato sopra le croci con l'ausilio del |b| pennarello¦ indelebile.</li>
+			<li id="a-href-1">Nel frattempo abbiamo composto una tabella contenente i parametri delle |ms|6|me| reazione che avremmo dovuto eseguire:
+				<table>
+					<tr>
+						<th>numero della reazione</th>
+						<th>volume di |Na2S2O3||§||comment| primo reagente¦</th>
+						<th>volume di |H2O|</th>
+						<th>volume di |HCl||§||comment| secondo reagente¦</th>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td>|cs|10mL|ce|</td>
+						<td>|cs|0mL|ce|</td>
+						<td>|cs|10mL|ce|</td>
+					</tr>
+					<tr>
+						<td>2</td>
+						<td>|cs|8mL|ce|</td>
+						<td>|cs|2mL|ce|</td>
+						<td>|cs|10mL|ce|</td>
+					</tr>
+					<tr>
+						<td>3</td>
+						<td>|cs|5mL|ce|</td>
+						<td>|cs|5mL|ce|</td>
+						<td>|cs|10mL|ce|</td>
+					</tr>
+					<tr>
+						<td>4</td>
+						<td>|cs|2mL|ce|</td>
+						<td>|cs|8mL|ce|</td>
+						<td>|cs|10mL|ce|</td>
+					</tr>
+					<tr>
+						<td>5</td>
+						<td>|cs|8mL|ce|</td>
+						<td>|cs|2mL|ce| di |H2Ohot|</td>
+						<td>|cs|10mL|ce|</td>
+					</tr>
+					<tr>
+						<td>6</td>
+						<td>|cs|8mL|ce|</td>
+						<td>|cs|2mL|ce| di |H2Ocold|</td>
+						<td>|cs|10mL|ce|</td>
+					</tr>
+				</table>
+			</li>
+			<li id="a-href-0">Successivamente abbiamo preso i tempi della prima sulle |ms|6|me| reazioni:
+				<ol>
+					<li>La prima parte della procedura consisteva nella preparazione della reazione:
+						<ol>
+							<li>Abbiamo versato nel rispettivo |b| becher¦, tramite la |b| micropipetta¦, il quantitativo corrspondente di |H2O|.</li>
+							<li>Sempre nel |b| becher¦, abbiamo versato tramite la prima |b| buretta¦ il corrispondente quantitativo di |Na2S2O3|.</li>
+							<li>Con la seconda |b| buretta¦ abbiamo versato nella prima |b| provetta¦ il quantitativo richiesto di |HCl|.</li>
+						</ol>
+					</li>
+					<li>La seconda consisteva nell'effetiva procedura di adempiere la reazione misurandone i tempi:
+						<ol>
+							<li>In prima siatnza abbiamo scelto chi avesse dovuto prendere i tempi, per tentare di ridurre gli errori di misurazione.</li>
+							<li>A quel punto mettavamo il |b| foglietto di carta¦, con la |i| X¦ disegnatavi sopra, sotto al |b| becher¦.</li>
+							<li>Dopodiché la procedura era composta da
+								<ul>
+									<li>qualcuno che contava al rovescio per sincronizzare gli altri due, i quali</li>
+									<li>uno versava la soluzione a base acquosa di |Na2S2O3| contenuta all'interno della prima |b| provetta¦ e</li>
+									<li>l'altro faceva partire il |b| cronometro¦ del telefono.</li>
+								</ul>
+							</li>
+							<li>Durante la reazione chi aveva il |b| cronometro¦ guardava attentamente per stopparlo nonappena non si sarebbe più vista la |i| X¦ disegnata sul |b| foglietto di carta¦ posto sotto al |b| becher¦.</li>
+							<li>Infine qualcuno prendeva nota su carta del tempo appena misurato.</li>
+						</ol>
+					</li>
+				</ol>
+			</li>
+			<li>Dopodiché abbiamo ripetuto la procedura |comment| <a href="#a-href-0">|ref-step| 7¦</a>¦ per tutte e |ms|6|me| le reazioni che avremmo dovuto realizzare |comment| seguendo la tabella contenuta nel <a href="#a-href-1">|ref-step| 6¦</a>¦.
+				<ul>
+					<li>Considerando che nel passaggio numero |ms|5|me|, dovendo usare l'|H2Ohot|, abbiamo prelevato l'|H2O| da un altro |b| becher¦ posto dall'assitente di laboratorio sopra al |b| fornello¦ elettrico e</li>
+					<li>Considerando che nel passaggio numero |ms|6|me|, dovendo usare l'|H2Ocold|, abbiamo prelevato l'|H2O| da una provetta precedentemente posta all'interno di un |b| becher¦ precedentemente collocato dall'assistente di laboratorio e contenente l'|H2Ocold|; la |b| provetta¦ conteneva la soluzione a base aquosa di |Na2S2O3| in modo che si raffreddasse.</li>
+					Sia il tempo a cui è stata sottoposta l'|H2O| al calore, che il tempo al quale è stata sottoposta la soluzione per farne diminuire la temperatura, sono stati di |ms|3|me| minuti.
+				</ul>
+			</li>
+			<li>Una volta eseguite tutte le reazioni abbiamo controllato di aver preso nota di tutto.</li>
+			<li>Infine abbiamo pulito l’attrezzatura utilizzata con l'ausilio dei lavandini del laboratorio.</li>
+		</ol>
+		|§|
+		Dopodiché abbiamo steso la relazione di laboratorio.
+	¦
+	|paragraph|
+		|title| premesse teoriche¦
+		<table class="WTable">
+			<tr>
+				<th>tradizionale</th>
+				<th>IUPAC</th>
+				<th>formula</th>
+				<th>immagine|§||comment| se presente¦</th>
+			</tr>
+			<tr>
+				<td>|b| acqua¦ distillata</td>
+				<td>ossido di diidrogeno</td>
+				<td>|cs|H2O|ce|</td>
+				<td>|img| chi-rel-lab-img/cf-H2O.png¦</td>
+			</tr>
+			<tr class="tr-sep"/>
+			<tr>
+				<td>|b| acido cloridrico¦</td>
+				<td>cloruro di idrogeno</td>
+				<td>|cs|HCl|ce|</td>
+				<td>|img| chi-rel-lab-img/cf-HCl.png¦</td>
+			</tr>
+			<tr>
+				<td>iposolfito di sodio</td>
+				<td>|b| tiosolfato di sodio¦</td>
+				<td>|cs|Na2S2O3|ce|</td>
+				<td>|img| chi-rel-lab-img/cf-Na2S2O3.png¦</td>
+			</tr>
+			<tr class="tr-sep"/>
+			<tr>
+				<td colspan="2">|b| zolfo¦|§||comment| |i| elemento chimico¦ della |i| tavola periodica degli elementi¦ con |i| numero atomico¦ |ms|16|me|¦</td>
+				<td>|cs|S|ce|</td>
+				<td>|img| chi-rel-lab-img/ce-S.png¦</td>
+			</tr>
+			<tr>
+				<td>|b| anidride solforosa¦</td>
+				<td>diossido di zolfo</td>
+				<td>|cs|SO2|ce|</td>
+				<td>|img| chi-rel-lab-img/cf-SO2.png¦</td>
+			</tr>
+			<tr>
+				<td>sale da cucina, salgemma</td>
+				<td>|b| cloruro di sodio¦</td>
+				<td>|cs|NaCl|ce|</td>
+				<td>|img| chi-rel-lab-img/cf-NaCl.png¦</td>
+			</tr>
+		</table>
+		|paragraph|
+			Quando l'|HCl| viene a trovarsi in soluzione con il |Na2S2O3| viene a originarsi una reazione spontanea di depositazione con cambio di colore in |qot| giallo zolfo¦ avente come reagenti i due appena elencati e come prodotti lo |ce-S|, l'|SO2|, il |NaCl| e l'|H2O|. Secondo la formula:
+			|Cs| Na2S2O3_{(aq)} + 2HCl_{(aq)}\ \ ->\ \ \ S_{(s)} + SO2_{(g)} + 2NaCl_{(aq)} + H2O_{(l)} |Ce|
+		¦
+		|paragraph|
+			Considerando
+			|Ms|
+				\begin{align}
+					S&=\text{Concentrazione del soluto} \\
+					T&=\text{Tempo della reazione} \\
+					V&=\text{Velocità di reazione} \\
+				\end{align}
+			|Me|
+			dove
+			<ul>
+				<li>per |qot| concentrazione del soluto¦ si intende la concentrazione del soluto preso in considerazione ai fini dell'analisi della |b| velocità di reazione¦; nel caso di questo esperimento esso sarà il |Na2S2O3|.</li>
+				<li>Per |qot| tempo della reazione¦ si intende la differenza di tempo che vi è tra l'inizio e la fine di una determinata reazione; nel caso di questa esperienza coincide col tempo misurato dal |b| cronometro¦ dl cellulare.</li>
+				<li>E per |qot| velocità di reazione¦ si considera la |b| velocità¦ stessa |b| della reazione¦ analizzata qui a seguire.</li>
+			</ul>
+			|paragraph|
+				La |b| velocità di reazione¦ sarà in relazione sia con la |b| concentrazione del soluto¦ sia con il |b| tempo di reazione¦:
+				|Ms|
+					\begin{align}
+						V&\thicksim S \\
+						V&\thicksim T
+					\end{align}
+				|Me|
+				Più precisamente, la |b| velocità di reazione¦ avrà una proporzionalità diretta con la |b| concentrazione del soluto¦ e una inversa con il |b| tempo di reazione¦:
+				|Ms|
+					\begin{align}
+						V&\propto S& \\
+						V&\propto \frac1T&
+					\end{align}
+				|Me|
+			¦
+			|paragraph|
+				In base a quanto appena detto a riguardo della |b| velocità di reazione¦ possiamo affermare che vi sarà anche una proporzionalità tra |b| concentrazione del soluto¦ e |b| tempo di reazione¦:
+				|Ms|
+					\begin{cases}
+						\begin{align}
+							V&\thicksim S \\
+							V&\thicksim T
+						\end{align}
+					\end{cases}
+					\quad \Rightarrow \quad
+					S\thicksim V\thicksim T
+					\quad \Rightarrow \quad
+					S\thicksim T
+				|Me|
+				Più precisamente, la |b| concentrazione del soluto¦ sarà inversamente proporzionale al |b| tempo di reazione¦:
+				|Ms|
+					\begin{cases}
+						\begin{align}
+							V&\propto S \\
+							V&\propto T^{-1}
+						\end{align}
+					\end{cases}
+					\quad \Rightarrow \quad
+					S\propto V\propto T^{-1}
+					\quad \Rightarrow \quad
+					S\propto T^{-1}
+				|Me|
+			¦
+			|paragraph|
+				Possiamo scrivere che la |b| velocità di reazione¦ sia in relazione con la |b| concentrazione di soluto¦ e con il |b| tempo di reazione¦:
+				|Ms|
+					\begin{cases}
+						\begin{align}
+							V&\thicksim S \\
+							V&\thicksim T
+						\end{align}
+					\end{cases}
+					\quad \Rightarrow \quad
+					V\thicksim S\ \land \ V\thicksim T
+					\quad \Rightarrow \quad
+					V\ \thicksim \ S\land T
+				|Me|
+				Più precisamente, possiamo scrivere che la |b| velocità di reazione¦ sia direttamente proporzionale alla |b| concentrazione di soluto¦ e inversamente proporzionale al |b| tempo di reazione¦:
+				|Ms|
+					\begin{cases}
+						\begin{align}
+							V&\propto S \\
+							V&\propto T^{-1}
+						\end{align}
+					\end{cases}
+					\quad \Rightarrow \quad
+					V\propto S\ \land \ V\propto T^{-1}
+					\quad \Rightarrow \quad
+					V\ \propto \ S\land T^{-1}
+				|Me|
+			¦
+			|paragraph|
+				Con quest'ultima premessa possiamo, non in maniera propriamente corretta, considerare la |b| velocità di reazione¦ equivalente al rapporto tra la |b| concentrazione di soluto¦ e il |b| tempo di reazione¦:
+				|Ms|
+					V\ \propto \ S\land T^{-1}
+					\quad \Rightarrow \quad
+					V=\frac{S}T
+				|Me|
+			¦
+		¦
+	¦
+	|paragraph|
+		|titles| |titel| Calcoli¦ e |titel| Procedimento logico¦¦
+		|paragraph|
+			La tabella coi risultati che abbiamo tratto è:
+			<table>
+				<tr>
+					<th>numero della reazione</th>
+					<th>volume di |Na2S2O3||§||comment| primo reagente¦</th>
+					<th>volume di |H2O|</th>
+					<th>volume di |HCl||§||comment| secondo reagente¦</th>
+					<th>tempo misurato</th>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td>|cs|10mL|ce|</td>
+					<td>|cs|0mL|ce|</td>
+					<td>|cs|10mL|ce|</td>
+					<td>|cs|8\ldotp00s|ce|</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>|cs|8mL|ce|</td>
+					<td>|cs|2mL|ce|</td>
+					<td>|cs|10mL|ce|</td>
+					<td>|cs|8\ldotp29s|ce|</td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td>|cs|5mL|ce|</td>
+					<td>|cs|5mL|ce|</td>
+					<td>|cs|10mL|ce|</td>
+					<td>|cs|12\ldotp69s|ce|</td>
+				</tr>
+				<tr>
+					<td>4</td>
+					<td>|cs|2mL|ce|</td>
+					<td>|cs|8mL|ce|</td>
+					<td>|cs|10mL|ce|</td>
+					<td>|cs|35\ldotp14s|ce|</td>
+				</tr>
+				<tr>
+					<td>5</td>
+					<td>|cs|8mL|ce|</td>
+					<td>|cs|2mL|ce| di |H2Ohot|</td>
+					<td>|cs|10mL|ce|</td>
+					<td>|cs|1\ldotp44s|ce|</td>
+				</tr>
+				<tr>
+					<td>6</td>
+					<td>|cs|8mL|ce|</td>
+					<td>|cs|2mL|ce| di |H2Ocold|</td>
+					<td>|cs|10mL|ce|</td>
+					<td>|cs|11\ldotp80s|ce|</td>
+				</tr>
+			</table>
+		¦
+		|paragraph|
+			Innanzitutto possiamo tracciare un grafico contenente tutti i tempi misuarti, per poterli vedere in relazione tra loro:
+			<canvas class="chart" id="Chart_1"></canvas>
+		¦
+		|paragraph|
+			Dopodiché, se prendessimo i primi |ms|4|me| punti il grafico assumerebbe una forma simile:
+			<canvas class="chart" id="Chart_2"></canvas>
+		¦
+		|paragraph|
+			E mettendo questi |ms|4|me| tempi in funzione della quantità di |Na2S2O3|:
+			<canvas class="chart" id="Chart_3"></canvas>
+			|paragraph|
+				Consideriamo, in base alle premesse teoriche, la |b| quantità di |Na2S2O3|¦ e il |b| tempo rilevato¦ come rispettivamente la |b| quantità di soluto¦ e il |b| tempo della reazione¦:
+				|Ms|
+					\begin{align}
+						\text{quantità di tiosolfato di sodio (}\ce{Na2S2O3}\text{)} &=S \\
+						\text{tempo rilevato} &=T
+					\end{align}
+				|Me|
+			¦
+			In base a quest'ultimo grafico possiamo supporre che vi sia una proporzionalità inversa tra |b| quantità di |Na2S2O3|¦ e |b| tempo rilevato¦.<br />
+			Verificabile tramite la premessa teorica secondo la quale vi sia una proporzionalità inversa tra |b| concentrazione di soluto¦ e |b| tempo di reazione¦:
+			|Ms|
+				\begin{cases}{
+					S\propto T^{-1} \\
+					\begin{cases}{
+						\begin{align}
+							S&=\text{quantità di tiosolfato di sodio (}\ce{Na2S2O3}\text{)} \\
+							T&=\text{tempo rilevato}
+						\end{align}
+					}\end{cases}
+				}\end{cases}
+				\quad \Rightarrow \quad
+				\text{quantità di tiosolfato di sodio (}\ce{Na2S2O3}\text{)} \ \propto \ (\text{tempo rilevato})^{-1}
+			|Me|
+		¦
+		|paragraph|
+			Considerando l'ultima premessa teorica e le sensibilità, possiamo trovare le |b| velocità di reazione¦ dal rapporto tra la |b| quantità di |Na2S2O3|¦ e il |b| tempo rilevato¦:
+			|Ms|
+				\begin{cases}{
+					V=\cfrac{S}T \\
+					\begin{alignat}{8}
+						S&=\ &\ce{10\ldotp0mL},&\ \ &\ce{8\ldotp0mL},&\ \ &\ce{5\ldotp0mL},&\ \ &\ce{2\ldotp0mL},&\ \ &\ce{8\ldotp0mL},&\ \ &\ce{8\ldotp0mL}& \\
+						T&=\ &\ce{8\ldotp00s},&\ \ &\ce{8\ldotp29s},&\ \ &\ce{12\ldotp69s},&\ \ &\ce{35\ldotp14s},&\ \ &\ce{1\ldotp44s},&\ \ &\ce{11\ldotp80s}&
+					\end{alignat}
+				}\end{cases}
+				\\ \Downarrow \\
+				V=\ \ce{1\ldotp25mL/s},\ \ce{0\ldotp965mL/s},\ \ce{0\ldotp394mL/s},\ \ce{0\ldotp0569mL/s},\ \ce{5\ldotp56mL/s},\ \ce{0\ldotp678mL/s}
+			|Me|
+			Arrivando così a comporre un'altra tabella nella quale vi siano anche le |b| velocità di reazione¦:
+			<table>
+				<tr>
+					<th>numero della reazione</th>
+					<th>volume di |Na2S2O3||§||comment| primo reagente¦</th>
+					<th>volume di |H2O|</th>
+					<th>volume di |HCl||§||comment| secondo reagente¦</th>
+					<th>tempo misurato</th>
+					<th>velocità di reazione|§||comment| |ms|\frac{\text{volume di tiosolfato di sodio (}\ce{Na2S2O3}\text{)}}{\text{tempo misurato}}|me|¦</th>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td>|cs|10mL|ce|</td>
+					<td>|cs|0mL|ce|</td>
+					<td>|cs|10mL|ce|</td>
+					<td>|cs|8\ldotp00s|ce|</td>
+					<td>|cs|1\ldotp25mL/s|ce|</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>|cs|8mL|ce|</td>
+					<td>|cs|2mL|ce|</td>
+					<td>|cs|10mL|ce|</td>
+					<td>|cs|8\ldotp29s|ce|</td>
+					<td>|cs|0\ldotp965mL/s|ce|</td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td>|cs|5mL|ce|</td>
+					<td>|cs|5mL|ce|</td>
+					<td>|cs|10mL|ce|</td>
+					<td>|cs|12\ldotp69s|ce|</td>
+					<td>|cs|0\ldotp394mL/s|ce|</td>
+				</tr>
+				<tr>
+					<td>4</td>
+					<td>|cs|2mL|ce|</td>
+					<td>|cs|8mL|ce|</td>
+					<td>|cs|10mL|ce|</td>
+					<td>|cs|35\ldotp14s|ce|</td>
+					<td>|cs|0\ldotp0569mL/s|ce|</td>
+				</tr>
+				<tr>
+					<td>5</td>
+					<td>|cs|8mL|ce|</td>
+					<td>|cs|2mL|ce| di |H2Ohot|</td>
+					<td>|cs|10mL|ce|</td>
+					<td>|cs|1\ldotp44s|ce|</td>
+					<td>|cs|5\ldotp56mL/s|ce|</td>
+				</tr>
+				<tr>
+					<td>6</td>
+					<td>|cs|8mL|ce|</td>
+					<td>|cs|2mL|ce| di |H2Ocold|</td>
+					<td>|cs|10mL|ce|</td>
+					<td>|cs|11\ldotp80s|ce|</td>
+					<td>|cs|0\ldotp678mL/s|ce|</td>
+				</tr>
+			</table>
+		¦
+		|paragraph|
+			Ponendo le |b| velocità di reazione¦ delle prime |ms|4|me| misure in funzione dei |b| tempi delle reazioni¦ otterremo il grafico:
+			<canvas class="chart" id="Chart_4"></canvas>
+			Dal quale possiamo osservare come la |b| velocità di reazione¦ sia inversamente proporzionale al |b| tempo delle reazioni¦ poiché quando una delle due misure cresce l'altra decresce.<br />
+			Ciò è anche verificato dalla premessa teorica secondo la quale la |b| velocità di reazione¦ è inversamente proporzionale al |b| tempo della reazione¦:
+			|Ms|
+				\text{velocità delle reazioni} ~\propto ~(\text{tempi rilevati})^{-1}
+				~~\equiv ~~
+				V\propto T^{-1}
+			|Me|
+		¦
+		|paragraph|
+			Estendendo l'ultimo grafico alle ultime due misurazioni:
+			<canvas class="chart" id="Chart_5"></canvas>
+			Possiamo osservare come queste si vadano ad allineare alla proporzione.
+		¦
+		|paragraph|
+			Infine possiamo confrontare le misurazione con la variazione di temperatura.
+			|paragraph|
+				Tracciando un grafico nel quale confrontare la misura numero |ms|5|me|, poiché quella utilizzante |H2Ohot|, con la misura numero |ms|2|me|, poiché avente stesso volume di |Na2S2O3| |comment| il primo reagente¦,
+				<canvas class="chart" id="Chart_6"></canvas>
+				potremmo osservare come la misura effettuata su una reazione avente una temperatura maggiore avrà una |b| velocità di reazione¦ superiore e, rispettivamente, un |b| tempo di reazione¦ inferiore.
+			¦
+			|paragraph|
+				Tracciando un simile grafico, nel quale confrontare la misura numero |ms|6|me|, poiché quella utilizzante |H2Ocold|, con la misura numero |ms|2|me|, poiché avente stesso volume di |Na2S2O3| |comment| il primo reagente¦,
+				<canvas class="chart" id="Chart_7"></canvas>
+				potremmo osservare come la misura effettuata su una reazione avente una temperatura inferiore avrà una |b| velocità di reazione¦ minore e, rispettivamente, un |b| tempo di reazione¦ superiore.
+			¦
+		¦
+	¦
+	|paragraph|
+		|title| osservazioni¦
+		|paragraph|
+			L'esperienza, a mio giudizio, è stata particolarmente semplice e veloce rispetto al solito.
+		¦
+		|paragraph|
+			Non vi sono altre significative osservazioni da riportare.
+		¦
+	¦
+	|paragraph|
+		|title| conclusioni¦
+		L'esperienza di laboratorio sulle |b| velocità di reazione¦ è stata svolta.|§|
+		Siamo riusciti a dimostrare
+		<ul>
+			<li>la relazione di proporzionalità inversa tra |b| quantità di reagente¦ e |b| durata della reazione¦ e</li>
+			<li>la relazione di proporzionalità inversa tra la |b| velocità di reazione¦ e |b| durata della reazione¦.</li>
+		</ul>
+		Inoltre abbiamo trovato che
+		<ul>
+			<li>nelle reazioni con temperatura inferiore il |b| rempo di reazione¦ aumenta e, rispettivamente, la |b| velocità della reazione¦ diminuisce,</li>
+			<li>contrariamente, nelle reazioni con temperatura superiore il |b| rempo di reazione¦ decresce e, rispettivamente, la |b| velocità della reazione¦ si incrementa.</li>
+		</ul>
+		Infine abbiamo aquisito maggiore esperienza e dimestichezza in laboratorio.
+	¦
+</div>
+
+</body>
+</html>
