@@ -1,0 +1,495 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>HTML Document</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Mono">
+	<link rel="stylesheet" href="https://2wtnt.tk/css.css">
+	<script type="text/javascript" src="https://2wtnt.tk/js.js"></script>
+	<!--script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML' async></script>
+	<script type="text/javascript">try{MathJax.Hub.Config({tex2jax:{inlineMath:[['$','$'],["//(","//)"]],processEscapes:true}})}catch{}</script-->
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@1,700&display=swap');
+
+:root {
+}
+
+/* *:not(pre):not(textarea) {
+	font-family: 'Lucida Console', monospace;
+	font-family: 'Ubuntu Mono', monospace;
+} */
+
+* {
+	margin: 10px auto;
+} *::first-letter {
+	font-weight: unset;
+	color: unset;
+	background: unset;
+} *::first-line {
+	font-weight: unset;
+	color: unset;
+	background: unset;
+}
+
+::-moz-selection {
+	background: rgba(0,255,255,.2);
+	color: unset;
+} ::selection {
+	background: rgba(0,255,255,.2);
+	color: unset;
+}
+
+body {
+} body::-webkit-scrollbar {
+	width: 1.5rem;
+} body::-webkit-scrollbar-track {
+	display: none;
+} body::-webkit-scrollbar-thumb {
+	background: silver;
+	background:
+		linear-gradient(top, transparent 5px, black 5px, black 50%, transparent 50%),	linear-gradient(bottom, transparent 5px, black 5px, black 50%, transparent 50%),
+		radial-gradient(circle, black 5px, transparent 5px) -2px 59%,
+		radial-gradient(circle, black 5px, transparent 5px) -2px 41%;
+	background-size: 100% 100%, 100% 100%, 15px 50%, 15px 50%;
+	background-clip: padding-box;
+	border: 0.5rem solid transparent;
+	border-radius: 1.5rem;
+	z-index: -1;
+	/*credits: https://gist.github.com/zoreet/1550217/8dff57fc6941ae4652faea7ff62f2b9a5c8767ef*/
+} body::-webkit-scrollbar-thumb:hover {
+	background-color: hsla(170,3%,33%,.8);
+}
+
+textarea, pre {
+	-moz-tab-size: 4;
+	  -o-tab-size: 4;
+	     tab-size: 4;
+}
+
+table {
+	border: 2px solid black;
+	border-radius: 4px;
+	padding: 1px;
+	border-collapse: collapse;
+} table tr, table td, table th {
+	border: 2px;
+	padding: 2px;
+} table td, table th {
+	border: 1px solid black;
+	text-align: center;
+} table th {
+	background: rgba(88,88,88,.5);
+	font-weight: normal;
+}
+
+ol {
+	counter-reset: item
+} ol li{
+	display: block
+} ol li:before {
+	content: counters(item, ".") ")\00A0\00A0";
+	counter-increment: item
+}
+
+.intro {
+	text-align: center;
+}
+
+.comment {
+	opacity: .54;
+} .comment:before {
+	/*content: '(';*/
+} .comment:after {
+	/*content: ')';*/
+}
+
+.paragraph {
+	background: rgba(180,180,200,.02);
+	margin: 20px auto 30px 0px;
+	border-radius: 1em;
+	padding: 0px 4px;
+	border: 1px solid rgba(180,180,200,.3);
+}
+
+.title {
+	/*font-weight: bold;*/
+} .title::first-letter {
+	text-transform: uppercase;
+}
+
+.titles {
+} .titles > .titel {
+	/*font-weight: bold;*/
+} .titles > .titel::first-letter {
+	text-transform: uppercase !important;
+}
+
+.title, .titles {
+	margin: 50px auto 20px auto;
+	font-size: 150%;
+}
+
+img {
+	height: 90%;
+	width: 90%;
+	max-height: 8em;
+	max-width: 8em;
+	object-fit: contain;
+}
+
+.qot {
+	font-style: italic;
+} .qot:before {
+	/*content: '“';*/
+} .qot:after {
+	/*content: '”';*/
+}
+
+.red-evidence {
+	color: rgba(128,0,0,1);
+}
+
+.ref-step a, .comment a, internal-ref {
+	color: unset;
+}
+
+#sbjs_tr> button, #sbjs_tr> input {
+	wifth: 100%;
+	height: 100%;
+}
+
+</style>
+<script>
+
+var rows=0;
+
+function add() {
+	document.getElementById('sbjs_tr').innerHTML += '<tr><th class="sbj">'+document.getElementById('taadd').value+'</th><td><button onclick="addvote('+rows+');">→<br />add vote</button></td></tr>';
+	rows += 1;
+};
+
+function addvote(pos) {
+	document.getElementById('sbjs_tr').getElementsByTagName('tr')[pos].innerHTML += '<td><input placeholder="insert the votes, please"/></td>';
+};
+
+function ArrAdd(arr=[],...v) {
+	if(!Array.isArray(arr)) arr=[arr] ;
+	return arr.concat(v);
+}; Array.prototype.AddArr = function() {
+	return Object.assign(this,this.concat(Array.from(arguments)));
+};
+
+function ArrCon(...v) {
+	let r = [];
+	for(let c of v) {
+		if(!Array.isArray(c)) c=[c] ;
+		r = r.concat(c);
+	};
+	return r;
+}; Array.prototype.ArrCon = function() {
+	if(!Array.isArray(this)) Object.assign(this,[this]) ;
+	for(let c of Array.from(arguments)) {
+		if(!Array.isArray(c)) c=[c] ;
+		Object.assign(this,this.concat(c));
+	};
+	return this;
+}; Array.prototype.ArrConOld = function() {
+	let r = this;
+	if(!Array.isArray(this)) r=[this] ;
+	for(let c of Array.from(arguments)) {
+		if(!Array.isArray(c)) c=[c] ;
+		r = r.concat(c);
+	};
+	return Object.assign(this,r);
+};
+
+function sum(...v) {
+	if(v.length==1) {
+		if(!Array.isArray(v[0])) v[0]=[v[0]] ;
+		v = v[0];
+	};
+	let s = 0;
+	return v.reduce((a,b)=>a+b,s);
+}; Array.prototype.sum = function(...v) {
+	if(v.length==1) {
+		if(!Array.isArray(v[0])) v[0]=[v[0]] ;
+		v = v[0];
+	};
+	let s = 0;
+	let r = ArrCon(this,v);
+	return r.reduce((a,b)=>a+b,s);
+};
+
+function avg(...v) {
+	if(v.length==1) {
+		if(!Array.isArray(v[0])) v[0]=[v[0]] ;
+		v = v[0];
+	};
+	let s = 0;
+	return v.reduce((a,b)=>a+b,s)/v.length;
+}; Array.prototype.avg = function(...v) {
+	if(v.length==1) {
+		if(!Array.isArray(v[0])) v[0]=[v[0]] ;
+		v = v[0];
+	};
+	let s = 0;
+	let r = ArrCon(this,v);
+	return r.reduce((a,b)=>a+b,s)/r.length;
+};
+
+function median(...v) {
+	if(v.length==1) {
+		if(!Array.isArray(v[0])) v[0]=[v[0]] ;
+		v = v[0];
+	};
+	v = v.sort((a,b)=>a-b);
+	let m = Math.floor(v.length/2);
+	return v.length%2==0?(v[m-1]+v[m])/2:v[m];
+}; Array.prototype.median = function(...v) {
+	if(v.length==1) {
+		if(!Array.isArray(v[0])) v[0]=[v[0]] ;
+		v = v[0];
+	};
+	v = ArrCon(this,v).sort((a,b)=>a-b);
+	let m = Math.floor(v.length/2);
+	return v.length%2==0?(v[m-1]+v[m])/2:v[m];
+};
+
+function mode(...v) { /** the mode is not correct, doesn't worl plurimode and mode for value that are not number ! */
+	if(v.length==1) {
+		if(!Array.isArray(v[0])) v[0]=[v[0]] ;
+		v = v[0];
+	};
+	v = v.slice().sort((x,y)=>x-y);
+	let a = c = 1;
+	let b = d = v[0];
+	for(let i=1; i<v.length; i++) {
+		if(v[i-1]!==v[i]) {
+			if(c>a) {
+				a = c;
+				b = d;
+			};
+			c = 0;
+			d = v[i];
+		};
+		c++;
+	};
+	return c>a?d:b;
+}; Array.prototype.mode = function(...v) {
+	if(v.length==1) {
+		if(!Array.isArray(v[0])) v[0]=[v[0]] ;
+		v = v[0];
+	};
+	v = ArrCon(this,v).slice().sort((x,y)=>x-y);
+	let a = c = 1;
+	let b = d = v[0];
+	for(let i=1; i<v.length; i++) {
+		if(v[i-1]!==v[i]) {
+			if(c>a) {
+				a = c;
+				b = d;
+			};
+			c = 0;
+			d = v[i];
+		};
+		c++;
+	};
+	return c>a?d:b;
+};
+
+function ArrRmv(arr,...v) {
+	if(!Array.isArray(arr)) arr=[arr] ;
+	return arr.filter(function(e){
+		let r = true;
+		for(let c of v) {
+			r = and(r,e!=c);
+		};
+		return r;
+	});
+}; Array.prototype.ArrRmv = function(...v) {
+	if(v.length==1) {
+		if(!Array.isArray(v[0])) v[0]=[v[0]] ;
+		v = v[0];
+	};
+	return this.filter(function(e){
+		let r = true;
+		for(let c of v) {
+			r = and(r,e!=c);
+		};
+		return r;
+	});
+};
+
+function and(...v) {
+	if(v.length==1) {
+		if(!Array.isArray(v[0])) v[0]=[v[0]] ;
+		v = v[0];
+	};
+	let t = true;
+	for(let c of v) {
+		t &= c;
+	};
+	return t==0?false:true;
+}; Array.prototype.and = function(...v) {
+	if(v.length==1) {
+		if(!Array.isArray(v[0])) v[0]=[v[0]] ;
+		v = v[0];
+	};
+	let t = true;
+	for(let c of ArrCon(this,v)) {
+		t &= c;
+	};
+	return t==0?false:true;
+};
+
+function or(...v) {
+	if(v.length==1) {
+		if(!Array.isArray(v[0])) v[0]=[v[0]] ;
+		v = v[0];
+	};
+	let t = false;
+	for(let c of v) {
+		t |= c;
+	};
+	return t==0?false:true;
+}; Array.prototype.or = function(...v) {
+	if(v.length==1) {
+		if(!Array.isArray(v[0])) v[0]=[v[0]] ;
+		v = v[0];
+	};
+	let t = false;
+	for(let c of ArrCon(this,v)) {
+		t |= c;
+	};
+	return t==0?false:true;
+};
+
+function xor(...v) {
+	if(v.length==1) {
+		if(!Array.isArray(v[0])) v[0]=[v[0]] ;
+		v = v[0];
+	};
+	let t = false;
+	for(let c of v) {
+		t ^= c;
+	};
+	return t==0?false:true;
+}; Array.prototype.xor = function(...v) {
+	if(v.length==1) {
+		if(!Array.isArray(v[0])) v[0]=[v[0]] ;
+		v = v[0];
+	};
+	let t = false;
+	for(let c of ArrCon(this,v)) {
+		t ^= c;
+	};
+	return t==0?false:true;
+};
+
+function JSONCon(...v) {
+	if(v.length==1) {
+		if(!Array.isArray(v[0])) v[0]=[v[0]] ;
+		v = v[0];
+	};
+	let r={};
+	for(let j of v) {
+		for(let k in j) {
+			r[k] = j[k];
+		};
+	};
+	return r;
+}; Array.prototype.JSONCon = function(...v) {
+	if(v.length==1) {
+		if(!Array.isArray(v[0])) v[0]=[v[0]] ;
+		v = v[0];
+	};
+	let r = {};
+	for(let j of ArrCon(this,v)) {
+		for(let k in j) {
+			r[k] = j[k];
+		};
+	};
+	this.splice(0,this.length);
+	return Object.assign(this,r);
+};
+
+function vavgs() {
+	let tab = [];
+	console.log('START read table →');
+	let lis = document.getElementById('sbjs_tr').getElementsByTagName('tr');
+	for(let i0=0; i0<lis.length; i0++) {
+		tab.push([lis[i0].getElementsByClassName('sbj')[0].innerHTML,[]]);
+		let values = [];
+		let ins = lis[i0].getElementsByTagName('input');
+		for(let i1=0; i1<ins.length; i1++) {
+			let v = ins[i1].value;
+			tab[i0][1].push(isNaN(v)?v:Number(v));
+		};
+	};
+	console.log('DONE read table');
+	console.log('START elaborate table →');
+	for(let e of tab) {
+		for(let i=0; i<e[1].length; i++) {
+			//~ if(e[1][i]==''||e[1][i]==' ') e[1][i]='?' ; /* e[1][i]=['?'][Array.indexOf(e[1][i],[''])]; */
+			if(isNaN(e[1][i])||e[1][i]=='') e[1][i]='?' ;
+		};
+		let rJSON = {
+			"vote": e[1],
+			"voteLen": e[1].length,
+			"voteKnw": e[1].ArrRmv('?'),
+			"voteKnwLen": e[1].ArrRmv('?').length,
+			"voteUnkwLen": e[1].length-e[1].ArrRmv('?').length,
+			"avg": avg(e[1].ArrRmv('?')),
+			"min": Math.min(...e[1].ArrRmv('?')),
+			"max": Math.max(...e[1].ArrRmv('?')),
+			"median": median(e[1].ArrRmv('?')),
+			"mode": mode(e[1].ArrRmv('?')),
+		};
+		for(let i=4; i<=10; i+=.5) {
+			let j = {};
+			console.log(sum(rJSON['voteKnw']));
+			j['obj'+i] = (rJSON['voteLen']*i-sum(rJSON['voteKnw']))/rJSON['voteUnkwLen'];
+			rJSON = JSONCon(rJSON,j);
+		};
+		e.AddArr(rJSON);
+	};
+	console.log(tab);
+	console.log('DONE elaborate table');
+	console.log('START print table →');
+	document.getElementById('ress').innerHTML = tab;
+	console.log('DONE print table');
+};
+
+function nojs() {
+	document.getElementById('no-js').outerHTML = '';
+};
+
+window.onload = function() {
+	nojs();
+	_JCHSL({'Elem':'document.body.style.backgroundColor','L':96.5,'LRange':.5,'Interval':2000,'IntervalRange':1000});
+};
+
+</script>
+</head>
+<body class="_BOMP">
+
+<div id="no-js">
+	<p>Sorry,<br />your browser may not support JavaScript<br />or, if you have them disabled, please enable them.</p>
+</div>
+
+<div class="_DN">
+</div>
+
+<div class="_PA _CX" id="rel">
+	<input id="taadd" placeholder="insert the suject, please"/>
+	<button onclick="add();">create new school subject</button>
+	<div id="sbjs">
+		<table id="sbjs_tr"></table>
+	</div>
+	<button onclick="vavgs();">exeute</button>
+	<div id="ress"></div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,1452 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>HTML document</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Mono">
+	<link rel="stylesheet" href="https://2wtnt.tk/css.css">
+	<script type="text/javascript" src="https://2wtnt.tk/js.js"></script>
+	<!--script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML' async></script>
+	<script type="text/javascript">try{MathJax.Hub.Config({tex2jax:{inlineMath:[['$','$'],["//(","//)"]],processEscapes:true}})}catch{}</script-->
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@1,700&display=swap');
+
+/* *:not(pre):not(textarea) {
+	font-family: 'Lucida Console', monospace;
+	font-family: 'Ubuntu Mono', monospace;
+} */
+
+* {
+	font-family: Helvetica, sans-serif;
+	margin: 10px auto;
+} *::first-letter {
+	font-weight: unset;
+	color: unset;
+	background: unset;
+} *::first-line {
+	font-weight: unset;
+	color: unset;
+	background: unset;
+}
+
+::-moz-selection {
+	background: rgba(0,255,255,.2);
+	color: unset;
+} ::selection {
+	background: rgba(0,255,255,.2);
+	color: unset;
+}
+
+body {
+} body::-webkit-scrollbar {
+	width: 1.5rem;
+} body::-webkit-scrollbar-track {
+	display: none;
+} body::-webkit-scrollbar-thumb {
+	background: silver;
+	background:
+		linear-gradient(top, transparent 5px, black 5px, black 50%, transparent 50%),	linear-gradient(bottom, transparent 5px, black 5px, black 50%, transparent 50%),
+		radial-gradient(circle, black 5px, transparent 5px) -2px 59%,
+		radial-gradient(circle, black 5px, transparent 5px) -2px 41%;
+	background-size: 100% 100%, 100% 100%, 15px 50%, 15px 50%;
+	background-clip: padding-box;
+	border: 0.5rem solid transparent;
+	border-radius: 1.5rem;
+	z-index: -1;
+	/*credits: https://gist.github.com/zoreet/1550217/8dff57fc6941ae4652faea7ff62f2b9a5c8767ef*/
+} body::-webkit-scrollbar-thumb:hover {
+	background-color: hsla(170,3%,33%,.8);
+}
+
+textarea, pre {
+	-moz-tab-size: 4;
+	  -o-tab-size: 4;
+	     tab-size: 4;
+}
+
+#no-js {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100vw;
+	height: 100vh;
+	padding: 0px;
+	margin: 0px;
+	border: 0px;
+	background: rgba(245,245,245,1);
+	z-index: 1000000;
+} #no-js > p {
+	position: absolute;
+	left: 50%;
+	top: 45%;
+	transform: translate(-50%,-50%);
+}
+
+table {
+	border: 2px solid black;
+	border-radius: 4px;
+	padding: 1px;
+	border-collapse: collapse;
+} table tr, table td, table th {
+	border: 2px;
+	padding: 2px;
+} table td, table th {
+	border: 1px solid black;
+	text-align: center;
+} table th {
+	background: rgba(88,88,88,.5);
+	font-weight: normal;
+}
+
+ol {
+	counter-reset: item;
+} ol li:not(ul li) {
+	display: block;
+} ol li:before {
+	content: counters(item,".") ")\00A0\00A0";
+	counter-increment: item;
+} ul li:before {
+	content: none;
+}
+
+.intro {
+	text-align: center;
+}
+
+.comment {
+	opacity: .54;
+} .comment:before {
+	/*content: '(';*/
+} .comment:after {
+	/*content: ')';*/
+}
+
+.paragraph {
+	background: rgba(180,180,200,.02);
+	margin: 20px auto 30px 0px;
+	border-radius: 1em;
+	padding: 0px 4px;
+	/*border: 1px solid rgba(180,180,200,.3);*/
+} .paragraph:not(.paragraph > .paragraph) {
+	border: 1px solid rgba(180,180,200,.3);
+}
+
+.title {
+	/*font-weight: bold;*/
+} .title::first-letter {
+	text-transform: uppercase;
+}
+
+.titles {
+} .titles > .titel {
+	/*font-weight: bold;*/
+} .titles > .titel::first-letter {
+	text-transform: uppercase !important;
+}
+
+.title, .titles {
+	margin: 50px auto 20px auto;
+	font-size: 150%;
+}
+
+.subtitle {
+	margin: 14px auto 17px auto;
+	font-size: 123%;
+	/*font-weight: bold;*/
+} .title::first-letter {
+	text-transform: uppercase;
+}
+
+.WTable {
+	width: 100%;
+}
+
+img {
+	object-fit: contain;
+}
+
+.attr > img, .enchOpt > img {
+	height: 90%;
+	width: 90%;
+	max-height: 8em;
+	max-width: 8em;
+}
+
+.qot {
+	font-style: italic;
+} .qot:before {
+	/*content: '“';*/
+} .qot:after {
+	/*content: '”';*/
+}
+
+.red-evidence {
+	color: rgba(128,0,0,1);
+}
+
+.ref-step a, .comment a {
+	color: unset;
+}
+
+.egp {
+	font-size: 86%;
+	opacity: .86;
+}
+
+.dem {
+	font-size: 93%;
+	opacity: .93;
+}
+
+.MathJax_Display {
+	margin: 1em 0em 1.2em 0em !important;
+}
+
+.attr {
+	position: relative;
+	max-height: 100%;
+	font-size: .6em;
+	vertical-align: middle;
+	border: 1px solid rgba(180,180,200,.3);
+} .attr > img {
+	height: 1.4em;
+	width: 1.4em;
+	margin: 0px;
+	object-fit: contain;
+}
+
+.enchOpt {
+	opacity: .63;
+	font-size: 82%;
+} .enchOpt > img {
+	vertical-align: middle;
+	height: 1em;
+	width: 1em;
+	margin: 0px;
+	margin-right: .5em;
+	object-fit: contain;
+}
+
+.enchInfo {
+	opacity: .6;
+	font-size: 85%;
+}
+
+.clarif {
+	margin: 12px auto auto auto;
+	opacity: .82;
+	font-size: 92%;
+} .clarif > div {
+	margin: 5px auto 5px 9.5px;
+}
+
+.moveImg {
+	position: relative;
+	max-height: 2em;
+	vertical-align: middle;
+	float: right;
+	height: 1.6em;
+	width: 1.6em;
+	margin: 0px .55em 0px 0px;
+}
+
+.imgImg {
+	border: 0px;
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+} .imgImg > div {
+	border: 0px;
+	margin: 0px auto;
+	padding: 0px;
+	position: relative;
+	width: -moz-fit-content;
+	width: fit-content;
+} .imgImg > div > img {
+	max-height: 5.65em;
+	min-height: 1em;
+	min-width: 1em;
+	margin: 0px .5em;
+	vertical-align: middle;
+	opacity: .79;
+}
+
+#sintesiList {
+	margin-right: 1.25em;
+}
+
+.scriptColor {
+	font-weight: 999;
+    /*-webkit-text-stroke: .4px black;*/
+    text-shadow: -.4px 0 black, 0 .4px black, .4px 0 black, 0 -.4px black;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-width: 120%;
+	vertical-align: middle;
+}
+
+.othsrc {
+	display: none;
+}
+
+</style>
+<script>
+
+function displayOthsrc(b) {
+	b?document.querySelector('.othsrc').style.display='none':document.querySelector('.othsrc').style.display='block';
+	return 'Done!';
+};
+
+function year(y) {
+	return y+'°anno';
+};
+
+function wand() {
+	return '<img src="https://cdn2.iconfinder.com/data/icons/harry-potter-colour-collection/60/19_-_Harry_Potter_-_Colour_-_Harrys_Wand-512.png">';
+};
+
+function hand() {
+	return '<img src="https://www.pngrepo.com/png/321086/512/magic-swirl.png">';
+};
+
+var moveSep = 'https://cdn-icons-png.flaticon.com/512/56/56843.png?w=360';
+
+let lightsColors = {
+	"none": {
+		"name": 'nessuno',
+		"color": 'white',
+	},
+	"blue": {
+		"name": 'blu',
+		"color": 'rgb(58,105,190)',
+	},
+	"bluice": {
+		"name": 'blu-ghiaccio',
+		"color": 'rgb(78,140,256)',
+	},
+	"green": {
+		"name": 'verde',
+		"color": 'rgb(47,217,121)',
+	},
+	"orange": {
+		"name": 'arancione',
+		"color": 'rgb(255,82,29)',
+	},
+	"yellow": {
+		"name": 'giallo',
+		"color": 'rgb(255,236,0)',
+	},
+	"purple": {
+		"name": 'porpora',
+		"color": 'rgb(100,0,120)',
+	},
+	"red": {
+		"name": 'rosso',
+		"color": 'rgb(255,10,0)',
+	},
+	"white": {
+		"name": 'bianco',
+		"color": 'rgb(245,245,245)',
+	},
+	"swirlOfGold": {
+		"name": 'vortice d\'orato',
+		"color": 'rgb(220,146,2)',
+	},
+};
+
+/**	{	"title": 'accio', "desc": 'Attira le cose verso di se.',
+		"engTitle": 'abc', //se è rilevante riportare l'incantesimo in inglese
+		"name": 'incantesimo di appello', //nome dell'incantesimo (!= dalla formula)
+		"engName": 'abc', //se è rilevante riportare il nome dell'incantesimo in inglese
+		"img": 'https://URL', //cover image
+		"sugg": 'abc', //suggested by
+		"alert": 'abc', //alertings
+		"class": 'appello', //classe
+		"engClass": 'abc', //se è rilevante riportare la classe in inglese
+		"type": 'abc', //tipologia dell'incantesimo
+		"lvl": 'abc', //livello
+		"enchOpp": 'depulso', //incantesimo contrario
+		"enchVs": 'abc', //incantesimo per difendersi
+		"enchSim": 'abc', //incantesimo simile
+		"enchRlt": 'abc', //incantesimi correlati
+		"color": lightsColors.blue,
+		"wandColor": lightsColors.blue,
+		"handColor": lightsColors.blue,
+		"move": 'https://URL', //image of movement of the wing
+		"info": 'abc', //other informations
+		"attr": {
+			"wand": true,
+			"year": 6||'abc',
+	},	}, */
+
+let incantesimi = [
+	{	"title": 'accio', "desc": 'Attira le cose verso di se senza limiti di distanza. Gli oggetti appellati non possono attraversare muri o porte, e possono quindi essere trattenuti anche a mani nude. L\'incantesimo non è in grado di evocare direttamente obiettivi eccezionalmente grandi come edifici o creature viventi. È inoltre possibile incantare gli oggetti per impedire che vengano richiamati.',
+		"name": 'incantesimo di appello',
+		"img": [
+			'https://static.wikia.nocookie.net/harrypotter/images/9/99/Accio_cup.gif/revision/latest/scale-to-width-down/350?cb=20160520023137',
+			'https://static.wikia.nocookie.net/harrypotter/images/2/23/NewtAccio1.gif/revision/latest/scale-to-width-down/250?cb=20190328210110',
+			'https://static.wikia.nocookie.net/harrypotter/images/6/60/NewtAccio2.gif/revision/latest/scale-to-width-down/250?cb=20190328210219',
+			'https://static.wikia.nocookie.net/harrypotter/images/5/50/NewtAccio3.gif/revision/latest/scale-to-width-down/250?cb=20190328210331',
+			'https://static.wikia.nocookie.net/harrypotter/images/b/ba/Accio_Firebolt.gif/revision/latest/scale-to-width-down/250?cb=20190817235111',
+			'https://static.wikia.nocookie.net/harrypotter/images/9/94/Accio_Winged_Key_-_PAS.png/revision/latest?cb=20201218160943'],
+		"sugg": [
+			'Per richiamere armi durante un duello.',
+			'Per richiamare una scopa volante per fuggire.'],
+		"alert": 'Dato che serve ad attirare oggetti che si trovano sia vicini che lontani, è evidente che maggiore è la distanza della cosa da richiamare maggiore dovrà essere la concentrazione.',
+		"class": 'appello',
+		"type": 'generico',
+		"lvl": 'facile',
+		"enchOpp": 'depulso',
+		"color": lightsColors.none,
+		"move": [
+			'https://static.wikia.nocookie.net/harrypotter/images/0/06/Accio_wand_movement_WBS.png/revision/latest/scale-to-width-down/70?cb=20130823044419',
+			moveSep,
+			'https://static.wikia.nocookie.net/harrypotter/images/9/92/Accio_wand_movement_WU.png/revision/latest/scale-to-width-down/180?cb=20200907001953',
+			'https://www.potterpedia.it/imagewatermark/immagini/3062-normal_p1bmu63h8v1bl19lc1t8ip3fqa04.jpg'],
+		"info": [
+			'Da non confondere con l’Incantesimo di Evocazione.',
+			'Viene utilizzato per la prima volta da Harry Potter, il quale nella prima prova del Torneo tremaghi appella la sua Firebolt dalla torre di Grifondoro al recinto dei draghi. Successivamente, il giovane mago è ricorso di nuovo alla formula Accio per appellare il Calice di Fuoco, trasformato in passaporta e, così, sfuggire a Lord Voldemort nel film "Harry Potter e il Calice di Fuoco".',
+			'La formula "accio" proviene dal latino e significa "io richiamo".',
+			'Nella traduzione in lingua Ungherese la formula dell\'incanto è "invito", probabilmente dall\'idea "invitare".'],
+		"attr": {
+			"wand": true,
+			"hand": true,
+			"year": 4,
+	},	},
+	{	"title": 'acutus', "desc": 'Trasfigura piccoli oggetti in aghi.',
+		"sugg": 'Per prendere dimestichezza con le trasfigurazioni, tutti i giovani maghi dovrebbero esercitarsi provando questo semplice incantesimo.',
+		"alert": 'Le prime volte che si esegue questa trasfigurazione bisogna stare molto attenti a non ferirsi con gli oggetti che potrebbero comparire al posto degli aghi (come lamette, schegge di ferro, .. ).',
+		"class": 'trasfigurazione',
+		"type": 'trasfigurazione',
+		"lvl": 'facile',
+		"info": 'Acutus è uno dei primi incanti insegnati alle lezioni di trasfigurazione alla Scuola di Magia e Stregoneria di Hogwarts.',
+		"attr": {
+			"wand": true,
+			"year": 1,
+	},	},
+	{	"title": 'adduco maxima', "desc": 'Aumenta, anche in modo gigantesco, lo spazio interno a un oggetto che possa fungere da contenitore senza cambiarne l\'apparenza esterna, in tal modo solo il mago o la strega che lo ha eseguito sa che un certo contenitore è magicamente ampliato.',
+		"name": 'incantesimo di estensione irriconoscibile',
+		"sugg": 'Per aumentare il volume interno di borse e bauli che così risultano leggeri e maneggevoli da trasportare pur contenendo un\'infinità di cose. Oppure per ingrandire l’interno di tende e locali in modo che molte persone possano stare in spazi ristretti.',
+		"alert": 'Se lo spazio di un contenitore è molto esteso è possibile avere difficoltà a ritrovarvi gli oggetti stipati, in questo caso si consiglia di utilizzare un incantesimo di appello, per esempio "accio", per recuperare il contenuto in modo veloce e sicuro.',
+		"class": 'estensione irriconoscibile',
+		"type": 'generico',
+		"lvl": 'avanzato',
+		"move": 'https://www.potterpedia.it/imagewatermark/immagini/3066-p1bmu6c9jf1umr1iffde91gct16r64.jpg',
+		"info": [
+			'È uno dei primi incantesimi insegnati alla Scuola di Magia e Stregoneria di Hogwarts.',
+			'Questo incantesimo viene usato da Arthur Weasley per permettere che otto persone, sei grandi bauli, due gufi e un ratto entrino confortevolmente in una Ford Anglia da quattro persone nell\'episodio "Harry Potter e La Camera dei Segreti".'],
+		"attr": {
+			"wand": true,
+			"year": 1,
+	},	},
+	{	"title": 'aguamenti', "desc": 'Generalmente produce un piccolo getto d’acqua ma raramente può essere utilizzato anche per impieghi di maggiore portata quali persino combattere.',
+		"name": 'incantesimo acquatico',
+		"engName": 'water-making spell',
+		"img": [
+			'https://static.wikia.nocookie.net/harrypotter/images/e/e4/Aguamenti_PM.png/revision/latest/scale-to-width-down/349?cb=20161227030850',
+			'https://static.wikia.nocookie.net/harrypotter/images/a/ad/Aguamenti.gif/revision/latest/scale-to-width-down/350?cb=20200818185203&path-prefix=it',
+			'https://static.wikia.nocookie.net/harrypotter/images/e/e2/Aguamenti_HM_Spell_Icon.png/revision/latest/scale-to-width-down/180?cb=20201130044020'],
+		"sugg": 'In caso di necessità può essere utilizzato per attaccare il nemico con ondate d\'acqua, fino ad intrappolarlo dentro una sfera.',
+		"alert": [
+			'Nel caso venga utilizzato per grandi getti d\'acqua, per esempio per difendersi, i luoghi privi di grandi spazi, come i posti affollati, le stanze chiuse, le foreste molto fitte e simili, non permetteranno di eseguire questo incantesimo in sicurezza o ne comprometteranno l’efficacia.',
+			'Da non confondere con "aqua eructo".'],
+		"type": 'fascino, congiura, evocazione, trasfigurazione, generico, offensivo',
+		"engType": 'charm, conjuration',
+		"lvl": 'medio',
+		"enchSim": 'aqua eructo',
+		"color": [lightsColors.bluice,lightsColors.blue],
+		"move": [
+			'https://static.wikia.nocookie.net/harrypotter/images/6/67/Aguamenti.png/revision/latest/scale-to-width-down/70?cb=20130823023223',
+			moveSep,
+			'https://static.wikia.nocookie.net/harrypotter/images/f/ff/Aguame.jpg/revision/latest/scale-to-width-down/220?cb=20200818185312&path-prefix=it',
+			'https://www.potterpedia.it/imagewatermark/immagini/3161-p1bmu759ir1lovkbcfld18gk16tv4.jpg'],
+		"info": 'La formula è composta da due termini: Il primo proviene dallo spagnolo o dal portoghese "agua" o "água" che significa "acqua". Il secondo proviene dallo spagnolo, portoghese o italiano "mente" che significa "mente". Entrambi a loro volta derivano rispettivamente dal Latino "aqua", che significa "acqua", e dalla medesima lingua "mens", che significa "mente"; quest\'ultimo al caso dativo singolare diviene "menti", ovvero "alla mente" o "per la mente".<br />Dato l\'amore di J. K. Rowling per i giochi di parole, sembra anche plausibile che nella sua mente ci fosse un ibrido tra "água" e "augment", nel senso di "aumentare".',
+		"attr": {
+			"wand": true,
+			"hand": true,
+			"year": 6,
+	},	},
+	{	"title": 'alimentes flames', "desc": 'Alimenta un fuoco e/o una fiamma facendogli raggiungere grandi dimensioni. Non è un incantesimo difficile ma richiede una discreta forza di volontà perché il fuoco magico si mantenga vigoroso e disciplinato.',
+		"sugg": 'Per far indietreggiare un branco di animali feroci o tenere lontano il nemico.',
+		"alert": 'Non bisogna mai perdere il contatto visivo con la fiamma per non rischiare che si spenga all’improvviso o che si ritorca contro che l\'ha creata.',
+		"type": 'difensivo',
+		"lvl": 'medio',
+		"move": 'https://www.potterpedia.it/imagewatermark/immagini/3160-p1bmu7vgqmhgd1l9b1jll1vrqbh24.jpg',
+		"attr": {
+			"wand": true,
+	},	},
+	{	"title": 'alohomora', "desc": 'Apre porte, casse o, più genericamente, serrature chiuse a chiave. Può aprire anche camere blindate.',
+		"name": 'incantesimo di apertura',
+		"engName": 'unlocking charm',
+		"img": [
+			'https://static.wikia.nocookie.net/harrypotter/images/0/0e/Alohomora.gif/revision/latest?cb=20140811055322',
+			'https://static.wikia.nocookie.net/harrypotter/images/2/23/AlohomoraHM.png/revision/latest/scale-to-width-down/180?cb=20201213231849',
+			'https://static.wikia.nocookie.net/harrypotter/images/4/4e/NewtAlohomora.gif/revision/latest/scale-to-width-down/220?cb=20190325031542',
+			'https://static.wikia.nocookie.net/harrypotter/images/5/5b/VoldemortAlohomora.gif/revision/latest/scale-to-width-down/184?cb=20190325160600',
+			'https://static.wikia.nocookie.net/harrypotter/images/3/36/AlohomoraPAS.png/revision/latest/scale-to-width-down/150?cb=20201217131731'],
+		"sugg": 'Per aprire le porte o le finestre sigillate magicamente oppure chiuse da lucchetti, catene e simili.',
+		"alert": 'Questo incantesimo è inefficace se la serratura da aprire è stata stregata con una magia particolarmente potente oppure oscura.',
+		"type": 'fascino, generico',
+		"engType": 'charm',
+		"lvl": 'facile, standard',
+		"enchOpp": 'incanto anti-alohomora',
+		"color": [lightsColors.none,lightsColors.blue,lightsColors.yellow,lightsColors.purple],
+		"move": [
+			'https://static.wikia.nocookie.net/harrypotter/images/e/e0/Alohomora-0.gif/revision/latest/scale-to-width-down/150?cb=20191220060045',
+			'https://static.wikia.nocookie.net/harrypotter/images/3/35/Unlocking-spell.png/revision/latest?cb=20110924151048',
+			moveSep,
+			'https://www.potterpedia.it/imagewatermark/immagini/3162-p1bmu87v881u2819qdm401109f3u4.jpg',
+			'https://static.wikia.nocookie.net/harrypotter/images/2/2c/AlohomoraGesture.png/revision/latest/scale-to-width-down/150?cb=20210128184911',
+			'https://static.wikia.nocookie.net/harrypotter/images/3/31/Alohomora_wand_movement_WU.png/revision/latest/scale-to-width-down/150?cb=20200909172859',
+			'https://static.wikia.nocookie.net/harrypotter/images/c/c3/Alohohomorahaha.gif/revision/latest/scale-to-width-down/220?cb=20200821132752&path-prefix=it'],
+		"info": [
+			'È possibile incantare le serrature in modo da renderlo inefficace.',
+			'L\'incantesimo è spiegato al capitolo sette del Libro standard degli incantesimi, in dotazione agli studenti del primo anno della Scuola di Magia e Stregoneria di Hogwarts.',
+			'Viene utilizzato per la prima volta da Hermione nel primo libro, ovvero nel primo anno a Hogwarts, per aprire la porta che conduce al corridoio del terzo piano dove è rinchiuso Fuffi nell\'episodio "Harry Potter e La Pietra Filosofale". Inoltre è utilizzato anche da Newt Scamander a New York per recuperare il proprio Snaso scappato e rifugiatosi in una camera blindata babbana.',
+			'La formula "alohomora" proviene da un dialetto dell\'Africa occidentale e significa "amico dei ladri".'],
+		"attr": {
+			"wand": true,
+			"hand": true,
+			"year": 1,
+	},	},
+	{	"title": 'anapneo', "desc": 'Libera le vie respiratorie ed evita il soffocamento. Si esegue pronunciando la formula e puntando la bacchetta verso il torace o la gola della persona che si vuole aiutare imprimendo un lieve movimento verso l’alto.',
+		"sugg": 'Per soccorrere una persona o una Creatura Magica che sta soffocando.',
+		"alert": 'Non è un incantesimo difficile ma, come tutti quelli curativi, deve essere eseguito con perizia per evitare di far danni.',
+		"type": 'guarigione, curativo',
+		"engType": 'healing, vanishment',
+		"lvl": 'medio',
+		"move": [
+			'https://cdn.staticcrate.com/stock-hd/effects/footagecrate-magic-point-unforgivable-green-prev-full.png',
+			moveSep,
+			'https://www.potterpedia.it/imagewatermark/immagini/3163-p1bmu9aic2mrp1nn6v73cj5ljj4.jpg'],
+		"info": ['La formula "anapneo" comepare per la prima volta nell\'episodio "Harry Potter e Il Principe Mezzosangue".',
+			'La formula "anapneo" proviene dal greco antico "αναπνέω" (anapnéo) che significa "respiro".'],
+		"attr": {
+			"wand": true,
+			"hand": true,
+	},	},
+	{	"title": 'animaleus nobodyx', "desc": 'Fa tornare Animagus e persone trasfigurate in bestie al suo stato umano. Se è scagliato contro animali veri, che erroneamente si pensa siano persone trasfigurate o Animagus, non ha alcun effetto. Non sortisce alcun effetto nemmeno sui Licantropi.',
+		"sugg": 'Per smascherare gli Animagus non registrati al Ministero della Magia.',
+		"alert": [
+			'I maghi giovani e inesperti dovrebbero evitare di usarlo se non in caso di effettiva necessità a causa della riscontrabile difficoltà nella sua esecuzione.',
+			'Da non confondere con l\'incanto omosembiante, poiché questo sortilegio non sortisce alcun effetto sui Licantropi.'],
+		"class": 'omo-sembiante',
+		"type": 'trasfigurazione',
+		"lvl": 'Probitivo',
+		"enchRlt": 'incanto omosembiante',
+		"info": 'Questo incantesimo è lanciato da Remus Lupin e Sirius Black per far tornare alla forma originale Peter Minus, che aveva assunto le sembianze del topo Crosta nell\'episodio "Harry Potter e Il Prigioniero di Azkaban".',
+		"attr": {
+			"wand": true,
+	},	},
+	{	"title": 'anteoculatia', "desc": 'Fa apparire delle corna ramificate sulla testa dell’avversario.',
+		"img": [
+			'https://static.wikia.nocookie.net/harrypotter/images/f/f7/Anteoculatia_HM.png/revision/latest?cb=20210131135726',
+			'https://static.wikia.nocookie.net/harrypotter/images/0/04/Anteoculatia.png/revision/latest/scale-to-width-down/180?cb=20120926202030'],
+		"class": 'oscuro, fattura',
+		"engClass": 'jinx',
+		"color": [lightsColors.red,lightsColors.purple],
+		"move": [
+			'https://static.wikia.nocookie.net/harrypotter/images/1/19/Anteoculatia_wand_movement_HM.png/revision/latest/scale-to-width-down/100?cb=20200401203135',
+			moveSep,
+			'https://static.wikia.nocookie.net/esharrypotter/images/c/c8/HM_Movimiento_de_varita_de_Anteoculatia.png/revision/latest/scale-to-width-down/75?cb=20210810232441'],
+		"info": 'La formula proviene dal sostantivo Spagnolo "ante" che significa "pelle di daino". In latino, spagnolo, italiano e portoghese è più comunemente conosciuto col significato di "prima" o "sopra". La seconda componente della formula proviene dal Latino "oculas"che significa "occhi" o "vedere".<br />L\'incantesimo può riferirsi alla "pelle di daino" o alla comparsa di attributi riferenti al daino. Oppure, in modo più vago, si riferisce a qualcosa posto sopra gli occhi, probabile area bersaglio dell\'incanto.',
+		"attr": {
+			"wand": true,
+			"hand": true,
+	},	},
+	{	"title": 'aparecium', "desc": 'Fa apparire inchiostro e testi resi invisibili dalla magia. Tuttavia è inefficace contro la Magia Oscura.',
+		"img": 'https://static.wikia.nocookie.net/harrypotter/images/2/26/Aparecium.png/revision/latest?cb=20120506172404&path-prefix=it',
+		"type": 'trasfigurazione, generico',
+		"lvl": 'facile',
+		"color": lightsColors.white,
+		"move": [
+			'https://static.wikia.nocookie.net/harrypotter/images/2/26/Aparecium.png/revision/latest?cb=20121031185609',
+			moveSep],
+		"info": [
+			'È uno dei primi incanti insegnati alle lezioni alla Scuola di Magia e Stregoneria di Hogwarts ma è vietato usarlo durante gli esami e le prove scritte.',
+			'L\'ha usato ermione quando voleva leggere cosa c\'era scritto nel diario di Tom Riddle nell\'episodio "Harry Potter e La Camera dei Segreti", senza però risultato.',
+			'La formula "aparecium" proviene dalla parola latina "appareo" la quale significa "diventare visibile", "apparire".'],
+		"attr": {
+			"wand": true,
+			"hand": true,
+			"year": 1,
+	},	},
+	{	"title": 'appare vestigium', "desc": 'Crea un vortice dorato dalla punta della bacchetta.',
+		"img": 'https://static.wikia.nocookie.net/harrypotter/images/0/01/COG_Newt_Appare_Vestigium.gif/revision/latest/scale-to-width-down/350?cb=20190224141035',
+		"sugg": 'Rivela impronte e tracce magiche.',
+		"type": 'fascino, generico',
+		"engType": 'charm',
+		"lvl": 'medio',
+		"color": lightsColors.swirlOfGold,
+		"info": [
+			'Viene usato da Newt Scamander a Parigi nel 1927.',
+			'La formula ha due componenti: Il primo proviene da un termine Latino, in forma imperativa (presente attivo, seconda persona, singolare), da una coniugazione di "appareo"  il quale significa "appari (ora)" o "appaio, o vengo in vista". Il secondo componente deriva anch\'esso dalla lingua Latina e proviene dal termine "vestigium" che significa "impronta", "traccia" o, in senso più amplio, qualsiasi forma di "traccia", "vestigia" o "segno". Uniti, la formula "appare vestigium" può essere interpretato come letterale comando "impronte, tracce, apparite ora!".'],
+		"attr": {
+			"wand": true,
+	},	},
+	{	"title": 'aqua eructo', "desc": 'Genera un getto d’acqua di potenza variabile nel punto di impatto del fascio di energia sprigionato dalla bacchetta inoltre l\'acqua non esce da quest\'ultima ma zampilla dal terreno. Il getto d\'acqua può arrivare fino a essere enorme e violento tanto da essere distruttivo.',
+		"img": 'https://static.wikia.nocookie.net/harrypotter/images/2/20/Aqua_Eructo.PNG/revision/latest/scale-to-width-down/350?cb=20090523111134',
+		"sugg": 'Per disorientare l’avversario e per travolgerlo con una violenta fiumana.',
+		"alert": 'Zampillando l\'acqua dal terreno, è sconsigliato usare Aqua Eructo in spazi ristretti e in luoghi chiusi.',
+		"type": 'offensivo, fascino',
+		"engType": 'charm',
+		"lvl": 'medio',
+		"enchSim": 'aguamenti, aqua eructo duo',
+		"color": lightsColors.bluice,
+		"move": [
+			'https://www.potterpedia.it/imagewatermark/immagini/3009-p1bmu9l3mdoda1dbm1osh1vneasc4.jpg',
+			'https://cdn.staticcrate.com/stock-hd/effects/footagecrate-magic-point-unforgivable-green-prev-full.png'],
+		"info": [
+			'Incantesimo non ufficiale della saga ma presente nel videogioco "Harry Potter e il calice di fuoco".',
+			'La formula "aqua eructo" proviene dal latino e significa "eruzione di acqua".'],
+		"attr": {
+			"wand": true,
+			"year": false,
+	},	},
+	{	"title": 'aqua eructo duo', "desc": 'Genera un getto d’acqua di potenza variabile dalla bacchetta inoltre. Il getto d\'acqua può arrivare fino a essere enorme e violento tanto da essere distruttivo.<br />Da non confontere con l\'incanto "aqua eructo", dal quale proviene.',
+		"sugg": 'Per disorientare l’avversario e per travolgerlo con una violenta fiumana.',
+		"type": 'offensivo, fascino',
+		"engType": 'charm',
+		"lvl": 'medio',
+		"enchSim": 'aqua eructo',
+		"color": lightsColors.bluice,
+		"info": [
+			'Incantesimo non ufficiale della saga ma presente nel videogioco "Harry Potter e il calice di fuoco".',
+			'La formula "aqua eructo" proviene dal latino e significa "eruzione di acqua".'],
+		"attr": {
+			"wand": true,
+			"year": false,
+	},	},
+	{	"title": 'arania exumai', "desc": 'Uccide i ragni e mette in fuga e stordisce le acromantule.',
+		"img": [
+			'https://static.wikia.nocookie.net/harrypotter/images/3/3e/Arania_Exumai_HM_Spell_Icon.png/revision/latest?cb=20201130101023',
+			'https://static.wikia.nocookie.net/harrypotter/images/9/9b/Arania_Exumai_GIF.gif/revision/latest/scale-to-width-down/180?cb=20140406021650',
+			'https://static.wikia.nocookie.net/harrypotter/images/5/5c/AraniaExumaiPAS.png/revision/latest/scale-to-width-down/150?cb=20201217131839'],
+		"sugg": [
+			'Usabile per difendersi da tutti gli aracnidi.',
+			'È un semplice incantesimo che può salvare la vita e perciò è bene che venga imparato al più presto dai giovani maghi.'],
+		"alert": 'Questo incantesimo può uccidere grossi ragni ma, nel caso di un’Acromantula adulta, riesce solo a farla allontanare.',
+		"class": 'fattura',
+		"type": 'difensivo',
+		"lvl": 'facile',
+		"engClass": 'jinx',
+		"color": lightsColors.blue,
+		"move": 'https://static.wikia.nocookie.net/harrypotter/images/9/9b/AraniaExumaiGesture.png/revision/latest/scale-to-width-down/75?cb=20210128170908',
+		"info": [
+			'Usato da Tom Riddle per far scappar via Aragog, l\'acromantula di Rubeus Hagrid e, successivamente, da Harry Potter contro i grossi ragni della Foresta Proibita nell\'episodio "Harry Potter e La Camera dei Segreti".',
+			'La formula "arania exumai" proviene dal latino da "aranea" che significa "ragno". Il componente "exumai" è possibile che derivi dalla medesima lingua dal termine "exuo" il quale significa "metto da parte" o "io rifiuto". Un\'altro etimo possibile è dal Latino qualcosa di simile a "exime", una coniugazione di "eximo" che significa "io scaccio" o "io bandisco". Assieme l\'incantamento significa "metto da parte il ragno", "scaccio il ragno" o "bandisco il ragno".'],
+		"attr": {
+			"wand": true,
+	},	},
+	{	"title": 'ardemonio', "desc": 'Fuoco maledetto e inarrestabile costituito da fiamme che, una volta evocate, aumentano continuamente di intensità e temperatura; esse possono assumere la forma di vari animali, come draghi, chimere o serpenti. Può uccidere anche gli Horcrux.',
+		"engTitle": 'fiendfyre',
+		"name": 'maledizione della fiamma mutaforma',
+		"sugg": 'Utilizzabile per disorientare il nemico e farlo divorare dall\'oscura fiamma mutaforma.',
+		"alert": 'Essendo un particolare fuoco che si scinde in una serie di creature demoniache che divorano tutto ciò che incontrano, è molto difficile da controllare e solo un mago potente e Oscuro può utilizzare questa maledizione senza rischiare che gli si ritorca contro.',
+		"type": 'oscuro',
+		"lvl": 'avanzato',
+		"enchSim": 'ardemonium',
+		"move": 'https://www.potterpedia.it/imagewatermark/immagini/3126-p1bmub8ensd8v1shn7j5fjs16684.jpg',
+		"info": 'Viene utilizzato da Vincent Tiger nei Doni della Morte contro Harry, Ron ed Hermione nella Stanza delle necessità, generando un rogo che distrugge la stanza stessa, il diadema di Corvonero e che uccide Tiger stesso, che dopo aver eseguito l\'incantesimo non riesce a tenerlo sotto controllo.',
+		"attr": {
+			"wand": true,
+	},	},
+	{	"title": 'ardemonium', "desc": 'Fuoco maledetto e inarrestabile costituito da fiamme che, una volta evocate, aumentano continuamente di intensità e temperatura; esse possono assumere la forma di vari animali, come draghi, chimere o serpenti. Può uccidere anche gli Horcrux.',
+		"name": 'maledizione della fiamma mutaforma',
+		"sugg": 'Utilizzabile per disorientare il nemico e farlo divorare dall\'oscura fiamma mutaforma.',
+		"alert": 'Essendo un particolare fuoco che si scinde in una serie di creature demoniache che divorano tutto ciò che incontrano, è molto difficile da controllare e solo un mago potente e Oscuro può utilizzare questa maledizione senza rischiare che gli si ritorca contro.',
+		"type": 'oscuro',
+		"lvl": 'avanzato',
+		"enchSim": 'ardemonio',
+		"move": 'https://www.potterpedia.it/imagewatermark/immagini/3126-p1bmub8ensd8v1shn7j5fjs16684.jpg',
+		"info": 'Viene utilizzato da Vincent Tiger nei Doni della Morte contro Harry, Ron ed Hermione nella Stanza delle necessità, generando un rogo che distrugge la stanza stessa, il diadema di Corvonero e che uccide Tiger stesso, che dopo aver eseguito l\'incantesimo non riesce a tenerlo sotto controllo.',
+		"attr": {
+			"wand": true,
+	},	},
+	{	"title": 'aresto momentum', "desc": ['Riduce o annulla del tutto il tempo e il movimento di un corpo, solo il mago o la strega che l\'ha evocato ne rimane immune.',
+			'L’effetto dura finché chi l’ha lanciato non decide che il tempo può tornare a scorrere normalmente, di solito, comunque, anche i maghi più potenti non sono in grado di mantenere attivo questo complesso sortilegio per più di pochi minuti.',
+			'Si tratta di un incantesimo di altissimo livello che richiede grande concentrazione e una forza di volontà eccezionale, quindi, solo un mago molto potente può servirsene.'],
+		"name": 'incantesimo rallentatore',
+		"img": [
+			'https://static.wikia.nocookie.net/harrypotter/images/8/81/Wandless_magic.gif/revision/latest?cb=20140818012650',
+			'https://static.wikia.nocookie.net/harrypotter/images/3/32/ArrestoMomentumHM.png/revision/latest/scale-to-width-down/180?cb=20201214074346'],
+		"sugg": 'Utilizzabile per rallentare il tempo impedendo incidenti.',
+		"type": 'fascino, generico',
+		"engType": 'charm',
+		"lvl": 'avanzato',
+		"color": [lightsColors.none,lightsColors.blue],
+		"move": 'https://static.wikia.nocookie.net/harrypotter/images/8/83/Arresto_Momentum_wand_movement_HM.png/revision/latest/scale-to-width-down/90?cb=20210926184832',
+		"info": [
+			'Usato da Albus Silente per arrestare la caduta di Harry Potter durante la prima partita di Quidditch del terzo anno, quando l’ingresso in campo dei Dissennatori lo avevano fatto precipitare dalla sua scopa volante nell\'episodio "Harry Potter e Il Principe di Azkaban".',
+			'Creato da Daisy Pennifold, una strega apartenente al mondo di Harry Potter vissuta nel XVIII secolo.'],
+		"attr": {
+			"wand": false,
+			"hand": true,
+	},	},
+	{	"title": 'artis tempurus', "desc": 'Genera un vortice di fuoco.',
+		"info": 'Utilizzato da Albus Silente.',
+		"attr": {
+			"wand": true,
+	},	},
+	{	"title": 'ascendo', "desc": ['Fa levitare o compiere un balzo enorme a chi pronuncia l’incantesimo.',
+			'Se ci si trova su alcuni determinati oggetti si può eseguire l\'incanto sull\'oggetto sulla quale siamo arrampicati, questi dovrebbero crescere in altezza.',
+			'Maggiore è la potenza di un mago più efficace sarà l’incantesimo, sia come durata sia come altezza.',
+			'L\'incantesimo funziona anche sott\'acqua, spingendo in superficie l\'utilizzatore.'],
+		"name": 'incantesimo di auto-levitazione',
+		"img": [
+			'https://static.wikia.nocookie.net/harrypotter/images/1/1b/NewtAscendio.gif/revision/latest/scale-to-width-down/350?cb=20190224143421',
+			'https://static.wikia.nocookie.net/harrypotter/images/7/79/Ascendio_HM.png/revision/latest/scale-to-width-down/180?cb=20210131053436',
+			'https://static.wikia.nocookie.net/harrypotter/images/6/69/Ascendio_-_GOF.gif/revision/latest?cb=20140422140044'],
+		"sugg": 'Utilizzabile per sfuggire da una bestia feroce o da un inseguitore.',
+		"alert": 'Per non rischiare di precipitare al suolo è necessario mantenere un alto livello di concentrazione per tutto il tempo che si resta sospesi in aria.',
+		"class": 'offensivo',
+		"type": 'fascino, offensivo',
+		"engType": 'charm',
+		"lvl": 'medio',
+		"color": [lightsColors.none,lightsColors.blue],
+		"move": 'https://static.wikia.nocookie.net/harrypotter/images/7/78/Ascendio_wand_movement_HM.png/revision/latest/scale-to-width-down/90?cb=20210914072559',
+		"info": [
+			'Newt Scamander utilizzò questo incantesimo nel tentativo di aiutarsi nel settembre del 1927 su una colonna di registri della biblioteca del Ministero Francese della Magia. Porpentina Goldstein e Leta Lestrange lo adoperarono al fine di sfuggire da un branco di Matagot inferociti che si accanirono su di loro.',
+			'Nell\'anno scolastico 1990-1991 alla Scuola di Magia e Stregoneria di Hogwarts, questo incantesimo fu trattato dal professor Filius Flitwick durante la lezione di incantesimi del settimo anno.',
+			'Harry Potter usa questo incantesimo solo nell\'adattamento cinematografico di "Harry Potter e Il Calice di Fuoco" per raggiungere la superficie del Grande Lago. Nel rispettivo libro riesce a nuotare sino alla superficie senza usare un incantesimo, anche se per un pelo.',
+			'La formula "ascendio" proviene dal Latino "ascendo" che significa "salire", "arrampicarsi".'],
+		"attr": {
+			"year": year('7')+'?',
+	},	},
+	{	"title": 'autoscribo', "desc": 'Incanta una penna in modo che prenda appunti da sola.',
+		"attr": {
+			"wand": true,
+	},	},
+	{	"title": 'avada kedavra', "desc": ['L’anatema che uccide, è una delle tre Maledizioni Senza Perdono; uccide qualunque persona o animale venga colpito da essa e produce un lampo di luce verde accecante accompagnata da un sibilo di vento e da un rumore sordo e incombente che spesso viene identificato come il rumore della morte.',
+			'È considerata la maledizione peggiore che esista poiché è in grado di infliggere una morte istantanea e non esiste contro-incantesimo.',
+			'Per lanciare questo incantesimo è necessario che il mago abbia un grande potere e che intenda veramente uccidere la persona in questione, giacché tutte le maledizioni senza perdono si basano sulla forza di volontà di chi le scaglia.',
+			'Sono capitati solo alcuni esclusivi casi in cui la maledizione non abbia avuto successo.'],
+		"name": 'anatema che uccide, maledizione mortale',
+		"engName": 'killing curse',
+		"img": [
+			'https://static.wikia.nocookie.net/harrypotter/images/7/78/Avada-Kedavra.gif/revision/latest?cb=20180412031022',
+			'https://static.wikia.nocookie.net/harrypotter/images/a/ae/B4C30M1_Wizengamot_trial_Pensieve_memory.png/revision/latest/scale-to-width-down/250?cb=20190313000102',
+			'https://static.wikia.nocookie.net/harrypotter/images/3/33/Potter_family_murder.gif/revision/latest/scale-to-width-down/250?cb=20161007230659',
+			'https://static.wikia.nocookie.net/harrypotter/images/0/0f/Frank_Bryce_murder.gif/revision/latest/scale-to-width-down/250?cb=20161007233603',
+			'https://static.wikia.nocookie.net/harrypotter/images/5/51/The_Killing_Curse.gif/revision/latest/scale-to-width-down/250?cb=20120715135203',
+			'https://static.wikia.nocookie.net/harrypotter/images/5/55/DH_-_Voldemort_VS._Harry_Final_Duel_01.jpg/revision/latest/scale-to-width-down/250?cb=20100628053053',
+			'https://static.wikia.nocookie.net/harrypotter/images/9/96/Snape_killing_Dumbledore.gif/revision/latest/scale-to-width-down/250?cb=20210401104606',
+			'https://static.wikia.nocookie.net/harrypotter/images/e/e8/Grimmson_kills_Irma.gif/revision/latest/scale-to-width-down/220?cb=20190820164605',
+			'https://static.wikia.nocookie.net/harrypotter/images/1/17/Auror_kills_Red_Head_Witch.gif/revision/latest/scale-to-width-down/220?cb=20190820165526',
+			'https://static.wikia.nocookie.net/harrypotter/images/7/75/Harry%27s_sacrifice.gif/revision/latest/scale-to-width-down/220?cb=20140616170544',
+			'https://static.wikia.nocookie.net/harrypotter/images/2/2f/Voldemort_kills_Burbage.gif/revision/latest/scale-to-width-down/220?cb=20190819223348',
+			'https://static.wikia.nocookie.net/harrypotter/images/5/5b/Rowan_Death.gif/revision/latest/scale-to-width-down/220?cb=20200221082844',
+			'https://static.wikia.nocookie.net/harrypotter/images/f/fb/Barty_Crouch_Junior_kills_spider.gif/revision/latest/scale-to-width-down/220?cb=20190818002606',
+			'https://static.wikia.nocookie.net/harrypotter/images/d/d0/Cedric%27s_Death.gif/revision/latest/scale-to-width-down/220?cb=20120825164555',
+			'https://static.wikia.nocookie.net/harrypotter/images/d/d5/Death_Eater_kills_Hedwig.gif/revision/latest/scale-to-width-down/220?cb=20140407022058',
+			'https://static.wikia.nocookie.net/harrypotter/images/5/53/AvadaLEGO.png/revision/latest/scale-to-width-down/220?cb=20130520023156',
+			'https://static.wikia.nocookie.net/harrypotter/images/0/0c/Nagini_DHF2.png/revision/latest/scale-to-width-down/200?cb=20110820134451'],
+		"alert": 'Evocherebbe istantaneamente gli Auror. Essere sorpresi a scagliare questa maledizione, equivale a procurarsi un biglietto di sola andata per il carcere di Azkaban.',
+		"type": 'maledizione, maledizione senza perdono',
+		"engType": 'curse',
+		"lvl": 'proibitivo',
+		"enchVs": 'nessuno',
+		"color": lightsColors.green,
+		"move": [
+			'https://www.potterpedia.it/imagewatermark/immagini/3007-p1bmubgitv13tu3j8ffd19hcc7t4.jpg',
+			'https://static.wikia.nocookie.net/harrypotter/images/e/e2/Killing-curse.png/revision/latest?cb=20120517184343'],
+		"info": [
+			'Quando Bartemius Crouch Senior era a dell\'Ufficio Applicazione della Legge sulla Magia al Ministero della Magia diede agli Auror la facoltà di utilizzare le Maledizioni Senza Perdono, tra cui anche L\'"avada edavra".',
+			'È proprio questa la maledizione usata da Lord Voldemort per uccidere Harry, sul quale, però, lasciò solo una cicatrice sulla fronte a forma di saetta, che creò una vera e propria via di comunicazione tra le emozioni del giovane mago e quelle del Signore Oscuro, in quanto Voldemort creò un Horcrux involontario.',
+			'Harry Potter fu l\'unica persona al mondo che sia riuscita a sopravvivere a questa Maledizione grazie all\'amore di sua madre.',
+			'Harry Potter in realtà non fu l\'unica persona a resistervi, bensì sono conosciuti almeno altri 7 tentativi di fallimento di questo encanto. Nonostante ciò, la sua fallaceità rimane comunque un evento estremamente improbabile.',
+			'La formula "avada kedavra" proviene dall\'Aramaico "אַבַדָא כְּדַברָא" (avada kedavra) che sinifica "lascia che la cosa venga distrutta".<br />Joanne Kathleen Rowling stessa ha confermato, nel corso di un\'intervista rilasciata al pubblico dell\'Edinburgh Book Festival il 15 aprile 2004, l\'etimologia dell\'incantesimo con le testuali parole: <i>"Qualcuno sa da dove viene avada kedavra? È un antico incantesimo in aramaico, ed è l\'origine di "abracadabra", che significa "che la cosa sia distrutta". In origine si usava per curare le malattie e la "cosa" era la malattia, ma io ho deciso di fare in modo che la "cosa" fosse la persona che mi sta di fronte. Mi prendo molte libertà con cose del genere. Le stravolgo e le faccio mie".</i>'],
+		"attr": {
+			"wand": true,
+	},	},
+	{	"title": 'avenseguim', "desc": 'Trasforma un oggetto in un dispositivo di localizzazione.',
+		"img": 'https://static.wikia.nocookie.net/harrypotter/images/2/28/Avenseguim.gif/revision/latest/scale-to-width-down/350?cb=20190224141324',
+		"sugg": 'Utile per localizzare persone scomparse grazie ad un oggetto a loro posseduto.',
+		"alert": 'Può essere usato contro di voi per trovarvi.',
+		"type": 'fascino, generico',
+		"engType": 'charm',
+		"lvl": 'medio',
+		"color": lightsColors.orange,
+		"info": [
+			'Nel 1927, Newt Scamander utilizzò questo incantesimo per risalire alle origini di una piuma, un indizio trovato durante la ricerca di Tina Goldstein, a Yusuf Kama, dal cui cappello proveniva la piuma.',
+			'La formula "avenseguim" deriva probabilmente dal  Latino "portmanteau di avens", un aggettivo che significa "desideroso" o "bramoso", e a seguire o il verbo spagnolo e portoghese che significa "seguire" altrimenti il catalano "seguim" che significa "seguiamo". Nel complesso, "avenseguim" può essere interpretato come "seguire avidamente", il che caratterizza in modo appropriato il comportamento di un dispositivo di localizzazione.'],
+		"attr": {
+			"wand": true,
+	},	},
+	{	"title": 'avifors', "desc": ['Trasforma degli oggetti in uno stormo di uccelli.',
+			'È un incanto che funzione esclusivamente sulle cose o sugli animali, non può essere usato per trasfigurare una persona.',
+			'In rari casi, e per motivi non del tutto chiari, "avifors" può trasformare l’oggetto colpito in un pipistrello o in uno stormo di questi mammiferi volanti.'],
+		"name": 'avifors spell',
+		"img": [
+			'https://static.wikia.nocookie.net/harrypotter/images/d/dd/Avifors_icon_HM.png/revision/latest/scale-to-width-down/350?cb=20211105195756',
+			'https://static.wikia.nocookie.net/harrypotter/images/9/96/Avifors.jpg/revision/latest/scale-to-width-down/220?cb=20090904212154'],
+		"sugg": 'Utilizzabile per confondere e creare superficiali ferite all’avversario.',
+		"class": 'trasfigurazione',
+		"type": 'trasfigurazione, fattura',
+		"engType": 'jinx',
+		"lvl": 'facile',
+		"color": lightsColors.blue,
+		"move": 'https://static.wikia.nocookie.net/harrypotter/images/5/56/Avifors_wand_movement_HM.png/revision/latest/scale-to-width-down/90?cb=20211105195814',
+		"info": 'La formula proviene dal Latino "avis" che significa "bird" unita al suffisso "-fors", di medesima etimologia.',
+		"attr": {
+			"wand": true,
+	},	},
+	{	"title": 'avis', "desc": ['Evoca uno stormo di uccelli dalla baccetta, i quali attaccano l\'avversario.',
+			'Anche se non è un incantesimo difficile il contatto visivo con la vittima è fondamentale per ottenere un buon risultato.'],
+		"name": 'incantesimo di evocazione di uccelli',
+		"engName": 'bird-conjuring charm',
+		"img": [
+			'https://static.wikia.nocookie.net/harrypotter/images/5/5c/Avis.jpg/revision/latest/scale-to-width-down/350?cb=20170208044910',
+			'https://static.wikia.nocookie.net/harrypotter/images/1/17/AvisHM.png/revision/latest/scale-to-width-down/200?cb=20201219164518'],
+		"sugg": [
+			'Usabile per confondere il nemico e distrarlo ma anche per infliggergli ferite leggere.',
+			'È un incantesimo che può risultare utile anche per distrarre pericolose belve volanti, come il grifone o la chimera, guadagnando prezioso tempo per fuggire.'],
+		"type": 'fascino, congiura, evocazione, trasfigurazione, offensivo',
+		"engType": 'charm, conjuration',
+		"lvl": 'medio',
+		"color": [lightsColors.none,lightsColors.blue],
+		"wandColor": lightsColors.none,
+		"handColor": lightsColors.blue,
+		"move": [
+			'https://static.wikia.nocookie.net/harrypotter/images/5/50/Avis_movement.png/revision/latest/scale-to-width-down/70?cb=20130823025613',
+			moveSep,
+			'https://www.potterpedia.it/imagewatermark/immagini/3012-p1bmudv2n4kra6tlg4p1i1i7784.jpg'],
+		"info": 'La formula proviene dal Latino "avis" o "aves" che significa "uccello".',
+		"attr": {
+			"wand": true,
+			"hand": true,
+	},	},
+	//Incanto Omosembiante
+	//Volate Ascenderai
+	//Partis Temporus
+	//Anti-Alohomora Charm
+	//? Hocus Pocus
+];
+
+function display(e) {
+	let r = '';
+	for(let c of e) {
+		let attr = '';
+		setAttr: {
+			let a = c.attr;
+			function ps(s) { /*Place String*/
+				attr += '&nbsp;<span class="attr">'+s+'</span>&nbsp;';
+			};
+			if(a.wand) ps(wand()) ;
+			if(a.hand) ps(hand()) ;
+			if(a.year&&a.year!=false) ps(isNaN(a.year)?a.year:year(a.year)) ;
+		};
+		let enchOpt = '';
+		setEnchOpt: {
+			function ps(s) { /*Place String*/
+				enchOpt += '<div class="enchOpt">'+s+'</div>';
+			};
+			if(c.class) ps('<img src="https://image.spreadshirtmedia.net/image-server/v1/designs/182606426,width=178,height=178.png">Classe dell\'incantesimo: '+c.class) ;
+			if(c.engClass) ps('<img src="https://image.spreadshirtmedia.net/image-server/v1/designs/182606426,width=178,height=178.png">Classe dell\'incantesimo in inglese: '+c.engClass) ;
+			if(c.type) ps('<img src="http://cdn.onlinewebfonts.com/svg/img_565376.png">Tipologia di incantesimo: '+c.type) ;
+			if(c.engType) ps('<img src="http://cdn.onlinewebfonts.com/svg/img_565376.png">Tipologia di incantesimo in inglese: '+c.engType) ;
+			if(c.lvl) ps('<img src="http://cdn.onlinewebfonts.com/svg/img_555851.png">Livello dell\'incantesimo: '+c.lvl) ;
+			if(c.enchRlt) ps('<img src="https://biancomat.it/wp-content/uploads/2021/10/BiancoMat-segno-zodiacale-cancro.png">Incantesimi correlati: '+c.enchRlt) ;
+			if(c.enchSim) ps('<img src="https://cdn0.iconfinder.com/data/icons/math-vol-1-1/32/equivalent_approximate_similar_about_equivalence_around_math_symbol-512.png">Incantesimi simili: '+c.enchSim) ;
+			if(c.enchOpp) ps('<img src="https://cdn-icons-png.flaticon.com/512/39/39484.png">Incantesimi contrari: '+c.enchOpp) ;
+			if(c.enchVs) ps('<img src="https://static.thenounproject.com/png/169035-200.png">Contro-incantesimi: '+c.enchVs) ;
+			if(c.color) {
+				let rc = '<img src="https://docs.krita.org/en/_images/Krita_color_mixing_traditional_order.png">Colore della luce dell\'incantesimo: ';
+				if(!Array.isArray(c.color)) c.color=[c.color] ;
+				for(let i of c.color) {
+					rc += '<span class="scriptColor" style="color:'+i.color+';">'+i.name+'</span>, ';
+				};
+				ps(rc.slice(0,-2));
+			};
+			if(c.wandColor) {
+				let rc = '<img src="https://docs.krita.org/en/_images/Krita_color_mixing_traditional_order.png">Colore della luce dell\'incantesimo quando lanciato dalla bacchetta: ';
+				if(!Array.isArray(c.wandColor)) c.wandColor=[c.wandColor] ;
+				for(let i of c.wandColor) {
+					rc += '<span class="scriptColor" style="color:'+i.color+';">'+i.name+'</span>, ';
+				};
+				ps(rc.slice(0,-2));
+			};
+			if(c.handColor) {
+				let rc = '<img src="https://docs.krita.org/en/_images/Krita_color_mixing_traditional_order.png">Colore della luce dell\'incantesimo quando lanciato con la mano: ';
+				if(!Array.isArray(c.handColor)) c.handColor=[c.handColor] ;
+				for(let i of c.handColor) {
+					rc += '<span class="scriptColor" style="color:'+i.color+';">'+i.name+'</span>, ';
+				};
+				ps(rc.slice(0,-2));
+			};
+			/** magic wand pretty lightly https://nota.marketing/wp-content/uploads/2021/06/magic-wand-1-300x300.png */
+			/** magic hand obscure skull https://icon-library.com/images/necromancer_magic_dark_wizard_magician_skull_dead_sorcerer_hand-512.png */
+		};
+		let engTitle = c.engTitle?' ('+c.engTitle.toUpperCase()+')':'';
+		let name = '';
+		if(c.name||c.engName) {
+			name += '<div class="subtitle">';
+			if(c.name) name+=c.name.toUpperCase() ;
+			if(c.engName) name+=' ('+c.engName.toUpperCase()+')' ;
+			name += '</div>';
+		};
+		let info = '';
+		if(c.info) {
+			if(!Array.isArray(c.info)) c.info=[c.info] ;
+			for(let i of c.info) {
+				info += '<div class="enchInfo">'+i+'</div>';
+			};
+		};
+		let sugg = '';
+		if(c.sugg) {
+			if(!Array.isArray(c.sugg)) c.sugg=[c.sugg] ;
+			sugg = '<div class="clarif">⋆Consigli:<br />';
+			for(let i of c.sugg) {
+				sugg += '<div>'+i+'</div>';
+			};
+			sugg += '</div>';
+		};
+		let alrt = '';
+		if(c.alert) {
+			if(!Array.isArray(c.alert)) c.alert=[c.alert] ;
+			alrt = '<div class="clarif"><span style="font-size:50%;">&nbsp;</span>! Avvertenze:<br />';
+			for(let i of c.alert) {
+				alrt += '<div>'+i+'</div>';
+			};
+			alrt += '</div>';
+		};
+		let desc = '';
+		if(c.desc) {
+			if(!Array.isArray(c.desc)) c.desc=[c.desc] ;
+			desc = '<div class="desc">';
+			for(let i of c.desc) {
+				desc += '<div>'+i+'</div>';
+			};
+			desc += '</div>';
+		};
+		let move = '';
+		if(c.move) {
+			if(!Array.isArray(c.move)) c.move=[c.move] ;
+			for(let i of c.move) {
+				move += '<img class="moveImg" src="'+i+'">';
+			};
+		};
+		let img = '';
+		if(c.img) {
+			if(!Array.isArray(c.img)) c.img=[c.img] ;
+			img = '<div class="imgImg"><div>';
+			for(let i of c.img) {
+				img += '<img src="'+i+'">';
+			};
+			img += '</div></div>';
+		};
+		r += '<li><div class="title">'+c.title.toUpperCase()+engTitle+'&nbsp;&nbsp;'+attr+move+'</div>'+name+desc+sugg+alrt+enchOpt+img+info+'</li>';
+	};
+	document.getElementById('sintesiList').innerHTML = r;
+};
+
+function nojs() {
+	document.getElementById('no-js').outerHTML = '';
+};
+
+window.onload = function() {
+	nojs();
+	_JCHSL({'Elem':'document.body.style.backgroundColor','L':96.5,'LRange':.5,'Interval':2000,'IntervalRange':1000});
+	display(incantesimi);
+};
+
+</script>
+<body class="_BOMP">
+
+<div id="no-js">
+	<p>Sorry,<br />your browser may not support JavaScript<br />or, if you have them disabled, please enable them.</p>
+</div>
+
+<div class="_DN">
+</div>
+
+<div class="_PA _CX" id="rel">
+	<div class="paragraph">
+		<div class="title">INCANTESIMI</div>
+		<ul id="sintesiList"></ul>
+	</div>
+	<div class="paragraph othsrc">
+		<div class="title">WikiPedia</div>
+		<ul>
+			<li>ref:
+				<a href="https://it.m.wikipedia.org/wiki/Incantesimi_di_Harry_Potter">URL</a>
+			</li>
+		</ul>
+		<div class="paragraph">
+			<div class="title">Aguamenti</div>
+			L'incantesimo Aguamenti è utilizzato per produrre un getto d'acqua dalla bacchetta.[6] Pur essendo un incantesimo relativamente facile, ad Hogwarts è studiato solo al sesto anno.[7] Nel videogioco del Calice di fuoco appare un incantesimo molto simile, Aqua Eructo, capace di emettere getti d'acqua anche distruttivi, con una potenza variabile.
+		</div>
+		<div class="paragraph">
+			<div class="title">Ardemonio</div>
+			L'Ardemonio (Fiendfyre) è un fuoco evocato magicamente in grado di distruggere anche gli Horcrux. È costituito da fiamme che, una volta evocate, aumentano continuamente di intensità e temperatura ed assumono la forma di belve feroci come chimere, serpenti e draghi.[8] Viene utilizzato da Vincent Tiger nei Doni della Morte contro Harry, Ron ed Hermione nella Stanza delle necessità, generando un rogo che distrugge la stanza stessa, il diadema di Corvonero e che uccide Tiger stesso, che dopo aver eseguito l'incantesimo non riesce a tenerlo sotto controllo.[9]
+		</div>
+		<div class="paragraph">
+			<div class="title">Incantesimo di apertura</div>
+			L'incantesimo di apertura è una magia in grado di aprire le porte chiuse a chiave. La formula è Alohomora, che in un dialetto dell'Africa occidentale significa "amico dei ladri".[10][11] È un incantesimo di livello standard, infatti Hermione è in grado di utilizzarlo già al primo anno; tuttavia è possibile incantare le serrature in modo da renderlo inefficace. Viene utilizzato per la prima volta da Hermione nel primo libro per aprire la porta che conduce al corridoio del terzo piano dove è rinchiuso Fuffi.[12]
+		</div>
+		<div class="paragraph">
+			<div class="title">Incantesimo di appello e di esilio</div>
+			L'incantesimo di appello (summoning charm) viene utilizzato per richiamare oggetti apparentemente senza limiti di distanza. La formula è Accio, che in latino significa "io richiamo".[4][13][14][15] Gli oggetti appellati non possono attraversare muri o porte, e possono quindi essere trattenuti anche a mani nude; è inoltre possibile incantare gli oggetti per impedire che vengano richiamati. Viene appreso dagli studenti di Hogwarts al quarto anno, quando Harry lo utilizza nella prima prova del Torneo tremaghi per appellare la sua Firebolt dalla torre di Grifondoro al recinto dei draghi.[16][17] Il suo opposto è l'Incantesimo di esilio, utilizzato per allontanare gli oggetti da sé; nei libri la formula non è nominata, mentre nei film e nei giochi è Depulso.[18]
+		</div>
+		<div class="paragraph">
+			<div class="title">Incantesimo Confundus</div>
+			L'incantesimo Confundus (Confundus charm) è una fattura che causa una grande confusione al bersaglio, facendogli dimenticare informazioni o sbagliare certi movimenti.[19] La formula è Confundo, che deriva dal latino confundus, ossia "confondere".[13][14] È possibile confondere anche gli oggetti, come fatto da Barty Crouch Jr. per far dimenticare al Calice di fuoco che al Torneo tremaghi partecipassero solamente tre scuole, così da poter iscrivere Harry come unico candidato di una quarta scuola.[20]
+		</div>
+		<div class="paragraph">
+			<div class="title">Incantesimo di disarmo</div>
+			L'incantesimo di disarmo (disarming charm) serve a far volar via dalle mani di una persona un oggetto, solitamente un'arma.[21][22] La formula è Expelliarmus: questa nasce dall'unione dell'inglese arcaico expel, stante per "cacciar via", e dal latino armus, da cui deriva la parola inglese arm, significante sia "braccio" che "arma"; il significato sarebbe quindi "cacciare via l'arma".[23] È un incantesimo difensivo di base, spesso utilizzato da Harry poiché non ferisce il bersaglio, sebbene talvolta possa scaraventarlo via per diversi metri. Viene mostrato per la prima volta da Severus Piton su Gilderoy Allock nel secondo libro durante un'esercitazione di duello;[24] nonostante la semplicità dell'incantesimo, con esso Harry riesce a fuggire da Voldemort nel quarto libro[25] e a sconfiggerlo definitivamente nel settimo.[26][27]
+		</div>
+		<div class="paragraph">
+			<div class="title">Incantesimo di disillusione</div>
+			L'incantesimo di disillusione (disillusionment charm) è una magia in grado di rendere invisibile il bersaglio, facendogli assumere il colore e la consistenza di ciò che si trova dietro di lui. La sensazione che prova Harry sotto l'effetto dell'incantesimo è quella di essere avvolto da un fastidioso gelo umido. Alcuni maghi particolarmente capaci, come Voldemort o Silente, sono in grado di generare un incantesimo di disillusione così potente da rendersi perfettamente invisibili; talvolta questo incantesimo viene gettato su un mantello per creare un Mantello dell'Invisibilità, ma al contrario di quello originale questi tendono a perdere di efficacia con il tempo, sbiadendosi.[28]
+		</div>
+		<div class="paragraph">
+			<div class="title">Incantesimo di estensione</div>
+			L'incantesimo di estensione (extension charm) è una formula in grado di ampliare notevolmente le dimensioni interne di un oggetto o di una stanza senza però modificare quelle esterne: la vecchia Ford Anglia di Arthur Weasley, ad esempio, pur sembrando una normale auto a cinque posti da fuori è in grado di ospitare comodamente tutta la famiglia Weasley più Harry con tanto di bauli e valigie per Hogwarts. Inoltre riduce notevolmente il peso degli oggetti contenuti nello spazio incantato, permettendo così di trasportare una gran quantità di materiale molto facilmente: Hermione, usando questo incantesimo sulla sua borsetta, ha potuto trasportare in essa una gran quantità di libri, pozioni e una tenda da campeggio, a sua volta incantata e arredata, senza difficoltà. La formula, mai detta nei libri e rivelata in seguito dall'autrice, è Capacious extremis.[29]
+		</div>
+		<div class="paragraph">
+			<div class="title">Incantesimo di legilimanzia</div>
+			L'incantesimo di legilimanzia, la cui formula è Legilimens, è un incantesimo che serve a leggere nella mente delle persone, mostrando i ricordi e i pensieri del bersaglio all'utilizzatore.[30][31] È una magia complessa da eseguire, che richiede una notevole esperienza e capacità soprattutto nel districarsi tra i pensieri altrui, altrimenti il risultato è la visione di ricordi confusi e casuali. È possibile contrastarlo tramite l'Occlumanzia. Questo incantesimo è stato apposto sul Cappello parlante, donandogli la facoltà di leggere nella mente degli studenti per scoprirne il carattere e le potenzialità.[32]
+		</div>
+		<div class="paragraph">
+			<div class="title">Incantesimo di levitazione</div>
+			L'incantesimo di levitazione (levitating charm) è una magia che permette di far fluttuare gli oggetti. La formula è Wingardium Leviosa: wingardium è l'unione di wing, ossia "ala" in inglese, e di ardium, storpiatura di arduus, ossia "alto" o "altura"; leviosa, invece, deriva da levitate, ossia "levitare".[14] È uno degli incantesimi di base, tra i primi che si imparano ad Hogwarts;[33] non sembra vi siano limiti di peso riguardo agli oggetti da far levitare. La formula deve essere pronunciata eseguendo un ben preciso movimento, descritto dal professor Vitious come un "agitare e colpire" con la bacchetta.[34]
+		</div>
+		<div class="paragraph">
+			<div class="title">Incantesimo di memoria</div>
+			L'incantesimo di memoria è un incantesimo per cancellare o modificare i ricordi. La formula è Oblivion, che deriva dal latino medievale obliviscor, che significa "io dimentico".[13] L'incantesimo è spesso utilizzato dal Ministero della Magia per modificare i ricordi dei babbani che incappano in qualche avvenimento magico: esiste infatti una squadra di maghi specializzati, chiamati "Obliviatori", adibita allo scopo.[35] Con questa magia, inoltre, Gilderoy Allock è riuscito a creare una sua falsa immagine di eroe "rubando" i meriti per delle imprese ad altri maghi, modificandone poi la memoria; provando a fare lo stesso a Harry e Ron nella camera dei segreti, la bacchetta rotta di Ron gli ritorce contro l'incantesimo, causandogli un'amnesia irreversibile.[36]
+		</div>
+		<div class="paragraph">
+			<div class="title">Incantesimo di ostacolo</div>
+			L'incantesimo di ostacolo (impediment jinx) è una fattura per bloccare o rallentare il bersaglio.[37] La formula è Impedimenta, dal latino impedimentum, ossia "impedimento", "ostacolo".[15] Harry lo apprende per prepararsi al Torneo Tremaghi.[38]
+		</div>
+		<div class="paragraph">
+			<div class="title">Incantesimo delle pastoie</div>
+			L'incantesimo delle pastoie (bind curse) è una fattura che blocca i movimenti avversari, irrigidendo le gambe legandole assieme. La formula è Petrificus. È un incantesimo di base, tanto che Draco Malfoy riesce a eseguirlo su Neville Paciock già al primo anno. Esiste una variabile, detta incantesimo delle pastoie total-body (full-body bind curse), che paralizza completamente il bersaglio; in questo caso la formula è Petrificus Totalus.[39][40] La formula deriva dal greco petros, ossia "pietra", e dal suffisso latino -ficus, che denota l'azione di "fare qualcosa"; il totalus è una storpiatura del latino medievale totalis, ossia "totale": il significato sarebbe quindi "pietrificare completamente".[23][13]
+		</div>
+		<div class="paragraph">
+			<div class="title">Incantesimo di riparazione</div>
+			L'incantesimo di riparazione serve, appunto, a riparare o ricostruire un oggetto.[41] La formula è Reparo, letteralmente "io riparo", "aggiusto",[4][15] talvolta preceduta dal nome dell'oggetto che si intende aggiustare. L'incantesimo può riparare verosimilmente qualsiasi cosa, sebbene abbia dei limiti: non può aggiustare oggetti distrutti dalla magia oscura o da sostanze altamente distruttive, come il veleno di basilisco. Non è possibile inoltre riparare le bacchette magiche spezzate, eccezion fatta per quando l'incantesimo è scagliato dalla bacchetta di sambuco.[42]
+		</div>
+		<div class="paragraph">
+			<div class="title">Incantesimo di rivelazione</div>
+			L'incantesimo di rivelazione, citato nel sesto libro anche come "Rivelaincanto di Scarpin",[43] serve a rivelare segreti e incantesimi dissimulati presenti su di un oggetto o una persona, oltre che a mostrare da quali ingredienti è composta una pozione. La formula è Revelio. Esistono delle variabili di questo incantesimo: lo Specialis Revelio, presumibilmente più potente dell'incantesimo base, utile a rivelare gli incantesimi su oggetti e pozioni,[44] e l'Homenum Revelio, utilizzato per rivelare la presenza di una persona eliminandone gli eventuali travestimenti magici.[45][46]
+		</div>
+		<div class="paragraph">
+			<div class="title">Incantesimo tagliuzzante</div>
+			L'incantesimo tagliuzzante (severing charm) serve a lacerare o recidere oggetti, generalmente tessuti, ma può essere usato per causare lievi ferite da taglio. La formula è Diffindo, ossia in latino "io divido" o "spezzo in due".[4][47][15] Può essere usato anche per spaccare materiali come vetro o ghiaccio.[48]
+		</div>
+		<div class="paragraph">
+			<div class="title">Incanto Fidelius</div>
+			L'incanto Fidelius (Fidelius charm) è una magia particolarmente complessa che serve a nascondere un'informazione dentro una persona vivente, detta Custode segreto: l'oggetto di tale informazione è quindi impossibile da scoprire o trovare, a meno che il Custode non decida di rivelarlo volontariamente; è inoltre impossibile forzare il Custode a rivelare il segreto attraverso la tortura o la legilimanzia. Nel caso in cui l'informazione nascosta sia l'indirizzo di una casa, ad esempio, questa risulterebbe impossibile da rintracciare finché non ne viene rivelata l'ubicazione: in quel momento la casa apparirebbe semplicemente dal nulla. Qualora il Custode segreto dovesse morire, inoltre, tutti coloro a cui ha rivelato l'informazione diventerebbero nuovi Custodi, diminuendo così l'efficacia dell'incantesimo.[49] Un incanto Fidelius è stato usato su Lily e James Potter con Peter Minus come Custode segreto, il quale però li ha traditi consegnandoli a Voldemort, e sul 12 di Grimmauld Place con Albus Silente come Custode. Nel settimo libro le case dei membri dell'Ordine della Fenice vengono anch'esse poste sotto l'incantesimo.[50] Fidelius deriva dal latino fidelis, ossia "fidato".[15]
+		</div>
+		<div class="paragraph">
+			<div class="title">Incanto Patronus</div>
+			L'incanto Patronus è una magia molto complessa e difficile da eseguire, e costituisce l'unica difesa nota contro i dissennatori.[51] La formula è Expecto Patronum, che deriva dall'unione delle parole latine expecto, ossia "aspetto" o "attendo", e patronum, ossia "patrono" o "protettore", e che significa letteralmente "aspetto un protettore".[23][13][15] Oltre la formula, nell'eseguire l'incantesimo è necessario concentrarsi su di un ricordo felice: il Patronus sarà composto quindi da felicità pura, rendendo impossibile per i dissennatori fargli qualsiasi danno. Se eseguito correttamente il Patronus diventa corporeo, assumendo una forma fisica ben definita: generalmente il patronus di una persona è un animale che rispecchia la sua personalità, anche se l'aspetto può però cambiare in base alle emozioni del mago, solitamente a seguito di un forte shock emotivo. La maggior parte dei maghi non è in grado di produrre un Patronus corporeo, limitandosi a produrre una nebbia argentea informe che tiene lontani i dissennatori, senza però scacciarli. È inoltre possibile inviare messaggi attraverso un Patronus corporeo, il quale li riporterà con la voce di chi lo ha evocato.[52] Viene insegnato a Harry da Remus Lupin al terzo anno.[53]
+		</div>
+		<div class="paragraph">
+			<div class="title">Incanto Proteus</div>
+			L'incanto Proteus è un incantesimo che consente di legare due o più oggetti in maniera tale che, se uno viene modificato in qualsiasi modo, gli altri subiscono le stesse modifiche. L'incantesimo è giudicato di livello elevato, e viene generalmente utilizzato per inviare messaggi o segnali. L'incantesimo è stato apposto sul Marchio Nero dei mangiamorte da Lord Voldemort, in maniera tale che, toccandone uno, gli altri bruciano per segnalare ai suoi seguaci di dirigersi immediatamente da lui. Viene utilizzato anche da Hermione nel quinto libro per comunicare ai membri dell'Esercito di Silente le date degli incontri attraverso dei galeoni finti.[54]
+		</div>
+		<div class="paragraph">
+			<div class="title">Incanto Reversus</div>
+			L'incanto Reversus è una formula utilizzata per far mostrare ad una bacchetta l'ultimo incantesimo utilizzato. La formula è Prior Incantatio,[N 1] ed evoca una sorta di "fantasma" dell'incantesimo. L'immagine viene fatta svanire con l'incantesimo Deletrius,[55] dal latino deleo, "io cancello".[15] Esiste un effetto simile causato dall'utilizzo di due bacchette con il nucleo proveniente dalla stessa creatura, chiamato anch'esso Prior Incantatio (Priori Incantatem nell'originale).[56][57] La formula deriva dal latino prior, "precedente", e "incantare".[55][15]
+		</div>
+		<div class="paragraph">
+			<div class="title">Incendio</div>
+			L'incantesimo Incendio serve a generare fiamme;[58] la formula deriva dal latino incendia, ovvero "fuoco".[15] È un incantesimo relativamente semplice, utilizzato tra le altre cose per accendere i camini della Metropolvere; può essere tuttavia utilizzato con finalità distruttive, come fatto dai Mangiamorte per dare fuoco alla capanna di Hagrid nel sesto libro.[59]
+		</div>
+		<div class="paragraph">
+			<div class="title">Levicorpus</div>
+			Il Levicorpus è un incantesimo che serve a far fluttuare in aria una persona, a testa in giù come se fosse appesa per le caviglie.[60] È stato inventato da Severus Piton e scritto sul suo libro di pozioni, con accanto la sigla n-vbl, ossia "non verbale" ("non-verbal"), a indicare che deve essere utilizzato senza pronunciare la formula.[61] Il controincantesimo è Liberacorpus.[62]
+		</div>
+		<div class="paragraph">
+			<div class="title">Lumos e Nox</div>
+			L'incantesimo Lumos serve ad accendere la punta della bacchetta come se fosse una torcia.[63] Nei film sono presenti delle variabili di questo incantesimo: il Lumos Solem, che produce della luce simile a quella solare, e il Lumos Maxima, che genera una luce più intensa di quella dell'incantesimo base. Per spegnere la bacchetta si usa la formula Nox.[64] I due incantesimi derivano dal latino: Lumos deriva da lumen, ossia "luce", e dal suffisso -os, stante per "avere qualcosa"; la traduzione approssimativa quindi sarebbe "avere luce". Nox, invece, è la traduzione latina di "notte".[23][13][14]
+		</div>
+		<div class="paragraph">
+			<div class="title">Maledizioni Senza Perdono</div>
+			Le Maledizioni Senza Perdono sono tre potenti maledizioni, il cui utilizzo su di un essere umano comporta la reclusione a vita ad Azkaban.[65] Sebbene il Ministero ne vieti l'utilizzo, Barty Crouch ha concesso agli Auror la facoltà di usarle durante la prima ascesa al potere di Voldemort. Le tre maledizioni sono l'Avada Kedavra, la Maledizione Cruciatus e la Maledizione Imperius: la prima compare sin dal primo libro, come unico ricordo che Harry ha della morte dei suoi genitori, ma il nome e il funzionamento vengono spiegati assieme a quelli delle altre due nel quarto libro.[66]
+		</div>
+		<div class="paragraph">
+			<div class="title">Avada Kedavra</div>
+			L'Avada Kedavra, noto anche come "Anatema che uccide", è un incantesimo che causa la morte istantanea di chi viene colpito. L'incantesimo deriva da un'antica formula in lingua aramaica, abhadda kedhabhra, che significa approssimativamente "sparisci con questa parola", usata anticamente dai maghi in Medio Oriente per scacciare le malattie, probabilmente origine della celebre Abracadabra utilizzata dai moderni prestigiatori.[67][68] L'incantesimo produce un vivido lampo verde, seguito da un rumore come di una presenza che incombe dall'alto. Per scagliarlo occorre un grosso potenziale magico e una forte intenzione di uccidere. Tra tutti gli incantesimi, è l'unico di cui si dice esplicitamente che non può essere bloccato o annullato in nessun modo; l'unica persona sopravvissuta ad esso è Harry Potter.[69][70]
+		</div>
+		<div class="paragraph">
+			<div class="title">Maledizione Cruciatus</div>
+			La Maledizione Cruciatus è un incantesimo oscuro che causa dolore estremo a chi ne è bersaglio. La formula è Crucio, che in latino significa letteralmente "io torturo".[4][14] L'utilizzo eccessivo di questa maledizione su una persona può portarla alla pazzia,[71] come successo a Frank e Alice Paciock, torturati fino a perdere il senno da Bellatrix Lestrange. Affinché la maledizione sia efficace, ci deve essere una volontà sadica di causare dolore da parte dell'utilizzatore.[72] Quando Harry viene sottoposto a questo supplizio da Voldemort nel quarto libro, gli sembra di essere trafitto da coltelli incandescenti su tutto il corpo e che perfino le ossa siano in fiamme.[73]
+		</div>
+		<div class="paragraph">
+			<div class="title">Maledizione Imperius</div>
+			La Maledizione Imperius è un incantesimo che permette a chi lo utilizza di assumere il controllo totale sulle azioni di chi lo subisce. La formula è Imperio, derivata dal latino imperare, ossia "comandare".[15] Chi subisce questo incantesimo ha la sensazione di avere la mente completamente vuota e leggera; è possibile contrastare la maledizione con una grande forza di volontà.[74][75] L'utilizzo di questa maledizione era particolarmente diffuso durante la prima ascesa di Voldemort, creando un clima di sfiducia generale nella popolazione, poiché è virtualmente impossibile scoprire chi è sotto l'effetto dell'incantesimo.[76]
+		</div>
+		<div class="paragraph">
+			<div class="title">Muffliato</div>
+			Il Muffliato è un incantesimo che riempie le orecchie del bersaglio di un ronzio indistinto, così da nascondere discussioni segrete. È uno degli incantesimi inventati da Severus Piton con lo pseudonimo di principe mezzosangue, e annotato nel suo libro di pozioni. La formula deriva dall'inglese muffle, che significa "imbottire qualcosa in modo da attutire il suono".[77][78]
+		</div>
+		<div class="paragraph">
+			<div class="title">Riddikulus</div>
+			Il Riddikulus è un incantesimo utilizzato per contrastare i mollicci.[79] La formula deriva da una storpiatura dell'inglese ridiculous (lett. "ridicolo") o dalla parola latina ridiculum, avente lo stesso significato.[13] Siccome il molliccio assume la forma di ciò che terrorizza di più la persona che si trova davanti, nello scagliare l'incantesimo occorre pensare a qualcosa che renda esilarante la forma che assume: ad esempio Neville, poiché la creatura assume l'aspetto di Severus Piton, immagina il professore con indosso i vestiti di sua nonna.[80]
+		</div>
+		<div class="paragraph">
+			<div class="title">Schiantesimo</div>
+			Lo Schiantesimo (Stunning spell) è una magia volta a stordire e a neutralizzare ("schiantare") l'avversario. La formula è Stupeficium (Stupefy nell'originale, letteralmente "stordire"), derivata dal latino stupefacere.[81] La magia è descritta come un lampo rosso che colpisce il bersaglio, scagliandolo via e facendogli perdere i sensi. Harry la impara nel quarto libro per prepararsi al Torneo Tremaghi.[82]
+		</div>
+		<div class="paragraph">
+			<div class="title">Sectumsempra</div>
+			Il Sectumsempra è un incantesimo oscuro che causa profonde lacerazioni al volto, alla gola e al petto del bersaglio, come se fosse stato colpito da spade invisibili. Le lacerazioni possono essere permanenti, come successo a George Weasley, il cui orecchio viene reciso per errore con questo incantesimo da Severus Piton. Fu inventato proprio da Piton e annotato nel suo libro di pozioni, accanto all'annotazione "contro i nemici".[83] L'incantesimo deriva dall'unione della parola latina sectum, che significa "lacerato", e da sempra, storpiatura della parola latina semper, ossia "sempre"; una traduzione approssimativa sarebbe quindi "reciso per sempre".[23][84][13][14]
+		</div>
+		<div class="paragraph">
+			<div class="title">Sortilegio Scudo</div>
+			Il sortilegio Scudo (shielding charm) è un incantesimo che crea uno scudo magico in grado di bloccare e riflettere gli incantesimi che gli vengono rivolti contro. La formula è Protego.[85] Molto efficace contro incantesimi di piccola e media entità, è tuttavia inutile contro anatemi come le Maledizioni Senza Perdono.[86] Vi sono alcune variabili di questo incantesimo, come il Protego Totalum, in grado di creare una barriera che racchiude e protegge chiunque si trovi in una certa area,[87][88] e il Protego Horribilis, una versione più potente dell'incantesimo di base.
+		</div>
+	</div>
+	<div class="paragraph othsrc">
+		<div class="title">StudentVille</div>
+		<ul>
+			<li>ref:
+				<a href="https://www.studentville.it/divertirsi/incantesimi-di-harry-potter-elenco-completo/">URL</a>
+			</li>
+		</ul>
+		<div class="paragraph">
+			<div class="title"><h3><strong>Introduzione agli incantesimi</strong></h3></div>
+			<ul>
+				<li><strong>Accio:</strong> attira oggetti</li>
+				<li><strong>Depulso:</strong> allontana oggetti</li>
+				<li><strong>Diminuendo:</strong> rimpicciolisce oggetti</li>
+				<li><strong>Engorgio:</strong> ingrandisce oggetti</li>
+				<li><strong>Reducio</strong>: rimpicciolisce oggetti</li>
+				<li><strong>Evanesco:</strong> fa scomparire un oggetto</li>
+				<li><strong>Incantesimo di evocazione</strong>: fa apparire un oggetto</li>
+				<li><strong>Engorgio Skullus:</strong> ingrandisce la testa di una persona</li>
+				<li><strong>Redactmu Skullus</strong>: rimpicciolisce la testa di una persona</li>
+				<li><strong>Quietus</strong>: abbassa il suono della voce</li>
+				<li><strong>Sonurus:</strong> alza il suon della voce</li>
+			</ul>
+		</div>
+		<div class="paragraph">
+			<div class="title"><h3><strong>Incantesimi di Harry Potter con la A</strong></h3></div>
+			<ul>
+				<li>Accio: incantesimo d’appello e contro-incantesimo di Depulso; serve ad attirare le cose verso di se.</li>
+				<li>Acutus: incantesimo di trasfigurazione; trasforma un oggetto in un ago.</li>
+				<li>Adduco Maxima: incantesimo di estensione irriconoscibile; rende gigantesco lo spazio all’interno di un oggetto.</li>
+				<li>Aguamenti: produce un piccolo getto d’acqua.</li>
+				<li>Alimentes Flames: alimenta un fuoco, facendogli raggiungere grandi dimensioni.</li>
+				<li>Alohomora: apre porte o casse chiuse a chiave.</li>
+				<li>Anapneo: libera le vie respiratorie ed evita il soffocamento.</li>
+				<li>Animaleus Nobodyx: incantesimo omo-sembiante; fa tornare un Animagus al suo stato umano.</li>
+				<li>Anteoculatia: fattura che fa apparire delle corna ramificate sulla testa dell’avversario.</li>
+				<li>Aparecium: fa apparire testi resi invisibili dalla magia.</li>
+				<li>Aqua Eructo: produce un enorme e violento getto d’acqua.</li>
+				<li>Arania Exumai: fattura che uccide i ragni e stordisce le acromantule.</li>
+				<li>Ardemonio: fuoco maledetto e inarrestabile; può assumere la forma di vari animali, come draghi, chimere o serpenti.</li>
+				<li>Aresto Momentum: riduce o annulla del tutto il movimento di un corpo.</li>
+				<li>Artis Tempurus: genera un vortice di fuoco.</li>
+				<li>Ascendo: fa compiere un balzo enorme a chi pronuncia l’incantesimo.</li>
+				<li>Autoscribo: incanta una penna in modo che prenda appunti da sola.</li>
+				<li>Avada Kedavra: l’anatema che uccide, è una delle tre Maledizioni Senza Perdono; uccide qualunque persona o animale venga colpito da essa e produce un lampo di luce verde accecante.</li>
+				<li>Avifors: incantesimo di trasfigurazione; trasforma degli oggetti in uno stormo di uccelli.</li>
+				<li>Avis: evoca uno stormo di uccelli.</li>
+			</ul>
+		</div>
+		<div class="paragraph">
+			<div class="title"><h3><strong>Incantesimi di Harry Potter con la&nbsp;B</strong></h3></div>
+			<ul>
+				<li>Bagaglius: riordina velocemente un baule o una valigia.</li>
+				<li>Baule Locomotor: fa fluttuare in aria un baule e permette di spostarlo a proprio piacimento.</li>
+				<li>Bombarda: genera una forte esplosione.</li>
+				<li>Bombarda Maxima: versione potenziata dell’incantesimo Bombarda, genera un esplosione, ancora più potente.</li>
+				<li>Brachium Emendo: guarisce i danni riportati ad un braccio.</li>
+			</ul>
+		</div>
+		<div class="paragraph">
+			<div class="title"><h3><strong>Incantesimi di Harry Potter con la C</strong></h3></div>
+			<ul>
+				<li>Calvorio: fattura che fa perdere i capelli all’avversario.</li>
+				<li>Carpe Retractum: permette di tirare oggetti verso di sé e aggrapparsi ad altri oggetti tramite un braccio invisibile creato dalla bacchetta.</li>
+				<li>Cave Inimicum: incantesimo gnaulante; funziona come un allarme e se un nemico si sta avvicinando emette un suono molto forte.</li>
+				<li>Chartanimus: incantesimo di trasfigurazione; trasforma un foglietto di carta in un animaletto di carta.</li>
+				<li>Circularis: fa apparire delle piattaforme magiche di forma rotonda.</li>
+				<li>Cistem Aperio: apre un baule o una scatola sigillato.</li>
+				<li>Colloportus: contro-incantesimo di Alohomora; blinda a chiave una porta.</li>
+				<li>Colovaria: incantesimo cambia-colore; fa cambiare colore ai capelli di una persona.</li>
+				<li>Confringo: incantesimo esplosivo; genera un esplosione fortissima, in grado di distruggere un palazzo.</li>
+				<li>Confundo (o Confundus): confonde un avversario per un breve periodo di tempo, nel quale fa cose prive di senso.</li>
+				<li>Conjuctivitis: fattura che colpisce gli occhi dell’avversario, causandogli una congiuntivite.</li>
+				<li>Crucio: maledizione della tortura, è una delle tre Maledizioni Senza Perdono; tortura l’avversario, che si sente come perforato da mille coltelli bollenti.</li>
+				<li>Cucurbita: incantesimo di trasfigurazione; trasforma una palla in una zucca.</li>
+			</ul>
+		</div>
+		<div class="paragraph">
+			<div class="title"><h3><strong>Incantesimi di Harry Potter con la D</strong></h3></div>
+			<ul>
+				<li>Defodio: incantesimo di scavo; serve a scavare un tunnel sotterraneo.</li>
+				<li>Deletrius: fa sparire marchi e scritte magiche.</li>
+				<li>Densaugeo: fattura che fa crescere i denti dell’avversario a dismisura.</li>
+				<li>Deprimo: genera una forte pressione su un oggetto, fino a farlo comprimere e talvolta esplodere.</li>
+				<li>Depulso: incantesimo di esilio e contro-incantesimo di Accio; serve ad allontanare da se le cose.</li>
+				<li>Descendo: fa scendere velocemente degli oggetti.</li>
+				<li>Diffindo: incantesimo tagliuzzante; taglia gli oggetti colpiti.</li>
+				<li>Diminuendo: contro-incantesimo di Engorgio; diminuisce le dimensioni di una persona.</li>
+				<li>Dismundo: fa avere visioni spaventose all’avversario per distrarlo.</li>
+				<li>Dissendio: spezza in due parti l’oggetto colpito.</li>
+				<li>Divversiò: incantesimo rallegrante; altera il comportamento di una persona, rendendolo allegro.</li>
+				<li>Dominusterra: causa un leggero terremoto.</li>
+				<li>Draconifors: incantesimo di trasfigurazione; trasforma un oggetto in un drago di piccole dimensioni.</li>
+				<li>Duro: incantesimo di trasfigurazione; trasforma oggetti in pietra.</li>
+			</ul>
+		</div>
+		<div class="paragraph">
+			<div class="title"><h3><strong>Incantesimi di Harry Potter con la E</strong></h3></div>
+			<ul>
+				<li>Ebublio: fattura che abbatte l’avversario con bolle esplosive.</li>
+				<li>Emendo: guarisce la parte del corpo sulla quale la bacchetta è puntata.</li>
+				<li>Engorgio: controincantesimo di Diminuendo e di Reducio; aumenta le dimensioni di persone, animali e cose.</li>
+				<li>Engorgio Skullus: fattura che causa l’aumento delle dimensioni della testa dell’avversario; il contro-incantesimo è Redactum Skullus.</li>
+				<li>Entomorphis: incantesimo di trasfigurazione; trasforma una persona in un enorme scarafaggio.</li>
+				<li>Epismendo: fa cessare un epistassi o una ferita molto piccola.</li>
+				<li>Erecto: serve ad erigere tende ed altre strutture.</li>
+				<li>Evanesco: incantesimo evanescente; fa scomparire un oggetto.</li>
+				<li>Everte Statim: incantesimo di dispersione; scaglia l’avversario a diversi metri di distanza.</li>
+				<li>Excelsiosempra: incantesimo di dispersione; scaglia in aria l’avversario per poi farlo ricadere giù violentemente.</li>
+				<li>Expecto Patronum: incanto Patronus; crea un Patronus, che difende il mago dai Dissennatori, produce una forte luce bianca e assume la forma di un animale, diverso per ogni persona.</li>
+				<li>Expelliarmus: incantesimo di disarmo; disarma l’avversario, scagliando via la sua bacchetta e talvolta anche lui e genera una forte luce rossa.</li>
+				<li>Expulso: genera una forte scarica elettrica in grado di fare esplodere gli oggetti e di fare svenire una persona.</li>
+				<li>Exulcero: fattura pungente; causa forti irritazioni e arrossamenti sulla pelle.</li>
+			</ul>
+		</div>
+		<div class="paragraph">
+			<div class="title"><h3><strong>Incantesimi di Harry Potter con la F</strong></h3></div>
+			<ul>
+				<li>Farfallus Explodit: genera uno sciame di farfalle che esplodono sul volto del nemico.</li>
+				<li>Fastronum: crea un suono molto forte che disorienta l’avversario.</li>
+				<li>Fattura Ammutolente: fa comparire un fantasma che colpisce una persona e la ammutolisce.</li>
+				<li>Fattura Anti-Smaterializzante: impedisce di smaterializzarsi in alcuni luoghi.</li>
+				<li>Fattura Gambemolli: causa un improvvisa mollezza delle gambe dell’avversario che cade al suolo.</li>
+				<li>Fattura Tartagliante: obbliga l’avversario a balbettare.</li>
+				<li>Feraverto: incantesimo di trasfigurazione; trasforma un animale in un calice d’acqua.</li>
+				<li>Ferula: fa apparire delle bende che si avvolgono attorno ad una ferita.</li>
+				<li>Fianto Duri: incantesimo di protezione; respinge gli incantesimi avversari.</li>
+				<li>Finite (o Finitus): fa cessare l’effetto di un incantesimo di medio-basso livello.</li>
+				<li>Finite Incantatem (o Finitus Incantatem): fa cessare l’effetto di un incantesimo di medio-alto livello.</li>
+				<li>Flagramus: permette di scrivere con la bacchetta.</li>
+				<li>Flipendo: fattura che stordisce piccole creature e allontana da se oggetti.</li>
+				<li>Fuocondro: genera calore dalla punta della bacchetta.</li>
+				<li>Furitum: incantesimo di trasfigurazione; trasforma una persona in un furetto.</li>
+				<li>Furnunculus: fattura che fa crescere gigantesche bolle di pus sul viso.</li>
+			</ul>
+		</div>
+		<div class="paragraph">
+			<div class="title"><h3><strong>Incantesimi di Harry Potter con la G</strong></h3></div>
+			<ul>
+				<li>Geminio: crea una copia esatta di un oggetto.</li>
+				<li>Glacius: fattura congelante; congela persone, animali e cose.</li>
+				<li>Glisseo: incantesimo di trasfigurazione; trasforma le scale in scivoli.</li>
+				<li>Gommosus: incantesimo di trasfigurazione; trasforma dei tappetini in tappetini elastici.</li>
+				<li>Gratta e Netta: pulisce qualunque oggetto e superficie.</li>
+				<li>Guidami: incanto quattro punti; serve a orientarsi, poiché la bacchetta punta il nord come una bussola dopo che l’incantesimo viene pronunciato.</li>
+			</ul>
+		</div>
+		<div class="paragraph">
+			<div class="title"><h3><strong>Incantesimi di Harry Potter con la H</strong></h3></div>
+			<ul>
+				<li>Herbifors: fattura che fa crescere dei fiori sulla testa dell’avversario</li>
+				<li>Herbivicus: velocizza la crescita della piante.</li>
+				<li>Homenum Revelio: rivela se ci sono persone in un luogo.</li>
+			</ul>
+		</div>
+		<div class="paragraph">
+			<div class="title"><h3><strong>Incantesimi di Harry Potter con la I</strong></h3></div>
+			<ul>
+				<li>Immobilus: incantesimo di congelamento; immobilizza, sia a terra che a mezz’aria, persone, animali o oggetti.</li>
+				<li>Impedimenta: incantesimo di ostacolo; rallenta i movimenti di un avversario che talvolta sviene.</li>
+				<li>Imperio: maledizione del comando, è una delle tre Maledizioni Senza Perdono; permette di comandare a bacchetta, senza che esso lo voglia, un uomo o un animale.</li>
+				<li>Impervius: rende gli oggetti impermeabili.</li>
+				<li>Imposium: rende mansuete le creature magiche impazzite.</li>
+				<li>Incantesimo Anti-imbroglio: impedisce di imbrogliare o copiare durante i compiti in classe.</li>
+				<li>Incantesimo della Linea dell’Eta’: permette solo a persone di una certa età, stabilita dal mago, di varcare il confine della linea.</li>
+				<li>Incantesimo di Adesione Permanente: un oggetto incollato ad una parete tramite questo incantesimo non potrà più essere staccato.</li>
+				<li>Incantesimo di Disillusione: serve a rendersi invisibili.</li>
+				<li>Incantesimo di Dissimulazione: serve a camuffare delle creature magiche, in modo che appaiano normali, agli occhi dei babbani.</li>
+				<li>Incantesimo di Evocazione: fa apparire un oggetto; contro-incantesimo di Evanesco.</li>
+				<li>Incantesimo d’Inciampo: fattura che fa inciampare su se stesso l’avversario.</li>
+				<li>Incantesimo di Volo: incantesimo molto complicato che permette ad un mago o ad un oggetto di volare.</li>
+				<li>Incantesimo Freddafiamma: fa diventare freddo il fuoco; usato dalle streghe medioevali per salvarsi dai roghi.</li>
+				<li>Incantesimo Imbottito: rende morbide le scope, in modo da rendere più confortevoli i viaggi lunghi.</li>
+				<li>Incantesimo Imperturbabile: rende imperturbabile una superficie e quindi non si può ascoltare nulla attraverso di essa.</li>
+				<li>Incantesimo Infrangibile: rende un oggetto indistruttibile.</li>
+				<li>Incantesimo Sensore Segreto: attiva un allarme quando si entra in luogo in cui si è posto questo incantesimo.</li>
+				<li>Incantesimo Testabolla: crea una bolla d’aria attorno alla testa, che permette di respirare sott’acqua.</li>
+				<li>Incanto Fidelius: rende una zona introvabile, tranne che da coloro che la abitano e dal custode; se il custode tradisce il segreto la zona può essere trovata da colui a chi viene rivelato.</li>
+				<li>Incanto Supersensor: evita di fare errori alla guida di una macchina.</li>
+				<li>Incarceramus: fattura che blocca un nemico con funi e corde.</li>
+				<li>Incendio: genera fiamme dalla punta della bacchetta.</li>
+				<li>Inflatus: fattura che gonfia una creatura fino a farla esplodere.</li>
+				<li>Innerva: fa rinvenire una persona schiantata con Stupeficium.</li>
+			</ul>
+		</div>
+		<div class="paragraph">
+			<div class="title"><h3><strong>Incantesimi di Harry Potter con la L</strong></h3></div>
+			<ul>
+				<li>Lacarnum Inflamare: appicca un incendio.</li>
+				<li>Languelingua: fattura che blocca la lingua di un avversario sul palato, impedendogli di parlare.</li>
+				<li>Lapifors: incantesimo di trasfigurazione; trasforma animali e oggetti in conigli.</li>
+				<li>Legillimens: incantesimo di legillimanzia; serve a leggere la mente di un altra persona.</li>
+				<li>Levicorpus: appende l’avversario per le caviglie; il contro-incantesimo è Liberacorpus.</li>
+				<li>Liberacorpus: contro-incantesimo di Levicorpus; serve a liberare una persona dall’incantesimo.</li>
+				<li>Liques Returnutix: incantesimo di rabbocco; rabbocca una bottiglia vuota.</li>
+				<li>Locomotor: serve a spostare oggetti; si pronuncia preceduto dal nome dell’oggetto che si vuole spostare.</li>
+				<li>Locomotor Mortis: incantesimo delle Pastoie; pietrifica le gambe dell’avversario, che non può più camminare.</li>
+				<li>Lumos: fa fuoriuscire luce dalla punta della bacchetta; il contro-incantesimo è Nox.</li>
+				<li>Lumos Duo: emette una scarica elettrica che pietrifica e distrugge i marciotti.</li>
+				<li>Lumos Maxima: versione potenziata di Lumos, in cui la luce che fuoriesce dalla bacchetta è ancora più grande.</li>
+				<li>Lumos Solem: versione più potente dell’incantesimo Lumos, in cui la luce emessa dalla bacchetta è pari addirittura a quella del Sole.</li>
+			</ul>
+		</div>
+		<div class="paragraph">
+			<div class="title"><h3><strong>Incantesimi di Harry Potter con la M</strong></h3></div>
+			<ul>
+				<li>Malum: incantesimo di trasfigurazione; trasforma un oggetto in una mela.</li>
+				<li>Mangia Lumache (o Slugulus Eructo): fattura che fa vomitare lumache all’avversario per un breve periodo di tempo.</li>
+				<li>Maledizione della frusta: crea una frusta invisibile che se colpisce l’avversario può causare gravi lesioni interne.</li>
+				<li>Maledizione Disarcionante: disarciona una persona dalla scopa e lo fa cadere al suolo.</li>
+				<li>Maledizione Flagrante: strega un oggetto in modo che bruci ogni cosa con cui venga a contatto.</li>
+				<li>Maledizione Gemino: strega un oggetto in modo che si duplichi ogni volta che viene toccato o ogni volta che le sue copie vengono toccate.</li>
+				<li>Melofors: incantesimo di trasfigurazione; trasforma la testa di una persona in una zucca.</li>
+				<li>Mimblewimble: confonde l’avversario facendogli pronunciare male l’incantesimo successivo.</li>
+				<li>Mobiliarbus: permette di spostare gli alberi.</li>
+				<li>Mobilicorpus: permette di muovere i corpi di persone svenute come se fossero marionette.</li>
+				<li>Monstrum: fattura orco-volante; evoca piccole creature che attaccano il nemico.</li>
+				<li>Morsmordre: evoca il Marchio Nero, simbolo di Voldemort.</li>
+				<li>Muffliato: provoca un forte ronzio, in modo da non fare udire cosa si dice a chi è vicino.</li>
+				<li>Multicorfors: incantesimo cambia-colore; cambia il colore di un oggetto.</li>
+				<li>Mutatio Caput: incantesimo di trasfigurazione; trasforma la testa di una persona o di un animale in quella di un altro animale.</li>
+			</ul>
+		</div>
+		<div class="paragraph">
+			<div class="title"><h3><strong>Incantesimi di Harry Potter con la N</strong></h3></div>
+			<ul>
+				<li>Nox: contro-incantesimo di Lumos; spegne la luce presente sulla punta della bacchetta.</li>
+			</ul>
+		</div>
+		<div class="paragraph">
+			<div class="title"><h3><strong>Incantesimi di Harry Potter con la O</strong></h3></div>
+			<ul>
+				<li>Obliterate: cancella qualsiasi traccia lasciata sul terreno.</li>
+				<li>Oblivion (o Obliviate): incantesimo di memoria; fa perdere parte o tutta la memoria ad una persona (Oblivion) o a più persone (Obliviate).</li>
+				<li>Obscuro: fa apparire una benda sugli occhi della persona colpita.</li>
+				<li>Oculus Reparo: ripara un paio di occhiali rotti.</li>
+				<li>Oppugno: ordina ad animali o ad oggetti di attaccare qualcuno.</li>
+				<li>Orbis: fattura che sotterra completamente l’avversario o l’oggetto colpito.</li>
+				<li>Orchideous: fa apparire un mazzo di fiori.</li>
+			</ul>
+		</div>
+		<div class="paragraph">
+			<div class="title"><h3><strong>Incantesimi di Harry Potter con la P</strong></h3></div>
+			<ul>
+				<li>Paperante: incantesimo di trasfigurazione; trasforma un animale in una papera di gomma.</li>
+				<li>Periculum: genera una raffica di scintille rosse per segnalare pericolo.</li>
+				<li>Peskipiksi Pesternomi: stordisce piccole creature come i folletti della Cornovaglia, ma è molto difficile da usare.</li>
+				<li>Petrificus Totalus: incantesimo di pietrificazione; pietrifica l’avversario completamente e per periodo di tempo abbastanza lungo.</li>
+				<li>Piertotum Locomotor: da vita a statue a armature che camminano e parlano.</li>
+				<li>Piscifors: incantesimo di trasfigurazione; trasforma un animale in un pesce.</li>
+				<li>Portus: trasforma un oggetto in una passa-porta.</li>
+				<li>Prior Incantatio: incantesimo Reversus; si lancia su un altra bacchetta per vedere qual è l’ultimo incantesimo che essa ha lanciato.</li>
+				<li>Protego: sortilegio scudo; serve a proteggersi da incantesimi e fatture, ma non può far nulla contro le Maledizioni Senza Perdono.</li>
+				<li>Protego Horribilis: incantesimo di protezione; rende una zona protetta dalle Maledizioni Senza Perdono.</li>
+				<li>Protego Maxima: crea una grande bolla magica intorno ad un luogo; chiunque tenti di attraversarla resta ucciso.</li>
+				<li>Protego Totalum: incantesimo di protezione; rende una zona protetta dagli incantesimi dei nemici.</li>
+				<li>Proteus: fa legare oggetti magici tra loro.</li>
+				<li>Pullus: incantesimo di trasfigurazione; trasforma persone o animali in polli o galline.</li>
+			</ul>
+		</div>
+		<div class="paragraph">
+			<div class="title"><h3><strong>Incantesimi di Harry Potter con la Q</strong></h3></div>
+			<ul>
+				<li>Quietus: contro-incantesimo di Sonorus; fa tornare la voce al suo stato normale.</li>
+			</ul>
+		</div>
+		<div class="paragraph">
+			<div class="title"><h3><strong>Incantesimi di Harry Potter con la R</strong></h3></div>
+			<ul>
+				<li>Recanto: meteofattura che fa cessare il cattivo tempo.</li>
+				<li>Recido: incantesimo amputante; utilizzato dagli studiosi per sezionare le creature magiche.</li>
+				<li>Redactum Skullus: controincantesimo di Engorgio Skullus; fa tornare la testa di una persona alle sue dimensioni normali.</li>
+				<li>Reducio: controincantesimo di Engorgio; rimpicciolisce animali e oggetti.</li>
+				<li>Reducto: incantesimo Reductor; polverizza qualunque oggetto venga colpito da esso.</li>
+				<li>Reinnerva: fa rinvenire una persona svenuta.</li>
+				<li>Relascio: libera una persona o un oggetto imprigionato da qualcosa.</li>
+				<li>Reparo: ripara qualunque oggetto rotto.</li>
+				<li>Repello Babbanum: incantesimo di protezione; rende una zona introvabile dai Babbani.</li>
+				<li>Repello Inimicum: incantesimo di protezione; respinge i nemici.</li>
+				<li>Rictusempra: incantesimo solleticante; scaglia lontano l’avversario e gli produce solletico.</li>
+				<li>Riddikulus: incantesimo anti-molliccio; serve a sconfiggere i mollicci, creature che prendono la forma della paura più grande del mago.</li>
+			</ul>
+		</div>
+		<div class="paragraph">
+			<div class="title"><h3><strong>Incantesimi di Harry Potter con la S</strong></h3></div>
+			<ul>
+				<li>Salvio Hexia: incantesimo di protezione; rende una zona introvabile dai nemici.</li>
+				<li>Secolus Secolarem: fa apparire un oggetto molto più antico e di valore di quanto sia.</li>
+				<li>Sectumsempra: maledizione che taglia e lacera varie parti del corpo e può portare alla morte.</li>
+				<li>Serpensortia: evoca un serpente.</li>
+				<li>Silencio: incantesimo tacitante; fa sparire la voce a persone e ad animali.</li>
+				<li>Skurge: elimina l’ectoplasma, una fastidiosa sostanza prodotta dai fantasmi.</li>
+				<li>Snuffifors: incantesimo di trasfigurazione; trasforma un libro in un topo.</li>
+				<li>Sonorus: amplifica il tono della voce; il contro-incantesimo è Quietus.</li>
+				<li>Specialis Revelio: fa apparire la vera natura di un oggetto magico.</li>
+				<li>Stifling: fattura che causa il soffocamento dell’avversario.</li>
+				<li>Stupeficium: schiantesimo; schianta l’avversario a diversi metri di distanza, facendolo svenire, e la luce emessa è rossa.</li>
+			</ul>
+		</div>
+		<div class="paragraph">
+			<div class="title"><h3><strong>Incantesimi di Harry Potter con la T</strong></h3></div>
+			<ul>
+				<li>Tabù: rende impronunciabile una parola, poiché chi lo fa infrange il Tabù e viene immediatamente rintracciato.</li>
+				<li>Tarantallegra: fattura che costringe le gambe dell’avversario a ballare.</li>
+				<li>Tergeo: assorbe le macchie.</li>
+				<li>Terradominus: amplifica la gravità.</li>
+				<li>Traccia magica: permette di rintracciare un mago, quando è ancora minorenne; essa scompare quando il mago compie 17 anni.</li>
+			</ul>
+		</div>
+		<div class="paragraph">
+			<div class="title"><h3><strong>Incantesimi di Harry Potter con la V</strong></h3></div>
+			<ul>
+				<li>Ventus: genera una forte folata di vento.</li>
+				<li>Verdimillious: rivela oggetti celati dalla magia.</li>
+				<li>Vermicoulus: trasforma un animale in uno sciame di vermi.</li>
+				<li>Vestis: incantesimo di trasfigurazione; trasforma un abito in un altro abito.</li>
+				<li>Vipera Evanesca: incantesimo evanescente; fa scomparire un serpente.</li>
+				<li>Visibula Noctambulus: permette di vedere al buio.</li>
+				<li>Volate Ascenderai: incantesimo di dispersione; scaglia in alto un animale o un oggetto e lo fa ricadere giù violentemente.</li>
+				<li>Voto Infrangibile: patto magico stretto tra due maghi; se uno dei due lo infrange muore.</li>
+				<li>Vulnera Sanentur: cura le ferite, anche gravi o inferte da magia oscura.</li>
+			</ul>
+		</div>
+		<div class="paragraph">
+			<div class="title"><h3><strong>Incantesimi di Harry Potter con la W</strong></h3></div>
+			<ul>
+				<li>Waddiwasi: spara piccoli oggetti, che si trovano a mezz’aria, ad alta velocità.</li>
+				<li>Wingardium Leviosa: incantesimo di levitazione; fa levitare gli oggetti a mezz’aria.</li>
+			</ul>
+		</div>
+		<div class="paragraph">
+			<div class="title"><h3><strong>Incantesimi di Harry Potter con la Z</strong></h3></div>
+			<ul>
+				<li>Zilerius: fattura che causa un eccesso di liquidi nei polmoni; se non si interviene subito si può morire per edema polmonare.</li>
+			</ul>
+		</div>
+	</div>
+	<div class="paragraph othsrc">
+		<div class="title">PotterPedia</div>
+		<ul>
+			<li>ref:
+				<a href="https://www.potterpedia.it/?v=Incantesimo_di_Estensione_Irriconoscibile#tabella">URL</a>
+			</li>
+		</ul>
+	</div>
+</div>
+
+</body>
+</html>
