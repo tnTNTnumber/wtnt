@@ -1,0 +1,1939 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>HTML document</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Mono">
+	<link rel="stylesheet" href="https://2wtnt.tk/css.css">
+	<script type="text/javascript" src="https://2wtnt.tk/js.js"></script>
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@1,700&display=swap');
+
+/* *:not(pre):not(textarea) {
+	font-family: 'Lucida Console', monospace;
+	font-family: 'Ubuntu Mono', monospace;
+} */
+
+* {
+	font-family: Helvetica, sans-serif;
+	margin: 10px auto;
+} *::first-letter {
+	font-weight: unset;
+	color: unset;
+	background: unset;
+} *::first-line {
+	font-weight: unset;
+	color: unset;
+	background: unset;
+}
+
+::-moz-selection {
+	background: rgba(0,255,255,.2);
+	color: unset;
+} ::selection {
+	background: rgba(0,255,255,.2);
+	color: unset;
+}
+
+body {
+} body::-webkit-scrollbar {
+	width: 1.5rem;
+} body::-webkit-scrollbar-track {
+	display: none;
+} body::-webkit-scrollbar-thumb {
+	background: silver;
+	background:
+		linear-gradient(top, transparent 5px, black 5px, black 50%, transparent 50%),	linear-gradient(bottom, transparent 5px, black 5px, black 50%, transparent 50%),
+		radial-gradient(circle, black 5px, transparent 5px) -2px 59%,
+		radial-gradient(circle, black 5px, transparent 5px) -2px 41%;
+	background-size: 100% 100%, 100% 100%, 15px 50%, 15px 50%;
+	background-clip: padding-box;
+	border: 0.5rem solid transparent;
+	border-radius: 1.5rem;
+	z-index: -1;
+	/*credits: https://gist.github.com/zoreet/1550217/8dff57fc6941ae4652faea7ff62f2b9a5c8767ef*/
+} body::-webkit-scrollbar-thumb:hover {
+	background-color: hsla(170,3%,33%,.8);
+}
+
+textarea, pre {
+	-moz-tab-size: 4;
+	  -o-tab-size: 4;
+	     tab-size: 4;
+}
+
+#no-js {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100vw;
+	height: 100vh;
+	padding: 0px;
+	margin: 0px;
+	border: 0px;
+	background: rgba(245,245,245,1);
+	z-index: 1000000;
+} #no-js > p {
+	position: absolute;
+	left: 50%;
+	top: 45%;
+	transform: translate(-50%,-50%);
+}
+
+ol {
+	counter-reset: item;
+} ol li:not(ul li) {
+	display: block;
+} ol li:before {
+	content: counters(item,".") ")\00A0\00A0";
+	counter-increment: item;
+} ul li:before {
+	content: none;
+}
+
+.ListHeadMonth {
+	font-size: 5em;
+	text-transform: uppercase;
+}
+
+.ListHeadDay {
+	font-size: 2em;
+}
+
+.ListMonth {
+	border: unset solid rgba(0,0,0,0);
+	border-width: 4em unset;
+	border-style: solid;
+	border-color: rgba(0,0,0,0);
+	font-size: unset;
+}
+
+.ListDay {
+	border: unset solid rgba(0,0,0,0);
+	border-width: 1em unset unset unset;
+	border-style: solid;
+	border-color: rgba(0,0,0,0);
+	font-size: auto;
+}
+
+.ListScope {
+	font-size: 1em;
+}
+
+.ListScopeSpan {
+	font-size: 1.2em;
+	text-transform: uppercase;
+}
+
+</style>
+<script>
+
+const dayScope = [
+	{
+		"month": 1,
+		"day": 1,
+		"scope": ['Giornata Mondiale della ','pace'],
+	}, {
+		"month": 1,
+		"day": 2,
+		"scope": ['Giornata Mondiale della ','fantascienza'],
+	}, {
+		"month": 1,
+		"day": 3,
+		"scope": ['Giornata Mondiale delle ','palle girate'],
+	}, {
+		"month": 1,
+		"day": 4,
+		"scope": ['Giornata Mondiale del ','braille'],
+	}, {
+		"month": 1,
+		"day": 6,
+		"scope": ['Giornata Cristiana dell\'','epifania'],
+	}, {
+		"month": 1,
+		"day": 7,
+		"scope": ['Giornata Nazionale della ','bandiera tricolore'],
+	}, {
+		"month": 1,
+		"day": 13,
+		"scope": ['Giornata Mondiale del ','dialogo tra religioni e omosessualità'],
+	}, {
+		"month": 1,
+		"day": 14,
+		"scope": ['Giornata Mondiale della ','logica'],
+	}, {
+		"month": 1,
+		"day": 15,
+		"scope": ['Giornata Mondiale di ','WikiPedia'],
+	}, {
+		"month": 1,
+		"day": 15,
+		"scope": ['Giornata Mondiale del ','migrante'],
+	}, {
+		"month": 1,
+		"day": 16,
+		"scope": ['Giornata Mondiale della ','neve'],
+	}, {
+		"month": 1,
+		"day": 17,
+		"scope": ['Giornata Mondiale della ','pizza'],
+	}, {
+		"month": 1,
+		"day": 18,
+		"scope": ['Giornata Mondiale delle ','	migrazioni'],
+	}, {
+		"month": 1,
+		"day": 19,
+		"scope": ['Giornata Internazionale del ','migrante - per la pace'],
+	}, {
+		"month": 1,
+		"day": 21,
+		"scope": ['Giornata Mondiale della ','abbracci'],
+	}, {
+		"month": 1,
+		"day": 23,
+		"scope": ['Giornata Mondiale della ','torta'],
+	}, {
+		"month": 1,
+		"day": 24,
+		"scope": ['Giornata Internazionale dell\'','istruzione'],
+	}, {
+		"month": 1,
+		"day": 25,
+		"scope": ['Giornata Internazionale dell\'','educazione'],
+	}, {
+		"month": 1,
+		"day": 26,
+		"scope": ['Giornata Mondiale dei ','malati di lebbra'],
+	}, {
+		"month": 1,
+		"day": 26,
+		"scope": ['Giornata Nazionale del ','sacrificio degli alpini'],
+	}, {
+		"month": 1,
+		"day": 27,
+		"scope": ['Giornata della ','memoria'],
+	}, {
+		"month": 1,
+		"day": 28,
+		"scope": ['Giornata Europea della ','protezione dei dati personali'],
+	}, {
+		"month": 1,
+		"day": 29,
+		"scope": ['Giornata Internazionale dei ','puzzle'],
+	}, {
+		"month": 1,
+		"day": 30,
+		"scope": ['Giornata Internazionale della ','nonviolenza'],
+	}, {
+		"month": 2,
+		"day": 1,
+		"scope": ['Giornata Mondiale del ','velo islamico'],
+	}, {
+		"month": 2,
+		"day": 1,
+		"scope": ['Giornata Mondiale delle ','zone umide'],
+	}, {
+		"month": 2,
+		"day": 2,
+		"scope": ['Giornata Mondiale della ','vita'],
+	}, {
+		"month": 2,
+		"day": 2,
+		"scope": ['Giornata Mondiale delle ','zone umide'],
+	}, {
+		"month": 2,
+		"day": 3,
+		"scope": ['Giornata Mondiale delle ','zone umide'],
+	}, {
+		"month": 2,
+		"day": 4,
+		"scope": ['Giornata Mondiale della ','lotta contro il cancro'],
+	}, {
+		"month": 2,
+		"day": 5,
+		"scope": ['Giornata Mondiale della ','Nutella'],
+	}, {
+		"month": 2,
+		"day": 5,
+		"scope": ['9ª Giornata Nazionale della ','prevenzione dello spreco alimentare'],
+	}, {
+		"month": 2,
+		"day": 6,
+		"scope": ['Giornata Nazionale della ','“tolleranza zero” contro l’infibulazione e le mutilazioni genitali femminili'],
+	}, {
+		"month": 2,
+		"day": 7,
+		"scope": ['Giornata Nazionale del ','bullismo e cyberbullismo'],
+	}, {
+		"month": 2,
+		"day": 8,
+		"scope": ['Giornata Nazionale del ','sicurezza in rete (“Safer Internet Day” (SID))'],
+	}, {
+		"month": 2,
+		"day": 9,
+		"scope": ['Giornata Nazionale dell\'','uso positivo di Internet'],
+	}, {
+		"month": 2,
+		"day": 10,
+		"scope": ['Giornata del ','ricordo'],
+	}, {
+		"month": 2,
+		"day": 11,
+		"scope": ['Giornata Mondiale del ','malato'],
+	}, {
+		"month": 2,
+		"day": 11,
+		"scope": ['Giornata Internazonale delle ','donne e delle ragazze nella scienza'],
+	}, {
+		"month": 2,
+		"day": 12,
+		"scope": ['Giornata Mondiale di ','Darwin'],
+	}, {
+		"month": 2,
+		"day": 12,
+		"scope": ['Giornata Internazonale dell\'','impiego dei minori nei conflitti armati'],
+	}, {
+		"month": 2,
+		"day": 13,
+		"scope": ['Giornata Internazonale della ','radio'],
+	}, {
+		"month": 2,
+		"day": 14,
+		"scope": ['','San Valentino'],
+	}, {
+		"month": 2,
+		"day": 14,
+		"scope": ['Giornata Internazonale delle ','cardiopatie congenite'],
+	}, {
+		"month": 2,
+		"day": 15,
+		"scope": ['Giornata Mondiale del ','cancro infantile'],
+	}, {
+		"month": 2,
+		"day": 16,
+		"scope": ['Giornata Mondiale delle ','balene'],
+	}, {
+		"month": 2,
+		"day": 17,
+		"scope": ['Giornata Mondiale del ','gatto'],
+	}, {
+		"month": 2,
+		"day": 18,
+		"scope": ['Giornata Mondiale della ','Sindrome di Asperger'],
+	}, {
+		"month": 2,
+		"day": 19,
+		"scope": ['Giornata Mondiale della ','lentezza'],
+	}, {
+		"month": 2,
+		"day": 20,
+		"scope": ['Giornata Mondiale della ','giustizia sociale'],
+	}, {
+		"month": 2,
+		"day": 21,
+		"scope": ['Giornata Internazionale della ','lingua madre'],
+	}, {
+		"month": 2,
+		"day": 21,
+		"scope": ['Giornata Internazionale della ','guida turistica'],
+	}, {
+		"month": 2,
+		"day": 22,
+		"scope": ['Giornata Mondiale del ','pensiero'],
+	}, {
+		"month": 2,
+		"day": 23,
+		"scope": ['Giornata Internazionale delle ','donne'],
+	}, {
+		"month": 2,
+		"day": 25,
+		"scope": ['Giornata Mondiale della ','commedia dell\'arte'],
+	}, {
+		"month": 2,
+		"day": 26,
+		"scope": ['Giornata Mondiale del ','pistacchio'],
+	}, {
+		"month": 2,
+		"day": 27,
+		"scope": ['Giornata Mondiale dell\'','orso polare'],
+	}, {
+		"month": 2,
+		"day": 28,
+		"scope": ['Giornata Mondiale delle ','malattie rare'],
+	}, {
+		"month": 2,
+		"day": 29,
+		"scope": ['Giornata Mondiale delle ','malattie e tumori rari'],
+	}, {
+		"month": 3,
+		"day": 1,
+		"scope": ['Giornata Mondiale della ','discriminazione'],
+	}, {
+		"month": 3,
+		"day": 3,
+		"scope": ['Giornata Mondiale di ','orecchio e udito'],
+	}, {
+		"month": 3,
+		"day": 3,
+		"scope": ['Giornata Mondiale della ','fauna selvatica'],
+	}, {
+		"month": 3,
+		"day": 4,
+		"scope": ['Giornata Mondiale dell\'','obesità'],
+	}, {
+		"month": 3,
+		"day": 4,
+		"scope": ['Giornata Mondiale del ','tennis'],
+	}, {
+		"month": 3,
+		"day": 6,
+		"scope": ['Giornata Mondiale dei ','giusti'],
+	}, {
+		"month": 3,
+		"day": 7,
+		"scope": ['Giornata Internazionale delle ','vittime del dovere delle forze di polizia'],
+	}, {
+		"month": 3,
+		"day": 8,
+		"scope": ['Giornata Internazionale della ','donna'],
+	}, {
+		"month": 3,
+		"day": 9,
+		"scope": ['Giornata Mondiale del ','rene'],
+	}, {
+		"month": 3,
+		"day": 10,
+		"scope": ['Giornata della ','prevenzione delle malattie renali'],
+	}, {
+		"month": 3,
+		"day": 11,
+		"scope": ['Giornata Mondiale del ','sonno'],
+	}, {
+		"month": 3,
+		"day": 11,
+		"scope": ['Giornata Internazionale della ','dignità e il rispetto della persona'],
+	}, {
+		"month": 3,
+		"day": 12,
+		"scope": ['Giornata Nazionale di ','educazione e prevenzione contro la violenza nei confronti degli operatori sanitari e socio-sanitari'],
+	}, {
+		"month": 3,
+		"day": 13,
+		"scope": ['Giornata Mondiale del ','rene'],
+	}, {
+		"month": 3,
+		"day": 14,
+		"scope": ['Giornata Mondiale del ','π'],
+	}, {
+		"month": 3,
+		"day": 15,
+		"scope": ['Giornata Nazionale dei ','disturbi del comportamento alimentare (DCA)'],
+	}, {
+		"month": 3,
+		"day": 16,
+		"scope": ['Giornata Mondiale del ','sonno'],
+	}, {
+		"month": 3,
+		"day": 17,
+		"scope": ['Giornata Mondiale delle ','torte'],
+	}, {
+		"month": 3,
+		"day": 17,
+		"scope": ['Giornata Italiana dell\'','unità nazionale'],
+	}, {
+		"month": 3,
+		"day": 18,
+		"scope": ['Giornata Nazionale delle ','vittime dell\'epidemia di coronavirus'],
+	}, {
+		"month": 3,
+		"day": 19,
+		"scope": ['Giornata Mondiale dell\'','acqua'],
+	}, {
+		"month": 3,
+		"day": 20,
+		"scope": ['Giornata Internazionale della ','felicità'],
+	}, {
+		"month": 3,
+		"day": 21,
+		"scope": ['Giornata Mondiale della ','pace interiore'],
+	}, {
+		"month": 3,
+		"day": 21,
+		"scope": ['Giornata Mondiale della ','poesia'],
+	}, {
+		"month": 3,
+		"day": 21,
+		"scope": ['Giornata Mondiale della ','sindrome di Down'],
+	}, {
+		"month": 3,
+		"day": 21,
+		"scope": ['Giornata Internazionale delle ','foreste'],
+	}, {
+		"month": 3,
+		"day": 21,
+		"scope": ['Giornata Internazionale dell\'','eliminazione della discriminazione raziale'],
+	}, {
+		"month": 3,
+		"day": 21,
+		"scope": ['Giornata della ','memoria e impegno in ricordo delle vittime innocenti delle mafie'],
+	}, {
+		"month": 3,
+		"day": 22,
+		"scope": ['Giornata Mondiale dell\'','acqua'],
+	}, {
+		"month": 3,
+		"day": 23,
+		"scope": ['Giornata Mondiale della ','meteorologia'],
+	}, {
+		"month": 3,
+		"day": 24,
+		"scope": ['Giornata Mondiale della ','tubercolosi (TBC)'],
+	}, {
+		"month": 3,
+		"day": 25,
+		"scope": ['Giornata Internazionale del ','ricordo delle vittime della schiavitù'],
+	}, {
+		"month": 3,
+		"day": 26,
+		"scope": ['Giornata Internazionale del ','risparmio energetico'],
+	}, {
+		"month": 3,
+		"day": 27,
+		"scope": ['Giornata Mondiale del ','teatro'],
+	}, {
+		"month": 3,
+		"day": 28,
+		"scope": ['Giornata Mondiale dell\'','endometriosi'],
+	}, {
+		"month": 3,
+		"day": 30,
+		"scope": ['Giornata Mondiale del ','disturbo bipolare, per il compleanno di Vincent van Gogh'],
+	}, {
+		"month": 3,
+		"day": 31,
+		"scope": ['Giornata Mondiale del ','backup'],
+	}, {
+		"month": 3,
+		"day": 31,
+		"scope": ['Giornata Internazionale della ','visibilità transgender'],
+	}, {
+		"month": 4,
+		"day": 2,
+		"scope": ['Giornata Mondiale della ','consapevolezza dell\'autismo'],
+	}, {
+		"month": 4,
+		"day": 4,
+		"scope": ['Giornata Internazionale della ','sensibilizzazione e azione contro le mine'],
+	}, {
+		"month": 4,
+		"day": 5,
+		"scope": ['Giornata Internazionale delle ','coscienze'],
+	}, {
+		"month": 4,
+		"day": 6,
+		"scope": ['Giornata Internazionale dello ','sport per lo sviluppo e la pace'],
+	}, {
+		"month": 4,
+		"day": 6,
+		"scope": ['','carbonara day'],
+	}, {
+		"month": 4,
+		"day": 7,
+		"scope": ['Giornata Mondiale della ','salute'],
+	}, {
+		"month": 4,
+		"day": 8,
+		"scope": ['Giornata Internazionale delle ','popolazioni Rom, Sinti e Camminanti'],
+	}, {
+		"month": 4,
+		"day": 9,
+		"scope": ['Giornata Mondiale dell\'','unicorno'],
+	}, {
+		"month": 4,
+		"day": 10,
+		"scope": ['Giornata Mondiale dell\'','omeopatia'],
+	}, {
+		"month": 4,
+		"day": 11,
+		"scope": ['Giornata Nazionale del ','mare e della cultura marina'],
+	}, {
+		"month": 4,
+		"day": 12,
+		"scope": ['Giornata Internazionale dei ','viaggi dell’uomo nello spazio'],
+	}, {
+		"month": 4,
+		"day": 13,
+		"scope": ['Giornata Internazionale del ','bacio'],
+	}, {
+		"month": 4,
+		"day": 14,
+		"scope": ['Giornata Mondiale della ','malattia di Chagas (CD-Chagas Disease), o tripanosomiasi americana'],
+	}, {
+		"month": 4,
+		"day": 15,
+		"scope": ['Giornata Mondiale dell\'','arte'],
+	}, {
+		"month": 4,
+		"day": 16,
+		"scope": ['Giornata Mondiale della ','voce'],
+	}, {
+		"month": 4,
+		"day": 17,
+		"scope": ['Giornata Mondiale della ','lotta contadina'],
+	}, {
+		"month": 4,
+		"day": 18,
+		"scope": ['Giornata Internazionale dei ','monumenti e dei siti'],
+	}, {
+		"month": 4,
+		"day": 19,
+		"scope": ['Giornata Mondiale della ','biodanza'],
+	}, {
+		"month": 4,
+		"day": 20,
+		"scope": ['Giornata Mondiale della ','marijuana (4 20)'],
+	}, {
+		"month": 4,
+		"day": 21,
+		"scope": ['Giornata Mondiale della ','creatività e dell\'innovazione per aumentare la consapevolezza del ruolo della creatività e dell\'innovazione in tutti gli aspetti dello sviluppo umano'],
+	}, {
+		"month": 4,
+		"day": 21,
+		"scope": ['Giornata Mondiale della ','migrazione dei pesci'],
+	}, {
+		"month": 4,
+		"day": 22,
+		"scope": ['Giornata della ','Terra'],
+	}, {
+		"month": 4,
+		"day": 23,
+		"scope": ['Giornata Mondiale del ','libro e del diritto d\'autore'],
+	}, {
+		"month": 4,
+		"day": 24,
+		"scope": ['Giornata Nazionale della ','donazione di organi e tessuti'],
+	}, {
+		"month": 4,
+		"day": 25,
+		"scope": ['Giornata Mondiale della ','malaria'],
+	}, {
+		"month": 4,
+		"day": 25,
+		"scope": ['Giornata Mondiale dei ','pinguini'],
+	}, {
+		"month": 4,
+		"day": 26,
+		"scope": ['Giornata Mondiale della ','proprietà intellettuale'],
+	}, {
+		"month": 4,
+		"day": 27,
+		"scope": ['Giornata Mondiale del ','disegno'],
+	}, {
+		"month": 4,
+		"day": 27,
+		"scope": ['Giornata Mondiale del ','tapiro'],
+	}, {
+		"month": 4,
+		"day": 28,
+		"scope": ['Giornata Mondiale della ','sicurezza e della salute sul lavoro'],
+	}, {
+		"month": 4,
+		"day": 28,
+		"scope": ['Giornata Mondiale delle ','vittime dell\'Amianto'],
+	}, {
+		"month": 4,
+		"day": 28,
+		"scope": ['Giornata Internazionale della ','salvaguardia delle rane'],
+	}, {
+		"month": 4,
+		"day": 29,
+		"scope": ['Giornata Internazionale della ','danza'],
+	}, {
+		"month": 4,
+		"day": 30,
+		"scope": ['Giornata Mondiale del ','jazz'],
+	}, {
+		"month": 5,
+		"day": 1,
+		"scope": ['Festa Internazionale dei ','lavoratori'],
+	}, {
+		"month": 5,
+		"day": 2,
+		"scope": ['Giornata Mondiale del ','tonno'],
+	}, {
+		"month": 5,
+		"day": 2,
+		"scope": ['Giornata Mondiale dei ','bloggers'],
+	}, {
+		"month": 5,
+		"day": 3,
+		"scope": ['Giornata Mondiale della ','libertà di stampa'],
+	}, {
+		"month": 5,
+		"day": 4,
+		"scope": ['Giornata Mondiale del ','calcio'],
+	}, {
+		"month": 5,
+		"day": 4,
+		"scope": ['Giornata Mondiale della ','risata'],
+	}, {
+		"month": 5,
+		"day": 5,
+		"scope": ['Giornata Mondiale dell\'','igiene delle mani'],
+	}, {
+		"month": 5,
+		"day": 5,
+		"scope": ['Giornata Internazionale delle ','ostriche'],
+	}, {
+		"month": 5,
+		"day": 6,
+		"scope": ['Giornata Mondiale dei ','colori'],
+	}, {
+		"month": 5,
+		"day": 6,
+		"scope": ['Giornata Mondiale dell\'','Asma'],
+	}, {
+		"month": 5,
+		"day": 7,
+		"scope": ['Giornata Mondiale della ','Croce Rossa'],
+	}, {
+		"month": 5,
+		"day": 8,
+		"scope": ['Giornata Mondiale della ','croce rossa e mezzaluna rossa'],
+	}, {
+		"month": 5,
+		"day": 8,
+		"scope": ['Giornata Mondiale della ','talassemia'],
+	}, {
+		"month": 5,
+		"day": 9,
+		"scope": ['Giornata Mondiale degli ','uccelli migratori'],
+	}, {
+		"month": 5,
+		"day": 9,
+		"scope": ['Giornata Europea della ','nascita dell\'Europa comunitaria'],
+	}, {
+		"month": 5,
+		"day": 10,
+		"scope": ['Giornata Mondiale del ','Lupus eritematoso sistemico (Les)'],
+	}, {
+		"month": 5,
+		"day": 11,
+		"scope": ['Giornata Mondiale dell\'','orienteering'],
+	}, {
+		"month": 5,
+		"day": 11,
+		"scope": ['Giornata Mondiale del ','commercio equo'],
+	}, {
+		"month": 5,
+		"day": 12,
+		"scope": ['Giornata Mondiale dell\'','infermiere'],
+	}, {
+		"month": 5,
+		"day": 12,
+		"scope": ['Giornata Mondiale della ','fibromalgia'],
+	}, {
+		"month": 5,
+		"day": 13,
+		"scope": ['Giornata Mondiale della ','fibromialgia'],
+	}, {
+		"month": 5,
+		"day": 15,
+		"scope": ['Giornata Internazionale delle ','famiglie'],
+	}, {
+		"month": 5,
+		"day": 16,
+		"scope": ['Giornata Mondiale del ','vivere insieme in pace'],
+	}, {
+		"month": 5,
+		"day": 17,
+		"scope": ['Giornata Mondiale delle ','telecomunicazioni'],
+	}, {
+		"month": 5,
+		"day": 17,
+		"scope": ['Giornata Internazionale dell\'','omofobia, bifobia e transfobia'],
+	}, {
+		"month": 5,
+		"day": 18,
+		"scope": ['Giornata Internazionale dei ','musei'],
+	}, {
+		"month": 5,
+		"day": 19,
+		"scope": ['Giornata Mondiale delle ','malattie infiammatorie croniche dell\'intestino'],
+	}, {
+		"month": 5,
+		"day": 19,
+		"scope": ['Giornata Mondiale del ','whisky'],
+	}, {
+		"month": 5,
+		"day": 20,
+		"scope": ['Giornata Mondiale delle ','api'],
+	}, {
+		"month": 5,
+		"day": 21,
+		"scope": ['Giornata Internazionale della ','diversità culturale'],
+	}, {
+		"month": 5,
+		"day": 22,
+		"scope": ['Giornata Mondiale della ','biodiversità'],
+	}, {
+		"month": 5,
+		"day": 23,
+		"scope": ['Giornata Mondiale delle ','tartarughe'],
+	}, {
+		"month": 5,
+		"day": 23,
+		"scope": ['Giornata Nazionale della ','legalità'],
+	}, {
+		"month": 5,
+		"day": 24,
+		"scope": ['Giornata Europea dei ','parchi'],
+	}, {
+		"month": 5,
+		"day": 25,
+		"scope": ['Giornata Mondiale dei ','bambini e minori scomparsi'],
+	}, {
+		"month": 5,
+		"day": 26,
+		"scope": ['Giornata Mondiale dell\'','aperitivo'],
+	}, {
+		"month": 5,
+		"day": 27,
+		"scope": ['Giornata Mondiale della ','lontra'],
+	}, {
+		"month": 5,
+		"day": 28,
+		"scope": ['Giornata Mondiale del ','gioco'],
+	}, {
+		"month": 5,
+		"day": 28,
+		"scope": ['Giornata Mondiale dell\'','hamburger'],
+	}, {
+		"month": 5,
+		"day": 28,
+		"scope": ['Giornata Mondiale della ','sclerosi multipla'],
+	}, {
+		"month": 5,
+		"day": 29,
+		"scope": ['Giornata Internazionale della ','salute digestiva'],
+	}, {
+		"month": 5,
+		"day": 29,
+		"scope": ['Giornata Internazionale dei ','peacekeeper'],
+	}, {
+		"month": 5,
+		"day": 30,
+		"scope": ['Giornata Mondiale della ','sclerosi multipla'],
+	}, {
+		"month": 5,
+		"day": 31,
+		"scope": ['Giornata Mondiale ','senza tabacco'],
+	}, {
+		"month": 5,
+		"day": 31,
+		"scope": ['Giornata Mondiale della ','lotta al fumo'],
+	}, {
+		"month": 6,
+		"day": 1,
+		"scope": ['Giornata Mondiale dei ','genitori'],
+	}, {
+		"month": 6,
+		"day": 1,
+		"scope": ['Giornata Mondiale delle ','comunicazioni sociali'],
+	}, {
+		"month": 6,
+		"day": 1,
+		"scope": ['Giornata Mondiale del ','latte'],
+	}, {
+		"month": 6,
+		"day": 2,
+		"scope": ['Giornata Mondiale dei ','disturbi del comportamento'],
+	}, {
+		"month": 6,
+		"day": 3,
+		"scope": ['Giornata Mondiale della ','bicicletta'],
+	}, {
+		"month": 6,
+		"day": 4,
+		"scope": ['Giornata Internazionale dei ','bambini innocenti vittime di aggressione delle Nazioni Unite'],
+	}, {
+		"month": 6,
+		"day": 5,
+		"scope": ['Giornata Mondiale dell\'','ambiente'],
+	}, {
+		"month": 6,
+		"day": 6,
+		"scope": ['Giornata Mondiale dell\'','ortottica'],
+	}, {
+		"month": 6,
+		"day": 6,
+		"scope": ['Giornata Mondiale del ','naturismo'],
+	}, {
+		"month": 6,
+		"day": 7,
+		"scope": ['Giornata Mondiale della ','sicurezza alimentare'],
+	}, {
+		"month": 6,
+		"day": 8,
+		"scope": ['Giornata Mondiale degli ','oceani'],
+	}, {
+		"month": 6,
+		"day": 9,
+		"scope": ['Giornata Mondiale del ','triangolo dei coralli'],
+	}, {
+		"month": 6,
+		"day": 10,
+		"scope": ['Giornata della ','Marina'],
+	}, {
+		"month": 6,
+		"day": 11,
+		"scope": ['Giornata Mondiale del ','lavoro a maglia in pubblico'],
+	}, {
+		"month": 6,
+		"day": 12,
+		"scope": ['Giornata Mondiale del ','lavoro minorile'],
+	}, {
+		"month": 6,
+		"day": 13,
+		"scope": ['Giornata Mondiale dell\'','albinismo'],
+	}, {
+		"month": 6,
+		"day": 13,
+		"scope": ['Giornata Mondiale del ','donatore di sangue'],
+	}, {
+		"month": 6,
+		"day": 14,
+		"scope": ['Giornata Mondiale del ','donatore di sangue'],
+	}, {
+		"month": 6,
+		"day": 15,
+		"scope": ['Giornata Mondiale del ','vento'],
+	}, {
+		"month": 6,
+		"day": 15,
+		"scope": ['Giornata Mondiale degli ','abusi sugli anziani'],
+	}, {
+		"month": 6,
+		"day": 16,
+		"scope": ['Giornata Mondiale della ','giocoleria'],
+	}, {
+		"month": 6,
+		"day": 16,
+		"scope": ['Giornata Internazionale delle ','rimesse famigliari'],
+	}, {
+		"month": 6,
+		"day": 17,
+		"scope": ['Giornata Mondiale della ','desertificazione e siccità'],
+	}, {
+		"month": 6,
+		"day": 18,
+		"scope": ['Giornata Mondiale del ','rifugiato - per la pace'],
+	}, {
+		"month": 6,
+		"day": 19,
+		"scope": ['Giornata Internazionale della ','violenza sessuale nei conflitti armati'],
+	}, {
+		"month": 6,
+		"day": 20,
+		"scope": ['Giornata Mondiale dei ','profughi'],
+	}, {
+		"month": 6,
+		"day": 21,
+		"scope": ['Giornata Mondiale delle ','giraffe'],
+	}, {
+		"month": 6,
+		"day": 21,
+		"scope": ['Giornata Internazionale dello ','yoga'],
+	}, {
+		"month": 6,
+		"day": 22,
+		"scope": ['Giornata Mondiale della ','foresta pluviale'],
+	}, {
+		"month": 6,
+		"day": 23,
+		"scope": ['Giornata del ','servizio pubblico delle Nazioni Unite'],
+	}, {
+		"month": 6,
+		"day": 24,
+		"scope": ['Giornata Mondiale dei ','soccorritori'],
+	}, {
+		"month": 6,
+		"day": 25,
+		"scope": ['Giornata Mondiale della ','vitilligine'],
+	}, {
+		"month": 6,
+		"day": 25,
+		"scope": ['Giornata Mondiale del ','marittimo'],
+	}, {
+		"month": 6,
+		"day": 26,
+		"scope": ['Giornata Mondiale dell\'','abuso e traffico illecito di droga e stupefacenti'],
+	}, {
+		"month": 6,
+		"day": 26,
+		"scope": ['Giornata Mondiale del ','cane in ufficio'],
+	}, {
+		"month": 6,
+		"day": 26,
+		"scope": ['Giornata Internazionale delle ','vittime di tortura'],
+	}, {
+		"month": 6,
+		"day": 27,
+		"scope": ['Giornata Mondiale delle ','micro, piccole e medie imprese'],
+	}, {
+		"month": 6,
+		"day": 28,
+		"scope": ['Giornata Mondiale dell\'','orgoglio LGBTQIIAA+*'],
+	}, {
+		"month": 6,
+		"day": 29,
+		"scope": ['Giornata Mondiale della ','sclerodermia'],
+	}, {
+		"month": 6,
+		"day": 29,
+		"scope": ['Giornata Mondiale del ','disegno industriale'],
+	}, {
+		"month": 6,
+		"day": 30,
+		"scope": ['','Asteroid Day'],
+	}, {
+		"month": 7,
+		"day": 1,
+		"scope": ['Giornata Nazionale dell\'','addio al servizio di leva obbligatorio'],
+	}, {
+		"month": 7,
+		"day": 2,
+		"scope": ['Giornata Mondiale degli ','O.V.N.I. (U.F.O.)'],
+	}, {
+		"month": 7,
+		"day": 3,
+		"scope": ['','Free Hugs Day'],
+	}, {
+		"month": 7,
+		"day": 3,
+		"scope": ['Giornata Internazionale delle ','cooperative'],
+	}, {
+		"month": 7,
+		"day": 4,
+		"scope": ['Giornata dell\'','indipendenza degli Stati Uniti d\'America'],
+	}, {
+		"month": 7,
+		"day": 6,
+		"scope": ['Giornata Mondiale del ','bacio'],
+	}, {
+		"month": 7,
+		"day": 7,
+		"scope": ['','World Chocolate Day'],
+	}, {
+		"month": 7,
+		"day": 8,
+		"scope": ['Giornata Internazionale del ','mar Mediterraneo'],
+	}, {
+		"month": 7,
+		"day": 9,
+		"scope": ['Giornata della ','distruzione delle armi piccole o leggere'],
+	}, {
+		"month": 7,
+		"day": 10,
+		"scope": ['Giornata Internazionale dell\'','olio di cannabis (Dab Day)'],
+	}, {
+		"month": 7,
+		"day": 11,
+		"scope": ['Giornata Mondiale della ','popolazione'],
+	}, {
+		"month": 7,
+		"day": 12,
+		"scope": ['Giornata Internazionale della ','gioventù'],
+	}, {
+		"month": 7,
+		"day": 13,
+		"scope": ['Giornata Internazionale del ','rock'],
+	}, {
+		"month": 7,
+		"day": 14,
+		"scope": ['','Festa Nazionale Francese'],
+	}, {
+		"month": 7,
+		"day": 15,
+		"scope": ['Giornata Mondiale delle ','competenze e capacità dei giovani'],
+	}, {
+		"month": 7,
+		"day": 16,
+		"scope": ['Giornata Mondiale della ','neve'],
+	}, {
+		"month": 7,
+		"day": 17,
+		"scope": ['Giornata Mondiale della ','giustizia internazionale penale'],
+	}, {
+		"month": 7,
+		"day": 17,
+		"scope": ['Giornata Mondiale delle ','emoji'],
+	}, {
+		"month": 7,
+		"day": 18,
+		"scope": ['Giornata Internazionale di ','Nelson Mandela'],
+	}, {
+		"month": 7,
+		"day": 20,
+		"scope": ['Giornata Internazionale della ','Luna'],
+	}, {
+		"month": 7,
+		"day": 22,
+		"scope": ['Giornata Mondiale del ','cervello'],
+	}, {
+		"month": 7,
+		"day": 23,
+		"scope": ['Giornata Mondiale della ','Sindrome di Sjögren'],
+	}, {
+		"month": 7,
+		"day": 24,
+		"scope": ['Giornata Mondiale del ','BDSM'],
+	}, {
+		"month": 7,
+		"day": 25,
+		"scope": ['Giornata Mondiale dei ','nonni e anziani'],
+	}, {
+		"month": 7,
+		"day": 26,
+		"scope": ['Giornata Mondiale dei ','nonni e anziani'],
+	}, {
+		"month": 7,
+		"day": 28,
+		"scope": ['Giornata Mondiale dell\'','epatite (WHD – World Hepatitis Day)'],
+	}, {
+		"month": 7,
+		"day": 29,
+		"scope": ['Giornata Mondiale della ','tigre'],
+	}, {
+		"month": 7,
+		"day": 30,
+		"scope": ['Giornata Mondiale dell\'','amicizia'],
+	}, {
+		"month": 7,
+		"day": 31,
+		"scope": ['Giornata Mondiale dell\'','orgasmo'],
+	}, {
+		"month": 8,
+		"day": 2,
+		"scope": ['Giornata Mondiale degli ','uomini'],
+	}, {
+		"month": 8,
+		"day": 4,
+		"scope": ['Giornata Mondiale del ','gufo'],
+	}, {
+		"month": 8,
+		"day": 6,
+		"scope": ['Giornata Mondiale della ','birra'],
+	}, {
+		"month": 8,
+		"day": 7,
+		"scope": ['Giornata Mondiale della ','birra'],
+	}, {
+		"month": 8,
+		"day": 8,
+		"scope": ['Giornata Mondiale del ','gatto'],
+	}, {
+		"month": 8,
+		"day": 9,
+		"scope": ['Giornata Mondiale dei ','popoli indigeni'],
+	}, {
+		"month": 8,
+		"day": 10,
+		"scope": ['Giornata Mondiale del ','leone'],
+	}, {
+		"month": 8,
+		"day": 12,
+		"scope": ['Giornata Mondiale dell\'','elefante'],
+	}, {
+		"month": 8,
+		"day": 12,
+		"scope": ['Giornata Internazionale della ','gioventù'],
+	}, {
+		"month": 8,
+		"day": 13,
+		"scope": ['Giornata Mondiale dei ','mancini'],
+	}, {
+		"month": 8,
+		"day": 16,
+		"scope": ['Giornata Nazionale delle ','confetture di frutta'],
+	}, {
+		"month": 8,
+		"day": 17,
+		"scope": ['Giornata di ','valorizzazione del gatto nero'],
+	}, {
+		"month": 8,
+		"day": 18,
+		"scope": ['Giornata Nazionale di ','sciroppi e liquori'],
+	}, {
+		"month": 8,
+		"day": 19,
+		"scope": ['Giornata Mondiale dell\'','aiuto umanitario'],
+	}, {
+		"month": 8,
+		"day": 19,
+		"scope": ['Giornata Mondiale della ','fotografia'],
+	}, {
+		"month": 8,
+		"day": 20,
+		"scope": ['Giornata Mondiale della ','zanzara'],
+	}, {
+		"month": 8,
+		"day": 21,
+		"scope": ['Giornata Mondiale dell\'','imprenditore'],
+	}, {
+		"month": 8,
+		"day": 21,
+		"scope": ['Giornata Internazionale di ','ricordo e tributo alle vittime di terrorismo'],
+	}, {
+		"month": 8,
+		"day": 22,
+		"scope": ['Giornata Mondiale del ','latte vegetale'],
+	}, {
+		"month": 8,
+		"day": 23,
+		"scope": ['Giornata Mondiale della ','commemorazione degli schiavi e della loro tratta e della sua abolizione'],
+	}, {
+		"month": 8,
+		"day": 26,
+		"scope": ['Giornata Mondiale del ','cane'],
+	}, {
+		"month": 8,
+		"day": 27,
+		"scope": ['Giornata del ','semplicemente così'],
+	}, {
+		"month": 8,
+		"day": 29,
+		"scope": ['Giornata Mondiale dei ','test nucleari'],
+	}, {
+		"month": 8,
+		"day": 30,
+		"scope": ['Giornata Internazionale dei ','desaparecidos'],
+	}, {
+		"month": 8,
+		"day": 31,
+		"scope": ['Giornata Internazionale della ','solidarietà'],
+	}, {
+		"month": 9,
+		"day": 1,
+		"scope": ['Giornata Mondiale della ','custodia e cura del Creato e sua relativa preghiera'],
+	}, {
+		"month": 9,
+		"day": 2,
+		"scope": ['Giornata Internazionale della ','pace ONU'],
+	}, {
+		"month": 9,
+		"day": 4,
+		"scope": ['Giornata Mondiale del ','benessere sessuale'],
+	}, {
+		"month": 9,
+		"day": 5,
+		"scope": ['Giornata Mondiale dell\'','azione per l\'Amazzonia'],
+	}, {
+		"month": 9,
+		"day": 7,
+		"scope": ['Giornata Mondiale della ','sensibilizzazione sulla distrofia muscolare di Duchenne'],
+	}, {
+		"month": 9,
+		"day": 7,
+		"scope": ['Giornata Internazionale dell\'','aria pulita e dei cieli blu'],
+	}, {
+		"month": 9,
+		"day": 8,
+		"scope": ['Giornata Mondiale dell\'','alfabetizzazione'],
+	}, {
+		"month": 9,
+		"day": 8,
+		"scope": ['Giornata Mondiale della ','fisioterapia'],
+	}, {
+		"month": 9,
+		"day": 9,
+		"scope": ['Giornata Mondiale della ','lotta alla Sindrome Fetoalcolica e dei disturbi correlati'],
+	}, {
+		"month": 9,
+		"day": 10,
+		"scope": ['Giornata Mondiale della ','prevenzione al suicidio'],
+	}, {
+		"month": 9,
+		"day": 11,
+		"scope": ['Giornata Internazionale della ','memoria dei lavoratori morti o feriti sui luoghi di lavoro'],
+	}, {
+		"month": 9,
+		"day": 12,
+		"scope": ['Giornata Internazionale della ','cooperazione sud-sud'],
+	}, {
+		"month": 9,
+		"day": 12,
+		"scope": ['Giornata Internazionale dei ','sacchetti di plastica'],
+	}, {
+		"month": 9,
+		"day": 13,
+		"scope": ['Giornata Mondiale della ','lotta alla S.E.P.S.I.'],
+	}, {
+		"month": 9,
+		"day": 14,
+		"scope": ['Giornata Mondiale della ','dermatite atopica'],
+	}, {
+		"month": 9,
+		"day": 15,
+		"scope": ['Giornata Mondiale della ','democrazia'],
+	}, {
+		"month": 9,
+		"day": 15,
+		"scope": ['Giornata Mondiale della ','consapevolezza sul linfoma'],
+	}, {
+		"month": 9,
+		"day": 16,
+		"scope": ['Giornata Mondiale della ','protezione della fascia di ozono'],
+	}, {
+		"month": 9,
+		"day": 17,
+		"scope": ['Giornata Mondiale della ','sicurezza dei pazienti'],
+	}, {
+		"month": 9,
+		"day": 18,
+		"scope": ['Giornata Mondiale del ','monitoraggio delle acque'],
+	}, {
+		"month": 9,
+		"day": 18,
+		"scope": ['Giornata Internazionale della ','parità salariale'],
+	}, {
+		"month": 9,
+		"day": 19,
+		"scope": ['Giornata Internazionale del ','"parla come un pirata"'],
+	}, {
+		"month": 9,
+		"day": 20,
+		"scope": ['Giornata Mondiale dei ','bambini'],
+	}, {
+		"month": 9,
+		"day": 20,
+		"scope": ['Giornata Internazionale dello ','sport universitario'],
+	}, {
+		"month": 9,
+		"day": 21,
+		"scope": ['Giornata Mondiale della ','pace'],
+	}, {
+		"month": 9,
+		"day": 21,
+		"scope": ['Giornata Mondiale dell\'','Alzheimer'],
+	}, {
+		"month": 9,
+		"day": 21,
+		"scope": ['Giornata Mondiale della ','gratitudine'],
+	}, {
+		"month": 9,
+		"day": 22,
+		"scope": ['Giornata Mondiale ','senza auto'],
+	}, {
+		"month": 9,
+		"day": 22,
+		"scope": ['Giornata Mondiale del ','rinoceronte'],
+	}, {
+		"month": 9,
+		"day": 23,
+		"scope": ['Giornata Mondiale dell\'','orgoglio bisessuale'],
+	}, {
+		"month": 9,
+		"day": 23,
+		"scope": ['Giornata Internazionale delle ','lingue dei segni'],
+	}, {
+		"month": 9,
+		"day": 25,
+		"scope": ['Giornata Mondiale dei ','sogni'],
+	}, {
+		"month": 9,
+		"day": 26,
+		"scope": ['Giornata Mondiale dell\'','eliminazione delle armi nucleari'],
+	}, {
+		"month": 9,
+		"day": 26,
+		"scope": ['Giornata Mondiale del ','migrante e del rifugiato (GMMR)'],
+	}, {
+		"month": 9,
+		"day": 26,
+		"scope": ['Giornata Mondiale degli ','amanti dei cani'],
+	}, {
+		"month": 9,
+		"day": 26,
+		"scope": ['Giornata Europea delle ','lingue'],
+	}, {
+		"month": 9,
+		"day": 27,
+		"scope": ['Giornata Mondiale del ','turismo'],
+	}, {
+		"month": 9,
+		"day": 28,
+		"scope": ['Giornata Mondiale dell\'','accesso universale alle informazioni'],
+	}, {
+		"month": 9,
+		"day": 28,
+		"scope": ['Giornata Mondiale della ','Rabbia'],
+	}, {
+		"month": 9,
+		"day": 28,
+		"scope": ['Giornata Mondiale del ','sordo'],
+	}, {
+		"month": 9,
+		"day": 29,
+		"scope": ['Giornata Mondiale del ','cuore'],
+	}, {
+		"month": 9,
+		"day": 29,
+		"scope": ['Giornata Mondiale del ','ringraziamento'],
+	}, {
+		"month": 9,
+		"day": 29,
+		"scope": ['Giornata Internazionale della ','consapevolezza'],
+	}, {
+		"month": 9,
+		"day": 30,
+		"scope": ['Giornata Mondiale della ','traduzione'],
+	}, {
+		"month": 9,
+		"day": 30,
+		"scope": ['Giornata Mondiale della ','marittima'],
+	}, {
+		"month": 10,
+		"day": 1,
+		"scope": ['Giornata Internazionale delle ','persone anziane'],
+	}, {
+		"month": 10,
+		"day": 2,
+		"scope": ['Giornata Internazionale della ','nonviolenza'],
+	}, {
+		"month": 10,
+		"day": 3,
+		"scope": ['Giornata Mondiale dell\'','habitat'],
+	}, {
+		"month": 10,
+		"day": 3,
+		"scope": ['Giornata Internazionale di ','accoglienza e memoria delle vittime dell\'immigrazione'],
+	}, {
+		"month": 10,
+		"day": 4,
+		"scope": ['Giornata Mondiale degli ','animali'],
+	}, {
+		"month": 10,
+		"day": 4,
+		"scope": ['Giornata della ','pace, fraternità e dialogo'],
+	}, {
+		"month": 10,
+		"day": 5,
+		"scope": ['Giornata Mondiale degli ','insegnanti'],
+	}, {
+		"month": 10,
+		"day": 6,
+		"scope": ['Giornata Mondiale della ','sensibilizzazione alla paralisi cerebrale'],
+	}, {
+		"month": 10,
+		"day": 7,
+		"scope": ['Giornata Mondiale del ','lavoro dignitoso'],
+	}, {
+		"month": 10,
+		"day": 7,
+		"scope": ['Giornata Mondiale del ','soccorso'],
+	}, {
+		"month": 10,
+		"day": 8,
+		"scope": ['Giornata Mondiale della ','vista'],
+	}, {
+		"month": 10,
+		"day": 9,
+		"scope": ['Giornata Mondiale della ','posta'],
+	}, {
+		"month": 10,
+		"day": 9,
+		"scope": ['Giornata Mondiale della ','consapevolezza sulle sindromi Pans e Pandas'],
+	}, {
+		"month": 10,
+		"day": 10,
+		"scope": ['Giornata Mondiale della ','salute mentale'],
+	}, {
+		"month": 10,
+		"day": 10,
+		"scope": ['Giornata Mondiale della ','pena di morte'],
+	}, {
+		"month": 10,
+		"day": 11,
+		"scope": ['Giornata Mondiale delle ','case di cura'],
+	}, {
+		"month": 10,
+		"day": 11,
+		"scope": ['Giornata Mondiale delle ','bambine e ragazze'],
+	}, {
+		"month": 10,
+		"day": 12,
+		"scope": ['Anniversario della','Giornata Mondiale'],
+	}, {
+		"month": 10,
+		"day": 12,
+		"scope": ['Giornata Nazionale di ','Cristoforo Colombo'],
+	}, {
+		"month": 10,
+		"day": 13,
+		"scope": ['Giornata Mondiale della ','riduzione dei disastri naturali'],
+	}, {
+		"month": 10,
+		"day": 14,
+		"scope": ['Giornata Mondiale della ','vista'],
+	}, {
+		"month": 10,
+		"day": 14,
+		"scope": ['Giornata Mondiale dell\'','educazione ambientale contro l\'incenerimento dei rifiuti'],
+	}, {
+		"month": 10,
+		"day": 15,
+		"scope": ['Giornata Mondiale della ','sensibilizzazione sulla perdita in gravidanza e dopo la nascita (BabyLoss)'],
+	}, {
+		"month": 10,
+		"day": 15,
+		"scope": ['Giornata Mondiale delle ','donne rurali'],
+	}, {
+		"month": 10,
+		"day": 16,
+		"scope": ['Giornata Mondiale dell\'','alimentazione'],
+	}, {
+		"month": 10,
+		"day": 17,
+		"scope": ['Giornata Mondiale dell\'','eradicazione della povertà'],
+	}, {
+		"month": 10,
+		"day": 18,
+		"scope": ['Giornata Mondiale della ','menopausa'],
+	}, {
+		"month": 10,
+		"day": 18,
+		"scope": ['Giornata Mondiale dello ','squash'],
+	}, {
+		"month": 10,
+		"day": 18,
+		"scope": ['Giornata Europea della ','tratta di esseri umani'],
+	}, {
+		"month": 10,
+		"day": 19,
+		"scope": ['Giornata Mondiale della ','lotta contro il tumore al seno e consapevolezza sulla ricostruzione mammaria'],
+	}, {
+		"month": 10,
+		"day": 20,
+		"scope": ['Giornata Mondiale dell\'','osteoporosi'],
+	}, {
+		"month": 10,
+		"day": 20,
+		"scope": ['Giornata Internazionale del ','controllore del traffico aereo'],
+	}, {
+		"month": 10,
+		"day": 21,
+		"scope": ['Giornata Mondiale dell\'','ascolto'],
+	}, {
+		"month": 10,
+		"day": 21,
+		"scope": ['Giornata Mondiale del ','risparmio'],
+	}, {
+		"month": 10,
+		"day": 22,
+		"scope": ['Giornata Mondiale della ','balbuzie'],
+	}, {
+		"month": 10,
+		"day": 23,
+		"scope": ['Giornata Mondiale della ','sensibilizzazione sulla sindrome Kabuki'],
+	}, {
+		"month": 10,
+		"day": 23,
+		"scope": ['Giornata della ','XLH'],
+	}, {
+		"month": 10,
+		"day": 24,
+		"scope": ['Giornata Mondiale delle ','Nazioni Unite'],
+	}, {
+		"month": 10,
+		"day": 24,
+		"scope": ['Giornata Mondiale dell\'','informazione e sviluppo'],
+	}, {
+		"month": 10,
+		"day": 24,
+		"scope": ['Giornata Mondiale della ','Polio'],
+	}, {
+		"month": 10,
+		"day": 25,
+		"scope": ['Giornata Mondiale della ','pasta'],
+	}, {
+		"month": 10,
+		"day": 25,
+		"scope": ['Giornata Internazionale degli ','artisti'],
+	}, {
+		"month": 10,
+		"day": 25,
+		"scope": ['Giornata Mondiale delle ','Nazioni Unite'],
+	}, {
+		"month": 10,
+		"day": 26,
+		"scope": ['Giornata Mondiale delle ','Nazioni Unite'],
+	}, {
+		"month": 10,
+		"day": 27,
+		"scope": ['Giornata Mondiale del ','patrimonio audiovisivo'],
+	}, {
+		"month": 10,
+		"day": 27,
+		"scope": ['Giornata Mondiale dei ','cugini'],
+	}, {
+		"month": 10,
+		"day": 28,
+		"scope": ['','Giorno del No (Επέτειος του Όχι)'],
+	}, {
+		"month": 10,
+		"day": 29,
+		"scope": ['Giornata Mondiale dell\'','ictus cerebrale'],
+	}, {
+		"month": 10,
+		"day": 29,
+		"scope": ['Giornata Mondiale della ','Psoriasi'],
+	}, {
+		"month": 10,
+		"day": 31,
+		"scope": ['Giornata Mondiale del ','risparmio'],
+	}, {
+		"month": 11,
+		"day": 1,
+		"scope": ['Giornata Mondiale del ','vegan'],
+	}, {
+		"month": 11,
+		"day": 2,
+		"scope": ['Giornata Mondiale del ','mettere fine all\'impunità per i crimini contro i giornalisti'],
+	}, {
+		"month": 11,
+		"day": 3,
+		"scope": ['Giornata Internazionale delle ','persone diversamente abili'],
+	}, {
+		"month": 11,
+		"day": 4,
+		"scope": ['Giornata dell\'','Unità Nazionale e Forze Armate'],
+	}, {
+		"month": 11,
+		"day": 5,
+		"scope": ['Giornata Mondiale della ','consapevolezza sugli tsunami (World Tsunami Awareness Day: WTAD)'],
+	}, {
+		"month": 11,
+		"day": 6,
+		"scope": ['Giornata Internazionale delle ','Nazioni Unite per la prevenzione dello sfruttamento dell\'ambiente in situazioni di guerra e conflitto armato'],
+	}, {
+		"month": 11,
+		"day": 7,
+		"scope": ['Giornata Mondiale del ','diabete'],
+	}, {
+		"month": 11,
+		"day": 7,
+		"scope": ['Giornata Mondiale dello ','stress'],
+	}, {
+		"month": 11,
+		"day": 8,
+		"scope": ['Giornata Mondiale dei ','guinness world record'],
+	}, {
+		"month": 11,
+		"day": 8,
+		"scope": ['Giornata Internazionale della ','radiologia'],
+	}, {
+		"month": 11,
+		"day": 9,
+		"scope": ['Giornata Mondiale della ','libertà contro oppressione, fascismo, antisemitismo e totalitarismo'],
+	}, {
+		"month": 11,
+		"day": 10,
+		"scope": ['Giornata Mondiale della ','scienza per la pace e lo sviluppo'],
+	}, {
+		"month": 11,
+		"day": 10,
+		"scope": ['Giornata Mondiale degli ','stagisti'],
+	}, {
+		"month": 11,
+		"day": 11,
+		"scope": ['Giornata Mondiale della ','"memoria" o "armistizio" per i caduti della prima guerra mondiale'],
+	}, {
+		"month": 11,
+		"day": 11,
+		"scope": ['Giornata Mondiale dei ','single'],
+	}, {
+		"month": 11,
+		"day": 12,
+		"scope": ['Giornata Mondiale della ','Polmonite (World Pneumonia Day)'],
+	}, {
+		"month": 11,
+		"day": 12,
+		"scope": ['Giornata Mondiale della ','qualità'],
+	}, {
+		"month": 11,
+		"day": 13,
+		"scope": ['Giornata Mondiale della ','gentilezza'],
+	}, {
+		"month": 11,
+		"day": 14,
+		"scope": ['Giornata Mondiale del ','diabete (Word Diabetes Day)'],
+	}, {
+		"month": 11,
+		"day": 15,
+		"scope": ['Giornata Mondiale dei ','poveri'],
+	}, {
+		"month": 11,
+		"day": 16,
+		"scope": ['Giornata Internazionale della ','tolleranza'],
+	}, {
+		"month": 11,
+		"day": 17,
+		"scope": ['Giornata Mondiale della ','prematurità'],
+	}, {
+		"month": 11,
+		"day": 17,
+		"scope": ['Giornata Mondiale degli ','studenti'],
+	}, {
+		"month": 11,
+		"day": 18,
+		"scope": ['Giornata Mondiale degli ','antibiotici e il loro uso consapevole'],
+	}, {
+		"month": 11,
+		"day": 18,
+		"scope": ['Giornata Mondiale della ','filosofia'],
+	}, {
+		"month": 11,
+		"day": 18,
+		"scope": ['Giornata Mondiale delle ','vittime della strada'],
+	}, {
+		"month": 11,
+		"day": 19,
+		"scope": ['Giornata Mondiale dei ','gabinetti'],
+	}, {
+		"month": 11,
+		"day": 19,
+		"scope": ['Giornata Internazionale dell\'','uomo'],
+	}, {
+		"month": 11,
+		"day": 20,
+		"scope": ['Giornata Mondiale dei ','diritti dei bambini, dell\'infanzia e dell\'adolescenza'],
+	}, {
+		"month": 11,
+		"day": 20,
+		"scope": ['Giornata Internazionale della ','memoria transgender'],
+	}, {
+		"month": 11,
+		"day": 20,
+		"scope": ['Giornata Internazionale dell\'','industrializzazione dell’Africa'],
+	}, {
+		"month": 11,
+		"day": 21,
+		"scope": ['Giornata Mondiale dell\'','albero'],
+	}, {
+		"month": 11,
+		"day": 21,
+		"scope": ['Giornata Mondiale della ','televisione'],
+	}, {
+		"month": 11,
+		"day": 22,
+		"scope": ['Giornata Mondiale della ','filosofia'],
+	}, {
+		"month": 11,
+		"day": 23,
+		"scope": ['Giornata Mondiale di ','Fibonacci'],
+	}, {
+		"month": 11,
+		"day": 24,
+		"scope": ['Giornata Internazionale dell\'','eliminazione della violenza sulle donne'],
+	}, {
+		"month": 11,
+		"day": 25,
+		"scope": ['Giornata Internaionale dell\'','eliminazione della violenza contro le donne'],
+	}, {
+		"month": 11,
+		"day": 26,
+		"scope": ['Giornata Mondiale dell\'','olivo'],
+	}, {
+		"month": 11,
+		"day": 27,
+		"scope": ['Giornata Mondiale del ','dono'],
+	}, {
+		"month": 11,
+		"day": 28,
+		"scope": ['Giornata Mondiale del ','Mediterraneo'],
+	}, {
+		"month": 11,
+		"day": 28,
+		"scope": ['Giornata Mondiale della ','compassione'],
+	}, {
+		"month": 11,
+		"day": 29,
+		"scope": ['Giornata Internazionale della ','solidarietà per il popolo palestinese'],
+	}, {
+		"month": 11,
+		"day": 30,
+		"scope": ['Giornata Mondiale della ','pena di morte'],
+	}, {
+		"month": 12,
+		"day": 1,
+		"scope": ['Giornata Mondiale dell\'','AIDS'],
+	}, {
+		"month": 12,
+		"day": 2,
+		"scope": ['Giornata Internazionale dell\'','abolizione della schiavitù'],
+	}, {
+		"month": 12,
+		"day": 3,
+		"scope": ['Giornata Mondiale delle ','persone con disabilità'],
+	}, {
+		"month": 12,
+		"day": 5,
+		"scope": ['Giornata Mondiale del ','suolo'],
+	}, {
+		"month": 12,
+		"day": 5,
+		"scope": ['Giornata Internazionale del ','volontariato per lo sviluppo economico e sociale'],
+	}, {
+		"month": 12,
+		"day": 7,
+		"scope": ['Giornata Internazionale dell\'','aviazione civile'],
+	}, {
+		"month": 12,
+		"day": 8,
+		"scope": ['','Immacolata Concezione della Beata Vergine Maria'],
+	}, {
+		"month": 12,
+		"day": 9,
+		"scope": ['Giornata Internazionale della ','corruzione'],
+	}, {
+		"month": 12,
+		"day": 10,
+		"scope": ['Giornata Mondiale dei ','diritti dell’uomo'],
+	}, {
+		"month": 12,
+		"day": 10,
+		"scope": ['Giornata Internazionale dei ','diritti degli animali'],
+	}, {
+		"month": 12,
+		"day": 11,
+		"scope": ['Giornata Mondiale del ','tango'],
+	}, {
+		"month": 12,
+		"day": 11,
+		"scope": ['Giornata Internazionale della  ','montagna'],
+	}, {
+		"month": 12,
+		"day": 12,
+		"scope": ['Giornata Internazionale della ','copertura sanitaria universale'],
+	}, {
+		"month": 12,
+		"day": 12,
+		"scope": ['Giornata internazionale della ','neutralità'],
+	}, {
+		"month": 12,
+		"day": 13,
+		"scope": ['Giornata Mondiale del ','pane'],
+	}, {
+		"month": 12,
+		"day": 14,
+		"scope": ['Giornata Mondiale delle ','scimmie'],
+	}, {
+		"month": 12,
+		"day": 15,
+		"scope": ['Giornata Nazionale del ','servizio civile universale'],
+	}, {
+		"month": 12,
+		"day": 16,
+		"scope": ['Giornata Nazionale dello ','spazio'],
+	}, {
+		"month": 12,
+		"day": 17,
+		"scope": ['Giornata Mondiale della ','violenza sui/sulle sex-workers'],
+	}, {
+		"month": 12,
+		"day": 18,
+		"scope": ['Giornata Mondiale dei ','migranti'],
+	}, {
+		"month": 12,
+		"day": 19,
+		"scope": ['Giornata delle ','Nazioni Unite per la cooperazione sud-sud'],
+	}, {
+		"month": 12,
+		"day": 20,
+		"scope": ['Giornata Internazionale della ','solidarietà umana'],
+	}, {
+		"month": 12,
+		"day": 21,
+		"scope": ['Giornata Mondiale dello ','snowboard'],
+	}, {
+		"month": 12,
+		"day": 21,
+		"scope": ['Giornata Mondiale dell\'','orgasmo e del piacere e del benessere sessuale'],
+	}, {
+		"month": 12,
+		"day": 22,
+		"scope": ['Giornata Mondiale dell\'','orgasmo'],
+	}, {
+		"month": 12,
+		"day": 25,
+		"scope": ['Giornata Internazionale dell\'','eliminazione della violenza contro le donne'],
+	}, {
+		"month": 12,
+		"day": 27,
+		"scope": ['Giornata Internazionale della ','preparazione alle epidemie'],
+	}, {
+		"month": 12,
+		"day": 27,
+		"scope": ['Giornata Mondiale del ','cambio senza scontrino'],
+	},
+];
+
+function displaDays(j) {
+	const m = [31,29,31,30,31,30,31,31,30,31,30,31]
+	let t = Array(12).fill(true);
+	for(let p in t) {
+		t[p] = Array(m[p]).fill([]);
+	};
+	for(let p in j) {
+		const e = j[p];
+		t[e.month-1][e.day-1] = t[e.month-1][e.day-1].concat([e.scope]);
+	};
+	let r = '';
+	const n = ['Gennaio','Febbraio','Marzo','Aprile','Maggio','Giugno','Luglio','Agosto','Settembre','Ottobre','Novembre','Dicembre'];
+	for(let M in t) {
+		if(t[M].length!=0) {
+			r += '<div class="ListMonth"><span class="ListHeadMonth">'+n[M]+'</span>';
+			for(let D in t[M]) {
+				if(t[M][D].length!=0) {
+					r += '<div class="ListDay"><span class="ListHeadDay">'+(Number(D)+1)+' '+n[M]+'</span>';
+					for(let S in t[M][D]) {
+						r += '<p class="ListScope">'+t[M][D][S][0]+'<span class="ListScopeSpan">'+t[M][D][S][1]+'</span></p>';
+					};
+					r += '</div>';
+				};
+			};
+			r += '</div>';
+		};
+	};
+	document.getElementById('dayList').innerHTML = r;
+};
+
+function nojs() {
+	document.getElementById('no-js').outerHTML = '';
+};
+
+window.onload = function() {
+	nojs();
+	_JCHSL({'Elem':'document.body.style.backgroundColor','L':96.5,'LRange':.5,'Interval':2000,'IntervalRange':1000});
+	displaDays(dayScope);
+};
+
+</script>
+<body class="_BOMP">
+
+<div id="no-js">
+	<p>Sorry,<br />your browser may not support JavaScript<br />or, if you have them disabled, please enable them.</p>
+</div>
+
+<div class="_DN">
+</div>
+
+<div class="_PA _CX" id="rel">
+	<div id="dayList"></div>
+</div>
+
+</body>
+</html>
