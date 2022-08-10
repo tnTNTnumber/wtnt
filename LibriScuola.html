@@ -1,0 +1,423 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Angaroni Leonardo - vendo libri usati - 388 118 3102</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Mono">
+	<link rel="stylesheet" href="https://2wtnt.tk/css.css">
+	<script type="text/javascript" src="https://2wtnt.tk/js.js"></script>
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@1,700&display=swap');
+
+:root {
+	--c1: rgba(220,127,73,.328);
+	--c2: rgba(104,24,4,.66);
+	--c3: rgba(52,12,2,.96);
+	/*--c1s: rgba(250,190,20,.23);
+	--c2s: rgba(200,120,12,.8);
+	--c3s: rgba(200,120,12,.8);*/
+}
+
+/* *:not(pre):not(textarea) {
+	font-family: 'Lucida Console', monospace;
+	font-family: 'Ubuntu Mono', monospace;
+} */
+
+* {
+	font-family: Helvetica, sans-serif;
+} *::first-letter {
+	font-weight: unset;
+	color: unset;
+	background: unset;
+} *::first-line {
+	font-weight: unset;
+	color: unset;
+	background: unset;
+}
+
+::-moz-selection {
+	background: rgba(0,255,255,.2);
+	color: unset;
+} ::selection {
+	background: rgba(0,255,255,.2);
+	color: unset;
+}
+
+body {
+} body::-webkit-scrollbar {
+	width: 1.5rem;
+} body::-webkit-scrollbar-track {
+	display: none;
+} body::-webkit-scrollbar-thumb {
+	background: silver;
+	background:
+		linear-gradient(top, transparent 5px, black 5px, black 50%, transparent 50%),	linear-gradient(bottom, transparent 5px, black 5px, black 50%, transparent 50%),
+		radial-gradient(circle, black 5px, transparent 5px) -2px 59%,
+		radial-gradient(circle, black 5px, transparent 5px) -2px 41%;
+	background-size: 100% 100%, 100% 100%, 15px 50%, 15px 50%;
+	background-clip: padding-box;
+	border: 0.5rem solid transparent;
+	border-radius: 1.5rem;
+	z-index: -1;
+	/*credits: https://gist.github.com/zoreet/1550217/8dff57fc6941ae4652faea7ff62f2b9a5c8767ef*/
+} body::-webkit-scrollbar-thumb:hover {
+	background-color: hsla(170,3%,33%,.8);
+}
+
+textarea, pre {
+	-moz-tab-size: 4;
+	  -o-tab-size: 4;
+	     tab-size: 4;
+}
+
+#no-js {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100vw;
+	height: 100vh;
+	padding: 0px;
+	margin: 0px;
+	border: 0px;
+	background: rgba(245,245,245,1);
+	z-index: 1000000;
+} #no-js > p {
+	position: absolute;
+	left: 50%;
+	top: 45%;
+	transform: translate(-50%,-50%);
+}
+
+ol {
+	counter-reset: item;
+} ol li:not(ul li) {
+	display: block;
+} ol li:before {
+	content: counters(item,".") ")\00A0\00A0";
+	counter-increment: item;
+} ul li:before {
+	content: none;
+}
+
+#main {
+	margin: 2.5em 0em;
+}
+
+* {
+	background: var(--c1,rgba(140,140,140,.128));
+	border: 1.5px solid var(--c2,rgba(22,22,22,.96));
+	border-radius: .35em;
+	color: var(--c3,rgba(22,22,22,.96));
+}
+
+html, body {
+	background: rgba(200,200,200,1);
+	background-image: url("9/LibriScuola/background.jpeg");
+	background-repeat: repeat;
+	background-position: center;
+	backdrop-filter: saturate(4);
+    -webkit-transition: background 0ms linear;
+    -ms-transition: background 0ms linear;
+    transition: background 0ms linear;
+}
+
+html {
+}
+
+body {
+}
+
+#bookshelf, img, .infoSet *, .mads * {
+	border-width: 0px;
+}
+
+#bookshelf, img, .infoSet *, .mads * {
+	background: transparent;
+}
+
+#bookshelf {
+	margin: 2.5em;
+}
+
+.book {
+	display: flex;
+	flex-direction: column;
+	margin: 3em auto;
+}
+
+.book img {
+	display: flex;
+	margin: .5em auto;
+	border: 0em solid transparent;
+	border-width: 0em .5em;
+	max-height: 68vh;
+	text-transform: capitalize;
+}
+
+.infoSet {
+	display: flex;
+	flex-direction: column;
+	margin: .5em;
+	padding: .31em;
+	width: calc( 100% - calc( .5em * calc( 2 + .31em ) ) );
+	text-align: center;
+}
+
+.name {
+	text-transform: capitalize;
+	font-size: 2em;
+	font-weight: bold;
+}
+
+.matter {
+	text-transform: capitalize;
+}
+
+.year {
+} .year::before {
+	content: ' - ';
+} .year::after {
+	content: '° anno';
+}
+
+.matter, .year {
+	font-size: 1.1em;
+}
+
+.price {
+	font-weight: bold;
+	font-size: 2.03em;
+}
+
+.currency {
+	font-size: .93em;
+} .currency::before {
+	content: ' ';
+}
+
+.nhandState {
+	font-size: .84em;
+} .nhandState::after {
+	content: ': ';
+}
+
+.nhand {
+	font-size: .66em;
+} .nhand::before {
+	content: '( ';
+} .nhand::after {
+	content: 'ª mano )';
+} .nhand::before, .nhand::after {
+	font-size: .99em;
+}
+
+.info {
+	margin: 1em .08em .2em .08em;
+	font-size: .7em;
+	opacity: .7;
+}
+
+.mads {
+	text-align: center;
+}
+
+.mads .name {
+	text-transform: capitalize;
+}
+
+.shareF {
+} .shareF img {
+	max-height: 1em;
+}
+
+</style>
+<script>
+
+var NID = 0;
+const A = [
+	{
+		"name": '4 Matematica.blu 2.0',
+		"pic": 'MATEMATICA-0.jpg',
+		"matter": 'matematica',
+		"year": 4,
+		"nhand": 3,
+		"price": 15, "currency": '€',
+		"info": '4 Matematica.blu 2.0 seconda edizione<br />Massimo Bergamini<br />Graziella Barozzi<br />Anna Trifone<br />ISBN 978-88-08-<b>83338</b>-9',
+	},
+	{
+		"name": 'Il Globo terrestre e la sua evoluzione',
+		"pic": 'SCIENZE-0.jpg',
+		"matter": 'scienze naturali (biologia, chimica, scienze della terra)',
+		"year": 4,
+		"nhand": 3,
+		"price": 8, "currency": '€',
+		"info": 'Il Globo terrestre e la sua evoluzione<br />Elvidio Lupia Palmieri<br />Maurizio Parotto<br />ISBN 978-88-08-<b>42588</b>-1',
+	},
+	{
+		"name": 'Invito alla biologia.blu',
+		"pic": 'SCIENZE-1.jpg',
+		"matter": 'scienze naturali (biologia, chimica, scienze della terra)',
+		"year": 4,
+		"nhand": 3,
+		"price": 15, "currency": '€',
+		"info": 'Invito alla biologia.blu<br />Biologia molecolare, genetica ed evoluzione<br />Il corpo umano con Biologi in English<br />Helena Curtis<br />N. Sue Barnes<br />Adriana Schnek<br />Graciela Flores<br />ISBN 978-88-08-<b>18836</b>-6',
+	},
+	{
+		"name": 'Chimica<br />concetti e modelli<br />Dalla struttura atomica all\'elettrochimica',
+		"pic": 'SCIENZE-2.jpg',
+		"matter": 'scienze naturali (biologia, chimica, scienze della terra)',
+		"year": 4,
+		"nhand": 2,
+		"price": 15, "currency": '€',
+		"info": 'Chimica<br />concetti e modelli<br />Dalla struttura atomica all\'elettrochimica<br />Seconda edizione<br />Gioseppe Bagliutti<br />Marco Falasca<br />Patrizia Amadio<br />ISBN 978-88-08-<b>44684</b>-8',
+	},
+	{
+		"name": '2 La storia<br />Progettare il futuro<br />Il Settecento e l\'ottocento<br />con Atlante di Geostoria',
+		"pic": 'STORIA-0.jpg',
+		"matter": 'storia',
+		"year": 4,
+		"nhand": 2,
+		"price": 20, "currency": '€',
+		"info": '2 La storia<br />Progettare il futuro<br />Il Settecento e l\'ottocento<br />con Atlante di Geostoria<br />Alessandro Barbero<br />Chiara Frugoni<br />Carla Sclarandis<br />ISBN 978-88-08-<b>66113</b>-5',
+	},
+
+	/** OLD */
+
+	{
+		"name": 'Altri Libri:',
+	},
+	{
+		"name": '3 Matematica.blu 2.0',
+		"pic": 'MATEMATICA-1.jpg',
+		"matter": 'matematica',
+		"year": 3,
+		"nhand": 3,
+		"price": 15, "currency": '€',
+		"info": '3 Matematica.blu 2.0 seconda edizione<br />Massimo Bergamini<br />Graziella Barozzi<br />Anna Trifone<br />ISBN 978-88-08-<b>23630</b>-2',
+	},
+	{
+		"name": 'Strumenti per l\'Italiano<br />Quarta edizione per la scuola delle competenze<br />con Quaderno delle competenze lessicali',
+		"pic": 'ITALIANO-0.jpg',
+		"matter": 'lingua, grammatica e letteratura italiana',
+		"year": 1,
+		"nhand": 3,
+		"price": 10, "currency": '€',
+		"info": 'Strumenti per l\'Italiano<br />Quarta edizione per la scuola delle competenze<br />con Quaderno delle competenze lessicali<br />A il sistema della lingua<br />Silvia Fogliato<br />ISBN 978-88-58-<b>30130</b>-2',
+	},
+	{
+		"name": 'English PLUS<br />Student\'s book & workbook<br />Pre-intermediate',
+		"pic": 'INGLESE-0.jpg',
+		"matter": 'lingua e cultura straniera inglese',
+		"year": '1, 2 e 3 ',
+		"nhand": 3,
+		"price": 10, "currency": '€',
+		"info": 'English PLUS<br />Student\'s book & workbook<br />Pre-intermediate<br />con Entry Checker<br />Elementary language revision<br />Ben Wets<br />ISBN 978-0-19-<b>464870</b>-7<br />ISBN 978-0-19-<b>464869</b>-1',
+	},
+	{
+		"name": 'English PLUS<br />Entry Checker<br />Pre-intermediate language revision',
+		"pic": 'INGLESE-1.jpg',
+		"matter": 'lingua e cultura straniera inglese',
+		"year": '?',
+		"nhand": 3,
+		"price": 2, "currency": '€',
+		"info": 'English PLUS<br />Pre-intermediate<br />con Entry Checker<br />Pre-intermediate language revision<br />Ben Wets<br />ISBN 978-0-19-<b>464901</b>-8',
+	},
+	{
+		"name": '1 L\'Amaldi per i licei scientifici.blu<br />seconda edizione<br />Meccanica e Termodinamica',
+		"pic": 'FISICA-0.jpg',
+		"matter": 'fisica',
+		"year": 3,
+		"nhand": 3,
+		"price": 15, "currency": '€',
+		"info": '1 L\'Amaldi per i licei scientifici.blu<br />seconda edizione<br />Meccanica e Termodinamica<br />I problemi modello<br />Prima la realtà poi la fisica<br />Poi verso l\'esame<br />Ugo Amaldi<br />ISBN 978-88-08-<b>72120</b>-4',
+	},
+	{
+		"name": '2 L\'Amaldi per i licei scientifici.blu<br />seconda edizione<br />Onde<br />Campo elettrico e magnetico',
+		"pic": 'FISICA-1.jpg',
+		"matter": 'fisica',
+		"year": 4,
+		"nhand": 3,
+		"price": 15, "currency": '€',
+		"info": '2 L\'Amaldi per i licei scientifici.blu<br />seconda edizione<br />Onde<br />Campo elettrico e magnetico<br />I problemi modello<br />Prima la realtà poi la fisica<br />Poi verso l\'esame<br />Ugo Amaldi<br />ISBN 978-88-08-<b>93739</b>-1',
+	},
+	{
+		"name": 'Terra<br />edizione azzurra<br />Il nostro pianeta<br />La geodinamica esogena<br />Chimica<br />concetti e modelli.blu<br />Dalla materia all\'atomo<br />PLUS',
+		"pic": 'SCIENZE-3.jpg',
+		"matter": 'scienze naturali (biologia, chimica, scienze della terra)',
+		"year": '1 e 2 ',
+		"nhand": 2,
+		"price": 15, "currency": '€',
+		"info": 'Terra<br />MULTIMEDIALE<br />edizione azzurra<br />Il nostro pianeta<br />La geodinamica esogena<br />Un concetto una lezione<br />Ciak si impara<br />Il menù delle competenze<br />Elvidio Lupia Palmieri<br />Maurizio Parotto<br />Chimica<br />concetti e modelli.blu<br />Dalla materia all\'atomo<br />PLUS<br />con videoLab<br />G. Valiutti<br />M. Falasca<br />A. Tifi<br />A. Gentile<br />ISBN 978-88-08-<b>73544</b>-7',
+	},
+	{
+		"name": 'INTRECCI GEOSTORICI',
+		"pic": 'STORIA-1.jpg',
+		"matter": 'storia',
+		"year": '1',
+		"nhand": 3,
+		"price": 10, "currency": '€',
+		"info": 'INTRECCI GEOSTORICI<br />Corso di storia, geografia, cittadinanza e costituzione<br />Gianni Gentile<br />Luigi Ronga<br />Anna Rossi<br />Paolo Cadorna<br />ISBN 978-88-350-<b>3856</b>-6',
+	},
+	{
+		"name": 'INTRECCI GEOSTORICI',
+		"pic": 'STORIA-2.jpg',
+		"matter": 'storia',
+		"year": '2',
+		"nhand": 3,
+		"price": 10, "currency": '€',
+		"info": 'INTRECCI GEOSTORICI<br />Corso di storia, geografia, cittadinanza e costituzione<br />Gianni Gentile<br />Luigi Ronga<br />Anna Rossi<br />Paolo Cadorna<br />ISBN 978-88-350-<b>3716</b>-3',
+	},
+];
+
+function displayBookSet(a) {
+	for(const j of a) {
+		document.getElementById('bookshelf').innerHTML += '<div class="book" id="ID'+NID+'">'+
+			(j.pic?'<img'+((j.matter&&j.year)?' alt="'+j.matter+' - '+j.year+'° anno'+(j.name?': '+j.name:'')+'"':'')+' src="9/LibriScuola/'+j.pic+'">':'')+'<div class="infoSet">'+
+			(j.name?'<div class="name">'+j.name+'</div>':'')+'<div>'+
+			(j.matter?'<span class="matter">'+j.matter+'</span>':'')+
+			(j.year?'<span class="year">'+j.year+'</span>':'')+'</div><div>'+
+			(j.price?'<span class="price">'+j.price+'</span>':'')+
+			(j.currency?'<span class="currency">'+j.currency+'</span>':'')+'</div><div>'+
+			//~ (j.nhand?'<span class="nhandState">'+(j.nhand==1?'nuovo':'usato')+'</span><span class="nhand">'+j.nhand+'</span>':'')+'</div>'+   /** to show used times */
+			(j.nhand?(j.nhand<2?'<span class="nhandState">nuovo</span><span class="nhand">'+j.nhand+'</span>':''):'')+'</div>'+
+			(j.info?'<div class="info">'+j.info+'</div>':'')+
+			'</div></div>';
+		NID += 1;
+	};
+};
+
+function mmads() {
+	for(let i=0; i<document.getElementsByClassName('mads').length; i++) {
+		document.getElementsByClassName('mads')[i].innerHTML += '<div class="name">Angaroni Leonardo</div><div class="shareF WhatsAppNum"><span><img src="9/LibriScuola/WhatsAppIcon.webp"></span><a href="https://wa.me/393881183102">+39 388 118 3102</a></div>';
+	};
+};
+
+function nojs() {
+	document.getElementById('no-js').outerHTML = '';
+};
+
+window.onload = function() {
+	nojs();
+	displayBookSet(A);
+	mmads();
+};
+
+</script>
+<body class="_BOMP">
+
+<div id="no-js">
+	<p>Sorry,<br />your browser may not support JavaScript<br />or, if you have them disabled, please enable them.</p>
+</div>
+
+<div class="_DN">
+</div>
+
+<div class="_PA _CX" id="main">
+	<div class="mads"></div>
+	<div id="bookshelf"></div>
+	<div class="mads" style="margin-bottom:1.5em;"></div>
+</div>
+
+</body>
+</html>
